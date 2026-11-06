@@ -504,6 +504,8 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   cursor:pointer;display:grid;place-items:center;color:#241f1a;font-family:var(--mono);font-size:8px}
 .rbqr svg{display:block;width:100%;height:100%}
 .rbqr:hover{box-shadow:0 0 0 2px var(--gold)}
+.padver{margin:14px 0 0;text-align:center;color:var(--muted);font-family:var(--mono);font-size:10px;
+  letter-spacing:.08em}
 .padwarn{margin:0 0 10px;padding:10px 12px;border-radius:10px;border:1px solid var(--gold);
   background:rgba(216,163,63,.12);color:var(--bone);font-size:13.5px;line-height:1.45}
 .padwarn[hidden]{display:none!important}
@@ -1482,6 +1484,7 @@ body.learning .gamecard .garrow{display:none}
       </div>
       <p class="conn" id="pad-status"></p>
       <button class="btn ghost" id="pad-leave" style="margin-top:14px">Leave the game</button>
+      <p class="padver" id="pad-ver"></p>
     </div>
   </section>
 
@@ -2884,6 +2887,7 @@ $('restart').onclick=()=>{
    ================================================================== */
 const BUILD='__BUILD__';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
+try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
                'wss://test.mosquitto.org:8081/mqtt'];
@@ -2894,7 +2898,8 @@ const PARTY={role:'solo',code:'',client:null,pid:'',seq:0,seen:{},stage:null,
 
 const topicFor=(code,leaf)=>'thechair/v1/'+String(code).toLowerCase()+'/'+leaf;
 const partyLink=()=>location.origin+location.pathname;
-const joinLink=()=>partyLink()+'#'+PARTY.code;        // the link an invited guest follows
+// the build goes in the link: a cached page cannot answer a URL it has never seen
+const joinLink=()=>partyLink()+'?v='+encodeURIComponent(BUILD).replace(/%20/g,'')+'#'+PARTY.code;
 function newCode(){let s='';for(let i=0;i<4;i++)s+=CODE_LETTERS[Math.floor(Math.random()*CODE_LETTERS.length)];return s}
 function cleanName(s){return String(s==null?'':s).replace(/[\u0000-\u001F\u007F]/g,'').trim().slice(0,14)}
 function screenNow(){const s=document.querySelector('.screen.on');return s?s.id:''}
@@ -4374,6 +4379,11 @@ function drawPadQuiz(st,me){
     try{$('pad-round').textContent='';$('pad-state').textContent='';
       $('pad-state').className='mystate';
       $('pad-seats').hidden=true;$('pad-leave').textContent='Leave the game';}catch(e){}
+    return;
+  }
+  if(!me){                      // still typing a name: nothing here is yours yet
+    box.hidden=true;box.innerHTML='';
+    const pp2=$('pad-pic');if(pp2){pp2.hidden=true;pp2.dataset.u=''}
     return;
   }
   box.className='qgrid';
