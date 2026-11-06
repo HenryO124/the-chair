@@ -1,0 +1,7 @@
+# Always hand out the newest build. The page is one file and it changes often;
+# a cached copy on someone's phone is the difference between "it works on mine"
+# and half the room playing last week's game.
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache

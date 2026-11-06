@@ -1,0 +1,3025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Chair — blind signings</title>
+<link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
+<link rel="preconnect" href="https://www.youtube.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+<link rel="preconnect" href="https://rr1---sn-5hnekn7k.googlevideo.com" crossorigin>
+<link rel="dns-prefetch" href="https://googlevideo.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#120B10; --panel:#1F1319; --panel2:#2A1B22; --line:#3E2830;
+  --gold:#D8A33F; --red:#C4342C; --red-dim:#7A211C;
+  --bone:#F0E7D8; --muted:#9A868D;
+  --disp:'Bricolage Grotesque','Trebuchet MS',sans-serif;
+  --mono:'Space Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:radial-gradient(120% 80% at 50% -10%,#2B171F 0%,var(--ink) 55%),var(--ink);
+  color:var(--bone); font-family:var(--disp); min-height:100vh;
+  display:flex; flex-direction:column; align-items:center; padding:14px 16px 10px;
+}
+.wrap{flex:1;min-width:0}
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  margin-bottom:10px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.logo{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.logo span{color:var(--red)}
+.meta{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+
+.brk{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:20px;
+  padding:6px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.brk:hover{border-color:var(--bone);color:var(--bone)}
+.screen{display:none;animation:rise .35s ease both}
+.screen.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h2{font-size:clamp(26px,7vw,38px);line-height:1.02;font-weight:800;letter-spacing:-.03em;margin:0 0 8px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 22px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.seg.wrap{flex-wrap:wrap}
+.seg.wrap button{flex:1 1 30%;min-width:88px}
+.seg button.rnd{border-style:dashed;border-color:var(--gold);color:var(--gold)}
+.seg button.rnd.sel{background:var(--gold);color:#1A1206;border-style:solid}
+.pool{font-family:var(--mono);font-size:11px;color:var(--muted);margin:-14px 0 20px}
+.pool.thin{color:var(--gold)}
+.field-label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+
+button{font-family:var(--disp);cursor:pointer;border:none;transition:transform .1s,background .15s,border-color .15s,color .15s}
+button:active{transform:scale(.98)}
+button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn{display:block;width:100%;padding:16px;border-radius:10px;background:var(--red);color:#FFF3EF;
+  font-size:17px;font-weight:800;letter-spacing:-.01em;margin-bottom:10px}
+.btn:hover{background:#D64138}
+.btn.gold{background:var(--gold);color:#1A1206}
+.btn.gold:hover{background:#E6B554}
+.btn.ghost{background:transparent;color:var(--bone);border:1px solid var(--line);font-weight:600}
+.btn.ghost:hover{border-color:var(--bone)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn-row{display:flex;gap:10px}
+.btn-row .btn{margin-bottom:0}
+
+.player-row{display:flex;gap:8px;margin-bottom:8px;align-items:stretch}
+.avpick{flex:none;width:52px;border-radius:9px;background:var(--panel2);
+  border:1px solid var(--line);padding:4px;overflow:hidden}
+.avpick:hover{border-color:var(--gold)}
+.avpick .av{width:100%;height:100%;display:block;border-radius:6px}
+.avnone{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--muted)}
+input[type=text]{flex:1;background:var(--panel2);border:1px solid var(--line);color:var(--bone);
+  font-family:var(--disp);font-size:16px;padding:13px 14px;border-radius:9px;min-width:0}
+input:focus{outline:none;border-color:var(--gold)}
+.kill{width:46px;flex:none;background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:9px;font-size:18px}
+.kill:hover{color:var(--red);border-color:var(--red)}
+.seg{display:flex;gap:8px;margin:4px 0 22px}
+.seg button{flex:1;padding:12px 4px;border-radius:9px;background:var(--panel2);border:1px solid var(--line);
+  color:var(--muted);font-family:var(--mono);font-size:14px}
+.seg button.sel{background:var(--bone);color:var(--ink);border-color:var(--bone);font-weight:700}
+
+/* ---- host cue card ---- */
+.cue{background:var(--panel);border:1px dashed var(--line);border-radius:12px;padding:22px 18px;text-align:center;margin-bottom:14px}
+.cue-hidden{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.cue-song{font-size:clamp(22px,6vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.15}
+#setlist-out{width:100%;height:180px;margin-top:10px;background:var(--panel2);border:1px solid var(--line);
+  color:var(--bone);font-family:var(--mono);font-size:12px;line-height:1.6;padding:12px;border-radius:9px;resize:vertical}
+.peek{width:100%;padding:9px;border-radius:9px;background:var(--panel2);border:1px solid var(--line);
+  color:var(--bone);font-family:var(--mono);font-size:13px;letter-spacing:.06em}
+.peek:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ---- record ---- */
+.deck{position:relative;width:min(260px,66vw);aspect-ratio:1;margin:4px auto 20px}
+.vinyl{position:absolute;inset:0;border-radius:50%;
+  background:repeating-radial-gradient(circle at 50% 50%,#0E080C 0 2px,#1B1218 2px 3.5px);
+  box-shadow:0 18px 44px rgba(0,0,0,.6),inset 0 0 0 1px #34252B}
+.vinyl::after{content:'';position:absolute;inset:0;border-radius:50%;
+  background:linear-gradient(115deg,transparent 38%,rgba(240,231,216,.08) 47%,transparent 55%)}
+.spin{animation:spin 1.6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.label{position:absolute;inset:33%;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#E9BB60,var(--gold) 55%,#8A6828)}
+.spindle{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--ink)}
+.readout{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.count{font-family:var(--mono);font-weight:700;font-size:40px;color:#231604;line-height:1}
+.count-cap{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:#4A3208;text-transform:uppercase;margin-top:3px}
+.arm{position:absolute;top:6%;right:4%;width:5px;height:52%;background:linear-gradient(#C7CBD1,#7E858D);
+  border-radius:3px;transform-origin:50% 6px;transform:rotate(34deg);transition:transform .4s ease}
+.arm::before{content:'';position:absolute;top:-9px;left:-8px;width:20px;height:20px;border-radius:50%;background:#9AA1A8}
+.arm.down{transform:rotate(3deg);transition:transform 20s linear}
+
+/* ---- chair layout ---- */
+.chairs,.seats{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:6px 0 20px}
+.chair{width:76px;text-align:center}
+.chair .nm{font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;color:var(--muted)}
+.chair.turned .nm{color:var(--bone)}
+.gotit{position:absolute;top:-2px;left:50%;transform:translateX(-50%);z-index:5;
+  font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.14em;
+  background:var(--gold);color:#1A1206;padding:3px 8px;border-radius:20px;
+  box-shadow:0 3px 10px rgba(216,163,63,.5)}
+.blkmark{position:absolute;top:-2px;left:50%;transform:translateX(-50%);z-index:5;
+  font-family:var(--mono);font-size:7.5px;font-weight:700;letter-spacing:.08em;white-space:nowrap;
+  background:var(--line);color:var(--red);padding:3px 7px;border-radius:20px}
+.chair{position:relative}
+.chair.turned .cushion{box-shadow:inset 0 3px 0 rgba(255,255,255,.3),0 0 0 2px var(--gold)}
+
+/* ---- shell + money rail ---- */
+.shell{width:100%;max-width:100%;display:flex;gap:0.9%;align-items:flex-start}
+.leftcol{display:none;flex:0 0 15%;min-width:0;position:sticky;top:2vh;
+  flex-direction:column;gap:1.3vh;max-height:96vh;overflow-y:auto}
+@media (min-width:880px){.leftcol{display:flex}}
+.rail,.roundcard{background:linear-gradient(170deg,rgba(26,16,22,.96),rgba(12,7,10,.96));
+  border:1px solid rgba(240,231,216,.1);border-radius:14px;padding:clamp(14px,1.4vw,20px);
+  box-shadow:inset 0 1px 0 rgba(240,231,216,.06)}
+/* the round card is the twin of the reveal panel on the right */
+.roundcard{min-height:150px;display:flex;flex-direction:column;justify-content:center}
+.rc-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:4px}
+.rc-num{font-family:var(--mono);font-weight:700;line-height:1;color:var(--gold);
+  font-size:clamp(30px,2.8vw,44px)}
+.rc-num span{font-size:.42em;color:var(--muted);font-weight:400;letter-spacing:.04em;margin-left:4px}
+.rc-season{font-family:var(--disp);font-size:13px;color:var(--bone);margin-top:12px;line-height:1.4}
+.rail h3{margin:0 0 10px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);font-weight:400}
+.rail .r{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+.rail .r:last-child{border-bottom:none}
+.rail .rtop{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}
+.slotbox{display:flex;flex-direction:column;gap:4px;margin:8px 0 6px}
+.slot{border-radius:8px;padding:7px 9px;min-height:34px;display:flex;flex-direction:column;
+  justify-content:center;gap:1px}
+.sline{display:flex;align-items:baseline;gap:6px}
+.slot.filled{background:rgba(216,163,63,.1);border:1px solid rgba(216,163,63,.3)}
+.slot.open{border:1.5px dashed rgba(240,231,216,.28);background:rgba(240,231,216,.03);min-height:34px}
+.slot .sa{flex:1;min-width:0;font-size:12.5px;font-weight:700;color:var(--bone);line-height:1.25;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.slot .st{font-family:var(--mono);font-size:9.5px;color:var(--muted);line-height:1.4;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.slot .sm{flex:none;font-family:var(--mono);font-size:10px;color:var(--gold)}
+.slot .so{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(240,231,216,.35);text-align:center}
+.blkrow{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px;justify-content:center;min-height:4px}
+.blk.terse{flex:0 1 auto;padding:4px 4px;font-size:7.5px;letter-spacing:0}
+.blkspent{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;color:var(--line)}
+.blockdot{font-family:var(--mono);font-size:10px;color:var(--gold);flex:none}
+.blockdot.spent{color:var(--line)}
+.rail .r .n{flex:1;line-height:1.3;font-size:clamp(13px,1vw,16px);font-weight:600;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.rail .r .t{font-family:var(--mono);font-size:clamp(13px,1vw,16px);font-weight:700;color:var(--gold)}
+.rail .r.lead .n{color:var(--bone)}
+.rail .r.lead .n::before{content:'\25c9 ';color:var(--gold);font-size:10px}
+.rail .r.spent .n{opacity:.6}
+.railstrip{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.railstrip span{font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:20px;
+  border:1px solid var(--line);color:var(--muted)}
+.railstrip span b{color:var(--gold);font-weight:700}
+@media (min-width:880px){.railstrip{display:none}}
+
+/* ---- host bar ---- */
+.hostbar{margin-bottom:4px}
+.hosthint{font-family:var(--mono);font-size:10px;color:var(--muted);margin:0 0 6px;text-align:center}
+.ytin{display:block;width:100%;margin-top:0;background:var(--panel2);border:1px solid var(--line);color:var(--bone);
+  font-family:var(--mono);font-size:11px;padding:7px 12px;border-radius:9px}
+#s-listen .hostbar{max-width:560px;margin:0 auto 4px}
+#s-listen .ythint{min-height:0;margin:3px 0 0}
+.ytin:focus{outline:none;border-color:var(--gold)}
+.ytin.ok{border-color:var(--gold);color:var(--gold)}
+.libbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.libbar .ytin{flex:1 1 220px;width:auto;margin-top:0}
+.libtable{max-height:52vh;overflow-y:auto;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel)}
+.librow{display:flex;align-items:center;gap:10px;padding:9px 12px;border-bottom:1px solid var(--line)}
+.librow:last-child{border-bottom:none}
+.librow .who{flex:1 1 38%;min-width:0}
+.librow .wa{font-size:13.5px;font-weight:700;color:var(--bone);overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.librow .wt{font-family:var(--mono);font-size:10px;color:var(--muted);overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.librow input{flex:1 1 42%;min-width:140px;background:var(--panel2);border:1px solid var(--line);
+  color:var(--bone);font-family:var(--mono);font-size:10.5px;padding:7px 10px;border-radius:7px}
+.librow input:focus{outline:none;border-color:var(--gold)}
+.librow input.ok{border-color:var(--gold);color:var(--gold)}
+.librow .mark{flex:none;width:16px;text-align:center;font-family:var(--mono);font-size:12px;
+  color:var(--line)}
+.librow .mark.on{color:var(--gold)}
+.librow .mark.on.dim{opacity:.45}
+.librow .mark.flag{color:var(--red)}
+.ythint{font-family:var(--mono);font-size:9.5px;color:var(--muted);margin:5px 0 0;text-align:center;min-height:12px}
+.vw-screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:6px}
+.vbig{position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:12px;background:transparent;border:0;
+  color:var(--bone);font-family:var(--disp);font-size:clamp(15px,1.5vw,22px);font-weight:700;
+  cursor:pointer;border-radius:6px}
+.vbig:hover{background:rgba(216,163,63,.07)}
+.vtri{display:flex;align-items:center;justify-content:center;width:clamp(54px,5vw,84px);
+  height:clamp(54px,5vw,84px);border-radius:50%;background:var(--red);color:#FFF3EF;
+  font-size:clamp(20px,2vw,30px);padding-left:5px;box-shadow:0 8px 24px rgba(196,52,44,.4)}
+.vwhy{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--muted);
+  letter-spacing:.06em;white-space:pre-line;text-align:center;max-width:34ch;line-height:1.6}
+.vstop{position:absolute;left:8px;bottom:8px;z-index:3;padding:6px 11px;border-radius:7px;
+  font-family:var(--mono);font-size:10px;border:1px solid var(--line);cursor:pointer;
+  background:rgba(12,7,10,.85);color:var(--muted)}
+.vstop:hover{border-color:var(--red);color:var(--red)}
+.vopen{position:absolute;right:8px;bottom:8px;z-index:3;padding:6px 11px;border-radius:7px;
+  font-family:var(--mono);font-size:10px;border:1px solid var(--line);
+  background:rgba(12,7,10,.85);color:var(--muted)}
+.vopen:hover{border-color:var(--gold);color:var(--gold)}
+.cue-sub{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:8px;font-weight:400}
+
+/* ---- the stage: screen row on top, chairs on the floor below ---- */
+.stageset.big{position:relative;padding:0.8% 0.8% 1.6vh;min-height:320px;
+  height:min(88vh,calc(100vh - 148px));display:flex;flex-direction:column}
+/* the screen takes every pixel the chairs don't need */
+.stageset.big .videowall{flex:1 1 auto;min-height:0;width:100%;
+  display:flex;align-items:center;justify-content:center;margin:0 0 1.4vh}
+/* fitScreen() sizes this to the biggest 16:9 that fits, so no black border is left over */
+.screenwrap{position:relative;margin:0 auto;aspect-ratio:16/9;max-width:100%;max-height:100%}
+.stageset.big .vw-screen{position:absolute;inset:0;width:100%;height:100%;border-radius:6px}
+.stageset.big .seats{flex:0 0 auto;width:75%;gap:1.2vh 1.6%;align-items:flex-end;
+  margin:0 auto;flex-wrap:wrap;justify-content:center}
+.stageset.big .seats{--n:4}
+.stageset.big .chair{width:calc((100% - (var(--n) - 1) * 1.6%) / var(--n));
+  max-width:11%;min-width:40px}
+/* a short window with two rows of chairs: keep them small enough to stay on screen */
+@media (max-height:880px){
+  .stageset.big .seats{gap:0.5vh 1.6%}
+  .stageset.big .chair{max-width:8.5%}
+}
+.stageset.big .chair .nm{font-size:clamp(9px,.78vw,12px)}
+.stageset.big .sign{font-size:clamp(8px,.68vw,10px);padding:6px 2px;letter-spacing:.02em}
+.stageset.big .blk{font-size:7.5px;padding:4px 3px}
+
+/* ---- the clock sits in its own row, out of the chairs' way ---- */
+.videowall{position:relative;z-index:1;width:100%}
+/* the reveal is a column of its own, so the screen keeps the whole stage */
+.infopanel{display:none;flex:0 0 15%;min-width:0;position:sticky;top:2vh;
+  flex-direction:column;min-height:74vh;gap:1.4vh}
+.infopanel>.ip-idle{padding:14px 12px;min-height:22vh;justify-content:center;display:flex;
+  flex-direction:column}
+.infopanel>.ip-body{min-height:22vh}
+.infopanel>.ip-body{padding:clamp(14px,1.4vw,20px)}
+.infopanel>.ip-idle,.infopanel>.ip-body{border-radius:14px;
+  background:linear-gradient(170deg,rgba(26,16,22,.96),rgba(12,7,10,.96));
+  border:1px solid rgba(240,231,216,.1);box-shadow:inset 0 1px 0 rgba(240,231,216,.06);
+  flex:0 0 auto}
+.infopanel.on{display:flex}
+.ip-idle{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(240,231,216,.34);line-height:1.9;text-align:center}
+.ip-idle #ip-sub{letter-spacing:.08em;font-size:.86em;color:rgba(240,231,216,.18)}
+.ip-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);
+  margin-right:9px;vertical-align:middle;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+.infopanel .artist-name{font-size:clamp(19px,1.8vw,27px);margin:0 0 3px;text-align:left;line-height:1.05}
+.infopanel .artist-tag{font-size:11px;margin-bottom:12px;text-align:left;line-height:1.55}
+.infopanel .figure{font-size:clamp(30px,2.8vw,44px);text-align:left}
+.infopanel .figure-cap{text-align:left;font-size:9px;margin-top:2px}
+.infopanel .verdict{text-align:left;font-size:13px;margin:14px 0 0;line-height:1.5}
+/* narrow screens stack it under the stage instead */
+@media (max-width:880px){
+  .shell{flex-wrap:wrap}
+  .infopanel{position:static;flex:1 1 100%;order:3;min-height:0;margin-top:4px}
+  /* the stage shrinks to fit the picture and the chairs, with no dead black above them */
+  .stageset.big{height:auto;min-height:0;padding:2% 2% 3%}
+  .stageset.big .videowall{flex:0 0 auto;margin-bottom:2.5%}
+  .screenwrap{width:100%}
+  .stageset.big .chair{max-width:22%}
+  .stageset.big .seats{width:100%;gap:2% 3%}
+}
+.striproundwrap{margin:-8px 0 16px}
+.striparound{font-family:var(--mono);font-size:11px;color:var(--muted)}
+@media (min-width:880px){.striproundwrap{display:none}}
+.vw-screen{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;
+  background:linear-gradient(170deg,#0A0509,#140C11);
+  border:1px solid rgba(240,231,216,.14);
+  box-shadow:0 0 44px rgba(216,163,63,.16),inset 0 1px 0 rgba(240,231,216,.08),0 18px 36px rgba(0,0,0,.6)}
+.vw-screen iframe,.vw-screen video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vw-idle{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:clamp(10px,1.1vw,14px);letter-spacing:.34em;color:rgba(240,231,216,.18)}
+.eq{position:absolute;inset:0;display:none;align-items:flex-end;justify-content:center;
+  gap:clamp(3px,.6vw,7px);padding:0 8% 14%}
+.eq i{display:block;flex:1;max-width:14px;border-radius:2px 2px 0 0;height:12%;
+  background:linear-gradient(180deg,var(--gold),var(--red));
+  animation:bounce 1.1s ease-in-out infinite}
+.eq i:nth-child(2n){animation-duration:.8s}
+.eq i:nth-child(3n){animation-duration:1.4s}
+.eq i:nth-child(4n){animation-duration:.95s}
+.eq i:nth-child(5n){animation-duration:1.25s}
+@keyframes bounce{0%,100%{height:12%}50%{height:78%}}
+.playing .eq{display:flex}
+.playing .vw-idle{display:none}
+@media (prefers-reduced-motion:reduce){.eq i{animation:none;height:40%}}
+.clock{position:absolute;z-index:3;right:clamp(8px,1vw,14px);top:clamp(8px,1vw,14px);
+  width:clamp(46px,5vw,70px);height:clamp(46px,5vw,70px)}
+.clock svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.clock circle{fill:rgba(12,7,10,.55);stroke-width:3.5;stroke-linecap:round}
+.clock .ring-bg{stroke:rgba(240,231,216,.14)}
+.clock .ring{fill:none;stroke:var(--gold);stroke-dasharray:131.95;stroke-dashoffset:0}
+.clock .count{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-weight:700;font-size:clamp(18px,2vw,30px);color:var(--gold)}
+.clock .count-cap{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.clock.low .ring{stroke:var(--red)}
+.clock.low .count{color:var(--red)}
+
+/* ---- a chair that actually swivels ---- */
+.rig{position:relative;width:100%;aspect-ratio:1/1.34;perspective:700px;
+  margin:0 auto clamp(7px,1vh,12px)}
+.swivel{position:absolute;left:0;right:0;top:0;bottom:26%;transform-style:preserve-3d;
+  transform:rotateY(180deg);transition:transform 1.15s cubic-bezier(.17,.84,.26,1);
+  transition-delay:calc(var(--i,0) * .05s)}
+.chair.turned .swivel{transform:rotateY(0deg)}
+.cback,.cfront{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+/* the back of the chair, which is what you see all night */
+.cback{transform:rotateY(180deg) translateZ(1px);border-radius:38% 38% 16% 16%/30% 30% 12% 12%;
+  background:linear-gradient(150deg,#4A333C,#2A1C24 52%,#160E13);
+  border:1px solid rgba(240,231,216,.07);
+  box-shadow:inset 0 2px 0 rgba(240,231,216,.06),0 14px 26px rgba(0,0,0,.55)}
+.cav{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%) rotateY(180deg);
+  width:52%;border-radius:22%;box-shadow:0 4px 12px rgba(0,0,0,.5);z-index:2}
+.cback::after{content:'';position:absolute;left:14%;right:14%;top:12%;height:52%;border-radius:40%;
+  background:linear-gradient(160deg,rgba(240,231,216,.05),transparent 70%)}
+/* the front, once it swings round */
+.cfront{border-radius:38% 38% 16% 16%/30% 30% 12% 12%;
+  background:linear-gradient(150deg,#2E2028,#1C1219);border:1px solid rgba(0,0,0,.5);
+  box-shadow:0 14px 26px rgba(0,0,0,.55)}
+.cushion{position:absolute;left:9%;right:9%;top:7%;height:62%;
+  border-radius:34% 34% 14% 14%/26% 26% 10% 10%;
+  background:linear-gradient(155deg,#E8524A,#C4342C 42%,#7A211C);
+  box-shadow:inset 0 3px 0 rgba(255,255,255,.26),inset 0 -14px 22px rgba(0,0,0,.34)}
+.cushion b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-weight:700;color:#FFF0EC;
+  font-size:clamp(20px,2.9vw,42px);text-shadow:0 2px 6px rgba(0,0,0,.45)}
+.pad{position:absolute;left:6%;right:6%;bottom:2%;height:24%;border-radius:18% 18% 40% 40%/30% 30% 60% 60%;
+  background:linear-gradient(#D8443B,#7A211C);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.2),0 5px 10px rgba(0,0,0,.45)}
+.arml,.armr{position:absolute;top:50%;width:16%;height:15%;border-radius:40%;
+  background:linear-gradient(#CE3B33,#6C1A16);box-shadow:0 3px 7px rgba(0,0,0,.45)}
+.arml{left:-7%}.armr{right:-7%}
+/* pedestal stays put while the seat swings */
+.stem{position:absolute;left:44%;width:12%;top:72%;height:18%;border-radius:3px;
+  background:linear-gradient(90deg,#2A2228,#9BA1A8 45%,#2A2228)}
+.foot{position:absolute;left:18%;right:18%;bottom:1%;height:7%;border-radius:50%;
+  background:linear-gradient(#B8BEC5,#3A3A42);box-shadow:0 7px 16px rgba(0,0,0,.6)}
+.chair::after{content:'';position:absolute;left:8%;right:8%;bottom:clamp(26px,3.4vh,42px);height:12px;
+  border-radius:50%;pointer-events:none;transition:background .6s;
+  background:radial-gradient(50% 100% at 50% 50%,rgba(216,163,63,.3),transparent 72%)}
+.chair.turned::after{background:radial-gradient(50% 100% at 50% 50%,rgba(196,52,44,.6),transparent 72%)}
+/* states */
+.chair.blocked .cushion,.chair.blocked .pad,.chair.blocked .arml,.chair.blocked .armr{
+  background:linear-gradient(#5A4A50,#2C2128)}
+.chair.blocked .nm{color:var(--red);text-decoration:line-through}
+.chair.done{opacity:.55}
+.chair.done .nm{color:var(--muted)}
+.chair.live .rig{cursor:pointer}
+.chair.target .rig{cursor:crosshair;outline:2px dashed var(--gold);outline-offset:6px;border-radius:12px}
+.sign{display:block;width:100%;margin-top:clamp(6px,.9vh,10px);padding:clamp(8px,1.1vh,13px) 4px;
+  border-radius:9px;font-family:var(--disp);font-weight:800;letter-spacing:.04em;
+  font-size:clamp(10px,1.05vw,14px);color:#FFF0EC;
+  background:linear-gradient(150deg,#E34C41,var(--red) 55%,#8E2620);
+  box-shadow:0 5px 14px rgba(196,52,44,.35),inset 0 1px 0 rgba(255,255,255,.22)}
+.sign:hover:not(:disabled){filter:brightness(1.1)}
+.sign:disabled{background:var(--panel2);color:var(--muted);box-shadow:none;cursor:not-allowed;opacity:.75}
+/* pass on this one — a full team counts as a skip without pressing anything */
+.skip{display:block;width:100%;margin-top:4px;padding:clamp(4px,.6vh,7px) 4px;border-radius:8px;
+  font-family:var(--mono);font-size:clamp(7.5px,.62vw,9.5px);letter-spacing:.1em;
+  background:transparent;border:1px solid var(--line);color:var(--muted);cursor:pointer}
+.skip:hover:not(:disabled){border-color:var(--bone);color:var(--bone)}
+.skip:disabled{cursor:not-allowed;opacity:.6}
+.skip.out{border-style:dashed;color:var(--muted);opacity:.85}
+.chair.turned .sign:disabled{background:linear-gradient(150deg,#E8B553,var(--gold));
+  color:#1A1206;font-weight:800;opacity:1}
+.blk{flex:1 1 auto;padding:4px 5px;border-radius:7px;
+  background:transparent;border:1px dashed var(--line);color:var(--muted);
+  font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;white-space:nowrap}
+.blk:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}
+.blk:disabled{opacity:.3;cursor:not-allowed}
+.chair.live:hover .cback,.chair.live:hover .cushion{filter:brightness(1.18)}
+.chair.live::after{background:radial-gradient(50% 100% at 50% 50%,rgba(216,163,63,.5),transparent 70%)}
+@media (prefers-reduced-motion:reduce){.swivel{transition:none}}
+
+.stagectl{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.vidctl{position:absolute;left:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.4vh,18px);z-index:5;
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;max-width:70%}
+.vidlabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--muted);
+  margin-right:4px}
+.vbtn{padding:6px 11px;border-radius:7px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.06em;border:1px solid var(--line);background:rgba(12,7,10,.8);color:var(--bone)}
+.vbtn.ok:hover{border-color:var(--gold);color:var(--gold)}
+.vbtn.bad:hover,.vbtn.del:hover{border-color:var(--red);color:var(--red)}
+.vbtn.done{background:var(--gold);color:#1A1206;border-color:var(--gold);font-weight:700}
+.vbtn.flagged{background:var(--red);color:#FFF3EF;border-color:var(--red);font-weight:700}
+.stagectl .btn{width:100%;margin:0;padding:14px 16px;font-size:15px}
+.turnline{font-family:var(--mono);font-size:11px;color:var(--muted);margin:0 0 2px;
+  text-align:center;line-height:1.5;min-height:16px}
+.seats .chair.live .seat{cursor:pointer}
+.seats .chair.live:hover .seat b{filter:brightness(1.12)}
+.seats .chair.live:hover .seat::before{filter:brightness(1.3)}
+.stageset.small{padding:30px 10px 22px;margin-top:4px}
+.stageset.small .seats{gap:12px 12px}
+.stageset.small .chair{width:58px}
+.stageset.small .seat{width:50px;height:56px;margin-bottom:6px}
+.stageset.small .seat b{font-size:17px;border-radius:11px 11px 7px 7px}
+.stageset.small .seat::before{border-radius:11px 11px 7px 7px}
+.stageset.small .chair .nm{font-size:10px}
+.backs{position:relative;z-index:1;text-align:center;margin:16px 0 0;
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+/* blocked chair */
+.chair.blocked .seat b{background:linear-gradient(165deg,#4A3A40,#2C2128);color:var(--muted)}
+.chair.blocked .nm{color:var(--red);text-decoration:line-through}
+.seats .chair.blocked .seat::after{background:radial-gradient(50% 100% at 50% 50%,rgba(154,134,141,.3),transparent 72%)}
+.blockrow{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 20px}
+.blockrow button{flex:1 1 30%;min-width:84px;padding:11px 4px;border-radius:9px;background:var(--panel2);
+  border:1px dashed var(--line);color:var(--muted);font-family:var(--mono);font-size:12px}
+.blockrow button.sel{background:var(--red);border-color:var(--red);color:#FFF3EF;border-style:solid;font-weight:700}
+.spent{font-family:var(--mono);font-size:11px;color:var(--muted);margin:-14px 0 18px}
+@media (prefers-reduced-motion:reduce){
+  .beams i,.haze{animation:none}
+}
+
+/* ---- bidding ---- */
+.bidboard{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 14px;margin-bottom:18px}
+.bid-now{font-family:var(--mono);font-weight:700;font-size:clamp(38px,12vw,60px);line-height:1;color:var(--gold)}
+.bid-cap{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.chair.high .seat{box-shadow:0 0 0 3px var(--gold)}
+.chair:disabled{opacity:.32;cursor:not-allowed}
+.pass{text-align:center;padding:40px 16px}
+.pass .who{font-size:clamp(30px,9vw,48px);font-weight:800;letter-spacing:-.03em;margin:8px 0 4px}
+.bank{font-family:var(--mono);font-size:13px;color:var(--gold)}
+.bid-big{font-family:var(--mono);font-weight:700;font-size:clamp(40px,13vw,64px);text-align:center;line-height:1;color:var(--gold)}
+.bid-unit{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:4px 0 16px}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;background:transparent;margin:0 0 20px}
+input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--line);border-radius:2px}
+input[type=range]::-moz-range-track{height:4px;background:var(--line);border-radius:2px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-12px;border-radius:50%;
+  background:var(--gold);border:3px solid var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.5)}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--gold);border:3px solid var(--ink)}
+input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+
+/* ---- reveal ---- */
+.artist-name{font-size:clamp(30px,9vw,52px);font-weight:800;letter-spacing:-.035em;line-height:1;margin:4px 0 4px}
+.artist-tag{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;margin-bottom:18px}
+.figure{font-family:var(--mono);font-weight:700;font-size:clamp(42px,13vw,72px);text-align:center;line-height:1;color:var(--gold)}
+.figure-cap{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.verdict{text-align:center;font-size:19px;font-weight:600;line-height:1.4;margin:22px 0 4px}
+.verdict em{font-style:normal;color:var(--gold)}
+.verdict.walk{color:var(--muted)}
+.note{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.6;margin-top:16px}
+
+/* ---- standings ---- */
+.team{border-bottom:1px solid var(--line);padding:14px 2px}
+.team-head{display:flex;align-items:baseline;gap:10px}
+.team .rank{font-family:var(--mono);font-size:12px;color:var(--muted);width:22px;flex:none}
+.team .nm{flex:1;font-weight:700;font-size:17px}
+.team .tot{font-family:var(--mono);font-weight:700;font-size:16px;color:var(--gold)}
+.team .roster{font-size:13px;color:var(--muted);margin:5px 0 0 32px;line-height:1.5}
+.team .budget{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:32px}
+.team.lead{background:linear-gradient(90deg,rgba(196,52,44,.16),transparent);border-radius:8px;padding-left:8px;padding-right:8px}
+.trophy{width:min(200px,55vw);aspect-ratio:1;margin:8px auto 22px;border-radius:50%;
+  background:repeating-radial-gradient(circle at 50% 50%,#B98A2E 0 2px,#D8A33F 2px 3.5px);
+  box-shadow:0 20px 50px rgba(216,163,63,.25);position:relative;animation:spin 4s linear infinite}
+.trophy .label{background:radial-gradient(circle at 35% 30%,#FFF6E4,#E7DCC6 60%,#C6B896)}
+@media (prefers-reduced-motion:reduce){.trophy{animation:none}}
+/* ---- the lobby: a code, a QR and the chairs filling up ---- */
+.lobbygrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin:6px 0 18px}
+@media (max-width:720px){.lobbygrid{grid-template-columns:1fr}}
+.lobbycode,.lobbyseats{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:clamp(14px,2vw,20px);min-width:0}
+.bigcode{font-family:var(--mono);font-weight:700;font-size:clamp(38px,7vw,64px);letter-spacing:.18em;
+  color:var(--gold);text-align:center;line-height:1.1;margin:2px 0 12px}
+.qrbox{background:#F0E7D8;border-radius:12px;padding:10px;width:min(210px,70%);margin:0 auto 10px;
+  display:flex;align-items:center;justify-content:center}
+.qrbox svg{display:block;width:100%;height:auto}
+#lobby-link{margin:10px 0 12px;word-break:break-all}
+.qrbox.empty{background:var(--panel2);min-height:120px;color:var(--muted);font-family:var(--mono);font-size:10px;
+  text-align:center;padding:20px}
+.joinrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.joinrow:last-child{border-bottom:0}
+.joinrow .av{width:34px;height:34px;border-radius:9px;overflow:hidden;flex:0 0 auto;background:var(--panel2)}
+.joinrow .av svg{display:block;width:100%;height:100%}
+.joinrow .who{flex:1;min-width:0;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.joinrow .tag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--muted);
+  border:1px solid var(--line);border-radius:20px;padding:3px 8px;flex:0 0 auto}
+.joinrow .tag.live{color:var(--gold);border-color:var(--gold)}
+.lobbyempty{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.7;padding:10px 0}
+
+/* ---- a chair on a phone ---- */
+.chairpad{max-width:460px;margin:0 auto;text-align:center}
+.chairpad .nowplaying{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);
+  text-transform:uppercase;margin:0 0 4px}
+.chairpad .mystate{font-size:clamp(17px,4.5vw,22px);font-weight:700;margin:0 0 14px;min-height:1.4em;
+  text-wrap:balance}
+.bigsign{display:block;width:100%;padding:clamp(26px,9vw,42px) 10px;border-radius:18px;border:0;
+  font-family:var(--disp);font-weight:800;letter-spacing:.03em;font-size:clamp(22px,7vw,32px);
+  color:#FFF0EC;background:linear-gradient(150deg,#E34C41,var(--red) 55%,#8E2620);
+  box-shadow:0 10px 28px rgba(196,52,44,.4),inset 0 1px 0 rgba(255,255,255,.22);cursor:pointer}
+.bigsign:active:not(:disabled){transform:translateY(2px)}
+.bigsign:disabled{background:var(--panel2);color:var(--muted);box-shadow:none;cursor:not-allowed}
+.bigskip{display:block;width:100%;margin-top:12px;padding:16px 10px;border-radius:14px;
+  background:transparent;border:1px solid var(--line);color:var(--muted);
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;cursor:pointer}
+.bigskip:disabled{opacity:.5;cursor:not-allowed}
+.blockpad{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.blockpad button{flex:1 1 40%;padding:11px 8px;border-radius:11px;background:transparent;
+  border:1px dashed var(--line);color:var(--muted);font-family:var(--mono);font-size:10px;
+  letter-spacing:.08em;cursor:pointer}
+.blockpad button:disabled{opacity:.45;cursor:not-allowed}
+.myteam{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;
+  text-align:left}
+.myteam h4{margin:0 0 8px;font-size:12px;font-family:var(--mono);letter-spacing:.14em;color:var(--muted);
+  text-transform:uppercase;font-weight:400}
+.myteam .line{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:3px 0}
+.myteam .line span:last-child{font-family:var(--mono);color:var(--gold)}
+.myteam .open{color:var(--muted);font-style:italic}
+.codein{display:block;width:100%;margin:0 0 12px;background:var(--panel2);border:1px solid var(--line);
+  color:var(--gold);font-family:var(--mono);font-weight:700;font-size:28px;letter-spacing:.3em;
+  padding:14px 10px;border-radius:12px;text-align:center;text-transform:uppercase}
+.codein:focus{outline:none;border-color:var(--gold)}
+.avpickrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 16px}
+.avpickrow button{width:46px;height:46px;border-radius:11px;overflow:hidden;padding:0;border:2px solid transparent;
+  background:var(--panel2);cursor:pointer}
+.avpickrow button.sel{border-color:var(--gold)}
+.avpickrow svg{display:block;width:100%;height:100%}
+.conn{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);margin:10px 0 0}
+.conn.bad{color:var(--red)}
+.conn.good{color:var(--gold)}
+
+/* the chairs, as a joined phone sees them: yours lit, the rest dimmed */
+.padseats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 2%;margin:4px 0 18px}
+.padseats .chair{width:calc((100% - 3 * 2%) / 4);max-width:92px;min-width:56px;text-align:center;
+  position:relative;opacity:.45;transition:opacity .25s ease}
+.padseats .chair.mine{opacity:1}
+.padseats .chair.turned{opacity:1}
+.padseats .nm{font-size:11px;font-weight:600;color:var(--muted);overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.padseats .chair.mine .nm{color:var(--bone)}
+.padseats .youtag{font-family:var(--mono);font-size:8px;letter-spacing:.12em;color:var(--gold);font-weight:700}
+.padseats .slots{font-size:9px;letter-spacing:.12em;color:var(--muted);line-height:1}
+.ptag{font-family:var(--mono);font-size:7.5px;letter-spacing:.08em;color:var(--muted);
+  border:1px solid var(--line);border-radius:20px;padding:2px 5px;margin-top:4px;display:inline-block}
+.padseats .chair.turned .ptag{color:var(--gold);border-color:var(--gold)}
+.padseats .chair.blocked .ptag{color:var(--red);border-color:var(--red)}
+
+/* ---- friends: the people who keep coming back ---- */
+.friends{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 10px}
+.friend{display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:20px;
+  border:1px solid var(--line);background:var(--panel2);color:var(--muted);
+  font-size:13px;font-weight:600;cursor:pointer}
+.friend:hover{border-color:var(--bone)}
+.friend.on{border-color:var(--gold);color:var(--gold);background:rgba(216,163,63,.08)}
+.friend .tick{font-family:var(--mono);font-size:10px;opacity:.6}
+.friend.on .tick{opacity:1}
+.friend .drop{border:0;background:transparent;color:var(--muted);font-size:14px;line-height:1;
+  padding:0 0 0 2px;cursor:pointer}
+.friend .drop:hover{color:var(--red)}
+.friendadd{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.friendadd input{flex:1 1 140px;min-width:0;background:var(--panel2);border:1px solid var(--line);
+  color:var(--bone);font-family:var(--mono);font-size:12px;padding:9px 11px;border-radius:9px}
+.friendadd input:focus{outline:none;border-color:var(--gold)}
+.friendadd button{flex:0 0 auto;padding:9px 16px;border-radius:9px;border:1px solid var(--line);
+  background:var(--panel2);color:var(--bone);font-weight:700;font-size:13px;cursor:pointer}
+.friendadd button:hover{border-color:var(--gold);color:var(--gold)}
+.joinrow .send{flex:0 0 auto;border:1px solid var(--line);background:transparent;color:var(--gold);
+  font-family:var(--mono);font-size:9px;letter-spacing:.1em;padding:5px 9px;border-radius:20px;cursor:pointer}
+.joinrow .send:hover{border-color:var(--gold)}
+.joinrow.waiting .who{color:var(--muted)}
+.heldhead{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--muted);
+  text-transform:uppercase;margin:14px 0 2px;padding-top:10px;border-top:1px solid var(--line)}
+.joinrow .send.drop{color:var(--muted);padding:5px 10px}
+.joinrow .send.drop:hover{color:var(--red);border-color:var(--red)}
+.namechips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 12px}
+.namechips button{padding:9px 14px;border-radius:20px;border:1px solid var(--gold);
+  background:transparent;color:var(--gold);font-weight:700;font-size:14px;cursor:pointer}
+
+/* a real face on the back of a chair, instead of the drawn one */
+.facepic{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.cback .facepic{border-radius:38% 38% 16% 16%/30% 30% 12% 12%}
+.photobtn{flex:0 0 auto;width:38px;height:38px;border-radius:10px;border:1px dashed var(--line);
+  background:var(--panel2);color:var(--muted);font-size:15px;cursor:pointer;line-height:1}
+.photobtn:hover{border-color:var(--gold);color:var(--gold)}
+.photobtn.has{border-style:solid;border-color:var(--gold)}
+.phototools{display:flex;gap:8px;justify-content:center;align-items:center;margin:0 0 16px;flex-wrap:wrap}
+.phototools .photobtn{width:auto;padding:0 14px;height:40px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.1em}
+.facenow{width:46px;height:46px;border-radius:11px;overflow:hidden;background:var(--panel2);flex:0 0 auto}
+
+/* the record, playing on a joined phone as well as on the television */
+.padscreen{position:relative;width:100%;aspect-ratio:16/9;margin:0 0 14px;border-radius:10px;
+  overflow:hidden;background:#000;border:1px solid var(--line)}
+.padscreen iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.soundbtn{position:absolute;left:8px;bottom:8px;z-index:3;padding:7px 11px;border-radius:20px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;border:1px solid var(--line);
+  background:rgba(12,7,10,.85);color:var(--muted);cursor:pointer}
+.soundbtn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* page one is one decision; the rest waits quietly underneath */
+.sidelinks{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 20px}
+.sidelinks .dot{color:var(--line)}
+.sidelink{background:none;border:0;padding:4px 2px;color:var(--muted);cursor:pointer;
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-decoration:underline;
+  text-underline-offset:3px}
+.sidelink:hover{color:var(--gold)}
+/* the four steps, and where you are in them */
+.steps{display:flex;gap:8px;align-items:center;margin:0 0 14px;flex-wrap:wrap}
+.step{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);
+  border:1px solid var(--line);border-radius:20px;padding:4px 10px}
+.step.on{color:var(--ink);background:var(--bone);border-color:var(--bone);font-weight:700}
+.step.done{color:var(--gold);border-color:var(--gold)}
+/* the last look before the night starts */
+.gorow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.gorow:last-of-type{border-bottom:0}
+.gorow .av{width:40px;height:40px;border-radius:10px;overflow:hidden;flex:0 0 auto;background:var(--panel2)}
+.gorow .av svg,.gorow .av img{display:block;width:100%;height:100%}
+.gorow .who{flex:1;min-width:0;font-weight:700;font-size:17px;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.gorow .st{font-family:var(--mono);font-size:10px;letter-spacing:.1em;border:1px solid var(--line);
+  border-radius:20px;padding:4px 10px;flex:0 0 auto;color:var(--muted)}
+.gorow .st.here{color:var(--gold);border-color:var(--gold)}
+.gorow.away{opacity:.55}
+.golist{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:clamp(12px,1.6vw,18px);margin:0 0 14px}
+.gosum{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.8;margin:0 0 18px}
+.gosum b{color:var(--bone);font-weight:700}
+
+/* the shelf of games */
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:6px 0 18px}
+.gamecard{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  padding:clamp(16px,2vw,22px);cursor:pointer;color:inherit;font:inherit;transition:border-color .15s,transform .15s}
+.gamecard:hover{border-color:var(--gold);transform:translateY(-2px)}
+.gamecard .gtag{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--red);
+  text-transform:uppercase}
+.gamecard h3{font-family:var(--disp);font-size:clamp(21px,2.4vw,27px);margin:6px 0 8px;line-height:1.1}
+.gamecard p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.gamecard .meta{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted)}
+.gamecard.soon{opacity:.5;cursor:default}
+.gamecard.soon:hover{border-color:var(--line);transform:none}
+
+/* the curtain: you hear the record, you do not see who it is */
+.curtain{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;
+  background:repeating-linear-gradient(90deg,#4A1016,#4A1016 14px,#5C141B 14px,#5C141B 30px);
+  box-shadow:inset 0 0 90px rgba(0,0,0,.7);font-family:var(--mono);font-size:12px;letter-spacing:.3em;
+  color:rgba(255,235,220,.45);text-transform:uppercase;transition:transform .7s ease,opacity .7s ease}
+.curtain.open{transform:translateY(-100%);opacity:0;pointer-events:none}
+/* four answers, on the big screen and on the phone */
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.4vh}
+.qbtn{display:flex;align-items:center;gap:10px;text-align:left;padding:clamp(10px,1.4vh,16px) 14px;
+  border-radius:12px;border:1px solid var(--line);background:var(--panel2);color:var(--bone);
+  font-weight:700;font-size:clamp(14px,1.5vw,19px);cursor:pointer;min-width:0}
+.qbtn .key{font-family:var(--mono);font-size:11px;color:var(--muted);flex:0 0 auto}
+.qbtn span.t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qbtn:hover:not(:disabled){border-color:var(--bone)}
+.qbtn:disabled{cursor:default}
+.qbtn.right{border-color:var(--gold);background:rgba(216,163,63,.14);color:var(--gold)}
+.qbtn.wrong{border-color:var(--red);opacity:.6}
+.qbtn.mine{box-shadow:inset 0 0 0 2px var(--bone)}
+.qhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 0 6px}
+.qhead .ask{font-family:var(--disp);font-size:clamp(17px,2vw,24px);font-weight:800}
+.qhead .cnt{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.qscores{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.2vh}
+.qsc{display:flex;align-items:center;gap:7px;padding:6px 11px;border-radius:20px;border:1px solid var(--line);
+  background:var(--panel);font-size:13px;font-weight:700}
+.qsc .av{width:22px;height:22px;border-radius:6px;overflow:hidden;background:var(--panel2);flex:0 0 auto}
+.qsc .av svg,.qsc .av img{display:block;width:100%;height:100%}
+.qsc b{color:var(--gold);font-family:var(--mono);font-size:12px}
+.qsc.done{border-color:var(--gold)}
+.qsc.waiting{opacity:.5}
+
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="leftcol" id="leftcol">
+  <div class="roundcard" id="round-tag"></div>
+  <div class="rail" id="rail"></div>
+</aside>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="logo">THE <span>CHAIR</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="meta" id="meta">blind signings</div>
+      <button class="brk" id="break">Break</button>
+    </div>
+  </div>
+
+  <div class="railstrip" id="railstrip"></div>
+  <p class="striproundwrap"><span class="striparound" id="round-tag-m"></span></p>
+
+  <!-- BREAK -->
+  <section class="screen" id="s-break">
+    <div class="eyebrow">Paused</div>
+    <h2>Take your time.</h2>
+    <p class="sub">Nothing is running. Get a beer, argue about whether Roxette really sold that many, go to the toilet. The game is exactly where you left it.</p>
+    <button class="btn gold" id="resume">Back to it</button>
+    <button class="btn ghost" id="to-setup">Setup &amp; video library</button>
+    <p class="note">Going to setup abandons the season in progress. Your video library is kept.</p>
+  </section>
+
+  <!-- START: pick a game -->
+  <section class="screen on" id="s-setup">
+    <div class="eyebrow">Party night</div>
+    <h2>Pick a game.</h2>
+    <p class="sub">Everyone plays from their own phone. One screen in the middle does the work.</p>
+
+    <div class="shelf">
+      <button type="button" class="gamecard" id="start" data-game="chair">
+        <div class="gtag">The original</div>
+        <h3>The Chair</h3>
+        <p>One record at a time, from before anyone had heard of them. Hit your chair the moment you want them &mdash; the first to turn gets them. Whoever's team sold the most records wins.</p>
+        <div class="meta">2&ndash;8 coaches &middot; 20&ndash;60 min</div>
+      </button>
+      <button type="button" class="gamecard" id="start-artist" data-game="artist">
+        <div class="gtag">Curtains closed</div>
+        <h3>Name the Artist</h3>
+        <p>The record plays behind a closed curtain. Four names on your phone, one of them right. Everyone answers, the curtain opens, and you find out together.</p>
+        <div class="meta">2&ndash;8 players &middot; 10&ndash;20 min</div>
+      </button>
+    </div>
+
+    <p class="pool thin" id="start-hint" style="margin:-4px 0 10px"></p>
+    <p class="sidelinks">
+      <button type="button" class="sidelink" id="join-open">Someone invited me</button>
+      <span class="dot">·</span>
+      <button type="button" class="sidelink" id="open-lib">Video library</button>
+    </p>
+    <p class="pool thin" id="buildtag"></p>
+  </section>
+
+  <!-- LOBBY: the chairs arrive on their own phones -->
+  <section class="screen" id="s-lobby">
+    <div class="steps"><span class="step on">1 Invite</span><span class="step">2 How we play</span><span class="step">3 Go</span></div>
+    <div class="eyebrow">Invite the room</div>
+    <h2>Their phones are the chairs.</h2>
+    <p class="sub">Keep this screen on the television. Everyone else opens the same page on their phone, taps <em style="font-style:normal;color:var(--bone)">Join a game</em> and types the code. Their chair appears here as they arrive.</p>
+
+    <div class="lobbygrid">
+      <div class="lobbycode">
+        <div class="field-label">Room code</div>
+        <div class="bigcode" id="lobby-code">····</div>
+        <div class="qrbox empty" id="lobby-qr">The code appears once the room is open.</div>
+        <p class="pool thin" id="lobby-link"></p>
+        <button class="btn ghost" id="copy-link">Copy the invitation</button>
+        <p class="conn" id="lobby-status">Opening the room…</p>
+      </div>
+      <div class="lobbyseats">
+        <div class="field-label">Chairs</div>
+        <div id="lobby-list"></div>
+      </div>
+    </div>
+
+    <div class="lobbycode" style="margin-top:4px">
+<div class="field-label">Who is at this screen</div>
+    <div id="players"></div>
+    <input type="file" id="row-file" accept="image/*" style="display:none">
+    <button class="btn ghost" id="add">Add another coach on this screen</button>
+    <p class="pool thin">Everyone else joins from their own phone in the next step.</p>
+        <div class="field-label">Friends</div>
+    <div class="friends" id="friends-list"></div>
+    <div class="friendadd">
+      <input type="text" id="friend-name" maxlength="14" autocomplete="off" placeholder="Name">
+      <button type="button" id="friend-add">Save</button>
+      <button type="button" id="friend-clear">Forget everyone</button>
+    </div>
+    <p class="pool thin" id="friends-note"></p>
+    </div>
+
+    <button class="btn" id="to-rules">Next — how we play</button>
+    <button class="btn ghost" id="lobby-back">Back</button>
+    <p class="note">Anyone without a phone still plays: every chair can be tapped on this screen too.</p>
+  </section>
+
+  <!-- HOW WE PLAY: agreed together, once the room is full -->
+  <section class="screen" id="s-rules">
+    <div class="steps"><span class="step done">1 Invite</span><span class="step on">2 How we play</span><span class="step">3 Go</span></div>
+    <div class="eyebrow">How we play</div>
+    <h2>Decide it together.</h2>
+    <p class="sub">Nobody has to agree with the host. Argue about the years, settle on a genre, then go.</p>
+<div class="field-label">Start the season in</div>
+    <div class="seg wrap" id="eras">
+      <button data-e="1">Any year</button>
+      <button data-e="1963">1963</button>
+      <button data-e="1980">1980</button>
+      <button data-e="1995">1995</button>
+      <button data-e="2000">2000</button>
+      <button data-e="0" class="rnd sel">Random</button>
+    </div>
+
+    <div class="field-label">Genre</div>
+    <div class="seg wrap" id="genres">
+      <button data-g="Any">Any</button>
+      <button data-g="Rock">Rock &amp; metal</button>
+      <button data-g="Pop">Pop</button>
+      <button data-g="Dance">Dance &amp; electronic</button>
+      <button data-g="Soul">Soul, R&amp;B &amp; hip-hop</button>
+      <button data-g="Roots">Country &amp; Latin</button>
+      <button data-g="Random" class="rnd sel">Random</button>
+    </div>
+    <p class="pool" id="pool"></p>
+
+    <div class="field-label">How many auditions tonight</div>
+    <div class="seg wrap" id="length">
+      <button data-l="10">10</button>
+      <button data-l="15" class="sel">15</button>
+      <button data-l="20">20</button>
+      <button data-l="30">30</button>
+      <button data-l="0">Until teams fill</button>
+    </div>
+
+    <div class="field-label">Singers per team</div>
+    <div class="seg wrap" id="teamsize">
+      <button data-t="2">2</button>
+      <button data-t="3" class="sel">3</button>
+      <button data-t="4">4</button>
+      <button data-t="5">5</button>
+      <button data-t="6">6</button>
+    </div>
+        <p class="pool thin" id="rules-note">No clock. The video runs until somebody turns or everybody skips.</p>
+    <button class="btn" id="to-go">Next — who is here</button>
+    <button class="btn ghost" id="back-lobby">Back</button>
+  </section>
+
+  <!-- GO: the last look before the first record -->
+  <section class="screen" id="s-go">
+    <div class="steps"><span class="step done">1 Invite</span><span class="step done">2 How we play</span><span class="step on">3 Go</span></div>
+    <div class="eyebrow">Ready</div>
+    <h2>Everyone in their chair?</h2>
+    <p class="gosum" id="go-sum"></p>
+    <div class="golist" id="go-list"></div>
+    <button class="btn" id="lobby-start">GO</button>
+    <button class="btn ghost" id="back-rules">Back</button>
+    <p class="note" id="go-note"></p>
+  </section>
+
+  <!-- A CHAIR, ON SOMEONE'S PHONE -->
+  <section class="screen" id="s-chair">
+    <div id="chair-join">
+      <div class="eyebrow">Take a chair</div>
+      <h2>What's the code?</h2>
+      <p class="sub">It is on the big screen, four letters.</p>
+      <input type="text" id="join-code" class="codein" maxlength="4" autocomplete="off"
+             autocapitalize="characters" spellcheck="false" placeholder="ABCD" aria-label="Room code">
+      <div class="namechips" id="join-chips" hidden></div>
+      <div class="field-label">Your name</div>
+      <input type="text" id="join-name" class="ytin" maxlength="14" autocomplete="off"
+             placeholder="Name on your chair">
+      <div class="field-label">Sound on this device</div>
+      <div class="seg" id="join-sound">
+        <button type="button" data-s="1" class="sel">On — I'm not by the TV</button>
+        <button type="button" data-s="0">Off — I'm in the room</button>
+      </div>
+      <p class="pool thin">Several phones playing the same record in one room echo badly. Somewhere else, you need the sound.</p>
+
+      <div class="field-label">Your face</div>
+      <div class="avpickrow" id="join-av"></div>
+      <div class="phototools">
+        <div class="facenow" id="face-now" hidden></div>
+        <button type="button" class="photobtn" id="face-pick">USE A PHOTO</button>
+        <button type="button" class="photobtn" id="face-clear" hidden>REMOVE</button>
+        <input type="file" id="face-file" accept="image/*" style="display:none">
+      </div>
+      <button class="btn" id="join-go">Take my chair</button>
+      <button class="btn ghost" id="join-back">Back</button>
+      <p class="conn" id="join-status"></p>
+    </div>
+
+    <div id="chair-pad" class="chairpad" hidden>
+      <p class="nowplaying" id="pad-round">Waiting for the stage</p>
+      <div class="padscreen" id="pad-screen" hidden></div>
+      <div class="padseats" id="pad-seats"></div>
+      <p class="mystate" id="pad-state">The host has not started yet.</p>
+      <div class="qgrid" id="pad-quiz" hidden></div>
+      <button class="bigsign" id="pad-sign" disabled>SIGN THEM</button>
+      <button class="bigskip" id="pad-skip" disabled>SKIP</button>
+      <button class="bigskip" id="pad-hold" hidden>HOLD IT — NOT YET</button>
+      <div class="blockpad" id="pad-blocks"></div>
+      <div class="myteam">
+        <h4 id="pad-teamhead">Your team</h4>
+        <div id="pad-team"></div>
+      </div>
+      <p class="conn" id="pad-status"></p>
+      <button class="btn ghost" id="pad-leave" style="margin-top:14px">Leave the game</button>
+    </div>
+  </section>
+
+
+  <!-- NAME THE ARTIST -->
+  <section class="screen" id="s-quiz">
+    <div class="stageset big" id="q-stage">
+      <div class="videowall" id="q-wall">
+        <div class="screenwrap">
+          <div class="vw-screen" id="q-screen"></div>
+          <div class="curtain" id="q-curtain">Curtain closed</div>
+        </div>
+      </div>
+      <div class="qhead">
+        <div class="ask" id="q-ask">Who is this?</div>
+        <div class="cnt" id="q-count"></div>
+      </div>
+      <div class="qgrid" id="q-options"></div>
+      <div class="qscores" id="q-scores"></div>
+    </div>
+    <div class="btn-row" style="margin-top:12px">
+      <button class="btn gold" id="q-next">Reveal</button>
+      <button class="btn ghost" id="q-quit">End the game</button>
+    </div>
+  </section>
+
+  <!-- VIDEO LIBRARY -->
+  <section class="screen" id="s-library">
+    <div class="eyebrow">Video library</div>
+    <h2 style="margin-bottom:6px">One link per act.</h2>
+    <p class="sub">Paste a YouTube link beside any act and it plays on that act's reveal, tonight and every night after. Nothing here is required — acts with no link simply reveal without a video.</p>
+
+    <div class="libbar">
+      <input type="text" id="lib-search" class="ytin" placeholder="Search an artist or track" autocomplete="off">
+      <div class="seg wrap" id="lib-filter" style="margin:0">
+        <button data-f="all" class="sel">All</button>
+        <button data-f="missing">Missing</button>
+        <button data-f="saved">Saved</button>
+        <button data-f="unchecked">Unchecked</button>
+        <button data-f="flagged">Flagged</button>
+      </div>
+    </div>
+    <p class="pool" id="lib-count"></p>
+
+    <div class="libtable" id="lib-rows"></div>
+
+    <div class="btn-row" style="margin-top:18px">
+      <button class="btn ghost" id="lib-export">Export to a file</button>
+      <button class="btn ghost" id="lib-import">Import a file</button>
+    </div>
+    <input type="file" id="lib-file" accept="application/json,.json" style="display:none">
+    <p class="note" id="lib-msg">Export keeps your links safe if the browser is cleared, and lets you carry them to another computer.</p>
+    <button class="btn gold" id="lib-done" style="margin-top:14px">Back</button>
+  </section>
+
+  <!-- AUDITION -->
+  <section class="screen" id="s-listen">
+    <div class="hostbar">
+      <input type="text" id="yt-url" class="ytin" placeholder="No video for this act? Paste a YouTube link"
+             autocomplete="off" spellcheck="false">
+      <p class="ythint" id="ythint"></p>
+    </div>
+
+    <div class="stageset big" id="stageset">
+      <div class="haze a"></div><div class="haze b"></div>
+      <div class="beams">
+        <i style="--x:12%;--d:0s"></i><i style="--x:34%;--d:.5s"></i>
+        <i style="--x:60%;--d:1.1s"></i><i style="--x:84%;--d:.8s"></i>
+      </div>
+      <div class="floor"></div>
+
+      <div class="videowall" id="videowall">
+        <div class="screenwrap">
+          <div class="vw-screen" id="vw-screen">
+            <div class="eq" id="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="vw-idle" id="vw-idle">STAGE</div>
+          </div>
+          <div class="clock" id="clock">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <circle class="ring-bg" cx="24" cy="24" r="21"/>
+              <circle class="ring" id="ring" cx="24" cy="24" r="21"/>
+            </svg>
+            <div class="count" id="count">0</div>
+            <div class="count-cap" id="count-cap">seconds</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seats" id="chairs-grid"></div>
+
+      <div class="vidctl" id="vidctl" style="display:none">
+        <span class="vidlabel" id="vidlabel">Is this the right video?</span>
+        <button class="vbtn ok" id="v-ok">✓ Right</button>
+        <button class="vbtn bad" id="v-bad">✗ Wrong</button>
+        <button class="vbtn del" id="v-del">Remove</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="screen" id="s-final">
+    <div class="eyebrow" style="text-align:center" id="final-eyebrow">Winning coach</div>
+    <div class="trophy"><div class="label"></div><div class="spindle"></div></div>
+    <h2 style="text-align:center" id="champ"></h2>
+    <p class="sub" style="text-align:center" id="champ-sub"></p>
+    <div id="final-board"></div>
+    <button class="btn" id="restart" style="margin-top:22px">New season</button>
+  </section>
+
+</div>
+<aside class="infopanel" id="infopanel">
+  <div class="rail" id="rail2"></div>
+  <div class="ip-idle" id="ip-idle">
+    <span class="ip-dot"></span>Blind audition<br><span id="ip-sub">nobody knows who this is</span>
+  </div>
+  <div class="ip-body" id="ip-body" style="display:none">
+    <div class="artist-name" id="artist-name"></div>
+    <div class="artist-tag" id="artist-tag"></div>
+    <div class="figure" id="figure">0</div>
+    <div class="figure-cap">million records, worldwide</div>
+    <div class="verdict" id="verdict"></div>
+  </div>
+  <div class="stagectl">
+    <p class="turnline" id="turnline">Tap your own chair while it plays.</p>
+    <button class="btn" id="drop">Start the audition</button>
+    <button class="btn ghost" id="stop" style="display:none">Needle up</button>
+    <button class="btn gold" id="next" style="display:none">Next audition</button>
+    <button class="btn ghost" id="auto-pause" hidden>Hold it</button>
+  </div>
+</aside>
+</div>
+
+<script src="lib-mqtt.js"></script>
+<script src="lib-qr.js"></script>
+<script>
+const CATALOG=[
+["Frank Sinatra","Fly Me to the Moon",1964,150,"Pop","All or Nothing at All",1940],
+["Johnny Cash","Ring of Fire",1963,90,"Country","Cry! Cry! Cry!",1955],
+["The Beatles","Hey Jude",1968,600,"Rock","Love Me Do",1962],
+["The Rolling Stones","Paint It Black",1966,200,"Rock","Come On",1963],
+["The Beach Boys","Good Vibrations",1966,100,"Rock","Surfin'",1961],
+["Elvis Presley","Suspicious Minds",1969,500,"Rock","That's All Right",1954],
+["Led Zeppelin","Whole Lotta Love",1969,200,"Rock","Good Times Bad Times",1969],
+["Neil Diamond","Sweet Caroline",1969,100,"Pop","Solitary Man",1966],
+["Rod Stewart","Maggie May",1971,120,"Rock","Good Morning Little Schoolgirl",1964],
+["Elton John","Rocket Man",1972,300,"Pop","Lady Samantha",1969],
+["Stevie Wonder","Superstition",1972,100,"Soul & R&B","Fingertips",1963],
+["Deep Purple","Smoke on the Water",1972,100,"Rock","Hush",1968],
+["Billy Joel","Piano Man",1973,150,"Pop","She's Got a Way",1971],
+["Aerosmith","Dream On",1973,150,"Rock","Dream On",1973],
+["Dolly Parton","Jolene",1973,100,"Country","Dumb Blonde",1967],
+["Queen","Bohemian Rhapsody",1975,250,"Rock","Keep Yourself Alive",1973],
+["ABBA","Dancing Queen",1976,150,"Pop","People Need Love",1972],
+["Eagles","Hotel California",1976,200,"Rock","Take It Easy",1972],
+["David Bowie","Heroes",1977,140,"Rock","Liza Jane",1964],
+["Bee Gees","Stayin' Alive",1977,120,"Pop","New York Mining Disaster 1941",1967],
+["Fleetwood Mac","Dreams",1977,120,"Rock","Black Magic Woman",1968],
+["Bob Marley","Three Little Birds",1977,75,"Reggae","Judge Not",1962],
+["Pink Floyd","Another Brick in the Wall",1979,250,"Rock","Arnold Layne",1967],
+["AC/DC","Highway to Hell",1979,200,"Rock","Can I Sit Next to You, Girl",1974],
+["The Knack","My Sharona",1979,5,"Rock","My Sharona",1979],
+["Barbra Streisand","Woman in Love",1980,150,"Pop","Happy Days Are Here Again",1962],
+["Phil Collins","In the Air Tonight",1981,150,"Pop","In the Air Tonight",1981],
+["Soft Cell","Tainted Love",1981,5,"Dance & electronic","Memorabilia",1981],
+["Dexys Midnight Runners","Come On Eileen",1982,5,"Pop","Dance Stance",1979],
+["Toni Basil","Mickey",1982,3,"Pop","Mickey",1982],
+["Men Without Hats","The Safety Dance",1982,3,"Dance & electronic","The Safety Dance",1982],
+["Michael Jackson","Billie Jean",1983,400,"Pop","Got to Be There",1971],
+["Nena","99 Luftballons",1983,5,"Pop","Nur getraumt",1982],
+["Bruce Springsteen","Born in the U.S.A.",1984,150,"Rock","Blinded by the Light",1973],
+["Prince","Purple Rain",1984,150,"Soul & R&B","Soft and Wet",1978],
+["a-ha","Take On Me",1985,55,"Pop","Take On Me",1984],
+["Falco","Rock Me Amadeus",1985,20,"Pop","Der Kommissar",1981],
+["Bon Jovi","Livin' on a Prayer",1986,100,"Rock","Runaway",1984],
+["Genesis","Land of Confusion",1986,100,"Rock","The Silent Sun",1968],
+["Whitney Houston","I Wanna Dance with Somebody",1987,200,"Soul & R&B","You Give Good Love",1985],
+["U2","With or Without You",1987,150,"Rock","I Will Follow",1980],
+["Guns N' Roses","Sweet Child o' Mine",1987,100,"Rock","It's So Easy",1987],
+["Enya","Orinoco Flow",1988,80,"Pop","I Want Tomorrow",1987],
+["Madonna","Like a Prayer",1989,300,"Pop","Everybody",1982],
+["Janet Jackson","Rhythm Nation",1989,160,"Soul & R&B","Young Love",1982],
+["Tina Turner","The Best",1989,100,"Soul & R&B","A Fool in Love",1960],
+["Scorpions","Wind of Change",1990,75,"Rock","Speedy's Coming",1975],
+["Roxette","It Must Have Been Love",1990,75,"Pop","Neverending Love",1986],
+["Vanilla Ice","Ice Ice Baby",1990,15,"Hip-hop","Ice Ice Baby",1990],
+["Nirvana","Smells Like Teen Spirit",1991,75,"Rock","Love Buzz",1988],
+["Metallica","Enter Sandman",1991,125,"Metal","Whiplash",1983],
+["Right Said Fred","I'm Too Sexy",1991,8,"Dance & electronic","I'm Too Sexy",1991],
+["4 Non Blondes","What's Up?",1993,6,"Rock","What's Up?",1993],
+["Blind Melon","No Rain",1993,5,"Rock","No Rain",1993],
+["Mariah Carey","All I Want for Christmas Is You",1994,200,"Soul & R&B","Vision of Love",1990],
+["Deep Blue Something","Breakfast at Tiffany's",1995,2,"Rock","Breakfast at Tiffany's",1995],
+["Spice Girls","Wannabe",1996,100,"Pop","Wannabe",1996],
+["Los del Rio","Macarena",1996,11,"Latin","Macarena",1993],
+["OMC","How Bizarre",1996,3,"Pop","How Bizarre",1995],
+["Celine Dion","My Heart Will Go On",1997,200,"Pop","Where Does My Heart Beat Now",1990],
+["Aqua","Barbie Girl",1997,33,"Dance & electronic","Roses Are Red",1996],
+["Chumbawamba","Tubthumping",1997,5,"Rock","Tubthumping",1997],
+["Cher","Believe",1998,100,"Pop","I Got You Babe",1965],
+["Vengaboys","Boom, Boom, Boom, Boom!!",1998,25,"Dance & electronic","Up & Down",1998],
+["Semisonic","Closing Time",1998,3,"Rock","Closing Time",1998],
+["Sixpence None the Richer","Kiss Me",1998,3,"Rock","Kiss Me",1998],
+["Backstreet Boys","I Want It That Way",1999,100,"Pop","We've Got It Goin' On",1995],
+["Santana","Smooth",1999,100,"Rock","Jingo",1969],
+["Red Hot Chili Peppers","Californication",1999,120,"Rock","True Men Don't Kill Coyotes",1984],
+["Eiffel 65","Blue (Da Ba Dee)",1999,10,"Dance & electronic","Blue (Da Ba Dee)",1998],
+["Lou Bega","Mambo No. 5",1999,10,"Latin","Mambo No. 5",1999],
+["Darude","Sandstorm",1999,2,"Dance & electronic","Sandstorm",1999],
+["Baha Men","Who Let the Dogs Out",2000,5,"Reggae","Who Let the Dogs Out",2000],
+["Crazy Town","Butterfly",2000,2,"Rock","Butterfly",2000],
+["Bomfunk MC's","Freestyler",2000,3,"Dance & electronic","Uprocking Beats",1998],
+["Kylie Minogue","Can't Get You Out of My Head",2001,80,"Pop","Locomotion",1987],
+["Eminem","Lose Yourself",2002,220,"Hip-hop","Just Don't Give a Damn",1998],
+["Las Ketchup","Asereje",2002,7,"Latin","Asereje",2002],
+["Britney Spears","Toxic",2003,100,"Pop","...Baby One More Time",1998],
+["The Rasmus","In the Shadows",2003,5,"Rock","F-F-F-Falling",2001],
+["Lordi","Hard Rock Hallelujah",2006,1,"Rock","Would You Love a Monsterman?",2002],
+["Shakira","Hips Don't Lie",2006,95,"Latin","Magia",1991],
+["Rihanna","Umbrella",2007,250,"Soul & R&B","Pon de Replay",2005],
+["Beyonce","Single Ladies",2008,120,"Soul & R&B","No, No, No",1997],
+["Coldplay","Viva la Vida",2008,100,"Rock","Shiver",2000],
+["Lady Gaga","Bad Romance",2009,124,"Pop","Just Dance",2008],
+["Michael Buble","Haven't Met You Yet",2009,75,"Pop","How Can You Mend a Broken Heart",2003],
+["Katy Perry","Firework",2010,143,"Pop","I Kissed a Girl",2008],
+["Bruno Mars","Just the Way You Are",2010,130,"Pop","Just the Way You Are",2010],
+["Adele","Rolling in the Deep",2010,120,"Pop","Hometown Glory",2007],
+["Maroon 5","Moves Like Jagger",2011,75,"Pop","Harder to Breathe",2002],
+["Gotye","Somebody That I Used to Know",2011,13,"Rock","Somebody That I Used to Know",2011],
+["PSY","Gangnam Style",2012,20,"Hip-hop","Bird",2001],
+["Carly Rae Jepsen","Call Me Maybe",2012,18,"Pop","Tug of War",2008],
+["Taylor Swift","Shake It Off",2014,200,"Country","Tim McGraw",2006],
+["Drake","Hotline Bling",2015,170,"Hip-hop","Best I Ever Had",2009],
+["Justin Bieber","Sorry",2015,150,"Pop","One Time",2009],
+["Ed Sheeran","Shape of You",2017,150,"Pop","The A Team",2011],
+["LL Cool J","Mama Said Knock You Out",1991,20,"Hip-hop","I Need a Beat",1984],
+["2Pac","California Love",1995,75,"Hip-hop","Trapped",1991],
+["The Notorious B.I.G.","Mo Money Mo Problems",1997,30,"Hip-hop","Party and Bullshit",1993],
+["Snoop Dogg","Drop It Like It's Hot",2004,35,"Hip-hop","Who Am I (What's My Name)?",1993],
+["Coolio","Gangsta's Paradise",1995,17,"Hip-hop","County Line",1993],
+["Cypress Hill","Insane in the Brain",1993,20,"Hip-hop","How I Could Just Kill a Man",1991],
+["Outkast","Hey Ya!",2003,20,"Hip-hop","Player's Ball",1993],
+["50 Cent","In da Club",2003,30,"Hip-hop","How to Rob",1999],
+["Kanye West","Stronger",2007,160,"Hip-hop","Through the Wire",2003],
+["Nicki Minaj","Super Bass",2011,100,"Hip-hop","Massive Attack",2010],
+["Macklemore & Ryan Lewis","Thrift Shop",2012,15,"Hip-hop","Wings",2011],
+["Black Sabbath","Paranoid",1970,70,"Metal","Evil Woman",1970],
+["Kiss","I Was Made for Lovin' You",1979,75,"Metal","Nothin' to Lose",1974],
+["Judas Priest","Breaking the Law",1980,50,"Metal","Rocka Rolla",1974],
+["Van Halen","Jump",1984,75,"Metal","You Really Got Me",1978],
+["Def Leppard","Pour Some Sugar on Me",1987,100,"Metal","Wasted",1979],
+["Iron Maiden","Run to the Hills",1982,130,"Metal","Running Free",1980],
+["Motley Crue","Dr. Feelgood",1989,100,"Metal","Stick to Your Guns",1981],
+["Europe","The Final Countdown",1986,25,"Metal","Seven Doors Hotel",1983],
+["Megadeth","Symphony of Destruction",1992,50,"Metal","Wake Up Dead",1986],
+["Rammstein","Du hast",1997,45,"Metal","Du riechst so gut",1995],
+["Nightwish","Nemo",2004,10,"Metal","The Carpenter",1997],
+["HIM","Join Me in Death",1999,10,"Metal","When Love and Death Embrace",1997],
+["Slipknot","Duality",2004,30,"Metal","Wait and Bleed",1999],
+["Linkin Park","In the End",2001,100,"Rock","One Step Closer",2000],
+["Ghost","Mary on a Cross",2019,3,"Metal","Elizabeth",2010],
+["Dua Lipa","Levitating",2020,90,"Pop","New Love",2015],
+["Billie Eilish","Bad Guy",2019,90,"Pop","Ocean Eyes",2016],
+["The Weeknd","Blinding Lights",2019,150,"Soul & R&B","Wicked Games",2012],
+["Sam Smith","Stay with Me",2014,55,"Pop","Lay Me Down",2013],
+["Ariana Grande","Thank U, Next",2018,110,"Pop","Put Your Hearts Up",2011],
+["Shawn Mendes","Senorita",2019,55,"Pop","Life of the Party",2014],
+["Lorde","Royals",2013,30,"Pop","Royals",2013],
+["Imagine Dragons","Believer",2017,110,"Rock","It's Time",2012],
+["BTS","Dynamite",2020,100,"Pop","No More Dream",2013],
+["Blackpink","How You Like That",2020,45,"Pop","Whistle",2016],
+["Bad Bunny","Dakiti",2020,100,"Latin","Diles",2016],
+["Rosalia","Con Altura",2019,15,"Latin","Catalina",2016],
+["Maneskin","Beggin'",2021,20,"Rock","Chosen",2017],
+["Post Malone","Sunflower",2018,120,"Hip-hop","White Iverson",2015],
+["Olivia Rodrigo","Drivers License",2021,40,"Pop","Drivers License",2021],
+["James Brown","I Got You (I Feel Good)",1965,200,"Soul & R&B","Please, Please, Please",1956],
+["Marvin Gaye","Sexual Healing",1982,70,"Soul & R&B","Let Your Conscience Be Your Guide",1961],
+["Depeche Mode","Enjoy the Silence",1990,100,"Dance & electronic","Dreaming of Me",1981],
+["Pet Shop Boys","West End Girls",1985,100,"Dance & electronic","West End Girls",1984],
+["Technotronic","Pump Up the Jam",1989,14,"Dance & electronic","Pump Up the Jam",1989],
+["Snap!","Rhythm Is a Dancer",1992,30,"Dance & electronic","The Power",1990],
+["2 Unlimited","No Limit",1993,18,"Dance & electronic","Get Ready for This",1991],
+["Faithless","Insomnia",1995,15,"Dance & electronic","Salva Mea",1995],
+["Tiesto","The Business",2020,36,"Dance & electronic","The Tube",1996],
+["Oasis","Wonderwall",1995,75,"Rock","Supersonic",1994],
+["Muse","Uprising",2009,30,"Rock","Uno",1999],
+["The Killers","Mr. Brightside",2004,28,"Rock","Mr. Brightside",2003],
+].filter(a=>a[3]>0);
+
+const S={players:[],deck:[],round:0,teamSize:3,game:'chair',len:15,era:0,genre:'Random',clip:0,turn:0,bids:[],current:null};
+const trackOf=a=>a[5];
+const yearOf=a=>a[6];
+const $=id=>document.getElementById(id);
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=n=>n.toLocaleString('en-US');
+function show(id){
+  try{drawMoney()}catch(e){}
+  try{$('infopanel').classList.toggle('on',id==='s-listen')}catch(e){}
+  try{$('leftcol').style.display=(id==='s-listen')?'':'none'}catch(e){}document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));window.scrollTo(0,0);
+  if(id==='s-listen')fitScreen();
+  if(id==='s-go')try{drawGo()}catch(e){}
+  try{$('break').style.display=(id==='s-chair')?'none':''}catch(e){}
+}
+
+
+/* --- the night rolls on by itself, unless somebody holds it --- */
+let autoTimer=null,autoLeft=0;
+function renderAuto(){
+  const b=$('next'),h=$('auto-pause');
+  if(!b)return;
+  if(autoLeft>0){
+    b.textContent='Next audition in '+autoLeft;
+    if(h)h.hidden=false;
+  }else{
+    b.textContent=seasonDone()?'Crown the coach':'Next audition';
+    if(h)h.hidden=true;
+  }
+}
+function stopAutoNext(quiet){
+  if(autoTimer){clearInterval(autoTimer);autoTimer=null}
+  autoLeft=0;renderAuto();
+  if(!quiet)publishStage();
+}
+function startAutoNext(){
+  stopAutoNext(true);
+  if(seasonDone())return;              // the last word belongs to the final screen
+  autoLeft=5;renderAuto();publishStage();
+  autoTimer=setInterval(()=>{
+    autoLeft--;
+    if(autoLeft<=0){stopAutoNext(true);$('next').click();return}
+    renderAuto();publishStage();
+  },1000);
+}
+$('auto-pause')&&($('auto-pause').onclick=()=>{
+  stopAutoNext();
+  $('turnline').textContent='Held. Press Next audition when you are ready.';
+});
+
+/* --- the screen is the biggest 16:9 picture the leftover space allows, so no
+       black border is ever left around it --- */
+function fitScreen(){
+  const on=document.querySelector('.screen.on')||document;
+  const wall=on.querySelector('.videowall'),sw=on.querySelector('.screenwrap');
+  if(!wall||!sw)return;
+  const h=wall.clientHeight,w=wall.clientWidth;
+  if(!w)return;                           // hidden, so there is nothing to measure yet
+  // on a phone the stage grows with its contents, so only the width can limit the picture
+  const narrow=window.innerWidth<=880;
+  if(!narrow&&!h)return;
+  const width=narrow?w:Math.min(w,h*16/9);
+  sw.style.width=Math.round(width)+'px';
+  sw.style.height=Math.round(width*9/16)+'px';
+}
+window.addEventListener('resize',fitScreen);
+
+/* ---- setup ---- */
+/* ---- avatars: drawn here in SVG, nothing imported ---- */
+const SKIN=['#F0C8A0','#E0A878','#C2855A','#8D5A3B','#5E3A26','#F7D9BE'];
+const HAIR=['#2A1B14','#6B3A1E','#C9922F','#E8E2D6','#8E2F6B','#2F5F8E','#B5483F','#4A4A52'];
+const BG=['#7A3A4E','#3F4C7A','#2E6A5E','#7A5A2E','#5A2E7A','#2E5A7A','#7A2E3E','#3E6A2E'];
+/* each style draws the hair; the head underneath is the same */
+function hairPath(style){
+  switch(style){
+    case 0: return '<path d="M11 26c0-9 5-14 13-14s13 5 13 14c0-6-4-8-13-8s-13 2-13 8z"/>';           // short
+    case 1: return '<path d="M11 26c0-9 5-14 13-14s13 5 13 14v14h-4V24c0-4-4-6-9-6s-9 2-9 6v16h-4z"/>'; // long
+    case 2: return '<path d="M11 26c0-9 5-14 13-14s13 5 13 14c0-6-4-8-13-8s-13 2-13 8z"/>'
+                 + '<circle cx="24" cy="7" r="5"/>';                                                   // bun
+    case 3: return '<circle cx="15" cy="17" r="6"/><circle cx="24" cy="13" r="7"/>'
+                 + '<circle cx="33" cy="17" r="6"/>';                                                  // curls
+    case 4: return '<path d="M10 24a14 14 0 0 1 28 0v2H10z"/><path d="M8 24h16v4H8z"/>';               // cap
+    default: return '<path d="M12 25c0-8 5-12 12-12s12 4 12 12c0-4-5-6-12-6s-12 2-12 6z" opacity=".85"/>'; // cropped
+  }
+}
+function avatarSVG(i,cls){
+  if(i===null||i===undefined||i<0)return '';
+  const sk=SKIN[i%SKIN.length], hr=HAIR[(i*3+1)%HAIR.length],
+        bg=BG[(i*5+2)%BG.length], st=i%6;
+  return '<svg class="'+(cls||'av')+'" viewBox="0 0 48 48" aria-hidden="true">'
+    +'<rect width="48" height="48" rx="11" fill="'+bg+'"/>'
+    +'<circle cx="24" cy="27" r="13" fill="'+sk+'"/>'
+    +'<g fill="'+hr+'">'+hairPath(st)+'</g>'
+    +'<circle cx="19.5" cy="26" r="1.7" fill="#2A1B20"/>'
+    +'<circle cx="28.5" cy="26" r="1.7" fill="#2A1B20"/>'
+    +'<path d="M20 32.5c2.4 2.2 5.6 2.2 8 0" stroke="#2A1B20" stroke-width="1.6" '
+    +'stroke-linecap="round" fill="none"/></svg>';
+}
+const AVATAR_COUNT=24;
+
+let rowPhoto=-1;
+function drawPlayers(){
+  const box=$('players');if(!box)return;box.innerHTML='';
+  const local=S.players.filter(p=>!p.pid&&!p.reserved);
+  S.players.forEach((p,i)=>{
+    if(p.pid||p.reserved)return;         // that chair belongs to a phone
+    const row=document.createElement('div');row.className='player-row';
+    // tap the picture to cycle through the faces, or past them for none
+    const pick=document.createElement('button');
+    pick.className='avpick';pick.type='button';
+    pick.setAttribute('aria-label','Change picture for coach '+(i+1));
+    pick.innerHTML=p.photo?('<img class="facepic" alt="" src="'+p.photo+'">')
+      :p.icon>=0?avatarSVG(p.icon,'av'):'<span class="avnone">none</span>';
+    pick.onclick=()=>{
+      if(p.photo){p.photo='';drawPlayers();return}      // a photo clears back to the drawings
+      p.icon=(p.icon===undefined||p.icon===null)?0:p.icon+1;
+      if(p.icon>=AVATAR_COUNT)p.icon=-1;
+      drawPlayers();
+    };
+    row.appendChild(pick);
+    // or put a real photo on this chair back
+    const cam=document.createElement('button');
+    cam.className='photobtn'+(p.photo?' has':'');cam.type='button';
+    cam.textContent='\ud83d\udcf7';
+    cam.title=p.photo?'Tap the picture to go back to the drawings':'Use a photo on this chair';
+    cam.setAttribute('aria-label','Use a photo for coach '+(i+1));
+    cam.onclick=()=>{rowPhoto=i;$('row-file').click()};
+    row.appendChild(cam);
+    const inp=document.createElement('input');
+    inp.type='text';inp.value=p.name;inp.placeholder=i===0?'You \u2014 Coach 1':'Coach '+(i+1);inp.maxLength=14;
+    inp.oninput=e=>{S.players[i].name=e.target.value;validate();drawLobbyList();publishStage()};
+    row.appendChild(inp);
+    if(local.length>1){
+      const x=document.createElement('button');
+      x.className='kill';x.textContent='\u00d7';x.setAttribute('aria-label','Remove coach');
+      x.onclick=()=>{S.players.splice(i,1);S.players.forEach((q,k)=>{q.id=k});
+        drawPlayers();validate();drawLobbyList();publishStage()};
+      row.appendChild(x);
+    }
+    box.appendChild(row);
+  });
+}
+function validate(){
+  // names are optional: an empty chair simply becomes Coach 1, Coach 2 and so on
+  const blank=S.players.filter(p=>!p.name.trim()).length;
+  $('start-hint').textContent=blank?'Leave a name empty and that chair plays as Coach '
+    +(S.players.findIndex(p=>!p.name.trim())+1)+'.':'';
+  updateStartState();
+}
+// the only thing that can stop a season now is a mix with nobody in it
+function updateStartState(){
+  let empty=false;
+  try{empty=S.genre!=='Random'&&!!S.era&&pool().length===0}
+  catch(e){return}      // the form draws before the catalogue is in place
+  try{$('lobby-start').disabled=empty}catch(e){}
+}
+S.players=[{name:'',icon:0}];
+try{const f=localStorage.getItem('thechair.myface');if(f)S.players[0].photo=f}catch(e){}
+drawPlayers();validate();
+
+$('row-file')&&($('row-file').addEventListener('change',e=>{
+  const f=e.target.files&&e.target.files[0];e.target.value='';
+  const i=rowPhoto;rowPhoto=-1;
+  if(!f||!S.players[i])return;
+  photoToSquare(f,160).then(url=>{
+    S.players[i].photo=url;
+    if(i===0){try{localStorage.setItem('thechair.myface',url)}catch(err){}}
+    drawPlayers();
+  }).catch(()=>{$('start-hint').textContent='That picture would not open. Try another one.'});
+}));
+$('add').onclick=()=>{
+  if(S.players.length>=6)return;
+  S.players.push(mkPlayer('',S.players.length*5%AVATAR_COUNT,nextPlayerId(),''));
+  drawPlayers();drawLobbyList();publishStage();
+  $('players').lastElementChild.querySelector('input').focus();
+};
+function segHandler(id,key,onPick){
+  $(id).onclick=e=>{const b=e.target.closest('button');if(!b)return;
+    document.querySelectorAll('#'+id+' button').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');onPick(b.dataset[key])};
+}
+segHandler('teamsize','t',v=>{S.teamSize=+v;updatePool()});
+segHandler('length','l',v=>{S.len=+v;updatePool()});
+segHandler('eras','e',v=>{S.era=+v;updatePool()});
+segHandler('genres','g',v=>{S.genre=v;updatePool()});
+
+
+const ERAS=[1,1963,1980,1995,2000];   // 1 = any year at all: nothing is filtered out
+/* every act carries the genre its own Wikipedia entry gives it; the buttons gather
+   those into families big enough to fill a night */
+const FAMILIES={
+  Rock:['Rock','Metal'],
+  Pop:['Pop'],
+  Dance:['Dance & electronic'],
+  Soul:['Soul & R&B','Hip-hop','Reggae'],
+  Roots:['Country','Latin']
+};
+const GENRE_LABEL={Rock:'rock & metal',Pop:'pop',Dance:'dance & electronic',
+  Soul:'soul, R&B & hip-hop',Roots:'country & Latin'};
+const GENRES=Object.keys(FAMILIES);
+const inFamily=(a,g)=>g==='Any'||(FAMILIES[g]||[]).indexOf(a[4])>=0;
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+/* a real shuffle: sort(()=>Math.random()-.5) leaves acts near where they started,
+   so the same names kept turning up early in the night */
+function shuffle(a){const x=[...a];
+  for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}
+  return x}
+
+function poolFor(era,genre){
+  return CATALOG.filter(a=>yearOf(a)>=era&&inFamily(a,genre));
+}
+function pool(){return poolFor(S.era||1963,S.genre==='Random'?'Any':S.genre)}
+
+function seats(){
+  const inLobby=S.players.some(p=>p.team);          // the lobby holds real chairs
+  const n=inLobby?S.players.length:S.players.filter(p=>p.name.trim()).length;
+  return n*S.teamSize;
+}
+function auditions(){return Math.min(pool().length,S.len?S.len:Math.max(seats(),seats()*3))}
+function updatePool(){
+  const el=$('pool'),rndEra=!S.era,rndGen=S.genre==='Random';
+  const n=pool().length,st=seats(),au=auditions();
+  updateStartState();
+  if(!rndEra&&!rndGen&&n===0){
+    el.className='pool thin';
+    el.textContent='Nobody started out in that corner \u2014 try another year or another genre.';
+    return;
+  }
+  if(rndEra||rndGen){
+    el.className='pool';
+    el.textContent=(rndEra&&rndGen?'Era and genre':rndEra?'The era':'The genre')
+      +' gets drawn when you start. '+st+' seats, '+au+' auditions.';
+    return;
+  }
+  if(!S.len){
+    el.className=au<st?'pool thin':'pool';
+    el.textContent='Runs until every team is full \u2014 up to '+au+' auditions for '+st+' seats.'
+      +(au<st?' The pool is too small, so some teams will finish short.':'');
+    return;
+  }
+  if(au<st){
+    el.className='pool thin';
+    el.textContent=au+' auditions for '+st+' seats \u2014 most teams will finish short. That is fine: you score what you signed.';
+  }else{
+    el.className='pool';
+    el.textContent=st+' seats \u00b7 '+au+' auditions \u00b7 '+n+' acts in the pool.';
+  }
+}
+updatePool();
+
+/* draw a random era/genre, but only combinations that hold enough acts */
+function resolveRandom(){
+  const needEra=!S.era,needGen=S.genre==='Random';
+  if(!needEra&&!needGen)return;
+  const eras=needEra?ERAS:[S.era];
+  const gens=needGen?GENRES:[S.genre];
+  const combos=[];
+  eras.forEach(e=>gens.forEach(g=>{
+    const n=poolFor(e,g).length;
+    if(n>=Math.max(seats(),S.len||0))combos.push({e:e,g:g});   // a full night, not a thin one
+  }));
+  const c=combos.length?pick(combos):{e:needEra?pick(ERAS):S.era,g:needGen?pick(GENRES):S.genre};
+  S.era=c.e;S.genre=c.g;
+}
+
+$('start').onclick=()=>{S.game='chair';openLobby()};
+$('start-artist')&&($('start-artist').onclick=()=>{S.game='artist';openLobby()});
+function beginSeason(){
+  // whatever route we came by, every chair must be a full player before the first record
+  S.players=S.players.map((p,i)=>p&&p.team?p
+    :mkPlayer((p&&p.name||'').trim()||('Coach '+(i+1)),p&&p.icon,i,(p&&p.pid)||''));
+  S.players.forEach((p,i)=>{p.name=(p.name||'').trim()||('Coach '+(i+1))});
+  resolveRandom();
+  S.season=(S.genre==='Any'?'all genres':(GENRE_LABEL[S.genre]||S.genre))+' \u00b7 from '+S.era;
+  // drawn at random; acts whose video you flagged as wrong go to the back of the pile
+  const p=pool();
+  S.deck=shuffle(p.filter(a=>statusOf(a)!=='bad'))
+    .concat(shuffle(p.filter(a=>statusOf(a)==='bad')))
+    .slice(0,auditions());
+  S.round=0;
+  nextRound();
+}
+
+/* ---- the teams, always on screen ---- */
+function sold(a){return a[3]}
+function teamTotal(p){return p.team.reduce((s,a)=>s+sold(a),0)}
+function full(p){return p.team.length>=S.teamSize}
+function drawMoney(){
+  if(!S.players.length)return;
+  const top=Math.max(...S.players.map(teamTotal));
+  const card=p=>{
+    let slots='';
+    for(let i=0;i<S.teamSize;i++){
+      const a=p.team[i];
+      slots+=a
+        ? '<div class="slot filled">'
+          +'<div class="sline"><span class="sa">'+esc(a[0])+'</span>'
+          +'<span class="sm">'+fmt(sold(a))+'m</span></div>'
+          +'<div class="st">'+esc(trackOf(a))+'</div></div>'
+        : '<div class="slot open"><span class="so">open</span></div>';
+    }
+    return '<div class="r'+(teamTotal(p)===top&&top>0?' lead':'')+'">'
+      +'<div class="rtop"><span class="n">'+esc(shownName(p))+'</span>'
+      +'<span class="blockdot'+(p.blockUsed?' spent':'')+'" title="'
+      +(p.blockUsed?'block spent':'block in hand')+'">\u2298</span>'
+      +'<span class="t">'+fmt(teamTotal(p))+'m</span></div>'
+      +'<div class="slotbox">'+slots+'</div></div>';
+  };
+  // the first three always sit on the left; a fourth and beyond go right
+  const leftTeams=S.players.slice(0,3), rightTeams=S.players.slice(3);
+  $('rail').innerHTML='<h3>Teams</h3>'+leftTeams.map(card).join('');
+  const r2=$('rail2');
+  r2.innerHTML=rightTeams.length?'<h3>Teams</h3>'+rightTeams.map(card).join(''):'';
+  r2.style.display=rightTeams.length?'block':'none';
+  $('railstrip').innerHTML=S.players.map(p=>
+    '<span>'+esc(shownName(p))+' <b>'+fmt(teamTotal(p))+'m</b> '
+    +p.team.length+'/'+S.teamSize+'</span>').join('');
+}
+
+/* ---- audition: first chair to turn signs them ---- */
+let timer=null,clipLeft=0,turnsOpen=false,videoShown=false;
+let winner=null,walked=false;
+let blockOwner=null,blockTarget=null;
+
+const byId=id=>S.players.find(p=>p.id===id);
+const allFull=()=>S.players.length>0&&S.players.every(full);
+// the night is over when every chair is filled, or when the auditions run out
+const seasonDone=()=>allFull()||S.round>=S.deck.length;
+
+function nextRound(){
+  stopAutoNext(true);
+  if(seasonDone()){finish();return}
+  S.round++;S.current=S.deck[S.round-1];
+  winner=null;walked=false;
+  blockOwner=null;blockTarget=null;turnsOpen=false;
+  S.players.forEach(p=>p.passed=false);        // everyone is back in the running
+  $('round-tag').innerHTML='<div class="rc-label">Audition</div>'
+    +'<div class="rc-num">'+S.round+'<span> of '+S.deck.length+'</span></div>'
+    +(S.season?'<div class="rc-season">'+esc(S.season)+'</div>':'');
+  $('meta').textContent=yearOf(S.current);
+  $('videowall').classList.remove('playing');clearVideo();videoShown=false;refreshVideoBox();
+  $('vidctl').style.display='none';
+  $('drop').style.display='block';$('drop').textContent='Start the audition';
+  $('stop').style.display='none';
+  
+  $('ip-body').style.display='none';$('ip-idle').style.display='block';
+  $('next').style.display='none';
+  $('turnline').textContent='Nobody can turn until the record starts.';
+  resetClock();drawSeats();show('s-listen');
+}
+function resetClock(){
+  clearInterval(timer);timer=null;
+  $('clock').style.display='block';
+  $('count').textContent=S.clip||'0';
+  $('count-cap').textContent=S.clip?'seconds':'ready';
+  const rg=$('ring');rg.style.transition='none';rg.style.strokeDashoffset='0';
+  $('clock').classList.remove('low');
+}
+
+/* --- the video: hidden during the blind listen, big at the reveal --- */
+/* the links that ship with the game; anything this browser has saved wins over them,
+   so your own corrections are never overwritten by an update */
+const SEEDVIDEOS={"2 Unlimited | Get Ready for This":"iPOmFUid3vA","2Pac | Trapped":"j-VUV9VcRAQ","4 Non Blondes | What's Up?":"6NXnxTNIWkc","50 Cent | How to Rob":"mrXiVvjBSXI","ABBA | People Need Love":"AhBZQmiP3ek","AC/DC | Can I Sit Next to You, Girl":"Gq7BdJqoGhI","Adele | Hometown Glory":"BW9Fzwuf43c","Aerosmith | Dream On":"iJDtukGW79Y","Aqua | Roses Are Red":"LrgCGtMFeyU","Ariana Grande | Put Your Hearts Up":"mgpHV4dGPs4","BTS | No More Dream":"rBG5L7UsUxA","Backstreet Boys | We've Got It Goin' On":"kHBXPoJhnHQ","Bad Bunny | Diles":"rWzXb-4HmVQ","Baha Men | Who Let the Dogs Out":"VMLRsQjcOJ4","Barbra Streisand | Happy Days Are Here Again":"7HcDQGZuppc","Bee Gees | New York Mining Disaster 1941":"4buU4QAif9A","Beyonce | No, No, No":"6H5wuTVnM0Y","Billie Eilish | Ocean Eyes":"_K582Qm9o08","Billy Joel | She's Got a Way":"ojsp3PDG9BM","Black Sabbath | Evil Woman":"1A5a_GlYo0g","Blackpink | Whistle":"dISNgvVpWlo","Blind Melon | No Rain":"3qVPNONdF58","Bob Marley | Judge Not":"W4K6Htmw1xE","Bomfunk MC's | Uprocking Beats":"wLwZx1hyGL8","Bon Jovi | Runaway":"s86K-p089R8","Britney Spears | ...Baby One More Time":"LaKOa57wo1w","Bruce Springsteen | Blinded by the Light":"uozMTmEjxHc","Bruno Mars | Just the Way You Are":"LjhCEhWiKXk","Carly Rae Jepsen | Tug of War":"geT9ZrDlDNo","Celine Dion | Where Does My Heart Beat Now":"Hij_QxDkIJI","Cher | I Got You Babe":"PkmBjHwzyMw","Chumbawamba | Tubthumping":"2H5uWRjFsGc","Coldplay | Shiver":"ujbS9mHRXDw","Coolio | County Line":"jpc86--1ntk","Crazy Town | Butterfly":"6FEDrU85FLE","Cypress Hill | How I Could Just Kill a Man":"Yg-RIOATCbU","Darude | Sandstorm":"iGxj4oVwGgs","David Bowie | Liza Jane":"7NfsLLzhTUE","Deep Blue Something | Breakfast at Tiffany's":"1ClCpfeIELw","Deep Purple | Hush":"W1PNvopXjbg","Def Leppard | Wasted":"WX9twvtdAZw","Depeche Mode | Dreaming of Me":"k5SDeiliTXk","Dexys Midnight Runners | Dance Stance":"Um-7TL-D1Qc","Dolly Parton | Dumb Blonde":"lN_VQ8GWEos","Drake | Best I Ever Had":"mgs4y8gGOZo","Dua Lipa | New Love":"Nz-dPOjK1gQ","Eagles | Take It Easy":"5igDtWadYms","Ed Sheeran | The A Team":"UAWcs5H-qgQ","Eiffel 65 | Blue (Da Ba Dee)":"zA52uNzx7Y4","Elton John | Lady Samantha":"7GGz1ze8lE8","Elvis Presley | That's All Right":"k-5p5djJAZg","Eminem | Just Don't Give a Damn":"wIQWRHJq_kE","Enya | I Want Tomorrow":"a-LIr06Egdc","Europe | Seven Doors Hotel":"_v7byabCFC8","Faithless | Salva Mea":"vEpgyt3KgzE","Falco | Der Kommissar":"8-bgiiTxhzM","Fleetwood Mac | Black Magic Woman":"b0HOuHknsVM","Frank Sinatra | All or Nothing at All":"m5EGbTX9Ifo","Genesis | The Silent Sun":"hTfHGGKFBHU","Ghost | Elizabeth":"woyaKianemI","Gotye | Somebody That I Used to Know":"8UVNT4wvIGY","Guns N' Roses | It's So Easy":"k2AFXseEnX4","HIM | When Love and Death Embrace":"cBzxEUYlJ6I","Imagine Dragons | It's Time":"sENM2wA_FTg","Iron Maiden | Running Free":"kbK9vqF8EOc","James Brown | Please, Please, Please":"mZBXH_O1Z9E","Janet Jackson | Young Love":"4a-Ibez1nQI","Johnny Cash | Cry! Cry! Cry!":"KoXuGhdZijY","Judas Priest | Rocka Rolla":"YS7pOJWQlWI","Justin Bieber | One Time":"iM3LAtliKgA","Kanye West | Through the Wire":"uvb-1wjAtk4","Katy Perry | I Kissed a Girl":"n5P88ZVeU84","Kiss | Nothin' to Lose":"WYI72AtVi0Y","Kylie Minogue | Locomotion":"xhxzzUEu138","LL Cool J | I Need a Beat":"oVDfyc2lh4Q","Lady Gaga | Just Dance":"DNQ0gV2VVlM","Las Ketchup | Asereje":"AMT698ArSfQ","Led Zeppelin | Good Times Bad Times":"TA9Rec1qAFQ","Linkin Park | One Step Closer":"4qlCC1GOwFw","Lorde | Royals":"nlcIKh6sBtc","Lordi | Would You Love a Monsterman?":"IRhbOFlTA5g","Los del Rio | Macarena":"nd5hXdSEnWA","Lou Bega | Mambo No. 5":"n2qgHu7HJLw","Macklemore & Ryan Lewis | Wings":"gAg3uMlNyHA","Madonna | Everybody":"VYNIbpQ5itQ","Maneskin | Chosen":"GWVMcigVt48","Mariah Carey | Vision of Love":"GkAIMmDb2y0","Maroon 5 | Harder to Breathe":"rV8NHsmVMPE","Marvin Gaye | Let Your Conscience Be Your Guide":"6ExYHDgnfTo","Megadeth | Wake Up Dead":"4kSvN1dQjxc","Men Without Hats | The Safety Dance":"1p_BvaHsgGg","Metallica | Whiplash":"0-IIAOC1lHw","Michael Buble | How Can You Mend a Broken Heart":"uygPCKLXB-g","Michael Jackson | Got to Be There":"1dp2FiFfCNY","Motley Crue | Stick to Your Guns":"h7JKu2ytCXw","Muse | Uno":"JW1rmSAc7-w","Neil Diamond | Solitary Man":"8TWppRdXqY4","Nena | Nur getraumt":"DGjZaiOPnAA","Nicki Minaj | Massive Attack":"2ZCUtnuAXg8","Nightwish | The Carpenter":"Z4A5HwMOfW8","Nirvana | Love Buzz":"3U36vDJIbrQ","OMC | How Bizarre":"C2cMG33mWVY","Oasis | Supersonic":"FOTsS2mplA0","Olivia Rodrigo | Drivers License":"ZmDBbnmKpqQ","Outkast | Player's Ball":"vFofKGKlWo4","PSY | Bird":"2pB0zurYJAc","Pet Shop Boys | West End Girls":"p3j2NYZ8FKs","Phil Collins | In the Air Tonight":"YkADj0TPrJA","Pink Floyd | Arnold Layne":"H3DGpINHX5Q","Post Malone | White Iverson":"SLsTskih7_I","Prince | Soft and Wet":"pHaJWL5IscE","Queen | Keep Yourself Alive":"JofwEB9g1zg","Rammstein | Du riechst so gut":"1HDV1fmtIKE","Red Hot Chili Peppers | True Men Don't Kill Coyotes":"Zs72MvKh8qU","Right Said Fred | I'm Too Sexy":"rdna1DKsg8M","Rihanna | Pon de Replay":"RIxmBllRNgw","Rod Stewart | Good Morning Little Schoolgirl":"2Ak_Dsz1UAE","Rosalia | Catalina":"0OMwDZUWl5g","Roxette | Neverending Love":"fOSKglnk-4g","Sam Smith | Lay Me Down":"HaMq2nn5ac0","Santana | Jingo":"DgGHeT9U9g0","Scorpions | Speedy's Coming":"au_UTT9_x08","Semisonic | Closing Time":"LCGZe_ZMAF0","Shakira | Magia":"f8T1bNypXNM","Shawn Mendes | Life of the Party":"O986FuTmQcM","Sixpence None the Richer | Kiss Me":"hII0JXUJNDo","Slipknot | Wait and Bleed":"B1zCN0YhW1s","Snap! | The Power":"j1BNcSBApOU","Snoop Dogg | Who Am I (What's My Name)?":"2soGJXQAQec","Soft Cell | Memorabilia":"zD-nw0tYYSI","Spice Girls | Wannabe":"D9Dj_5c6vPQ","Stevie Wonder | Fingertips":"k3ubgVjp3CY","Taylor Swift | Tim McGraw":"8IjBmK3NvCE","Technotronic | Pump Up the Jam":"9EcjWd-O4jI","The Beach Boys | Surfin'":"IaVacDHFyi0","The Beatles | Love Me Do":"l_ND5fVCEqI","The Killers | Mr. Brightside":"gGdGFtwCNBE","The Knack | My Sharona":"BR2JtsVumFA","The Notorious B.I.G. | Party and Bullshit":"QA4DG804VuI","The Rasmus | F-F-F-Falling":"LcB0LNrMFW4","The Rolling Stones | Come On":"nG6dUZ8lmDo","The Weeknd | Wicked Games":"O1OTWCd40bc","Tiesto | The Tube":"nGDrkji1i4Q","Tina Turner | A Fool in Love":"FwaxT7zL7kA","Toni Basil | Mickey":"1fkobOoJe6I","U2 | I Will Follow":"xnsNR143Ihk","Van Halen | You Really Got Me":"-Oh6hNFZ2KA","Vanilla Ice | Ice Ice Baby":"rog8ou-ZepE","Vengaboys | Up & Down":"w3XFgzv8Ptk","Whitney Houston | You Give Good Love":"dY7PmX6Oz58","a-ha | Take On Me":"Q3JoQvLcKVU"};
+let VIDEOS={};
+try{VIDEOS=JSON.parse(localStorage.getItem('thechair.videos')||'{}')}catch(e){VIDEOS={}}
+VIDEOS=Object.assign({},SEEDVIDEOS,VIDEOS);
+function saveVideos(){try{localStorage.setItem('thechair.videos',JSON.stringify(VIDEOS))}catch(e){}}
+function ytId(url){
+  if(!url)return '';
+  const s=String(url).trim();
+  if(/^[\w-]{11}$/.test(s))return s;                       // a bare id
+  let m=s.match(/[?&]v=([\w-]{11})/)||s.match(/youtu\.be\/([\w-]{11})/)
+       ||s.match(/\/embed\/([\w-]{11})/)||s.match(/\/shorts\/([\w-]{11})/)
+       ||s.match(/\/live\/([\w-]{11})/);
+  return m?m[1]:'';
+}
+const videoKey=a=>a[0]+' | '+a[5];
+function rememberVideo(url){
+  const id=ytId(url);
+  if(!id)return false;
+  VIDEOS[videoKey(S.current)]=id;saveVideos();
+  return true;
+}
+function savedVideo(a){return VIDEOS[videoKey(a)]||''}        // whatever is in the library
+function videoFor(a){                                         // what may reach the stage
+  if(statusOf(a)==='bad')return '';      // flagged as the wrong video, so it never plays
+  return savedVideo(a);
+}
+function watchUrl(id){return 'https://www.youtube.com/watch?v='+id}
+let curVid='';
+function showVideo(id){
+  curVid=id;
+  if(SERVED){
+    $('vw-screen').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id
+      +'?autoplay=1&rel=0&playsinline=1" title="Music video" '
+      +'allow="autoplay; encrypted-media; fullscreen" '
+      +'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      +'<button class="vstop" data-stop="1">■ Stop</button>'
+      +'<button class="vopen" data-id="'+id+'">Open on YouTube</button>';
+  }else{
+    // an embed cannot work without a page origin, so offer the real thing instead
+    $('vw-screen').innerHTML='<button class="vbig" data-id="'+id+'">'
+      +'<span class="vtri">\u25b6</span><span>Play the video on YouTube</span>'
+      +'<span class="vwhy">To watch it here on the stage, close this and start the game\nwith start-the-chair.bat instead of opening the file directly.</span></button>';
+  }
+}
+// the chairs locking kills the video, but it stays one click away
+function stopVideo(only){
+  const id=only||curVid;
+  if(!id)return;
+  if(!SERVED){showVideo(id);return}   // nothing was playing on the stage anyway
+  curVid=id;
+  $('vw-screen').innerHTML='<div class="eq" id="eq">'+'<i></i>'.repeat(12)+'</div>'
+    +'<button class="vbig" data-play="'+id+'"><span class="vtri">▶</span>'
+    +'<span>Watch the video</span></button>';
+}
+$('vw-screen').addEventListener('click',e=>{
+  if(e.target.closest('[data-stop]')){stopVideo();return}
+  const p=e.target.closest('[data-play]');
+  if(p){showVideo(p.dataset.play);return}
+  const b=e.target.closest('.vbig,.vopen');
+  if(b&&b.dataset.id)window.open(watchUrl(b.dataset.id),'_blank','noopener');
+});
+function clearVideo(){
+  curVid='';
+  $('vw-screen').innerHTML='<div class="eq" id="eq">'+'<i></i>'.repeat(12)+'</div>'
+    +'<div class="vw-idle" id="vw-idle">STAGE</div>';
+}
+$('yt-url').oninput=e=>{
+  const ok=rememberVideo(e.target.value);
+  e.target.classList.toggle('ok',ok);
+  $('ythint').textContent=e.target.value.trim()
+    ? (ok?'Saved — it plays with the audition, and is remembered for next time.'
+         :'That does not look like a YouTube link yet.')
+    : '';
+};
+const SERVED=location.protocol==='http:'||location.protocol==='https:';
+function fileWarning(){
+  return SERVED?''
+    :'YouTube refuses to play in a page opened straight from disk (error 153). '
+     +'Serve the folder instead: run  python3 -m http.server 8000  in it, '
+     +'then open  http://localhost:8000/the-chair.html';
+}
+function refreshVideoBox(){
+  const have=savedVideo(S.current);
+  $('yt-url').value='';
+  $('yt-url').classList.remove('ok');
+  $('ythint').textContent=!have
+    ? 'Optional: paste a link and the video plays with the audition.'
+    : statusOf(S.current)==='bad'
+      ? 'You flagged this video as wrong, so it stays off the stage. Paste a better link to replace it.'
+      : 'Video saved for this act — it plays as the audition starts.';
+}
+
+/* --- a verdict on each video, so checking them is a one-time job --- */
+let VSTATUS={};
+try{VSTATUS=JSON.parse(localStorage.getItem('thechair.videostatus')||'{}')}catch(e){VSTATUS={}}
+function saveStatus(){try{localStorage.setItem('thechair.videostatus',JSON.stringify(VSTATUS))}catch(e){}}
+function statusOf(a){return VSTATUS[videoKey(a)]||''}
+function setStatus(a,v){
+  const k=videoKey(a);
+  if(v)VSTATUS[k]=v; else delete VSTATUS[k];
+  saveStatus();
+}
+function drawVidCtl(){
+  const a=S.current;
+  if(!a){$('vidctl').style.display='none';return}
+  if(!savedVideo(a)){                       // no link yet: say so instead of showing nothing
+    $('vidctl').style.display='flex';
+    $('vidlabel').textContent=SERVED
+      ? 'No video for this act \u2014 paste a link up top and it plays next time.'
+      : fileWarning();
+    $('v-ok').style.display='none';$('v-bad').style.display='none';$('v-del').style.display='none';
+    return;
+  }
+  $('v-ok').style.display='';$('v-bad').style.display='';$('v-del').style.display='';
+  const st=statusOf(a);
+  $('vidctl').style.display='flex';
+  $('v-ok').className='vbtn ok'+(st==='ok'?' done':'');
+  $('v-bad').className='vbtn bad'+(st==='bad'?' flagged':'');
+  $('vidlabel').textContent=st==='ok'?'Checked — right video'
+    :st==='bad'?'Flagged as wrong — fix it in the library'
+    :'Is this the right video?';
+}
+$('v-ok').onclick=()=>{setStatus(S.current,statusOf(S.current)==='ok'?'':'ok');drawVidCtl()};
+$('v-bad').onclick=()=>{setStatus(S.current,statusOf(S.current)==='bad'?'':'bad');drawVidCtl()};
+$('v-del').onclick=()=>{
+  delete VIDEOS[videoKey(S.current)];saveVideos();
+  setStatus(S.current,'');
+  clearVideo();
+  $('vidctl').style.display='none';
+};
+
+/* --- the video library: build it once, keep it for good --- */
+let libFilter='all',libQuery='';
+function libList(){
+  return CATALOG.filter(a=>{
+    const saved=!!savedVideo(a);
+    const st=statusOf(a);
+    if(libFilter==='missing'&&saved)return false;
+    if(libFilter==='saved'&&!saved)return false;
+    if(libFilter==='unchecked'&&(!saved||st))return false;
+    if(libFilter==='flagged'&&st!=='bad')return false;
+    if(!libQuery)return true;
+    const q=libQuery.toLowerCase();
+    return a[0].toLowerCase().includes(q)||a[5].toLowerCase().includes(q)
+        || a[1].toLowerCase().includes(q);
+  });
+}
+function libCount(shown){
+  const have=CATALOG.filter(a=>savedVideo(a)).length;
+  $('lib-count').className='pool';
+  const okN=CATALOG.filter(a=>statusOf(a)==='ok').length;
+  const badN=CATALOG.filter(a=>statusOf(a)==='bad').length;
+  $('lib-count').textContent=have+' of '+CATALOG.length+' acts have a video · '
+    +okN+' checked · '+badN+' flagged'
+    +(shown===undefined?'':' · showing '+shown);
+}
+function drawLibrary(){
+  const rows=libList();
+  libCount(rows.length);
+  $('lib-rows').innerHTML=rows.map(a=>{
+    const k=videoKey(a), id=VIDEOS[k]||'', st=statusOf(a);
+    return '<div class="librow" data-k="'+encodeURIComponent(k)+'">'
+      +'<div class="who"><div class="wa">'+esc(a[0])+'</div>'
+      +'<div class="wt">'+esc(a[5])+' · '+a[6]+'</div></div>'
+      +'<input type="text" class="'+(id?'ok':'')+'" value="'+esc(id)+'" '
+      +'placeholder="YouTube link" autocomplete="off" spellcheck="false">'
+      +'<span class="mark '+(st==='ok'?'on':st==='bad'?'flag':id?'on dim':'')+'" title="'
+      +(st==='ok'?'checked, right':st==='bad'?'flagged as wrong':id?'not checked yet':'no video')
+      +'">'+(st==='bad'?'✗':id?'◉':'○')+'</span></div>';
+  }).join('')||'<div class="librow"><div class="who"><div class="wt">Nothing matches that.</div></div></div>';
+}
+$('lib-rows').addEventListener('input',e=>{
+  const inp=e.target.closest('input');if(!inp)return;
+  const row=inp.closest('.librow'); if(!row)return;
+  const k=decodeURIComponent(row.dataset.k), v=inp.value.trim();
+  const mark=row.querySelector('.mark');
+  if(!v){delete VIDEOS[k];delete VSTATUS[k];saveVideos();saveStatus();
+    inp.classList.remove('ok');mark.className='mark';mark.textContent='○';libCount();return}
+  const id=ytId(v);
+  if(id){if(VIDEOS[k]!==id){delete VSTATUS[k];saveStatus()}
+    VIDEOS[k]=id;saveVideos();inp.classList.add('ok');mark.className='mark on dim';mark.textContent='◉'}
+  else{inp.classList.remove('ok');mark.className='mark';mark.textContent='○'}
+  libCount();                   // the tally keeps up with typing, without redrawing the list
+});
+$('lib-search').oninput=e=>{libQuery=e.target.value.trim();drawLibrary()};
+segHandler('lib-filter','f',v=>{libFilter=v;drawLibrary()});
+$('open-lib').onclick=()=>{
+  drawLibrary();
+  if(!SERVED)$('lib-msg').textContent=fileWarning();
+  show('s-library');
+};
+$('lib-done').onclick=()=>show('s-setup');
+
+$('lib-export').onclick=()=>{
+  const blob=new Blob([JSON.stringify({videos:VIDEOS,status:VSTATUS},null,2)],
+    {type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='the-chair-videos.json';a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+  $('lib-msg').textContent='Saved as the-chair-videos.json.';
+};
+$('lib-import').onclick=()=>$('lib-file').click();
+$('lib-file').onchange=e=>{
+  const f=e.target.files&&e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const raw=JSON.parse(r.result);
+      if(!raw||typeof raw!=='object')throw new Error('not a library');
+      const vids=raw.videos&&typeof raw.videos==='object'?raw.videos:raw;  // old flat files still work
+      const sts=raw.status&&typeof raw.status==='object'?raw.status:{};
+      let added=0;
+      Object.keys(vids).forEach(k=>{
+        const id=ytId(vids[k]);
+        if(id&&VIDEOS[k]!==id){VIDEOS[k]=id;added++}
+      });
+      Object.keys(sts).forEach(k=>{if(sts[k]==='ok'||sts[k]==='bad')VSTATUS[k]=sts[k]});
+      saveVideos();saveStatus();drawLibrary();
+      $('lib-msg').textContent=added+' link'+(added===1?'':'s')+' merged in. Nothing was removed.';
+    }catch(err){$('lib-msg').textContent='That file could not be read as a video library.'}
+  };
+  r.readAsText(f);
+  e.target.value='';
+};
+
+
+/* --- chairs --- */
+function canTurn(p){return !full(p)&&p.id!==blockTarget&&!p.passed}
+// a full team is a skip on its own, so nobody has to press anything
+const hasSkipped=p=>p.passed||full(p);
+const stillDeciding=()=>S.players.filter(p=>canTurn(p));
+function checkAllSkipped(){
+  if(!turnsOpen||winner)return;
+  if(stillDeciding().length)return;
+  $('turnline').textContent='Everyone skipped.';
+  closeWindow();                     // nobody wanted them, so the audition is over
+}
+function drawSeats(){
+  const cols=S.players.length<=3?S.players.length:Math.ceil(S.players.length/2);
+  $('chairs-grid').style.setProperty('--n',cols);   // 4->2+2, 5->3+2, 6->3+3
+  $('chairs-grid').innerHTML=S.players.map((p,i)=>{
+    const got=winner&&winner.id===p.id;
+    const live=turnsOpen&&canTurn(p)&&!winner;
+    const cls=(got?' turned':'')+(blockTarget===p.id?' blocked':'')
+      +(full(p)?' done':'')+(live?' live':'')
+      ;
+    const signLabel=got?'GOT THEM':full(p)?'TEAM FULL':blockTarget===p.id?'BLOCKED'
+      :p.passed?'SKIPPED':'SIGN THEM';
+    const skipLabel=p.passed?'SKIPPED':'SKIP';
+    const canSkip=turnsOpen&&!winner&&!p.passed&&!full(p);
+    const canBlock=!p.blockUsed&&blockTarget===null&&turnsOpen&&!winner;
+    return '<div class="chair'+cls+'" data-i="'+i+'" style="--i:'+i+'">'
+      +'<div class="rig" data-i="'+i+'">'
+        +'<div class="swivel">'
+          +'<div class="cback">'+backArt(p,'cav')+'</div>'
+          +'<div class="cfront">'
+            +'<div class="cushion"><b>'+esc((String(p.name||'?').charAt(0)||'?').toUpperCase())+'</b></div>'
+            +'<div class="armr"></div><div class="arml"></div>'
+            +'<div class="pad"></div>'
+          +'</div>'
+        +'</div>'
+        +'<div class="stem"></div><div class="foot"></div>'
+      +'</div>'
+      +(got?'<div class="gotit">FIRST</div>':'')
+      +(blockTarget===p.id?'<div class="blkmark">BLOCKED BY '+esc(byId(blockOwner).name.toUpperCase())+'</div>':'')
+      +'<div class="nm">'+esc(shownName(p))+'</div>'
+      +'<div class="slots">'+'\u25cf'.repeat(p.team.length)
+      +'\u25cb'.repeat(Math.max(0,S.teamSize-p.team.length))+'</div>'
+      +'<button class="sign" data-i="'+i+'"'+(live?'':' disabled')+'>'+signLabel+'</button>'
+      +(full(p)?''                     // the sign button already reads TEAM FULL
+        :'<button class="skip'+(p.passed?' out':'')+'" data-skip="'+i+'"'
+         +(canSkip?'':' disabled')+'>'+skipLabel+'</button>')
+      +'<div class="blkrow">'+(p.blockUsed||blockTarget!==null||!turnsOpen||winner
+          ? (p.blockUsed?'<span class="blkspent">block spent</span>':'')
+          : (function(){
+              const rivals=S.players.filter(q=>q.id!==p.id);
+              const terse=rivals.length>2;        // keep the chair from growing a tower of buttons
+              return rivals.map(q=>
+                '<button class="blk'+(terse?' terse':'')+'" data-by="'+p.id+'" data-at="'+q.id+'"'
+                +' title="Block '+esc(q.name)+'">'
+                +(terse?'\u2298'+esc(q.name.slice(0,3).toUpperCase())
+                       :'BLOCK '+esc(q.name.toUpperCase()))+'</button>').join('');
+            })())
+        +'</div>'
+      +'</div>';
+  }).join('');
+}
+$('chairs-grid').onclick=e=>{
+  const sk=e.target.closest('button.skip');
+  if(sk&&!sk.disabled){
+    const p=S.players[+sk.dataset.skip];
+    if(!p||!turnsOpen||winner||full(p))return;
+    p.passed=true;
+    $('turnline').textContent=p.name+' skipped.';
+    drawSeats();checkAllSkipped();return;
+  }
+  const blk=e.target.closest('button.blk');
+  if(blk&&!blk.disabled){
+    const by=byId(+blk.dataset.by),at=byId(+blk.dataset.at);
+    if(!by||!at||by.blockUsed||blockTarget!==null||!turnsOpen||winner)return;
+    blockTarget=at.id;blockOwner=by.id;by.blockUsed=true;
+    $('turnline').textContent=by.name+' blocked '+at.name+'.';
+    drawSeats();drawMoney();checkAllSkipped();return;
+  }
+  const hit=e.target.closest('button.sign,.rig');
+  if(!hit)return;
+  const i=+hit.dataset.i,p=S.players[i];
+  if(!turnsOpen||winner){
+    $('turnline').textContent=winner?winner.name+' already got there.':'Too late. The chairs are locked.';return}
+  if(full(p)){$('turnline').textContent=p.name+'\u2019s team is full.';return}
+  if(blockTarget===p.id){$('turnline').textContent=p.name+' is blocked this round.';return}
+  claim(p);
+};
+
+/* --- playback window --- */
+function playClip(){
+  resetClock();
+  turnsOpen=true;winner=null;walked=false;
+  $('drop').style.display='none';$('stop').style.display='block';
+  clipLeft=S.clip?S.clip:0;
+  $('count').textContent=clipLeft;
+  $('count-cap').textContent=S.clip?'seconds left to turn':'playing';
+  if(S.clip){
+    const rg=$('ring');
+    rg.style.transition='none';rg.style.strokeDashoffset='0';
+    requestAnimationFrame(()=>{
+      rg.style.transition='stroke-dashoffset '+S.clip+'s linear';
+      rg.style.strokeDashoffset='131.95';
+    });
+  }
+  $('videowall').classList.add('playing');
+  const vid=videoFor(S.current);
+  if(vid){videoShown=true;showVideo(vid)}   // the video runs with the audition
+  $('turnline').textContent='First chair to turn gets them \u2014 or skip.';
+  drawSeats();fitScreen();runClock();
+}
+function runClock(){
+  clearInterval(timer);
+  timer=setInterval(()=>{
+    if(S.clip){clipLeft--;$('count').textContent=Math.max(clipLeft,0);
+      $('clock').classList.toggle('low',clipLeft<=5&&clipLeft>0);
+      if(clipLeft<=0)closeWindow()}
+    else{clipLeft++;$('count').textContent=clipLeft}
+  },1000);
+}
+function claim(p){
+  winner=p;
+  closeWindow();
+}
+function closeWindow(){
+  clearInterval(timer);timer=null;
+  turnsOpen=false;
+  walked=!winner;
+  const rg=$('ring');
+  rg.style.transition='none';rg.style.strokeDashoffset='131.95';
+  $('clock').classList.remove('low');
+  $('clock').style.display='none';            // nothing cryptic left on screen
+  $('count-cap').textContent='chairs locked';
+  $('stop').style.display='none';
+  $('videowall').classList.remove('playing');
+  stopVideo();                       // time is up, so the music stops too
+  $('turnline').textContent=winner?'':'Nobody turned. They walk.';
+  drawSeats();
+  doReveal();                      // the answer appears beside the screen, no extra click
+}
+$('drop').onclick=playClip;
+$('stop').onclick=closeWindow;
+
+/* --- break freezes the window rather than killing it --- */
+let heldClip=false;
+function holdClip(){
+  stopAutoNext(true);
+  if(!timer)return false;
+  clearInterval(timer);timer=null;
+  const rg=$('ring');
+  rg.style.strokeDashoffset=getComputedStyle(rg).strokeDashoffset;
+  rg.style.transition='none';
+  $('count-cap').textContent='on hold';
+  return true;
+}
+function resumeClip(){
+  const rg=$('ring');
+  if(S.clip){requestAnimationFrame(()=>{
+    rg.style.transition='stroke-dashoffset '+Math.max(clipLeft,1)+'s linear';
+    rg.style.strokeDashoffset='131.95';
+  })}
+  $('count-cap').textContent=S.clip?'seconds left to turn':'playing';
+  $('stop').style.display='block';runClock();
+}
+$('break').onclick=()=>{
+  const cur=document.querySelector('.screen.on');
+  if(cur&&cur.id!=='s-break')$('resume').dataset.back=cur.id;
+  heldClip=holdClip();
+  show('s-break');
+};
+$('to-setup').onclick=()=>{
+  clearInterval(timer);timer=null;heldClip=false;
+  $('infopanel').classList.remove('on');
+  show('s-setup');
+};
+$('resume').onclick=()=>{
+  const back=$('resume').dataset.back||'s-setup';
+  show(back);
+  if(back==='s-listen'){
+    if(heldClip)resumeClip();
+    else if($('drop').style.display==='none'&&$('stop').style.display==='none'
+            &&$('next').style.display==='none'){closeWindow()}
+  }
+  heldClip=false;
+};
+
+/* ---- reveal ---- */
+
+function doReveal(){
+  const a=S.current,name=a[0],n=sold(a);
+  if(winner){winner.team.push(a);drawMoney()}   // straight into their team slots
+  $('artist-name').textContent=name;
+  $('artist-tag').innerHTML=esc('“'+trackOf(a)+'”')+' · '+yearOf(a)+' · '+a[4]
+    +(a[1]!==a[5]
+      ? '<br><span style="color:var(--bone)">Went on to record “'+esc(a[1])+'” in '+a[2]+'</span>'
+      : '<br><span style="color:var(--muted)">Never recorded anything bigger</span>');
+  $('figure').textContent='0';
+  $('verdict').className=winner?'verdict':'verdict walk';
+  if(winner){
+    const t=teamTotal(winner);
+    $('verdict').innerHTML='<em>'+esc(winner.name)+'</em> signed them.'
+      +'<br><span style="font-size:15px;color:var(--muted)">Team now '+fmt(t)+'m across '
+      +winner.team.length+' of '+S.teamSize+'</span>'
+      +(n<=15?'<br><span style="font-size:15px;color:var(--red)">One hit, then nothing.</span>'
+       :n>=200?'<br><span style="font-size:15px;color:var(--gold)">A giant. Nobody else got near.</span>':'');
+  }else{
+    $('verdict').textContent=(blockTarget!==null&&byId(blockTarget)
+      ?byId(blockTarget).name+' was blocked, and nobody else moved. ':'Not one chair turned. ')
+      +name+' walks out unsigned — and takes '+n+' million records with them.';
+  }
+  const vid=videoFor(a);
+  if(vid&&!videoShown){stopVideo(vid);videoShown=true}     // host added the link mid-audition
+  drawVidCtl();
+  $('ip-idle').style.display='none';
+  $('ip-body').style.display='block';
+  const done=seasonDone();
+  $('next').style.display='block';
+  $('next').textContent=done?'Crown the coach':'Next audition';
+  countUp(n);
+  if(!done)startAutoNext();
+}
+function countUp(target){
+  if(reduced){$('figure').textContent=target;return}
+  const dur=1000,t0=performance.now();
+  (function step(now){
+    const k=Math.min((now-t0)/dur,1);
+    $('figure').textContent=Math.round(target*(1-Math.pow(1-k,3)));
+    if(k<1)requestAnimationFrame(step);
+  })(performance.now());
+}
+
+/* ---- on to the next one: no second click to start it ---- */
+$('next').onclick=()=>{
+  if(seasonDone()){finish();return}
+  nextRound();
+  playClip();
+};
+function board(){
+  return [...S.players].sort((a,b)=>teamTotal(b)-teamTotal(a)).map((p,i)=>{
+    const roster=p.team.length
+      ? p.team.map(a=>esc(a[0])+' <span style="color:var(--gold)">'+fmt(sold(a))+'m</span>').join(' \u00b7 ')
+      : 'No signings yet';
+    return '<div class="team'+(i===0&&teamTotal(p)>0?' lead':'')+'">'
+      +'<div class="team-head"><span class="rank">'+(i+1)+'</span>'
+      +'<span class="nm">'+esc(shownName(p))+'</span>'
+      +'<span class="tot">'+fmt(teamTotal(p))+'m</span></div>'
+      +'<div class="roster">'+roster+'</div>'
+      +'<div class="budget">'+p.team.length+' of '+S.teamSize+' signed'
+      +(p.blockUsed?' \u00b7 block spent':' \u00b7 block in hand')+'</div></div>';
+  }).join('');
+}
+function finish(){
+  const s=[...S.players].sort((a,b)=>teamTotal(b)-teamTotal(a));
+  const w=s[0];
+  $('champ').textContent=w.name;
+  const short=w.team.length<S.teamSize;
+  $('champ-sub').textContent='wins with '+fmt(teamTotal(w))+' million records across '
+    +w.team.length+(short?' of '+S.teamSize+' seats \u2014 a short team, but the right names':' signings');
+  // the biggest single catch of the night
+  let best=null,bestBy=null;
+  S.players.forEach(p=>p.team.forEach(a=>{if(!best||sold(a)>sold(best)){best=a;bestBy=p}}));
+  // and the one nobody took
+  const taken=new Set(S.players.flatMap(p=>p.team.map(a=>a[0])));
+  const played=S.deck.slice(0,S.round).filter(a=>!taken.has(a[0]));
+  const missed=played.sort((x,y)=>sold(y)-sold(x))[0];
+  $('final-board').innerHTML=board()
+    +(best?'<p class="note">Catch of the night: '+esc(bestBy.name)+' on '+esc(best[0])
+      +', '+fmt(sold(best))+'m.</p>':'')
+    +(missed?'<p class="note">The one that got away: '+esc(missed[0])+' walked out unsigned with '
+      +fmt(sold(missed))+'m.</p>':'');
+  $('meta').textContent='season over';
+  show('s-final');
+}
+$('restart').onclick=()=>{
+  S.players=S.players.map(p=>({name:p.name,icon:p.icon,team:[],blockUsed:false,id:p.id}));
+  S.deck=shuffle(CATALOG);S.round=0;nextRound();
+};
+
+/* ==================================================================
+   PARTY MODE — the chairs live on people's phones.
+   The stage screen owns the game; a phone is a button that says
+   "I want them". Messages travel through a public MQTT broker, so
+   nobody needs an account: the room code is the whole address.
+   ================================================================== */
+const BUILD='__BUILD__';
+try{$('buildtag').textContent='Version '+BUILD}catch(e){}
+const BROKERS=['wss://broker.emqx.io:8084/mqtt',
+               'wss://broker.hivemq.com:8884/mqtt',
+               'wss://test.mosquitto.org:8081/mqtt'];
+const CODE_LETTERS='ABCDEFGHJKLMNPQRSTUVWXYZ';   // no I, no O: they read as 1 and 0
+const MAX_CHAIRS=8;
+const PARTY={role:'solo',code:'',client:null,pid:'',seq:0,seen:{},stage:null,
+             joinTimer:null,pubTimer:null,formPlayers:null};
+
+const topicFor=(code,leaf)=>'thechair/v1/'+String(code).toLowerCase()+'/'+leaf;
+const partyLink=()=>location.origin+location.pathname;
+const joinLink=()=>partyLink()+'#'+PARTY.code;        // the link an invited guest follows
+function newCode(){let s='';for(let i=0;i<4;i++)s+=CODE_LETTERS[Math.floor(Math.random()*CODE_LETTERS.length)];return s}
+function cleanName(s){return String(s==null?'':s).replace(/[\u0000-\u001F\u007F]/g,'').trim().slice(0,14)}
+function screenNow(){const s=document.querySelector('.screen.on');return s?s.id:''}
+const PREP=['s-lobby','s-rules','s-go'];
+const inPrep=()=>PREP.indexOf(screenNow())>=0;    // still gathering: phones may join
+function mkPlayer(name,icon,id,pid,photo){
+  return {name:name,icon:(icon===undefined||icon===null?-1:icon),team:[],
+          blockUsed:false,passed:false,id:id,pid:pid||'',photo:photo||''};
+}
+const shownName=p=>((p&&p.name||'').trim())||('Coach '+(((p&&p.id)|0)+1));
+function nextPlayerId(){return S.players.reduce((n,p)=>Math.max(n,p.id+1),0)}
+function myPid(){
+  let v='';
+  try{v=localStorage.getItem('thechair.pid')||''}catch(e){}
+  if(!/^[A-Za-z0-9_-]{6,24}$/.test(v)){
+    v='c'+Math.random().toString(36).slice(2,10)+Math.random().toString(36).slice(2,6);
+    try{localStorage.setItem('thechair.pid',v)}catch(e){}
+  }
+  return v;
+}
+
+/* --- the connection. Three brokers, first one that answers wins. --- */
+function partyConnect(onUp,onFail,setStatus){
+  if(typeof mqtt==='undefined'){onFail('The connection code did not load. Reload the page.');return}
+  let i=0;
+  (function attempt(){
+    if(i>=BROKERS.length){onFail('No connection server answered. Check the network and try again.');return}
+    const url=BROKERS[i++];
+    setStatus('Connecting…','');
+    let settled=false,c=null;
+    const giveUp=()=>{if(settled)return;settled=true;try{c&&c.end(true)}catch(e){}attempt()};
+    try{
+      c=mqtt.connect(url,{clientId:'tc_'+Math.random().toString(36).slice(2,10),
+        keepalive:30,connectTimeout:6000,reconnectPeriod:0,clean:true,protocolVersion:4});
+    }catch(e){giveUp();return}
+    c.on('error',giveUp);
+    setTimeout(giveUp,7000);
+    c.on('connect',()=>{
+      if(settled)return;settled=true;
+      PARTY.client=c;
+      c.options.reconnectPeriod=3000;          // from here on, keep itself alive
+      setStatus('Connected','good');
+      c.on('close',()=>setStatus('Connection dropped — reconnecting…','bad'));
+      c.on('reconnect',()=>setStatus('Reconnecting…',''));
+      onUp(c);
+    });
+  })();
+}
+function partyEnd(){
+  if(PARTY.joinTimer){clearInterval(PARTY.joinTimer);PARTY.joinTimer=null}
+  if(PARTY.client){
+    try{
+      if(PARTY.role==='host'&&PARTY.code)
+        PARTY.client.publish(topicFor(PARTY.code,'stage'),'',{retain:true,qos:0});
+      if(PARTY.role==='chair'&&PARTY.code&&PARTY.pid)
+        PARTY.client.publish(topicFor(PARTY.code,'face/'+PARTY.pid),'',{retain:true,qos:0});
+      PARTY.client.end(true);
+    }catch(e){}
+  }
+  PARTY.client=null;PARTY.role='solo';PARTY.code='';PARTY.stage=null;PARTY.seen={};
+}
+
+
+
+/* ---- faces: a drawn avatar, or a photo someone sent from their phone ---- */
+const FACES={};                       // pid -> data url, arriving on its own channel
+function faceOf(p){return (p&&p.photo)||(p&&p.pid&&FACES[p.pid])||''}
+function backArt(p,cls){
+  const f=faceOf(p);
+  if(f)return '<img class="facepic" alt="" src="'+f+'">';
+  return (p&&p.icon>=0)?avatarSVG(p.icon,cls):'';
+}
+/* shrink whatever the camera gave us to a small square: a chair back is tiny,
+   and the message has to cross a public broker */
+function photoToSquare(file,px){
+  return new Promise((ok,no)=>{
+    if(!file||!/^image\//.test(file.type||''))return no(new Error('not an image'));
+    const fr=new FileReader();
+    fr.onerror=()=>no(new Error('could not read the file'));
+    fr.onload=()=>{
+      const img=new Image();
+      img.onerror=()=>no(new Error('could not open the picture'));
+      img.onload=()=>{
+        const side=Math.min(img.width,img.height);
+        const cv=document.createElement('canvas');cv.width=px;cv.height=px;
+        const g=cv.getContext('2d');
+        g.drawImage(img,(img.width-side)/2,(img.height-side)/2,side,side,0,0,px,px);
+        let q=0.72,url=cv.toDataURL('image/jpeg',q);
+        while(url.length>60000&&q>0.35){q-=0.12;url=cv.toDataURL('image/jpeg',q)}
+        ok(url);
+      };
+      img.src=fr.result;
+    };
+    fr.readAsDataURL(file);
+  });
+}
+
+/* ================= friends =================
+   Names this browser remembers, so nobody retypes them every night.
+   A phone number is optional and only ever used to open WhatsApp with
+   the invitation already written. Nothing leaves this browser. */
+let FRIENDS=[];
+try{FRIENDS=JSON.parse(localStorage.getItem('thechair.friends')||'[]')}catch(e){FRIENDS=[]}
+if(!Array.isArray(FRIENDS))FRIENDS=[];
+function saveFriends(){try{localStorage.setItem('thechair.friends',JSON.stringify(FRIENDS))}catch(e){}}
+function addFriend(name,invite){
+  name=cleanName(name);if(!name)return null;
+  let f=FRIENDS.find(x=>x.name.toLowerCase()===name.toLowerCase());
+  if(!f){f={name:name,on:!!invite};FRIENDS.push(f)}
+  saveFriends();return f;
+}
+
+/* the lobby list and the friends list have to agree with each other */
+function releaseChair(name){
+  if(!name)return;
+  const n=String(name).toLowerCase();
+  const before=S.players.length;
+  S.players=S.players.filter(p=>!(p.reserved&&!p.pid&&p.name.toLowerCase()===n));
+  if(S.players.length!==before){
+    S.players.forEach((p,i)=>{p.id=i});
+    drawLobbyList();publishStage();
+  }
+}
+function holdChair(f){
+  if(!f||!inPrep())return;
+  if(S.players.some(p=>p.name.toLowerCase()===f.name.toLowerCase()))return;
+  if(S.players.length>=MAX_CHAIRS)return;
+  const p=mkPlayer(f.name,S.players.length*3%AVATAR_COUNT,nextPlayerId(),'');
+  p.reserved=true;S.players.push(p);
+  drawLobbyList();publishStage();
+}
+function forgetFriends(){
+  const names=FRIENDS.map(f=>f.name);
+  FRIENDS.length=0;saveFriends();drawFriends();
+  names.forEach(releaseChair);
+}
+
+function drawFriends(){
+  const box=$('friends-list');if(!box)return;
+  box.innerHTML=FRIENDS.map((f,i)=>
+    '<span class="friend'+(f.on?' on':'')+'" data-f="'+i+'" role="button" tabindex="0">'
+    +'<span class="tick">'+(f.on?'✓':'·')+'</span>'
+    +esc(f.name)
+    +'<button class="drop" data-drop="'+i+'" aria-label="Forget '+esc(f.name)+'">×</button>'
+    +'</span>').join('');
+  const n=FRIENDS.filter(f=>f.on).length;
+  $('friends-note').textContent=FRIENDS.length
+    ? (n?n+' invited — their chairs are held in the lobby until they join.'
+        :'Tap a name to invite them tonight.')
+    : 'Save the people you play with. Their chair waits for them, and they join by tapping their own name.';
+}
+$('friend-add')&&($('friend-add').onclick=()=>{
+  const f=addFriend($('friend-name').value,true);     // typed now, so invited now
+  if(!f)return;
+  $('friend-name').value='';
+  f.on=true;saveFriends();drawFriends();
+});
+$('friend-clear')&&($('friend-clear').onclick=forgetFriends);
+$('friend-name')&&($('friend-name').addEventListener('keydown',e=>{if(e.key==='Enter')$('friend-add').click()}));
+$('friends-list')&&($('friends-list').addEventListener('click',e=>{
+  const d=e.target.closest('button[data-drop]');
+  if(d){
+    const gone=FRIENDS.splice(+d.dataset.drop,1)[0];
+    saveFriends();drawFriends();releaseChair(gone&&gone.name);
+    return;
+  }
+  const c=e.target.closest('[data-f]');
+  if(!c)return;
+  const f=FRIENDS[+c.dataset.f];if(!f)return;
+  f.on=!f.on;saveFriends();drawFriends();
+  if(f.on)holdChair(f); else releaseChair(f.name);
+}));
+drawFriends();
+
+/* the invitation itself */
+function inviteText(name){
+  return (name?name+', join':'Join')+' my game of The Chair: '
+    +joinLink()+'  — room code '+PARTY.code;
+}
+function sendInvite(seat){
+  const txt=inviteText(seat.name);
+  try{navigator.clipboard.writeText(txt).then(
+    ()=>lobbyStatus('Invitation for '+seat.name+' copied','good'),
+    ()=>lobbyStatus(txt,''));
+  }catch(e){lobbyStatus(txt,'')}
+}
+
+/* ================= the stage screen, hosting ================= */
+function lobbyStatus(msg,cls){
+  const el=$('lobby-status');if(!el)return;
+  el.textContent=msg;el.className='conn'+(cls?' '+cls:'');
+}
+function openLobby(){
+  // the name rows live in the lobby now, so one list is edited in place
+  S.players=S.players.filter(p=>!p.pid&&!p.reserved)
+    .map((p,i)=>p.team?p:mkPlayer(p.name||'',p.icon,i,'',p.photo));
+  S.players.forEach((p,i)=>{p.id=i;p.team=[];p.blockUsed=false;p.passed=false});
+  // a new game always starts empty: tap a friend to hold a chair for tonight
+  FRIENDS.forEach(f=>{f.on=false});saveFriends();drawFriends();
+  PARTY.role='host';PARTY.code=newCode();PARTY.seen={};
+  $('lobby-code').textContent=PARTY.code;
+  $('lobby-link').textContent=joinLink();
+  drawLobbyQR();drawLobbyList();
+  show('s-lobby');
+  partyConnect(c=>{
+    c.subscribe([topicFor(PARTY.code,'join'),topicFor(PARTY.code,'act'),
+                 topicFor(PARTY.code,'face/+')],{qos:0});
+    c.on('message',onHostMessage);
+    lobbyStatus('Room open — waiting for phones','good');
+    publishStage();
+  },msg=>lobbyStatus(msg,'bad'),lobbyStatus);
+}
+function closeLobby(){
+  partyEnd();
+  S.players=S.players.filter(p=>!p.pid&&!p.reserved);   // the phones are not here any more
+  if(!S.players.length)S.players=[mkPlayer('',0,0,'')];
+  drawPlayers();validate();show('s-setup');
+}
+
+
+/* ==================================================================
+   NAME THE ARTIST — the record plays behind a closed curtain, four
+   names on every phone, and the curtain lifts once everyone has said.
+   ================================================================== */
+const Q={on:false,round:0,of:10,deck:[],current:null,options:[],correct:0,
+         answers:{},order:[],revealed:false,timer:null};
+
+function quizStart(){
+  const p=pool().filter(a=>videoFor(a));          // no video, no question
+  Q.of=Math.min(S.len||10,p.length);
+  Q.deck=shuffle(p).slice(0,Q.of);
+  Q.round=0;Q.on=true;
+  S.players.forEach(pl=>{pl.score=0});
+  quizNext();
+}
+function quizNext(){
+  if(Q.round>=Q.deck.length){quizFinish();return}
+  clearTimeout(Q.timer);
+  Q.current=Q.deck[Q.round++];
+  Q.answers={};Q.order=[];Q.revealed=false;
+  // three names that are not the answer, from the same corner of the catalogue
+  const near=CATALOG.filter(a=>a!==Q.current&&a[4]===Q.current[4]);
+  const far=CATALOG.filter(a=>a!==Q.current&&a[4]!==Q.current[4]);
+  const wrong=shuffle(near).slice(0,3);
+  while(wrong.length<3){const c=shuffle(far)[0];if(c&&wrong.indexOf(c)<0)wrong.push(c)}
+  Q.options=shuffle([Q.current].concat(wrong));
+  Q.correct=Q.options.indexOf(Q.current);
+  $('q-curtain').classList.remove('open');
+  $('q-curtain').textContent='Curtain closed';
+  $('q-next').textContent='Reveal';
+  showQuizVideo(videoFor(Q.current));
+  drawQuiz();publishStage();
+}
+function showQuizVideo(id){
+  const box=$('q-screen');if(!box)return;
+  if(!SERVED||!/^[\w-]{11}$/.test(id||'')){
+    box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
+    return;
+  }
+  box.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id
+    +'?autoplay=1&rel=0&playsinline=1&controls=0&modestbranding=1" title="The record"'
+    +' allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+}
+function quizAnswer(player,idx){
+  if(!Q.on||Q.revealed||!player)return;
+  if(player.id in Q.answers)return;              // one answer each, no changing it
+  if(!(idx>=0&&idx<4))return;
+  Q.answers[player.id]=idx;Q.order.push(player.id);
+  drawQuiz();publishStage();
+  if(S.players.every(p=>p.id in Q.answers))quizReveal();
+}
+function quizReveal(){
+  if(Q.revealed)return;
+  Q.revealed=true;
+  // ten points for the right name, five more for being first to it
+  const firstRight=Q.order.find(id=>Q.answers[id]===Q.correct);
+  S.players.forEach(p=>{
+    if(Q.answers[p.id]===Q.correct)p.score=(p.score||0)+10+(p.id===firstRight?5:0);
+  });
+  $('q-curtain').classList.add('open');
+  $('q-next').textContent=Q.round>=Q.deck.length?'See the winner':'Next record';
+  drawQuiz();publishStage();
+  clearTimeout(Q.timer);
+  Q.timer=setTimeout(()=>{if(Q.revealed&&Q.on)quizNext()},10000);   // ten seconds of the video
+}
+function quizFinish(){
+  Q.on=false;clearTimeout(Q.timer);
+  try{$('final-eyebrow').textContent='Sharpest ear'}catch(e){}
+  const box=$('q-screen');if(box)box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
+  const best=[...S.players].sort((a,b)=>(b.score||0)-(a.score||0));
+  const top=best[0]?(best[0].score||0):0;
+  const won=best.filter(p=>(p.score||0)===top);
+  $('champ').textContent=won.length>1?'A tie':shownName(won[0]||{});
+  $('champ-sub').textContent=won.length>1
+    ? won.map(shownName).join(' and ')+' both finished on '+top+' points.'
+    : top+' points out of '+(Q.deck.length*15)+'.';
+  $('final-board').innerHTML='<div class="board">'+best.map((p,i)=>
+    '<div class="brow"><span class="bn">'+(i+1)+'. '+esc(shownName(p))+'</span>'
+    +'<span class="bv">'+(p.score||0)+' pts</span></div>').join('')+'</div>';
+  try{$('meta').textContent='game over'}catch(e){}
+  publishStage();show('s-final');
+}
+function drawQuiz(){
+  if(!Q.current)return;
+  $('q-count').textContent='Record '+Q.round+' of '+Q.deck.length;
+  $('q-ask').textContent=Q.revealed
+    ? Q.current[0]+' — '+trackOf(Q.current)+', '+yearOf(Q.current)
+    : 'Who is this?';
+  if(Q.revealed)$('q-curtain').textContent='';
+  $('q-options').innerHTML=Q.options.map((a,i)=>{
+    const cls=Q.revealed?(i===Q.correct?' right':' wrong'):'';
+    return '<button class="qbtn'+cls+'" data-opt="'+i+'"'+(Q.revealed?' disabled':'')+'>'
+      +'<span class="key">'+'ABCD'[i]+'</span><span class="t">'+esc(a[0])+'</span></button>';
+  }).join('');
+  $('q-scores').innerHTML=S.players.map(p=>{
+    const said=p.id in Q.answers;
+    const right=Q.revealed&&Q.answers[p.id]===Q.correct;
+    return '<span class="qsc'+(said?' done':' waiting')+'">'
+      +'<span class="av">'+backArt(p,'qav')+'</span>'+esc(shownName(p))
+      +' <b>'+(p.score||0)+'</b>'+(right?' ✓':'')+'</span>';
+  }).join('');
+}
+$('q-options')&&($('q-options').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-opt]');if(!b)return;
+  // on the big screen the host answers for whoever is sitting there
+  const here=S.players.filter(p=>!p.pid);
+  const me=here.find(p=>!(p.id in Q.answers));
+  if(me)quizAnswer(me,+b.dataset.opt);
+}));
+$('q-next')&&($('q-next').onclick=()=>{
+  if(!Q.revealed)quizReveal();
+  else if(Q.round>=Q.deck.length)quizFinish();
+  else quizNext();
+});
+$('q-quit')&&($('q-quit').onclick=()=>{Q.on=false;clearTimeout(Q.timer);quizFinish()});
+
+/* --- the last look before the first record --- */
+function drawGo(){
+  const box=$('go-list');if(!box)return;
+  const here=S.players.filter(p=>!p.reserved||p.pid).length;
+  const away=S.players.length-here;
+  box.innerHTML=S.players.map(p=>{
+    const present=!p.reserved||!!p.pid;
+    return '<div class="gorow'+(present?'':' away')+'">'
+      +'<div class="av">'+backArt(p,'gav')+'</div>'
+      +'<div class="who">'+esc(shownName(p))+'</div>'
+      +'<div class="st'+(present?' here':'')+'">'+(present?'HERE':'NOT HERE YET')+'</div>'
+      +'</div>';
+  }).join('')||'<p class="lobbyempty">Nobody has a chair yet.</p>';
+  const g=$('go-sum');
+  if(g)g.innerHTML='<b>'+here+'</b> '+(here===1?'chair':'chairs')+' ready'
+    +(away?', <b>'+away+'</b> still missing':'')
+    +' · <b>'+(S.genre==='Any'?'all genres':(GENRE_LABEL[S.genre]||S.genre))+'</b>'
+    +' from <b>'+(S.era||'any year')+'</b>'
+    +' · <b>'+(S.len||'enough')+'</b> auditions'
+    +' · <b>'+S.teamSize+'</b> per team';
+  const n=$('go-note');
+  if(n)n.textContent=away
+    ? 'You can start without them — the chairs nobody took are simply left out.'
+    : 'Everyone is in. The first record is waiting.';
+}
+
+function drawLobbyQR(){
+  const box=$('lobby-qr');if(!box)return;
+  if(typeof qrcode==='undefined'){
+    box.className='qrbox empty';
+    box.textContent='Open '+joinLink()+' on the phone.';
+    return;
+  }
+  try{
+    const q=qrcode(0,'M');q.addData(joinLink());q.make();
+    box.className='qrbox';
+    box.innerHTML=q.createSvgTag({cellSize:4,margin:1,scalable:true});
+  }catch(e){
+    box.className='qrbox empty';
+    box.textContent='Open '+joinLink()+' on the phone.';
+  }
+}
+function drawLobbyList(){
+  const box=$('lobby-list');if(!box)return;
+  const taken=S.players.filter(p=>!p.reserved||p.pid);
+  const held=S.players.filter(p=>p.reserved&&!p.pid);
+  let h='';
+  if(!taken.length)h+='<p class="lobbyempty">Nobody has sat down yet. Scan the code, or send '
+      +esc(joinLink())+' — the link already carries the room.</p>';
+  else h+=taken.map(p=>
+      '<div class="joinrow">'
+      +'<div class="av">'+backArt(p,'lav')+'</div>'
+      +'<div class="who">'+esc(shownName(p))+'</div>'
+      +'<div class="tag'+(p.pid?' live':'')+'">'+(p.pid?'PHONE':'THIS SCREEN')+'</div>'
+      +'</div>').join('');
+  if(held.length)
+    h+='<div class="heldhead">Holding a chair for</div>'
+      +held.map(p=>
+        '<div class="joinrow waiting">'
+        +'<div class="av">'+backArt(p,'lav')+'</div>'
+        +'<div class="who">'+esc(shownName(p))+'</div>'
+        +'<button class="send" data-invite="'+S.players.indexOf(p)+'">COPY INVITE</button>'
+        +'<button class="send drop" data-free="'+S.players.indexOf(p)+'">×</button>'
+        +'</div>').join('');
+  box.innerHTML=h;
+}
+
+
+/* a face message carries the picture itself, not JSON */
+function facePid(t){
+  const head=topicFor(PARTY.code,'face/');
+  return String(t).indexOf(head)===0?String(t).slice(head.length):null;
+}
+function takeFace(pid,url){
+  if(!/^[A-Za-z0-9_-]{6,24}$/.test(pid))return;
+  if(url&&!/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(url))return;
+  if(url&&url.length>90000)return;                 // nothing that big belongs here
+  if(url)FACES[pid]=url; else delete FACES[pid];
+  if(PARTY.role==='host'){
+    if(inPrep()){drawLobbyList();drawGo()} else drawSeats();
+  }else if(PARTY.stage){padSig='';drawPad()}
+}
+
+function onHostMessage(t,payload){
+  const face=facePid(t);
+  if(face!==null){takeFace(face,payload.toString());return}
+  let m=null;
+  try{m=JSON.parse(payload.toString())}catch(e){return}
+  if(!m||typeof m!=='object')return;
+  if(t===topicFor(PARTY.code,'join'))hostJoin(m);
+  else if(t===topicFor(PARTY.code,'act'))hostAct(m);
+}
+function hostJoin(m){
+  const pid=String(m.pid||'');
+  if(!/^[A-Za-z0-9_-]{6,24}$/.test(pid))return;
+  const name=cleanName(m.name);
+  const icon=(typeof m.icon==='number'&&m.icon>=0&&m.icon<AVATAR_COUNT)?Math.floor(m.icon):0;
+  let p=S.players.find(x=>x.pid===pid);
+  if(p){                                   // already seated: they renamed or reloaded
+    if(name)p.name=name;
+    p.icon=icon;
+    drawLobbyList();publishStage();return;
+  }
+  // a chair held for this name is theirs, whether they tapped it or typed it
+  const held=S.players.find(x=>x.reserved&&!x.pid
+    &&(x.id===m.claim||(name&&x.name.toLowerCase()===name.toLowerCase())));
+  if(held&&inPrep()){
+    held.pid=pid;held.icon=icon;if(name)held.name=name;
+    drawLobbyList();publishStage();return;
+  }
+  if(p){}
+  else if(screenNow()!=='s-lobby'){
+    publishStage();return;                 // the season has begun; the teams are set
+  }else if(S.players.length>=MAX_CHAIRS){
+    publishStage();return;
+  }else{
+    p=mkPlayer(name||('Coach '+(S.players.length+1)),icon,nextPlayerId(),pid);
+    S.players.push(p);
+  }
+  drawLobbyList();drawGo();
+  if(!inPrep())drawSeats();
+  publishStage();
+}
+function hostAct(m){
+  const pid=String(m.pid||'');
+  const p=S.players.find(x=>x.pid&&x.pid===pid);
+  if(!p)return;
+  const seq=+m.seq||0;
+  if(seq<=(PARTY.seen[pid]||0))return;     // a repeat of something already done
+  PARTY.seen[pid]=seq;
+  if(m.type==='answer'){                   // Name the Artist: four names, one tap
+    quizAnswer(p,+m.target);
+    return;
+  }
+  if(m.type==='hold'){                     // anyone may stop the clock between acts
+    if(autoLeft>0){
+      stopAutoNext();
+      $('turnline').textContent=p.name+' held it. Press Next audition when you are ready.';
+    }
+    return;
+  }
+  if(!turnsOpen||winner)return;
+  if((+m.round||0)!==S.round)return;       // a tap that arrived after its audition
+  if(m.type==='sign'){
+    if(full(p)||p.passed||blockTarget===p.id)return;
+    claim(p);
+  }else if(m.type==='skip'){
+    if(full(p)||p.passed)return;
+    p.passed=true;
+    $('turnline').textContent=p.name+' skipped.';
+    drawSeats();checkAllSkipped();
+  }else if(m.type==='block'){
+    const at=S.players.find(x=>x.id===m.target);
+    if(!at||at.id===p.id||p.blockUsed||blockTarget!==null)return;
+    blockTarget=at.id;blockOwner=p.id;p.blockUsed=true;
+    $('turnline').textContent=p.name+' blocked '+at.name+'.';
+    drawSeats();drawMoney();checkAllSkipped();
+  }
+}
+
+function quizState(phase){
+  return {v:1,game:'artist',phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
+    round:Q.round,of:Q.deck.length,revealed:!!Q.revealed,
+    correct:Q.revealed?Q.correct:-1,
+    act:Q.revealed&&Q.current?{name:Q.current[0],track:trackOf(Q.current),year:yearOf(Q.current)}:null,
+    options:Q.options.map(a=>a[0]),
+    seats:S.players.map(p=>({id:p.id,pid:p.pid||'',name:p.name,icon:p.icon,
+      said:(p.id in Q.answers),pick:Q.revealed?(p.id in Q.answers?Q.answers[p.id]:-1):-1,
+      score:p.score||0,team:[],passed:false,full:false,blockUsed:false,total:p.score||0,
+      reserved:false}))};
+}
+function stageState(){
+  const a=S.current;
+  const revealed=!!a&&!turnsOpen&&(!!winner||walked);
+  const phase=inPrep()?'lobby'
+    :screenNow()==='s-final'?'over'
+    :turnsOpen?'live':revealed?'locked':'between';
+  if(S.game==='artist'&&screenNow()!=='s-lobby'&&screenNow()!=='s-rules'&&screenNow()!=='s-go')
+    return quizState(phase);
+  return {v:1,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
+    blockTarget:(blockTarget===null?null:blockTarget),
+    blockOwner:(blockOwner===null?null:blockOwner),
+    winner:winner?winner.id:null,
+    act:revealed&&a?{name:a[0],track:trackOf(a),year:yearOf(a),sold:sold(a)}:null,
+    vid:(a&&turnsOpen&&videoShown)?videoFor(a):'',    // same record, on every screen
+    next:autoLeft,
+    seats:S.players.map(p=>({id:p.id,pid:p.pid||'',name:p.name,icon:p.icon,
+      reserved:!!(p.reserved&&!p.pid),
+      passed:!!p.passed,full:full(p),blockUsed:!!p.blockUsed,total:teamTotal(p),
+      team:p.team.map(x=>({n:x[0],m:sold(x)}))}))};
+}
+function publishStage(){
+  if(PARTY.role!=='host'||!PARTY.client)return;
+  if(PARTY.pubTimer)return;                 // coalesce a burst into one message
+  PARTY.pubTimer=setTimeout(()=>{
+    PARTY.pubTimer=null;
+    if(PARTY.role!=='host'||!PARTY.client)return;
+    try{PARTY.client.publish(topicFor(PARTY.code,'stage'),JSON.stringify(stageState()),
+      {retain:true,qos:0})}catch(e){}
+  },70);
+}
+
+/* ================= a phone, being a chair ================= */
+let padIcon=0;
+function joinStatus(msg,cls){
+  const el=$('join-status');if(el){el.textContent=msg;el.className='conn'+(cls?' '+cls:'')}
+  const el2=$('pad-status');if(el2){el2.textContent=msg;el2.className='conn'+(cls?' '+cls:'')}
+}
+function drawAvatarPicker(){
+  const box=$('join-av');if(!box)return;
+  let h='';
+  for(let i=0;i<Math.min(AVATAR_COUNT,8);i++)
+    h+='<button type="button" data-av="'+i+'" class="'+(i===padIcon?'sel':'')+'" '
+      +'aria-label="Face '+(i+1)+'">'+avatarSVG(i,'pav')+'</button>';
+  box.innerHTML=h;
+}
+function openChairScreen(){
+  padIcon=0;drawAvatarPicker();
+  $('chair-join').hidden=false;$('chair-pad').hidden=true;
+  joinStatus('','');
+  show('s-chair');
+}
+function chairJoin(){
+  const code=($('join-code').value||'').toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);
+  const name=cleanName($('join-name').value);
+  if(code.length!==4){joinStatus('The code is four letters.','bad');return}
+  if(PARTY.client&&!name){joinStatus('Type your name first.','bad');return}
+  PARTY.role='chair';PARTY.code=code;PARTY.pid=myPid();PARTY.seq=0;
+  $('join-go').disabled=true;
+  partyConnect(c=>{
+    $('join-go').disabled=false;
+    c.subscribe([topicFor(code,'stage'),topicFor(code,'face/+')],{qos:0});
+    c.on('message',(t,payload)=>{
+      const face=facePid(t);
+      if(face!==null){takeFace(face,payload.toString());return}
+      let m=null;try{m=JSON.parse(payload.toString())}catch(e){return}
+      if(!m||typeof m!=='object'||!Array.isArray(m.seats))return;
+      PARTY.stage=m;
+      if(!mySeat()&&m.phase==='lobby'){
+        drawJoinChips(m);                        // a chair may be waiting under a name
+        if(!cleanName($('join-name').value)){    // nobody has said who this is yet
+          $('chair-join').hidden=false;$('chair-pad').hidden=true;
+          joinStatus('Room '+PARTY.code+' found \u2014 tell them who you are.','good');
+          return;
+        }
+      }
+      $('chair-join').hidden=true;$('chair-pad').hidden=false;
+      drawPad();
+    });
+    if(name)sendJoin(name);
+    if(myFace)publishFace();
+    PARTY.joinTimer=setInterval(()=>{
+      const n=cleanName($('join-name').value);
+      if(!mySeat()&&n)sendJoin(n,PARTY.claim)
+    },2500);
+    joinStatus('Connected — looking for room '+code,'good');
+  },msg=>{$('join-go').disabled=false;joinStatus(msg,'bad')},joinStatus);
+}
+function sendJoin(name,claim){
+  if(!PARTY.client)return;
+  try{PARTY.client.publish(topicFor(PARTY.code,'join'),
+    JSON.stringify({pid:PARTY.pid,name:name||'',icon:padIcon,
+      claim:(claim===undefined?null:claim)}),{qos:0})}catch(e){}
+}
+/* the host is holding chairs under names: offer them instead of typing */
+function drawJoinChips(st){
+  const box=$('join-chips');if(!box)return false;
+  const held=st.seats.filter(sv=>sv.reserved);
+  const typed=cleanName($('join-name').value);
+  if(!held.length||typed){box.hidden=true;return false}
+  box.hidden=false;
+  box.innerHTML='<p class="pool thin" style="flex:1 1 100%;margin:0 0 2px">Which one are you?</p>'
+    +held.map(sv=>'<button type="button" data-claim="'+sv.id+'">'+esc(sv.name)+'</button>').join('');
+  return true;    // stay on the join screen until they say who they are
+}
+function mySeat(){
+  const st=PARTY.stage;if(!st)return null;
+  return st.seats.find(s=>s.pid===PARTY.pid)||null;
+}
+function sendAct(type,target){
+  const st=PARTY.stage;
+  if(!PARTY.client||!st)return;
+  PARTY.seq++;
+  try{PARTY.client.publish(topicFor(PARTY.code,'act'),
+    JSON.stringify({pid:PARTY.pid,seq:PARTY.seq,type:type,
+      target:(target===undefined?null:target),round:st.round}),{qos:0})}catch(e){}
+}
+
+/* --- the row of chairs as a joined device sees it: yours lit, the rest dim,
+       and everyone's chair swivels the moment they turn --- */
+let padSig='';
+function padSeatHTML(sv,st,mine){
+  const turned=st.winner===sv.id;
+  const cls=(turned?' turned':'')+(st.blockTarget===sv.id?' blocked':'')
+    +(sv.full?' done':'')+(mine?' mine':'');
+  const tag=turned?'GOT THEM':st.blockTarget===sv.id?'BLOCKED'
+    :sv.full?'TEAM FULL':sv.passed?'SKIPPED':'';
+  const initial=esc((String(sv.name||'?').charAt(0)||'?').toUpperCase());
+  return '<div class="chair'+cls+'" data-seat="'+sv.id+'">'
+    +'<div class="rig"><div class="swivel">'
+      +'<div class="cback">'+backArt({icon:sv.icon,pid:sv.pid},'ps'+sv.id)+'</div>'
+      +'<div class="cfront"><div class="cushion"><b>'+initial+'</b></div>'
+        +'<div class="armr"></div><div class="arml"></div><div class="pad"></div></div>'
+    +'</div><div class="stem"></div><div class="foot"></div></div>'
+    +'<div class="nm">'+esc(sv.name)+(mine?' <b class="youtag">YOU</b>':'')+'</div>'
+    +'<div class="slots">'+'\u25cf'.repeat(sv.team.length)
+      +'\u25cb'.repeat(Math.max(0,st.teamSize-sv.team.length))+'</div>'
+    +'<div class="ptag"'+(tag?'':' hidden')+'>'+(tag||'')+'</div>'
+    +'</div>';
+}
+function drawPadSeats(st,me){
+  const box=$('pad-seats');if(!box)return;
+  const sig=st.seats.map(s=>s.id+':'+s.name+':'+s.icon).join('|');
+  if(sig!==padSig){                     // the room changed, so build it again
+    padSig=sig;
+    box.innerHTML=st.seats.map(sv=>padSeatHTML(sv,st,!!me&&sv.id===me.id)).join('');
+    return;
+  }
+  // same people: touch only what changed, so a chair keeps swivelling
+  st.seats.forEach(sv=>{
+    const el=box.querySelector('[data-seat="'+sv.id+'"]');if(!el)return;
+    const turned=st.winner===sv.id;
+    el.classList.toggle('turned',turned);
+    el.classList.toggle('blocked',st.blockTarget===sv.id);
+    el.classList.toggle('done',!!sv.full);
+    el.classList.toggle('mine',!!me&&sv.id===me.id);
+    const tag=turned?'GOT THEM':st.blockTarget===sv.id?'BLOCKED'
+      :sv.full?'TEAM FULL':sv.passed?'SKIPPED':'';
+    const t=el.querySelector('.ptag');
+    if(t){t.textContent=tag;t.hidden=!tag}
+    const sl=el.querySelector('.slots');
+    if(sl)sl.textContent='\u25cf'.repeat(sv.team.length)
+      +'\u25cb'.repeat(Math.max(0,st.teamSize-sv.team.length));
+  });
+}
+
+/* the same record on the phone, muted: in one room the television carries the
+   sound, and a browser will not autoplay with sound anyway */
+let padVid='',padSound=true;        // on unless this device says otherwise
+try{const v=localStorage.getItem('thechair.padsound');if(v!==null)padSound=(v==='1')}catch(e){}
+function setPadSound(on){
+  padSound=!!on;
+  try{localStorage.setItem('thechair.padsound',padSound?'1':'0')}catch(e){}
+  const box=$('join-sound');
+  if(box)[...box.querySelectorAll('button')].forEach(b=>
+    b.classList.toggle('sel',(b.dataset.s==='1')===padSound));
+  padVid='';                         // bring the player back with the new setting
+  if(PARTY.stage)drawPadScreen(PARTY.stage);
+}
+$('join-sound')&&($('join-sound').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-s]');if(!b)return;
+  setPadSound(b.dataset.s==='1');
+}));
+function drawPadScreen(st){
+  const box=$('pad-screen');if(!box)return;
+  const want=(st&&st.phase==='live'&&st.vid)?String(st.vid):'';
+  const key=want+'|'+(padSound?'1':'0');
+  if(key===padVid)return;
+  padVid=key;
+  if(!want||!/^[\w-]{11}$/.test(want)){box.hidden=true;box.innerHTML='';return}
+  box.hidden=false;
+  box.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+want
+    +'?autoplay=1&mute='+(padSound?'0':'1')+'&rel=0&playsinline=1&controls=1" title="The record"'
+    +' allow="autoplay; encrypted-media; fullscreen"'
+    +' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+    +'<button class="soundbtn" id="pad-sound">'
+    +(padSound?'\ud83d\udd0a SOUND ON':'\ud83d\udd07 MUTED \u2014 TAP FOR SOUND')+'</button>';
+}
+/* one tap decides it for the rest of the night */
+document.addEventListener('click',e=>{
+  if(!e.target.closest||!e.target.closest('#pad-sound'))return;
+  setPadSound(!padSound);
+});
+
+/* --- the phone, when the game is Name the Artist --- */
+function drawPadQuiz(st,me){
+  const box=$('pad-quiz');if(!box)return;
+  const chairBits=['pad-sign','pad-skip','pad-blocks','pad-hold','pad-team','pad-teamhead'];
+  chairBits.forEach(id=>{const e=$(id);if(e)e.hidden=true});
+  box.hidden=false;
+  const mine=me?me.pick:-1, said=me?me.said:false;
+  $('pad-round').textContent=st.phase==='over'?'That is the game'
+    :'Record '+st.round+' of '+st.of;
+  $('pad-state').textContent=st.phase==='lobby'?'You are in. Watch the big screen.'
+    :st.revealed&&st.act?(mine===st.correct?'Right — '+st.act.name:'It was '+st.act.name)
+    :said?'Locked in. Waiting for the others…'
+    :'Who is this?';
+  box.innerHTML=(st.options||[]).map((t,i)=>{
+    const cls=st.revealed?(i===st.correct?' right':(i===mine?' wrong':'')):(i===mine?' mine':'');
+    return '<button class="qbtn'+cls+'" data-ans="'+i+'"'+((said||st.revealed)?' disabled':'')+'>'
+      +'<span class="key">'+'ABCD'[i]+'</span><span class="t">'+esc(t)+'</span></button>';
+  }).join('');
+}
+$('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-ans]');if(!b||b.disabled)return;
+  [...$('pad-quiz').querySelectorAll('button')].forEach(x=>x.disabled=true);
+  sendAct('answer',+b.dataset.ans);
+}));
+function drawPad(){
+  const st=PARTY.stage,me=mySeat();
+  const sign=$('pad-sign'),skip=$('pad-skip');
+  if(!st)return;
+  if(st.game==='artist'){
+    drawPadScreen({phase:'',vid:''});          // the curtain is the host's business
+    drawPadSeats(st,me);drawPadQuiz(st,me);
+    return;
+  }
+  const qb=$('pad-quiz');if(qb)qb.hidden=true;
+  ['pad-sign','pad-skip','pad-team','pad-teamhead'].forEach(id=>{const e=$(id);if(e)e.hidden=false});
+  if(!me){
+    $('pad-round').textContent='Room '+PARTY.code;
+    $('pad-state').textContent=st.phase==='lobby'
+      ?'Asking for a chair…'
+      :'The season already started, so there is no free chair. Ask the host for a new game.';
+    drawPadSeats(st,null);
+    sign.disabled=true;skip.disabled=true;$('pad-blocks').innerHTML='';
+    $('pad-team').innerHTML='';
+    return;
+  }
+  const live=st.phase==='live';
+  const blocked=st.blockTarget===me.id;
+  const out=me.full||me.passed||blocked;
+  const iWon=st.winner===me.id;
+
+  $('pad-round').textContent=st.phase==='lobby'?'Room '+PARTY.code+' · waiting to start'
+    :'Audition '+st.round+' of '+st.of;
+
+  if(st.phase==='lobby'){
+    const n=st.seats.length;
+    $('pad-state').textContent='You are in. '+n+(n===1?' chair':' chairs')
+      +' so far \u2014 waiting for the host to start.';
+  }
+  else if(live&&blocked)$('pad-state').textContent='Blocked this round. Hands off.';
+  else if(live&&me.full)$('pad-state').textContent='Your team is full. You are out of the running.';
+  else if(live&&me.passed)$('pad-state').textContent='You skipped this one.';
+  else if(live)$('pad-state').textContent='Listen. First chair to turn gets them.';
+  else if(st.phase==='locked'&&st.act)
+    $('pad-state').textContent=(iWon?'You signed ':'')+st.act.name+' — '+st.act.sold+'m records.'
+      +(st.next>0?'   Next in '+st.next+'…':'');
+  else if(st.phase==='over')$('pad-state').textContent='That is the season. Look at the big screen.';
+  else $('pad-state').textContent='Waiting for the next audition…';
+
+  drawPadScreen(st);
+  drawPadSeats(st,me);
+  sign.disabled=!live||out||st.winner!==null;
+  sign.textContent=iWon?'YOU GOT THEM':blocked?'BLOCKED':me.full?'TEAM FULL':'SIGN THEM';
+  skip.hidden=!!me.full;                   // TEAM FULL on the big button says it already
+  skip.disabled=!live||out||st.winner!==null;
+  skip.textContent=me.passed?'SKIPPED':'SKIP';
+
+  const hold=$('pad-hold');
+  if(hold)hold.hidden=!(st.next>0);
+  const canBlock=live&&!me.blockUsed&&st.blockTarget===null&&st.winner===null&&!me.full;
+  $('pad-blocks').innerHTML=st.seats.filter(s=>s.id!==me.id).map(s=>
+    '<button data-block="'+s.id+'"'+(canBlock?'':' disabled')+'>BLOCK '
+    +esc(String(s.name).toUpperCase())+'</button>').join('')
+    +(me.blockUsed?'<button disabled>BLOCK SPENT</button>':'');
+
+  $('pad-teamhead').textContent='Your team · '+me.total+'m';
+  const slots=[];
+  me.team.forEach(t=>slots.push('<div class="line"><span>'+esc(t.n)+'</span><span>'+t.m+'m</span></div>'));
+  for(let i=me.team.length;i<st.teamSize;i++)
+    slots.push('<div class="line open"><span>open</span><span>—</span></div>');
+  $('pad-team').innerHTML=slots.join('');
+}
+
+
+/* --- my own face, on my own chair ------------------------------------ */
+let myFace='';
+try{myFace=localStorage.getItem('thechair.myface')||''}catch(e){}
+function drawMyFace(){
+  const box=$('face-now');if(!box)return;
+  box.hidden=!myFace;
+  box.innerHTML=myFace?'<img class="facepic" alt="" src="'+myFace+'">':'';
+  const c=$('face-clear');if(c)c.hidden=!myFace;
+  const b=$('face-pick');if(b){b.classList.toggle('has',!!myFace);b.textContent=myFace?'ANOTHER PHOTO':'USE A PHOTO'}
+}
+function publishFace(){
+  if(!PARTY.client||!PARTY.code||!PARTY.pid)return;
+  try{PARTY.client.publish(topicFor(PARTY.code,'face/'+PARTY.pid),myFace||'',
+    {retain:true,qos:0})}catch(e){}
+}
+$('face-pick')&&($('face-pick').onclick=()=>$('face-file').click());
+$('face-file')&&($('face-file').addEventListener('change',e=>{
+  const f=e.target.files&&e.target.files[0];
+  e.target.value='';
+  if(!f)return;
+  joinStatus('Shrinking the picture\u2026','');
+  photoToSquare(f,160).then(url=>{
+    myFace=url;
+    try{localStorage.setItem('thechair.myface',url)}catch(err){}
+    drawMyFace();publishFace();
+    joinStatus('Your photo is on your chair.','good');
+  }).catch(err=>joinStatus('That picture would not open. Try another.','bad'));
+}));
+$('face-clear')&&($('face-clear').onclick=()=>{
+  myFace='';
+  try{localStorage.removeItem('thechair.myface')}catch(e){}
+  drawMyFace();publishFace();
+});
+drawMyFace();
+setTimeout(followInvitation,0);
+
+
+/* an invitation link ends in #CODE: open that room and skip every other choice */
+function followInvitation(){
+  let h='';
+  try{h=(location.hash||'').replace('#','').toUpperCase().replace(/[^A-Z]/g,'')}catch(e){}
+  if(h.length!==4)return false;
+  openChairScreen();
+  $('join-code').value=h;
+  joinStatus('Opening room '+h+'\u2026','');
+  chairJoin();                       // connect now; the name comes next
+  return true;
+}
+
+/* --- wiring --- */
+$('join-open')&&($('join-open').onclick=openChairScreen);
+$('lobby-back')&&($('lobby-back').onclick=closeLobby);
+$('to-rules')&&($('to-rules').onclick=()=>{updatePool();dressRules();show('s-rules')});
+function dressRules(){
+  const quiz=S.game==='artist';
+  const ts=$('teamsize'),lab=ts&&ts.previousElementSibling;
+  if(ts)ts.hidden=quiz;
+  if(lab&&lab.classList.contains('field-label'))lab.hidden=quiz;
+  const ln=$('length'),lnlab=ln&&ln.previousElementSibling;
+  if(lnlab)lnlab.textContent=quiz?'How many records tonight':'How many auditions tonight';
+  const until=ln&&[...ln.querySelectorAll('button')].find(b=>b.dataset.l==='0');
+  if(until)until.hidden=quiz;                 // a quiz has no teams to fill
+  if(quiz&&!S.len){S.len=10;segPick('length','l','10')}
+  const note=$('rules-note');
+  if(note)note.textContent=quiz
+    ? 'The record plays behind the curtain. Everyone answers, then it opens.'
+    : 'No clock. The video runs until somebody turns or everybody skips.';
+}
+function segPick(id,key,val){
+  const box=$(id);if(!box)return;
+  [...box.querySelectorAll('button')].forEach(b=>b.classList.toggle('sel',b.dataset[key]===val));
+}
+$('back-lobby')&&($('back-lobby').onclick=()=>show('s-lobby'));
+$('to-go')&&($('to-go').onclick=()=>{drawGo();show('s-go')});
+$('back-rules')&&($('back-rules').onclick=()=>show('s-rules'));
+
+$('lobby-start')&&($('lobby-start').onclick=()=>{
+  S.players=S.players.filter(p=>!(p.reserved&&!p.pid));   // they never turned up
+  S.players.forEach((p,i)=>{p.id=i});
+  if(S.players.length<1){
+    lobbyStatus('Nobody has taken a chair yet \u2014 scan the code, or go back and type a name.','bad');
+    drawLobbyList();return;
+  }
+  S.players.filter(p=>p.pid).forEach(p=>addFriend(p.name));   // worth remembering
+  drawFriends();
+  if(S.game==='artist'){
+    try{$('meta').textContent='name the artist'}catch(e){}
+    show('s-quiz');fitScreen();quizStart();
+  }
+  else beginSeason();
+  publishStage();
+});
+$('lobby-list')&&($('lobby-list').addEventListener('click',e=>{
+  const f=e.target.closest('button[data-free]');
+  if(f){
+    const p=S.players[+f.dataset.free];
+    if(p){const fr=FRIENDS.find(x=>x.name.toLowerCase()===p.name.toLowerCase());
+      if(fr){fr.on=false;saveFriends();drawFriends()}
+      releaseChair(p.name);}
+    return;
+  }
+  const b=e.target.closest('button[data-invite]');if(!b)return;
+  const p=S.players[+b.dataset.invite];if(p)sendInvite(p);
+}));
+$('copy-link')&&($('copy-link').onclick=()=>{
+  const t='Join my game of The Chair: '+joinLink()+'  \u2014 room code '+PARTY.code;
+  try{navigator.clipboard.writeText(t).then(
+    ()=>lobbyStatus('Link copied','good'),
+    ()=>lobbyStatus(t,''));
+  }catch(e){lobbyStatus(t,'')}
+});
+$('join-av')&&($('join-av').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-av]');if(!b)return;
+  padIcon=+b.dataset.av;drawAvatarPicker();
+}));
+$('join-go')&&($('join-go').onclick=chairJoin);
+$('join-chips')&&($('join-chips').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-claim]');if(!b)return;
+  PARTY.claim=+b.dataset.claim;
+  $('join-name').value=b.textContent;
+  $('join-chips').hidden=true;
+  sendJoin(b.textContent,PARTY.claim);
+}));
+$('join-back')&&($('join-back').onclick=()=>{partyEnd();show('s-setup')});
+$('join-code')&&($('join-code').addEventListener('input',e=>{
+  e.target.value=e.target.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);
+}));
+$('pad-sign')&&($('pad-sign').onclick=()=>{$('pad-sign').disabled=true;sendAct('sign')});
+$('pad-skip')&&($('pad-skip').onclick=()=>{$('pad-skip').disabled=true;sendAct('skip')});
+$('pad-hold')&&($('pad-hold').onclick=()=>{$('pad-hold').hidden=true;sendAct('hold')});
+$('pad-blocks')&&($('pad-blocks').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-block]');if(!b||b.disabled)return;
+  [...$('pad-blocks').querySelectorAll('button')].forEach(x=>x.disabled=true);
+  sendAct('block',+b.dataset.block);
+}));
+$('pad-leave')&&($('pad-leave').onclick=()=>{partyEnd();openChairScreen()});
+
+/* every change on the stage is news for the phones */
+(function(){
+  const wrap=f=>function(){const r=f.apply(this,arguments);publishStage();return r};
+  drawSeats=wrap(drawSeats);doReveal=wrap(doReveal);nextRound=wrap(nextRound);finish=wrap(finish);
+})();
+
+</script>
+</body>
+</html>
