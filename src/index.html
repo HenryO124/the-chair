@@ -499,6 +499,23 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 #lobby-link{margin:10px 0 12px;word-break:break-all}
 .qrbox.empty{background:var(--panel2);min-height:120px;color:var(--muted);font-family:var(--mono);font-size:10px;
   text-align:center;padding:20px}
+/* calling the whole room in at once: the code and the QR, over everything */
+.rbqr{background:#F0E7D8;border-radius:8px;padding:3px;width:40px;height:40px;flex:0 0 auto;border:0;
+  cursor:pointer;display:grid;place-items:center;color:#241f1a;font-family:var(--mono);font-size:8px}
+.rbqr svg{display:block;width:100%;height:100%}
+.rbqr:hover{box-shadow:0 0 0 2px var(--gold)}
+.padpic{width:100%;aspect-ratio:4/3;margin:0 0 10px;border-radius:12px;border:1px solid var(--line);
+  background:#15110e center/contain no-repeat}
+.padpic[hidden]{display:none!important}
+.joinover{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:3vh 4vw;
+  background:rgba(8,7,6,.94);backdrop-filter:blur(6px)}
+.joinover[hidden]{display:none!important}
+.joincard{background:var(--panel);border:1px solid var(--line);border-radius:18px;text-align:center;
+  padding:clamp(14px,2.4vw,26px);max-width:560px;width:100%;max-height:94vh;overflow:auto}
+.joincard .bigcode{margin:0 0 10px}
+.joincard .qrbox{width:min(330px,52vh);padding:12px}
+.jolink{font-family:var(--mono);font-size:12.5px;color:var(--muted);word-break:break-all;margin:10px 0 14px}
+.jorow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .joinrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line)}
 .joinrow:last-child{border-bottom:0}
 .joinrow .av{width:34px;height:34px;border-radius:9px;overflow:hidden;flex:0 0 auto;background:var(--panel2)}
@@ -718,9 +735,10 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   border-radius:50%;background:radial-gradient(ellipse at center,rgba(230,110,86,.55),transparent 68%);filter:blur(9px)}
 .spot svg{position:absolute;inset:0;width:100%;height:100%}
 .modes-title{font-family:var(--disp);font-weight:800;margin:2px 0 16px;font-size:clamp(28px,3.6vw,46px)}
-.backlink{background:none;border:0;padding:0 0 6px;cursor:pointer;color:var(--muted);
+.backlink{background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:7px 14px;
+  margin:0 0 14px;cursor:pointer;color:var(--muted);display:inline-block;
   font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-.backlink:hover{color:var(--bone)}
+.backlink:hover{color:var(--bone);border-color:var(--gold)}
 
 /* menu 1: a short list of the things you can do tonight */
 .menugrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
@@ -772,6 +790,9 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 
 /* "Learn the games" shows the same cards, but nothing to press */
 body.learning .startbar{display:none}
+/* on your own there is nobody to invite: the settings are the whole page */
+body.solo #s-lobby .lobbygrid,body.solo #lobby-sub,body.solo #lobby-home,
+body.solo #s-lobby .steps{display:none}
 body.learning .gamecard{cursor:default}
 body.learning .gamecard.sel{border-color:var(--line);background:var(--panel)}
 body.learning .gamecard .garrow{display:none}
@@ -1148,8 +1169,9 @@ body.learning .gamecard .garrow{display:none}
       <span class="rbgroup" id="rb-joined"></span>
       <span class="rbgroup" id="rb-pending"></span>
       <span class="rbgap"></span>
+      <button type="button" class="rbqr" id="rb-qr" title="Show the code and QR big">QR</button>
       <button type="button" class="btn ghost" id="rb-invite">Copy the invitation</button>
-      <button type="button" class="btn" id="rb-next">Who's playing &rarr;</button>
+      <button type="button" class="btn" id="rb-next">Let's party &rarr;</button>
     </div>
 
     <div class="startbar" id="startbar">
@@ -1165,10 +1187,10 @@ body.learning .gamecard .garrow{display:none}
 
   <!-- LOBBY: the chairs arrive on their own phones -->
   <section class="screen" id="s-lobby">
-    <div class="steps"><span class="step on">1 Invite</span><span class="step">2 How we play</span><span class="step">3 Go</span></div>
+    <div class="steps"><span class="step on">1 The party room</span><span class="step">2 Go</span></div>
     <div class="eyebrow">Invite the room</div>
     <h2>Their phones are the chairs.</h2>
-    <p class="sub">Keep this screen on the television. Everyone else opens the same page on their phone, taps <em style="font-style:normal;color:var(--bone)">Join with code</em> and types it in. Their chair appears here as they arrive.</p>
+    <p class="sub" id="lobby-sub">Keep this screen on the television. Everyone else opens the same page on their phone, taps <em style="font-style:normal;color:var(--bone)">Join with code</em> and types it in. Their chair appears here as they arrive.</p>
 
     <div class="lobbygrid">
       <div class="lobbycode">
@@ -1186,33 +1208,8 @@ body.learning .gamecard .garrow{display:none}
     </div>
 
     <div class="lobbycode" style="margin-top:4px">
-<div class="field-label">Who is at this screen</div>
-    <div id="players"></div>
-    <input type="file" id="row-file" accept="image/*" style="display:none">
-    <button class="btn ghost" id="add">Add another coach on this screen</button>
-    <p class="pool thin" id="start-hint"></p>
-    <p class="pool thin">Everyone else joins from their own phone in the next step.</p>
-        <div class="field-label">Friends</div>
-    <div class="friends" id="friends-list"></div>
-    <div class="friendadd">
-      <input type="text" id="friend-name" maxlength="14" autocomplete="off" placeholder="Name">
-      <button type="button" id="friend-add">Save</button>
-      <button type="button" id="friend-clear">Forget everyone</button>
-    </div>
-    <p class="pool thin" id="friends-note"></p>
-    </div>
-
-    <button class="btn" id="to-rules">Next — how we play</button>
-    <button class="btn ghost" id="lobby-back">Back</button>
-    <p class="note">Anyone without a phone still plays: every chair can be tapped on this screen too.</p>
-  </section>
-
-  <!-- HOW WE PLAY: agreed together, once the room is full -->
-  <section class="screen" id="s-rules">
-    <div class="steps"><span class="step done">1 Invite</span><span class="step on">2 How we play</span><span class="step">3 Go</span></div>
     <div class="eyebrow">How we play</div>
-    <h2>Decide it together.</h2>
-    <p class="sub" id="rules-sub">Nobody has to agree with the host. Argue about the years, settle on a genre, then go.</p>
+<p class="sub" id="rules-sub">Nobody has to agree with the host. Argue about the years, settle on a genre, then go.</p>
 <div class="field-label">Start the season in</div>
     <div class="seg wrap" id="eras">
       <button data-e="1">Any year</button>
@@ -1271,13 +1268,43 @@ body.learning .gamecard .garrow{display:none}
       <button data-t="6">6</button>
     </div>
         <p class="pool thin" id="rules-note">No clock. The video runs until somebody turns or everybody skips.</p>
+  </div>
+
+  <div class="lobbycode" style="margin-top:4px">
+<div class="field-label">Who is at this screen</div>
+    <div id="players"></div>
+    <input type="file" id="row-file" accept="image/*" style="display:none">
+    <button class="btn ghost" id="add">Add another coach on this screen</button>
+    <p class="pool thin" id="start-hint"></p>
+    <p class="pool thin">Everyone else joins from their own phone in the next step.</p>
+        <div class="field-label">Friends</div>
+    <div class="friends" id="friends-list"></div>
+    <div class="friendadd">
+      <input type="text" id="friend-name" maxlength="14" autocomplete="off" placeholder="Name">
+      <button type="button" id="friend-add">Save</button>
+      <button type="button" id="friend-clear">Forget everyone</button>
+    </div>
+    <p class="pool thin" id="friends-note"></p>
+    </div>
+
+    <button class="btn" id="to-rules">Everyone in &mdash; ready to go &rarr;</button>
+    <button class="btn ghost" id="lobby-back">Back</button>
+    <button type="button" class="backlink" id="lobby-home" style="margin-left:10px">&larr; Main menu</button>
+    <p class="note">Anyone without a phone still plays: every chair can be tapped on this screen too.</p>
+  </section>
+
+  <!-- HOW WE PLAY: agreed together, once the room is full -->
+  <section class="screen" id="s-rules">
+    <div class="steps"><span class="step done">1 Invite</span><span class="step on">2 How we play</span><span class="step">3 Go</span></div>
+    <div class="eyebrow">How we play</div>
+    <h2>Decide it together.</h2>
     <button class="btn" id="to-go">Next — who is here</button>
     <button class="btn ghost" id="back-lobby">Back</button>
   </section>
 
   <!-- GO: the last look before the first record -->
   <section class="screen" id="s-go">
-    <div class="steps"><span class="step done">1 Invite</span><span class="step done">2 How we play</span><span class="step on">3 Go</span></div>
+    <div class="steps"><span class="step done">1 The party room</span><span class="step on">2 Go</span></div>
     <div class="eyebrow">Ready</div>
     <h2>Everyone in their chair?</h2>
     <p class="gosum" id="go-sum"></p>
@@ -1329,6 +1356,7 @@ body.learning .gamecard .garrow{display:none}
         <div class="pvhead" id="pv-head">Which topics do you want?</div>
         <div class="pvgrid" id="pv-grid"></div>
       </div>
+      <div class="padpic" id="pad-pic" hidden></div>
       <div class="qgrid" id="pad-quiz" hidden></div>
       <button class="bigsign" id="pad-sign" disabled>SIGN THEM</button>
       <button class="bigskip" id="pad-skip" disabled>SKIP</button>
@@ -1446,6 +1474,20 @@ body.learning .gamecard .garrow{display:none}
 </div>
 
 <audio id="menu-music" loop preload="none" src="menu.mp3"></audio>
+<!-- hold this up to the room: everyone scans it at once -->
+<div class="joinover" id="joinover" hidden>
+  <div class="joincard">
+    <div class="eyebrow">Join the party</div>
+    <div class="bigcode" id="jo-code">····</div>
+    <div class="qrbox empty" id="jo-qr">The code appears once the room is open.</div>
+    <p class="jolink" id="jo-link"></p>
+    <div class="jorow">
+      <button type="button" class="btn ghost" id="jo-copy">Copy the invitation</button>
+      <button type="button" class="btn" id="jo-close">Close</button>
+    </div>
+  </div>
+</div>
+
 <script src="lib-mqtt.js"></script>
 <script src="lib-qr.js"></script>
 <script>
@@ -2080,6 +2122,7 @@ function pickGame(name){
 function openModes(mode){
   LEARNING=(mode==='learn'); SOLO=(mode==='solo');
   document.body.classList.toggle('learning',LEARNING);
+  document.body.classList.toggle('solo',SOLO);
   $('modes-eyebrow').textContent=LEARNING?'How they play':SOLO?'Quick start, on your own':'Create a game';
   const go=$('create-room');
   if(go)go.textContent='Start on this screen';
@@ -2104,14 +2147,29 @@ function startSolo(){
   S.players.forEach(p=>{p.team=[];p.blockUsed=false;p.passed=false;p.score=0});
   try{drawPlayers();validate()}catch(e){}
   try{updatePool();dressRules()}catch(e){}
-  show('s-rules');
+  show('s-lobby');
 }
 function goFromModes(){
   if(!GAMEBLURB[S.game])pickGame('chair');
-  if(SOLO)startSolo(); else show('s-lobby');     // the room is already open by now
+  if(SOLO)startSolo(); else toLobby();     // the room is already open by now
 }
 $('create-room')&&($('create-room').onclick=goFromModes);
-$('rb-next')&&($('rb-next').onclick=()=>show('s-lobby'));
+$('rb-next')&&($('rb-next').onclick=()=>toLobby());
+$('lobby-home')&&($('lobby-home').onclick=()=>{try{$('modes-back').click()}catch(e){}});
+/* the invitation, big enough for a room to read off the television */
+function openJoin(){
+  const o=$('joinover');if(!o)return;
+  try{$('jo-code').textContent=PARTY.code||'····'}catch(e){}
+  try{$('jo-link').textContent=joinLink()}catch(e){}
+  drawQRInto('jo-qr');
+  o.hidden=false;
+}
+function closeJoin(){const o=$('joinover');if(o)o.hidden=true}
+$('rb-qr')&&($('rb-qr').onclick=openJoin);
+$('jo-close')&&($('jo-close').onclick=closeJoin);
+$('jo-copy')&&($('jo-copy').onclick=()=>{try{$('copy-link').click()}catch(e){}});
+$('joinover')&&($('joinover').onclick=e=>{if(e.target===$('joinover'))closeJoin()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeJoin()});
 $('rb-invite')&&($('rb-invite').onclick=()=>{try{$('copy-link').click()}catch(e){}});
 $('rb-copy')&&($('rb-copy').onclick=()=>{
   try{navigator.clipboard.writeText(PARTY.code)}catch(e){}
@@ -3502,22 +3560,7 @@ function drawGo(){
     : 'Everyone is in. The first record is waiting.';
 }
 
-function drawLobbyQR(){
-  const box=$('lobby-qr');if(!box)return;
-  if(typeof qrcode==='undefined'){
-    box.className='qrbox empty';
-    box.textContent='Open '+joinLink()+' on the phone.';
-    return;
-  }
-  try{
-    const q=qrcode(0,'M');q.addData(joinLink());q.make();
-    box.className='qrbox';
-    box.innerHTML=q.createSvgTag({cellSize:4,margin:1,scalable:true});
-  }catch(e){
-    box.className='qrbox empty';
-    box.textContent='Open '+joinLink()+' on the phone.';
-  }
-}
+function drawLobbyQR(){drawQRInto('lobby-qr')}
 function drawLobbyList(){
   const box=$('lobby-list');if(!box)return;
   const taken=S.players.filter(p=>!p.reserved||p.pid);
@@ -3544,9 +3587,31 @@ function drawLobbyList(){
   drawRoomBar();
 }
 /* the same room, said in one line along the bottom of the game menu */
+function toLobby(){
+  try{updatePool();dressRules()}catch(e){}
+  show('s-lobby');
+}
+/* one QR generator, three places that show it */
+function drawQRInto(id,base){
+  const box=$(id);if(!box)return;
+  base=base||'qrbox';
+  const link=joinLink();
+  const giveUp=()=>{box.className=base+' empty';
+    box.textContent=base==='rbqr'?'QR':'Open '+link+' on the phone.'};
+  if(typeof qrcode==='undefined'){giveUp();return}
+  try{
+    const q=qrcode(0,'M');q.addData(link);q.make();
+    box.className=base;
+    box.innerHTML=q.createSvgTag({cellSize:4,margin:1,scalable:true});
+  }catch(e){giveUp()}
+}
 function drawRoomBar(){
   const bar=$('roombar');if(!bar)return;
   try{$('rb-code').textContent=PARTY.code||'····'}catch(e){}
+  if(PARTY.code)drawQRInto('rb-qr','rbqr');
+  if($('joinover')&&!$('joinover').hidden){
+    try{$('jo-code').textContent=PARTY.code||'····';$('jo-link').textContent=joinLink()}catch(e){}
+  }
   const joined=S.players.filter(p=>!p.reserved||p.pid);
   const waiting=S.players.filter(p=>p.reserved&&!p.pid);
   $('rb-joined').innerHTML='<span class="rblab ok">Joined ('+joined.length+'/'+MAX_CHAIRS+')</span>'
@@ -3706,6 +3771,7 @@ function quizState(phase){
     remote:!!S.remote,
     vid:isAsking()||!Q.current||!S.remote?'':videoFor(Q.current),
     ask:isAsking()&&Q.current?Q.current[1]:'',
+    pic:(function(){try{const p=QIMG[String(Q.qid)];return p?p.u:''}catch(e){return ''}})(),
     cat:isAsking()&&Q.current?Q.current[0]:'',
     act:!Q.revealed||!Q.current?null
       :isAsking()?{name:Q.current[2],track:'',year:''}
@@ -4000,6 +4066,16 @@ function drawPadQuiz(st,me){
   const chairBits=['pad-sign','pad-skip','pad-blocks','pad-hold','pad-team','pad-teamhead'];
   chairBits.forEach(id=>{const e=$(id);if(e)e.hidden=true});
   box.hidden=false;
+  // the picture is the question in Picture Guess, and half the fun in the quiz
+  const pp=$('pad-pic');
+  if(pp){
+    const want=(st.phase==='over')?'':(st.pic||'');
+    if(pp.dataset.u!==want){
+      pp.dataset.u=want;
+      pp.style.backgroundImage=want?'url("'+want.replace(/"/g,'%22')+'")':'';
+    }
+    pp.hidden=!want;
+  }
   const said=me?me.said:false;
   const mine=(me&&me.pick>=0)?me.pick:(said?myPick:-1);
   if(!said)myPick=-1;              // a new question, a clean slate
@@ -4077,6 +4153,7 @@ function drawPad(){
     return;
   }
   const qb=$('pad-quiz');if(qb)qb.hidden=true;
+  const pq=$('pad-pic');if(pq){pq.hidden=true;pq.dataset.u=''}
   ['pad-sign','pad-skip','pad-team','pad-teamhead'].forEach(id=>{const e=$(id);if(e)e.hidden=false});
   if(!me){
     $('pad-round').textContent='Room '+PARTY.code;
@@ -4188,7 +4265,7 @@ function followInvitation(){
 /* --- wiring --- */
 $('m-code')&&($('m-code').onclick=openChairScreen);
 $('lobby-back')&&($('lobby-back').onclick=closeLobby);
-$('to-rules')&&($('to-rules').onclick=()=>{updatePool();dressRules();show('s-rules')});
+$('to-rules')&&($('to-rules').onclick=()=>{drawGo();show('s-go')});
 function dressRules(){
   try{dressWhere()}catch(e){}
   const triv=S.game==='trivia';
@@ -4237,9 +4314,9 @@ function segPick(id,key,val){
   const box=$(id);if(!box)return;
   [...box.querySelectorAll('button')].forEach(b=>b.classList.toggle('sel',b.dataset[key]===val));
 }
-$('back-lobby')&&($('back-lobby').onclick=()=>show('s-lobby'));
+$('back-lobby')&&($('back-lobby').onclick=()=>toLobby());
 $('to-go')&&($('to-go').onclick=()=>{drawGo();show('s-go')});
-$('back-rules')&&($('back-rules').onclick=()=>show('s-rules'));
+$('back-rules')&&($('back-rules').onclick=()=>toLobby());
 
 $('lobby-start')&&($('lobby-start').onclick=()=>{
   S.players=S.players.filter(p=>!(p.reserved&&!p.pid));   // they never turned up
