@@ -682,6 +682,33 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 .menutile .mtdesc{display:block;margin-top:5px;color:var(--muted);font-size:13.5px;line-height:1.5}
 .menutile.soon{opacity:.45;cursor:default}
 @media (max-width:1040px){.menugrid{grid-template-columns:1fr}.menutile.lead{grid-column:auto}}
+/* the room bar: the code, who is in, and the invitation */
+.roombar{gap:clamp(8px,1.2vw,14px)}
+.rbhead{display:flex;flex-direction:column;gap:5px}
+.rbroom{display:flex;align-items:center;gap:7px;font-family:var(--disp);font-weight:800;
+  font-size:clamp(16px,1.7vw,20px);white-space:nowrap}
+.rbroom b{font-family:var(--mono);letter-spacing:.14em;color:var(--gold)}
+.rbcopy{background:none;border:0;padding:2px;cursor:pointer;color:var(--muted);display:grid;place-items:center}
+.rbcopy svg{width:16px;height:16px;display:block}
+.rbcopy:hover{color:var(--bone)}
+.rbtag{display:inline-flex;align-items:center;gap:5px;align-self:flex-start;padding:2px 9px;border-radius:20px;
+  border:1px solid var(--line);background:var(--panel2);font-family:var(--mono);font-size:9px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.rbtag svg{width:11px;height:11px}
+.rbgroup{display:flex;align-items:center;gap:7px;flex-wrap:wrap;min-width:0}
+.rbgroup:empty{display:none}
+.rblab{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.rblab.ok::before{content:'';width:8px;height:8px;border-radius:50%;background:#49C27B}
+.rblab.wait::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.rbchip{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:20px;
+  border:1px solid var(--line);background:var(--panel2);font-size:12.5px;font-weight:700;white-space:nowrap}
+.rbchip.host{border-color:var(--gold)}
+.rbchip.host i{font-style:normal;color:var(--gold)}
+.rbchip.waiting{border-style:dashed;background:none;color:var(--muted);font-weight:400}
+.rbgap{flex:1 1 auto}
+@media (max-width:980px){.rbgap{display:none}.roombar .sbd{display:none}}
+
 /* "Learn the games" shows the same cards, but nothing to press */
 body.learning .startbar{display:none}
 body.learning .gamecard{cursor:default}
@@ -717,6 +744,7 @@ body.learning .gamecard .garrow{display:none}
   letter-spacing:.12em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
 
 /* the bar along the bottom: this is where a night actually begins */
+.startbar[hidden]{display:none}
 .startbar{display:flex;align-items:center;gap:clamp(10px,1.6vw,18px);flex-wrap:wrap;
   border:1px solid var(--line);border-radius:16px;background:var(--panel);
   padding:clamp(12px,1.6vw,18px) clamp(14px,2vw,22px);margin:clamp(10px,2vh,22px) 0 14px}
@@ -824,25 +852,24 @@ body.learning .gamecard .garrow{display:none}
         <div class="spot" aria-hidden="true">
           <div class="beam"></div>
           <svg viewBox="0 0 300 300" fill="none">
-            <!-- a plain wooden chair under the light: drawn, not photographed -->
-            <defs>
-              <linearGradient id="chairlit" x1="0" y1="0" x2="1" y2="0.4">
-                <stop offset="0" stop-color="#8C4529"/><stop offset=".45" stop-color="#E39A68"/>
-                <stop offset="1" stop-color="#9B5030"/>
-              </linearGradient>
-            </defs>
-            <g fill="url(#chairlit)">
-              <!-- back legs, behind the seat -->
-              <path d="M112 168h9l3 76h-9z" opacity=".62"/>
-              <path d="M183 168h9l3 76h-9z" opacity=".62"/>
+            <!-- a plain wooden chair under the light: drawn, not photographed.
+                 Flat fills on purpose — this markup is cloned into both menus,
+                 and a shared gradient id does not survive being duplicated. -->
+            <g>
+              <!-- back legs, in the shade behind the seat -->
+              <path d="M112 168h9l3 76h-9z" fill="#7A3A22"/>
+              <path d="M183 168h9l3 76h-9z" fill="#7A3A22"/>
               <!-- back posts and the two slats -->
-              <path d="M104 64h11v112h-11zM189 64h11v112h-11z"/>
-              <path d="M104 72h96v15h-96zM104 106h96v15h-96z"/>
-              <!-- seat, with its front edge catching the light -->
-              <path d="M94 170h116l9 18H85z"/>
-              <path d="M85 188h134v9H85z" opacity=".8"/>
+              <path d="M104 64h11v112h-11z" fill="#C1764B"/>
+              <path d="M189 64h11v112h-11z" fill="#8E4A2B"/>
+              <path d="M104 72h96v15h-96z" fill="#D98F5F"/>
+              <path d="M104 106h96v15h-96z" fill="#CE8655"/>
+              <!-- seat, its front edge catching the light -->
+              <path d="M94 170h116l9 18H85z" fill="#E8A571"/>
+              <path d="M85 188h134v9H85z" fill="#A85B35"/>
               <!-- front legs -->
-              <path d="M90 196h11l-6 78h-11zM208 196h11l6 78h-11z"/>
+              <path d="M90 196h11l-6 78h-11z" fill="#C97A4E"/>
+              <path d="M208 196h11l6 78h-11z" fill="#8E4A2B"/>
             </g>
           </svg>
           <div class="pool"></div>
@@ -1001,7 +1028,30 @@ body.learning .gamecard .garrow{display:none}
       </div>
     </div>
 
-    <div class="startbar">
+    <!-- the room is already open: its code, who is in it, and the invitation -->
+    <div class="startbar roombar" id="roombar" hidden>
+      <span class="sbi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="8.4" cy="8" r="3"/><path d="M2.5 19c0-3.2 2.6-4.9 5.9-4.9S14.3 15.8 14.3 19"/>
+        <path d="M15.6 5.6a3 3 0 0 1 0 5"/><path d="M17.4 14.4c2 .7 3.1 2.2 3.1 4.6"/></svg></span>
+      <span class="rbhead">
+        <span class="rbroom">Room <b id="rb-code">····</b>
+          <button type="button" class="rbcopy" id="rb-copy" title="Copy the code">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="9" y="9" width="11" height="11" rx="2.4"/><path d="M15 6.2A2.2 2.2 0 0 0 12.8 4H6.2A2.2 2.2 0 0 0 4 6.2v6.6A2.2 2.2 0 0 0 6.2 15"/></svg>
+          </button>
+        </span>
+        <span class="rbtag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="4.5" y="10.5" width="15" height="9.5" rx="2.4"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>Private room</span>
+      </span>
+      <span class="sbd"></span>
+      <span class="rbgroup" id="rb-joined"></span>
+      <span class="rbgroup" id="rb-pending"></span>
+      <span class="rbgap"></span>
+      <button type="button" class="btn ghost" id="rb-invite">Copy the invitation</button>
+      <button type="button" class="btn" id="rb-next">Who's playing &rarr;</button>
+    </div>
+
+    <div class="startbar" id="startbar">
       <span class="sbi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
         <circle cx="8.4" cy="8" r="3"/><path d="M2.5 19c0-3.2 2.6-4.9 5.9-4.9S14.3 15.8 14.3 19"/>
         <path d="M15.6 5.6a3 3 0 0 1 0 5"/><path d="M17.4 14.4c2 .7 3.1 2.2 3.1 4.6"/></svg></span>
@@ -1766,10 +1816,13 @@ function openModes(mode){
   document.body.classList.toggle('learning',LEARNING);
   $('modes-eyebrow').textContent=LEARNING?'How they play':SOLO?'Quick start, on your own':'Create a game';
   const go=$('create-room');
-  if(go)go.textContent=SOLO?'Start on this screen':'+ Create room';
-  const bar=document.querySelector('.startbar .sbt');
-  if(bar)bar.textContent=SOLO?'Play on your own':'Start a game';
+  if(go)go.textContent='Start on this screen';
+  const lab=document.querySelector('#startbar .sbt');
+  if(lab)lab.textContent='Play on your own';
   if(!LEARNING)pickGame(GAMEBLURB[S.game]?S.game:'chair');
+  // creating a game opens the room straight away, so the code is there to pass around
+  if(mode==='create'){$('startbar').hidden=true;$('roombar').hidden=false;openLobby('s-setup');return}
+  $('roombar').hidden=true;$('startbar').hidden=LEARNING;
   show('s-setup');
 }
 document.querySelectorAll('.gamecard').forEach(c=>{
@@ -1789,14 +1842,26 @@ function startSolo(){
 }
 function goFromModes(){
   if(!GAMEBLURB[S.game])pickGame('chair');
-  if(SOLO)startSolo(); else openLobby();
+  if(SOLO)startSolo(); else show('s-lobby');     // the room is already open by now
 }
 $('create-room')&&($('create-room').onclick=goFromModes);
+$('rb-next')&&($('rb-next').onclick=()=>show('s-lobby'));
+$('rb-invite')&&($('rb-invite').onclick=()=>{try{$('copy-link').click()}catch(e){}});
+$('rb-copy')&&($('rb-copy').onclick=()=>{
+  try{navigator.clipboard.writeText(PARTY.code)}catch(e){}
+  const b=$('rb-code'),was=b.textContent;b.textContent='copied';
+  setTimeout(()=>{b.textContent=was},900);
+});
 $('m-create')&&($('m-create').onclick=()=>openModes('create'));
 $('m-solo')&&($('m-solo').onclick=()=>openModes('solo'));
 $('m-learn')&&($('m-learn').onclick=()=>openModes('learn'));
-$('modes-back')&&($('modes-back').onclick=()=>{LEARNING=SOLO=false;
-  document.body.classList.remove('learning');show('s-home')});
+$('modes-back')&&($('modes-back').onclick=()=>{
+  LEARNING=SOLO=false;document.body.classList.remove('learning');
+  $('roombar').hidden=true;$('startbar').hidden=false;
+  // walking back out shuts the room, rather than leaving a dead code in the wild
+  if(PARTY.role==='host'){try{closeLobby();return}catch(e){}}
+  show('s-home');
+});
 function beginSeason(){
   // whatever route we came by, every chair must be a full player before the first record
   S.players=S.players.map((p,i)=>p&&p.team?p
@@ -2408,7 +2473,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 16:46';
+const BUILD='06.11. 16:53';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
@@ -2613,7 +2678,7 @@ function lobbyStatus(msg,cls){
   const el=$('lobby-status');if(!el)return;
   el.textContent=msg;el.className='conn'+(cls?' '+cls:'');
 }
-function openLobby(){
+function openLobby(goTo){
   // the name rows live in the lobby now, so one list is edited in place
   S.players=S.players.filter(p=>!p.pid&&!p.reserved)
     .map((p,i)=>p.team?p:mkPlayer(p.name||'',p.icon,i,'',p.photo));
@@ -2623,8 +2688,8 @@ function openLobby(){
   PARTY.role='host';PARTY.code=newCode();PARTY.seen={};
   $('lobby-code').textContent=PARTY.code;
   $('lobby-link').textContent=joinLink();
-  drawLobbyQR();drawLobbyList();
-  show('s-lobby');
+  drawLobbyQR();drawLobbyList();drawRoomBar();
+  show(goTo||'s-lobby');
   partyConnect(c=>{
     c.subscribe([topicFor(PARTY.code,'join'),topicFor(PARTY.code,'act'),
                  topicFor(PARTY.code,'face/+')],{qos:0});
@@ -2825,6 +2890,21 @@ function drawLobbyList(){
         +'<button class="send drop" data-free="'+S.players.indexOf(p)+'">×</button>'
         +'</div>').join('');
   box.innerHTML=h;
+  drawRoomBar();
+}
+/* the same room, said in one line along the bottom of the game menu */
+function drawRoomBar(){
+  const bar=$('roombar');if(!bar)return;
+  try{$('rb-code').textContent=PARTY.code||'····'}catch(e){}
+  const joined=S.players.filter(p=>!p.reserved||p.pid);
+  const waiting=S.players.filter(p=>p.reserved&&!p.pid);
+  $('rb-joined').innerHTML='<span class="rblab ok">Joined ('+joined.length+'/'+MAX_CHAIRS+')</span>'
+    +joined.map((p,i)=>'<span class="rbchip'+(i===0?' host':'')+'">'+esc(shownName(p))
+      +(i===0?' <i>&#9819;</i>':'')+'</span>').join('');
+  $('rb-pending').innerHTML=waiting.length
+    ? '<span class="rblab wait">Waiting ('+waiting.length+')</span>'
+      +waiting.map(p=>'<span class="rbchip waiting">'+esc(shownName(p))+'</span>').join('')
+    : '';
 }
 
 
