@@ -1,0 +1,440 @@
+[
+ {
+  "i": 0,
+  "verdict": "keep"
+ },
+ {
+  "i": 1,
+  "verdict": "fix",
+  "why": "The aside is a familiar myth. Blood is red whether or not it is carrying oxygen - deoxygenated blood is dark red, not blue - and the colour comes from the porphyrin ring the iron sits in, not from the iron 'turning red' on meeting oxygen.",
+  "fix": {
+   "n": {
+    "en": "Blood is red whether or not it is carrying oxygen; oxygen only makes the red brighter, which is why veins merely look blue through the skin.",
+    "fi": "Veri on punaista riippumatta siitä, kuljettaako se happea; happi vain kirkastaa punaista sävyä, ja siksi suonet vain näyttävät ihon läpi sinisiltä.",
+    "sv": "Blodet är rött oavsett om det bär syre eller inte; syret gör bara det röda ljusare, och därför ser venerna bara blå ut genom huden."
+   }
+  },
+  "source": "https://www.todayifoundout.com/index.php/2010/09/de-oxygenated-blood-turns-dark-red-not-blue/"
+ },
+ {
+  "i": 2,
+  "verdict": "keep"
+ },
+ {
+  "i": 3,
+  "verdict": "keep"
+ },
+ {
+  "i": 4,
+  "verdict": "keep"
+ },
+ {
+  "i": 5,
+  "verdict": "keep"
+ },
+ {
+  "i": 6,
+  "verdict": "keep"
+ },
+ {
+  "i": 7,
+  "verdict": "keep"
+ },
+ {
+  "i": 8,
+  "verdict": "keep"
+ },
+ {
+  "i": 9,
+  "verdict": "keep"
+ },
+ {
+  "i": 10,
+  "verdict": "keep"
+ },
+ {
+  "i": 11,
+  "verdict": "keep"
+ },
+ {
+  "i": 12,
+  "verdict": "keep"
+ },
+ {
+  "i": 13,
+  "verdict": "keep"
+ },
+ {
+  "i": 14,
+  "verdict": "keep"
+ },
+ {
+  "i": 15,
+  "verdict": "keep"
+ },
+ {
+  "i": 16,
+  "verdict": "keep"
+ },
+ {
+  "i": 17,
+  "verdict": "keep"
+ },
+ {
+  "i": 18,
+  "verdict": "keep"
+ },
+ {
+  "i": 19,
+  "verdict": "keep"
+ },
+ {
+  "i": 20,
+  "verdict": "keep"
+ },
+ {
+  "i": 21,
+  "verdict": "keep"
+ },
+ {
+  "i": 22,
+  "verdict": "keep"
+ },
+ {
+  "i": 23,
+  "verdict": "keep"
+ },
+ {
+  "i": 24,
+  "verdict": "keep"
+ },
+ {
+  "i": 25,
+  "verdict": "keep"
+ },
+ {
+  "i": 26,
+  "verdict": "keep"
+ },
+ {
+  "i": 27,
+  "verdict": "keep"
+ },
+ {
+  "i": 28,
+  "verdict": "keep"
+ },
+ {
+  "i": 29,
+  "verdict": "keep"
+ },
+ {
+  "i": 30,
+  "verdict": "keep"
+ },
+ {
+  "i": 31,
+  "verdict": "keep"
+ },
+ {
+  "i": 32,
+  "verdict": "keep"
+ },
+ {
+  "i": 33,
+  "verdict": "keep"
+ },
+ {
+  "i": 34,
+  "verdict": "keep"
+ },
+ {
+  "i": 35,
+  "verdict": "keep"
+ },
+ {
+  "i": 36,
+  "verdict": "keep"
+ },
+ {
+  "i": 37,
+  "verdict": "keep"
+ },
+ {
+  "i": 38,
+  "verdict": "keep"
+ },
+ {
+  "i": 39,
+  "verdict": "keep"
+ },
+ {
+  "i": 40,
+  "verdict": "keep"
+ },
+ {
+  "i": 41,
+  "verdict": "keep"
+ },
+ {
+  "i": 42,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Olympus_Mons"
+ },
+ {
+  "i": 43,
+  "verdict": "keep"
+ },
+ {
+  "i": 44,
+  "verdict": "keep"
+ },
+ {
+  "i": 45,
+  "verdict": "keep"
+ },
+ {
+  "i": 46,
+  "verdict": "keep"
+ },
+ {
+  "i": 47,
+  "verdict": "keep"
+ },
+ {
+  "i": 48,
+  "verdict": "keep"
+ },
+ {
+  "i": 49,
+  "verdict": "keep"
+ },
+ {
+  "i": 50,
+  "verdict": "keep"
+ },
+ {
+  "i": 51,
+  "verdict": "keep"
+ },
+ {
+  "i": 52,
+  "verdict": "keep"
+ },
+ {
+  "i": 53,
+  "verdict": "keep",
+  "source": "https://www.newsd.admin.ch/newsd/message/attachments/39613.pdf"
+ },
+ {
+  "i": 54,
+  "verdict": "keep"
+ },
+ {
+  "i": 55,
+  "verdict": "keep"
+ },
+ {
+  "i": 56,
+  "verdict": "keep"
+ },
+ {
+  "i": 57,
+  "verdict": "keep"
+ },
+ {
+  "i": 58,
+  "verdict": "keep"
+ },
+ {
+  "i": 59,
+  "verdict": "keep"
+ },
+ {
+  "i": 60,
+  "verdict": "keep"
+ },
+ {
+  "i": 61,
+  "verdict": "keep"
+ },
+ {
+  "i": 62,
+  "verdict": "keep"
+ },
+ {
+  "i": 63,
+  "verdict": "keep"
+ },
+ {
+  "i": 64,
+  "verdict": "keep"
+ },
+ {
+  "i": 65,
+  "verdict": "keep"
+ },
+ {
+  "i": 66,
+  "verdict": "fix",
+  "why": "A hectare is 10 000 square metres against a standard football pitch of 105 by 68 metres, 7 140 square metres, so it is about 40 per cent larger - not 'a little larger'.",
+  "fix": {
+   "n": {
+    "en": "That is a square a hundred metres on each side, comfortably bigger than a football pitch.",
+    "fi": "Se on neliö, jonka sivu on sata metriä, selvästi isompi kuin jalkapallokenttä.",
+    "sv": "Det är en kvadrat med hundra meters sida, klart större än en fotbollsplan."
+   }
+  },
+  "source": "https://footballhistory.org/field.html"
+ },
+ {
+  "i": 67,
+  "verdict": "keep"
+ },
+ {
+  "i": 68,
+  "verdict": "keep"
+ },
+ {
+  "i": 69,
+  "verdict": "keep"
+ },
+ {
+  "i": 70,
+  "verdict": "keep"
+ },
+ {
+  "i": 71,
+  "verdict": "keep"
+ },
+ {
+  "i": 72,
+  "verdict": "keep"
+ },
+ {
+  "i": 73,
+  "verdict": "keep"
+ },
+ {
+  "i": 74,
+  "verdict": "keep"
+ },
+ {
+  "i": 75,
+  "verdict": "keep"
+ },
+ {
+  "i": 76,
+  "verdict": "keep"
+ },
+ {
+  "i": 77,
+  "verdict": "keep"
+ },
+ {
+  "i": 78,
+  "verdict": "keep"
+ },
+ {
+  "i": 79,
+  "verdict": "keep"
+ },
+ {
+  "i": 80,
+  "verdict": "keep"
+ },
+ {
+  "i": 81,
+  "verdict": "keep"
+ },
+ {
+  "i": 82,
+  "verdict": "keep"
+ },
+ {
+  "i": 83,
+  "verdict": "keep"
+ },
+ {
+  "i": 84,
+  "verdict": "keep"
+ },
+ {
+  "i": 85,
+  "verdict": "keep"
+ },
+ {
+  "i": 86,
+  "verdict": "keep"
+ },
+ {
+  "i": 87,
+  "verdict": "keep"
+ },
+ {
+  "i": 88,
+  "verdict": "keep"
+ },
+ {
+  "i": 89,
+  "verdict": "fix",
+  "why": "'Several times' overstates it. Finnish moose bulls run about 400-500 kg live weight (slaughter weight 217-254 kg) while male Eurasian brown bears average 250-300 kg, so the moose is roughly twice the bear, not several times.",
+  "fix": {
+   "n": {
+    "en": "A full-grown bull can weigh half a tonne, roughly twice what a Finnish brown bear does.",
+    "fi": "Täysikasvuinen sonni voi painaa puoli tonnia, noin kaksi kertaa sen minkä suomalainen karhu.",
+    "sv": "En fullvuxen älgtjur kan väga ett halvt ton, ungefär dubbelt så mycket som en finsk brunbjörn."
+   }
+  },
+  "source": "https://riista.fi/wp-content/uploads/2013/03/Mets%C3%A4styksenjohtajan-perustaidot-Hirven-biologia-Suomen-riistakeskus.pdf"
+ },
+ {
+  "i": 90,
+  "verdict": "fix",
+  "why": "'Largest' has two defensible answers with lapinpollo sitting in the options: the great grey owl is reckoned the world's longest owl and beats the eagle owl on length, while the eagle owl is far heavier. Asking for the heaviest leaves one answer.",
+  "fix": {
+   "q": {
+    "en": "Which is the heaviest owl in Europe?",
+    "fi": "Mikä on Euroopan painavin pöllö?",
+    "sv": "Vilken är Europas tyngsta uggla?"
+   }
+  },
+  "source": "https://en.wikipedia.org/wiki/Great_grey_owl"
+ },
+ {
+  "i": 91,
+  "verdict": "keep"
+ },
+ {
+  "i": 92,
+  "verdict": "keep"
+ },
+ {
+  "i": 93,
+  "verdict": "keep"
+ },
+ {
+  "i": 94,
+  "verdict": "keep"
+ },
+ {
+  "i": 95,
+  "verdict": "keep"
+ },
+ {
+  "i": 96,
+  "verdict": "keep"
+ },
+ {
+  "i": 97,
+  "verdict": "keep"
+ },
+ {
+  "i": 98,
+  "verdict": "keep"
+ },
+ {
+  "i": 99,
+  "verdict": "keep"
+ }
+]

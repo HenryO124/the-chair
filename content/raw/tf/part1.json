@@ -1,0 +1,703 @@
+[
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "Finland once elected a king who never set foot in the country.",
+   "fi": "Suomi valitsi kerran kuninkaan, joka ei koskaan käynyt maassa.",
+   "sv": "Finland valde en gång en kung som aldrig satte sin fot i landet."
+  },
+  "n": {
+   "en": "Prince Friedrich Karl of Hesse was elected king on 9 October 1918 and renounced the throne on 14 December without ever travelling to Finland.",
+   "fi": "Hessenin prinssi Friedrich Karl valittiin kuninkaaksi 9. lokakuuta 1918 ja luopui kruunusta 14. joulukuuta käymättä kertaakaan Suomessa.",
+   "sv": "Prins Friedrich Karl av Hessen valdes till kung den 9 oktober 1918 och avstod från tronen den 14 december utan att någonsin ha rest till Finland."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "The shortest war in recorded history was over in less than an hour.",
+   "fi": "Historian lyhyin sota oli ohi alle tunnissa.",
+   "sv": "Det kortaste kriget i historien var över på mindre än en timme."
+  },
+  "n": {
+   "en": "The Anglo-Zanzibar War of 27 August 1896 lasted between 38 and 45 minutes.",
+   "fi": "Englannin ja Sansibarin välinen sota 27. elokuuta 1896 kesti 38–45 minuuttia.",
+   "sv": "Det anglo-zanzibariska kriget den 27 augusti 1896 varade mellan 38 och 45 minuter."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "The Great Pyramid of Giza stayed the tallest building in the world for over three thousand years.",
+   "fi": "Gizan suuri pyramidi oli maailman korkein rakennus yli kolmetuhatta vuotta.",
+   "sv": "Cheopspyramiden i Giza var världens högsta byggnad i över tretusen år."
+  },
+  "n": {
+   "en": "Built around 2600 BC, it held the record for more than 3,700 years, until medieval cathedral builders went higher.",
+   "fi": "Noin 2600 eaa. valmistunut pyramidi piti ennätystä yli 3 700 vuotta, kunnes keskiajan katedraalinrakentajat kurkottivat korkeammalle.",
+   "sv": "Pyramiden byggdes omkring 2600 f.Kr. och höll rekordet i över 3 700 år, till dess att medeltidens katedralbyggare nådde högre."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "The Soviet Union was thrown out of the League of Nations for attacking Finland.",
+   "fi": "Neuvostoliitto erotettiin Kansainliitosta, koska se hyökkäsi Suomeen.",
+   "sv": "Sovjetunionen uteslöts ur Nationernas förbund för angreppet på Finland."
+  },
+  "n": {
+   "en": "The League declared the attack illegal and expelled the Soviet Union on 14 December 1939, two weeks after the Winter War began.",
+   "fi": "Kansainliitto julisti hyökkäyksen laittomaksi ja erotti Neuvostoliiton 14. joulukuuta 1939, kaksi viikkoa talvisodan alusta.",
+   "sv": "Förbundet förklarade angreppet olagligt och uteslöt Sovjetunionen den 14 december 1939, två veckor efter vinterkrigets början."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "There was teaching at Oxford before the Aztecs founded their capital city.",
+   "fi": "Oxfordissa opetettiin jo ennen kuin asteekit perustivat pääkaupunkinsa.",
+   "sv": "Det bedrevs undervisning i Oxford redan innan aztekerna grundade sin huvudstad."
+  },
+  "n": {
+   "en": "Teaching at Oxford is recorded from 1096; Tenochtitlan's founding is traditionally dated to 1325.",
+   "fi": "Oxfordissa on opetettu tiettävästi vuodesta 1096; Tenochtitlánin perustamisvuotena pidetään 1325.",
+   "sv": "Undervisning i Oxford är belagd från 1096; Tenochtitlan brukar dateras till 1325."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "The Berlin Wall ran all the way around West Berlin.",
+   "fi": "Berliinin muuri kiersi Länsi-Berliinin kokonaan.",
+   "sv": "Berlinmuren gick runt hela Västberlin."
+  },
+  "n": {
+   "en": "Of the roughly 155 kilometres of wall, only about 43 kilometres ran between the two halves of the city; the rest sealed West Berlin off from East Germany.",
+   "fi": "Noin 155 kilometrin muurista vain noin 43 kilometriä kulki kaupungin puolikkaiden välissä; loput eristivät Länsi-Berliinin Itä-Saksasta.",
+   "sv": "Av murens cirka 155 kilometer gick bara omkring 43 kilometer mellan stadens två halvor; resten stängde av Västberlin från Östtyskland."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "Helsinki was once awarded a Summer Olympics that was never held.",
+   "fi": "Helsingille myönnettiin kerran kesäolympialaiset, joita ei koskaan järjestetty.",
+   "sv": "Helsingfors fick en gång olympiska sommarspel som aldrig hölls."
+  },
+  "n": {
+   "en": "The 1940 Games were moved from Tokyo to Helsinki and then cancelled because of the Second World War.",
+   "fi": "Vuoden 1940 kisat siirrettiin Tokiosta Helsinkiin ja peruttiin sitten toisen maailmansodan vuoksi.",
+   "sv": "Spelen 1940 flyttades från Tokyo till Helsingfors och ställdes sedan in på grund av andra världskriget."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "Finnish became an official language in Finland only in the 1860s.",
+   "fi": "Suomi tuli Suomessa viralliseksi kieleksi vasta 1860-luvulla.",
+   "sv": "Finska blev officiellt språk i Finland först på 1860-talet."
+  },
+  "n": {
+   "en": "Alexander II's Language Act of 1863 gave Finnish official status for the first time, and it reached full equality with Swedish only in 1902.",
+   "fi": "Aleksanteri II:n kieliasetus vuonna 1863 teki suomesta ensi kerran virallisen kielen, ja tasavertaiseksi ruotsin kanssa se tuli vasta 1902.",
+   "sv": "Alexander II:s språkförordning 1863 gav finskan officiell status för första gången, och full jämställdhet med svenskan nåddes först 1902."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "The Danish flag holds the record as the oldest national flag still in use.",
+   "fi": "Tanskan lipulla on ennätys maailman vanhimpana edelleen käytössä olevana kansallislippuna.",
+   "sv": "Den danska flaggan har rekordet som världens äldsta nationsflagga som fortfarande används."
+  },
+  "n": {
+   "en": "Dannebrog has been recognised as Denmark's national flag since 1625, a Guinness record.",
+   "fi": "Dannebrog on ollut Tanskan kansallislippu vuodesta 1625, mikä on Guinnessin ennätys.",
+   "sv": "Dannebrogen har varit Danmarks nationsflagga sedan 1625, vilket är ett Guinnessrekord."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "Finnish athletes competed at the Olympic Games before Finland was an independent country.",
+   "fi": "Suomalaiset urheilijat kilpailivat olympialaisissa jo ennen kuin Suomi oli itsenäinen.",
+   "sv": "Finländska idrottare tävlade i olympiska spel redan innan Finland var självständigt."
+  },
+  "n": {
+   "en": "As an autonomous Grand Duchy, Finland sent its own team from the 1908 Games onwards, although the Russian flag was used for both countries.",
+   "fi": "Autonomisena suuriruhtinaskuntana Suomi lähetti oman joukkueen vuoden 1908 kisoista alkaen, vaikka lippuna käytettiin Venäjän lippua.",
+   "sv": "Som autonomt storfurstendöme sände Finland eget lag från spelen 1908, även om Rysslands flagga användes för båda länderna."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "The Aztec capital was built on an island in a lake.",
+   "fi": "Asteekkien pääkaupunki rakennettiin saarelle järven keskelle.",
+   "sv": "Aztekernas huvudstad byggdes på en ö i en sjö."
+  },
+  "n": {
+   "en": "Tenochtitlan stood on an island in Lake Texcoco, where Mexico City sprawls today.",
+   "fi": "Tenochtitlán sijaitsi saarella Texcocojärvessä, jonka paikalla levittäytyy nykyinen Mexico City.",
+   "sv": "Tenochtitlan låg på en ö i sjön Texcoco, där Mexico City breder ut sig i dag."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "Sweden has not fought a war since the time of Napoleon.",
+   "fi": "Ruotsi ei ole käynyt sotaa Napoleonin ajan jälkeen.",
+   "sv": "Sverige har inte deltagit i något krig sedan Napoleons tid."
+  },
+  "n": {
+   "en": "Swedish troops last fought in the Napoleonic Wars in 1813–14; since then the country has taken part only in peacekeeping.",
+   "fi": "Ruotsin joukot taistelivat viimeksi Napoleonin sodissa 1813–14; sen jälkeen maa on osallistunut vain rauhanturvaamiseen.",
+   "sv": "Svenska trupper stred senast i Napoleonkrigen 1813–14; sedan dess har landet bara deltagit i fredsbevarande insatser."
+  }
+ },
+ {
+  "cat": "History",
+  "a": true,
+  "q": {
+   "en": "Germany was still paying off debts from the First World War in the 21st century.",
+   "fi": "Saksa maksoi ensimmäisen maailmansodan velkoja vielä 2000-luvulla.",
+   "sv": "Tyskland betalade av skulder från första världskriget ännu på 2000-talet."
+  },
+  "n": {
+   "en": "The last instalment, about 94 million dollars, was paid on 3 October 2010.",
+   "fi": "Viimeinen erä, noin 94 miljoonaa dollaria, maksettiin 3. lokakuuta 2010.",
+   "sv": "Den sista delbetalningen, omkring 94 miljoner dollar, gjordes den 3 oktober 2010."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "The Hundred Years' War lasted exactly one hundred years.",
+   "fi": "Satavuotinen sota kesti tasan sata vuotta.",
+   "sv": "Hundraårskriget varade i exakt hundra år."
+  },
+  "n": {
+   "en": "It ran from 1337 to 1453, which is 116 years, and even then with long truces in between.",
+   "fi": "Se kesti vuodesta 1337 vuoteen 1453 eli 116 vuotta, ja siihenkin mahtui pitkiä aselepoja.",
+   "sv": "Det varade från 1337 till 1453, alltså 116 år, och även då med långa vapenvilor emellan."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "Helsinki was occupied by enemy troops during the Second World War.",
+   "fi": "Vihollisjoukot valtasivat Helsingin toisen maailmansodan aikana.",
+   "sv": "Fiendens trupper ockuperade Helsingfors under andra världskriget."
+  },
+  "n": {
+   "en": "Finland was one of only three European combatant countries whose capital was never occupied, along with the Soviet Union and the United Kingdom.",
+   "fi": "Suomi oli yksi vain kolmesta Euroopan sotaa käyneestä maasta, jonka pääkaupunkia ei vallattu – muut olivat Neuvostoliitto ja Britannia.",
+   "sv": "Finland var ett av bara tre krigförande länder i Europa vars huvudstad aldrig ockuperades, jämte Sovjetunionen och Storbritannien."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "The influenza pandemic of 1918 began in Spain.",
+   "fi": "Vuoden 1918 influenssapandemia alkoi Espanjasta.",
+   "sv": "Influensapandemin 1918 började i Spanien."
+  },
+  "n": {
+   "en": "The outbreak did not start in Spain; neutral Spain simply had no wartime censorship, so its newspapers were the ones that reported the epidemic.",
+   "fi": "Tauti ei alkanut Espanjasta; puolueettomassa Espanjassa ei vain ollut sodan sensuuria, joten sen lehdet kertoivat epidemiasta avoimesti.",
+   "sv": "Utbrottet började inte i Spanien; det neutrala Spanien saknade bara krigscensur, så dess tidningar var de som rapporterade om epidemin."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "The Nobel prize for economics was one of the prizes set up in Alfred Nobel's will.",
+   "fi": "Nobelin taloustieteen palkinto oli yksi Alfred Nobelin testamentissa perustetuista palkinnoista.",
+   "sv": "Nobelpriset i ekonomi var ett av de priser som inrättades i Alfred Nobels testamente."
+  },
+  "n": {
+   "en": "The will created five prizes; the economics prize was added by Sweden's central bank in 1968 and first awarded in 1969.",
+   "fi": "Testamentti perusti viisi palkintoa; taloustieteen palkinnon lisäsi Ruotsin keskuspankki 1968, ja se jaettiin ensi kerran 1969.",
+   "sv": "Testamentet skapade fem priser; ekonomipriset tillkom genom Sveriges riksbank 1968 och delades ut första gången 1969."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "The Ottoman Empire came to an end in the 19th century.",
+   "fi": "Ottomaanien valtakunta lakkasi olemasta 1800-luvulla.",
+   "sv": "Ottomanska riket upphörde att existera på 1800-talet."
+  },
+  "n": {
+   "en": "The sultanate was abolished on 1 November 1922 and the Republic of Turkey declared on 29 October 1923.",
+   "fi": "Sulttaanikunta lakkautettiin 1. marraskuuta 1922, ja Turkin tasavalta julistettiin 29. lokakuuta 1923.",
+   "sv": "Sultanatet avskaffades den 1 november 1922 och republiken Turkiet utropades den 29 oktober 1923."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "The Eiffel Tower was built to stand in Paris permanently.",
+   "fi": "Eiffel-torni rakennettiin Pariisiin pysyväksi.",
+   "sv": "Eiffeltornet byggdes för att stå permanent i Paris."
+  },
+  "n": {
+   "en": "It was a temporary structure for the 1889 world's fair, due for demolition in 1909, and was saved because it made such a good radio mast.",
+   "fi": "Se oli väliaikainen rakennelma vuoden 1889 maailmannäyttelyyn, ja se oli määrä purkaa 1909, mutta se säästyi hyvänä radiomastona.",
+   "sv": "Det var en tillfällig konstruktion för världsutställningen 1889 och skulle rivas 1909, men räddades eftersom det blev en utmärkt radiomast."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "Woolly mammoths had been extinct for tens of thousands of years by the time the Egyptian pyramids were built.",
+   "fi": "Villamammutit olivat kuolleet sukupuuttoon kymmeniätuhansia vuosia ennen Egyptin pyramidien rakentamista.",
+   "sv": "Ullhåriga mammutar hade dött ut tiotusentals år innan de egyptiska pyramiderna byggdes."
+  },
+  "n": {
+   "en": "A population survived on Wrangel Island until about 2000 BC, so mammoths were still alive when the Great Pyramid went up around 2600 BC.",
+   "fi": "Wrangelinsaarella eli mammuttikanta noin vuoteen 2000 eaa., joten mammutteja oli vielä elossa, kun suuri pyramidi nousi noin 2600 eaa.",
+   "sv": "En population levde kvar på Wrangels ö till omkring 2000 f.Kr., så mammutar fanns ännu när Cheopspyramiden restes runt 2600 f.Kr."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "The last execution in France was carried out before the Second World War.",
+   "fi": "Ranskassa teloitettiin viimeisen kerran ennen toista maailmansotaa.",
+   "sv": "Den sista avrättningen i Frankrike skedde före andra världskriget."
+  },
+  "n": {
+   "en": "Hamida Djandoubi was guillotined in Marseille on 10 September 1977, and the death penalty was abolished in 1981.",
+   "fi": "Hamida Djandoubi mestattiin giljotiinilla Marseillessa 10. syyskuuta 1977, ja kuolemanrangaistus poistettiin 1981.",
+   "sv": "Hamida Djandoubi giljotinerades i Marseille den 10 september 1977, och dödsstraffet avskaffades 1981."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "Greenland is a part of the European Union.",
+   "fi": "Grönlanti on osa Euroopan unionia.",
+   "sv": "Grönland är en del av Europeiska unionen."
+  },
+  "n": {
+   "en": "Greenlanders voted to leave in 1982, mainly over fishing quotas, and the withdrawal took effect on 1 February 1985.",
+   "fi": "Grönlantilaiset äänestivät erosta 1982 lähinnä kalastuskvoottien vuoksi, ja ero tuli voimaan 1. helmikuuta 1985.",
+   "sv": "Grönlänningarna röstade för utträde 1982, främst på grund av fiskekvoterna, och utträdet trädde i kraft den 1 februari 1985."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "Finland never managed to pay off its war reparations to the Soviet Union.",
+   "fi": "Suomi ei koskaan saanut sotakorvauksiaan Neuvostoliitolle maksettua.",
+   "sv": "Finland lyckades aldrig betala av sina krigsskadestånd till Sovjetunionen."
+  },
+  "n": {
+   "en": "The Soviet Union cut the bill by a quarter in 1948 and Finland paid off the rest in 1952.",
+   "fi": "Neuvostoliitto pienensi summaa neljänneksellä 1948, ja Suomi maksoi loput vuonna 1952.",
+   "sv": "Sovjetunionen minskade summan med en fjärdedel 1948, och Finland betalade resten 1952."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "The Pony Express carried mail across America for more than twenty years.",
+   "fi": "Pony Express kuljetti postia Amerikan halki yli kahdenkymmenen vuoden ajan.",
+   "sv": "Pony Express fraktade post genom Amerika i över tjugo år."
+  },
+  "n": {
+   "en": "It ran only from April 1860 to October 1861, about 18 months, and folded as soon as the transcontinental telegraph was finished.",
+   "fi": "Se toimi vain huhtikuusta 1860 lokakuuhun 1861 eli noin 18 kuukautta ja lopetti heti, kun mannertenvälinen sähkölennätin valmistui.",
+   "sv": "Den gick bara från april 1860 till oktober 1861, cirka 18 månader, och lades ned så snart den transkontinentala telegrafen var klar."
+  }
+ },
+ {
+  "cat": "History",
+  "a": false,
+  "q": {
+   "en": "All the Nobel prizes are handed out in Stockholm.",
+   "fi": "Kaikki Nobel-palkinnot jaetaan Tukholmassa.",
+   "sv": "Alla Nobelpris delas ut i Stockholm."
+  },
+  "n": {
+   "en": "The peace prize is awarded in Oslo; all the others are presented in Stockholm.",
+   "fi": "Rauhanpalkinto jaetaan Oslossa, kaikki muut Tukholmassa.",
+   "sv": "Fredspriset delas ut i Oslo, alla andra i Stockholm."
+  }
+ },
+
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "The land on Finland's west coast is still rising out of the sea.",
+   "fi": "Suomen länsirannikolla maa nousee edelleen merestä.",
+   "sv": "Landet vid Finlands västkust stiger fortfarande ur havet."
+  },
+  "n": {
+   "en": "In the Kvarken area the ground rises almost a centimetre a year, and in about 2,000 years the sea floor there will cut the Gulf of Bothnia in two.",
+   "fi": "Merenkurkussa maa nousee lähes sentin vuodessa, ja noin 2 000 vuoden kuluttua merenpohja katkaisee Pohjanlahden kahtia.",
+   "sv": "I Kvarken stiger marken nästan en centimeter per år, och om cirka 2 000 år delar havsbottnen Bottniska viken i två delar."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "Lake Baikal holds more water than all of North America's Great Lakes together.",
+   "fi": "Baikaljärvessä on enemmän vettä kuin kaikissa Pohjois-Amerikan suurissa järvissä yhteensä.",
+   "sv": "Bajkalsjön rymmer mer vatten än alla Nordamerikas stora sjöar tillsammans."
+  },
+  "n": {
+   "en": "Its 23,600 cubic kilometres make up roughly a fifth of all the unfrozen fresh water on Earth.",
+   "fi": "Sen 23 600 kuutiokilometriä on noin viidennes kaikesta maapallon sulasta makeasta vedestä.",
+   "sv": "Dess 23 600 kubikkilometer utgör omkring en femtedel av allt ofruset sötvatten på jorden."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "At their closest, Europe and Africa are less than twenty kilometres apart.",
+   "fi": "Lähimmillään Eurooppa ja Afrikka ovat alle kahdenkymmenen kilometrin päässä toisistaan.",
+   "sv": "Som närmast ligger Europa och Afrika mindre än tjugo kilometer från varandra."
+  },
+  "n": {
+   "en": "The Strait of Gibraltar narrows to 14.2 kilometres between Spain and Morocco.",
+   "fi": "Gibraltarinsalmi kapenee Espanjan ja Marokon välissä 14,2 kilometriin.",
+   "sv": "Gibraltarsundet smalnar av till 14,2 kilometer mellan Spanien och Marocko."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "The surface of the Dead Sea lies more than four hundred metres below sea level.",
+   "fi": "Kuolleenmeren pinta on yli neljäsataa metriä merenpinnan alapuolella.",
+   "sv": "Döda havets yta ligger mer än fyrahundra meter under havsnivån."
+  },
+  "n": {
+   "en": "It sits about 440 metres below sea level, the lowest dry land on Earth, and keeps sinking as the water is drawn off.",
+   "fi": "Se on noin 440 metriä merenpinnan alapuolella, maapallon alin kuiva maa, ja laskee edelleen veden oton myötä.",
+   "sv": "Det ligger omkring 440 meter under havsnivån, jordens lägsta torra land, och sjunker ännu när vatten tas bort."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "The Dead Sea is nearly ten times as salty as the ocean.",
+   "fi": "Kuolleenmeri on lähes kymmenen kertaa niin suolainen kuin valtameri.",
+   "sv": "Döda havet är nästan tio gånger saltare än världshavet."
+  },
+  "n": {
+   "en": "Its salinity of around 34 per cent is 9.6 times that of sea water, which is why no fish or water plants survive in it.",
+   "fi": "Sen noin 34 prosentin suolapitoisuus on 9,6-kertainen meriveteen verrattuna, minkä vuoksi siinä ei elä kaloja eikä vesikasveja.",
+   "sv": "Salthalten på cirka 34 procent är 9,6 gånger havsvattnets, och därför lever varken fiskar eller vattenväxter i det."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "Counting its islands, Norway's coastline is more than a hundred thousand kilometres long.",
+   "fi": "Saaret mukaan luettuna Norjan rantaviiva on yli satatuhatta kilometriä pitkä.",
+   "sv": "Med öarna inräknade är Norges kustlinje mer än hundratusen kilometer lång."
+  },
+  "n": {
+   "en": "The mainland with its fjords measures about 29,000 kilometres; add the islands and the figure reaches 100,915 kilometres.",
+   "fi": "Mannerranta vuonoineen on noin 29 000 kilometriä; saarten kanssa luku nousee 100 915 kilometriin.",
+   "sv": "Fastlandet med fjordarna mäter cirka 29 000 kilometer; med öarna blir siffran 100 915 kilometer."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "More than three quarters of Greenland lies under ice.",
+   "fi": "Yli kolme neljännestä Grönlannista on jään alla.",
+   "sv": "Mer än tre fjärdedelar av Grönland ligger under is."
+  },
+  "n": {
+   "en": "The ice sheet covers about 1.76 million square kilometres, some 81 per cent of the island.",
+   "fi": "Jäätikkö peittää noin 1,76 miljoonaa neliökilometriä eli noin 81 prosenttia saaresta.",
+   "sv": "Inlandsisen täcker cirka 1,76 miljoner kvadratkilometer, omkring 81 procent av ön."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "Iceland sits on the boundary between two tectonic plates.",
+   "fi": "Islanti sijaitsee kahden mannerlaatan saumalla.",
+   "sv": "Island ligger på gränsen mellan två kontinentalplattor."
+  },
+  "n": {
+   "en": "The island straddles the divergent edge of the North American and Eurasian plates and is pulling apart by nearly two centimetres a year.",
+   "fi": "Saari on Pohjois-Amerikan ja Euraasian laatan erkanemisvyöhykkeellä ja repeää lähes kaksi senttiä vuodessa.",
+   "sv": "Ön ligger där den nordamerikanska och den eurasiska plattan glider isär, och den dras åt sidorna med nästan två centimeter om året."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "The official height of Mount Everest was agreed anew in 2020.",
+   "fi": "Mount Everestin virallinen korkeus sovittiin uudelleen vuonna 2020.",
+   "sv": "Mount Everests officiella höjd fastställdes på nytt år 2020."
+  },
+  "n": {
+   "en": "Nepal and China jointly announced 8,848.86 metres on 8 December 2020, settling a long disagreement over the figure.",
+   "fi": "Nepal ja Kiina ilmoittivat yhdessä 8. joulukuuta 2020 korkeudeksi 8 848,86 metriä ja päättivät pitkän kiistan luvusta.",
+   "sv": "Nepal och Kina meddelade gemensamt 8 848,86 meter den 8 december 2020 och avslutade en lång tvist om siffran."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "Finland's border with Russia is longer than its borders with Sweden and Norway put together.",
+   "fi": "Suomen raja Venäjän kanssa on pidempi kuin Ruotsin ja Norjan rajat yhteensä.",
+   "sv": "Finlands gräns mot Ryssland är längre än gränserna mot Sverige och Norge tillsammans."
+  },
+  "n": {
+   "en": "The eastern border runs 1,309 kilometres, while Sweden accounts for 545 and Norway 709.",
+   "fi": "Itäraja on 1 309 kilometriä, kun Ruotsin raja on 545 ja Norjan 709 kilometriä.",
+   "sv": "Östgränsen är 1 309 kilometer, medan gränsen mot Sverige är 545 och mot Norge 709 kilometer."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "Within the last ten thousand years the Sahara was green, with lakes and grazing herds.",
+   "fi": "Viimeisten kymmenentuhannen vuoden aikana Sahara on ollut vehreä, järvien ja laumojen maa.",
+   "sv": "Under de senaste tiotusen åren har Sahara varit grön, med sjöar och betande hjordar."
+  },
+  "n": {
+   "en": "The African humid period ended only 6,000 to 5,000 years ago, and until then elephants, hippos and crocodiles lived there.",
+   "fi": "Afrikan sateinen kausi päättyi vasta 6 000–5 000 vuotta sitten, ja siihen asti siellä eli norsuja, virtahepoja ja krokotiileja.",
+   "sv": "Den afrikanska fuktperioden tog slut för bara 6 000–5 000 år sedan, och fram till dess levde där elefanter, flodhästar och krokodiler."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "Lake Baikal is the oldest lake in the world.",
+   "fi": "Baikaljärvi on maailman vanhin järvi.",
+   "sv": "Bajkalsjön är världens äldsta sjö."
+  },
+  "n": {
+   "en": "It is reckoned to be 25 to 30 million years old, and at 1,642 metres it is also the deepest.",
+   "fi": "Sen ikä on arviolta 25–30 miljoonaa vuotta, ja 1 642 metrin syvyydellä se on myös maailman syvin.",
+   "sv": "Den beräknas vara 25–30 miljoner år gammal och är med sina 1 642 meter också världens djupaste."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": true,
+  "q": {
+   "en": "A mountain in Ecuador reaches farther from the centre of the Earth than Everest does.",
+   "fi": "Ecuadorissa on vuori, jonka huippu on kauempana maapallon keskipisteestä kuin Everestin huippu.",
+   "sv": "Ett berg i Ecuador når längre från jordens medelpunkt än Everest gör."
+  },
+  "n": {
+   "en": "Chimborazo rises only 6,263 metres above the sea, but it stands on the equatorial bulge, so its summit is about two kilometres farther out.",
+   "fi": "Chimborazo kohoaa vain 6 263 metriä merenpinnasta, mutta se seisoo päiväntasaajan pullistumalla, joten sen huippu on noin kaksi kilometriä kauempana.",
+   "sv": "Chimborazo reser sig bara 6 263 meter över havet, men står på ekvatorsutbuktningen, så toppen ligger ungefär två kilometer längre ut."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "Vatnajökull in Iceland is the largest ice cap in Europe.",
+   "fi": "Islannin Vatnajökull on Euroopan suurin jäätikkö.",
+   "sv": "Vatnajökull på Island är Europas största iskalott."
+  },
+  "n": {
+   "en": "It is the second largest by both area and volume; the ice cap on Severny Island in the Russian Arctic is bigger.",
+   "fi": "Se on toiseksi suurin sekä pinta-alaltaan että tilavuudeltaan – Venäjän arktisen Severnyin saaren jäätikkö on suurempi.",
+   "sv": "Den är näst störst både till yta och volym; iskalotten på Severnyj i ryska Arktis är större."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "The Strait of Gibraltar is over fifty kilometres wide at its narrowest.",
+   "fi": "Gibraltarinsalmi on kapeimmillaan yli viisikymmentä kilometriä leveä.",
+   "sv": "Gibraltarsundet är som smalast över femtio kilometer brett."
+  },
+  "n": {
+   "en": "The narrows measure 14.2 kilometres across and about 900 metres deep.",
+   "fi": "Kapeikko on 14,2 kilometriä leveä ja noin 900 metriä syvä.",
+   "sv": "Det smalaste stället är 14,2 kilometer brett och omkring 900 meter djupt."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "Mauna Kea in Hawaii rises higher above sea level than Mount Everest.",
+   "fi": "Havaijin Mauna Kea kohoaa merenpinnasta korkeammalle kuin Mount Everest.",
+   "sv": "Mauna Kea på Hawaii reser sig högre över havsnivån än Mount Everest."
+  },
+  "n": {
+   "en": "Mauna Kea reaches only 4,205 metres above the sea, although measured from its base on the ocean floor it is over 10,000 metres tall.",
+   "fi": "Mauna Kea nousee merenpinnasta vain 4 205 metriä, vaikka merenpohjalta mitattuna se on yli 10 000 metriä korkea.",
+   "sv": "Mauna Kea når bara 4 205 meter över havet, även om den mätt från sin bas på havsbottnen är över 10 000 meter hög."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "Every country sets its clocks a whole number of hours away from universal time.",
+   "fi": "Kaikki maat asettavat kellonsa tasatunneittain maailmanajasta.",
+   "sv": "Alla länder ställer sina klockor ett helt antal timmar från världstiden."
+  },
+  "n": {
+   "en": "Nepal runs at UTC+05:45, one of only three zones in the world that are three quarters of an hour off the hour.",
+   "fi": "Nepalissa on UTC+05.45, yksi maailman vain kolmesta vyöhykkeestä, jotka ovat kolme neljännestuntia tasatunnista.",
+   "sv": "Nepal ligger på UTC+05.45, en av världens bara tre zoner som är tre kvart från hel timme."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "Iceland has no native land mammals at all.",
+   "fi": "Islannissa ei ole lainkaan alkuperäisiä maanisäkkäitä.",
+   "sv": "Island har inga ursprungliga landlevande däggdjur alls."
+  },
+  "n": {
+   "en": "The arctic fox got there on its own and is the island's only native land mammal; there are no reptiles or amphibians.",
+   "fi": "Naali saapui saarelle omin voimin ja on sen ainoa alkuperäinen maanisäkäs; matelijoita ja sammakkoeläimiä ei ole lainkaan.",
+   "sv": "Fjällräven kom dit på egen hand och är öns enda ursprungliga landdäggdjur; kräldjur och groddjur saknas helt."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "Finland's highest point rises over two thousand metres.",
+   "fi": "Suomen korkein kohta kohoaa yli kahteentuhanteen metriin.",
+   "sv": "Finlands högsta punkt reser sig över tvåtusen meter."
+  },
+  "n": {
+   "en": "The Halti fell area tops out at about 1,320 metres, less than a sixth of Everest.",
+   "fi": "Haltin alue kohoaa noin 1 320 metriin, vajaaseen kuudesosaan Everestin korkeudesta.",
+   "sv": "Haltiområdet når omkring 1 320 meter, mindre än en sjättedel av Everest."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "When the Swedish mining town of Kiruna was moved, its old church was pulled down.",
+   "fi": "Kun Ruotsin kaivoskaupunki Kiiruna siirrettiin, sen vanha kirkko purettiin.",
+   "sv": "När den svenska gruvstaden Kiruna flyttades revs dess gamla kyrka."
+  },
+  "n": {
+   "en": "The whole 113-year-old wooden church was carried to the new centre in one piece in August 2025.",
+   "fi": "Koko 113-vuotias puukirkko kuljetettiin uuteen keskustaan yhtenä kappaleena elokuussa 2025.",
+   "sv": "Hela den 113-åriga träkyrkan transporterades i ett stycke till det nya centrumet i augusti 2025."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "The Mid-Atlantic Ridge lies entirely under water.",
+   "fi": "Keski-Atlantin selänne on kokonaan veden alla.",
+   "sv": "Mittatlantiska ryggen ligger helt under vattnet."
+  },
+  "n": {
+   "en": "Iceland is the ridge above the waves: the island was built up where the plate boundary meets a hotspot.",
+   "fi": "Islanti on selänne veden pinnan yllä: saari on kasvanut siihen, missä laattojen sauma kohtaa kuuman pisteen.",
+   "sv": "Island är ryggen ovanför vattenytan: ön har byggts upp där plattgränsen möter en hetfläck."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "China is divided into five official time zones.",
+   "fi": "Kiina on jaettu viiteen viralliseen aikavyöhykkeeseen.",
+   "sv": "Kina är indelat i fem officiella tidszoner."
+  },
+  "n": {
+   "en": "The country spans five geographical time zones but keeps a single official one, Beijing time, the largest country in the world to do so.",
+   "fi": "Maa levittäytyy viidelle maantieteelliselle aikavyöhykkeelle, mutta siinä on vain yksi virallinen, Pekingin aika – maailman suurin maa, joka tekee näin.",
+   "sv": "Landet sträcker sig över fem geografiska tidszoner men håller en enda officiell, Pekingtid, som världens största land med bara en."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "A ship passing through the Panama Canal from the Atlantic to the Pacific travels westwards.",
+   "fi": "Panaman kanavan läpi Atlantilta Tyynellemerelle kulkeva laiva matkaa länteen.",
+   "sv": "Ett fartyg som går genom Panamakanalen från Atlanten till Stilla havet färdas västerut."
+  },
+  "n": {
+   "en": "The isthmus twists, so the passage runs from north-west to south-east and the Pacific entrance lies east of the Atlantic one.",
+   "fi": "Kannas kiertyy, joten kulkureitti vie luoteesta kaakkoon ja Tyynenmeren suu on idempänä kuin Atlantin.",
+   "sv": "Näset vrider sig, så passagen går från nordväst till sydöst och Stillahavsmynningen ligger öster om Atlantmynningen."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "Denmark's highest natural point rises more than five hundred metres above sea level.",
+   "fi": "Tanskan korkein luonnollinen kohta kohoaa yli viisisataa metriä merenpinnasta.",
+   "sv": "Danmarks högsta naturliga punkt reser sig mer än femhundra meter över havet."
+  },
+  "n": {
+   "en": "Møllehøj in Jutland tops out at 170.86 metres, nine centimetres above its nearest rival.",
+   "fi": "Jyllannin Møllehøj kohoaa 170,86 metriin, yhdeksän senttiä lähintä kilpailijaansa korkeammalle.",
+   "sv": "Møllehøj på Jylland når 170,86 meter, nio centimeter högre än sin närmaste konkurrent."
+  }
+ },
+ {
+  "cat": "Geography",
+  "a": false,
+  "q": {
+   "en": "Greenland is one of the most densely populated countries on Earth.",
+   "fi": "Grönlanti on yksi maapallon tiheimmin asutuista maista.",
+   "sv": "Grönland är ett av jordens tätast befolkade länder."
+  },
+  "n": {
+   "en": "With about 57,000 people on two million square kilometres it is the least densely populated country in the world.",
+   "fi": "Noin 57 000 asukasta kahdella miljoonalla neliökilometrillä tekee siitä maailman harvimmin asutun maan.",
+   "sv": "Med omkring 57 000 invånare på två miljoner kvadratkilometer är det världens mest tunnbefolkade land."
+  }
+ }
+]

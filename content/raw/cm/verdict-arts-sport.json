@@ -1,0 +1,470 @@
+[
+ {
+  "i": 0,
+  "verdict": "keep"
+ },
+ {
+  "i": 1,
+  "verdict": "keep"
+ },
+ {
+  "i": 2,
+  "verdict": "fix",
+  "why": "The figures do not support 'more than twice': the Old Kalevala (1835) has 12 078 verses and the New Kalevala (1849) has 22 795, a ratio of about 1.89. Same error as arts.json index 2 in round one.",
+  "fix": {
+   "n": {
+    "en": "The 1849 edition is nearly twice as long as the first one published in 1835, 22,795 verses against 12,078.",
+    "fi": "Vuoden 1849 laitos on lähes kaksi kertaa niin pitkä kuin ensimmäinen, vuonna 1835 julkaistu: 22 795 säettä vastaan 12 078.",
+    "sv": "Utgåvan från 1849 är nästan dubbelt så lång som den första från 1835, 22 795 verser mot 12 078."
+   }
+  },
+  "source": "https://en.wikipedia.org/wiki/Kalevala"
+ },
+ {
+  "i": 3,
+  "verdict": "keep"
+ },
+ {
+  "i": 4,
+  "verdict": "keep"
+ },
+ {
+  "i": 5,
+  "verdict": "keep"
+ },
+ {
+  "i": 6,
+  "verdict": "keep"
+ },
+ {
+  "i": 7,
+  "verdict": "keep"
+ },
+ {
+  "i": 8,
+  "verdict": "keep"
+ },
+ {
+  "i": 9,
+  "verdict": "keep"
+ },
+ {
+  "i": 10,
+  "verdict": "keep"
+ },
+ {
+  "i": 11,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Temppeliaukio_Church"
+ },
+ {
+  "i": 12,
+  "verdict": "keep"
+ },
+ {
+  "i": 13,
+  "verdict": "keep"
+ },
+ {
+  "i": 14,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Savonlinna_Opera_Festival"
+ },
+ {
+  "i": 15,
+  "verdict": "keep"
+ },
+ {
+  "i": 16,
+  "verdict": "keep"
+ },
+ {
+  "i": 17,
+  "verdict": "keep"
+ },
+ {
+  "i": 18,
+  "verdict": "keep"
+ },
+ {
+  "i": 19,
+  "verdict": "keep"
+ },
+ {
+  "i": 20,
+  "verdict": "keep"
+ },
+ {
+  "i": 21,
+  "verdict": "keep"
+ },
+ {
+  "i": 22,
+  "verdict": "keep"
+ },
+ {
+  "i": 23,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Waterloo_(song)"
+ },
+ {
+  "i": 24,
+  "verdict": "keep"
+ },
+ {
+  "i": 25,
+  "verdict": "keep"
+ },
+ {
+  "i": 26,
+  "verdict": "keep"
+ },
+ {
+  "i": 27,
+  "verdict": "keep"
+ },
+ {
+  "i": 28,
+  "verdict": "keep"
+ },
+ {
+  "i": 29,
+  "verdict": "keep"
+ },
+ {
+  "i": 30,
+  "verdict": "keep"
+ },
+ {
+  "i": 31,
+  "verdict": "keep"
+ },
+ {
+  "i": 32,
+  "verdict": "keep"
+ },
+ {
+  "i": 33,
+  "verdict": "keep"
+ },
+ {
+  "i": 34,
+  "verdict": "keep"
+ },
+ {
+  "i": 35,
+  "verdict": "keep"
+ },
+ {
+  "i": 36,
+  "verdict": "keep"
+ },
+ {
+  "i": 37,
+  "verdict": "keep"
+ },
+ {
+  "i": 38,
+  "verdict": "keep"
+ },
+ {
+  "i": 39,
+  "verdict": "keep"
+ },
+ {
+  "i": 40,
+  "verdict": "keep"
+ },
+ {
+  "i": 41,
+  "verdict": "keep"
+ },
+ {
+  "i": 42,
+  "verdict": "keep"
+ },
+ {
+  "i": 43,
+  "verdict": "keep"
+ },
+ {
+  "i": 44,
+  "verdict": "keep"
+ },
+ {
+  "i": 45,
+  "verdict": "keep"
+ },
+ {
+  "i": 46,
+  "verdict": "keep"
+ },
+ {
+  "i": 47,
+  "verdict": "keep"
+ },
+ {
+  "i": 48,
+  "verdict": "keep"
+ },
+ {
+  "i": 49,
+  "verdict": "keep"
+ },
+ {
+  "i": 50,
+  "verdict": "keep"
+ },
+ {
+  "i": 51,
+  "verdict": "keep"
+ },
+ {
+  "i": 52,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Helsinki_Olympic_Stadium"
+ },
+ {
+  "i": 53,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Pes%C3%A4pallo"
+ },
+ {
+  "i": 54,
+  "verdict": "keep"
+ },
+ {
+  "i": 55,
+  "verdict": "fix",
+  "why": "'There are no home runs' - Finnish 'kunnareita ei ole' - is wrong and a Finnish room will say so. Pesapallo does have the kunnari: a batter who reaches third base on his own hit is credited with one. What the back line rules out is the ball-out-of-the-park home run, so every kunnari is run inside the field.",
+  "fix": {
+   "n": {
+    "en": "They zig-zag across the field instead of forming a diamond, and a ball hit over the back line is a fault, so every home run has to be run inside the field.",
+    "fi": "Pesät sijaitsevat siksakissa eivätkä timanttina, ja takarajan yli lyöty pallo on virhe, joten kunnarit juostaan aina kentän sisällä.",
+    "sv": "Baserna ligger i sicksack i stället för i en diamant, och en boll som slås över baklinjen är fel, så varje homerun måste springas inne på planen."
+   }
+  },
+  "source": "https://www.jyu.fi/tdk/museo/pesapallo_en/aakkoset.htm"
+ },
+ {
+  "i": 56,
+  "verdict": "keep",
+  "source": "https://wikiwand.com/en/articles/Wife-carrying"
+ },
+ {
+  "i": 57,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen"
+ },
+ {
+  "i": 58,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Tapio_Rautavaara"
+ },
+ {
+  "i": 59,
+  "verdict": "keep"
+ },
+ {
+  "i": 60,
+  "verdict": "keep"
+ },
+ {
+  "i": 61,
+  "verdict": "keep"
+ },
+ {
+  "i": 62,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/M%C3%B6lkky"
+ },
+ {
+  "i": 63,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/M%C3%B6lkky"
+ },
+ {
+  "i": 64,
+  "verdict": "keep"
+ },
+ {
+  "i": 65,
+  "verdict": "keep"
+ },
+ {
+  "i": 66,
+  "verdict": "keep"
+ },
+ {
+  "i": 67,
+  "verdict": "keep"
+ },
+ {
+  "i": 68,
+  "verdict": "cut",
+  "why": "Duplicate: the same question with the same four options and the same answer already stands in the round-one bank as sci-every.json index 51 (and every.json index 1), where it was given a 'fix' verdict and kept. Keeping this copy asks the marathon twice. The content itself is correct.",
+  "source": "https://artsandculture.google.com/story/exactly-42-195-kilometres-the-olympic-museum/UQUxmUDpLTLLUA"
+ },
+ {
+  "i": 69,
+  "verdict": "keep"
+ },
+ {
+  "i": 70,
+  "verdict": "keep",
+  "source": "https://www.britannica.com/story/why-are-basketball-hoops-10-feet-high"
+ },
+ {
+  "i": 71,
+  "verdict": "keep"
+ },
+ {
+  "i": 72,
+  "verdict": "keep"
+ },
+ {
+  "i": 73,
+  "verdict": "keep"
+ },
+ {
+  "i": 74,
+  "verdict": "keep"
+ },
+ {
+  "i": 75,
+  "verdict": "keep"
+ },
+ {
+  "i": 76,
+  "verdict": "keep"
+ },
+ {
+  "i": 77,
+  "verdict": "keep"
+ },
+ {
+  "i": 78,
+  "verdict": "keep"
+ },
+ {
+  "i": 79,
+  "verdict": "keep"
+ },
+ {
+  "i": 80,
+  "verdict": "keep"
+ },
+ {
+  "i": 81,
+  "verdict": "fix",
+  "why": "The Finnish and Swedish wording hands over the answer: 'kymmenottelu' and 'tiokamp' literally contain ten, so 'Kuinka monta lajia kymmenottelussa on?' answers itself, as does the aside's 'seitsenottelussa on seitseman'. No change to the aside can save it, so the question is reframed to the first day's programme, which is five events on day one and five on day two.",
+  "fix": {
+   "q": {
+    "en": "How many events does a decathlete contest on the first day?",
+    "fi": "Kuinka monta lajia kymmenottelija kilpailee ensimmäisenä päivänä?",
+    "sv": "Hur många grenar tävlar en tiokampare i under den första dagen?"
+   },
+   "o": [
+    {
+     "en": "Five",
+     "fi": "Viisi",
+     "sv": "Fem"
+    },
+    {
+     "en": "Four",
+     "fi": "Neljä",
+     "sv": "Fyra"
+    },
+    {
+     "en": "Six",
+     "fi": "Kuusi",
+     "sv": "Sex"
+    },
+    {
+     "en": "Seven",
+     "fi": "Seitsemän",
+     "sv": "Sju"
+    }
+   ],
+   "n": {
+    "en": "Day one is the 100 metres, long jump, shot put, high jump and 400 metres; day two runs to the 1500 metres at the end.",
+    "fi": "Ensimmäisenä päivänä ovat 100 metriä, pituus, kuula, korkeus ja 400 metriä; toinen päivä päättyy 1500 metriin.",
+    "sv": "Första dagen är 100 meter, längdhopp, kulstötning, höjdhopp och 400 meter; andra dagen avslutas med 1 500 meter."
+   }
+  },
+  "source": "https://worldathletics.org/disciplines/combined-events/decathlon"
+ },
+ {
+  "i": 82,
+  "verdict": "keep"
+ },
+ {
+  "i": 83,
+  "verdict": "keep"
+ },
+ {
+  "i": 84,
+  "verdict": "keep"
+ },
+ {
+  "i": 85,
+  "verdict": "keep"
+ },
+ {
+  "i": 86,
+  "verdict": "keep"
+ },
+ {
+  "i": 87,
+  "verdict": "keep"
+ },
+ {
+  "i": 88,
+  "verdict": "keep"
+ },
+ {
+  "i": 89,
+  "verdict": "keep"
+ },
+ {
+  "i": 90,
+  "verdict": "keep"
+ },
+ {
+  "i": 91,
+  "verdict": "keep"
+ },
+ {
+  "i": 92,
+  "verdict": "keep"
+ },
+ {
+  "i": 93,
+  "verdict": "keep"
+ },
+ {
+  "i": 94,
+  "verdict": "keep"
+ },
+ {
+  "i": 95,
+  "verdict": "keep"
+ },
+ {
+  "i": 96,
+  "verdict": "keep"
+ },
+ {
+  "i": 97,
+  "verdict": "keep"
+ },
+ {
+  "i": 98,
+  "verdict": "keep"
+ },
+ {
+  "i": 99,
+  "verdict": "keep",
+  "source": "https://wikiwand.com/en/Biathlon"
+ }
+]

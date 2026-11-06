@@ -1,0 +1,263 @@
+{
+ "pg-helsinki-cathedral": {
+  "cand": {
+   "id": "pg-helsinki-cathedral",
+   "cats": [
+    "Helsinki Cathedral"
+   ],
+   "scan": 100,
+   "must": [
+    "helsin|tuomiokirkko|cathedral"
+   ],
+   "search": "Helsinki Cathedral exterior"
+  },
+  "top": [
+   {
+    "file": "Helsinki Cathedral and statue of Alexander II (1890-1900).jpg",
+    "score": 50.0,
+    "w": 4100,
+    "h": 3000,
+    "licence": "Public domain",
+    "author": "В стиле Пётр Петрович Павлов",
+    "desc": "w:Helsinki Cathedral and statue of w:Alexander II of Russia ca 1896-1897",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Helsinki_Cathedral_and_statue_of_Alexander_II_%281890-1900%29.jpg/1280px-Helsinki_Cathedral_and_statue_of_Alexander_II_%281890-1900%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Helsingfors. L'Monument D'Alexandre II LCCN2017659707.jpg",
+    "score": 50.0,
+    "w": 7145,
+    "h": 5278,
+    "licence": "Public domain",
+    "author": "В стиле Пётр Петрович Павлов",
+    "desc": "Title: Helsingfors. L'Monument D'Alexandre II Abstract/medium: 1 print : color photochrom ; sheet 17 x 23 cm.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Helsingfors._L%27Monument_D%27Alexandre_II_LCCN2017659707.jpg/1280px-Helsingfors._L%27Monument_D%27Alexandre_II_LCCN2017659707.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Helsingfors. L'Monument D'Alexandre II LCCN2017659707.tif",
+    "score": 50.0,
+    "w": 7145,
+    "h": 5278,
+    "licence": "Public domain",
+    "author": "Photoglob Co., publisher",
+    "desc": "Title: Helsingfors. L'Monument D'Alexandre II Abstract/medium: 1 print : color photochrom ; sheet 17 x 23 cm.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Helsingfors._L%27Monument_D%27Alexandre_II_LCCN2017659707.tif/lossy-page1-1280px-Helsingfors._L%27Monument_D%27Alexandre_II_LCCN2017659707.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Hammond Slides Finland.jpg",
+    "score": 50.0,
+    "w": 10200,
+    "h": 6600,
+    "licence": "CC BY-SA 4.0",
+    "author": "Thomas Taylor Hammond (1920-1993)",
+    "desc": "Helsinki Lutheran Cathedral in Helsinki, Finland.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Hammond_Slides_Finland.jpg/1280px-Hammond_Slides_Finland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Helsinki July 1996 - Cathedral and Statue.jpg",
+    "score": 50.0,
+    "w": 7089,
+    "h": 4745,
+    "licence": "CC BY-SA 4.0",
+    "author": "Per source. Please credit \"Family photos of Infrogmation\"",
+    "desc": "Helsinki, July 1996.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Helsinki_July_1996_-_Cathedral_and_Statue.jpg/1280px-Helsinki_July_1996_-_Cathedral_and_Statue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Sofiankatu Helsinki.jpg",
+    "score": 50.0,
+    "w": 5152,
+    "h": 3864,
+    "licence": "CC BY-SA 4.0",
+    "author": "Mikkoau",
+    "desc": "This is a photo of a monument in Finland identified by the ID 'Senate Square with surroundings' (Q30505811) - RKY: 4628",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Sofiankatu_Helsinki.jpg/1280px-Sofiankatu_Helsinki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   }
+  ]
+ },
+ "pg-temppeliaukio": {
+  "cand": {
+   "id": "pg-temppeliaukio",
+   "cats": [
+    "Temppeliaukio Church"
+   ],
+   "scan": 80,
+   "must": [
+    "temppeliaukio|rock church"
+   ],
+   "search": "Temppeliaukio church interior Helsinki"
+  },
+  "top": [
+   {
+    "file": "11-07-29-helsinki-by-RalfR-024.jpg",
+    "score": 70.0,
+    "w": 4288,
+    "h": 2848,
+    "licence": "FAL",
+    "author": "Ralf Roletschek (talk) - Fahrradtechnik auf fahrradmonteur.de",
+    "desc": "Helsinki, Temppeliaukio Church",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/11-07-29-helsinki-by-RalfR-024.jpg/1280px-11-07-29-helsinki-by-RalfR-024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": true
+   },
+   {
+    "file": "Tempelplatsens kyrka November 2025 01.jpg",
+    "score": 70.0,
+    "w": 6304,
+    "h": 3940,
+    "licence": "CC BY-SA 4.0",
+    "author": "ArildV",
+    "desc": "Exterior of Temppeliaukio Church, Helsinki.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Tempelplatsens_kyrka_November_2025_01.jpg/1280px-Tempelplatsens_kyrka_November_2025_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": true
+   },
+   {
+    "file": "FI-18 - Helsinki - Cross - Christianity - Religion - Church - Lutheranism (4891380131).jpg",
+    "score": 50.0,
+    "w": 4288,
+    "h": 2848,
+    "licence": "CC BY 2.0",
+    "author": "CGP Grey",
+    "desc": "Temppeliaukio Church in Helsinki, Finland.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/FI-18_-_Helsinki_-_Cross_-_Christianity_-_Religion_-_Church_-_Lutheranism_%284891380131%29.jpg/1280px-FI-18_-_Helsinki_-_Cross_-_Christianity_-_Religion_-_Church_-_Lutheranism_%284891380131%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Temppeliaukio Church 07.jpg",
+    "score": 50.0,
+    "w": 5093,
+    "h": 3850,
+    "licence": "CC BY-SA 4.0",
+    "author": "Ad Meskens",
+    "desc": "De Temppeliaukio-kerk, Helsinki, Finland.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Temppeliaukio_Church_07.jpg/1280px-Temppeliaukio_Church_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Temppeliaukion kirkko Helsinki 2022-09-19 01.jpg",
+    "score": 50.0,
+    "w": 8368,
+    "h": 5584,
+    "licence": "CC0",
+    "author": "Leonhard Lenz",
+    "desc": "Temppeliaukio Church in Helsinki.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Temppeliaukion_kirkko_Helsinki_2022-09-19_01.jpg/1280px-Temppeliaukion_kirkko_Helsinki_2022-09-19_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Temppeliaukion kirkko Helsinki 2022-09-19 02.jpg",
+    "score": 50.0,
+    "w": 8368,
+    "h": 5584,
+    "licence": "CC0",
+    "author": "Leonhard Lenz",
+    "desc": "Temppeliaukio Church in Helsinki.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Temppeliaukion_kirkko_Helsinki_2022-09-19_02.jpg/1280px-Temppeliaukion_kirkko_Helsinki_2022-09-19_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   }
+  ]
+ },
+ "pg-borgund": {
+  "cand": {
+   "id": "pg-borgund",
+   "cats": [
+    "Borgund stave church"
+   ],
+   "scan": 80,
+   "must": [
+    "borgund"
+   ],
+   "search": "Borgund stave church exterior"
+  },
+  "top": [
+   {
+    "file": "Borgund stave church exterior 20230926-1.jpg",
+    "score": 50.0,
+    "w": 7964,
+    "h": 5689,
+    "licence": "CC BY-SA 4.0",
+    "author": "Bjørn Erik Pedersen",
+    "desc": "This image was uploaded as part of Wiki Loves Monuments 2023.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Borgund_stave_church_exterior_20230926-1.jpg/1280px-Borgund_stave_church_exterior_20230926-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Borgund stave church exterior 20230926-5.jpg",
+    "score": 50.0,
+    "w": 7826,
+    "h": 6047,
+    "licence": "CC BY-SA 4.0",
+    "author": "Bjørn Erik Pedersen",
+    "desc": "This image was uploaded as part of Wiki Loves Monuments 2023.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Borgund_stave_church_exterior_20230926-5.jpg/1280px-Borgund_stave_church_exterior_20230926-5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "Borgund stave church exterior 20230926-6.jpg",
+    "score": 50.0,
+    "w": 7823,
+    "h": 6045,
+    "licence": "CC BY-SA 4.0",
+    "author": "Bjørn Erik Pedersen",
+    "desc": "This image was uploaded as part of Wiki Loves Monuments 2023.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Borgund_stave_church_exterior_20230926-6.jpg/1280px-Borgund_stave_church_exterior_20230926-6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "10 2024 Sogn og Fjordane 26.jpg",
+    "score": 50.0,
+    "w": 5864,
+    "h": 2932,
+    "licence": "CC BY-SA 4.0",
+    "author": "Øyvind Holmstad",
+    "desc": "Exterior of Borgund Stave Church at Laerdal, Western Norway.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/10_2024_Sogn_og_Fjordane_26.jpg/1280px-10_2024_Sogn_og_Fjordane_26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "10 2024 Sogn og Fjordane 27.jpg",
+    "score": 50.0,
+    "w": 5864,
+    "h": 2932,
+    "licence": "CC BY-SA 4.0",
+    "author": "Øyvind Holmstad",
+    "desc": "Exterior of Borgund Stave Church at Laerdal, Western Norway.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/10_2024_Sogn_og_Fjordane_27.jpg/1280px-10_2024_Sogn_og_Fjordane_27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   },
+   {
+    "file": "11 2024 Sogn og Fjordane 30.jpg",
+    "score": 50.0,
+    "w": 5864,
+    "h": 2932,
+    "licence": "CC BY-SA 4.0",
+    "author": "Øyvind Holmstad",
+    "desc": "Exterior of Borgund Stave Church at Laerdal, Western Norway.",
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/11_2024_Sogn_og_Fjordane_30.jpg/1280px-11_2024_Sogn_og_Fjordane_30.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "featured": false,
+    "quality": false
+   }
+  ]
+ }
+}

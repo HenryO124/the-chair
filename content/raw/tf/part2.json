@@ -1,0 +1,703 @@
+[
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "A day on Venus lasts longer than a year on Venus.",
+   "fi": "Vuorokausi Venuksessa on pidempi kuin Venuksen vuosi.",
+   "sv": "Ett dygn på Venus är längre än ett år på Venus."
+  },
+  "n": {
+   "en": "Venus turns once on its axis in 243 Earth days but circles the Sun in 225.",
+   "fi": "Venus pyörähtää akselinsa ympäri 243 maapäivässä, mutta kiertää Auringon 225 päivässä.",
+   "sv": "Venus roterar ett varv kring sin axel på 243 jorddygn men går runt solen på 225."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "An octopus has blue blood because it carries oxygen with copper instead of iron.",
+   "fi": "Tursaalla on sinistä verta, koska se kuljettaa happea kuparin eikä raudan avulla.",
+   "sv": "En bläckfisk har blått blod eftersom den transporterar syre med koppar i stället för järn."
+  },
+  "n": {
+   "en": "The copper protein haemocyanin works better than haemoglobin in cold, oxygen-poor water.",
+   "fi": "Kuparia sisältävä hemosyaniini toimii kylmässä ja vähähappisessa vedessä paremmin kuin hemoglobiini.",
+   "sv": "Kopparproteinet hemocyanin fungerar bättre än hemoglobin i kallt och syrefattigt vatten."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "Saturn is less dense than water.",
+   "fi": "Saturnuksen tiheys on pienempi kuin veden.",
+   "sv": "Saturnus har lägre densitet än vatten."
+  },
+  "n": {
+   "en": "Its average density is 0.69 grams per cubic centimetre, about 30 per cent less than water, the only planet below that mark.",
+   "fi": "Sen keskitiheys on 0,69 grammaa kuutiosenttimetrissä eli noin 30 prosenttia vettä vähemmän – ainoa planeetta sen rajan alapuolella.",
+   "sv": "Medeldensiteten är 0,69 gram per kubikcentimeter, cirka 30 procent lägre än vattnets, och den är den enda planeten under den gränsen."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "Sharks have no bones.",
+   "fi": "Hailla ei ole luita.",
+   "sv": "Hajar har inga ben."
+  },
+  "n": {
+   "en": "Their skeleton is cartilage and connective tissue, only about half as dense as bone, which saves them energy.",
+   "fi": "Niiden luuranko on rustoa ja sidekudosta, tiheydeltään vain noin puolet luusta, mikä säästää energiaa.",
+   "sv": "Deras skelett består av brosk och bindväv med bara ungefär halva benets densitet, vilket sparar energi."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "The Greenland shark can live for several hundred years.",
+   "fi": "Holkeri eli grönlanninhai voi elää useita satoja vuosia.",
+   "sv": "Grönlandshajen kan leva i flera hundra år."
+  },
+  "n": {
+   "en": "Radiocarbon dating of its eye lenses gives lifespans of 272 to 510 years, the longest known of any vertebrate.",
+   "fi": "Silmän linssien radiokarboniajoitus antaa eliniäksi 272–510 vuotta, pisimmän tunnetun selkärankaisilla.",
+   "sv": "Radiokoldatering av linserna ger livslängder på 272 till 510 år, det längsta kända bland ryggradsdjur."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "A lightning bolt heats the air around it to about thirty thousand degrees.",
+   "fi": "Salama kuumentaa ympärillään olevan ilman noin kolmeenkymmeneentuhanteen asteeseen.",
+   "sv": "En blixt hettar upp luften omkring sig till omkring trettiotusen grader."
+  },
+  "n": {
+   "en": "A typical stroke carries about 30,000 amperes and heats the channel to roughly 30,000 degrees Celsius in a few microseconds.",
+   "fi": "Tyypillinen isku kuljettaa noin 30 000 ampeeria ja kuumentaa kanavan noin 30 000 celsiusasteeseen muutamassa mikrosekunnissa.",
+   "sv": "Ett typiskt nedslag för med sig omkring 30 000 ampere och hettar upp kanalen till ungefär 30 000 grader Celsius på några mikrosekunder."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "Tardigrades have survived being exposed to the vacuum of space.",
+   "fi": "Tardigradit eli karhukaiset ovat selvinneet avaruuden tyhjiöstä.",
+   "sv": "Trögkrypare har överlevt att utsättas för rymdens vakuum."
+  },
+  "n": {
+   "en": "On a 2007 mission the vacuum alone did them little harm; it was the Sun's ultraviolet light that killed most of them.",
+   "fi": "Vuoden 2007 lennolla pelkkä tyhjiö ei vahingoittanut niitä pahasti; useimmat kuolivat Auringon ultraviolettisäteilyyn.",
+   "sv": "På ett uppdrag 2007 skadade vakuumet i sig dem knappt; det var solens ultravioletta ljus som dödade de flesta."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "Water is at its densest a few degrees above freezing, not at freezing point.",
+   "fi": "Vesi on tiheimmillään pari astetta jäätymispisteen yläpuolella, ei jäätymispisteessä.",
+   "sv": "Vatten är som tätast några grader över fryspunkten, inte vid fryspunkten."
+  },
+  "n": {
+   "en": "The peak comes at about 4 degrees Celsius, which is why the coldest water in a lake sits at the top and ice forms there first.",
+   "fi": "Huippu on noin 4 celsiusasteessa, minkä vuoksi järven kylmin vesi on pinnalla ja jää syntyy ensin sinne.",
+   "sv": "Toppen ligger vid cirka 4 grader Celsius, och därför samlas det kallaste vattnet i en sjö högst upp och isen bildas där först."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "A teaspoon of material from a neutron star would weigh billions of tonnes.",
+   "fi": "Teelusikallinen neutronitähden ainetta painaisi miljardeja tonneja.",
+   "sv": "En tesked materia från en neutronstjärna skulle väga miljarder ton."
+  },
+  "n": {
+   "en": "One teaspoonful comes to over 5,500,000,000,000 kilograms, the density of an atomic nucleus.",
+   "fi": "Yhdessä teelusikallisessa on yli 5 500 000 000 000 kilogrammaa – atomiytimen tiheys.",
+   "sv": "En tesked motsvarar över 5 500 000 000 000 kilogram, samma densitet som en atomkärna."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "The eyes of Arctic reindeer change colour between summer and winter.",
+   "fi": "Arktisten peurojen silmät vaihtavat väriä kesän ja talven välillä.",
+   "sv": "Arktiska renars ögon byter färg mellan sommar och vinter."
+  },
+  "n": {
+   "en": "The mirror layer behind the retina shifts from gold in summer to blue in winter, which seems to help them see in the long polar night.",
+   "fi": "Verkkokalvon takana oleva heijastinkerros vaihtuu kesän kullasta talven siniseksi, mikä näyttää auttavan näkemään pitkässä kaamoksessa.",
+   "sv": "Spegelskiktet bakom näthinnan växlar från guld på sommaren till blått på vintern, vilket tycks hjälpa dem att se under den långa polarnatten."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "Taking the years as a whole, Mercury is the planet closest to Earth.",
+   "fi": "Vuosia kokonaisuutena tarkastellen Merkurius on Maata lähimpänä oleva planeetta.",
+   "sv": "Sett över åren är Merkurius den planet som ligger närmast jorden."
+  },
+  "n": {
+   "en": "Because it hugs the Sun, Mercury spends more time near us than Venus does, even though Venus comes closer at its closest.",
+   "fi": "Koska Merkurius pysyttelee lähellä Aurinkoa, se on useimmin lähellämme, vaikka Venus käy lähimmillään lähempänä.",
+   "sv": "Eftersom Merkurius håller sig nära solen är den oftast närmast oss, även om Venus som närmast kommer närmare."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "Sound travels faster in water than in air.",
+   "fi": "Ääni kulkee vedessä nopeammin kuin ilmassa.",
+   "sv": "Ljud går fortare i vatten än i luft."
+  },
+  "n": {
+   "en": "At 20 degrees it moves 343 metres a second in air and 1,481 in fresh water, over four times as fast.",
+   "fi": "Kahdessakymmenessä asteessa se kulkee ilmassa 343 ja makeassa vedessä 1 481 metriä sekunnissa eli yli nelinkertaisella nopeudella.",
+   "sv": "Vid tjugo grader rör det sig 343 meter per sekund i luft och 1 481 i sötvatten, mer än fyra gånger snabbare."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": true,
+  "q": {
+   "en": "The ostrich has the largest eyes of any animal living on land.",
+   "fi": "Strutsilla on suurimmat silmät kaikista maalla elävistä eläimistä.",
+   "sv": "Strutsen har de största ögonen av alla djur som lever på land."
+  },
+  "n": {
+   "en": "Each eye measures about 50 millimetres across, and its long neck lets it use them to spot danger far off.",
+   "fi": "Kumpikin silmä on halkaisijaltaan noin 50 millimetriä, ja pitkä kaula auttaa havaitsemaan vaaran kaukaa.",
+   "sv": "Varje öga är omkring 50 millimeter i diameter, och den långa halsen gör att den kan upptäcka fara på långt håll."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "Every mammal has seven bones in its neck.",
+   "fi": "Kaikilla nisäkkäillä on seitsemän kaulanikamaa.",
+   "sv": "Alla däggdjur har sju halskotor."
+  },
+  "n": {
+   "en": "Nearly all do, but the manatee has six, the two-toed sloth five or six and the three-toed sloth nine.",
+   "fi": "Lähes kaikilla on, mutta manaatilla on kuusi, kaksivarpaisella laiskiaisella viisi tai kuusi ja kolmivarpaisella yhdeksän.",
+   "sv": "Nästan alla har det, men manaten har sex, tvåtåiga sengångaren fem eller sex och trefingriga sengångaren nio."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "Venus spins in the same direction as the other planets.",
+   "fi": "Venus pyörii samaan suuntaan kuin muut planeetat.",
+   "sv": "Venus roterar i samma riktning som de andra planeterna."
+  },
+  "n": {
+   "en": "Venus turns clockwise, the opposite way to its orbit and to the spin of the other planets.",
+   "fi": "Venus pyörii myötäpäivään eli päinvastoin kuin se kiertää Aurinkoa ja kuin muut planeetat pyörivät.",
+   "sv": "Venus roterar medsols, alltså motsatt sin bana runt solen och de andra planeternas rotation."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "A thread of spider silk is weaker than a steel thread of the same weight.",
+   "fi": "Hämähäkinseitin säie on heikompi kuin samanpainoinen teräslanka.",
+   "sv": "En tråd av spindelsilke är svagare än en ståltråd av samma vikt."
+  },
+  "n": {
+   "en": "Weight for weight, dragline silk is about five times as strong as steel, because it is so much lighter.",
+   "fi": "Painoon suhteutettuna kantosäie on noin viisi kertaa terästä lujempaa, koska se on niin paljon kevyempää.",
+   "sv": "Vikt för vikt är bärtråden ungefär fem gånger starkare än stål, eftersom den är så mycket lättare."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "Sharks first appeared in the age of the dinosaurs.",
+   "fi": "Hait ilmestyivät maapallolle dinosaurusten aikaan.",
+   "sv": "Hajar uppträdde först under dinosauriernas tid."
+  },
+  "n": {
+   "en": "Shark-like fish swam in the Devonian seas 419 to 359 million years ago, long before the first dinosaurs.",
+   "fi": "Haikalat uivat devonikauden merissä 419–359 miljoonaa vuotta sitten, kauan ennen ensimmäisiä dinosauruksia.",
+   "sv": "Hajliknande fiskar simmade i devons hav för 419–359 miljoner år sedan, långt före de första dinosaurierna."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "Finland's bedrock is among the youngest in Europe.",
+   "fi": "Suomen kallioperä on Euroopan nuorimpia.",
+   "sv": "Finlands berggrund är bland de yngsta i Europa."
+  },
+  "n": {
+   "en": "It belongs to the Fennoscandian Shield, and the oldest rocks in the east and north date from the Archean, billions of years back.",
+   "fi": "Se kuuluu Fennoskandian kilpeen, ja idän ja pohjoisen vanhimmat kivet ovat arkeeiselta ajalta, miljardeja vuosia takaa.",
+   "sv": "Den hör till den fennoskandiska skölden, och de äldsta bergarterna i öst och norr är från arkeikum, miljarder år tillbaka."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "Auroras are something that happens only on Earth.",
+   "fi": "Revontulia esiintyy vain Maassa.",
+   "sv": "Norrsken förekommer bara på jorden."
+  },
+  "n": {
+   "en": "They have been seen on every planet with a magnetic field, and even on Venus, which has none.",
+   "fi": "Niitä on havaittu kaikilla magneettikentän omaavilla planeetoilla ja myös Venuksessa, jolla kenttää ei ole.",
+   "sv": "De har observerats på alla planeter med magnetfält och även på Venus, som saknar ett."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "Auroras glow a few kilometres up, below the clouds.",
+   "fi": "Revontulet hehkuvat parin kilometrin korkeudessa, pilvien alapuolella.",
+   "sv": "Norrsken lyser några kilometer upp, under molnen."
+  },
+  "n": {
+   "en": "They are emitted above 80 kilometres, with most of the light coming from around 100 kilometres up.",
+   "fi": "Ne syntyvät yli 80 kilometrin korkeudessa, ja suurin osa valosta tulee noin sadan kilometrin korkeudelta.",
+   "sv": "De uppstår över 80 kilometers höjd, och mest ljus kommer från omkring hundra kilometer upp."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "The green in the northern lights comes from nitrogen.",
+   "fi": "Revontulten vihreä väri syntyy typestä.",
+   "sv": "Den gröna färgen i norrskenet kommer från kväve."
+  },
+  "n": {
+   "en": "Green comes from atomic oxygen; nitrogen is behind the blue and purple shades lower down.",
+   "fi": "Vihreä syntyy happiatomeista; typpi tuottaa alempana näkyvät siniset ja violetit sävyt.",
+   "sv": "Grönt kommer från atomärt syre; kväve står bakom de blå och violetta tonerna längre ner."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "Anders Celsius set up his temperature scale exactly the way we use it today.",
+   "fi": "Anders Celsius laati lämpötila-asteikkonsa juuri siinä muodossa, jossa käytämme sitä nyt.",
+   "sv": "Anders Celsius ställde upp sin temperaturskala precis som vi använder den i dag."
+  },
+  "n": {
+   "en": "In 1742 he put 0 at boiling and 100 at freezing; Carl Linnaeus turned the scale round in 1745.",
+   "fi": "Vuonna 1742 hän asetti nollan kiehumispisteeseen ja sadan jäätymispisteeseen; Carl von Linné käänsi asteikon 1745.",
+   "sv": "År 1742 satte han 0 vid kokpunkten och 100 vid fryspunkten; Carl von Linné vände på skalan 1745."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "A neutron star spins at most a few times a second.",
+   "fi": "Neutronitähti pyörii enintään muutaman kierroksen sekunnissa.",
+   "sv": "En neutronstjärna roterar högst några varv per sekund."
+  },
+  "n": {
+   "en": "The fastest known one turns 716 times a second, and newborn neutron stars often manage several hundred.",
+   "fi": "Nopein tunnettu pyörähtää 716 kertaa sekunnissa, ja vastasyntyneet neutronitähdet ehtivät usein useita satoja.",
+   "sv": "Den snabbaste kända snurrar 716 varv per sekund, och nyfödda neutronstjärnor klarar ofta flera hundra."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "Sound travels more slowly through steel than through air.",
+   "fi": "Ääni kulkee teräksessä hitaammin kuin ilmassa.",
+   "sv": "Ljud går långsammare genom stål än genom luft."
+  },
+  "n": {
+   "en": "In steel sound runs at about 6,000 metres a second, roughly seventeen times its speed in air.",
+   "fi": "Teräksessä ääni kulkee noin 6 000 metriä sekunnissa eli noin seitsemäntoista kertaa ilmaa nopeammin.",
+   "sv": "I stål rör sig ljudet omkring 6 000 meter per sekund, ungefär sjutton gånger snabbare än i luft."
+  }
+ },
+ {
+  "cat": "Science",
+  "a": false,
+  "q": {
+   "en": "A blue whale's heart is about the size of a human heart.",
+   "fi": "Sinivalaan sydän on noin ihmisen sydämen kokoinen.",
+   "sv": "Blåvalens hjärta är ungefär lika stort som en människas."
+  },
+  "n": {
+   "en": "The heart of a stranded blue whale weighed 180 kilograms, the heaviest ever measured in any animal.",
+   "fi": "Rantautuneen sinivalaan sydän painoi 180 kilogrammaa, raskain koskaan mitattu eläimen sydän.",
+   "sv": "Hjärtat hos en strandad blåval vägde 180 kilogram, det tyngsta som mätts hos något djur."
+  }
+ },
+
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "The Nokia ringtone comes from a guitar piece written over a century ago.",
+   "fi": "Nokian soittoääni on peräisin yli sata vuotta vanhasta kitarakappaleesta.",
+   "sv": "Nokias ringsignal kommer från ett gitarrstycke som skrevs för över hundra år sedan."
+  },
+  "n": {
+   "en": "The tune is a phrase from Gran Vals, written for solo guitar by the Spaniard Francisco Tárrega in 1902.",
+   "fi": "Sävelmä on katkelma Gran Vals -teoksesta, jonka espanjalainen Francisco Tárrega kirjoitti sooloitaralle vuonna 1902.",
+   "sv": "Melodin är en fras ur Gran Vals, som spanjoren Francisco Tárrega skrev för sologitarr 1902."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "The Mona Lisa is less than a metre tall.",
+   "fi": "Mona Lisa on alle metrin korkuinen.",
+   "sv": "Mona Lisa är mindre än en meter hög."
+  },
+  "n": {
+   "en": "The panel measures 77 by 53 centimetres and is painted in oil on poplar wood.",
+   "fi": "Taulu on 77 × 53 senttimetriä ja maalattu öljyväreillä poppelilevylle.",
+   "sv": "Tavlan mäter 77 × 53 centimeter och är målad i olja på poppelträ."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "The Mona Lisa was once stolen by a man who worked at the Louvre.",
+   "fi": "Mona Lisan varasti aikoinaan Louvressa työskennellyt mies.",
+   "sv": "Mona Lisa stals en gång av en man som arbetade på Louvren."
+  },
+  "n": {
+   "en": "Vincenzo Peruggia, who had helped build the painting's glass case, took it on 21 August 1911; it came back in January 1914.",
+   "fi": "Vincenzo Peruggia, joka oli ollut tekemässä taulun lasikoteloa, vei sen 21. elokuuta 1911; taulu palasi tammikuussa 1914.",
+   "sv": "Vincenzo Peruggia, som hjälpt till att bygga tavlans glasmonter, tog den den 21 augusti 1911; den återkom i januari 1914."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "Edvard Munch made four versions of The Scream.",
+   "fi": "Edvard Munch teki Huudosta neljä versiota.",
+   "sv": "Edvard Munch gjorde fyra versioner av Skriet."
+  },
+  "n": {
+   "en": "Two are painted and two are in pastel, and he also made a lithograph of the same scene.",
+   "fi": "Kaksi on maalattu ja kaksi tehty pastellilla, ja samasta aiheesta on myös litografia.",
+   "sv": "Två är målade och två gjorda i pastell, och han gjorde också en litografi av samma motiv."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "The national anthems of Finland and Estonia share the same melody.",
+   "fi": "Suomen ja Viron kansallislauluissa on sama sävelmä.",
+   "sv": "Finlands och Estlands nationalsånger har samma melodi."
+  },
+  "n": {
+   "en": "Fredrik Pacius's tune for Maamme is also used for Estonia's Mu isamaa, mu õnn ja rõõm.",
+   "fi": "Fredrik Paciuksen sävelmä Maamme-lauluun on käytössä myös Viron laulussa Mu isamaa, mu õnn ja rõõm.",
+   "sv": "Fredrik Pacius melodi till Vårt land används också i Estlands Mu isamaa, mu õnn ja rõõm."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "The first Moomin book was written in Swedish.",
+   "fi": "Ensimmäinen muumikirja kirjoitettiin ruotsiksi.",
+   "sv": "Den första muminboken skrevs på svenska."
+  },
+  "n": {
+   "en": "Tove Jansson wrote Småtrollen och den stora översvämningen, published in 1945 in the last months of the war.",
+   "fi": "Tove Jansson kirjoitti teoksen Småtrollen och den stora översvämningen, joka ilmestyi 1945 sodan viimeisinä kuukausina.",
+   "sv": "Tove Jansson skrev Småtrollen och den stora översvämningen, utgiven 1945 under krigets sista månader."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "The Kalevala was one of the sources Tolkien drew on.",
+   "fi": "Kalevala oli yksi Tolkienin käyttämistä lähteistä.",
+   "sv": "Kalevala var en av de källor Tolkien använde."
+  },
+  "n": {
+   "en": "Tolkien named the Kalevala as a source for The Silmarillion, and the Kullervo story lies behind Túrin Turambar.",
+   "fi": "Tolkien nimesi Kalevalan Silmarillionin lähteeksi, ja Kullervon tarina on Túrin Turambarin taustalla.",
+   "sv": "Tolkien angav Kalevala som källa till Silmarillion, och berättelsen om Kullervo ligger bakom Túrin Turambar."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "The official version of the European anthem has no words at all.",
+   "fi": "Euroopan hymnin virallisessa versiossa ei ole lainkaan sanoja.",
+   "sv": "Den officiella versionen av Europahymnen har inga ord alls."
+  },
+  "n": {
+   "en": "The anthem is purely instrumental, taken from the last movement of Beethoven's Ninth Symphony and adopted in 1972 and 1985.",
+   "fi": "Hymni on puhtaasti soitinmusiikkia Beethovenin yhdeksännen sinfonian viimeisestä osasta, ja se otettiin käyttöön 1972 ja 1985.",
+   "sv": "Hymnen är rent instrumental, hämtad ur sista satsen i Beethovens nionde symfoni, och antogs 1972 och 1985."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "In the Hall of the Mountain King was written for a play by Henrik Ibsen.",
+   "fi": "Vuorenkuninkaan luolassa sävellettiin Henrik Ibsenin näytelmää varten.",
+   "sv": "I Bergakungens sal skrevs till en pjäs av Henrik Ibsen."
+  },
+  "n": {
+   "en": "Edvard Grieg composed it in 1875 as stage music for Ibsen's Peer Gynt.",
+   "fi": "Edvard Grieg sävelsi sen 1875 näyttämömusiikiksi Ibsenin Peer Gyntiin.",
+   "sv": "Edvard Grieg komponerade den 1875 som scenmusik till Ibsens Peer Gynt."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "Agatha Christie is the best-selling fiction writer of all time.",
+   "fi": "Agatha Christie on kaikkien aikojen myydyin kaunokirjailija.",
+   "sv": "Agatha Christie är den bäst säljande skönlitterära författaren någonsin."
+  },
+  "n": {
+   "en": "Guinness lists her at over two billion copies in 44 languages, and she is also the most translated individual author.",
+   "fi": "Guinness kirjaa hänelle yli kaksi miljardia myytyä kappaletta 44 kielellä, ja hän on myös käännetyin yksittäinen kirjailija.",
+   "sv": "Guinness anger över två miljarder sålda exemplar på 44 språk, och hon är också den mest översatta enskilda författaren."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "Michelangelo carved his David from a block of marble that other sculptors had given up on.",
+   "fi": "Michelangelo veisti Daavidinsa marmorilohkareesta, jonka muut kuvanveistäjät olivat hylänneet.",
+   "sv": "Michelangelo högg sin David ur ett marmorblock som andra skulptörer gett upp."
+  },
+  "n": {
+   "en": "Two sculptors had abandoned the block, which lay out in the cathedral yard for about 25 years before he took it on at the age of 26.",
+   "fi": "Kaksi kuvanveistäjää oli jättänyt lohkareen kesken, ja se makasi tuomiokirkon pihalla noin 25 vuotta, kunnes 26-vuotias Michelangelo tartui siihen.",
+   "sv": "Två skulptörer hade övergett blocket, som låg ute på domkyrkans gård i cirka 25 år innan den 26-årige Michelangelo tog sig an det."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "Fewer than forty paintings in the world are accepted as Vermeer's.",
+   "fi": "Koko maailmassa Vermeerin töinä hyväksytään alle neljäkymmentä maalausta.",
+   "sv": "I hela världen erkänns färre än fyrtio målningar som Vermeers."
+  },
+  "n": {
+   "en": "Just 34 works are universally attributed to him, although a 19th-century catalogue once credited him with 66.",
+   "fi": "Hänen töikseen hyväksytään yleisesti vain 34 maalausta, vaikka 1800-luvun luettelo laski hänelle kerran 66.",
+   "sv": "Bara 34 verk tillskrivs honom allmänt, trots att en katalog på 1800-talet en gång räknade honom 66."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": true,
+  "q": {
+   "en": "Only one painting is known by name to have been sold by Van Gogh in his lifetime.",
+   "fi": "Van Goghin elinaikana myydyistä maalauksista tunnetaan nimeltä vain yksi.",
+   "sv": "Av de målningar Van Gogh sålde under sin livstid är bara en känd till namnet."
+  },
+  "n": {
+   "en": "The Red Vineyard went to the Belgian painter Anna Boch for 400 francs.",
+   "fi": "Punainen viinitarha meni belgialaiselle taidemaalarille Anna Bochille 400 frangilla.",
+   "sv": "Den röda vingården gick till den belgiska målaren Anna Boch för 400 franc."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Beethoven was able to hear the first performance of his Ninth Symphony.",
+   "fi": "Beethoven kuuli yhdeksännen sinfoniansa ensiesityksen.",
+   "sv": "Beethoven kunde höra urpremiären av sin nionde symfoni."
+  },
+  "n": {
+   "en": "He was almost completely deaf at the Vienna premiere on 7 May 1824 and had to be turned round to see the audience applauding.",
+   "fi": "Hän oli Wienin kantaesityksessä 7. toukokuuta 1824 lähes täysin kuuro, ja hänet oli käännettävä näkemään yleisön taputukset.",
+   "sv": "Han var nästan helt döv vid urpremiären i Wien den 7 maj 1824 och måste vändas om för att se publiken applådera."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "The Scream has never been stolen from a museum.",
+   "fi": "Huutoa ei ole koskaan varastettu museosta.",
+   "sv": "Skriet har aldrig stulits från ett museum."
+  },
+  "n": {
+   "en": "Two versions have been taken: one in Oslo in February 1994 and another by masked gunmen in August 2004.",
+   "fi": "Kaksi versiota on viety: toinen Oslossa helmikuussa 1994 ja toinen naamioituneiden aseistettujen miesten toimesta elokuussa 2004.",
+   "sv": "Två versioner har tagits: en i Oslo i februari 1994 och en av maskerade beväpnade män i augusti 2004."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Sibelius's Eighth Symphony was performed shortly before he died.",
+   "fi": "Sibeliuksen kahdeksas sinfonia esitettiin vähän ennen hänen kuolemaansa.",
+   "sv": "Sibelius åttonde symfoni uppfördes strax före hans död."
+  },
+  "n": {
+   "en": "It was never played: he and Aino burned a pile of manuscripts in the mid-1940s, and the day after his death his daughter announced that the symphony did not exist.",
+   "fi": "Sitä ei soitettu koskaan: hän ja Aino polttivat nuottikasan 1940-luvun puolivälissä, ja hänen kuolemaansa seuraavana päivänä tytär ilmoitti, ettei sinfoniaa ole.",
+   "sv": "Den spelades aldrig: han och Aino brände en bunt manuskript i mitten av 1940-talet, och dagen efter hans död meddelade dottern att symfonin inte existerade."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Tetris was invented in Japan.",
+   "fi": "Tetris kehitettiin Japanissa.",
+   "sv": "Tetris uppfanns i Japan."
+  },
+  "n": {
+   "en": "Alexey Pajitnov made it in the mid-1980s at a Soviet computing centre in Moscow; the name mixes the Greek for four with his favourite sport, tennis.",
+   "fi": "Aleksei Pažitnov teki sen 1980-luvun puolivälissä neuvostoliittolaisessa laskentakeskuksessa Moskovassa; nimi yhdistää kreikan neloset ja hänen lempilajinsa tenniksen.",
+   "sv": "Aleksej Pazjitnov skapade det i mitten av 1980-talet vid ett sovjetiskt datacenter i Moskva; namnet blandar grekiskans fyra med hans favoritsport tennis."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Marimekko's Unikko poppy print dates from the 1990s.",
+   "fi": "Marimekon Unikko-kuosi on 1990-luvulta.",
+   "sv": "Marimekkos Unikko-mönster är från 1990-talet."
+  },
+  "n": {
+   "en": "Maija Isola painted it in 1964, defying the company's dislike of floral patterns.",
+   "fi": "Maija Isola maalasi sen vuonna 1964 uhmaten yhtiön kukkakuoseja kohtaan tuntemaa vastenmielisyyttä.",
+   "sv": "Maija Isola målade det 1964 och trotsade därmed företagets motvilja mot blommönster."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Aku Ankka, the Finnish Donald Duck magazine, first appeared in the 1980s.",
+   "fi": "Aku Ankka -lehti ilmestyi ensimmäisen kerran 1980-luvulla.",
+   "sv": "Aku Ankka, den finska Kalle Anka-tidningen, kom ut första gången på 1980-talet."
+  },
+  "n": {
+   "en": "The first issue came out on 5 December 1951, and in 2013 it was Finland's best-selling magazine.",
+   "fi": "Ensimmäinen numero ilmestyi 5. joulukuuta 1951, ja vuonna 2013 se oli Suomen myydyin lehti.",
+   "sv": "Första numret kom ut den 5 december 1951, och 2013 var den Finlands mest sålda tidning."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Michelangelo's David is a little under two metres tall.",
+   "fi": "Michelangelon Daavid on vähän alle kaksi metriä korkea.",
+   "sv": "Michelangelos David är drygt en och en halv meter hög."
+  },
+  "n": {
+   "en": "The statue stands 5.17 metres high and weighs about 8.5 tonnes.",
+   "fi": "Veistos on 5,17 metriä korkea ja painaa noin 8,5 tonnia.",
+   "sv": "Statyn är 5,17 meter hög och väger omkring 8,5 ton."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Agatha Christie's play The Mousetrap closed after a few months in London.",
+   "fi": "Agatha Christien näytelmä Hiirenloukku lopetettiin Lontoossa parin kuukauden jälkeen.",
+   "sv": "Agatha Christies pjäs Råttfällan lades ner efter några månader i London."
+  },
+  "n": {
+   "en": "It opened in the West End in November 1952 and had passed 27,500 performances by 2018.",
+   "fi": "Se sai ensi-iltansa West Endissä marraskuussa 1952, ja vuoteen 2018 esityksiä oli yli 27 500.",
+   "sv": "Den hade premiär i West End i november 1952 och hade passerat 27 500 föreställningar 2018."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Finland won the Eurovision Song Contest the first time it took part.",
+   "fi": "Suomi voitti Euroviisut ensimmäisellä osallistumiskerrallaan.",
+   "sv": "Finland vann Eurovisionsschlagerfestivalen första gången landet deltog."
+  },
+  "n": {
+   "en": "Finland first entered in 1961 and had to wait 45 years for its win in 2006.",
+   "fi": "Suomi osallistui ensi kerran 1961 ja sai odottaa voittoaan 45 vuotta, vuoteen 2006.",
+   "sv": "Finland deltog första gången 1961 och fick vänta 45 år på segern 2006."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Shakespeare himself oversaw the printing of the First Folio of his plays.",
+   "fi": "Shakespeare valvoi itse näytelmiensä ensimmäisen folion painamista.",
+   "sv": "Shakespeare övervakade själv tryckningen av den första folioutgåvan av sina pjäser."
+  },
+  "n": {
+   "en": "The Folio appeared in 1623, about seven years after his death, and 18 of its 36 plays had never been printed before.",
+   "fi": "Folio ilmestyi 1623 eli noin seitsemän vuotta hänen kuolemansa jälkeen, ja sen 36 näytelmästä 18 ei ollut aiemmin painettu.",
+   "sv": "Folioutgåvan kom 1623, ungefär sju år efter hans död, och 18 av dess 36 pjäser hade aldrig tryckts tidigare."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "The Hollywood sign has read Hollywood ever since it was put up.",
+   "fi": "Hollywood-kilvessä on lukenut Hollywood siitä asti, kun se pystytettiin.",
+   "sv": "Hollywoodskylten har stått Hollywood ända sedan den restes."
+  },
+  "n": {
+   "en": "It was dedicated in July 1923 as an advertisement reading HOLLYWOODLAND; the last four letters were taken down in 1949.",
+   "fi": "Se vihittiin heinäkuussa 1923 mainokseksi, jossa luki HOLLYWOODLAND; neljä viimeistä kirjainta purettiin 1949.",
+   "sv": "Den invigdes i juli 1923 som en reklamskylt med texten HOLLYWOODLAND; de sista fyra bokstäverna togs ner 1949."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "a": false,
+  "q": {
+   "en": "Vermeer was already celebrated across Europe when he died.",
+   "fi": "Vermeer oli kuollessaan jo kuulu koko Euroopassa.",
+   "sv": "Vermeer var redan berömd i hela Europa när han dog."
+  },
+  "n": {
+   "en": "He was a moderately successful local painter in Delft and The Hague, and slipped into obscurity until German and French critics rediscovered him in the 1860s.",
+   "fi": "Hän oli kohtalaisen menestynyt paikallinen maalari Delftissä ja Haagissa ja vaipui unohduksiin, kunnes saksalaiset ja ranskalaiset kriitikot löysivät hänet uudelleen 1860-luvulla.",
+   "sv": "Han var en måttligt framgångsrik lokal målare i Delft och Haag och föll i glömska tills tyska och franska kritiker återupptäckte honom på 1860-talet."
+  }
+ }
+]

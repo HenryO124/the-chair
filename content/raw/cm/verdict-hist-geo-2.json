@@ -1,0 +1,427 @@
+[
+ {
+  "i": 0,
+  "verdict": "keep"
+ },
+ {
+  "i": 1,
+  "verdict": "keep"
+ },
+ {
+  "i": 2,
+  "verdict": "keep"
+ },
+ {
+  "i": 3,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Finnish_markka"
+ },
+ {
+  "i": 4,
+  "verdict": "keep"
+ },
+ {
+  "i": 5,
+  "verdict": "keep"
+ },
+ {
+  "i": 6,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Finnish_famine_of_1866%E2%80%931868"
+ },
+ {
+  "i": 7,
+  "verdict": "keep"
+ },
+ {
+  "i": 8,
+  "verdict": "keep"
+ },
+ {
+  "i": 9,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Porkkala_Naval_Base"
+ },
+ {
+  "i": 10,
+  "verdict": "keep"
+ },
+ {
+  "i": 11,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Evacuation_of_Finnish_Karelia"
+ },
+ {
+  "i": 12,
+  "verdict": "keep"
+ },
+ {
+  "i": 13,
+  "verdict": "keep"
+ },
+ {
+  "i": 14,
+  "verdict": "keep"
+ },
+ {
+  "i": 15,
+  "verdict": "keep"
+ },
+ {
+  "i": 16,
+  "verdict": "fix",
+  "why": "Sweden changed over on 3 September 1967 and Iceland on 26 May 1968, which is nearly nine months, not eight.",
+  "fix": {
+   "n": {
+    "en": "Iceland followed in May the next year, and Swedes still call the changeover day Dagen H.",
+    "fi": "Islanti seurasi perässä seuraavan vuoden toukokuussa, ja ruotsalaiset kutsuvat vaihtopäivää yhä nimellä Dagen H.",
+    "sv": "Island följde efter i maj året därpå, och dagen kallas fortfarande Dagen H."
+   }
+  },
+  "source": "https://en.wikipedia.org/wiki/H-dagurinn"
+ },
+ {
+  "i": 17,
+  "verdict": "keep"
+ },
+ {
+  "i": 18,
+  "verdict": "keep"
+ },
+ {
+  "i": 19,
+  "verdict": "keep"
+ },
+ {
+  "i": 20,
+  "verdict": "keep"
+ },
+ {
+  "i": 21,
+  "verdict": "keep"
+ },
+ {
+  "i": 22,
+  "verdict": "keep"
+ },
+ {
+  "i": 23,
+  "verdict": "keep"
+ },
+ {
+  "i": 24,
+  "verdict": "keep"
+ },
+ {
+  "i": 25,
+  "verdict": "keep"
+ },
+ {
+  "i": 26,
+  "verdict": "keep"
+ },
+ {
+  "i": 27,
+  "verdict": "keep"
+ },
+ {
+  "i": 28,
+  "verdict": "keep"
+ },
+ {
+  "i": 29,
+  "verdict": "keep"
+ },
+ {
+  "i": 30,
+  "verdict": "keep"
+ },
+ {
+  "i": 31,
+  "verdict": "keep"
+ },
+ {
+  "i": 32,
+  "verdict": "keep"
+ },
+ {
+  "i": 33,
+  "verdict": "keep"
+ },
+ {
+  "i": 34,
+  "verdict": "keep"
+ },
+ {
+  "i": 35,
+  "verdict": "keep"
+ },
+ {
+  "i": 36,
+  "verdict": "keep"
+ },
+ {
+  "i": 37,
+  "verdict": "keep"
+ },
+ {
+  "i": 38,
+  "verdict": "keep"
+ },
+ {
+  "i": 39,
+  "verdict": "keep"
+ },
+ {
+  "i": 40,
+  "verdict": "keep"
+ },
+ {
+  "i": 41,
+  "verdict": "keep"
+ },
+ {
+  "i": 42,
+  "verdict": "keep"
+ },
+ {
+  "i": 43,
+  "verdict": "keep"
+ },
+ {
+  "i": 44,
+  "verdict": "keep"
+ },
+ {
+  "i": 45,
+  "verdict": "keep"
+ },
+ {
+  "i": 46,
+  "verdict": "keep"
+ },
+ {
+  "i": 47,
+  "verdict": "keep"
+ },
+ {
+  "i": 48,
+  "verdict": "keep"
+ },
+ {
+  "i": 49,
+  "verdict": "keep"
+ },
+ {
+  "i": 50,
+  "verdict": "keep"
+ },
+ {
+  "i": 51,
+  "verdict": "keep"
+ },
+ {
+  "i": 52,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Nuorgam"
+ },
+ {
+  "i": 53,
+  "verdict": "keep"
+ },
+ {
+  "i": 54,
+  "verdict": "keep"
+ },
+ {
+  "i": 55,
+  "verdict": "keep"
+ },
+ {
+  "i": 56,
+  "verdict": "keep"
+ },
+ {
+  "i": 57,
+  "verdict": "keep"
+ },
+ {
+  "i": 58,
+  "verdict": "keep"
+ },
+ {
+  "i": 59,
+  "verdict": "keep"
+ },
+ {
+  "i": 60,
+  "verdict": "fix",
+  "why": "The transmission route is invented detail: turku is a loan of the Slavic torg, market, which linguists (Kaisa Hakkinen) hold came in through Estonian, not 'along Viking trade routes'.",
+  "fix": {
+   "n": {
+    "en": "The word is an old loan from the Slavic torg, market, while the Swedish name Åbo means a dwelling by the river.",
+    "fi": "Sana on vanha laina slaavilaisesta sanasta torg eli markkinapaikka, kun taas ruotsinkielinen nimi Åbo tarkoittaa asumusta joen varrella.",
+    "sv": "Ordet är ett gammalt lånord från slaviskans torg, marknad, medan det svenska namnet Åbo betyder en boplats vid ån."
+   }
+  },
+  "source": "https://en.wikipedia.org/wiki/Turku"
+ },
+ {
+  "i": 61,
+  "verdict": "keep"
+ },
+ {
+  "i": 62,
+  "verdict": "keep"
+ },
+ {
+  "i": 63,
+  "verdict": "keep"
+ },
+ {
+  "i": 64,
+  "verdict": "keep"
+ },
+ {
+  "i": 65,
+  "verdict": "keep"
+ },
+ {
+  "i": 66,
+  "verdict": "keep"
+ },
+ {
+  "i": 67,
+  "verdict": "keep"
+ },
+ {
+  "i": 68,
+  "verdict": "keep"
+ },
+ {
+  "i": 69,
+  "verdict": "keep"
+ },
+ {
+  "i": 70,
+  "verdict": "keep"
+ },
+ {
+  "i": 71,
+  "verdict": "keep"
+ },
+ {
+  "i": 72,
+  "verdict": "keep"
+ },
+ {
+  "i": 73,
+  "verdict": "keep"
+ },
+ {
+  "i": 74,
+  "verdict": "keep"
+ },
+ {
+  "i": 75,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Cape_Agulhas"
+ },
+ {
+  "i": 76,
+  "verdict": "keep"
+ },
+ {
+  "i": 77,
+  "verdict": "keep"
+ },
+ {
+  "i": 78,
+  "verdict": "keep"
+ },
+ {
+  "i": 79,
+  "verdict": "keep"
+ },
+ {
+  "i": 80,
+  "verdict": "keep"
+ },
+ {
+  "i": 81,
+  "verdict": "keep"
+ },
+ {
+  "i": 82,
+  "verdict": "keep"
+ },
+ {
+  "i": 83,
+  "verdict": "keep"
+ },
+ {
+  "i": 84,
+  "verdict": "keep"
+ },
+ {
+  "i": 85,
+  "verdict": "keep"
+ },
+ {
+  "i": 86,
+  "verdict": "keep"
+ },
+ {
+  "i": 87,
+  "verdict": "keep"
+ },
+ {
+  "i": 88,
+  "verdict": "keep"
+ },
+ {
+  "i": 89,
+  "verdict": "keep"
+ },
+ {
+  "i": 90,
+  "verdict": "keep"
+ },
+ {
+  "i": 91,
+  "verdict": "keep"
+ },
+ {
+  "i": 92,
+  "verdict": "keep"
+ },
+ {
+  "i": 93,
+  "verdict": "keep"
+ },
+ {
+  "i": 94,
+  "verdict": "keep"
+ },
+ {
+  "i": 95,
+  "verdict": "keep"
+ },
+ {
+  "i": 96,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Brenner_Pass"
+ },
+ {
+  "i": 97,
+  "verdict": "keep"
+ },
+ {
+  "i": 98,
+  "verdict": "keep"
+ },
+ {
+  "i": 99,
+  "verdict": "keep"
+ }
+]

@@ -1,0 +1,423 @@
+[
+ {
+  "i": 0,
+  "verdict": "keep",
+  "source": "https://um.fi/current-affairs/-/asset_publisher/gc654PySnjTX/content/uudenvuodenaatto-pietarin-smolnassa-itsenaisyyden-tunnustus-31-12-1917"
+ },
+ {
+  "i": 1,
+  "verdict": "keep"
+ },
+ {
+  "i": 2,
+  "verdict": "keep"
+ },
+ {
+  "i": 3,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Evacuation_of_Finnish_Karelia"
+ },
+ {
+  "i": 4,
+  "verdict": "keep"
+ },
+ {
+  "i": 5,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/St%C3%A5hlberg_kidnapping"
+ },
+ {
+  "i": 6,
+  "verdict": "keep"
+ },
+ {
+  "i": 7,
+  "verdict": "keep"
+ },
+ {
+  "i": 8,
+  "verdict": "keep"
+ },
+ {
+  "i": 9,
+  "verdict": "keep"
+ },
+ {
+  "i": 10,
+  "verdict": "keep"
+ },
+ {
+  "i": 11,
+  "verdict": "keep",
+  "source": "https://finland100.fi/2017/08/29/the-price-of-the-finnish-civil-war-sentences-executions-prison-camps-deaths/"
+ },
+ {
+  "i": 12,
+  "verdict": "keep"
+ },
+ {
+  "i": 13,
+  "verdict": "keep"
+ },
+ {
+  "i": 14,
+  "verdict": "keep"
+ },
+ {
+  "i": 15,
+  "verdict": "keep"
+ },
+ {
+  "i": 16,
+  "verdict": "keep"
+ },
+ {
+  "i": 17,
+  "verdict": "keep"
+ },
+ {
+  "i": 18,
+  "verdict": "keep"
+ },
+ {
+  "i": 19,
+  "verdict": "keep"
+ },
+ {
+  "i": 20,
+  "verdict": "keep"
+ },
+ {
+  "i": 21,
+  "verdict": "keep"
+ },
+ {
+  "i": 22,
+  "verdict": "keep"
+ },
+ {
+  "i": 23,
+  "verdict": "keep"
+ },
+ {
+  "i": 24,
+  "verdict": "keep"
+ },
+ {
+  "i": 25,
+  "verdict": "keep"
+ },
+ {
+  "i": 26,
+  "verdict": "keep"
+ },
+ {
+  "i": 27,
+  "verdict": "keep"
+ },
+ {
+  "i": 28,
+  "verdict": "keep"
+ },
+ {
+  "i": 29,
+  "verdict": "keep"
+ },
+ {
+  "i": 30,
+  "verdict": "keep"
+ },
+ {
+  "i": 31,
+  "verdict": "keep"
+ },
+ {
+  "i": 32,
+  "verdict": "keep"
+ },
+ {
+  "i": 33,
+  "verdict": "keep"
+ },
+ {
+  "i": 34,
+  "verdict": "keep"
+ },
+ {
+  "i": 35,
+  "verdict": "keep"
+ },
+ {
+  "i": 36,
+  "verdict": "keep"
+ },
+ {
+  "i": 37,
+  "verdict": "keep"
+ },
+ {
+  "i": 38,
+  "verdict": "keep"
+ },
+ {
+  "i": 39,
+  "verdict": "keep"
+ },
+ {
+  "i": 40,
+  "verdict": "keep"
+ },
+ {
+  "i": 41,
+  "verdict": "keep"
+ },
+ {
+  "i": 42,
+  "verdict": "keep"
+ },
+ {
+  "i": 43,
+  "verdict": "keep"
+ },
+ {
+  "i": 44,
+  "verdict": "keep"
+ },
+ {
+  "i": 45,
+  "verdict": "keep"
+ },
+ {
+  "i": 46,
+  "verdict": "keep"
+ },
+ {
+  "i": 47,
+  "verdict": "keep"
+ },
+ {
+  "i": 48,
+  "verdict": "keep"
+ },
+ {
+  "i": 49,
+  "verdict": "keep"
+ },
+ {
+  "i": 50,
+  "verdict": "keep"
+ },
+ {
+  "i": 51,
+  "verdict": "keep"
+ },
+ {
+  "i": 52,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Kemijoki"
+ },
+ {
+  "i": 53,
+  "verdict": "keep"
+ },
+ {
+  "i": 54,
+  "verdict": "keep"
+ },
+ {
+  "i": 55,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/V%C3%A4nern"
+ },
+ {
+  "i": 56,
+  "verdict": "keep"
+ },
+ {
+  "i": 57,
+  "verdict": "keep"
+ },
+ {
+  "i": 58,
+  "verdict": "fix",
+  "why": "The tunnel is not half the crossing: the Drogden tunnel is about 4 km of an roughly 12 km fixed link, so about a third at most.",
+  "fix": {
+   "n": {
+    "en": "A four-kilometre stretch is not a bridge at all but a tunnel, which the crossing enters on the artificial island of Peberholm.",
+    "fi": "Neljän kilometrin matka ei ole siltaa lainkaan vaan tunneli, johon ylitys sukeltaa keinosaarella Peberholmilla.",
+    "sv": "En fyra kilometer lång sträcka är inte bro alls utan en tunnel, som förbindelsen går ner i vid den konstgjorda ön Peberholm."
+   }
+  },
+  "source": "https://wikiwand.com/en/articles/Oresund_bridge"
+ },
+ {
+  "i": 59,
+  "verdict": "keep"
+ },
+ {
+  "i": 60,
+  "verdict": "keep"
+ },
+ {
+  "i": 61,
+  "verdict": "keep"
+ },
+ {
+  "i": 62,
+  "verdict": "keep"
+ },
+ {
+  "i": 63,
+  "verdict": "keep"
+ },
+ {
+  "i": 64,
+  "verdict": "keep"
+ },
+ {
+  "i": 65,
+  "verdict": "keep"
+ },
+ {
+  "i": 66,
+  "verdict": "keep",
+  "source": "https://www.usgs.gov/media/images/lake-baikal-space-largest-oldest-and-deepest-lake"
+ },
+ {
+  "i": 67,
+  "verdict": "keep"
+ },
+ {
+  "i": 68,
+  "verdict": "keep"
+ },
+ {
+  "i": 69,
+  "verdict": "keep"
+ },
+ {
+  "i": 70,
+  "verdict": "keep"
+ },
+ {
+  "i": 71,
+  "verdict": "keep"
+ },
+ {
+  "i": 72,
+  "verdict": "keep",
+  "source": "https://www.worldatlas.com/articles/the-world-s-southernmost-country-capitals.html"
+ },
+ {
+  "i": 73,
+  "verdict": "keep"
+ },
+ {
+  "i": 74,
+  "verdict": "keep"
+ },
+ {
+  "i": 75,
+  "verdict": "keep"
+ },
+ {
+  "i": 76,
+  "verdict": "keep"
+ },
+ {
+  "i": 77,
+  "verdict": "keep"
+ },
+ {
+  "i": 78,
+  "verdict": "keep"
+ },
+ {
+  "i": 79,
+  "verdict": "keep",
+  "source": "https://drishtiias.com/daily-news-analysis/mt-aconcagua"
+ },
+ {
+  "i": 80,
+  "verdict": "keep"
+ },
+ {
+  "i": 81,
+  "verdict": "keep"
+ },
+ {
+  "i": 82,
+  "verdict": "keep"
+ },
+ {
+  "i": 83,
+  "verdict": "keep"
+ },
+ {
+  "i": 84,
+  "verdict": "keep"
+ },
+ {
+  "i": 85,
+  "verdict": "keep"
+ },
+ {
+  "i": 86,
+  "verdict": "keep"
+ },
+ {
+  "i": 87,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Geography_of_Lesotho"
+ },
+ {
+  "i": 88,
+  "verdict": "cut",
+  "why": "Duplicate: this is the same question, with the same four options in the same order and the same aside, as sci-every.json index 39, so the bank would ask it twice.",
+  "source": "https://www.worldatlas.com/bodies-of-water/how-deep-the-mariana-trench-is-compared-to-mount-everest.html"
+ },
+ {
+  "i": 89,
+  "verdict": "keep"
+ },
+ {
+  "i": 90,
+  "verdict": "keep"
+ },
+ {
+  "i": 91,
+  "verdict": "keep"
+ },
+ {
+  "i": 92,
+  "verdict": "keep"
+ },
+ {
+  "i": 93,
+  "verdict": "keep"
+ },
+ {
+  "i": 94,
+  "verdict": "keep"
+ },
+ {
+  "i": 95,
+  "verdict": "keep"
+ },
+ {
+  "i": 96,
+  "verdict": "keep"
+ },
+ {
+  "i": 97,
+  "verdict": "keep"
+ },
+ {
+  "i": 98,
+  "verdict": "keep"
+ },
+ {
+  "i": 99,
+  "verdict": "keep"
+ }
+]

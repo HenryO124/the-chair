@@ -1,0 +1,470 @@
+[
+ {
+  "i": 0,
+  "verdict": "keep"
+ },
+ {
+  "i": 1,
+  "verdict": "keep"
+ },
+ {
+  "i": 2,
+  "verdict": "keep",
+  "source": "https://bionumbers.hms.harvard.edu/bionumber.aspx?id=106322"
+ },
+ {
+  "i": 3,
+  "verdict": "keep",
+  "source": "https://www.ruokavirasto.fi/globalassets/teemat/terveytta-edistava-ruokavalio/ravintoaineet/vrn_jodi_toimenpidesuositus_10_2.2015_english.pdf"
+ },
+ {
+  "i": 4,
+  "verdict": "keep"
+ },
+ {
+  "i": 5,
+  "verdict": "keep"
+ },
+ {
+  "i": 6,
+  "verdict": "keep",
+  "source": "https://scilit.com/publications/e34c0afa8041542b7c597f4f4da4db4b"
+ },
+ {
+  "i": 7,
+  "verdict": "keep"
+ },
+ {
+  "i": 8,
+  "verdict": "keep"
+ },
+ {
+  "i": 9,
+  "verdict": "keep"
+ },
+ {
+  "i": 10,
+  "verdict": "keep"
+ },
+ {
+  "i": 11,
+  "verdict": "keep"
+ },
+ {
+  "i": 12,
+  "verdict": "keep"
+ },
+ {
+  "i": 13,
+  "verdict": "keep",
+  "source": "https://pubs.rsc.org/en/content/articlehtml/2007/pp/b613263d"
+ },
+ {
+  "i": 14,
+  "verdict": "keep"
+ },
+ {
+  "i": 15,
+  "verdict": "keep",
+  "source": "https://www.livescience.com/health/science-history-alexander-fleming-wakes-up-to-funny-mold-in-his-petri-dish-and-accidentally-discovers-the-first-antibiotic-sept-28-1928"
+ },
+ {
+  "i": 16,
+  "verdict": "keep"
+ },
+ {
+  "i": 17,
+  "verdict": "fix",
+  "why": "The aside's etymology is false: English 'ferry' is from Proto-Germanic *farjan 'to carry over', not from Latin ferrum.",
+  "fix": {
+   "n": {
+    "en": "Fe is short for the Latin ferrum, the same root behind words like ferrous and ferrite.",
+    "fi": "Fe on lyhenne latinan sanasta ferrum, ja samasta juuresta tulevat sanat kuten ferriitti.",
+    "sv": "Fe är kort för latinets ferrum, och från samma rot kommer ord som ferrit."
+   }
+  },
+  "source": "https://www.etymonline.com/word/ferry"
+ },
+ {
+  "i": 18,
+  "verdict": "keep"
+ },
+ {
+  "i": 19,
+  "verdict": "keep"
+ },
+ {
+  "i": 20,
+  "verdict": "keep"
+ },
+ {
+  "i": 21,
+  "verdict": "keep"
+ },
+ {
+  "i": 22,
+  "verdict": "keep"
+ },
+ {
+  "i": 23,
+  "verdict": "keep",
+  "source": "https://solarwatch.app/resources/helium-discovered-solar-eclipse"
+ },
+ {
+  "i": 24,
+  "verdict": "keep"
+ },
+ {
+  "i": 25,
+  "verdict": "keep"
+ },
+ {
+  "i": 26,
+  "verdict": "keep"
+ },
+ {
+  "i": 27,
+  "verdict": "keep"
+ },
+ {
+  "i": 28,
+  "verdict": "keep"
+ },
+ {
+  "i": 29,
+  "verdict": "keep",
+  "source": "https://canadianarchaeology.ca/dating"
+ },
+ {
+  "i": 30,
+  "verdict": "keep"
+ },
+ {
+  "i": 31,
+  "verdict": "keep",
+  "source": "https://ebsco.com/research-starters/astronomy-and-astrophysics/uranus"
+ },
+ {
+  "i": 32,
+  "verdict": "fix",
+  "why": "The Great Red Spot has shrunk to roughly one Earth diameter, so 'wide enough to swallow the whole Earth' is no longer safely true and goes further out of date every year.",
+  "fix": {
+   "n": {
+    "en": "The spot is a storm about as wide as the Earth, and it has been shrinking for as long as astronomers have measured it.",
+    "fi": "Pilkku on myrsky, joka on noin Maan levyinen, ja se on kutistunut niin kauan kuin tähtitieteilijät ovat sitä mitanneet.",
+    "sv": "Fläcken är en storm som är ungefär lika bred som jorden, och den har krympt så länge astronomer har mätt den."
+   }
+  },
+  "source": "https://science.nasa.gov/asset/hubble/jupiters-great-red-spot-2/"
+ },
+ {
+  "i": 33,
+  "verdict": "keep"
+ },
+ {
+  "i": 34,
+  "verdict": "keep"
+ },
+ {
+  "i": 35,
+  "verdict": "keep"
+ },
+ {
+  "i": 36,
+  "verdict": "keep"
+ },
+ {
+  "i": 37,
+  "verdict": "keep"
+ },
+ {
+  "i": 38,
+  "verdict": "keep",
+  "source": "https://www.vapriikki.fi/en/the-formation-of-rocks-and-bedrock/"
+ },
+ {
+  "i": 39,
+  "verdict": "keep",
+  "source": "https://www.worldatlas.com/bodies-of-water/how-deep-the-mariana-trench-is-compared-to-mount-everest.html"
+ },
+ {
+  "i": 40,
+  "verdict": "keep"
+ },
+ {
+  "i": 41,
+  "verdict": "keep"
+ },
+ {
+  "i": 42,
+  "verdict": "keep",
+  "source": "https://guinnessworldrecords.com/world-records/115537-largest-animal"
+ },
+ {
+  "i": 43,
+  "verdict": "keep"
+ },
+ {
+  "i": 44,
+  "verdict": "keep"
+ },
+ {
+  "i": 45,
+  "verdict": "keep"
+ },
+ {
+  "i": 46,
+  "verdict": "keep"
+ },
+ {
+  "i": 47,
+  "verdict": "keep"
+ },
+ {
+  "i": 48,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Abundance_of_the_chemical_elements"
+ },
+ {
+  "i": 49,
+  "verdict": "keep",
+  "source": "https://www.newworldencyclopedia.org/entry/Mohs_scale_of_mineral_hardness"
+ },
+ {
+  "i": 50,
+  "verdict": "keep"
+ },
+ {
+  "i": 51,
+  "verdict": "fix",
+  "why": "'Simply kept' is misleading: marathon distances varied for another thirteen years and the 1908 figure was only made the official standard in 1921.",
+  "fix": {
+   "n": {
+    "en": "The odd distance comes from the route run at the London Olympics of 1908 and was made the official standard in 1921.",
+    "fi": "Omituinen matka periytyy Lontoon olympialaisten 1908 reitistä, ja se vahvistettiin viralliseksi mitaksi vuonna 1921.",
+    "sv": "Den udda distansen kommer från banan vid olympiaden i London 1908 och fastställdes som officiell standard 1921."
+   }
+  },
+  "source": "https://artsandculture.google.com/story/exactly-42-195-kilometres-the-olympic-museum/UQUxmUDpLTLLUA"
+ },
+ {
+  "i": 52,
+  "verdict": "keep"
+ },
+ {
+  "i": 53,
+  "verdict": "keep"
+ },
+ {
+  "i": 54,
+  "verdict": "keep"
+ },
+ {
+  "i": 55,
+  "verdict": "keep"
+ },
+ {
+  "i": 56,
+  "verdict": "keep"
+ },
+ {
+  "i": 57,
+  "verdict": "keep"
+ },
+ {
+  "i": 58,
+  "verdict": "keep",
+  "source": "https://classicfm.com/discover-music/instruments/piano/why-pianos-have-88-keys/"
+ },
+ {
+  "i": 59,
+  "verdict": "keep"
+ },
+ {
+  "i": 60,
+  "verdict": "keep"
+ },
+ {
+  "i": 61,
+  "verdict": "keep",
+  "source": "https://www.wordorigins.org/big-list-entries/bakers-dozen"
+ },
+ {
+  "i": 62,
+  "verdict": "keep",
+  "source": "https://www.britannica.com/story/why-is-saffron-so-expensive"
+ },
+ {
+  "i": 63,
+  "verdict": "keep"
+ },
+ {
+  "i": 64,
+  "verdict": "keep"
+ },
+ {
+  "i": 65,
+  "verdict": "keep"
+ },
+ {
+  "i": 66,
+  "verdict": "keep"
+ },
+ {
+  "i": 67,
+  "verdict": "keep"
+ },
+ {
+  "i": 68,
+  "verdict": "keep"
+ },
+ {
+  "i": 69,
+  "verdict": "keep"
+ },
+ {
+  "i": 70,
+  "verdict": "keep"
+ },
+ {
+  "i": 71,
+  "verdict": "keep",
+  "source": "https://www.sowseeds.co.uk/pages/scoville-scale"
+ },
+ {
+  "i": 72,
+  "verdict": "keep"
+ },
+ {
+  "i": 73,
+  "verdict": "keep"
+ },
+ {
+  "i": 74,
+  "verdict": "keep"
+ },
+ {
+  "i": 75,
+  "verdict": "keep"
+ },
+ {
+  "i": 76,
+  "verdict": "keep"
+ },
+ {
+  "i": 77,
+  "verdict": "keep"
+ },
+ {
+  "i": 78,
+  "verdict": "keep"
+ },
+ {
+  "i": 79,
+  "verdict": "keep"
+ },
+ {
+  "i": 80,
+  "verdict": "keep"
+ },
+ {
+  "i": 81,
+  "verdict": "keep"
+ },
+ {
+  "i": 82,
+  "verdict": "keep"
+ },
+ {
+  "i": 83,
+  "verdict": "keep"
+ },
+ {
+  "i": 84,
+  "verdict": "keep",
+  "source": "https://digital.library.adelaide.edu.au/items/ad4f9181-6877-4d5b-bcf9-55a0446bd65b/full"
+ },
+ {
+  "i": 85,
+  "verdict": "keep"
+ },
+ {
+  "i": 86,
+  "verdict": "fix",
+  "why": "The Santa inference does not follow: most sled reindeer are castrated males, which keep their antlers on the same cycle as cows, so antlers at Christmas do not imply females.",
+  "fix": {
+   "n": {
+    "en": "Bulls drop their antlers in early winter while cows keep theirs until spring.",
+    "fi": "Urokset pudottavat sarvensa alkutalvesta, kun taas naaraat pitävät omansa kevääseen asti.",
+    "sv": "Tjurarna fäller sina horn i början av vintern medan korna behåller sina till våren."
+   }
+  },
+  "source": "https://ptes.org/reindeer-rule-ok/"
+ },
+ {
+  "i": 87,
+  "verdict": "keep"
+ },
+ {
+  "i": 88,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Apteekin_Salmiakki"
+ },
+ {
+  "i": 89,
+  "verdict": "keep"
+ },
+ {
+  "i": 90,
+  "verdict": "keep",
+  "source": "https://www.luke.fi/en/news/the-growing-stock-volume-is-25-billion-cubic-metres-in-finnish-forests-a-quarter-of-which-in-peatlands"
+ },
+ {
+  "i": 91,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/List_of_lakes_of_Finland"
+ },
+ {
+  "i": 92,
+  "verdict": "keep",
+  "source": "https://www.arcticcentre.org/en/arctic-region/arctic-birds/whooper-swan/"
+ },
+ {
+  "i": 93,
+  "verdict": "fix",
+  "why": "'Dozens of nicknames' and the 'out of respect' motive are not supported; the sourced account is that substitute noa-names were used to avoid drawing the animal's attention.",
+  "fix": {
+   "n": {
+    "en": "Its real name was avoided and replaced with substitute names such as otso and kontio, so as not to draw the animal's attention.",
+    "fi": "Sen oikeaa nimeä vältettiin ja tilalle käytettiin kiertoilmauksia kuten otso ja kontio, jottei eläimen huomiota herätettäisi.",
+    "sv": "Dess riktiga namn undveks och ersattes med omskrivningar som otso och kontio, för att inte dra till sig djurets uppmärksamhet."
+   }
+  },
+  "source": "https://en.wikipedia.org/wiki/Noa-name"
+ },
+ {
+  "i": 94,
+  "verdict": "keep",
+  "source": "https://itameri.fi/en/the-baltic-sea-now/water-quality/salinity/"
+ },
+ {
+  "i": 95,
+  "verdict": "keep"
+ },
+ {
+  "i": 96,
+  "verdict": "keep"
+ },
+ {
+  "i": 97,
+  "verdict": "keep"
+ },
+ {
+  "i": 98,
+  "verdict": "keep"
+ },
+ {
+  "i": 99,
+  "verdict": "keep"
+ }
+]

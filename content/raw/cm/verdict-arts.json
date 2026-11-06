@@ -1,0 +1,216 @@
+[
+ {
+  "i": 0,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Finlandia"
+ },
+ {
+  "i": 1,
+  "verdict": "keep"
+ },
+ {
+  "i": 2,
+  "verdict": "fix",
+  "why": "The figures do not support 'more than twice': the Old Kalevala (1835) has 12,078 verses and the New Kalevala (1849) has 22,795, a ratio of about 1.89.",
+  "fix": {
+   "n": {
+    "en": "The 1849 edition is nearly twice as long as the first one published in 1835, 22,795 verses against 12,078.",
+    "fi": "Vuoden 1849 laitos on lähes kaksi kertaa niin pitkä kuin ensimmäinen, vuonna 1835 julkaistu: 22 795 säettä vastaan 12 078.",
+    "sv": "Utgåvan från 1849 är nästan dubbelt så lång som den första från 1835, 22 795 verser mot 12 078."
+   }
+  },
+  "source": "https://en.wikipedia.org/wiki/Kalevala"
+ },
+ {
+  "i": 3,
+  "verdict": "keep"
+ },
+ {
+  "i": 4,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/The_Unknown_Soldier_(2017_film)"
+ },
+ {
+  "i": 5,
+  "verdict": "keep"
+ },
+ {
+  "i": 6,
+  "verdict": "keep"
+ },
+ {
+  "i": 7,
+  "verdict": "keep"
+ },
+ {
+  "i": 8,
+  "verdict": "keep"
+ },
+ {
+  "i": 9,
+  "verdict": "keep"
+ },
+ {
+  "i": 10,
+  "verdict": "keep"
+ },
+ {
+  "i": 11,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Temppeliaukio_Church"
+ },
+ {
+  "i": 12,
+  "verdict": "keep"
+ },
+ {
+  "i": 13,
+  "verdict": "keep"
+ },
+ {
+  "i": 14,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Savonlinna_Opera_Festival"
+ },
+ {
+  "i": 15,
+  "verdict": "keep"
+ },
+ {
+  "i": 16,
+  "verdict": "keep"
+ },
+ {
+  "i": 17,
+  "verdict": "keep"
+ },
+ {
+  "i": 18,
+  "verdict": "keep"
+ },
+ {
+  "i": 19,
+  "verdict": "keep"
+ },
+ {
+  "i": 20,
+  "verdict": "keep"
+ },
+ {
+  "i": 21,
+  "verdict": "keep"
+ },
+ {
+  "i": 22,
+  "verdict": "keep"
+ },
+ {
+  "i": 23,
+  "verdict": "keep",
+  "source": "https://en.wikipedia.org/wiki/Waterloo_(song)"
+ },
+ {
+  "i": 24,
+  "verdict": "keep"
+ },
+ {
+  "i": 25,
+  "verdict": "keep"
+ },
+ {
+  "i": 26,
+  "verdict": "keep"
+ },
+ {
+  "i": 27,
+  "verdict": "keep"
+ },
+ {
+  "i": 28,
+  "verdict": "keep"
+ },
+ {
+  "i": 29,
+  "verdict": "keep"
+ },
+ {
+  "i": 30,
+  "verdict": "keep"
+ },
+ {
+  "i": 31,
+  "verdict": "keep"
+ },
+ {
+  "i": 32,
+  "verdict": "keep"
+ },
+ {
+  "i": 33,
+  "verdict": "keep"
+ },
+ {
+  "i": 34,
+  "verdict": "keep"
+ },
+ {
+  "i": 35,
+  "verdict": "keep"
+ },
+ {
+  "i": 36,
+  "verdict": "keep"
+ },
+ {
+  "i": 37,
+  "verdict": "keep"
+ },
+ {
+  "i": 38,
+  "verdict": "keep"
+ },
+ {
+  "i": 39,
+  "verdict": "keep"
+ },
+ {
+  "i": 40,
+  "verdict": "keep"
+ },
+ {
+  "i": 41,
+  "verdict": "keep"
+ },
+ {
+  "i": 42,
+  "verdict": "keep"
+ },
+ {
+  "i": 43,
+  "verdict": "keep"
+ },
+ {
+  "i": 44,
+  "verdict": "keep"
+ },
+ {
+  "i": 45,
+  "verdict": "keep"
+ },
+ {
+  "i": 46,
+  "verdict": "keep"
+ },
+ {
+  "i": 47,
+  "verdict": "keep"
+ },
+ {
+  "i": 48,
+  "verdict": "keep"
+ },
+ {
+  "i": 49,
+  "verdict": "keep"
+ }
+]

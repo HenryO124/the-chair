@@ -1,0 +1,3502 @@
+[
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which organ breaks down most of the alcohol you drink?",
+   "fi": "Mikä elin hajottaa suurimman osan juodusta alkoholista?",
+   "sv": "Vilket organ bryter ner det mesta av alkoholen du dricker?"
+  },
+  "o": [
+   {
+    "en": "The liver",
+    "fi": "Maksa",
+    "sv": "Levern"
+   },
+   {
+    "en": "The stomach",
+    "fi": "Mahalaukku",
+    "sv": "Magsäcken"
+   },
+   {
+    "en": "The spleen",
+    "fi": "Perna",
+    "sv": "Mjälten"
+   },
+   {
+    "en": "The bladder",
+    "fi": "Virtsarakko",
+    "sv": "Urinblåsan"
+   }
+  ],
+  "n": {
+   "en": "The liver works at a fairly fixed rate, which is why coffee or a cold shower does nothing to speed it up.",
+   "fi": "Maksa tekee työnsä melko vakionopeudella, joten kahvi tai kylmä suihku ei nopeuta sitä lainkaan.",
+   "sv": "Levern arbetar i ganska jämn takt, så kaffe eller en kall dusch skyndar inte på den alls."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which protein in the red blood cells carries oxygen?",
+   "fi": "Mikä punasolujen valkuaisaine kuljettaa happea?",
+   "sv": "Vilket protein i de röda blodkropparna transporterar syre?"
+  },
+  "o": [
+   {
+    "en": "Haemoglobin",
+    "fi": "Hemoglobiini",
+    "sv": "Hemoglobin"
+   },
+   {
+    "en": "Collagen",
+    "fi": "Kollageeni",
+    "sv": "Kollagen"
+   },
+   {
+    "en": "Keratin",
+    "fi": "Keratiini",
+    "sv": "Keratin"
+   },
+   {
+    "en": "Insulin",
+    "fi": "Insuliini",
+    "sv": "Insulin"
+   }
+  ],
+  "n": {
+   "en": "It is the iron in it that turns red when it meets oxygen, which is why blood is red rather than some other colour.",
+   "fi": "Juuri sen sisältämä rauta punertuu hapen kanssa, ja siksi veri on punaista eikä jonkin muun väristä.",
+   "sv": "Det är järnet i det som rodnar när det möter syre, och därför är blodet rött och inte någon annan färg."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Roughly how long does a single red blood cell live?",
+   "fi": "Kuinka kauan yksi punasolu suunnilleen elää?",
+   "sv": "Ungefär hur länge lever en enda röd blodkropp?"
+  },
+  "o": [
+   {
+    "en": "About four months",
+    "fi": "Noin neljä kuukautta",
+    "sv": "Ungefär fyra månader"
+   },
+   {
+    "en": "About four days",
+    "fi": "Noin neljä päivää",
+    "sv": "Ungefär fyra dagar"
+   },
+   {
+    "en": "About four weeks",
+    "fi": "Noin neljä viikkoa",
+    "sv": "Ungefär fyra veckor"
+   },
+   {
+    "en": "About four years",
+    "fi": "Noin neljä vuotta",
+    "sv": "Ungefär fyra år"
+   }
+  ],
+  "n": {
+   "en": "A red blood cell has no nucleus, which leaves more room for cargo but means it cannot repair itself.",
+   "fi": "Punasolulla ei ole tumaa, joten lastille jää enemmän tilaa, mutta se ei myöskään pysty korjaamaan itseään.",
+   "sv": "En röd blodkropp saknar cellkärna, vilket ger mer plats för lasten men gör att den inte kan reparera sig själv."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "How many vertebrae are there in a human neck?",
+   "fi": "Kuinka monta nikamaa ihmisen kaulassa on?",
+   "sv": "Hur många kotor finns det i en människas hals?"
+  },
+  "o": [
+   {
+    "en": "Seven",
+    "fi": "Seitsemän",
+    "sv": "Sju"
+   },
+   {
+    "en": "Three",
+    "fi": "Kolme",
+    "sv": "Tre"
+   },
+   {
+    "en": "Twelve",
+    "fi": "Kaksitoista",
+    "sv": "Tolv"
+   },
+   {
+    "en": "Twenty",
+    "fi": "Kaksikymmentä",
+    "sv": "Tjugo"
+   }
+  ],
+  "n": {
+   "en": "A giraffe has exactly the same number; its neck bones are simply enormous.",
+   "fi": "Kirahvilla on tasan sama määrä, sen kaulanikamat ovat vain valtavan kokoisia.",
+   "sv": "En giraff har exakt samma antal, dess halskotor är bara enormt stora."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which part of the eye controls how much light gets in?",
+   "fi": "Mikä silmän osa säätelee sisään pääsevän valon määrää?",
+   "sv": "Vilken del av ögat reglerar hur mycket ljus som släpps in?"
+  },
+  "o": [
+   {
+    "en": "The iris",
+    "fi": "Värikalvo",
+    "sv": "Regnbågshinnan"
+   },
+   {
+    "en": "The cornea",
+    "fi": "Sarveiskalvo",
+    "sv": "Hornhinnan"
+   },
+   {
+    "en": "The retina",
+    "fi": "Verkkokalvo",
+    "sv": "Näthinnan"
+   },
+   {
+    "en": "The lens",
+    "fi": "Mykiö",
+    "sv": "Linsen"
+   }
+  ],
+  "n": {
+   "en": "Its pattern is as individual as a fingerprint, and the two eyes of one person rarely match exactly.",
+   "fi": "Sen kuviointi on yhtä yksilöllinen kuin sormenjälki, eivätkä saman ihmisen silmät juuri koskaan ole täysin samanlaiset.",
+   "sv": "Dess mönster är lika individuellt som ett fingeravtryck, och samma persons två ögon stämmer sällan exakt överens."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What are the millions of tiny sacs where the lungs swap gases called?",
+   "fi": "Mikä on niiden miljoonien pikkurakkuloiden nimi, joissa keuhkot vaihtavat kaasuja?",
+   "sv": "Vad kallas de miljontals små blåsor där lungorna byter gaser?"
+  },
+  "o": [
+   {
+    "en": "Alveoli",
+    "fi": "Alveolit",
+    "sv": "Alveoler"
+   },
+   {
+    "en": "Capillaries",
+    "fi": "Hiussuonet",
+    "sv": "Kapillärer"
+   },
+   {
+    "en": "Bronchi",
+    "fi": "Keuhkoputket",
+    "sv": "Luftrör"
+   },
+   {
+    "en": "Follicles",
+    "fi": "Follikkelit",
+    "sv": "Folliklar"
+   }
+  ],
+  "n": {
+   "en": "Spread out flat they would cover something like seventy square metres, the floor of a small flat.",
+   "fi": "Tasaiseksi levitettynä ne peittäisivät noin seitsemänkymmentä neliömetriä, pienen asunnon lattian.",
+   "sv": "Utbredda platt skulle de täcka omkring sjuttio kvadratmeter, golvet i en liten lägenhet."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which part of the blood plugs a cut and stops the bleeding?",
+   "fi": "Mikä veren osa tukkii haavan ja pysäyttää vuodon?",
+   "sv": "Vilken del av blodet täpper till ett sår och stoppar blödningen?"
+  },
+  "o": [
+   {
+    "en": "The platelets",
+    "fi": "Verihiutaleet",
+    "sv": "Blodplättarna"
+   },
+   {
+    "en": "The red cells",
+    "fi": "Punasolut",
+    "sv": "De röda blodkropparna"
+   },
+   {
+    "en": "The white cells",
+    "fi": "Valkosolut",
+    "sv": "De vita blodkropparna"
+   },
+   {
+    "en": "The plasma",
+    "fi": "Plasma",
+    "sv": "Plasman"
+   }
+  ],
+  "n": {
+   "en": "They are not whole cells at all but fragments broken off much larger cells in the bone marrow.",
+   "fi": "Ne eivät ole kokonaisia soluja vaan paloja, jotka ovat irronneet luuytimen paljon suuremmista soluista.",
+   "sv": "De är inte hela celler utan bitar som lossnat från mycket större celler i benmärgen."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Where in the body are new blood cells made?",
+   "fi": "Missä kehossa syntyy uusia verisoluja?",
+   "sv": "Var i kroppen bildas nya blodkroppar?"
+  },
+  "o": [
+   {
+    "en": "In the bone marrow",
+    "fi": "Luuytimessä",
+    "sv": "I benmärgen"
+   },
+   {
+    "en": "In the liver",
+    "fi": "Maksassa",
+    "sv": "I levern"
+   },
+   {
+    "en": "In the lymph nodes",
+    "fi": "Imusolmukkeissa",
+    "sv": "I lymfkörtlarna"
+   },
+   {
+    "en": "In the thymus",
+    "fi": "Kateenkorvassa",
+    "sv": "I brässen"
+   }
+  ],
+  "n": {
+   "en": "An adult makes something like two million of them every second, day and night.",
+   "fi": "Aikuinen valmistaa niitä noin kaksi miljoonaa joka sekunti, yötä päivää.",
+   "sv": "En vuxen tillverkar omkring två miljoner av dem varje sekund, dygnet runt."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which part of the gut is the appendix attached to?",
+   "fi": "Mihin suolen osaan umpilisäke on kiinnittynyt?",
+   "sv": "Vilken del av tarmen sitter blindtarmsbihanget fast i?"
+  },
+  "o": [
+   {
+    "en": "The large intestine",
+    "fi": "Paksusuoleen",
+    "sv": "Tjocktarmen"
+   },
+   {
+    "en": "The small intestine",
+    "fi": "Ohutsuoleen",
+    "sv": "Tunntarmen"
+   },
+   {
+    "en": "The stomach",
+    "fi": "Mahalaukkuun",
+    "sv": "Magsäcken"
+   },
+   {
+    "en": "The oesophagus",
+    "fi": "Ruokatorveen",
+    "sv": "Matstrupen"
+   }
+  ],
+  "n": {
+   "en": "It seems to act as a safe house for gut bacteria, which can repopulate the gut after a bad illness.",
+   "fi": "Se näyttää toimivan suolistobakteerien turvapaikkana, josta suolisto voi täyttyä uudelleen rajun taudin jälkeen.",
+   "sv": "Den tycks fungera som ett skyddsrum för tarmbakterier, som kan återbefolka tarmen efter en svår sjukdom."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Where is most of the food you eat absorbed into the body?",
+   "fi": "Missä suurin osa syödystä ravinnosta imeytyy elimistöön?",
+   "sv": "Var tas det mesta av maten du äter upp i kroppen?"
+  },
+  "o": [
+   {
+    "en": "In the small intestine",
+    "fi": "Ohutsuolessa",
+    "sv": "I tunntarmen"
+   },
+   {
+    "en": "In the stomach",
+    "fi": "Mahalaukussa",
+    "sv": "I magsäcken"
+   },
+   {
+    "en": "In the large intestine",
+    "fi": "Paksusuolessa",
+    "sv": "I tjocktarmen"
+   },
+   {
+    "en": "In the mouth",
+    "fi": "Suussa",
+    "sv": "I munnen"
+   }
+  ],
+  "n": {
+   "en": "Its lining is folded and fringed so finely that it has the surface area of a small room.",
+   "fi": "Sen sisäpinta on poimuttunut ja nukkainen niin tiheästi, että pinta-alaa on pienen huoneen verran.",
+   "sv": "Dess insida är så tätt veckad och luddig att ytan motsvarar ett litet rum."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Roughly how much of an adult human body is water?",
+   "fi": "Kuinka suuri osa aikuisen ihmisen kehosta on vettä?",
+   "sv": "Hur stor del av en vuxen människas kropp är vatten?"
+  },
+  "o": [
+   {
+    "en": "About 60 per cent",
+    "fi": "Noin 60 prosenttia",
+    "sv": "Omkring 60 procent"
+   },
+   {
+    "en": "About 20 per cent",
+    "fi": "Noin 20 prosenttia",
+    "sv": "Omkring 20 procent"
+   },
+   {
+    "en": "About 40 per cent",
+    "fi": "Noin 40 prosenttia",
+    "sv": "Omkring 40 procent"
+   },
+   {
+    "en": "About 90 per cent",
+    "fi": "Noin 90 prosenttia",
+    "sv": "Omkring 90 procent"
+   }
+  ],
+  "n": {
+   "en": "A newborn baby is wetter still, and the share drops slowly as a person grows older.",
+   "fi": "Vastasyntynyt on vielä vetisempi, ja osuus laskee hitaasti iän myötä.",
+   "sv": "Ett nyfött barn är ännu blötare, och andelen sjunker långsamt med åren."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which of the basic tastes has a Japanese name?",
+   "fi": "Millä perusmauista on japanilainen nimi?",
+   "sv": "Vilken av grundsmakerna har ett japanskt namn?"
+  },
+  "o": [
+   {
+    "en": "Umami",
+    "fi": "Umami",
+    "sv": "Umami"
+   },
+   {
+    "en": "Sour",
+    "fi": "Hapan",
+    "sv": "Surt"
+   },
+   {
+    "en": "Bitter",
+    "fi": "Karvas",
+    "sv": "Beskt"
+   },
+   {
+    "en": "Salty",
+    "fi": "Suolainen",
+    "sv": "Salt"
+   }
+  ],
+  "n": {
+   "en": "A Tokyo chemist identified it in seaweed broth in 1908, and the rest of the world took most of a century to agree.",
+   "fi": "Tokiolainen kemisti tunnisti sen merileväliemestä vuonna 1908, ja muulta maailmalta kului lähes vuosisata hyväksyä se.",
+   "sv": "En kemist i Tokyo identifierade den i tångbuljong 1908, och resten av världen tog nästan ett sekel på sig att hålla med."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which part of the ear turns sound into nerve signals?",
+   "fi": "Mikä korvan osa muuttaa äänen hermosignaaleiksi?",
+   "sv": "Vilken del av örat omvandlar ljud till nervsignaler?"
+  },
+  "o": [
+   {
+    "en": "The cochlea",
+    "fi": "Simpukka",
+    "sv": "Snäckan"
+   },
+   {
+    "en": "The eardrum",
+    "fi": "Tärykalvo",
+    "sv": "Trumhinnan"
+   },
+   {
+    "en": "The ear canal",
+    "fi": "Korvakäytävä",
+    "sv": "Hörselgången"
+   },
+   {
+    "en": "The earlobe",
+    "fi": "Korvalehti",
+    "sv": "Örsnibben"
+   }
+  ],
+  "n": {
+   "en": "It is filled with liquid and lined with tiny hairs, and once those hairs are damaged they never grow back.",
+   "fi": "Se on nesteen täyttämä ja vuorattu pikkukarvoilla, eivätkä nuo karvat enää koskaan kasva takaisin vaurioiduttuaan.",
+   "sv": "Den är fylld med vätska och klädd med små hår, och när de håren väl skadats växer de aldrig tillbaka."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which mineral makes bones and teeth hard?",
+   "fi": "Mikä kivennäisaine tekee luista ja hampaista kovia?",
+   "sv": "Vilket mineralämne gör ben och tänder hårda?"
+  },
+  "o": [
+   {
+    "en": "Calcium",
+    "fi": "Kalsium",
+    "sv": "Kalcium"
+   },
+   {
+    "en": "Iron",
+    "fi": "Rauta",
+    "sv": "Järn"
+   },
+   {
+    "en": "Zinc",
+    "fi": "Sinkki",
+    "sv": "Zink"
+   },
+   {
+    "en": "Magnesium",
+    "fi": "Magnesium",
+    "sv": "Magnesium"
+   }
+  ],
+  "n": {
+   "en": "The skeleton doubles as a storehouse, and the body will quietly withdraw from it when the diet falls short.",
+   "fi": "Luusto toimii samalla varastona, ja elimistö nostaa sieltä hiljaa talletuksiaan, jos ravinnosta ei riitä.",
+   "sv": "Skelettet fungerar också som ett förråd, och kroppen tar tyst ut därifrån när kosten inte räcker till."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which pigment captures the Sun's energy in a plant?",
+   "fi": "Mikä väriaine kerää auringon energian kasvissa?",
+   "sv": "Vilket färgämne fångar upp solens energi i en växt?"
+  },
+  "o": [
+   {
+    "en": "Chlorophyll",
+    "fi": "Klorofylli",
+    "sv": "Klorofyll"
+   },
+   {
+    "en": "Carotene",
+    "fi": "Karoteeni",
+    "sv": "Karoten"
+   },
+   {
+    "en": "Melanin",
+    "fi": "Melaniini",
+    "sv": "Melanin"
+   },
+   {
+    "en": "Anthocyanin",
+    "fi": "Antosyaani",
+    "sv": "Antocyanin"
+   }
+  ],
+  "n": {
+   "en": "The yellows of autumn sit in the leaf all summer long and only show once this pigment breaks down.",
+   "fi": "Syksyn keltaiset sävyt ovat lehdessä koko kesän ja paljastuvat vasta, kun tämä väriaine hajoaa.",
+   "sv": "Höstens gula toner finns i bladet hela sommaren och syns först när detta färgämne bryts ner."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What is ordinary cell division called?",
+   "fi": "Mikä on tavallisen solunjakautumisen nimi?",
+   "sv": "Vad kallas vanlig celldelning?"
+  },
+  "o": [
+   {
+    "en": "Mitosis",
+    "fi": "Mitoosi",
+    "sv": "Mitos"
+   },
+   {
+    "en": "Osmosis",
+    "fi": "Osmoosi",
+    "sv": "Osmos"
+   },
+   {
+    "en": "Diffusion",
+    "fi": "Diffuusio",
+    "sv": "Diffusion"
+   },
+   {
+    "en": "Fermentation",
+    "fi": "Käyminen",
+    "sv": "Jäsning"
+   }
+  ],
+  "n": {
+   "en": "Sex cells are made a different way, which halves the number of chromosomes so the next generation starts even.",
+   "fi": "Sukusolut syntyvät toisella tavalla, joka puolittaa kromosomien määrän, jotta seuraava sukupolvi alkaa tasan.",
+   "sv": "Könsceller bildas på ett annat sätt som halverar antalet kromosomer, så att nästa generation börjar jämnt."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Against which kind of infection are antibiotics useless?",
+   "fi": "Minkälaiseen tulehdukseen antibiootit eivät tehoa?",
+   "sv": "Mot vilken sorts infektion hjälper antibiotika inte?"
+  },
+  "o": [
+   {
+    "en": "One caused by a virus",
+    "fi": "Viruksen aiheuttamaan",
+    "sv": "En som orsakas av ett virus"
+   },
+   {
+    "en": "One caused by a bacterium",
+    "fi": "Bakteerin aiheuttamaan",
+    "sv": "En som orsakas av en bakterie"
+   },
+   {
+    "en": "One caused by a fungus",
+    "fi": "Sienen aiheuttamaan",
+    "sv": "En som orsakas av en svamp"
+   },
+   {
+    "en": "One caused by a parasite",
+    "fi": "Loisen aiheuttamaan",
+    "sv": "En som orsakas av en parasit"
+   }
+  ],
+  "n": {
+   "en": "A virus is not really alive on its own; it borrows a cell's machinery, so there is little for the drug to attack.",
+   "fi": "Virus ei oikeastaan elä itsekseen, vaan lainaa solun koneistoa, joten lääkkeellä ei ole juuri mihin tarttua.",
+   "sv": "Ett virus lever egentligen inte på egen hand utan lånar cellens maskineri, så läkemedlet har föga att angripa."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which plant did Gregor Mendel use to work out the rules of inheritance?",
+   "fi": "Millä kasvilla Gregor Mendel selvitti perinnöllisyyden säännöt?",
+   "sv": "Vilken växt använde Gregor Mendel för att komma underfund med ärftlighetens regler?"
+  },
+  "o": [
+   {
+    "en": "The pea",
+    "fi": "Herneellä",
+    "sv": "Ärtan"
+   },
+   {
+    "en": "The bean",
+    "fi": "Pavulla",
+    "sv": "Bönan"
+   },
+   {
+    "en": "The potato",
+    "fi": "Perunalla",
+    "sv": "Potatisen"
+   },
+   {
+    "en": "The barley",
+    "fi": "Ohralla",
+    "sv": "Kornet"
+   }
+  ],
+  "n": {
+   "en": "He was a monk, and his results sat ignored in a local journal for about thirty-five years before anyone saw the point.",
+   "fi": "Hän oli munkki, ja hänen tuloksensa makasivat huomiotta paikallisessa lehdessä noin 35 vuotta, ennen kuin kukaan tajusi niiden arvon.",
+   "sv": "Han var munk, och hans resultat låg obemärkta i en lokal tidskrift i omkring 35 år innan någon förstod poängen."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which part of a flower makes the pollen?",
+   "fi": "Mikä kukan osa tuottaa siitepölyn?",
+   "sv": "Vilken del av blomman producerar pollenet?"
+  },
+  "o": [
+   {
+    "en": "The stamens",
+    "fi": "Heteet",
+    "sv": "Ståndarna"
+   },
+   {
+    "en": "The pistil",
+    "fi": "Emi",
+    "sv": "Pistillen"
+   },
+   {
+    "en": "The petals",
+    "fi": "Terälehdet",
+    "sv": "Kronbladen"
+   },
+   {
+    "en": "The sepals",
+    "fi": "Verholehdet",
+    "sv": "Foderbladen"
+   }
+  ],
+  "n": {
+   "en": "Grains of pollen are tough enough to survive thousands of years in a bog, which is how we know what grew here long ago.",
+   "fi": "Siitepölyhiukkaset kestävät suossa tuhansia vuosia, ja siksi tiedämme, mitä täällä kasvoi kauan sitten.",
+   "sv": "Pollenkorn klarar sig i tusentals år i en myr, och det är så vi vet vad som växte här för länge sedan."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What is ordinary window glass mostly made from?",
+   "fi": "Mistä tavallinen ikkunalasi pääosin valmistetaan?",
+   "sv": "Vad tillverkas vanligt fönsterglas mest av?"
+  },
+  "o": [
+   {
+    "en": "Sand",
+    "fi": "Hiekasta",
+    "sv": "Sand"
+   },
+   {
+    "en": "Clay",
+    "fi": "Savesta",
+    "sv": "Lera"
+   },
+   {
+    "en": "Gypsum",
+    "fi": "Kipsistä",
+    "sv": "Gips"
+   },
+   {
+    "en": "Talc",
+    "fi": "Talkista",
+    "sv": "Talk"
+   }
+  ],
+  "n": {
+   "en": "Window glass gets its flatness by being floated out on a bath of molten tin while it cools.",
+   "fi": "Ikkunalasin tasaisuus syntyy siitä, että se lasketaan jäähtymään sulan tinan päälle.",
+   "sv": "Fönsterglasets släthet uppstår genom att det flyter ut på ett bad av smält tenn medan det svalnar."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which element makes up the largest share of the Earth's crust by weight?",
+   "fi": "Mikä alkuaine muodostaa painoltaan suurimman osan maankuoresta?",
+   "sv": "Vilket grundämne utgör den största delen av jordskorpan räknat i vikt?"
+  },
+  "o": [
+   {
+    "en": "Oxygen",
+    "fi": "Happi",
+    "sv": "Syre"
+   },
+   {
+    "en": "Silicon",
+    "fi": "Pii",
+    "sv": "Kisel"
+   },
+   {
+    "en": "Iron",
+    "fi": "Rauta",
+    "sv": "Järn"
+   },
+   {
+    "en": "Aluminium",
+    "fi": "Alumiini",
+    "sv": "Aluminium"
+   }
+  ],
+  "n": {
+   "en": "It makes up about 46 per cent of the crust, nearly all of it locked into rock rather than floating about as gas.",
+   "fi": "Sitä on maankuoresta noin 46 prosenttia, melkein kaikki sitoutuneena kiveen eikä kaasuna ilmassa.",
+   "sv": "Det utgör omkring 46 procent av skorpan, nästan allt bundet i berg och inte som gas i luften."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What is rust?",
+   "fi": "Mitä ruoste on?",
+   "sv": "Vad är rost?"
+  },
+  "o": [
+   {
+    "en": "Iron that has joined with oxygen",
+    "fi": "Rautaa, joka on yhtynyt hapen kanssa",
+    "sv": "Järn som förenat sig med syre"
+   },
+   {
+    "en": "Iron that has joined with nitrogen",
+    "fi": "Rautaa, joka on yhtynyt typen kanssa",
+    "sv": "Järn som förenat sig med kväve"
+   },
+   {
+    "en": "Iron that has been worn down by salt",
+    "fi": "Suolan kuluttamaa rautaa",
+    "sv": "Järn som nötts ner av salt"
+   },
+   {
+    "en": "Iron that has cooled too quickly",
+    "fi": "Liian nopeasti jäähtynyttä rautaa",
+    "sv": "Järn som kylts för snabbt"
+   }
+  ],
+  "n": {
+   "en": "It flakes away instead of forming a sealed skin, so the metal underneath keeps corroding until nothing is left.",
+   "fi": "Se hilseilee pois eikä muodosta tiivistä pintaa, joten alla oleva metalli syöpyy, kunnes mitään ei ole jäljellä.",
+   "sv": "Den flagnar av i stället för att bilda ett tätt skinn, så metallen under fortsätter att frätas tills inget återstår."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which acid does the stomach produce to help digest food?",
+   "fi": "Mitä happoa mahalaukku erittää ruoansulatusta varten?",
+   "sv": "Vilken syra bildar magsäcken för att hjälpa matsmältningen?"
+  },
+  "o": [
+   {
+    "en": "Hydrochloric acid",
+    "fi": "Suolahappoa",
+    "sv": "Saltsyra"
+   },
+   {
+    "en": "Sulphuric acid",
+    "fi": "Rikkihappoa",
+    "sv": "Svavelsyra"
+   },
+   {
+    "en": "Nitric acid",
+    "fi": "Typpihappoa",
+    "sv": "Salpetersyra"
+   },
+   {
+    "en": "Carbonic acid",
+    "fi": "Hiilihappoa",
+    "sv": "Kolsyra"
+   }
+  ],
+  "n": {
+   "en": "The stomach lining is replaced every few days, which is the only reason it does not digest itself.",
+   "fi": "Mahalaukun limakalvo uusiutuu muutaman päivän välein, ja vain siksi se ei sula itsestään.",
+   "sv": "Magsäckens slemhinna byts ut med några dagars mellanrum, och bara därför smälter den inte sig själv."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which acid builds up in the muscles during hard exercise?",
+   "fi": "Mitä happoa lihaksiin kertyy kovassa rasituksessa?",
+   "sv": "Vilken syra samlas i musklerna vid hård ansträngning?"
+  },
+  "o": [
+   {
+    "en": "Lactic acid",
+    "fi": "Maitohappoa",
+    "sv": "Mjölksyra"
+   },
+   {
+    "en": "Formic acid",
+    "fi": "Muurahaishappoa",
+    "sv": "Myrsyra"
+   },
+   {
+    "en": "Oxalic acid",
+    "fi": "Oksaalihappoa",
+    "sv": "Oxalsyra"
+   },
+   {
+    "en": "Uric acid",
+    "fi": "Virtsahappoa",
+    "sv": "Urinsyra"
+   }
+  ],
+  "n": {
+   "en": "It is cleared within an hour or so, so it cannot be what makes you ache two days later.",
+   "fi": "Se poistuu noin tunnissa, joten se ei voi olla syy kahden päivän päästä tuntuvaan kipuun.",
+   "sv": "Den försvinner på ungefär en timme, så den kan inte vara orsaken till värken två dagar senare."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Diamond and pencil lead are both pure forms of which element?",
+   "fi": "Timantti ja lyijykynän terä ovat molemmat saman alkuaineen muotoja, minkä?",
+   "sv": "Diamant och blyertsstift är båda rena former av vilket grundämne?"
+  },
+  "o": [
+   {
+    "en": "Carbon",
+    "fi": "Hiili",
+    "sv": "Kol"
+   },
+   {
+    "en": "Silicon",
+    "fi": "Pii",
+    "sv": "Kisel"
+   },
+   {
+    "en": "Lead",
+    "fi": "Lyijy",
+    "sv": "Bly"
+   },
+   {
+    "en": "Boron",
+    "fi": "Boori",
+    "sv": "Bor"
+   }
+  ],
+  "n": {
+   "en": "The difference is only how the atoms are stacked: in slippery sheets in one, in a rigid cage in the other.",
+   "fi": "Ero on vain atomien pinoamisessa: toisessa liukkaina kerroksina, toisessa jäykkänä häkkinä.",
+   "sv": "Skillnaden är bara hur atomerna är staplade: i hala skikt i det ena, i en styv bur i det andra."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which metal is added to a firework to make it burn red?",
+   "fi": "Mikä metalli lisätään ilotulitteeseen, jotta se palaa punaisena?",
+   "sv": "Vilken metall tillsätts i ett fyrverkeri för att det ska brinna rött?"
+  },
+  "o": [
+   {
+    "en": "Strontium",
+    "fi": "Strontium",
+    "sv": "Strontium"
+   },
+   {
+    "en": "Barium",
+    "fi": "Barium",
+    "sv": "Barium"
+   },
+   {
+    "en": "Copper",
+    "fi": "Kupari",
+    "sv": "Koppar"
+   },
+   {
+    "en": "Sodium",
+    "fi": "Natrium",
+    "sv": "Natrium"
+   }
+  ],
+  "n": {
+   "en": "Blue is by far the hardest colour to make, because the compound that gives it falls apart at the temperature of the flame.",
+   "fi": "Sininen on selvästi vaikein väri, koska sen antava yhdiste hajoaa liekin lämmössä.",
+   "sv": "Blått är klart den svåraste färgen, eftersom föreningen som ger den faller sönder i lågans hetta."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which metal coats galvanised steel?",
+   "fi": "Mikä metalli peittää galvanoidun teräksen?",
+   "sv": "Vilken metall täcker galvaniserat stål?"
+  },
+  "o": [
+   {
+    "en": "Zinc",
+    "fi": "Sinkki",
+    "sv": "Zink"
+   },
+   {
+    "en": "Nickel",
+    "fi": "Nikkeli",
+    "sv": "Nickel"
+   },
+   {
+    "en": "Chromium",
+    "fi": "Kromi",
+    "sv": "Krom"
+   },
+   {
+    "en": "Copper",
+    "fi": "Kupari",
+    "sv": "Koppar"
+   }
+  ],
+  "n": {
+   "en": "It protects even where the coating is scratched through, because it corrodes in the steel's place.",
+   "fi": "Se suojaa silloinkin, kun pinnoite on naarmuuntunut puhki, koska se syöpyy teräksen puolesta.",
+   "sv": "Den skyddar även där beläggningen är genomrepad, eftersom den frätes i stålets ställe."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which gas smells of rotten eggs?",
+   "fi": "Mikä kaasu haisee mädäntyneiltä kananmunilta?",
+   "sv": "Vilken gas luktar ruttna ägg?"
+  },
+  "o": [
+   {
+    "en": "Hydrogen sulphide",
+    "fi": "Rikkivety",
+    "sv": "Svavelväte"
+   },
+   {
+    "en": "Carbon monoxide",
+    "fi": "Häkä",
+    "sv": "Kolmonoxid"
+   },
+   {
+    "en": "Ammonia",
+    "fi": "Ammoniakki",
+    "sv": "Ammoniak"
+   },
+   {
+    "en": "Methane",
+    "fi": "Metaani",
+    "sv": "Metan"
+   }
+  ],
+  "n": {
+   "en": "The nose stops smelling it at high concentrations, which is exactly what makes it dangerous.",
+   "fi": "Nenä lakkaa haistamasta sitä suurina pitoisuuksina, ja juuri se tekee siitä vaarallisen.",
+   "sv": "Näsan slutar känna lukten vid höga halter, och just det gör den farlig."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What is dry ice?",
+   "fi": "Mitä kuivajää on?",
+   "sv": "Vad är torris?"
+  },
+  "o": [
+   {
+    "en": "Frozen carbon dioxide",
+    "fi": "Jäätynyttä hiilidioksidia",
+    "sv": "Fryst koldioxid"
+   },
+   {
+    "en": "Water ice with the air pumped out",
+    "fi": "Vesijäätä, josta ilma on poistettu",
+    "sv": "Vattenis med luften urpumpad"
+   },
+   {
+    "en": "Frozen nitrogen",
+    "fi": "Jäätynyttä typpeä",
+    "sv": "Fryst kväve"
+   },
+   {
+    "en": "Very cold salt ice",
+    "fi": "Hyvin kylmää suolajäätä",
+    "sv": "Mycket kall saltis"
+   }
+  ],
+  "n": {
+   "en": "It never melts into a puddle; it goes straight from solid to gas at about minus 78 degrees.",
+   "fi": "Se ei koskaan sula lätäköksi, vaan muuttuu kiinteästä suoraan kaasuksi noin -78 asteessa.",
+   "sv": "Den smälter aldrig till en pöl utan går direkt från fast form till gas vid omkring minus 78 grader."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What is measured in hertz?",
+   "fi": "Mitä mitataan hertseinä?",
+   "sv": "Vad mäts i hertz?"
+  },
+  "o": [
+   {
+    "en": "Frequency",
+    "fi": "Taajuutta",
+    "sv": "Frekvens"
+   },
+   {
+    "en": "Loudness",
+    "fi": "Äänenvoimakkuutta",
+    "sv": "Ljudstyrka"
+   },
+   {
+    "en": "Wavelength",
+    "fi": "Aallonpituutta",
+    "sv": "Våglängd"
+   },
+   {
+    "en": "Energy",
+    "fi": "Energiaa",
+    "sv": "Energi"
+   }
+  ],
+  "n": {
+   "en": "One hertz is simply one cycle per second, so the unit works for a heartbeat just as well as for a radio wave.",
+   "fi": "Yksi hertsi on yksinkertaisesti yksi värähdys sekunnissa, joten yksikkö sopii sydämenlyönnille yhtä hyvin kuin radioaallolle.",
+   "sv": "En hertz är helt enkelt en svängning per sekund, så enheten passar lika bra för ett hjärtslag som för en radiovåg."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What does a Geiger counter detect?",
+   "fi": "Mitä geigermittari havaitsee?",
+   "sv": "Vad mäter en geigermätare?"
+  },
+  "o": [
+   {
+    "en": "Radiation",
+    "fi": "Säteilyä",
+    "sv": "Strålning"
+   },
+   {
+    "en": "Magnetism",
+    "fi": "Magneettisuutta",
+    "sv": "Magnetism"
+   },
+   {
+    "en": "Humidity",
+    "fi": "Kosteutta",
+    "sv": "Fuktighet"
+   },
+   {
+    "en": "Carbon monoxide",
+    "fi": "Häkää",
+    "sv": "Kolmonoxid"
+   }
+  ],
+  "n": {
+   "en": "The familiar clicking is not a sound effect; each click is one particle passing through the tube.",
+   "fi": "Tuttu naksutus ei ole äänitehoste, vaan jokainen naksahdus on yksi putken läpi kulkenut hiukkanen.",
+   "sv": "Det välkända knastret är ingen ljudeffekt, varje knäpp är en partikel som passerat röret."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which kind of radiation is stopped by a sheet of paper?",
+   "fi": "Minkä säteilylajin pysäyttää paperiarkki?",
+   "sv": "Vilken sorts strålning stoppas av ett pappersark?"
+  },
+  "o": [
+   {
+    "en": "Alpha",
+    "fi": "Alfa",
+    "sv": "Alfa"
+   },
+   {
+    "en": "Beta",
+    "fi": "Beeta",
+    "sv": "Beta"
+   },
+   {
+    "en": "Gamma",
+    "fi": "Gamma",
+    "sv": "Gamma"
+   },
+   {
+    "en": "Neutron",
+    "fi": "Neutroni",
+    "sv": "Neutron"
+   }
+  ],
+  "n": {
+   "en": "It is harmless outside the body for that very reason, but dangerous if the source is swallowed or breathed in.",
+   "fi": "Juuri siksi se on kehon ulkopuolella vaaraton, mutta vaarallinen, jos lähde niellään tai hengitetään sisään.",
+   "sv": "Just därför är den ofarlig utanför kroppen, men farlig om källan sväljs eller andas in."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which colour of visible light has the longest wavelength?",
+   "fi": "Millä näkyvän valon värillä on pisin aallonpituus?",
+   "sv": "Vilken färg i det synliga ljuset har längst våglängd?"
+  },
+  "o": [
+   {
+    "en": "Red",
+    "fi": "Punainen",
+    "sv": "Rött"
+   },
+   {
+    "en": "Violet",
+    "fi": "Violetti",
+    "sv": "Violett"
+   },
+   {
+    "en": "Green",
+    "fi": "Vihreä",
+    "sv": "Grönt"
+   },
+   {
+    "en": "Blue",
+    "fi": "Sininen",
+    "sv": "Blått"
+   }
+  ],
+  "n": {
+   "en": "Just beyond it sits infrared, which we cannot see but can feel on the skin as warmth.",
+   "fi": "Heti sen takana on infrapuna, jota emme näe mutta tunnemme iholla lämpönä.",
+   "sv": "Strax bortom den ligger infrarött, som vi inte ser men känner som värme på huden."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What is it called when a solid turns straight into a gas?",
+   "fi": "Mitä kutsutaan sellaiseksi, kun kiinteä aine muuttuu suoraan kaasuksi?",
+   "sv": "Vad kallas det när ett fast ämne övergår direkt till gas?"
+  },
+  "o": [
+   {
+    "en": "Sublimation",
+    "fi": "Sublimaatio",
+    "sv": "Sublimering"
+   },
+   {
+    "en": "Evaporation",
+    "fi": "Haihtuminen",
+    "sv": "Avdunstning"
+   },
+   {
+    "en": "Condensation",
+    "fi": "Tiivistyminen",
+    "sv": "Kondensation"
+   },
+   {
+    "en": "Precipitation",
+    "fi": "Saostuminen",
+    "sv": "Utfällning"
+   }
+  ],
+  "n": {
+   "en": "It is why washing hung outside in a hard frost slowly dries without ever thawing.",
+   "fi": "Siksi pakkasessa ulos ripustettu pyykki kuivuu hitaasti ilman että se koskaan sulaa.",
+   "sv": "Det är därför tvätt som hängs ute i sträng kyla sakta torkar utan att någonsin tina."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What does a transformer change in an electricity supply?",
+   "fi": "Mitä muuntaja muuttaa sähkönsyötössä?",
+   "sv": "Vad ändrar en transformator i en elförsörjning?"
+  },
+  "o": [
+   {
+    "en": "The voltage",
+    "fi": "Jännitteen",
+    "sv": "Spänningen"
+   },
+   {
+    "en": "The frequency",
+    "fi": "Taajuuden",
+    "sv": "Frekvensen"
+   },
+   {
+    "en": "The direction of the current",
+    "fi": "Virran suunnan",
+    "sv": "Strömmens riktning"
+   },
+   {
+    "en": "The total energy",
+    "fi": "Kokonaisenergian",
+    "sv": "Den totala energin"
+   }
+  ],
+  "n": {
+   "en": "It only works on alternating current, which is the main reason the grid runs on alternating current at all.",
+   "fi": "Se toimii vain vaihtovirralla, ja juuri siksi sähköverkko ylipäätään toimii vaihtovirralla.",
+   "sv": "Den fungerar bara med växelström, och det är huvudskälet till att elnätet alls går på växelström."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What can sound not travel through?",
+   "fi": "Minkä läpi ääni ei pääse kulkemaan?",
+   "sv": "Vad kan ljud inte färdas genom?"
+  },
+  "o": [
+   {
+    "en": "A vacuum",
+    "fi": "Tyhjiön",
+    "sv": "Ett vakuum"
+   },
+   {
+    "en": "Water",
+    "fi": "Veden",
+    "sv": "Vatten"
+   },
+   {
+    "en": "Steel",
+    "fi": "Teräksen",
+    "sv": "Stål"
+   },
+   {
+    "en": "Wood",
+    "fi": "Puun",
+    "sv": "Trä"
+   }
+  ],
+  "n": {
+   "en": "Sound actually travels fastest through solids, roughly fifteen times faster in steel than in air.",
+   "fi": "Ääni kulkee itse asiassa nopeimmin kiinteissä aineissa, teräksessä noin viisitoista kertaa nopeammin kuin ilmassa.",
+   "sv": "Ljud färdas faktiskt snabbast i fasta ämnen, ungefär femton gånger snabbare i stål än i luft."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Why does a passing ambulance siren seem to drop in pitch?",
+   "fi": "Miksi ohi ajavan ambulanssin sireeni tuntuu madaltuvan?",
+   "sv": "Varför tycks sirenen på en ambulans som kör förbi sjunka i tonhöjd?"
+  },
+  "o": [
+   {
+    "en": "The sound waves are stretched as it moves away",
+    "fi": "Ääniaallot venyvät sen loitotessa",
+    "sv": "Ljudvågorna sträcks ut när den avlägsnar sig"
+   },
+   {
+    "en": "The siren is turned down as it passes",
+    "fi": "Sireeni käännetään hiljemmalle ohitettaessa",
+    "sv": "Sirenen skruvas ner när den passerar"
+   },
+   {
+    "en": "The air cools behind the vehicle",
+    "fi": "Ilma viilenee ajoneuvon takana",
+    "sv": "Luften kyls av bakom fordonet"
+   },
+   {
+    "en": "The sound reflects off the road",
+    "fi": "Ääni heijastuu tiestä",
+    "sv": "Ljudet studsar mot vägen"
+   }
+  ],
+  "n": {
+   "en": "The same stretching in starlight is how we know distant galaxies are moving away from us.",
+   "fi": "Sama venyminen tähtien valossa kertoo meille, että kaukaiset galaksit loittonevat meistä.",
+   "sv": "Samma uttänjning i stjärnljus är hur vi vet att avlägsna galaxer rör sig bort från oss."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What is the Moon called when it passes between the Earth and the Sun?",
+   "fi": "Miksi Kuuta kutsutaan, kun se kulkee Maan ja Auringon välissä?",
+   "sv": "Vad kallas månen när den passerar mellan jorden och solen?"
+  },
+  "o": [
+   {
+    "en": "New moon",
+    "fi": "Uusikuu",
+    "sv": "Nymåne"
+   },
+   {
+    "en": "Full moon",
+    "fi": "Täysikuu",
+    "sv": "Fullmåne"
+   },
+   {
+    "en": "Half moon",
+    "fi": "Puolikuu",
+    "sv": "Halvmåne"
+   },
+   {
+    "en": "Waning moon",
+    "fi": "Vanha kuu",
+    "sv": "Avtagande måne"
+   }
+  ],
+  "n": {
+   "en": "If its path lined up exactly every time, we would get a solar eclipse every month instead of a couple a year.",
+   "fi": "Jos sen rata osuisi joka kerta tarkalleen kohdalleen, saisimme auringonpimennyksen joka kuukausi parin vuosittaisen sijaan.",
+   "sv": "Om dess bana låg exakt rätt varje gång skulle vi få en solförmörkelse varje månad i stället för ett par om året."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Why do we always see the same side of the Moon?",
+   "fi": "Miksi näemme aina Kuun saman puolen?",
+   "sv": "Varför ser vi alltid samma sida av månen?"
+  },
+  "o": [
+   {
+    "en": "It turns once on its axis for every orbit",
+    "fi": "Se pyörähtää akselinsa ympäri kerran joka kierroksella",
+    "sv": "Den snurrar ett varv kring sin axel för varje omloppsbana"
+   },
+   {
+    "en": "It does not rotate at all",
+    "fi": "Se ei pyöri lainkaan",
+    "sv": "Den roterar inte alls"
+   },
+   {
+    "en": "The far side is always in darkness",
+    "fi": "Kääntöpuoli on aina pimeä",
+    "sv": "Baksidan ligger alltid i mörker"
+   },
+   {
+    "en": "The Earth's shadow hides the other side",
+    "fi": "Maan varjo peittää toisen puolen",
+    "sv": "Jordens skugga döljer andra sidan"
+   }
+  ],
+  "n": {
+   "en": "Nobody saw the far side until a Soviet probe photographed it in 1959, and it turned out to have far fewer dark plains.",
+   "fi": "Kukaan ei nähnyt kääntöpuolta ennen kuin neuvostoluotain kuvasi sen vuonna 1959, ja siinä oli paljon vähemmän tummia tasankoja.",
+   "sv": "Ingen såg baksidan förrän en sovjetisk sond fotograferade den 1959, och den visade sig ha långt färre mörka slätter."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which star is the Sun's nearest neighbour?",
+   "fi": "Mikä tähti on Auringon lähin naapuri?",
+   "sv": "Vilken stjärna är solens närmaste nabo?"
+  },
+  "o": [
+   {
+    "en": "Proxima Centauri",
+    "fi": "Proxima Centauri",
+    "sv": "Proxima Centauri"
+   },
+   {
+    "en": "Sirius",
+    "fi": "Sirius",
+    "sv": "Sirius"
+   },
+   {
+    "en": "Betelgeuse",
+    "fi": "Betelgeuse",
+    "sv": "Betelgeuse"
+   },
+   {
+    "en": "Polaris",
+    "fi": "Pohjantähti",
+    "sv": "Polstjärnan"
+   }
+  ],
+  "n": {
+   "en": "It is a dim red dwarf, far too faint to pick out with the naked eye despite being the closest of them all.",
+   "fi": "Se on himmeä punainen kääpiö, aivan liian heikko paljaalle silmälle, vaikka onkin kaikista lähin.",
+   "sv": "Den är en svag röd dvärg, alldeles för ljussvag för blotta ögat trots att den är den närmaste av alla."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What are Saturn's rings mostly made of?",
+   "fi": "Mistä Saturnuksen renkaat enimmäkseen koostuvat?",
+   "sv": "Vad består Saturnus ringar mest av?"
+  },
+  "o": [
+   {
+    "en": "Ice",
+    "fi": "Jäästä",
+    "sv": "Is"
+   },
+   {
+    "en": "Dust",
+    "fi": "Pölystä",
+    "sv": "Damm"
+   },
+   {
+    "en": "Rock",
+    "fi": "Kivestä",
+    "sv": "Sten"
+   },
+   {
+    "en": "Gas",
+    "fi": "Kaasusta",
+    "sv": "Gas"
+   }
+  ],
+  "n": {
+   "en": "They are tens of thousands of kilometres wide but in places only about ten metres thick.",
+   "fi": "Ne ovat kymmeniätuhansia kilometrejä leveät mutta paikoin vain noin kymmenen metriä paksut.",
+   "sv": "De är tiotusentals kilometer breda men på sina ställen bara omkring tio meter tjocka."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Between which two planets does the asteroid belt lie?",
+   "fi": "Minkä kahden planeetan välissä asteroidivyöhyke on?",
+   "sv": "Mellan vilka två planeter ligger asteroidbältet?"
+  },
+  "o": [
+   {
+    "en": "Mars and Jupiter",
+    "fi": "Marsin ja Jupiterin",
+    "sv": "Mars och Jupiter"
+   },
+   {
+    "en": "Earth and Mars",
+    "fi": "Maan ja Marsin",
+    "sv": "Jorden och Mars"
+   },
+   {
+    "en": "Jupiter and Saturn",
+    "fi": "Jupiterin ja Saturnuksen",
+    "sv": "Jupiter och Saturnus"
+   },
+   {
+    "en": "Venus and Earth",
+    "fi": "Venuksen ja Maan",
+    "sv": "Venus och jorden"
+   }
+  ],
+  "n": {
+   "en": "It is mostly empty space; a spacecraft has crossed it many times without ever coming near a rock.",
+   "fi": "Se on enimmäkseen tyhjää avaruutta, ja luotaimet ovat ylittäneet sen monta kertaa tulematta lähellekään kiveä.",
+   "sv": "Det är mest tom rymd, och rymdsonder har korsat det många gånger utan att ens komma nära en sten."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "The volcano Olympus Mons rises on which planet?",
+   "fi": "Millä planeetalla kohoaa Olympus Mons -tulivuori?",
+   "sv": "På vilken planet reser sig vulkanen Olympus Mons?"
+  },
+  "o": [
+   {
+    "en": "Mars",
+    "fi": "Marsilla",
+    "sv": "Mars"
+   },
+   {
+    "en": "Venus",
+    "fi": "Venuksella",
+    "sv": "Venus"
+   },
+   {
+    "en": "Jupiter",
+    "fi": "Jupiterilla",
+    "sv": "Jupiter"
+   },
+   {
+    "en": "Mercury",
+    "fi": "Merkuriuksella",
+    "sv": "Merkurius"
+   }
+  ],
+  "n": {
+   "en": "It is the tallest volcano known anywhere, yet so wide and gently sloped that standing on it you would not notice a mountain at all.",
+   "fi": "Se on korkein tunnettu tulivuori missään, mutta niin laaja ja loivarinteinen, ettei sen päällä seisoessa huomaisi vuorta lainkaan.",
+   "sv": "Den är den högsta kända vulkanen någonstans, men så bred och flackt sluttande att man stående på den inte alls skulle märka ett berg."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What is the boundary around a black hole called?",
+   "fi": "Mikä on mustan aukon ympärillä olevan rajan nimi?",
+   "sv": "Vad kallas gränsen runt ett svart hål?"
+  },
+  "o": [
+   {
+    "en": "The event horizon",
+    "fi": "Tapahtumahorisontti",
+    "sv": "Händelsehorisonten"
+   },
+   {
+    "en": "The singularity",
+    "fi": "Singulariteetti",
+    "sv": "Singulariteten"
+   },
+   {
+    "en": "The corona",
+    "fi": "Korona",
+    "sv": "Koronan"
+   },
+   {
+    "en": "The photosphere",
+    "fi": "Fotosfääri",
+    "sv": "Fotosfären"
+   }
+  ],
+  "n": {
+   "en": "Nothing special happens there to a falling traveller; the point of no return is invisible from the inside.",
+   "fi": "Putoavalle matkaajalle siinä kohtaa ei tapahdu mitään erityistä, sillä paluun raja on sisältä näkymätön.",
+   "sv": "Ingenting särskilt händer där för en fallande resenär, ty gränsen för ingen återvändo är osynlig inifrån."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Roughly how fast must a rocket travel to escape the Earth's gravity?",
+   "fi": "Kuinka nopeasti raketin on suunnilleen kuljettava päästäkseen eroon Maan vetovoimasta?",
+   "sv": "Ungefär hur fort måste en raket färdas för att slippa jordens dragningskraft?"
+  },
+  "o": [
+   {
+    "en": "About 11 kilometres a second",
+    "fi": "Noin 11 kilometriä sekunnissa",
+    "sv": "Omkring 11 kilometer i sekunden"
+   },
+   {
+    "en": "About 1 kilometre a second",
+    "fi": "Noin 1 kilometri sekunnissa",
+    "sv": "Omkring 1 kilometer i sekunden"
+   },
+   {
+    "en": "About 40 kilometres a second",
+    "fi": "Noin 40 kilometriä sekunnissa",
+    "sv": "Omkring 40 kilometer i sekunden"
+   },
+   {
+    "en": "About 110 kilometres a second",
+    "fi": "Noin 110 kilometriä sekunnissa",
+    "sv": "Omkring 110 kilometer i sekunden"
+   }
+  ],
+  "n": {
+   "en": "On the Moon about a fifth of that is enough, which is why its lander could be such a flimsy little craft.",
+   "fi": "Kuusta pääsee noin viidesosalla, ja siksi sen laskeutuja saattoi olla niin hatara pikku alus.",
+   "sv": "Från månen räcker omkring en femtedel, och därför kunde dess landare vara ett så spinkigt litet fordon."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which layer inside the Earth is molten?",
+   "fi": "Mikä Maan sisäisistä kerroksista on sulaa?",
+   "sv": "Vilket av jordens inre lager är smält?"
+  },
+  "o": [
+   {
+    "en": "The outer core",
+    "fi": "Ulkoydin",
+    "sv": "Yttre kärnan"
+   },
+   {
+    "en": "The inner core",
+    "fi": "Sisäydin",
+    "sv": "Inre kärnan"
+   },
+   {
+    "en": "The crust",
+    "fi": "Maankuori",
+    "sv": "Jordskorpan"
+   },
+   {
+    "en": "The upper mantle",
+    "fi": "Ylävaippa",
+    "sv": "Övre manteln"
+   }
+  ],
+  "n": {
+   "en": "Its churning liquid iron generates the magnetic field that makes a compass work at all.",
+   "fi": "Sen pyörteilevä sula rauta synnyttää magneettikentän, jonka ansiosta kompassi ylipäätään toimii.",
+   "sv": "Dess virvlande flytande järn alstrar magnetfältet som gör att en kompass fungerar över huvud taget."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What is the name of the scale that describes the strength of the wind?",
+   "fi": "Minkä niminen on tuulen voimakkuutta kuvaava asteikko?",
+   "sv": "Vad heter skalan som beskriver vindens styrka?"
+  },
+  "o": [
+   {
+    "en": "Beaufort",
+    "fi": "Beaufort",
+    "sv": "Beaufort"
+   },
+   {
+    "en": "Kelvin",
+    "fi": "Kelvin",
+    "sv": "Kelvin"
+   },
+   {
+    "en": "Fujita",
+    "fi": "Fujita",
+    "sv": "Fujita"
+   },
+   {
+    "en": "Mercalli",
+    "fi": "Mercalli",
+    "sv": "Mercalli"
+   }
+  ],
+  "n": {
+   "en": "It was written for sailing ships and described not numbers but how much canvas a frigate could safely carry.",
+   "fi": "Se laadittiin purjelaivoja varten eikä se kuvannut lukuja vaan sitä, kuinka paljon purjeita fregatti saattoi turvallisesti pitää.",
+   "sv": "Den skrevs för segelfartyg och beskrev inte siffror utan hur mycket segel en fregatt tryggt kunde föra."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "How is a fjord formed?",
+   "fi": "Miten vuono syntyy?",
+   "sv": "Hur bildas en fjord?"
+  },
+  "o": [
+   {
+    "en": "A glacier gouged the valley and the sea flooded it",
+    "fi": "Jäätikkö kaivoi laakson ja meri täytti sen",
+    "sv": "En glaciär grävde ut dalen och havet fyllde den"
+   },
+   {
+    "en": "A river slowly cut it out of the rock",
+    "fi": "Joki kaiversi sen hitaasti kallioon",
+    "sv": "En flod skar sakta ut den ur berget"
+   },
+   {
+    "en": "An earthquake split the coast open",
+    "fi": "Maanjäristys halkaisi rannikon",
+    "sv": "En jordbävning spräckte upp kusten"
+   },
+   {
+    "en": "Waves wore away a line of soft rock",
+    "fi": "Aallot kuluttivat pehmeän kivijuovan pois",
+    "sv": "Vågor nötte bort en rand av mjukt berg"
+   }
+  ],
+  "n": {
+   "en": "Many are deeper inside than at their mouth, because the ice lost its grinding power as it reached the sea.",
+   "fi": "Moni on sisäosistaan syvempi kuin suultaan, koska jää menetti kaivuuvoimansa saavuttaessaan meren.",
+   "sv": "Många är djupare längst in än vid mynningen, eftersom isen förlorade sin slipkraft när den nådde havet."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "What are the huge lone boulders left behind by the ice age called?",
+   "fi": "Mikä on jääkauden jälkeensä jättämien valtavien yksittäisten lohkareiden nimi?",
+   "sv": "Vad kallas de väldiga ensamma stenblock som istiden lämnade efter sig?"
+  },
+  "o": [
+   {
+    "en": "Erratics",
+    "fi": "Siirtolohkareet",
+    "sv": "Flyttblock"
+   },
+   {
+    "en": "Moraines",
+    "fi": "Moreeniharjut",
+    "sv": "Moränryggar"
+   },
+   {
+    "en": "Drumlins",
+    "fi": "Drumliinit",
+    "sv": "Drumliner"
+   },
+   {
+    "en": "Eskers",
+    "fi": "Harjut",
+    "sv": "Rullstensåsar"
+   }
+  ],
+  "n": {
+   "en": "Geologists match their rock type to the bedrock far away and so work out which way the ice flowed.",
+   "fi": "Geologit vertaavat niiden kivilajia kaukaiseen kallioperään ja päättelevät siitä, mihin suuntaan jää virtasi.",
+   "sv": "Geologer jämför deras bergart med berggrunden långt bort och räknar så ut åt vilket håll isen rörde sig."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Why does the Sun not set in Lapland at midsummer?",
+   "fi": "Miksi aurinko ei laske Lapissa keskikesällä?",
+   "sv": "Varför går solen inte ner i Lappland vid midsommar?"
+  },
+  "o": [
+   {
+    "en": "The Earth's axis is tilted",
+    "fi": "Maan akseli on kallellaan",
+    "sv": "Jordens axel lutar"
+   },
+   {
+    "en": "The Earth is closest to the Sun then",
+    "fi": "Maa on silloin lähimpänä Aurinkoa",
+    "sv": "Jorden är då som närmast solen"
+   },
+   {
+    "en": "The Earth spins more slowly in summer",
+    "fi": "Maa pyörii kesällä hitaammin",
+    "sv": "Jorden snurrar långsammare på sommaren"
+   },
+   {
+    "en": "The atmosphere bends the light right round",
+    "fi": "Ilmakehä taivuttaa valon kokonaan ympäri",
+    "sv": "Atmosfären böjer ljuset hela vägen runt"
+   }
+  ],
+  "n": {
+   "en": "The tilt is about 23 degrees, and without it there would be no seasons anywhere on Earth.",
+   "fi": "Kallistus on noin 23 astetta, ja ilman sitä maapallolla ei olisi vuodenaikoja missään.",
+   "sv": "Lutningen är omkring 23 grader, och utan den skulle det inte finnas årstider någonstans på jorden."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which part of the potato plant do we eat?",
+   "fi": "Mitä perunakasvin osaa me syömme?",
+   "sv": "Vilken del av potatisplantan äter vi?"
+  },
+  "o": [
+   {
+    "en": "A swollen underground stem",
+    "fi": "Paksuuntunutta maanalaista vartta",
+    "sv": "En förtjockad underjordisk stjälk"
+   },
+   {
+    "en": "A root",
+    "fi": "Juurta",
+    "sv": "En rot"
+   },
+   {
+    "en": "A fruit",
+    "fi": "Hedelmää",
+    "sv": "En frukt"
+   },
+   {
+    "en": "A seed",
+    "fi": "Siementä",
+    "sv": "Ett frö"
+   }
+  ],
+  "n": {
+   "en": "The little dimples are buds, which is why a forgotten one in the cupboard starts sprouting shoots.",
+   "fi": "Pienet kuopat ovat silmuja, ja siksi kaappiin unohtunut alkaa kasvattaa ituja.",
+   "sv": "De små groparna är knoppar, och därför börjar en bortglömd i skåpet skjuta skott."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What is tofu made from?",
+   "fi": "Mistä tofu valmistetaan?",
+   "sv": "Vad görs tofu av?"
+  },
+  "o": [
+   {
+    "en": "Soya beans",
+    "fi": "Soijapavuista",
+    "sv": "Sojabönor"
+   },
+   {
+    "en": "Rice",
+    "fi": "Riisistä",
+    "sv": "Ris"
+   },
+   {
+    "en": "Chickpeas",
+    "fi": "Kikherneistä",
+    "sv": "Kikärter"
+   },
+   {
+    "en": "Oats",
+    "fi": "Kaurasta",
+    "sv": "Havre"
+   }
+  ],
+  "n": {
+   "en": "It is made much like cheese: the milk is curdled, and the curds are pressed into a block.",
+   "fi": "Se tehdään pitkälti kuin juusto: maito saostetaan ja massa puristetaan palaksi.",
+   "sv": "Den görs ungefär som ost: mjölken får ysta sig och massan pressas till ett block."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Traditional Italian mozzarella is made from the milk of which animal?",
+   "fi": "Minkä eläimen maidosta perinteinen italialainen mozzarella tehdään?",
+   "sv": "Av vilket djurs mjölk görs traditionell italiensk mozzarella?"
+  },
+  "o": [
+   {
+    "en": "The water buffalo",
+    "fi": "Vesipuhvelin",
+    "sv": "Vattenbuffeln"
+   },
+   {
+    "en": "The goat",
+    "fi": "Vuohen",
+    "sv": "Geten"
+   },
+   {
+    "en": "The sheep",
+    "fi": "Lampaan",
+    "sv": "Fåret"
+   },
+   {
+    "en": "The donkey",
+    "fi": "Aasin",
+    "sv": "Åsnan"
+   }
+  ],
+  "n": {
+   "en": "The herds were first kept in the marshes south of Naples, where ordinary cattle did badly.",
+   "fi": "Laumoja pidettiin aluksi Napolin eteläpuolisilla soilla, joilla tavallinen karja ei viihtynyt.",
+   "sv": "Hjordarna hölls först i träskmarkerna söder om Neapel, där vanliga nötkreatur klarade sig dåligt."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What makes the holes in Emmental cheese?",
+   "fi": "Mikä tekee reiät emmentaljuustoon?",
+   "sv": "Vad gör hålen i emmentalost?"
+  },
+  "o": [
+   {
+    "en": "Gas bubbles given off by bacteria",
+    "fi": "Bakteerien tuottamat kaasukuplat",
+    "sv": "Gasbubblor som bakterier avger"
+   },
+   {
+    "en": "Steam trapped during heating",
+    "fi": "Kuumennuksessa jäänyt höyry",
+    "sv": "Ånga som fastnat under upphettningen"
+   },
+   {
+    "en": "Holes punched by the cheesemaker",
+    "fi": "Juustomestarin puhkomat reiät",
+    "sv": "Hål som ostmästaren stuckit"
+   },
+   {
+    "en": "Air whipped into the curd",
+    "fi": "Massaan vatkattu ilma",
+    "sv": "Luft som vispats in i ostmassan"
+   }
+  ],
+  "n": {
+   "en": "Milking machines made dairies so clean that the cheese started coming out with too few holes.",
+   "fi": "Lypsykoneet tekivät meijereistä niin puhtaita, että juustoon alkoi tulla liian vähän reikiä.",
+   "sv": "Mjölkmaskiner gjorde mejerierna så rena att osten började få för få hål."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which grain is couscous made from?",
+   "fi": "Mistä viljasta couscous tehdään?",
+   "sv": "Vilket sädesslag görs couscous av?"
+  },
+  "o": [
+   {
+    "en": "Wheat",
+    "fi": "Vehnästä",
+    "sv": "Vete"
+   },
+   {
+    "en": "Rice",
+    "fi": "Riisistä",
+    "sv": "Ris"
+   },
+   {
+    "en": "Millet",
+    "fi": "Hirssistä",
+    "sv": "Hirs"
+   },
+   {
+    "en": "Maize",
+    "fi": "Maissista",
+    "sv": "Majs"
+   }
+  ],
+  "n": {
+   "en": "It is not a grain in its own right but tiny rolled pieces of pasta, steamed rather than boiled.",
+   "fi": "Se ei ole oma viljansa vaan pieniä pyöriteltyjä pastanpalasia, jotka höyrytetään eikä keitetä.",
+   "sv": "Det är inget eget sädesslag utan små rullade pastabitar som ångas i stället för att kokas."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What is marzipan mostly made of?",
+   "fi": "Mistä marsipaani pääosin tehdään?",
+   "sv": "Vad består marsipan mest av?"
+  },
+  "o": [
+   {
+    "en": "Almonds",
+    "fi": "Manteleista",
+    "sv": "Mandel"
+   },
+   {
+    "en": "Hazelnuts",
+    "fi": "Hasselpähkinöistä",
+    "sv": "Hasselnötter"
+   },
+   {
+    "en": "Coconut",
+    "fi": "Kookoksesta",
+    "sv": "Kokos"
+   },
+   {
+    "en": "Cashews",
+    "fi": "Cashewpähkinöistä",
+    "sv": "Cashewnötter"
+   }
+  ],
+  "n": {
+   "en": "Lübeck has made it for centuries and still guards the name in European law.",
+   "fi": "Lyypekissä sitä on tehty vuosisatoja, ja kaupunki vartioi nimeä yhä eurooppalaisessa laissa.",
+   "sv": "Lübeck har gjort den i århundraden och vaktar fortfarande namnet i europeisk lag."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which nut goes into a classic pesto?",
+   "fi": "Mikä pähkinä kuuluu klassiseen pestoon?",
+   "sv": "Vilken nöt hör hemma i en klassisk pesto?"
+  },
+  "o": [
+   {
+    "en": "Pine nuts",
+    "fi": "Pinjansiemenet",
+    "sv": "Pinjenötter"
+   },
+   {
+    "en": "Walnuts",
+    "fi": "Saksanpähkinät",
+    "sv": "Valnötter"
+   },
+   {
+    "en": "Almonds",
+    "fi": "Mantelit",
+    "sv": "Mandlar"
+   },
+   {
+    "en": "Peanuts",
+    "fi": "Maapähkinät",
+    "sv": "Jordnötter"
+   }
+  ],
+  "n": {
+   "en": "They are picked out of pine cones by hand, which is why a small bag costs what it does.",
+   "fi": "Ne poimitaan männynkävyistä käsin, ja siksi pieni pussi maksaa sen mitä maksaa.",
+   "sv": "De plockas ur tallkottar för hand, och därför kostar en liten påse vad den gör."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which vegetable is the soup borscht made from?",
+   "fi": "Mistä kasviksesta borssikeitto keitetään?",
+   "sv": "Vilken grönsak kokas soppan borsjtj på?"
+  },
+  "o": [
+   {
+    "en": "Beetroot",
+    "fi": "Punajuuresta",
+    "sv": "Rödbeta"
+   },
+   {
+    "en": "Carrot",
+    "fi": "Porkkanasta",
+    "sv": "Morot"
+   },
+   {
+    "en": "Turnip",
+    "fi": "Nauriista",
+    "sv": "Rova"
+   },
+   {
+    "en": "Pumpkin",
+    "fi": "Kurpitsasta",
+    "sv": "Pumpa"
+   }
+  ],
+  "n": {
+   "en": "A splash of vinegar is added not for taste but to keep the colour from turning a dull brown.",
+   "fi": "Tilkka etikkaa lisätään ei maun vaan värin vuoksi, jottei se muutu tylsän ruskeaksi.",
+   "sv": "En skvätt vinäger tillsätts inte för smakens skull utan för att färgen inte ska bli trist brun."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which grain is the Easter dish mämmi made from?",
+   "fi": "Mistä viljasta pääsiäisruoka mämmi tehdään?",
+   "sv": "Vilket sädesslag görs påskrätten memma av?"
+  },
+  "o": [
+   {
+    "en": "Rye",
+    "fi": "Rukiista",
+    "sv": "Råg"
+   },
+   {
+    "en": "Barley",
+    "fi": "Ohrasta",
+    "sv": "Korn"
+   },
+   {
+    "en": "Oats",
+    "fi": "Kaurasta",
+    "sv": "Havre"
+   },
+   {
+    "en": "Wheat",
+    "fi": "Vehnästä",
+    "sv": "Vete"
+   }
+  ],
+  "n": {
+   "en": "Part of the grain is malted, and that is what turns the mixture sweet without any sugar being added.",
+   "fi": "Osa viljasta mallastetaan, ja juuri se tekee seoksesta makean ilman lisättyä sokeria.",
+   "sv": "En del av säden mältas, och det är det som gör blandningen söt utan tillsatt socker."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which part of a chilli holds most of its heat?",
+   "fi": "Mikä chilin osa sisältää suurimman osan sen tulisuudesta?",
+   "sv": "Vilken del av en chili innehåller det mesta av dess hetta?"
+  },
+  "o": [
+   {
+    "en": "The white pith the seeds hang from",
+    "fi": "Valkoinen sisus, jossa siemenet roikkuvat",
+    "sv": "Det vita innanmätet som fröna sitter på"
+   },
+   {
+    "en": "The seeds",
+    "fi": "Siemenet",
+    "sv": "Fröna"
+   },
+   {
+    "en": "The outer flesh",
+    "fi": "Ulompi hedelmäliha",
+    "sv": "Det yttre fruktköttet"
+   },
+   {
+    "en": "The stalk",
+    "fi": "Kanta",
+    "sv": "Stjälken"
+   }
+  ],
+  "n": {
+   "en": "The seeds themselves make none of it; they only taste hot because they sit against the part that does.",
+   "fi": "Siemenet eivät tuota sitä lainkaan, vaan maistuvat tulisilta vain siksi, että ne ovat kiinni siinä osassa, joka tuottaa.",
+   "sv": "Fröna bildar ingen alls; de smakar starkt bara för att de ligger mot den del som gör det."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Why does a jar of honey never go off?",
+   "fi": "Miksi hunajapurkki ei koskaan pilaannu?",
+   "sv": "Varför blir en burk honung aldrig dålig?"
+  },
+  "o": [
+   {
+    "en": "It holds almost no water and is acidic",
+    "fi": "Siinä on tuskin lainkaan vettä ja se on hapanta",
+    "sv": "Den innehåller nästan inget vatten och är sur"
+   },
+   {
+    "en": "Bees add a preservative to it",
+    "fi": "Mehiläiset lisäävät siihen säilöntäainetta",
+    "sv": "Bin tillsätter ett konserveringsmedel"
+   },
+   {
+    "en": "Its sugar is a kind no microbe can use",
+    "fi": "Sen sokeri on lajia, jota mikrobit eivät voi käyttää",
+    "sv": "Dess socker är av ett slag som mikrober inte kan använda"
+   },
+   {
+    "en": "It is pasteurised in the hive",
+    "fi": "Se pastöroidaan pesässä",
+    "sv": "Den pastöriseras i kupan"
+   }
+  ],
+  "n": {
+   "en": "The same dryness and acidity are why it has been spread on wounds as a dressing since ancient times, and still is.",
+   "fi": "Sama kuivuus ja happamuus ovat syy siihen, että sitä on levitetty haavoille sidoksena muinaisista ajoista asti ja levitetään yhä.",
+   "sv": "Samma torrhet och syra är skälet till att den strukits på sår som förband sedan antiken och fortfarande används så."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which tea has been allowed to oxidise completely?",
+   "fi": "Mikä tee on annettu hapettua täysin?",
+   "sv": "Vilket te har fått oxidera helt?"
+  },
+  "o": [
+   {
+    "en": "Black tea",
+    "fi": "Musta tee",
+    "sv": "Svart te"
+   },
+   {
+    "en": "Green tea",
+    "fi": "Vihreä tee",
+    "sv": "Grönt te"
+   },
+   {
+    "en": "White tea",
+    "fi": "Valkoinen tee",
+    "sv": "Vitt te"
+   },
+   {
+    "en": "Rooibos",
+    "fi": "Rooibos",
+    "sv": "Rooibos"
+   }
+  ],
+  "n": {
+   "en": "Green and black tea come from the very same bush; only the handling after picking is different.",
+   "fi": "Vihreä ja musta tee tulevat aivan samasta pensaasta, vain poiminnan jälkeinen käsittely eroaa.",
+   "sv": "Grönt och svart te kommer från exakt samma buske, bara hanteringen efter plockningen skiljer sig."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What does white chocolate lack that milk chocolate has?",
+   "fi": "Mitä valkosuklaasta puuttuu, mitä maitosuklaassa on?",
+   "sv": "Vad saknar vit choklad som mjölkchoklad har?"
+  },
+  "o": [
+   {
+    "en": "Cocoa solids",
+    "fi": "Kaakaomassa",
+    "sv": "Kakaomassa"
+   },
+   {
+    "en": "Cocoa butter",
+    "fi": "Kaakaovoi",
+    "sv": "Kakaosmör"
+   },
+   {
+    "en": "Milk",
+    "fi": "Maito",
+    "sv": "Mjölk"
+   },
+   {
+    "en": "Sugar",
+    "fi": "Sokeri",
+    "sv": "Socker"
+   }
+  ],
+  "n": {
+   "en": "That is also why it melts in the hand so readily and scorches the moment you try to heat it.",
+   "fi": "Siksi se myös sulaa kädessä niin herkästi ja palaa pohjaan heti, kun sitä yrittää kuumentaa.",
+   "sv": "Det är också därför den smälter så lätt i handen och bränner vid så fort man försöker värma den."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What makes a popcorn kernel burst open?",
+   "fi": "Mikä saa popcornjyvän poksahtamaan auki?",
+   "sv": "Vad får ett popcornkorn att spricka upp?"
+  },
+  "o": [
+   {
+    "en": "Water inside it turns to steam",
+    "fi": "Sen sisällä oleva vesi muuttuu höyryksi",
+    "sv": "Vattnet inuti förvandlas till ånga"
+   },
+   {
+    "en": "The oil boils through the shell",
+    "fi": "Öljy kiehuu kuoren läpi",
+    "sv": "Oljan kokar genom skalet"
+   },
+   {
+    "en": "The starch catches fire briefly",
+    "fi": "Tärkkelys syttyy hetkeksi",
+    "sv": "Stärkelsen fattar eld ett ögonblick"
+   },
+   {
+    "en": "The air in the kernel expands",
+    "fi": "Jyvän sisällä oleva ilma laajenee",
+    "sv": "Luften i kornet utvidgas"
+   }
+  ],
+  "n": {
+   "en": "Only one kind of maize has a shell tight enough to hold the pressure until it finally gives way.",
+   "fi": "Vain yhdellä maissilajikkeella on kuori, joka pitää paineen sisällään siihen asti, kunnes se vihdoin pettää.",
+   "sv": "Bara en majssort har ett skal tätt nog att hålla trycket tills det till slut ger vika."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "How many millilitres does a recipe mean by one teaspoon?",
+   "fi": "Kuinka monta millilitraa reseptin teelusikallinen tarkoittaa?",
+   "sv": "Hur många milliliter menar ett recept med en tesked?"
+  },
+  "o": [
+   {
+    "en": "5",
+    "fi": "5",
+    "sv": "5"
+   },
+   {
+    "en": "2",
+    "fi": "2",
+    "sv": "2"
+   },
+   {
+    "en": "10",
+    "fi": "10",
+    "sv": "10"
+   },
+   {
+    "en": "15",
+    "fi": "15",
+    "sv": "15"
+   }
+  ],
+  "n": {
+   "en": "A tablespoon is three of them, which is worth remembering when only one measuring spoon can be found.",
+   "fi": "Ruokalusikallinen on kolme sellaista, mikä kannattaa muistaa, kun mittalusikoista löytyy vain yksi.",
+   "sv": "En matsked är tre sådana, värt att minnas när bara en måttsked står att finna."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "How much does a standard wine bottle hold?",
+   "fi": "Paljonko tavalliseen viinipulloon mahtuu?",
+   "sv": "Hur mycket rymmer en vanlig vinflaska?"
+  },
+  "o": [
+   {
+    "en": "0.75 litres",
+    "fi": "0,75 litraa",
+    "sv": "0,75 liter"
+   },
+   {
+    "en": "0.5 litres",
+    "fi": "0,5 litraa",
+    "sv": "0,5 liter"
+   },
+   {
+    "en": "1 litre",
+    "fi": "1 litra",
+    "sv": "1 liter"
+   },
+   {
+    "en": "0.9 litres",
+    "fi": "0,9 litraa",
+    "sv": "0,9 liter"
+   }
+  ],
+  "n": {
+   "en": "One story has it that the size matched the lungful a glassblower could manage in a single breath.",
+   "fi": "Erään tarinan mukaan koko vastasi sitä, minkä lasinpuhaltaja jaksoi puhaltaa yhdellä henkäyksellä.",
+   "sv": "Enligt en historia motsvarade storleken vad en glasblåsare orkade blåsa i ett andetag."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "How many square metres is one hectare?",
+   "fi": "Kuinka monta neliömetriä on yksi hehtaari?",
+   "sv": "Hur många kvadratmeter är en hektar?"
+  },
+  "o": [
+   {
+    "en": "10 000",
+    "fi": "10 000",
+    "sv": "10 000"
+   },
+   {
+    "en": "1 000",
+    "fi": "1 000",
+    "sv": "1 000"
+   },
+   {
+    "en": "100 000",
+    "fi": "100 000",
+    "sv": "100 000"
+   },
+   {
+    "en": "5 000",
+    "fi": "5 000",
+    "sv": "5 000"
+   }
+  ],
+  "n": {
+   "en": "That is a square a hundred metres on each side, a little larger than a football pitch.",
+   "fi": "Se on neliö, jonka sivu on sata metriä, hieman jalkapallokenttää suurempi.",
+   "sv": "Det är en kvadrat med hundra meters sida, något större än en fotbollsplan."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Roughly how many pounds is one kilogram?",
+   "fi": "Kuinka monta naulaa on suunnilleen yksi kilogramma?",
+   "sv": "Ungefär hur många pund är ett kilogram?"
+  },
+  "o": [
+   {
+    "en": "About 2.2",
+    "fi": "Noin 2,2",
+    "sv": "Ungefär 2,2"
+   },
+   {
+    "en": "About 1.6",
+    "fi": "Noin 1,6",
+    "sv": "Ungefär 1,6"
+   },
+   {
+    "en": "About 3.5",
+    "fi": "Noin 3,5",
+    "sv": "Ungefär 3,5"
+   },
+   {
+    "en": "About 4.4",
+    "fi": "Noin 4,4",
+    "sv": "Ungefär 4,4"
+   }
+  ],
+  "n": {
+   "en": "The pound has been defined since 1959 as an exact number of grams, so the imperial unit now depends on the metric one.",
+   "fi": "Naula on vuodesta 1959 määritelty tasan tiettynä grammamääränä, joten brittiyksikkö riippuu nykyään metrisestä.",
+   "sv": "Pundet har sedan 1959 definierats som ett exakt antal gram, så den brittiska enheten beror numera på den metriska."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "The zloty is the currency of which country?",
+   "fi": "Minkä maan valuutta on zloty?",
+   "sv": "Zloty är valutan i vilket land?"
+  },
+  "o": [
+   {
+    "en": "Poland",
+    "fi": "Puola",
+    "sv": "Polen"
+   },
+   {
+    "en": "Czechia",
+    "fi": "Tšekki",
+    "sv": "Tjeckien"
+   },
+   {
+    "en": "Hungary",
+    "fi": "Unkari",
+    "sv": "Ungern"
+   },
+   {
+    "en": "Romania",
+    "fi": "Romania",
+    "sv": "Rumänien"
+   }
+  ],
+  "n": {
+   "en": "The name simply means golden, and the coin it referred to was once literally gold.",
+   "fi": "Nimi tarkoittaa yksinkertaisesti kultaista, ja raha, johon se viittasi, oli aikanaan kirjaimellisesti kultaa.",
+   "sv": "Namnet betyder helt enkelt gyllene, och myntet det syftade på var en gång bokstavligen guld."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What does an ISBN identify?",
+   "fi": "Mitä ISBN yksilöi?",
+   "sv": "Vad identifierar ett ISBN?"
+  },
+  "o": [
+   {
+    "en": "A book",
+    "fi": "Kirjan",
+    "sv": "En bok"
+   },
+   {
+    "en": "A bank account",
+    "fi": "Pankkitilin",
+    "sv": "Ett bankkonto"
+   },
+   {
+    "en": "A song",
+    "fi": "Kappaleen",
+    "sv": "En låt"
+   },
+   {
+    "en": "A company",
+    "fi": "Yrityksen",
+    "sv": "Ett företag"
+   }
+  ],
+  "n": {
+   "en": "The last digit is a check digit, so a single mistyped number is caught before anything is ordered.",
+   "fi": "Viimeinen numero on tarkistusnumero, joten yksittäinen näppäilyvirhe huomataan ennen kuin mitään tilataan.",
+   "sv": "Sista siffran är en kontrollsiffra, så ett enda feltryck upptäcks innan något beställs."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "How many bits make up one byte?",
+   "fi": "Kuinka monta bittiä on yhdessä tavussa?",
+   "sv": "Hur många bitar utgör en byte?"
+  },
+  "o": [
+   {
+    "en": "Eight",
+    "fi": "Kahdeksan",
+    "sv": "Åtta"
+   },
+   {
+    "en": "Four",
+    "fi": "Neljä",
+    "sv": "Fyra"
+   },
+   {
+    "en": "Ten",
+    "fi": "Kymmenen",
+    "sv": "Tio"
+   },
+   {
+    "en": "Sixteen",
+    "fi": "Kuusitoista",
+    "sv": "Sexton"
+   }
+  ],
+  "n": {
+   "en": "Eight was not inevitable; early machines used six or seven, and the eight-bit byte only won out in the 1960s.",
+   "fi": "Kahdeksan ei ollut väistämätön, sillä varhaiset koneet käyttivät kuutta tai seitsemää, ja kahdeksan voitti vasta 1960-luvulla.",
+   "sv": "Åtta var inte självklart; tidiga maskiner använde sex eller sju, och åttabitarsbyten segrade först på 1960-talet."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which number is written M in Roman numerals?",
+   "fi": "Mikä luku kirjoitetaan roomalaisin numeroin M?",
+   "sv": "Vilket tal skrivs M med romerska siffror?"
+  },
+  "o": [
+   {
+    "en": "1 000",
+    "fi": "1 000",
+    "sv": "1 000"
+   },
+   {
+    "en": "100",
+    "fi": "100",
+    "sv": "100"
+   },
+   {
+    "en": "500",
+    "fi": "500",
+    "sv": "500"
+   },
+   {
+    "en": "10 000",
+    "fi": "10 000",
+    "sv": "10 000"
+   }
+  ],
+  "n": {
+   "en": "The system has no zero at all, which is one reason doing arithmetic with it is such a misery.",
+   "fi": "Järjestelmässä ei ole nollaa lainkaan, ja siksi muun muassa laskeminen sillä on niin tuskaista.",
+   "sv": "Systemet har ingen nolla alls, vilket är ett skäl till att räkna med det är en sådan plåga."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "How does an A3 sheet compare with an A4 sheet?",
+   "fi": "Miten A3-arkki suhtautuu A4-arkkiin?",
+   "sv": "Hur förhåller sig ett A3-ark till ett A4-ark?"
+  },
+  "o": [
+   {
+    "en": "It is twice the area",
+    "fi": "Se on pinta-alaltaan kaksi kertaa suurempi",
+    "sv": "Det har dubbelt så stor yta"
+   },
+   {
+    "en": "It is half the area",
+    "fi": "Se on pinta-alaltaan puolet pienempi",
+    "sv": "Det har halva ytan"
+   },
+   {
+    "en": "It is four times the area",
+    "fi": "Se on pinta-alaltaan nelinkertainen",
+    "sv": "Det har fyra gånger så stor yta"
+   },
+   {
+    "en": "It is the same area but a different shape",
+    "fi": "Se on pinta-alaltaan sama mutta eri muotoinen",
+    "sv": "Det har samma yta men annan form"
+   }
+  ],
+  "n": {
+   "en": "Every size in the series has the same proportions, so folding one in half always gives the next size down.",
+   "fi": "Kaikilla sarjan koilla on samat mittasuhteet, joten puoliksi taitettuna saa aina seuraavan pienemmän koon.",
+   "sv": "Alla format i serien har samma proportioner, så viker man ett på mitten får man alltid nästa mindre storlek."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which is the only even prime number?",
+   "fi": "Mikä on ainoa parillinen alkuluku?",
+   "sv": "Vilket är det enda jämna primtalet?"
+  },
+  "o": [
+   {
+    "en": "2",
+    "fi": "2",
+    "sv": "2"
+   },
+   {
+    "en": "4",
+    "fi": "4",
+    "sv": "4"
+   },
+   {
+    "en": "0",
+    "fi": "0",
+    "sv": "0"
+   },
+   {
+    "en": "6",
+    "fi": "6",
+    "sv": "6"
+   }
+  ],
+  "n": {
+   "en": "Every other even number can be halved, which disqualifies it on the spot.",
+   "fi": "Jokainen muu parillinen luku on jaettavissa kahdella, mikä pudottaa sen heti pois.",
+   "sv": "Varje annat jämnt tal går att dela med två, vilket diskvalificerar det på fläcken."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What is a word that reads the same backwards called?",
+   "fi": "Mikä on sellaisen sanan nimi, joka luetaan samoin takaperin?",
+   "sv": "Vad kallas ett ord som läses likadant baklänges?"
+  },
+  "o": [
+   {
+    "en": "A palindrome",
+    "fi": "Palindromi",
+    "sv": "Ett palindrom"
+   },
+   {
+    "en": "An anagram",
+    "fi": "Anagrammi",
+    "sv": "Ett anagram"
+   },
+   {
+    "en": "A homonym",
+    "fi": "Homonyymi",
+    "sv": "En homonym"
+   },
+   {
+    "en": "An acronym",
+    "fi": "Akronyymi",
+    "sv": "En akronym"
+   }
+  ],
+  "n": {
+   "en": "The Finnish word saippuakivikauppias, a soapstone seller, is one of the longest in everyday use anywhere.",
+   "fi": "Suomen sana saippuakivikauppias on yksi pisimmistä arkikäytössä olevista missään kielessä.",
+   "sv": "Det finska ordet saippuakivikauppias, en täljstenshandlare, är ett av de längsta som används i vardagsspråk någonstans."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What does RSVP on an invitation ask you to do?",
+   "fi": "Mitä kutsun RSVP pyytää tekemään?",
+   "sv": "Vad ber RSVP på en inbjudan dig att göra?"
+  },
+  "o": [
+   {
+    "en": "Reply",
+    "fi": "Vastaamaan",
+    "sv": "Svara"
+   },
+   {
+    "en": "Bring a gift",
+    "fi": "Tuomaan lahjan",
+    "sv": "Ta med en present"
+   },
+   {
+    "en": "Arrive on time",
+    "fi": "Saapumaan ajoissa",
+    "sv": "Komma i tid"
+   },
+   {
+    "en": "Dress formally",
+    "fi": "Pukeutumaan juhlavasti",
+    "sv": "Klä dig formellt"
+   }
+  ],
+  "n": {
+   "en": "The letters stand for a French phrase, a leftover from the days when French was the language of polite Europe.",
+   "fi": "Kirjaimet tulevat ranskankielisestä lauseesta, jäänne ajoilta, jolloin ranska oli sivistyneen Euroopan kieli.",
+   "sv": "Bokstäverna står för en fransk fras, en rest från tiden då franska var det bildade Europas språk."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which language did English borrow the word sauna from?",
+   "fi": "Mistä kielestä englanti on lainannut sanan sauna?",
+   "sv": "Från vilket språk har engelskan lånat ordet sauna?"
+  },
+  "o": [
+   {
+    "en": "Finnish",
+    "fi": "Suomesta",
+    "sv": "Finska"
+   },
+   {
+    "en": "Swedish",
+    "fi": "Ruotsista",
+    "sv": "Svenska"
+   },
+   {
+    "en": "Russian",
+    "fi": "Venäjästä",
+    "sv": "Ryska"
+   },
+   {
+    "en": "Estonian",
+    "fi": "Virosta",
+    "sv": "Estniska"
+   }
+  ],
+  "n": {
+   "en": "English speakers mostly say it wrong: in the original the first vowels are those of how, not of saw.",
+   "fi": "Englanninkieliset lausuvat sen useimmiten väärin, sillä alkukielessä ensimmäiset vokaalit ovat au eivätkä oo.",
+   "sv": "Engelsktalande säger det oftast fel, för i originalet är de första vokalerna au och inte å."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which Swedish word means neither too much nor too little?",
+   "fi": "Mikä ruotsin sana tarkoittaa ei liikaa eikä liian vähän?",
+   "sv": "Vilket svenskt ord betyder varken för mycket eller för lite?"
+  },
+  "o": [
+   {
+    "en": "Lagom",
+    "fi": "Lagom",
+    "sv": "Lagom"
+   },
+   {
+    "en": "Fika",
+    "fi": "Fika",
+    "sv": "Fika"
+   },
+   {
+    "en": "Mysig",
+    "fi": "Mysig",
+    "sv": "Mysig"
+   },
+   {
+    "en": "Orka",
+    "fi": "Orka",
+    "sv": "Orka"
+   }
+  ],
+  "n": {
+   "en": "It is often said to come from the Viking drinking horn passed round the team, though scholars doubt that story.",
+   "fi": "Sen sanotaan usein juontuvan viikinkien juomasarvesta, joka kiersi joukkueelta toiselle, vaikka tutkijat epäilevät tarinaa.",
+   "sv": "Det sägs ofta komma från vikingarnas dryckeshorn som gick laget runt, även om forskare betvivlar historien."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "From which language does the word robot come?",
+   "fi": "Mistä kielestä sana robotti on peräisin?",
+   "sv": "Från vilket språk kommer ordet robot?"
+  },
+  "o": [
+   {
+    "en": "Czech",
+    "fi": "Tšekistä",
+    "sv": "Tjeckiska"
+   },
+   {
+    "en": "Greek",
+    "fi": "Kreikasta",
+    "sv": "Grekiska"
+   },
+   {
+    "en": "Latin",
+    "fi": "Latinasta",
+    "sv": "Latin"
+   },
+   {
+    "en": "Japanese",
+    "fi": "Japanista",
+    "sv": "Japanska"
+   }
+  ],
+  "n": {
+   "en": "It was coined for a stage play in 1920 and comes from an old word for forced labour.",
+   "fi": "Se keksittiin näytelmään vuonna 1920, ja se tulee vanhasta pakkotyötä tarkoittavasta sanasta.",
+   "sv": "Det myntades för en pjäs 1920 och kommer från ett gammalt ord för tvångsarbete."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which is the fastest land animal over a short sprint?",
+   "fi": "Mikä on nopein maaeläin lyhyellä kiritysmatkalla?",
+   "sv": "Vilket är det snabbaste landdjuret på en kort spurt?"
+  },
+  "o": [
+   {
+    "en": "The cheetah",
+    "fi": "Gepardi",
+    "sv": "Geparden"
+   },
+   {
+    "en": "The greyhound",
+    "fi": "Vinttikoira",
+    "sv": "Vinthunden"
+   },
+   {
+    "en": "The pronghorn",
+    "fi": "Haarukkasarvi",
+    "sv": "Gaffelantilopen"
+   },
+   {
+    "en": "The ostrich",
+    "fi": "Strutsi",
+    "sv": "Strutsen"
+   }
+  ],
+  "n": {
+   "en": "It can only keep it up for twenty seconds or so, and often has to rest before it can even start eating.",
+   "fi": "Se jaksaa pitää vauhtia yllä vain parikymmentä sekuntia ja joutuu usein lepäämään ennen kuin pääsee edes syömään.",
+   "sv": "Den orkar hålla farten i bara ett tjugotal sekunder och måste ofta vila innan den ens kan börja äta."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which bird lays the largest egg?",
+   "fi": "Mikä lintu munii suurimman munan?",
+   "sv": "Vilken fågel lägger det största ägget?"
+  },
+  "o": [
+   {
+    "en": "The ostrich",
+    "fi": "Strutsi",
+    "sv": "Strutsen"
+   },
+   {
+    "en": "The emu",
+    "fi": "Emu",
+    "sv": "Emun"
+   },
+   {
+    "en": "The albatross",
+    "fi": "Albatrossi",
+    "sv": "Albatrossen"
+   },
+   {
+    "en": "The swan",
+    "fi": "Joutsen",
+    "sv": "Svanen"
+   }
+  ],
+  "n": {
+   "en": "The shell is strong enough to stand on, and boiling one properly takes well over an hour.",
+   "fi": "Kuori kestää päällä seisomisen, ja sen kunnollinen keittäminen vie reilusti yli tunnin.",
+   "sv": "Skalet håller för att stå på, och att koka ett ordentligt tar långt över en timme."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Roughly how long is an elephant pregnant?",
+   "fi": "Kuinka kauan norsu on suunnilleen tiineenä?",
+   "sv": "Ungefär hur länge är en elefant dräktig?"
+  },
+  "o": [
+   {
+    "en": "About 22 months",
+    "fi": "Noin 22 kuukautta",
+    "sv": "Omkring 22 månader"
+   },
+   {
+    "en": "About 9 months",
+    "fi": "Noin 9 kuukautta",
+    "sv": "Omkring 9 månader"
+   },
+   {
+    "en": "About 14 months",
+    "fi": "Noin 14 kuukautta",
+    "sv": "Omkring 14 månader"
+   },
+   {
+    "en": "About 36 months",
+    "fi": "Noin 36 kuukautta",
+    "sv": "Omkring 36 månader"
+   }
+  ],
+  "n": {
+   "en": "It is the longest pregnancy of any mammal, and the calf can already walk within hours of being born.",
+   "fi": "Se on nisäkkäiden pisin tiineys, ja vasikka osaa kävellä jo tuntien kuluttua syntymästään.",
+   "sv": "Det är det längsta dräktigheten bland däggdjur, och kalven kan gå redan timmar efter födseln."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "How does a honeybee tell the hive where it found flowers?",
+   "fi": "Miten mehiläinen kertoo pesälle, mistä se löysi kukkia?",
+   "sv": "Hur talar ett bi om för kupan var det hittat blommor?"
+  },
+  "o": [
+   {
+    "en": "It dances a pattern on the comb",
+    "fi": "Se tanssii kuvion kennolle",
+    "sv": "Det dansar ett mönster på vaxkakan"
+   },
+   {
+    "en": "It hums at a particular pitch",
+    "fi": "Se hyrisee tietyllä korkeudella",
+    "sv": "Det surrar i en viss tonhöjd"
+   },
+   {
+    "en": "It leaves a scent trail back",
+    "fi": "Se jättää hajujäljen takaisin",
+    "sv": "Det lämnar ett doftspår tillbaka"
+   },
+   {
+    "en": "It leads the others out one by one",
+    "fi": "Se johdattaa muut ulos yksitellen",
+    "sv": "Det leder ut de andra en och en"
+   }
+  ],
+  "n": {
+   "en": "The angle of the dance gives the direction relative to the Sun, and its length gives the distance.",
+   "fi": "Tanssin kulma kertoo suunnan Aurinkoon nähden ja sen kesto etäisyyden.",
+   "sv": "Dansens vinkel anger riktningen i förhållande till solen och dess längd avståndet."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What is a snail's shell made of?",
+   "fi": "Mistä etanan kuori on tehty?",
+   "sv": "Vad består ett snigelskal av?"
+  },
+  "o": [
+   {
+    "en": "Lime",
+    "fi": "Kalkista",
+    "sv": "Kalk"
+   },
+   {
+    "en": "Horn",
+    "fi": "Sarveisaineesta",
+    "sv": "Horn"
+   },
+   {
+    "en": "Hardened mucus",
+    "fi": "Kovettuneesta limasta",
+    "sv": "Härdat slem"
+   },
+   {
+    "en": "Silica",
+    "fi": "Piistä",
+    "sv": "Kiselsyra"
+   }
+  ],
+  "n": {
+   "en": "The animal builds it from the inside out and carries it for life; it cannot move house.",
+   "fi": "Eläin rakentaa sen sisältä ulospäin ja kantaa sitä koko elämänsä, sillä se ei voi vaihtaa asuntoa.",
+   "sv": "Djuret bygger det inifrån och ut och bär det hela livet, det kan inte flytta."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What does a cuckoo do with its eggs?",
+   "fi": "Mitä käki tekee munillaan?",
+   "sv": "Vad gör göken med sina ägg?"
+  },
+  "o": [
+   {
+    "en": "It lays them in other birds' nests",
+    "fi": "Se munii ne toisten lintujen pesiin",
+    "sv": "Den lägger dem i andra fåglars bon"
+   },
+   {
+    "en": "It buries them in warm sand",
+    "fi": "Se hautaa ne lämpimään hiekkaan",
+    "sv": "Den gräver ner dem i varm sand"
+   },
+   {
+    "en": "It leaves them on bare rock",
+    "fi": "Se jättää ne paljaalle kalliolle",
+    "sv": "Den lämnar dem på bar klippa"
+   },
+   {
+    "en": "It carries them until they hatch",
+    "fi": "Se kantaa niitä kuoriutumiseen asti",
+    "sv": "Den bär dem tills de kläcks"
+   }
+  ],
+  "n": {
+   "en": "Each female specialises in one host species and lays eggs that match that bird's own.",
+   "fi": "Kukin naaras erikoistuu yhteen isäntälajiin ja munii munia, jotka muistuttavat kyseisen linnun omia.",
+   "sv": "Varje hona specialiserar sig på en värdart och lägger ägg som liknar den fågelns egna."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Why do geese fly in a V?",
+   "fi": "Miksi hanhet lentävät auramuodostelmassa?",
+   "sv": "Varför flyger gäss i plogformation?"
+  },
+  "o": [
+   {
+    "en": "Each bird rides the lift from the one ahead",
+    "fi": "Kukin lintu hyödyntää edellä lentävän nostetta",
+    "sv": "Varje fågel utnyttjar lyftkraften från den framför"
+   },
+   {
+    "en": "It keeps the flock warm",
+    "fi": "Se pitää parven lämpimänä",
+    "sv": "Det håller flocken varm"
+   },
+   {
+    "en": "It confuses birds of prey",
+    "fi": "Se hämää petolintuja",
+    "sv": "Det förvirrar rovfåglar"
+   },
+   {
+    "en": "It lets them all see the ground",
+    "fi": "Se antaa kaikkien nähdä maahan",
+    "sv": "Det låter alla se marken"
+   }
+  ],
+  "n": {
+   "en": "The lead bird gets no help at all, so the flock keeps swapping the hardest position round.",
+   "fi": "Kärkilintu ei saa apua lainkaan, joten parvi vaihtaa raskainta paikkaa jatkuvasti.",
+   "sv": "Ledarfågeln får ingen hjälp alls, så flocken byter ständigt om den tyngsta platsen."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which is the only venomous snake living wild in Finland?",
+   "fi": "Mikä on ainoa Suomessa luonnonvaraisena elävä myrkkykäärme?",
+   "sv": "Vilken är den enda giftiga ormen som lever vilt i Finland?"
+  },
+  "o": [
+   {
+    "en": "The adder",
+    "fi": "Kyy",
+    "sv": "Huggormen"
+   },
+   {
+    "en": "The grass snake",
+    "fi": "Rantakäärme",
+    "sv": "Snoken"
+   },
+   {
+    "en": "The smooth snake",
+    "fi": "Kangaskäärme",
+    "sv": "Hasselsnoken"
+   },
+   {
+    "en": "The slow worm",
+    "fi": "Vaskitsa",
+    "sv": "Kopparödlan"
+   }
+  ],
+  "n": {
+   "en": "It is a protected species, and the slow worm it is often mistaken for is not even a snake but a legless lizard.",
+   "fi": "Se on rauhoitettu, ja vaskitsa, johon se usein sekoitetaan, ei ole edes käärme vaan jalaton sisilisko.",
+   "sv": "Den är fridlyst, och kopparödlan som den ofta förväxlas med är inte ens en orm utan en benlös ödla."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which is Finland's only wild cat?",
+   "fi": "Mikä on Suomen ainoa villi kissaeläin?",
+   "sv": "Vilket är Finlands enda vilda kattdjur?"
+  },
+  "o": [
+   {
+    "en": "The lynx",
+    "fi": "Ilves",
+    "sv": "Lodjuret"
+   },
+   {
+    "en": "The wolverine",
+    "fi": "Ahma",
+    "sv": "Järven"
+   },
+   {
+    "en": "The wolf",
+    "fi": "Susi",
+    "sv": "Vargen"
+   },
+   {
+    "en": "The arctic fox",
+    "fi": "Naali",
+    "sv": "Fjällräven"
+   }
+  ],
+  "n": {
+   "en": "The tufts on its ears are thought to work rather like antennae, helping it place a faint sound.",
+   "fi": "Sen korvatupsujen arvellaan toimivan antennien tapaan ja auttavan paikantamaan heikon äänen.",
+   "sv": "Tofsarna på dess öron tros fungera ungefär som antenner och hjälpa det att placera ett svagt ljud."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which seal lives in just one Finnish lake and nowhere else on Earth?",
+   "fi": "Mikä hylje elää vain yhdessä suomalaisessa järvessä eikä missään muualla maailmassa?",
+   "sv": "Vilken säl lever bara i en enda finsk sjö och ingen annanstans på jorden?"
+  },
+  "o": [
+   {
+    "en": "The Saimaa ringed seal",
+    "fi": "Saimaannorppa",
+    "sv": "Saimenvikaren"
+   },
+   {
+    "en": "The grey seal",
+    "fi": "Harmaahylje",
+    "sv": "Gråsälen"
+   },
+   {
+    "en": "The harbour seal",
+    "fi": "Kirjohylje",
+    "sv": "Knubbsälen"
+   },
+   {
+    "en": "The harp seal",
+    "fi": "Grönlanninhylje",
+    "sv": "Grönlandssälen"
+   }
+  ],
+  "n": {
+   "en": "It was cut off from the sea when the land rose after the ice age, and it now pups in snowdrifts on the shore ice.",
+   "fi": "Se jäi erilleen merestä maan kohotessa jääkauden jälkeen, ja se saa nykyään poikasensa rantajään kinoksiin.",
+   "sv": "Den skildes från havet när landet höjde sig efter istiden, och den får nu sina kutar i drivor på strandisen."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which is the largest wild land animal in Finland?",
+   "fi": "Mikä on Suomen suurin villi maaeläin?",
+   "sv": "Vilket är Finlands största vilda landdjur?"
+  },
+  "o": [
+   {
+    "en": "The moose",
+    "fi": "Hirvi",
+    "sv": "Älgen"
+   },
+   {
+    "en": "The brown bear",
+    "fi": "Karhu",
+    "sv": "Brunbjörnen"
+   },
+   {
+    "en": "The reindeer",
+    "fi": "Poro",
+    "sv": "Renen"
+   },
+   {
+    "en": "The wolf",
+    "fi": "Susi",
+    "sv": "Vargen"
+   }
+  ],
+  "n": {
+   "en": "A full-grown bull can weigh more than half a tonne, several times what a Finnish bear does.",
+   "fi": "Täysikasvuinen uros voi painaa yli puoli tonnia, moninkertaisesti suomalaiseen karhuun verrattuna.",
+   "sv": "En fullvuxen tjur kan väga över ett halvt ton, flera gånger mer än en finsk björn."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which is the largest owl in Europe?",
+   "fi": "Mikä on Euroopan suurin pöllö?",
+   "sv": "Vilken är Europas största uggla?"
+  },
+  "o": [
+   {
+    "en": "The eagle owl",
+    "fi": "Huuhkaja",
+    "sv": "Berguven"
+   },
+   {
+    "en": "The great grey owl",
+    "fi": "Lapinpöllö",
+    "sv": "Lappugglan"
+   },
+   {
+    "en": "The snowy owl",
+    "fi": "Tunturipöllö",
+    "sv": "Fjällugglan"
+   },
+   {
+    "en": "The tawny owl",
+    "fi": "Lehtopöllö",
+    "sv": "Kattugglan"
+   }
+  ],
+  "n": {
+   "en": "Its wings are fringed so softly that prey hears nothing until it is far too late.",
+   "fi": "Sen siivet ovat niin pehmeäreunaiset, ettei saalis kuule mitään ennen kuin on jo aivan liian myöhäistä.",
+   "sv": "Dess vingar har så mjuka kanter att bytet inte hör något förrän det är alldeles för sent."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What does the SPF number on a sunscreen tell you about?",
+   "fi": "Mitä aurinkovoiteen SPF-luku kertoo?",
+   "sv": "Vad berättar SPF-talet på en solkräm om?"
+  },
+  "o": [
+   {
+    "en": "Protection against the burning UVB rays",
+    "fi": "Suojasta polttavaa UVB-säteilyä vastaan",
+    "sv": "Skyddet mot de brännande UVB-strålarna"
+   },
+   {
+    "en": "Protection against the ageing UVA rays",
+    "fi": "Suojasta ikäännyttävää UVA-säteilyä vastaan",
+    "sv": "Skyddet mot de åldrande UVA-strålarna"
+   },
+   {
+    "en": "How long the cream stays on in water",
+    "fi": "Kuinka kauan voide pysyy vedessä",
+    "sv": "Hur länge krämen sitter kvar i vatten"
+   },
+   {
+    "en": "How thickly it should be spread",
+    "fi": "Kuinka paksusti se pitää levittää",
+    "sv": "Hur tjockt den ska bredas på"
+   }
+  ],
+  "n": {
+   "en": "Most people use a third of the amount the test assumes, so the real protection is far below the number on the bottle.",
+   "fi": "Useimmat käyttävät kolmasosan testin oletusmäärästä, joten todellinen suoja jää kauas pullon luvusta.",
+   "sv": "De flesta använder en tredjedel av den mängd testet förutsätter, så det verkliga skyddet ligger långt under siffran på flaskan."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Why do your ears pop as an aeroplane climbs?",
+   "fi": "Miksi korvat lukkiutuvat lentokoneen noustessa?",
+   "sv": "Varför poppar öronen när ett flygplan stiger?"
+  },
+  "o": [
+   {
+    "en": "The air pressure outside drops faster than inside the ear",
+    "fi": "Ulkoilman paine laskee nopeammin kuin korvan sisällä",
+    "sv": "Lufttrycket utanför sjunker snabbare än inne i örat"
+   },
+   {
+    "en": "The cabin air is much drier than usual",
+    "fi": "Matkustamon ilma on tavallista kuivempaa",
+    "sv": "Kabinluften är mycket torrare än vanligt"
+   },
+   {
+    "en": "The engines shake the eardrum",
+    "fi": "Moottorit tärisyttävät tärykalvoa",
+    "sv": "Motorerna skakar trumhinnan"
+   },
+   {
+    "en": "The cold makes the ear canal shrink",
+    "fi": "Kylmyys kutistaa korvakäytävää",
+    "sv": "Kylan får hörselgången att krympa"
+   }
+  ],
+  "n": {
+   "en": "Swallowing opens a narrow tube to the throat, which is why chewing or yawning sorts it out.",
+   "fi": "Nieleminen avaa kapean putken nieluun, ja siksi pureskelu tai haukottelu auttaa.",
+   "sv": "Att svälja öppnar en smal gång till svalget, och därför hjälper det att tugga eller gäspa."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What makes a non-stick frying pan non-stick?",
+   "fi": "Mikä tekee tarttumattomasta paistinpannusta tarttumattoman?",
+   "sv": "Vad gör en non-stick-stekpanna non-stick?"
+  },
+  "o": [
+   {
+    "en": "A thin plastic coating",
+    "fi": "Ohut muovipinnoite",
+    "sv": "En tunn plastbeläggning"
+   },
+   {
+    "en": "A layer of baked-on oil",
+    "fi": "Kerros paistunutta öljyä",
+    "sv": "Ett lager inbränd olja"
+   },
+   {
+    "en": "Polished stainless steel",
+    "fi": "Kiillotettu ruostumaton teräs",
+    "sv": "Polerat rostfritt stål"
+   },
+   {
+    "en": "A ceramic glaze",
+    "fi": "Keraaminen lasite",
+    "sv": "En keramisk glasyr"
+   }
+  ],
+  "n": {
+   "en": "The slippery stuff was discovered by accident in 1938 by a chemist whose gas cylinder came out empty but still heavy.",
+   "fi": "Liukas aine löytyi vahingossa vuonna 1938, kun kemistin kaasupullo tyhjeni mutta painoi yhä.",
+   "sv": "Det hala ämnet upptäcktes av en slump 1938 av en kemist vars gastub kom ut tom men ändå tung."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Why does the bathroom mirror fog up?",
+   "fi": "Miksi kylpyhuoneen peili huurtuu?",
+   "sv": "Varför immar badrumsspegeln igen?"
+  },
+  "o": [
+   {
+    "en": "Water vapour condenses on the cold glass",
+    "fi": "Vesihöyry tiivistyy kylmään lasiin",
+    "sv": "Vattenånga kondenserar på det kalla glaset"
+   },
+   {
+    "en": "Steam lifts the dust off the surface",
+    "fi": "Höyry nostaa pölyn pinnalta",
+    "sv": "Ångan lyfter dammet från ytan"
+   },
+   {
+    "en": "Soap residue dries into a film",
+    "fi": "Saippuajäämät kuivuvat kalvoksi",
+    "sv": "Tvålrester torkar till en hinna"
+   },
+   {
+    "en": "The silver backing expands in heat",
+    "fi": "Hopeointi laajenee lämmössä",
+    "sv": "Silverskiktet utvidgas i värmen"
+   }
+  ],
+  "n": {
+   "en": "Warm air can hold far more water than cold, which is also why a cold glass of drink sweats in summer.",
+   "fi": "Lämmin ilma pidättää paljon enemmän vettä kuin kylmä, ja siksi myös kylmä juomalasi hikoilee kesällä.",
+   "sv": "Varm luft kan hålla långt mer vatten än kall, och därför svettas också ett kallt dricksglas på sommaren."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "How does soap get grease off a plate?",
+   "fi": "Miten saippua irrottaa rasvan lautaselta?",
+   "sv": "Hur får tvål bort fett från en tallrik?"
+  },
+  "o": [
+   {
+    "en": "Its molecules grip grease at one end and water at the other",
+    "fi": "Sen molekyylit tarttuvat toisesta päästä rasvaan ja toisesta veteen",
+    "sv": "Dess molekyler griper fett i ena änden och vatten i den andra"
+   },
+   {
+    "en": "It dissolves the grease into a liquid",
+    "fi": "Se liuottaa rasvan nesteeksi",
+    "sv": "Den löser upp fettet till en vätska"
+   },
+   {
+    "en": "It burns the grease away chemically",
+    "fi": "Se polttaa rasvan kemiallisesti pois",
+    "sv": "Den bränner bort fettet kemiskt"
+   },
+   {
+    "en": "It makes the water much hotter",
+    "fi": "Se tekee vedestä paljon kuumempaa",
+    "sv": "Den gör vattnet mycket hetare"
+   }
+  ],
+  "n": {
+   "en": "The same two-ended trick is why washing hands properly tears a virus's fatty coat right open.",
+   "fi": "Sama kaksipäinen temppu saa kunnollisen käsienpesun repimään viruksen rasvakuoren auki.",
+   "sv": "Samma tvåändade knep gör att ordentlig handtvätt sliter upp ett virus fetthölje."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What does the catalytic converter in a car do?",
+   "fi": "Mitä auton katalysaattori tekee?",
+   "sv": "Vad gör katalysatorn i en bil?"
+  },
+  "o": [
+   {
+    "en": "It turns harmful exhaust gases into less harmful ones",
+    "fi": "Se muuttaa haitalliset pakokaasut vähemmän haitallisiksi",
+    "sv": "Den omvandlar skadliga avgaser till mindre skadliga"
+   },
+   {
+    "en": "It filters soot out of the exhaust",
+    "fi": "Se suodattaa noen pakokaasusta",
+    "sv": "Den filtrerar bort sot ur avgaserna"
+   },
+   {
+    "en": "It cools the engine",
+    "fi": "Se jäähdyttää moottoria",
+    "sv": "Den kyler motorn"
+   },
+   {
+    "en": "It muffles the engine noise",
+    "fi": "Se vaimentaa moottorin äänen",
+    "sv": "Den dämpar motorljudet"
+   }
+  ],
+  "n": {
+   "en": "It needs precious metals to work, which is why thieves saw them out from under parked cars.",
+   "fi": "Se tarvitsee toimiakseen jalometalleja, ja siksi varkaat sahaavat niitä irti pysäköityjen autojen alta.",
+   "sv": "Den behöver ädelmetaller för att fungera, och därför sågar tjuvar loss dem under parkerade bilar."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Why does a candle go out when a glass is placed over it?",
+   "fi": "Miksi kynttilä sammuu, kun sen päälle laitetaan lasi?",
+   "sv": "Varför slocknar ett ljus när man sätter ett glas över det?"
+  },
+  "o": [
+   {
+    "en": "It uses up the oxygen inside",
+    "fi": "Se kuluttaa sisällä olevan hapen",
+    "sv": "Det förbrukar syret därinne"
+   },
+   {
+    "en": "The glass cuts off the draught",
+    "fi": "Lasi katkaisee vedon",
+    "sv": "Glaset stänger av draget"
+   },
+   {
+    "en": "The wax cools too quickly",
+    "fi": "Vaha jäähtyy liian nopeasti",
+    "sv": "Vaxet kallnar för snabbt"
+   },
+   {
+    "en": "Carbon dioxide puts out the wick",
+    "fi": "Hiilidioksidi sammuttaa sydämen",
+    "sv": "Koldioxid släcker veken"
+   }
+  ],
+  "n": {
+   "en": "The flame actually dies while plenty is left, because below about sixteen per cent it can no longer keep burning.",
+   "fi": "Liekki kuolee itse asiassa, vaikka sitä on vielä runsaasti jäljellä, sillä noin kuudentoista prosentin alapuolella se ei enää pala.",
+   "sv": "Lågan dör faktiskt medan det finns gott om kvar, för under omkring sexton procent kan den inte längre brinna."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Why does ice float on water?",
+   "fi": "Miksi jää kelluu vedessä?",
+   "sv": "Varför flyter is på vatten?"
+  },
+  "o": [
+   {
+    "en": "Water expands as it freezes",
+    "fi": "Vesi laajenee jäätyessään",
+    "sv": "Vatten utvidgas när det fryser"
+   },
+   {
+    "en": "Air bubbles get trapped in it",
+    "fi": "Siihen jää ilmakuplia",
+    "sv": "Luftbubblor fastnar i den"
+   },
+   {
+    "en": "It is colder than the water below",
+    "fi": "Se on kylmempää kuin alla oleva vesi",
+    "sv": "Den är kallare än vattnet under"
+   },
+   {
+    "en": "Its surface is smoother than water",
+    "fi": "Sen pinta on vettä sileämpi",
+    "sv": "Dess yta är slätare än vattnets"
+   }
+  ],
+  "n": {
+   "en": "Almost everything else shrinks on freezing, and if water did too, lakes would freeze solid from the bottom up.",
+   "fi": "Lähes kaikki muu kutistuu jäätyessään, ja jos vesikin tekisi niin, järvet jäätyisivät umpeen pohjasta ylöspäin.",
+   "sv": "Nästan allt annat krymper när det fryser, och om vatten gjorde det skulle sjöar frysa igenom nerifrån och upp."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "What does a use-by date on food mean that a best-before date does not?",
+   "fi": "Mitä viimeinen käyttöpäivä tarkoittaa, mitä parasta ennen -päivä ei?",
+   "sv": "Vad betyder sista förbrukningsdag som bäst före-datum inte gör?"
+  },
+  "o": [
+   {
+    "en": "After it the food may be unsafe to eat",
+    "fi": "Sen jälkeen ruoka voi olla vaarallista syödä",
+    "sv": "Efter det kan maten vara farlig att äta"
+   },
+   {
+    "en": "After it the food simply tastes worse",
+    "fi": "Sen jälkeen ruoka vain maistuu huonommalta",
+    "sv": "Efter det smakar maten bara sämre"
+   },
+   {
+    "en": "After it the shop must lower the price",
+    "fi": "Sen jälkeen kaupan on alennettava hintaa",
+    "sv": "Efter det måste butiken sänka priset"
+   },
+   {
+    "en": "After it the packaging may leak",
+    "fi": "Sen jälkeen pakkaus voi vuotaa",
+    "sv": "Efter det kan förpackningen läcka"
+   }
+  ],
+  "n": {
+   "en": "Confusing the two is reckoned to be one of the biggest single causes of food thrown away at home.",
+   "fi": "Näiden kahden sekoittamista pidetään yhtenä suurimmista yksittäisistä syistä kotitalouksien ruokahävikkiin.",
+   "sv": "Att blanda ihop de två räknas som en av de största enskilda orsakerna till matsvinn i hemmen."
+  }
+ }
+]

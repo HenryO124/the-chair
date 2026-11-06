@@ -1,0 +1,251 @@
+[
+{"cat":"Science",
+ "q":{"en":"Which gas makes up about 78 per cent of the air we breathe?","fi":"Mikä kaasu muodostaa noin 78 prosenttia hengitysilmasta?","sv":"Vilken gas utgör omkring 78 procent av luften vi andas?"},
+ "o":[{"en":"Nitrogen","fi":"Typpi","sv":"Kväve"},{"en":"Oxygen","fi":"Happi","sv":"Syre"},{"en":"Carbon dioxide","fi":"Hiilidioksidi","sv":"Koldioxid"},{"en":"Argon","fi":"Argon","sv":"Argon"}],
+ "n":{"en":"Argon is the third most common gas in air, and there is far more of it than carbon dioxide.","fi":"Argon on ilman kolmanneksi yleisin kaasu, ja sitä on selvästi enemmän kuin hiilidioksidia.","sv":"Argon är luftens tredje vanligaste gas, och det finns betydligt mer argon än koldioxid."}},
+
+{"cat":"Science",
+ "q":{"en":"Which organ produces insulin?","fi":"Mikä elin tuottaa insuliinia?","sv":"Vilket organ producerar insulin?"},
+ "o":[{"en":"The pancreas","fi":"Haima","sv":"Bukspottkörteln"},{"en":"The liver","fi":"Maksa","sv":"Levern"},{"en":"The kidney","fi":"Munuainen","sv":"Njuren"},{"en":"The spleen","fi":"Perna","sv":"Mjälten"}],
+ "n":{"en":"The pancreas makes glucagon as well, a hormone that pushes blood sugar the opposite way.","fi":"Haima tuottaa myös glukagonia, joka vie verensokeria päinvastaiseen suuntaan.","sv":"Bukspottkörteln bildar även glukagon, ett hormon som drar blodsockret i motsatt riktning."}},
+
+{"cat":"Science",
+ "q":{"en":"Which part of the brain looks after balance and coordination?","fi":"Mikä aivojen osa huolehtii tasapainosta ja liikkeiden koordinaatiosta?","sv":"Vilken del av hjärnan sköter balans och koordination?"},
+ "o":[{"en":"The cerebellum","fi":"Pikkuaivot","sv":"Lillhjärnan"},{"en":"The cerebral cortex","fi":"Aivokuori","sv":"Hjärnbarken"},{"en":"The brain stem","fi":"Aivorunko","sv":"Hjärnstammen"},{"en":"The hypothalamus","fi":"Hypotalamus","sv":"Hypotalamus"}],
+ "n":{"en":"The cerebellum is only about a tenth of the brain by volume but holds more than half of all its nerve cells.","fi":"Pikkuaivot ovat tilavuudeltaan vain noin kymmenesosa aivoista, mutta niissä on yli puolet kaikista hermosoluista.","sv":"Lillhjärnan är bara ungefär en tiondel av hjärnans volym men rymmer över hälften av alla nervceller."}},
+
+{"cat":"Science",
+ "q":{"en":"Which gland in the neck regulates the body's metabolism?","fi":"Mikä kaulassa sijaitseva rauhanen säätelee aineenvaihduntaa?","sv":"Vilken körtel i halsen reglerar kroppens ämnesomsättning?"},
+ "o":[{"en":"The thyroid","fi":"Kilpirauhanen","sv":"Sköldkörteln"},{"en":"The pancreas","fi":"Haima","sv":"Bukspottkörteln"},{"en":"The adrenal gland","fi":"Lisämunuainen","sv":"Binjuren"},{"en":"The pituitary gland","fi":"Aivolisäke","sv":"Hypofysen"}],
+ "n":{"en":"The thyroid needs iodine to work, which is why table salt is iodised in Finland.","fi":"Kilpirauhanen tarvitsee toimiakseen jodia, ja siksi suomalainen ruokasuola on jodioitua.","sv":"Sköldkörteln behöver jod för att fungera, och därför är finskt bordssalt jodberikat."}},
+
+{"cat":"Science",
+ "q":{"en":"How many chromosomes does a normal human body cell have?","fi":"Montako kromosomia on tavallisessa ihmisen solussa?","sv":"Hur många kromosomer har en vanlig mänsklig kroppscell?"},
+ "o":[{"en":"46","fi":"46","sv":"46"},{"en":"23","fi":"23","sv":"23"},{"en":"48","fi":"48","sv":"48"},{"en":"64","fi":"64","sv":"64"}],
+ "n":{"en":"A sperm or egg cell carries only 23, so a fertilised egg gets a full set from each parent.","fi":"Siittiössä tai munasolussa on vain 23, joten hedelmöittynyt solu saa täyden sarjan kummaltakin vanhemmalta.","sv":"En sädes- eller ägg­cell har bara 23, så det befruktade ägget får en full uppsättning från varje förälder."}},
+
+{"cat":"Science",
+ "q":{"en":"Which base pairs with adenine in DNA?","fi":"Mikä emäs pariutuu adeniinin kanssa DNA:ssa?","sv":"Vilken bas parar sig med adenin i DNA?"},
+ "o":[{"en":"Thymine","fi":"Tymiini","sv":"Tymin"},{"en":"Guanine","fi":"Guaniini","sv":"Guanin"},{"en":"Cytosine","fi":"Sytosiini","sv":"Cytosin"},{"en":"Uracil","fi":"Urasiili","sv":"Uracil"}],
+ "n":{"en":"In RNA thymine is swapped for uracil, so there adenine pairs with uracil instead.","fi":"RNA:ssa tymiinin tilalla on urasiili, joten siellä adeniini pariutuu urasiilin kanssa.","sv":"I RNA byts tymin mot uracil, så där parar sig adenin med uracil i stället."}},
+
+{"cat":"Science",
+ "q":{"en":"Which is the longest bone in the human body?","fi":"Mikä on ihmisen pisin luu?","sv":"Vilket är människans längsta ben?"},
+ "o":[{"en":"The femur","fi":"Reisiluu","sv":"Lårbenet"},{"en":"The shin bone","fi":"Sääriluu","sv":"Skenbenet"},{"en":"The upper arm bone","fi":"Olkaluu","sv":"Överarmsbenet"},{"en":"The collarbone","fi":"Solisluu","sv":"Nyckelbenet"}],
+ "n":{"en":"The femur is roughly a quarter of a person's height, which is why forensic scientists can estimate height from it alone.","fi":"Reisiluu on noin neljäsosa ihmisen pituudesta, ja siksi siitä voidaan arvioida vainajan pituus.","sv":"Lårbenet är ungefär en fjärdedel av kroppslängden, och därför kan rättsmedicinare uppskatta längden utifrån bara det."}},
+
+{"cat":"Science",
+ "q":{"en":"Which is the smallest bone in the human body?","fi":"Mikä on ihmisen pienin luu?","sv":"Vilket är människans minsta ben?"},
+ "o":[{"en":"The stapes","fi":"Jalustin","sv":"Stigbygeln"},{"en":"The incus","fi":"Alasin","sv":"Städet"},{"en":"The nasal bone","fi":"Nenäluu","sv":"Näsbenet"},{"en":"The tailbone","fi":"Häntäluu","sv":"Svanskotan"}],
+ "n":{"en":"The three smallest bones in the body are all in the middle ear, and together they would sit on a fingertip.","fi":"Kehon kolme pienintä luuta ovat kaikki välikorvassa, ja yhdessä ne mahtuvat sormenpäälle.","sv":"Kroppens tre minsta ben sitter alla i mellanöratt och ryms tillsammans på en fingertopp."}},
+
+{"cat":"Science",
+ "q":{"en":"Which blood vessels carry blood away from the heart?","fi":"Mitkä verisuonet kuljettavat verta sydämestä poispäin?","sv":"Vilka blodkärl leder blodet bort från hjärtat?"},
+ "o":[{"en":"Arteries","fi":"Valtimot","sv":"Artärerna"},{"en":"Veins","fi":"Laskimot","sv":"Venerna"},{"en":"Capillaries","fi":"Hiussuonet","sv":"Kapillärerna"},{"en":"Lymph vessels","fi":"Imusuonet","sv":"Lymfkärlen"}],
+ "n":{"en":"The pulmonary artery is the odd one out, because it carries oxygen-poor blood to the lungs.","fi":"Keuhkovaltimo on poikkeus, sillä se kuljettaa vähähappista verta keuhkoihin.","sv":"Lungartären är undantaget, eftersom den för syrefattigt blod till lungorna."}},
+
+{"cat":"Science",
+ "q":{"en":"Which blood type can be given to almost anyone in an emergency?","fi":"Mitä veriryhmää voi hätätilanteessa antaa lähes kenelle tahansa?","sv":"Vilken blodgrupp kan i en nödsituation ges till nästan vem som helst?"},
+ "o":[{"en":"O negative","fi":"O negatiivinen","sv":"O negativ"},{"en":"AB positive","fi":"AB positiivinen","sv":"AB positiv"},{"en":"A positive","fi":"A positiivinen","sv":"A positiv"},{"en":"B negative","fi":"B negatiivinen","sv":"B negativ"}],
+ "n":{"en":"AB positive is the mirror image: it can receive from anyone but be given to very few.","fi":"AB positiivinen on peilikuva: se voi vastaanottaa kaikilta mutta sopii vain harvoille.","sv":"AB positiv är spegelbilden: den kan ta emot från alla men ges till väldigt få."}},
+
+{"cat":"Science",
+ "q":{"en":"Which organ filters the blood and makes urine?","fi":"Mikä elin suodattaa verta ja tuottaa virtsaa?","sv":"Vilket organ filtrerar blodet och bildar urin?"},
+ "o":[{"en":"The kidneys","fi":"Munuaiset","sv":"Njurarna"},{"en":"The liver","fi":"Maksa","sv":"Levern"},{"en":"The bladder","fi":"Virtsarakko","sv":"Urinblåsan"},{"en":"The spleen","fi":"Perna","sv":"Mjälten"}],
+ "n":{"en":"The kidneys take about a fifth of all the blood the heart pumps, which is a lot for two organs the size of a fist.","fi":"Munuaiset saavat noin viidesosan kaikesta sydämen pumppaamasta verestä, vaikka ne ovat vain nyrkin kokoisia.","sv":"Njurarna tar emot ungefär en femtedel av allt blod hjärtat pumpar, trots att de bara är stora som en knytnäve."}},
+
+{"cat":"Science",
+ "q":{"en":"Where is bile stored before it is used?","fi":"Missä sappi varastoituu ennen käyttöä?","sv":"Var lagras gallan innan den används?"},
+ "o":[{"en":"In the gallbladder","fi":"Sappirakossa","sv":"I gallblåsan"},{"en":"In the pancreas","fi":"Haimassa","sv":"I bukspottkörteln"},{"en":"In the spleen","fi":"Pernassa","sv":"I mjälten"},{"en":"In the stomach","fi":"Mahalaukussa","sv":"I magsäcken"}],
+ "n":{"en":"Bile is actually made in the liver, and people whose gallbladder has been removed get along without the store.","fi":"Sappi muodostuu itse asiassa maksassa, ja ilman sappirakkoa­kin pärjää hyvin.","sv":"Gallan bildas i själva verket i levern, och den som fått gallblåsan borttagen klarar sig bra utan lagret."}},
+
+{"cat":"Science",
+ "q":{"en":"What is the hardest substance the human body makes?","fi":"Mikä on kovin aine, jonka ihmiskeho tuottaa?","sv":"Vilket är det hårdaste ämne kroppen bildar?"},
+ "o":[{"en":"Tooth enamel","fi":"Hammaskiille","sv":"Tandemaljen"},{"en":"Bone","fi":"Luu","sv":"Benet"},{"en":"Fingernail","fi":"Kynsi","sv":"Nageln"},{"en":"Cartilage","fi":"Rusto","sv":"Brosket"}],
+ "n":{"en":"Enamel contains no living cells, so unlike bone it can never repair itself.","fi":"Hammaskiilteessä ei ole eläviä soluja, joten se ei toisin kuin luu korjaa itseään koskaan.","sv":"Tandemaljen har inga levande celler, så till skillnad från ben kan den aldrig läka sig själv."}},
+
+{"cat":"Science",
+ "q":{"en":"Which vitamin does the skin make in sunlight?","fi":"Minkä vitamiinin iho tuottaa auringonvalossa?","sv":"Vilket vitamin bildar huden i solljus?"},
+ "o":[{"en":"Vitamin D","fi":"D-vitamiini","sv":"D-vitamin"},{"en":"Vitamin C","fi":"C-vitamiini","sv":"C-vitamin"},{"en":"Vitamin B12","fi":"B12-vitamiini","sv":"B12-vitamin"},{"en":"Vitamin K","fi":"K-vitamiini","sv":"K-vitamin"}],
+ "n":{"en":"At Finnish latitudes the sun sits too low from autumn to spring for the skin to make any vitamin D at all.","fi":"Suomen leveysasteilla aurinko on syksystä kevääseen niin matalalla, ettei iho tuota D-vitamiinia lainkaan.","sv":"På finska breddgrader står solen så lågt från höst till vår att huden inte bildar något D-vitamin alls."}},
+
+{"cat":"Science",
+ "q":{"en":"Lack of which vitamin causes scurvy?","fi":"Minkä vitamiinin puute aiheuttaa keripukin?","sv":"Brist på vilket vitamin ger skörbjugg?"},
+ "o":[{"en":"Vitamin C","fi":"C-vitamiini","sv":"C-vitamin"},{"en":"Vitamin A","fi":"A-vitamiini","sv":"A-vitamin"},{"en":"Vitamin D","fi":"D-vitamiini","sv":"D-vitamin"},{"en":"Vitamin B6","fi":"B6-vitamiini","sv":"B6-vitamin"}],
+ "n":{"en":"Most mammals make their own vitamin C; humans, other primates and guinea pigs are among the few that cannot.","fi":"Useimmat nisäkkäät tuottavat itse C-vitamiinia; ihminen, muut kapeanenäiset apinat ja marsu ovat harvoja poikkeuksia.","sv":"De flesta däggdjur bildar eget C-vitamin; människan, andra primater och marsvin är bland de få som inte kan."}},
+
+{"cat":"Science",
+ "q":{"en":"Who discovered penicillin?","fi":"Kuka havaitsi penisilliinin?","sv":"Vem upptäckte penicillinet?"},
+ "o":[{"en":"Alexander Fleming","fi":"Alexander Fleming","sv":"Alexander Fleming"},{"en":"Louis Pasteur","fi":"Louis Pasteur","sv":"Louis Pasteur"},{"en":"Robert Koch","fi":"Robert Koch","sv":"Robert Koch"},{"en":"Edward Jenner","fi":"Edward Jenner","sv":"Edward Jenner"}],
+ "n":{"en":"He found it by accident on a bacterial dish that had been left out and gone mouldy.","fi":"Hän löysi sen vahingossa bakteerimaljalta, joka oli jäänyt pöydälle ja homehtunut.","sv":"Han fann det av en slump på en bakterieskål som hade lämnats framme och blivit möglig."}},
+
+{"cat":"Science",
+ "q":{"en":"Which element has the chemical symbol K?","fi":"Mikä alkuaine on kemiallisella merkillä K?","sv":"Vilket grundämne har den kemiska beteckningen K?"},
+ "o":[{"en":"Potassium","fi":"Kalium","sv":"Kalium"},{"en":"Calcium","fi":"Kalsium","sv":"Kalcium"},{"en":"Krypton","fi":"Krypton","sv":"Krypton"},{"en":"Cobalt","fi":"Koboltti","sv":"Kobolt"}],
+ "n":{"en":"The symbol comes from the Latin name kalium, which is also the word Finnish and Swedish use.","fi":"Merkki tulee latinan sanasta kalium, joka on myös suomen ja ruotsin käyttämä nimi.","sv":"Beteckningen kommer från det latinska namnet kalium, som också är ordet på finska och svenska."}},
+
+{"cat":"Science",
+ "q":{"en":"Which element has the chemical symbol Fe?","fi":"Mikä alkuaine on kemiallisella merkillä Fe?","sv":"Vilket grundämne har den kemiska beteckningen Fe?"},
+ "o":[{"en":"Iron","fi":"Rauta","sv":"Järn"},{"en":"Lead","fi":"Lyijy","sv":"Bly"},{"en":"Fluorine","fi":"Fluori","sv":"Fluor"},{"en":"Tin","fi":"Tina","sv":"Tenn"}],
+ "n":{"en":"Fe is short for the Latin ferrum, and the same root gives us words like ferry and ferrite.","fi":"Fe tulee latinan sanasta ferrum, joka näkyy myös esimerkiksi sanassa ferriitti.","sv":"Fe kommer från latinets ferrum, samma rot som i ordet ferrit."}},
+
+{"cat":"Science",
+ "q":{"en":"Which metal is liquid at room temperature?","fi":"Mikä metalli on huoneenlämmössä nestemäistä?","sv":"Vilken metall är flytande i rumstemperatur?"},
+ "o":[{"en":"Mercury","fi":"Elohopea","sv":"Kvicksilver"},{"en":"Lead","fi":"Lyijy","sv":"Bly"},{"en":"Tin","fi":"Tina","sv":"Tenn"},{"en":"Zinc","fi":"Sinkki","sv":"Zink"}],
+ "n":{"en":"Gallium melts at about 30 degrees, so a lump of it turns to liquid in your hand.","fi":"Gallium sulaa noin 30 asteessa, joten kappale sitä muuttuu nesteeksi kädessä.","sv":"Gallium smälter vid omkring 30 grader, så en bit av det blir flytande i handen."}},
+
+{"cat":"Science",
+ "q":{"en":"Which metal conducts electricity best?","fi":"Mikä metalli johtaa sähköä parhaiten?","sv":"Vilken metall leder elektricitet bäst?"},
+ "o":[{"en":"Silver","fi":"Hopea","sv":"Silver"},{"en":"Copper","fi":"Kupari","sv":"Koppar"},{"en":"Gold","fi":"Kulta","sv":"Guld"},{"en":"Aluminium","fi":"Alumiini","sv":"Aluminium"}],
+ "n":{"en":"Copper is used in wiring anyway, because it is almost as good and vastly cheaper.","fi":"Johdoissa käytetään silti kuparia, koska se on lähes yhtä hyvä ja paljon halvempaa.","sv":"I kablar används ändå koppar, eftersom den är nästan lika bra och mycket billigare."}},
+
+{"cat":"Science",
+ "q":{"en":"What is the chemical formula of ordinary table salt?","fi":"Mikä on tavallisen ruokasuolan kemiallinen kaava?","sv":"Vilken kemisk formel har vanligt bordssalt?"},
+ "o":[{"en":"NaCl","fi":"NaCl","sv":"NaCl"},{"en":"KCl","fi":"KCl","sv":"KCl"},{"en":"NaHCO3","fi":"NaHCO3","sv":"NaHCO3"},{"en":"CaCl2","fi":"CaCl2","sv":"CaCl2"}],
+ "n":{"en":"Both of its elements are dangerous on their own: sodium catches fire in water and chlorine is a poison gas.","fi":"Kummatkin sen alkuaineet ovat yksinään vaarallisia: natrium syttyy vedessä ja kloori on myrkyllistä kaasua.","sv":"Båda dess grundämnen är farliga var för sig: natrium tar eld i vatten och klor är en giftig gas."}},
+
+{"cat":"Science",
+ "q":{"en":"Which gas has the formula O3?","fi":"Mikä kaasu on kaavalla O3?","sv":"Vilken gas har formeln O3?"},
+ "o":[{"en":"Ozone","fi":"Otsoni","sv":"Ozon"},{"en":"Oxygen","fi":"Happi","sv":"Syre"},{"en":"Carbon monoxide","fi":"Häkä","sv":"Kolmonoxid"},{"en":"Methane","fi":"Metaani","sv":"Metan"}],
+ "n":{"en":"High up it shields us from ultraviolet light, but at ground level the same gas is an irritant pollutant.","fi":"Korkealla se suojaa meitä ultraviolettisäteilyltä, mutta maanpinnalla sama kaasu on ärsyttävä epäpuhtaus.","sv":"Högt uppe skyddar den oss mot ultraviolett ljus, men vid marken är samma gas en irriterande förorening."}},
+
+{"cat":"Science",
+ "q":{"en":"What is the main component of natural gas?","fi":"Mikä on maakaasun pääkomponentti?","sv":"Vad är huvudbeståndsdelen i naturgas?"},
+ "o":[{"en":"Methane","fi":"Metaani","sv":"Metan"},{"en":"Propane","fi":"Propaani","sv":"Propan"},{"en":"Butane","fi":"Butaani","sv":"Butan"},{"en":"Carbon dioxide","fi":"Hiilidioksidi","sv":"Koldioxid"}],
+ "n":{"en":"Natural gas has no smell of its own, so the rotten-egg odour is added on purpose to make leaks noticeable.","fi":"Maakaasu on itsessään hajutonta, joten pistävä haju lisätään siihen tarkoituksella vuotojen havaitsemiseksi.","sv":"Naturgas är i sig luktfri, så den stickande lukten tillsätts med avsikt för att läckor ska märkas."}},
+
+{"cat":"Science",
+ "q":{"en":"Which noble gas is the lightest?","fi":"Mikä jalokaasu on kevyin?","sv":"Vilken ädelgas är lättast?"},
+ "o":[{"en":"Helium","fi":"Helium","sv":"Helium"},{"en":"Neon","fi":"Neon","sv":"Neon"},{"en":"Argon","fi":"Argon","sv":"Argon"},{"en":"Krypton","fi":"Krypton","sv":"Krypton"}],
+ "n":{"en":"Helium was spotted in the Sun's spectrum before anyone found it on Earth, which is why it is named after Helios.","fi":"Helium havaittiin Auringon spektrissä ennen kuin sitä löydettiin Maasta, ja siksi se on nimetty Helioksen mukaan.","sv":"Helium upptäcktes i solens spektrum innan någon fann det på jorden, och därför är det uppkallat efter Helios."}},
+
+{"cat":"Science",
+ "q":{"en":"What is the pH of pure water at room temperature?","fi":"Mikä on puhtaan veden pH huoneenlämmössä?","sv":"Vilket pH har rent vatten i rumstemperatur?"},
+ "o":[{"en":"7","fi":"7","sv":"7"},{"en":"0","fi":"0","sv":"0"},{"en":"10","fi":"10","sv":"10"},{"en":"14","fi":"14","sv":"14"}],
+ "n":{"en":"The scale is logarithmic, so pH 4 is a hundred times more acidic than pH 6.","fi":"Asteikko on logaritminen, joten pH 4 on sata kertaa happamampi kuin pH 6.","sv":"Skalan är logaritmisk, så pH 4 är hundra gånger surare än pH 6."}},
+
+{"cat":"Science",
+ "q":{"en":"What is absolute zero in degrees Celsius?","fi":"Mikä on absoluuttinen nollapiste celsiusasteina?","sv":"Vad är absoluta nollpunkten i grader Celsius?"},
+ "o":[{"en":"-273.15 degrees","fi":"-273,15 astetta","sv":"-273,15 grader"},{"en":"-100 degrees","fi":"-100 astetta","sv":"-100 grader"},{"en":"-459 degrees","fi":"-459 astetta","sv":"-459 grader"},{"en":"-1000 degrees","fi":"-1 000 astetta","sv":"-1 000 grader"}],
+ "n":{"en":"Minus 459 is the same temperature written in Fahrenheit, which is why that number also looks familiar.","fi":"Miinus 459 on sama lämpötila fahrenheitasteina, ja siksi myös se luku näyttää tutulta.","sv":"Minus 459 är samma temperatur i Fahrenheit, och därför ser även det talet bekant ut."}},
+
+{"cat":"Science",
+ "q":{"en":"What is the SI unit of force?","fi":"Mikä on voiman SI-yksikkö?","sv":"Vilken är kraftens SI-enhet?"},
+ "o":[{"en":"The newton","fi":"Newton","sv":"Newton"},{"en":"The joule","fi":"Joule","sv":"Joule"},{"en":"The watt","fi":"Watti","sv":"Watt"},{"en":"The pascal","fi":"Pascal","sv":"Pascal"}],
+ "n":{"en":"One newton is roughly the weight of a 100-gram bar of chocolate resting in your hand.","fi":"Yksi newton on karkeasti 100 gramman suklaalevyn paino kädessä.","sv":"En newton är ungefär tyngden av en hundragramschokladkaka i handen."}},
+
+{"cat":"Science",
+ "q":{"en":"What is the unit of electrical resistance?","fi":"Mikä on sähköisen vastuksen yksikkö?","sv":"Vilken är enheten för elektriskt motstånd?"},
+ "o":[{"en":"The ohm","fi":"Ohmi","sv":"Ohm"},{"en":"The volt","fi":"Voltti","sv":"Volt"},{"en":"The ampere","fi":"Ampeeri","sv":"Ampere"},{"en":"The farad","fi":"Faradi","sv":"Farad"}],
+ "n":{"en":"Ohm's law ties all three together: volts equal amperes times ohms.","fi":"Ohmin laki sitoo kaikki kolme yhteen: voltit ovat ampeerit kertaa ohmit.","sv":"Ohms lag binder ihop alla tre: volt är ampere gånger ohm."}},
+
+{"cat":"Science",
+ "q":{"en":"Which particle in an atom has no electric charge?","fi":"Millä atomin hiukkasella ei ole sähkövarausta?","sv":"Vilken partikel i atomen har ingen elektrisk laddning?"},
+ "o":[{"en":"The neutron","fi":"Neutroni","sv":"Neutronen"},{"en":"The proton","fi":"Protoni","sv":"Protonen"},{"en":"The electron","fi":"Elektroni","sv":"Elektronen"},{"en":"The positron","fi":"Positroni","sv":"Positronen"}],
+ "n":{"en":"An atom is mostly empty space, with nearly all its mass packed into a nucleus a tiny fraction of its width.","fi":"Atomi on suurimmaksi osaksi tyhjää tilaa, ja lähes koko massa on ytimessä, joka on häviävän pieni osa sen leveydestä.","sv":"En atom är mest tomrum, med nästan hela massan packad i en kärna som är en försvinnande liten del av dess bredd."}},
+
+{"cat":"Science",
+ "q":{"en":"Which isotope is used to date organic finds?","fi":"Mitä isotooppia käytetään orgaanisten löytöjen ajoitukseen?","sv":"Vilken isotop används för att datera organiska fynd?"},
+ "o":[{"en":"Carbon-14","fi":"Hiili-14","sv":"Kol-14"},{"en":"Carbon-12","fi":"Hiili-12","sv":"Kol-12"},{"en":"Uranium-235","fi":"Uraani-235","sv":"Uran-235"},{"en":"Potassium-40","fi":"Kalium-40","sv":"Kalium-40"}],
+ "n":{"en":"Its half-life is about 5 700 years, so the method only reaches back some tens of thousands of years.","fi":"Sen puoliintumisaika on noin 5 700 vuotta, joten menetelmä ulottuu vain joitakin kymmeniätuhansia vuosia taaksepäin.","sv":"Dess halveringstid är omkring 5 700 år, så metoden räcker bara några tiotusentals år bakåt."}},
+
+{"cat":"Science",
+ "q":{"en":"Which is the hottest planet in the Solar System?","fi":"Mikä on aurinkokunnan kuumin planeetta?","sv":"Vilken är solsystemets hetaste planet?"},
+ "o":[{"en":"Venus","fi":"Venus","sv":"Venus"},{"en":"Mercury","fi":"Merkurius","sv":"Merkurius"},{"en":"Mars","fi":"Mars","sv":"Mars"},{"en":"Jupiter","fi":"Jupiter","sv":"Jupiter"}],
+ "n":{"en":"Venus is hotter than Mercury even though it sits further from the Sun, because its thick carbon dioxide air traps the heat.","fi":"Venus on Merkuriusta kuumempi, vaikka se on kauempana Auringosta, koska sen paksu hiilidioksidi-ilmakehä pitää lämmön sisällään.","sv":"Venus är hetare än Merkurius trots att den ligger längre från solen, eftersom dess tjocka koldioxidatmosfär håller värmen kvar."}},
+
+{"cat":"Science",
+ "q":{"en":"Which planet is tipped so far over that it spins almost on its side?","fi":"Mikä planeetta on kaatunut niin, että se pyörii lähes kyljellään?","sv":"Vilken planet lutar så mycket att den roterar nästan liggande?"},
+ "o":[{"en":"Uranus","fi":"Uranus","sv":"Uranus"},{"en":"Neptune","fi":"Neptunus","sv":"Neptunus"},{"en":"Saturn","fi":"Saturnus","sv":"Saturnus"},{"en":"Mars","fi":"Mars","sv":"Mars"}],
+ "n":{"en":"Its axis leans about 98 degrees, so each pole spends decades in unbroken darkness.","fi":"Sen akseli on kallistunut noin 98 astetta, joten kumpikin napa on vuosikymmeniä yhtäjaksoisessa pimeydessä.","sv":"Dess axel lutar omkring 98 grader, så varje pol tillbringar årtionden i obrutet mörker."}},
+
+{"cat":"Science",
+ "q":{"en":"Which planet has the Great Red Spot?","fi":"Millä planeetalla on Suuri punainen pilkku?","sv":"Vilken planet har Stora röda fläcken?"},
+ "o":[{"en":"Jupiter","fi":"Jupiter","sv":"Jupiter"},{"en":"Saturn","fi":"Saturnus","sv":"Saturnus"},{"en":"Mars","fi":"Mars","sv":"Mars"},{"en":"Neptune","fi":"Neptunus","sv":"Neptunus"}],
+ "n":{"en":"The spot is a storm wide enough to swallow the whole Earth.","fi":"Pilkku on myrsky, joka on niin laaja, että koko Maa mahtuisi sen sisään.","sv":"Fläcken är en storm så vid att hela jorden skulle rymmas i den."}},
+
+{"cat":"Science",
+ "q":{"en":"Roughly how long does sunlight take to reach Earth?","fi":"Kuinka kauan auringonvalolta kestää matka Maahan?","sv":"Hur länge tar solljuset på sig att nå jorden?"},
+ "o":[{"en":"About eight minutes","fi":"Noin kahdeksan minuuttia","sv":"Ungefär åtta minuter"},{"en":"About eight seconds","fi":"Noin kahdeksan sekuntia","sv":"Ungefär åtta sekunder"},{"en":"About eight hours","fi":"Noin kahdeksan tuntia","sv":"Ungefär åtta timmar"},{"en":"It arrives instantly","fi":"Se saapuu hetkessä","sv":"Det kommer ögonblickligen"}],
+ "n":{"en":"Light from the Moon needs only about a second and a quarter to get here.","fi":"Kuun valo tarvitsee matkaan vain noin sekunnin ja neljäsosan.","sv":"Ljuset från månen behöver bara ungefär en och en kvarts sekund."}},
+
+{"cat":"Science",
+ "q":{"en":"What is our own galaxy called?","fi":"Mikä on oman galaksimme nimi?","sv":"Vad heter vår egen galax?"},
+ "o":[{"en":"The Milky Way","fi":"Linnunrata","sv":"Vintergatan"},{"en":"Andromeda","fi":"Andromeda","sv":"Andromeda"},{"en":"The Triangulum Galaxy","fi":"Kolmion galaksi","sv":"Triangelgalaxen"},{"en":"The Large Magellanic Cloud","fi":"Suuri Magellanin pilvi","sv":"Stora magellanska molnet"}],
+ "n":{"en":"Andromeda is the nearest big galaxy to ours, and it is moving towards us rather than away.","fi":"Andromeda on lähin suuri galaksi, ja se lähestyy meitä eikä loittone.","sv":"Andromeda är den närmaste stora galaxen, och den närmar sig oss i stället för att avlägsna sig."}},
+
+{"cat":"Science",
+ "q":{"en":"What causes the ocean tides?","fi":"Mikä aiheuttaa valtamerten vuorovedet?","sv":"Vad orsakar havens tidvatten?"},
+ "o":[{"en":"The pull of the Moon and the Sun","fi":"Kuun ja Auringon veto","sv":"Månens och solens dragningskraft"},{"en":"Earth's rotation on its own","fi":"Pelkkä Maan pyöriminen","sv":"Jordens rotation ensam"},{"en":"The winds","fi":"Tuulet","sv":"Vindarna"},{"en":"Ocean currents","fi":"Merivirrat","sv":"Havsströmmarna"}],
+ "n":{"en":"The Baltic Sea has almost no tide, so its water level is set mostly by wind and air pressure instead.","fi":"Itämerellä ei ole käytännössä vuorovettä, joten vedenkorkeutta säätelevät lähinnä tuuli ja ilmanpaine.","sv":"Östersjön har nästan inget tidvatten, så vattenståndet styrs mest av vind och lufttryck."}},
+
+{"cat":"Science",
+ "q":{"en":"In which layer of the atmosphere does weather happen?","fi":"Missä ilmakehän kerroksessa sää tapahtuu?","sv":"I vilket skikt av atmosfären uppstår vädret?"},
+ "o":[{"en":"The troposphere","fi":"Troposfääri","sv":"Troposfären"},{"en":"The stratosphere","fi":"Stratosfääri","sv":"Stratosfären"},{"en":"The mesosphere","fi":"Mesosfääri","sv":"Mesosfären"},{"en":"The thermosphere","fi":"Termosfääri","sv":"Termosfären"}],
+ "n":{"en":"Airliners cruise near the top of it or just above, partly to stay out of the weather.","fi":"Matkustajakoneet lentävät sen yläosassa tai juuri sen yllä, osittain päästäkseen sään yläpuolelle.","sv":"Passagerarplan flyger i dess övre del eller strax ovanför, delvis för att komma över vädret."}},
+
+{"cat":"Science",
+ "q":{"en":"What does a barometer measure?","fi":"Mitä barometri mittaa?","sv":"Vad mäter en barometer?"},
+ "o":[{"en":"Air pressure","fi":"Ilmanpainetta","sv":"Lufttrycket"},{"en":"Humidity","fi":"Ilmankosteutta","sv":"Luftfuktigheten"},{"en":"Wind speed","fi":"Tuulen nopeutta","sv":"Vindhastigheten"},{"en":"Temperature","fi":"Lämpötilaa","sv":"Temperaturen"}],
+ "n":{"en":"A falling reading usually means a low is on the way, which is why the dial is read as a weather sign.","fi":"Laskeva lukema tarkoittaa yleensä matalapaineen tuloa, ja siksi mittaria luetaan sääennusteena.","sv":"En fallande avläsning betyder oftast att ett lågtryck är på väg, och därför läses mätaren som ett vädertecken."}},
+
+{"cat":"Science",
+ "q":{"en":"Which of these rocks formed from cooled magma?","fi":"Mikä näistä kivistä on syntynyt jähmettyneestä magmasta?","sv":"Vilken av dessa bergarter har bildats av stelnad magma?"},
+ "o":[{"en":"Granite","fi":"Graniitti","sv":"Granit"},{"en":"Limestone","fi":"Kalkkikivi","sv":"Kalksten"},{"en":"Marble","fi":"Marmori","sv":"Marmor"},{"en":"Sandstone","fi":"Hiekkakivi","sv":"Sandsten"}],
+ "n":{"en":"Finland's bedrock is largely of this kind and extremely old, around two thousand million years in places.","fi":"Suomen kallioperä on suurelta osin tällaista ja hyvin vanhaa, paikoin noin kaksi miljardia vuotta.","sv":"Finlands berggrund är till stor del av detta slag och mycket gammal, på sina ställen omkring två miljarder år."}},
+
+{"cat":"Science",
+ "q":{"en":"Where is the deepest known point in the oceans?","fi":"Missä on valtamerten syvin tunnettu kohta?","sv":"Var finns havens djupaste kända punkt?"},
+ "o":[{"en":"The Mariana Trench","fi":"Mariaanien hauta","sv":"Marianergraven"},{"en":"The Puerto Rico Trench","fi":"Puerto Ricon hauta","sv":"Puerto Ricograven"},{"en":"The Java Trench","fi":"Javan hauta","sv":"Javagraven"},{"en":"The Tonga Trench","fi":"Tongan hauta","sv":"Tongagraven"}],
+ "n":{"en":"It is deeper than Mount Everest is tall, with about two kilometres to spare.","fi":"Se on syvempi kuin Everest on korkea, ja eroa on noin kaksi kilometriä.","sv":"Den är djupare än Everest är högt, med ungefär två kilometer till godo."}},
+
+{"cat":"Science",
+ "q":{"en":"Which mammal lays eggs?","fi":"Mikä nisäkäs munii?","sv":"Vilket däggdjur lägger ägg?"},
+ "o":[{"en":"The platypus","fi":"Vesinokkaeläin","sv":"Näbbdjuret"},{"en":"The hedgehog","fi":"Siili","sv":"Igelkotten"},{"en":"The otter","fi":"Saukko","sv":"Uttern"},{"en":"The bat","fi":"Lepakko","sv":"Fladdermusen"}],
+ "n":{"en":"The male platypus also carries a venomous spur on each hind leg.","fi":"Vesinokkaeläimen koiraalla on lisäksi myrkkykannus kummassakin takajalassa.","sv":"Näbbdjurshanen har dessutom en giftig sporre på vardera bakbenet."}},
+
+{"cat":"Science",
+ "q":{"en":"How many hearts does an octopus have?","fi":"Montako sydäntä mustekalalla on?","sv":"Hur många hjärtan har en bläckfisk?"},
+ "o":[{"en":"Three","fi":"Kolme","sv":"Tre"},{"en":"One","fi":"Yksi","sv":"Ett"},{"en":"Two","fi":"Kaksi","sv":"Två"},{"en":"Eight","fi":"Kahdeksan","sv":"Åtta"}],
+ "n":{"en":"Two of them push blood through the gills and the third sends it round the rest of the body.","fi":"Kaksi niistä työntää verta kidusten läpi ja kolmas kierrättää sen muualle kehoon.","sv":"Två av dem pumpar blodet genom gälarna och det tredje skickar det runt resten av kroppen."}},
+
+{"cat":"Science",
+ "q":{"en":"What is the largest animal that has ever lived?","fi":"Mikä on suurin koskaan elänyt eläin?","sv":"Vilket är det största djur som någonsin levt?"},
+ "o":[{"en":"The blue whale","fi":"Sinivalas","sv":"Blåvalen"},{"en":"The sperm whale","fi":"Kaskelotti","sv":"Kaskeloten"},{"en":"Argentinosaurus","fi":"Argentinosaurus","sv":"Argentinosaurus"},{"en":"The African elephant","fi":"Afrikannorsu","sv":"Afrikanska elefanten"}],
+ "n":{"en":"A newborn blue whale calf already weighs more than a car.","fi":"Vastasyntynyt sinivalaan poikanen painaa jo enemmän kuin henkilöauto.","sv":"En nyfödd blåvalskalv väger redan mer än en bil."}},
+
+{"cat":"Science",
+ "q":{"en":"Roughly how long ago did the dinosaurs die out?","fi":"Kuinka kauan sitten dinosaurukset kuolivat sukupuuttoon?","sv":"Hur länge sedan dog dinosaurierna ut?"},
+ "o":[{"en":"About 66 million years ago","fi":"Noin 66 miljoonaa vuotta sitten","sv":"För omkring 66 miljoner år sedan"},{"en":"About 6 million years ago","fi":"Noin 6 miljoonaa vuotta sitten","sv":"För omkring 6 miljoner år sedan"},{"en":"About 250 million years ago","fi":"Noin 250 miljoonaa vuotta sitten","sv":"För omkring 250 miljoner år sedan"},{"en":"About 500 000 years ago","fi":"Noin 500 000 vuotta sitten","sv":"För omkring 500 000 år sedan"}],
+ "n":{"en":"Birds are the branch of dinosaurs that came through, so the group never vanished entirely.","fi":"Linnut ovat se dinosaurusten haara, joka selvisi, joten ryhmä ei kadonnut kokonaan.","sv":"Fåglarna är den gren av dinosaurierna som klarade sig, så gruppen försvann aldrig helt."}},
+
+{"cat":"Science",
+ "q":{"en":"Which branch of science studies fungi?","fi":"Mikä tieteenala tutkii sieniä?","sv":"Vilken vetenskapsgren studerar svampar?"},
+ "o":[{"en":"Mycology","fi":"Mykologia","sv":"Mykologi"},{"en":"Botany","fi":"Kasvitiede","sv":"Botanik"},{"en":"Entomology","fi":"Hyönteistiede","sv":"Entomologi"},{"en":"Ornithology","fi":"Lintutiede","sv":"Ornitologi"}],
+ "n":{"en":"Fungi are closer relatives of animals than of plants.","fi":"Sienet ovat läheisempää sukua eläimille kuin kasveille.","sv":"Svampar är närmare släkt med djur än med växter."}},
+
+{"cat":"Science",
+ "q":{"en":"What makes the northern lights glow?","fi":"Mikä saa revontulet hehkumaan?","sv":"Vad får norrskenet att lysa?"},
+ "o":[{"en":"Particles from the Sun striking the upper atmosphere","fi":"Auringosta tulevat hiukkaset törmäävät yläilmakehään","sv":"Partiklar från solen träffar den övre atmosfären"},{"en":"Sunlight bending in ice crystals","fi":"Auringonvalo taittuu jääkristalleissa","sv":"Solljus bryts i iskristaller"},{"en":"Moonlight reflecting off snow","fi":"Kuunvalo heijastuu lumesta","sv":"Månljus reflekteras i snön"},{"en":"Heat escaping from the ground","fi":"Maan lämpö karkaa avaruuteen","sv":"Värme som läcker ut från marken"}],
+ "n":{"en":"The familiar green comes from oxygen atoms, and the rarer deep red from oxygen much higher up.","fi":"Tuttu vihreä väri syntyy happiatomeista, ja harvinaisempi tummanpunainen vielä korkeammalla olevasta hapesta.","sv":"Den bekanta gröna färgen kommer från syreatomer, och det ovanligare djupröda från syre ännu högre upp."}},
+
+{"cat":"Science",
+ "q":{"en":"Which gas do plants give off as a by-product of photosynthesis?","fi":"Minkä kaasun kasvit vapauttavat yhteyttämisen sivutuotteena?","sv":"Vilken gas avger växterna som biprodukt vid fotosyntesen?"},
+ "o":[{"en":"Oxygen","fi":"Hapen","sv":"Syre"},{"en":"Carbon dioxide","fi":"Hiilidioksidin","sv":"Koldioxid"},{"en":"Nitrogen","fi":"Typen","sv":"Kväve"},{"en":"Hydrogen","fi":"Vedyn","sv":"Väte"}],
+ "n":{"en":"That oxygen comes from the water the plant splits apart, not from the carbon dioxide.","fi":"Happi tulee kasvin hajottamasta vedestä, ei hiilidioksidista.","sv":"Syret kommer från vattnet som växten spjälkar, inte från koldioxiden."}},
+
+{"cat":"Science",
+ "q":{"en":"Which instrument records earthquakes?","fi":"Mikä laite tallentaa maanjäristyksiä?","sv":"Vilket instrument registrerar jordbävningar?"},
+ "o":[{"en":"A seismograph","fi":"Seismografi","sv":"En seismograf"},{"en":"A barometer","fi":"Barometri","sv":"En barometer"},{"en":"A hygrometer","fi":"Hygrometri","sv":"En hygrometer"},{"en":"An anemometer","fi":"Anemometri","sv":"En anemometer"}],
+ "n":{"en":"Finland has small earthquakes too, though they are so weak that they are rarely felt.","fi":"Suomessakin tapahtuu pieniä maanjäristyksiä, mutta ne ovat niin heikkoja, että niitä harvoin tunnetaan.","sv":"Även Finland har små jordbävningar, men de är så svaga att de sällan känns."}},
+
+{"cat":"Science",
+ "q":{"en":"Which element is the most common in the universe?","fi":"Mikä alkuaine on universumissa yleisin?","sv":"Vilket grundämne är vanligast i universum?"},
+ "o":[{"en":"Hydrogen","fi":"Vety","sv":"Väte"},{"en":"Helium","fi":"Helium","sv":"Helium"},{"en":"Oxygen","fi":"Happi","sv":"Syre"},{"en":"Carbon","fi":"Hiili","sv":"Kol"}],
+ "n":{"en":"Hydrogen and helium together account for roughly 98 per cent of all ordinary matter.","fi":"Vety ja helium muodostavat yhdessä noin 98 prosenttia kaikesta tavallisesta aineesta.","sv":"Väte och helium står tillsammans för omkring 98 procent av all vanlig materia."}},
+
+{"cat":"Science",
+ "q":{"en":"What does the Mohs scale measure?","fi":"Mitä Mohsin asteikko mittaa?","sv":"Vad mäter Mohs skala?"},
+ "o":[{"en":"The hardness of minerals","fi":"Mineraalien kovuutta","sv":"Mineralers hårdhet"},{"en":"The strength of earthquakes","fi":"Maanjäristysten voimakkuutta","sv":"Jordbävningars styrka"},{"en":"The acidity of soil","fi":"Maaperän happamuutta","sv":"Jordens surhet"},{"en":"The density of rocks","fi":"Kivien tiheyttä","sv":"Bergarters täthet"}],
+ "n":{"en":"Diamond sits at 10 and talc at 1, and a human fingernail lands at about two and a half.","fi":"Timantti on 10 ja talkki 1, ja ihmisen kynsi asettuu noin kahteen ja puoleen.","sv":"Diamant ligger på 10 och talk på 1, och en människonagel hamnar på ungefär två och en halv."}}
+]

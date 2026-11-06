@@ -1,0 +1,3502 @@
+[
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which composer wrote the tone poem Finlandia?",
+   "fi": "Kuka sävelsi sinfonisen runon Finlandia?",
+   "sv": "Vilken kompositör skrev tondikten Finlandia?"
+  },
+  "o": [
+   {
+    "en": "Jean Sibelius",
+    "fi": "Jean Sibelius",
+    "sv": "Jean Sibelius"
+   },
+   {
+    "en": "Oskar Merikanto",
+    "fi": "Oskar Merikanto",
+    "sv": "Oskar Merikanto"
+   },
+   {
+    "en": "Robert Kajanus",
+    "fi": "Robert Kajanus",
+    "sv": "Robert Kajanus"
+   },
+   {
+    "en": "Fredrik Pacius",
+    "fi": "Fredrik Pacius",
+    "sv": "Fredrik Pacius"
+   }
+  ],
+  "n": {
+   "en": "It was first heard in 1899 at a benefit for the press, and was toured under harmless titles such as Impromptu to slip past the Russian censors.",
+   "fi": "Se kuultiin ensi kerran 1899 lehdistön hyväksi järjestetyissä juhlissa, ja sitä esitettiin viattomilla nimillä kuten Impromptu Venäjän sensuurin kiertämiseksi.",
+   "sv": "Den hördes första gången 1899 vid pressfesten, och framfördes under oskyldiga namn som Impromptu för att slippa den ryska censuren."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "How many numbered symphonies did Jean Sibelius complete?",
+   "fi": "Kuinka monta numeroitua sinfoniaa Jean Sibelius sai valmiiksi?",
+   "sv": "Hur många numrerade symfonier fullbordade Jean Sibelius?"
+  },
+  "o": [
+   {
+    "en": "Seven",
+    "fi": "Seitsemän",
+    "sv": "Sju"
+   },
+   {
+    "en": "Five",
+    "fi": "Viisi",
+    "sv": "Fem"
+   },
+   {
+    "en": "Nine",
+    "fi": "Yhdeksän",
+    "sv": "Nio"
+   },
+   {
+    "en": "Eleven",
+    "fi": "Yksitoista",
+    "sv": "Elva"
+   }
+  ],
+  "n": {
+   "en": "He wrestled for years with an Eighth Symphony and is believed to have burned the manuscript in the 1940s.",
+   "fi": "Hän taisteli vuosia kahdeksannen sinfonian kanssa, ja käsikirjoituksen uskotaan päätyneen takkaan 1940-luvulla.",
+   "sv": "Han kämpade i åratal med en åttonde symfoni, och manuskriptet tros ha brunnit upp på 1940-talet."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who collected and compiled the Kalevala?",
+   "fi": "Kuka keräsi ja kokosi Kalevalan?",
+   "sv": "Vem samlade in och sammanställde Kalevala?"
+  },
+  "o": [
+   {
+    "en": "Elias Lönnrot",
+    "fi": "Elias Lönnrot",
+    "sv": "Elias Lönnrot"
+   },
+   {
+    "en": "Aleksis Kivi",
+    "fi": "Aleksis Kivi",
+    "sv": "Aleksis Kivi"
+   },
+   {
+    "en": "J. L. Runeberg",
+    "fi": "J. L. Runeberg",
+    "sv": "J. L. Runeberg"
+   },
+   {
+    "en": "Eino Leino",
+    "fi": "Eino Leino",
+    "sv": "Eino Leino"
+   }
+  ],
+  "n": {
+   "en": "The 1849 edition is more than twice as long as the first one published in 1835.",
+   "fi": "Vuoden 1849 laitos on yli kaksi kertaa niin pitkä kuin ensimmäinen, vuonna 1835 julkaistu.",
+   "sv": "Utgåvan från 1849 är mer än dubbelt så lång som den första från 1835."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who wrote the novel Seven Brothers?",
+   "fi": "Kuka kirjoitti romaanin Seitsemän veljestä?",
+   "sv": "Vem skrev romanen Sju bröder?"
+  },
+  "o": [
+   {
+    "en": "Aleksis Kivi",
+    "fi": "Aleksis Kivi",
+    "sv": "Aleksis Kivi"
+   },
+   {
+    "en": "Juhani Aho",
+    "fi": "Juhani Aho",
+    "sv": "Juhani Aho"
+   },
+   {
+    "en": "Minna Canth",
+    "fi": "Minna Canth",
+    "sv": "Minna Canth"
+   },
+   {
+    "en": "Teuvo Pakkala",
+    "fi": "Teuvo Pakkala",
+    "sv": "Teuvo Pakkala"
+   }
+  ],
+  "n": {
+   "en": "A savage review by the critic August Ahlqvist helped break Kivi, who died at 38.",
+   "fi": "Kriitikko August Ahlqvistin murskaava arvio oli osasyy siihen, että Kivi murtui ja kuoli 38-vuotiaana.",
+   "sv": "Kritikern August Ahlqvists förödande recension bidrog till att knäcka Kivi, som dog vid 38 års ålder."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who wrote the novel The Unknown Soldier?",
+   "fi": "Kuka kirjoitti romaanin Tuntematon sotilas?",
+   "sv": "Vem skrev romanen Okänd soldat?"
+  },
+  "o": [
+   {
+    "en": "Väinö Linna",
+    "fi": "Väinö Linna",
+    "sv": "Väinö Linna"
+   },
+   {
+    "en": "Mika Waltari",
+    "fi": "Mika Waltari",
+    "sv": "Mika Waltari"
+   },
+   {
+    "en": "Pentti Haanpää",
+    "fi": "Pentti Haanpää",
+    "sv": "Pentti Haanpää"
+   },
+   {
+    "en": "Veijo Meri",
+    "fi": "Veijo Meri",
+    "sv": "Veijo Meri"
+   }
+  ],
+  "n": {
+   "en": "It has been filmed three times, in 1955, 1985 and 2017.",
+   "fi": "Se on filmattu kolmesti: 1955, 1985 ja 2017.",
+   "sv": "Den har filmatiserats tre gånger: 1955, 1985 och 2017."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Finnish writer has won the Nobel Prize in Literature?",
+   "fi": "Kuka suomalainen kirjailija on voittanut Nobelin kirjallisuuspalkinnon?",
+   "sv": "Vilken finländsk författare har fått Nobelpriset i litteratur?"
+  },
+  "o": [
+   {
+    "en": "F. E. Sillanpää",
+    "fi": "F. E. Sillanpää",
+    "sv": "F. E. Sillanpää"
+   },
+   {
+    "en": "Väinö Linna",
+    "fi": "Väinö Linna",
+    "sv": "Väinö Linna"
+   },
+   {
+    "en": "Mika Waltari",
+    "fi": "Mika Waltari",
+    "sv": "Mika Waltari"
+   },
+   {
+    "en": "Eino Leino",
+    "fi": "Eino Leino",
+    "sv": "Eino Leino"
+   }
+  ],
+  "n": {
+   "en": "The prize came in 1939, the same year the Winter War broke out.",
+   "fi": "Palkinto tuli vuonna 1939, samana vuonna kun talvisota syttyi.",
+   "sv": "Priset kom 1939, samma år som vinterkriget bröt ut."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who created the Moomins?",
+   "fi": "Kuka loi muumit?",
+   "sv": "Vem skapade muminfigurerna?"
+  },
+  "o": [
+   {
+    "en": "Tove Jansson",
+    "fi": "Tove Jansson",
+    "sv": "Tove Jansson"
+   },
+   {
+    "en": "Astrid Lindgren",
+    "fi": "Astrid Lindgren",
+    "sv": "Astrid Lindgren"
+   },
+   {
+    "en": "Elsa Beskow",
+    "fi": "Elsa Beskow",
+    "sv": "Elsa Beskow"
+   },
+   {
+    "en": "Selma Lagerlöf",
+    "fi": "Selma Lagerlöf",
+    "sv": "Selma Lagerlöf"
+   }
+  ],
+  "n": {
+   "en": "She wrote the books in Swedish, her mother tongue, and drew every picture herself.",
+   "fi": "Hän kirjoitti kirjat ruotsiksi, äidinkielellään, ja piirsi kaikki kuvat itse.",
+   "sv": "Hon skrev böckerna på svenska, sitt modersmål, och ritade alla bilder själv."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Moomin character leaves the valley every autumn with a harmonica?",
+   "fi": "Kuka muumihahmo lähtee joka syksy laaksosta huuliharppuineen?",
+   "sv": "Vilken mumingestalt lämnar dalen varje höst med sitt munspel?"
+  },
+  "o": [
+   {
+    "en": "Snufkin",
+    "fi": "Nuuskamuikkunen",
+    "sv": "Snusmumriken"
+   },
+   {
+    "en": "Hemulen",
+    "fi": "Hemuli",
+    "sv": "Hemulen"
+   },
+   {
+    "en": "The Snork Maiden",
+    "fi": "Niiskuneiti",
+    "sv": "Snorkfröken"
+   },
+   {
+    "en": "Stinky",
+    "fi": "Haisuli",
+    "sv": "Stinky"
+   }
+  ],
+  "n": {
+   "en": "Jansson modelled him partly on her former fiancé, the writer and politician Atos Wirtanen.",
+   "fi": "Jansson otti hahmoon piirteitä entisestä kihlatustaan, kirjailija-poliitikko Atos Wirtasesta.",
+   "sv": "Jansson byggde figuren delvis på sin tidigare fästman, författaren och politikern Atos Wirtanen."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which architect designed Finlandia Hall in Helsinki?",
+   "fi": "Kuka arkkitehti suunnitteli Helsingin Finlandia-talon?",
+   "sv": "Vilken arkitekt ritade Finlandiahuset i Helsingfors?"
+  },
+  "o": [
+   {
+    "en": "Alvar Aalto",
+    "fi": "Alvar Aalto",
+    "sv": "Alvar Aalto"
+   },
+   {
+    "en": "Eliel Saarinen",
+    "fi": "Eliel Saarinen",
+    "sv": "Eliel Saarinen"
+   },
+   {
+    "en": "Carl Ludvig Engel",
+    "fi": "Carl Ludvig Engel",
+    "sv": "Carl Ludvig Engel"
+   },
+   {
+    "en": "Lars Sonck",
+    "fi": "Lars Sonck",
+    "sv": "Lars Sonck"
+   }
+  ],
+  "n": {
+   "en": "He clad it in Carrara marble, which cracked in the Finnish frost and had to be replaced.",
+   "fi": "Hän verhosi sen Carraran marmorilla, joka rapautui suomalaisessa pakkasessa ja oli uusittava.",
+   "sv": "Han klädde det i Carraramarmor, som sprack i den finska kylan och måste bytas ut."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which disease was Alvar Aalto's Paimio Sanatorium built to treat?",
+   "fi": "Minkä sairauden hoitoon Alvar Aallon Paimion parantola rakennettiin?",
+   "sv": "Vilken sjukdom byggdes Alvar Aaltos sanatorium i Pemar för att behandla?"
+  },
+  "o": [
+   {
+    "en": "Tuberculosis",
+    "fi": "Tuberkuloosi",
+    "sv": "Tuberkulos"
+   },
+   {
+    "en": "Polio",
+    "fi": "Polio",
+    "sv": "Polio"
+   },
+   {
+    "en": "Cholera",
+    "fi": "Kolera",
+    "sv": "Kolera"
+   },
+   {
+    "en": "Malaria",
+    "fi": "Malaria",
+    "sv": "Malaria"
+   }
+  ],
+  "n": {
+   "en": "Aalto designed even the washbasin, angled so that the water ran down almost silently.",
+   "fi": "Aalto suunnitteli myös pesualtaan, jonka kulma ohjasi veden valumaan lähes äänettömästi.",
+   "sv": "Aalto ritade även handfatet, vinklat så att vattnet rann nästan ljudlöst."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who designed Helsinki Central Railway Station?",
+   "fi": "Kuka suunnitteli Helsingin päärautatieaseman?",
+   "sv": "Vem ritade Helsingfors centralstation?"
+  },
+  "o": [
+   {
+    "en": "Eliel Saarinen",
+    "fi": "Eliel Saarinen",
+    "sv": "Eliel Saarinen"
+   },
+   {
+    "en": "Alvar Aalto",
+    "fi": "Alvar Aalto",
+    "sv": "Alvar Aalto"
+   },
+   {
+    "en": "Lars Sonck",
+    "fi": "Lars Sonck",
+    "sv": "Lars Sonck"
+   },
+   {
+    "en": "Carl Ludvig Engel",
+    "fi": "Carl Ludvig Engel",
+    "sv": "Carl Ludvig Engel"
+   }
+  ],
+  "n": {
+   "en": "His son Eero designed the Gateway Arch in St Louis.",
+   "fi": "Hänen poikansa Eero suunnitteli St. Louisin Gateway Archin.",
+   "sv": "Hans son Eero ritade Gateway Arch i St. Louis."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Helsinki church was blasted out of solid bedrock?",
+   "fi": "Mikä Helsingin kirkko louhittiin suoraan kallioon?",
+   "sv": "Vilken kyrka i Helsingfors sprängdes ut ur urberget?"
+  },
+  "o": [
+   {
+    "en": "Temppeliaukio Church",
+    "fi": "Temppeliaukion kirkko",
+    "sv": "Tempelplatsens kyrka"
+   },
+   {
+    "en": "Kallio Church",
+    "fi": "Kallion kirkko",
+    "sv": "Berghälls kyrka"
+   },
+   {
+    "en": "Helsinki Cathedral",
+    "fi": "Helsingin tuomiokirkko",
+    "sv": "Helsingfors domkyrka"
+   },
+   {
+    "en": "Uspenski Cathedral",
+    "fi": "Uspenskin katedraali",
+    "sv": "Uspenskijkatedralen"
+   }
+  ],
+  "n": {
+   "en": "The architects meant to smooth the rock over with concrete, until acousticians talked them out of it.",
+   "fi": "Arkkitehdit aikoivat peittää kallion betonilla, kunnes akustikot saivat heidät luopumaan ajatuksesta.",
+   "sv": "Arkitekterna tänkte täcka berget med betong, tills akustiker talade dem ur det."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who painted The Wounded Angel?",
+   "fi": "Kuka maalasi Haavoittuneen enkelin?",
+   "sv": "Vem målade Den sårade ängeln?"
+  },
+  "o": [
+   {
+    "en": "Hugo Simberg",
+    "fi": "Hugo Simberg",
+    "sv": "Hugo Simberg"
+   },
+   {
+    "en": "Akseli Gallen-Kallela",
+    "fi": "Akseli Gallen-Kallela",
+    "sv": "Akseli Gallen-Kallela"
+   },
+   {
+    "en": "Albert Edelfelt",
+    "fi": "Albert Edelfelt",
+    "sv": "Albert Edelfelt"
+   },
+   {
+    "en": "Eero Järnefelt",
+    "fi": "Eero Järnefelt",
+    "sv": "Eero Järnefelt"
+   }
+  ],
+  "n": {
+   "en": "Visitors to the Ateneum voted it Finland's national painting in 2006.",
+   "fi": "Ateneumin kävijät valitsivat sen Suomen kansallisteokseksi vuonna 2006.",
+   "sv": "Ateneums besökare röstade fram den som Finlands nationalmålning 2006."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which painter is best known for his Kalevala scenes, such as the Mother of Lemminkäinen?",
+   "fi": "Kuka taidemaalari tunnetaan parhaiten Kalevala-aiheistaan, kuten Lemminkäisen äidistä?",
+   "sv": "Vilken målare är mest känd för sina Kalevalamotiv, som Lemminkäinens mor?"
+  },
+  "o": [
+   {
+    "en": "Akseli Gallen-Kallela",
+    "fi": "Akseli Gallen-Kallela",
+    "sv": "Akseli Gallen-Kallela"
+   },
+   {
+    "en": "Hugo Simberg",
+    "fi": "Hugo Simberg",
+    "sv": "Hugo Simberg"
+   },
+   {
+    "en": "Pekka Halonen",
+    "fi": "Pekka Halonen",
+    "sv": "Pekka Halonen"
+   },
+   {
+    "en": "Helene Schjerfbeck",
+    "fi": "Helene Schjerfbeck",
+    "sv": "Helene Schjerfbeck"
+   }
+  ],
+  "n": {
+   "en": "He painted Kalevala frescoes for the Finnish pavilion at the Paris World's Fair of 1900.",
+   "fi": "Hän maalasi Kalevala-freskot Suomen paviljonkiin Pariisin maailmannäyttelyssä 1900.",
+   "sv": "Han målade Kalevalafresker till den finska paviljongen på världsutställningen i Paris 1900."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "In which castle is the Savonlinna Opera Festival held?",
+   "fi": "Missä linnassa Savonlinnan oopperajuhlat järjestetään?",
+   "sv": "I vilken borg hålls operafestspelen i Nyslott?"
+  },
+  "o": [
+   {
+    "en": "Olavinlinna",
+    "fi": "Olavinlinna",
+    "sv": "Olofsborg"
+   },
+   {
+    "en": "Turku Castle",
+    "fi": "Turun linna",
+    "sv": "Åbo slott"
+   },
+   {
+    "en": "Häme Castle",
+    "fi": "Hämeen linna",
+    "sv": "Tavastehus slott"
+   },
+   {
+    "en": "Suomenlinna",
+    "fi": "Suomenlinna",
+    "sv": "Sveaborg"
+   }
+  ],
+  "n": {
+   "en": "The soprano Aino Ackté started the festival in 1912; it then lay dormant for about fifty years before being revived in 1967.",
+   "fi": "Sopraano Aino Ackté käynnisti juhlat 1912; sen jälkeen ne nukkuivat noin viisikymmentä vuotta ja heräsivät uudelleen 1967.",
+   "sv": "Sopranen Aino Ackté startade festspelen 1912; sedan låg de i träda i ett halvsekel innan de väcktes igen 1967."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "With which song did Lordi win the Eurovision Song Contest?",
+   "fi": "Millä kappaleella Lordi voitti Euroviisut?",
+   "sv": "Med vilken låt vann Lordi Eurovisionsschlagerfestivalen?"
+  },
+  "o": [
+   {
+    "en": "Hard Rock Hallelujah",
+    "fi": "Hard Rock Hallelujah",
+    "sv": "Hard Rock Hallelujah"
+   },
+   {
+    "en": "Cha Cha Cha",
+    "fi": "Cha Cha Cha",
+    "sv": "Cha Cha Cha"
+   },
+   {
+    "en": "Aina mun pitää",
+    "fi": "Aina mun pitää",
+    "sv": "Aina mun pitää"
+   },
+   {
+    "en": "Tom Tom Tom",
+    "fi": "Tom Tom Tom",
+    "sv": "Tom Tom Tom"
+   }
+  ],
+  "n": {
+   "en": "It was Finland's first Eurovision win, in Athens in 2006, with the whole band in monster masks.",
+   "fi": "Se oli Suomen ensimmäinen euroviisuvoitto, Ateenassa 2006, koko bändi hirviönaamareissa.",
+   "sv": "Det var Finlands första Eurovisionsvinst, i Aten 2006, med hela bandet i monstermasker."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who composed the music of the Finnish national anthem?",
+   "fi": "Kuka sävelsi Suomen kansallislaulun Maamme?",
+   "sv": "Vem komponerade musiken till Finlands nationalsång Vårt land?"
+  },
+  "o": [
+   {
+    "en": "Fredrik Pacius",
+    "fi": "Fredrik Pacius",
+    "sv": "Fredrik Pacius"
+   },
+   {
+    "en": "Jean Sibelius",
+    "fi": "Jean Sibelius",
+    "sv": "Jean Sibelius"
+   },
+   {
+    "en": "Oskar Merikanto",
+    "fi": "Oskar Merikanto",
+    "sv": "Oskar Merikanto"
+   },
+   {
+    "en": "Robert Kajanus",
+    "fi": "Robert Kajanus",
+    "sv": "Robert Kajanus"
+   }
+  ],
+  "n": {
+   "en": "Estonia's national anthem is sung to the very same tune.",
+   "fi": "Viron kansallishymni lauletaan täsmälleen samalla sävelmällä.",
+   "sv": "Estlands nationalsång sjungs till exakt samma melodi."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Norwegian painter made The Scream?",
+   "fi": "Kuka norjalainen taidemaalari teki Huudon?",
+   "sv": "Vilken norsk målare gjorde Skriet?"
+  },
+  "o": [
+   {
+    "en": "Edvard Munch",
+    "fi": "Edvard Munch",
+    "sv": "Edvard Munch"
+   },
+   {
+    "en": "Christian Krohg",
+    "fi": "Christian Krohg",
+    "sv": "Christian Krohg"
+   },
+   {
+    "en": "Anders Zorn",
+    "fi": "Anders Zorn",
+    "sv": "Anders Zorn"
+   },
+   {
+    "en": "Carl Larsson",
+    "fi": "Carl Larsson",
+    "sv": "Carl Larsson"
+   }
+  ],
+  "n": {
+   "en": "He made several versions in paint, pastel and print, and two of them were stolen from Oslo museums and later recovered.",
+   "fi": "Hän teki teoksesta useita versioita maalaten, pastellilla ja grafiikkana; kaksi niistä vietiin Oslon museoista ja saatiin myöhemmin takaisin.",
+   "sv": "Han gjorde flera versioner i målning, pastell och grafik; två av dem stals från museer i Oslo och återfanns senare."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Swedish author created Pippi Longstocking?",
+   "fi": "Kuka ruotsalainen kirjailija loi Peppi Pitkätossun?",
+   "sv": "Vilken svensk författare skapade Pippi Långstrump?"
+  },
+  "o": [
+   {
+    "en": "Astrid Lindgren",
+    "fi": "Astrid Lindgren",
+    "sv": "Astrid Lindgren"
+   },
+   {
+    "en": "Selma Lagerlöf",
+    "fi": "Selma Lagerlöf",
+    "sv": "Selma Lagerlöf"
+   },
+   {
+    "en": "Tove Jansson",
+    "fi": "Tove Jansson",
+    "sv": "Tove Jansson"
+   },
+   {
+    "en": "Elsa Beskow",
+    "fi": "Elsa Beskow",
+    "sv": "Elsa Beskow"
+   }
+  ],
+  "n": {
+   "en": "Her daughter, ill in bed, invented the name and demanded a story to go with it.",
+   "fi": "Hänen vuoteessa sairastanut tyttärensä keksi nimen ja vaati siihen tarinan.",
+   "sv": "Hennes sjuka dotter hittade på namnet i sängen och krävde en berättelse till."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Danish writer wrote The Little Mermaid?",
+   "fi": "Kuka tanskalainen kirjailija kirjoitti Pienen merenneidon?",
+   "sv": "Vilken dansk författare skrev Den lilla sjöjungfrun?"
+  },
+  "o": [
+   {
+    "en": "Hans Christian Andersen",
+    "fi": "Hans Christian Andersen",
+    "sv": "Hans Christian Andersen"
+   },
+   {
+    "en": "Karen Blixen",
+    "fi": "Karen Blixen",
+    "sv": "Karen Blixen"
+   },
+   {
+    "en": "Selma Lagerlöf",
+    "fi": "Selma Lagerlöf",
+    "sv": "Selma Lagerlöf"
+   },
+   {
+    "en": "Jacob Grimm",
+    "fi": "Jacob Grimm",
+    "sv": "Jacob Grimm"
+   }
+  ],
+  "n": {
+   "en": "The statue in Copenhagen harbour is only about 1.25 metres tall.",
+   "fi": "Kopenhaminan satamassa oleva patsas on vain noin 1,25 metriä korkea.",
+   "sv": "Statyn i Köpenhamns hamn är bara omkring 1,25 meter hög."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Norwegian playwright wrote A Doll's House?",
+   "fi": "Kuka norjalainen näytelmäkirjailija kirjoitti Nukkekodin?",
+   "sv": "Vilken norsk dramatiker skrev Ett dockhem?"
+  },
+  "o": [
+   {
+    "en": "Henrik Ibsen",
+    "fi": "Henrik Ibsen",
+    "sv": "Henrik Ibsen"
+   },
+   {
+    "en": "August Strindberg",
+    "fi": "August Strindberg",
+    "sv": "August Strindberg"
+   },
+   {
+    "en": "Knut Hamsun",
+    "fi": "Knut Hamsun",
+    "sv": "Knut Hamsun"
+   },
+   {
+    "en": "Bjørnstjerne Bjørnson",
+    "fi": "Bjørnstjerne Bjørnson",
+    "sv": "Bjørnstjerne Bjørnson"
+   }
+  ],
+  "n": {
+   "en": "German theatres pushed him into writing an alternative ending in which Nora stays at home.",
+   "fi": "Saksalaiset teatterit painostivat hänet kirjoittamaan vaihtoehtoisen lopun, jossa Nora jää kotiin.",
+   "sv": "Tyska teatrar pressade honom att skriva ett alternativt slut där Nora stannar hemma."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Swedish director made The Seventh Seal, where a knight plays chess with Death?",
+   "fi": "Kuka ruotsalainen ohjaaja teki Seitsemännen sinetin, jossa ritari pelaa shakkia Kuoleman kanssa?",
+   "sv": "Vilken svensk regissör gjorde Det sjunde inseglet, där en riddare spelar schack med Döden?"
+  },
+  "o": [
+   {
+    "en": "Ingmar Bergman",
+    "fi": "Ingmar Bergman",
+    "sv": "Ingmar Bergman"
+   },
+   {
+    "en": "Victor Sjöström",
+    "fi": "Victor Sjöström",
+    "sv": "Victor Sjöström"
+   },
+   {
+    "en": "Bo Widerberg",
+    "fi": "Bo Widerberg",
+    "sv": "Bo Widerberg"
+   },
+   {
+    "en": "Jan Troell",
+    "fi": "Jan Troell",
+    "sv": "Jan Troell"
+   }
+  ],
+  "n": {
+   "en": "The chess game came from a medieval church painting that Bergman had seen as a boy.",
+   "fi": "Shakkipeli oli peräisin keskiaikaisesta kirkkomaalauksesta, jonka Bergman oli nähnyt poikasena.",
+   "sv": "Schackpartiet kom från en medeltidsmålning i en kyrka som Bergman sett som barn."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Danish architect designed the Sydney Opera House?",
+   "fi": "Kuka tanskalainen arkkitehti suunnitteli Sydneyn oopperatalon?",
+   "sv": "Vilken dansk arkitekt ritade operahuset i Sydney?"
+  },
+  "o": [
+   {
+    "en": "Jørn Utzon",
+    "fi": "Jørn Utzon",
+    "sv": "Jørn Utzon"
+   },
+   {
+    "en": "Arne Jacobsen",
+    "fi": "Arne Jacobsen",
+    "sv": "Arne Jacobsen"
+   },
+   {
+    "en": "Alvar Aalto",
+    "fi": "Alvar Aalto",
+    "sv": "Alvar Aalto"
+   },
+   {
+    "en": "Eero Saarinen",
+    "fi": "Eero Saarinen",
+    "sv": "Eero Saarinen"
+   }
+  ],
+  "n": {
+   "en": "He resigned from the project in 1966 and never returned to Australia to see it finished.",
+   "fi": "Hän erosi hankkeesta 1966 eikä koskaan palannut Australiaan näkemään valmista rakennusta.",
+   "sv": "Han lämnade projektet 1966 och återvände aldrig till Australien för att se byggnaden färdig."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which song won ABBA the Eurovision Song Contest in 1974?",
+   "fi": "Millä kappaleella ABBA voitti Euroviisut vuonna 1974?",
+   "sv": "Med vilken låt vann ABBA Eurovisionsschlagerfestivalen 1974?"
+  },
+  "o": [
+   {
+    "en": "Waterloo",
+    "fi": "Waterloo",
+    "sv": "Waterloo"
+   },
+   {
+    "en": "Dancing Queen",
+    "fi": "Dancing Queen",
+    "sv": "Dancing Queen"
+   },
+   {
+    "en": "Mamma Mia",
+    "fi": "Mamma Mia",
+    "sv": "Mamma Mia"
+   },
+   {
+    "en": "Fernando",
+    "fi": "Fernando",
+    "sv": "Fernando"
+   }
+  ],
+  "n": {
+   "en": "They won in Brighton, and the British jury gave Sweden no points at all.",
+   "fi": "Voitto tuli Brightonissa, ja brittiläinen raati antoi Ruotsille nolla pistettä.",
+   "sv": "Segern kom i Brighton, och den brittiska juryn gav Sverige noll poäng."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who painted the ceiling of the Sistine Chapel?",
+   "fi": "Kuka maalasi Sikstuksen kappelin katon?",
+   "sv": "Vem målade taket i Sixtinska kapellet?"
+  },
+  "o": [
+   {
+    "en": "Michelangelo",
+    "fi": "Michelangelo",
+    "sv": "Michelangelo"
+   },
+   {
+    "en": "Raphael",
+    "fi": "Rafael",
+    "sv": "Rafael"
+   },
+   {
+    "en": "Leonardo da Vinci",
+    "fi": "Leonardo da Vinci",
+    "sv": "Leonardo da Vinci"
+   },
+   {
+    "en": "Sandro Botticelli",
+    "fi": "Sandro Botticelli",
+    "sv": "Sandro Botticelli"
+   }
+  ],
+  "n": {
+   "en": "He thought of himself as a sculptor first and took the commission reluctantly.",
+   "fi": "Hän piti itseään ennen kaikkea kuvanveistäjänä ja otti tilauksen vastahakoisesti.",
+   "sv": "Han såg sig främst som skulptör och tog uppdraget motvilligt."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Spanish painter made Guernica?",
+   "fi": "Kuka espanjalainen taidemaalari teki Guernican?",
+   "sv": "Vilken spansk målare gjorde Guernica?"
+  },
+  "o": [
+   {
+    "en": "Pablo Picasso",
+    "fi": "Pablo Picasso",
+    "sv": "Pablo Picasso"
+   },
+   {
+    "en": "Salvador Dalí",
+    "fi": "Salvador Dalí",
+    "sv": "Salvador Dalí"
+   },
+   {
+    "en": "Joan Miró",
+    "fi": "Joan Miró",
+    "sv": "Joan Miró"
+   },
+   {
+    "en": "Francisco de Goya",
+    "fi": "Francisco de Goya",
+    "sv": "Francisco de Goya"
+   }
+  ],
+  "n": {
+   "en": "The whole enormous canvas is painted only in black, white and grey.",
+   "fi": "Koko valtava kangas on maalattu vain mustalla, valkoisella ja harmaalla.",
+   "sv": "Hela den enorma duken är målad enbart i svart, vitt och grått."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "In which museum does the Mona Lisa hang?",
+   "fi": "Missä museossa Mona Lisa on esillä?",
+   "sv": "I vilket museum hänger Mona Lisa?"
+  },
+  "o": [
+   {
+    "en": "The Louvre",
+    "fi": "Louvre",
+    "sv": "Louvren"
+   },
+   {
+    "en": "The Uffizi",
+    "fi": "Uffizi",
+    "sv": "Uffizierna"
+   },
+   {
+    "en": "The Prado",
+    "fi": "Prado",
+    "sv": "Prado"
+   },
+   {
+    "en": "The Rijksmuseum",
+    "fi": "Rijksmuseum",
+    "sv": "Rijksmuseum"
+   }
+  ],
+  "n": {
+   "en": "It was stolen in 1911 and stayed missing for two years before turning up in Italy.",
+   "fi": "Se vietiin vuonna 1911 ja oli kadonneena kaksi vuotta, kunnes löytyi Italiasta.",
+   "sv": "Den stals 1911 och var försvunnen i två år innan den dök upp i Italien."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Dutch painter made The Starry Night?",
+   "fi": "Kuka hollantilainen taidemaalari teki Tähtiyön?",
+   "sv": "Vilken holländsk målare gjorde Stjärnnatt?"
+  },
+  "o": [
+   {
+    "en": "Vincent van Gogh",
+    "fi": "Vincent van Gogh",
+    "sv": "Vincent van Gogh"
+   },
+   {
+    "en": "Johannes Vermeer",
+    "fi": "Johannes Vermeer",
+    "sv": "Johannes Vermeer"
+   },
+   {
+    "en": "Rembrandt",
+    "fi": "Rembrandt",
+    "sv": "Rembrandt"
+   },
+   {
+    "en": "Piet Mondrian",
+    "fi": "Piet Mondrian",
+    "sv": "Piet Mondrian"
+   }
+  ],
+  "n": {
+   "en": "He painted it from a room in an asylum at Saint-Rémy in southern France.",
+   "fi": "Hän maalasi sen mielisairaalan huoneesta Saint-Rémyssä Etelä-Ranskassa.",
+   "sv": "Han målade den från ett rum på ett sinnessjukhus i Saint-Rémy i södra Frankrike."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which sculptor made The Thinker?",
+   "fi": "Kuka kuvanveistäjä teki Ajattelijan?",
+   "sv": "Vilken skulptör gjorde Tänkaren?"
+  },
+  "o": [
+   {
+    "en": "Auguste Rodin",
+    "fi": "Auguste Rodin",
+    "sv": "Auguste Rodin"
+   },
+   {
+    "en": "Antonio Canova",
+    "fi": "Antonio Canova",
+    "sv": "Antonio Canova"
+   },
+   {
+    "en": "Constantin Brâncuși",
+    "fi": "Constantin Brâncuși",
+    "sv": "Constantin Brâncuși"
+   },
+   {
+    "en": "Alberto Giacometti",
+    "fi": "Alberto Giacometti",
+    "sv": "Alberto Giacometti"
+   }
+  ],
+  "n": {
+   "en": "The figure began as one part of a huge doorway based on Dante's Inferno.",
+   "fi": "Hahmo syntyi osana suurta ovea, jonka aiheena oli Danten Helvetti.",
+   "sv": "Figuren började som en del av en enorm port byggd på Dantes Inferno."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which architect designed the Sagrada Família in Barcelona?",
+   "fi": "Kuka arkkitehti suunnitteli Barcelonan Sagrada Famílian?",
+   "sv": "Vilken arkitekt ritade Sagrada Família i Barcelona?"
+  },
+  "o": [
+   {
+    "en": "Antoni Gaudí",
+    "fi": "Antoni Gaudí",
+    "sv": "Antoni Gaudí"
+   },
+   {
+    "en": "Lluís Domènech i Montaner",
+    "fi": "Lluís Domènech i Montaner",
+    "sv": "Lluís Domènech i Montaner"
+   },
+   {
+    "en": "Le Corbusier",
+    "fi": "Le Corbusier",
+    "sv": "Le Corbusier"
+   },
+   {
+    "en": "Louis Sullivan",
+    "fi": "Louis Sullivan",
+    "sv": "Louis Sullivan"
+   }
+  ],
+  "n": {
+   "en": "Building started in 1882, and Gaudí was run over by a tram in 1926.",
+   "fi": "Rakentaminen alkoi 1882, ja raitiovaunu jyräsi Gaudín vuonna 1926.",
+   "sv": "Bygget började 1882, och Gaudí blev överkörd av en spårvagn 1926."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "For which event was the Eiffel Tower built?",
+   "fi": "Mitä tapahtumaa varten Eiffel-torni rakennettiin?",
+   "sv": "Till vilket evenemang byggdes Eiffeltornet?"
+  },
+  "o": [
+   {
+    "en": "The Paris World's Fair of 1889",
+    "fi": "Pariisin maailmannäyttely 1889",
+    "sv": "Världsutställningen i Paris 1889"
+   },
+   {
+    "en": "The Paris World's Fair of 1900",
+    "fi": "Pariisin maailmannäyttely 1900",
+    "sv": "Världsutställningen i Paris 1900"
+   },
+   {
+    "en": "The Paris Olympics of 1900",
+    "fi": "Pariisin olympialaiset 1900",
+    "sv": "Olympiska spelen i Paris 1900"
+   },
+   {
+    "en": "The Paris Exposition of 1855",
+    "fi": "Pariisin näyttely 1855",
+    "sv": "Parisutställningen 1855"
+   }
+  ],
+  "n": {
+   "en": "It was supposed to come down after twenty years, and was saved largely because it made an excellent radio mast.",
+   "fi": "Sen oli määrä purkaa kahdenkymmenen vuoden jälkeen, ja se säästyi pitkälti siksi, että siitä tuli erinomainen radiomasto.",
+   "sv": "Det skulle rivas efter tjugo år och räddades främst för att det blev en utmärkt radiomast."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Shakespeare play is set at Elsinore?",
+   "fi": "Mikä Shakespearen näytelmä sijoittuu Elsinoreen?",
+   "sv": "Vilken Shakespearepjäs utspelar sig i Helsingör?"
+  },
+  "o": [
+   {
+    "en": "Hamlet",
+    "fi": "Hamlet",
+    "sv": "Hamlet"
+   },
+   {
+    "en": "Macbeth",
+    "fi": "Macbeth",
+    "sv": "Macbeth"
+   },
+   {
+    "en": "Othello",
+    "fi": "Othello",
+    "sv": "Othello"
+   },
+   {
+    "en": "King Lear",
+    "fi": "Kuningas Lear",
+    "sv": "Kung Lear"
+   }
+  ],
+  "n": {
+   "en": "Elsinore is Helsingør in Denmark, and the castle there is called Kronborg.",
+   "fi": "Elsinore on Tanskan Helsingør, ja siellä sijaitseva linna on Kronborg.",
+   "sv": "Helsingör ligger i Danmark, och borgen där heter Kronborg."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Shakespeare play is set mostly in Scotland?",
+   "fi": "Mikä Shakespearen näytelmä sijoittuu pääosin Skotlantiin?",
+   "sv": "Vilken Shakespearepjäs utspelar sig mest i Skottland?"
+  },
+  "o": [
+   {
+    "en": "Macbeth",
+    "fi": "Macbeth",
+    "sv": "Macbeth"
+   },
+   {
+    "en": "Romeo and Juliet",
+    "fi": "Romeo ja Julia",
+    "sv": "Romeo och Julia"
+   },
+   {
+    "en": "The Tempest",
+    "fi": "Myrsky",
+    "sv": "Stormen"
+   },
+   {
+    "en": "Twelfth Night",
+    "fi": "Loppiaisaatto",
+    "sv": "Trettondagsafton"
+   }
+  ],
+  "n": {
+   "en": "Actors avoid saying its name inside a theatre and call it 'the Scottish play' instead.",
+   "fi": "Näyttelijät välttävät sanomasta sen nimeä teatterissa ja kutsuvat sitä skotlantilaiseksi näytelmäksi.",
+   "sv": "Skådespelare undviker att säga namnet inne i en teater och kallar den 'den skotska pjäsen'."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Russian author wrote Crime and Punishment?",
+   "fi": "Kuka venäläinen kirjailija kirjoitti Rikoksen ja rangaistuksen?",
+   "sv": "Vilken rysk författare skrev Brott och straff?"
+  },
+  "o": [
+   {
+    "en": "Fyodor Dostoevsky",
+    "fi": "Fjodor Dostojevski",
+    "sv": "Fjodor Dostojevskij"
+   },
+   {
+    "en": "Leo Tolstoy",
+    "fi": "Leo Tolstoi",
+    "sv": "Lev Tolstoj"
+   },
+   {
+    "en": "Anton Chekhov",
+    "fi": "Anton Tšehov",
+    "sv": "Anton Tjechov"
+   },
+   {
+    "en": "Ivan Turgenev",
+    "fi": "Ivan Turgenev",
+    "sv": "Ivan Turgenjev"
+   }
+  ],
+  "n": {
+   "en": "He was writing partly to clear gambling debts, and dictated a whole other novel in the middle of it.",
+   "fi": "Hän kirjoitti osin maksaakseen pelivelkojaan ja saneli kesken kaiken kokonaan toisen romaanin.",
+   "sv": "Han skrev delvis för att betala spelskulder och dikterade mitt i allt en helt annan roman."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who wrote The Lord of the Rings?",
+   "fi": "Kuka kirjoitti Taru sormusten herrasta?",
+   "sv": "Vem skrev Sagan om ringen?"
+  },
+  "o": [
+   {
+    "en": "J. R. R. Tolkien",
+    "fi": "J. R. R. Tolkien",
+    "sv": "J. R. R. Tolkien"
+   },
+   {
+    "en": "C. S. Lewis",
+    "fi": "C. S. Lewis",
+    "sv": "C. S. Lewis"
+   },
+   {
+    "en": "T. H. White",
+    "fi": "T. H. White",
+    "sv": "T. H. White"
+   },
+   {
+    "en": "Mervyn Peake",
+    "fi": "Mervyn Peake",
+    "sv": "Mervyn Peake"
+   }
+  ],
+  "n": {
+   "en": "Tolkien built his Elvish language Quenya partly on the sound of Finnish.",
+   "fi": "Tolkien rakensi haltiakielensä quenyan osin suomen kielen soinnin pohjalta.",
+   "sv": "Tolkien byggde sitt alviska språk quenya delvis på finskans klang."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which composer wrote the ballet Swan Lake?",
+   "fi": "Kuka sävelsi baletin Joutsenlampi?",
+   "sv": "Vem komponerade baletten Svansjön?"
+  },
+  "o": [
+   {
+    "en": "Pyotr Tchaikovsky",
+    "fi": "Pjotr Tšaikovski",
+    "sv": "Pjotr Tjajkovskij"
+   },
+   {
+    "en": "Igor Stravinsky",
+    "fi": "Igor Stravinsky",
+    "sv": "Igor Stravinskij"
+   },
+   {
+    "en": "Sergei Prokofiev",
+    "fi": "Sergei Prokofjev",
+    "sv": "Sergej Prokofjev"
+   },
+   {
+    "en": "Aram Khachaturian",
+    "fi": "Aram Hatšaturjan",
+    "sv": "Aram Chatjaturjan"
+   }
+  ],
+  "n": {
+   "en": "The first production in 1877 was a flop, and the ballet only became famous after his death.",
+   "fi": "Ensimmäinen tuotanto vuonna 1877 floppasi, ja baletti nousi maineeseen vasta hänen kuoltuaan.",
+   "sv": "Den första uppsättningen 1877 blev ett fiasko, och baletten blev berömd först efter hans död."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which composer's Ninth Symphony ends with a choir?",
+   "fi": "Kenen säveltäjän yhdeksäs sinfonia päättyy kuoroon?",
+   "sv": "Vilken kompositörs nionde symfoni slutar med en kör?"
+  },
+  "o": [
+   {
+    "en": "Ludwig van Beethoven",
+    "fi": "Ludwig van Beethoven",
+    "sv": "Ludwig van Beethoven"
+   },
+   {
+    "en": "Johannes Brahms",
+    "fi": "Johannes Brahms",
+    "sv": "Johannes Brahms"
+   },
+   {
+    "en": "Gustav Mahler",
+    "fi": "Gustav Mahler",
+    "sv": "Gustav Mahler"
+   },
+   {
+    "en": "Anton Bruckner",
+    "fi": "Anton Bruckner",
+    "sv": "Anton Bruckner"
+   }
+  ],
+  "n": {
+   "en": "He was almost completely deaf by the time it was first performed in 1824.",
+   "fi": "Hän oli lähes täysin kuuro, kun teos ensiesitettiin vuonna 1824.",
+   "sv": "Han var nästan helt döv när verket uruppfördes 1824."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Puccini opera was left unfinished when he died?",
+   "fi": "Mikä Puccinin ooppera jäi kesken hänen kuollessaan?",
+   "sv": "Vilken Puccini-opera lämnades ofullbordad när han dog?"
+  },
+  "o": [
+   {
+    "en": "Turandot",
+    "fi": "Turandot",
+    "sv": "Turandot"
+   },
+   {
+    "en": "Tosca",
+    "fi": "Tosca",
+    "sv": "Tosca"
+   },
+   {
+    "en": "Madama Butterfly",
+    "fi": "Madama Butterfly",
+    "sv": "Madama Butterfly"
+   },
+   {
+    "en": "La Bohème",
+    "fi": "La Bohème",
+    "sv": "La Bohème"
+   }
+  ],
+  "n": {
+   "en": "Another composer wrote the ending, and at the 1926 premiere Toscanini stopped where Puccini's own music ran out.",
+   "fi": "Loppu on toisen säveltäjän käsialaa, ja vuoden 1926 kantaesityksessä Toscanini pysäytti esityksen siihen, mihin Puccinin oma musiikki loppui.",
+   "sv": "Slutet skrevs av en annan kompositör, och vid premiären 1926 stannade Toscanini där Puccinis egen musik tog slut."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "In which Mozart opera does the Queen of the Night appear?",
+   "fi": "Missä Mozartin oopperassa esiintyy Yön kuningatar?",
+   "sv": "I vilken Mozartopera förekommer Nattens drottning?"
+  },
+  "o": [
+   {
+    "en": "The Magic Flute",
+    "fi": "Taikahuilu",
+    "sv": "Trollflöjten"
+   },
+   {
+    "en": "The Marriage of Figaro",
+    "fi": "Figaron häät",
+    "sv": "Figaros bröllop"
+   },
+   {
+    "en": "Don Giovanni",
+    "fi": "Don Giovanni",
+    "sv": "Don Giovanni"
+   },
+   {
+    "en": "Così fan tutte",
+    "fi": "Così fan tutte",
+    "sv": "Così fan tutte"
+   }
+  ],
+  "n": {
+   "en": "Mozart died within months of its first performance in 1791.",
+   "fi": "Mozart kuoli muutaman kuukauden kuluttua sen kantaesityksestä vuonna 1791.",
+   "sv": "Mozart dog bara månader efter uruppförandet 1791."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which composer wrote The Four Seasons?",
+   "fi": "Kuka sävelsi Neljä vuodenaikaa?",
+   "sv": "Vem komponerade De fyra årstiderna?"
+  },
+  "o": [
+   {
+    "en": "Antonio Vivaldi",
+    "fi": "Antonio Vivaldi",
+    "sv": "Antonio Vivaldi"
+   },
+   {
+    "en": "Johann Sebastian Bach",
+    "fi": "Johann Sebastian Bach",
+    "sv": "Johann Sebastian Bach"
+   },
+   {
+    "en": "George Frideric Handel",
+    "fi": "Georg Friedrich Händel",
+    "sv": "Georg Friedrich Händel"
+   },
+   {
+    "en": "Arcangelo Corelli",
+    "fi": "Arcangelo Corelli",
+    "sv": "Arcangelo Corelli"
+   }
+  ],
+  "n": {
+   "en": "Vivaldi was an ordained priest who spent decades teaching music to orphan girls in Venice.",
+   "fi": "Vivaldi oli vihitty pappi, joka opetti vuosikymmeniä musiikkia orpotytöille Venetsiassa.",
+   "sv": "Vivaldi var prästvigd och undervisade i decennier föräldralösa flickor i musik i Venedig."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Dutch painter made Girl with a Pearl Earring?",
+   "fi": "Kuka hollantilainen taidemaalari teki Tytön helmikorvakorulla?",
+   "sv": "Vilken holländsk målare gjorde Flicka med pärlörhänge?"
+  },
+  "o": [
+   {
+    "en": "Johannes Vermeer",
+    "fi": "Johannes Vermeer",
+    "sv": "Johannes Vermeer"
+   },
+   {
+    "en": "Rembrandt",
+    "fi": "Rembrandt",
+    "sv": "Rembrandt"
+   },
+   {
+    "en": "Frans Hals",
+    "fi": "Frans Hals",
+    "sv": "Frans Hals"
+   },
+   {
+    "en": "Jan Steen",
+    "fi": "Jan Steen",
+    "sv": "Jan Steen"
+   }
+  ],
+  "n": {
+   "en": "Fewer than forty paintings by him are known to survive.",
+   "fi": "Hänen käsialaansa tunnetaan säilyneenä alle neljäkymmentä maalausta.",
+   "sv": "Färre än fyrtio målningar av honom är kända i dag."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Tolstoy novel is set during Napoleon's invasion of Russia?",
+   "fi": "Mikä Tolstoin romaani sijoittuu Napoleonin Venäjän-sotaretkeen?",
+   "sv": "Vilken roman av Tolstoj utspelar sig under Napoleons fälttåg mot Ryssland?"
+  },
+  "o": [
+   {
+    "en": "War and Peace",
+    "fi": "Sota ja rauha",
+    "sv": "Krig och fred"
+   },
+   {
+    "en": "Anna Karenina",
+    "fi": "Anna Karenina",
+    "sv": "Anna Karenina"
+   },
+   {
+    "en": "Resurrection",
+    "fi": "Ylösnousemus",
+    "sv": "Uppståndelse"
+   },
+   {
+    "en": "The Death of Ivan Ilyich",
+    "fi": "Ivan Iljitšin kuolema",
+    "sv": "Ivan Iljitjs död"
+   }
+  ],
+  "n": {
+   "en": "Tolstoy rewrote it again and again, and his wife copied the whole manuscript out by hand.",
+   "fi": "Tolstoi kirjoitti sen uudelleen kerta toisensa jälkeen, ja hänen vaimonsa kopioi koko käsikirjoituksen käsin.",
+   "sv": "Tolstoj skrev om den gång på gång, och hans hustru kopierade hela manuskriptet för hand."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "What nationality did Agatha Christie give her detective Hercule Poirot?",
+   "fi": "Minkä maalaisen Agatha Christie teki etsivästään Hercule Poirot'sta?",
+   "sv": "Vilken nationalitet gav Agatha Christie sin detektiv Hercule Poirot?"
+  },
+  "o": [
+   {
+    "en": "Belgian",
+    "fi": "Belgialainen",
+    "sv": "Belgare"
+   },
+   {
+    "en": "French",
+    "fi": "Ranskalainen",
+    "sv": "Fransman"
+   },
+   {
+    "en": "Swiss",
+    "fi": "Sveitsiläinen",
+    "sv": "Schweizare"
+   },
+   {
+    "en": "Austrian",
+    "fi": "Itävaltalainen",
+    "sv": "Österrikare"
+   }
+  ],
+  "n": {
+   "en": "When his last case came out in 1975, The New York Times printed him a front-page obituary.",
+   "fi": "Kun hänen viimeinen juttunsa ilmestyi 1975, The New York Times julkaisi hänelle muistokirjoituksen etusivulla.",
+   "sv": "När hans sista fall kom ut 1975 publicerade The New York Times en dödsruna över honom på förstasidan."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Kafka story begins with a man waking up as an insect?",
+   "fi": "Mikä Kafkan teos alkaa siitä, että mies herää hyönteisenä?",
+   "sv": "Vilken berättelse av Kafka börjar med att en man vaknar som en insekt?"
+  },
+  "o": [
+   {
+    "en": "The Metamorphosis",
+    "fi": "Muodonmuutos",
+    "sv": "Förvandlingen"
+   },
+   {
+    "en": "The Trial",
+    "fi": "Oikeusjuttu",
+    "sv": "Processen"
+   },
+   {
+    "en": "The Castle",
+    "fi": "Linna",
+    "sv": "Slottet"
+   },
+   {
+    "en": "Amerika",
+    "fi": "Amerikka",
+    "sv": "Amerika"
+   }
+  ],
+  "n": {
+   "en": "Kafka asked his friend Max Brod to burn his unpublished papers; Brod published them instead.",
+   "fi": "Kafka pyysi ystäväänsä Max Brodia polttamaan julkaisemattomat paperinsa; Brod julkaisi ne.",
+   "sv": "Kafka bad sin vän Max Brod bränna hans opublicerade papper; Brod gav ut dem i stället."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "In which London theatre did Shakespeare's own company perform?",
+   "fi": "Missä lontoolaisessa teatterissa Shakespearen oma seurue esiintyi?",
+   "sv": "I vilken teater i London spelade Shakespeares eget sällskap?"
+  },
+  "o": [
+   {
+    "en": "The Globe",
+    "fi": "Globe-teatteri",
+    "sv": "Globeteatern"
+   },
+   {
+    "en": "Drury Lane",
+    "fi": "Drury Lane",
+    "sv": "Drury Lane"
+   },
+   {
+    "en": "The Old Vic",
+    "fi": "Old Vic",
+    "sv": "Old Vic"
+   },
+   {
+    "en": "Covent Garden",
+    "fi": "Covent Garden",
+    "sv": "Covent Garden"
+   }
+  ],
+  "n": {
+   "en": "The first Globe burned down in 1613 when a cannon fired as a sound effect set the thatched roof alight.",
+   "fi": "Ensimmäinen Globe paloi 1613, kun ääniefektinä ammuttu tykki sytytti ruokokaton.",
+   "sv": "Den första Globe brann ner 1613 när en kanon som ljudeffekt satte eld på halmtaket."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Who directed the film Citizen Kane?",
+   "fi": "Kuka ohjasi elokuvan Citizen Kane?",
+   "sv": "Vem regisserade filmen Citizen Kane?"
+  },
+  "o": [
+   {
+    "en": "Orson Welles",
+    "fi": "Orson Welles",
+    "sv": "Orson Welles"
+   },
+   {
+    "en": "John Ford",
+    "fi": "John Ford",
+    "sv": "John Ford"
+   },
+   {
+    "en": "Howard Hawks",
+    "fi": "Howard Hawks",
+    "sv": "Howard Hawks"
+   },
+   {
+    "en": "Billy Wilder",
+    "fi": "Billy Wilder",
+    "sv": "Billy Wilder"
+   }
+  ],
+  "n": {
+   "en": "Welles was 25, and he co-wrote it, directed it and played the lead.",
+   "fi": "Welles oli 25-vuotias, ja hän oli käsikirjoittaja, ohjaaja ja pääosan esittäjä.",
+   "sv": "Welles var 25 år och var medförfattare, regissör och huvudrollsinnehavare."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Japanese director made Seven Samurai?",
+   "fi": "Kuka japanilainen ohjaaja teki Seitsemän samuraita?",
+   "sv": "Vilken japansk regissör gjorde De sju samurajerna?"
+  },
+  "o": [
+   {
+    "en": "Akira Kurosawa",
+    "fi": "Akira Kurosawa",
+    "sv": "Akira Kurosawa"
+   },
+   {
+    "en": "Yasujirō Ozu",
+    "fi": "Yasujirō Ozu",
+    "sv": "Yasujirō Ozu"
+   },
+   {
+    "en": "Kenji Mizoguchi",
+    "fi": "Kenji Mizoguchi",
+    "sv": "Kenji Mizoguchi"
+   },
+   {
+    "en": "Nagisa Ōshima",
+    "fi": "Nagisa Ōshima",
+    "sv": "Nagisa Ōshima"
+   }
+  ],
+  "n": {
+   "en": "Hollywood remade it as the western The Magnificent Seven.",
+   "fi": "Hollywood teki siitä lännenelokuvan Seitsemän rohkeaa miestä.",
+   "sv": "Hollywood gjorde om den till westernfilmen Sju vågade livet."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which ballet caused an uproar at its Paris premiere in 1913?",
+   "fi": "Mikä baletti aiheutti mellakan kantaesityksessään Pariisissa 1913?",
+   "sv": "Vilken balett orsakade tumult vid sin premiär i Paris 1913?"
+  },
+  "o": [
+   {
+    "en": "The Rite of Spring",
+    "fi": "Kevätuhri",
+    "sv": "Våroffer"
+   },
+   {
+    "en": "The Firebird",
+    "fi": "Tulilintu",
+    "sv": "Eldfågeln"
+   },
+   {
+    "en": "Petrushka",
+    "fi": "Petruška",
+    "sv": "Petrusjka"
+   },
+   {
+    "en": "Giselle",
+    "fi": "Giselle",
+    "sv": "Giselle"
+   }
+  ],
+  "n": {
+   "en": "The noise in the hall grew so loud that the dancers could no longer hear the orchestra.",
+   "fi": "Melu salissa kasvoi niin kovaksi, etteivät tanssijat enää kuulleet orkesteria.",
+   "sv": "Bullret i salen blev så högt att dansarna inte längre kunde höra orkestern."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Beatles album is named after the London street on its cover?",
+   "fi": "Mikä Beatlesin albumi on nimetty kansikuvan lontoolaisen kadun mukaan?",
+   "sv": "Vilket Beatlesalbum är döpt efter gatan i London på omslaget?"
+  },
+  "o": [
+   {
+    "en": "Abbey Road",
+    "fi": "Abbey Road",
+    "sv": "Abbey Road"
+   },
+   {
+    "en": "Let It Be",
+    "fi": "Let It Be",
+    "sv": "Let It Be"
+   },
+   {
+    "en": "Revolver",
+    "fi": "Revolver",
+    "sv": "Revolver"
+   },
+   {
+    "en": "Rubber Soul",
+    "fi": "Rubber Soul",
+    "sv": "Rubber Soul"
+   }
+  ],
+  "n": {
+   "en": "The zebra crossing on the sleeve is now a protected landmark.",
+   "fi": "Kansikuvan suojatie on nykyään suojeltu nähtävyys.",
+   "sv": "Övergångsstället på omslaget är i dag ett skyddat landmärke."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which Queen album contains Bohemian Rhapsody?",
+   "fi": "Millä Queenin albumilla on Bohemian Rhapsody?",
+   "sv": "Vilket Queenalbum innehåller Bohemian Rhapsody?"
+  },
+  "o": [
+   {
+    "en": "A Night at the Opera",
+    "fi": "A Night at the Opera",
+    "sv": "A Night at the Opera"
+   },
+   {
+    "en": "Sheer Heart Attack",
+    "fi": "Sheer Heart Attack",
+    "sv": "Sheer Heart Attack"
+   },
+   {
+    "en": "News of the World",
+    "fi": "News of the World",
+    "sv": "News of the World"
+   },
+   {
+    "en": "The Game",
+    "fi": "The Game",
+    "sv": "The Game"
+   }
+  ],
+  "n": {
+   "en": "The song runs nearly six minutes, and the record company insisted it was far too long for radio.",
+   "fi": "Kappale kestää lähes kuusi minuuttia, ja levy-yhtiö vakuutti sen olevan aivan liian pitkä radioon.",
+   "sv": "Låten är nästan sex minuter lång, och skivbolaget hävdade att den var alldeles för lång för radio."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many Olympic gold medals did the runner Paavo Nurmi win?",
+   "fi": "Kuinka monta olympiakultaa juoksija Paavo Nurmi voitti?",
+   "sv": "Hur många OS-guld vann löparen Paavo Nurmi?"
+  },
+  "o": [
+   {
+    "en": "Nine",
+    "fi": "Yhdeksän",
+    "sv": "Nio"
+   },
+   {
+    "en": "Five",
+    "fi": "Viisi",
+    "sv": "Fem"
+   },
+   {
+    "en": "Seven",
+    "fi": "Seitsemän",
+    "sv": "Sju"
+   },
+   {
+    "en": "Twelve",
+    "fi": "Kaksitoista",
+    "sv": "Tolv"
+   }
+  ],
+  "n": {
+   "en": "He opened the 1952 Helsinki Games by lighting the cauldron, then handed the torch on to Hannes Kolehmainen, who lit the beacon up in the tower.",
+   "fi": "Hän avasi Helsingin kisat 1952 sytyttämällä maljan ja ojensi soihdun Hannes Kolehmaiselle, joka sytytti tulen tornin huipulla.",
+   "sv": "Han invigde Helsingforsspelen 1952 genom att tända elden i skålen och lämnade sedan facklan till Hannes Kolehmainen, som tände lågan uppe i tornet."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which Nordic city hosted the 1952 Summer Olympics?",
+   "fi": "Mikä pohjoismainen kaupunki järjesti kesäolympialaiset 1952?",
+   "sv": "Vilken nordisk stad stod värd för sommarolympiaden 1952?"
+  },
+  "o": [
+   {
+    "en": "Helsinki",
+    "fi": "Helsinki",
+    "sv": "Helsingfors"
+   },
+   {
+    "en": "Stockholm",
+    "fi": "Tukholma",
+    "sv": "Stockholm"
+   },
+   {
+    "en": "Oslo",
+    "fi": "Oslo",
+    "sv": "Oslo"
+   },
+   {
+    "en": "Copenhagen",
+    "fi": "Kopenhamina",
+    "sv": "Köpenhamn"
+   }
+  ],
+  "n": {
+   "en": "Helsinki had also been awarded the 1940 Games, which were cancelled because of the war.",
+   "fi": "Helsingille oli myönnetty myös vuoden 1940 kisat, jotka peruttiin sodan vuoksi.",
+   "sv": "Helsingfors hade också fått 1940 års spel, som ställdes in på grund av kriget."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How tall is the tower of the Helsinki Olympic Stadium?",
+   "fi": "Kuinka korkea on Helsingin olympiastadionin torni?",
+   "sv": "Hur högt är tornet vid Helsingfors olympiastadion?"
+  },
+  "o": [
+   {
+    "en": "72.71 m",
+    "fi": "72,71 m",
+    "sv": "72,71 m"
+   },
+   {
+    "en": "52.71 m",
+    "fi": "52,71 m",
+    "sv": "52,71 m"
+   },
+   {
+    "en": "62.71 m",
+    "fi": "62,71 m",
+    "sv": "62,71 m"
+   },
+   {
+    "en": "82.71 m",
+    "fi": "82,71 m",
+    "sv": "82,71 m"
+   }
+  ],
+  "n": {
+   "en": "It matches the length of Matti Järvinen's gold medal javelin throw at the 1932 Olympics.",
+   "fi": "Se vastaa Matti Järvisen olympiavoittoheiton pituutta vuoden 1932 kisoissa.",
+   "sv": "Det motsvarar längden på Matti Järvinens guldkast i spjut vid OS 1932."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Who invented pesäpallo, Finnish baseball?",
+   "fi": "Kuka kehitti pesäpallon?",
+   "sv": "Vem skapade boboll, den finska bollsporten?"
+  },
+  "o": [
+   {
+    "en": "Lauri \"Tahko\" Pihkala",
+    "fi": "Lauri \"Tahko\" Pihkala",
+    "sv": "Lauri \"Tahko\" Pihkala"
+   },
+   {
+    "en": "Ville Ritola",
+    "fi": "Ville Ritola",
+    "sv": "Ville Ritola"
+   },
+   {
+    "en": "Matti Järvinen",
+    "fi": "Matti Järvinen",
+    "sv": "Matti Järvinen"
+   },
+   {
+    "en": "Hannes Kolehmainen",
+    "fi": "Hannes Kolehmainen",
+    "sv": "Hannes Kolehmainen"
+   }
+  ],
+  "n": {
+   "en": "The first game was played in Kaisaniemi park in Helsinki in November 1920.",
+   "fi": "Ensimmäinen peli pelattiin Helsingin Kaisaniemen puistossa marraskuussa 1920.",
+   "sv": "Den första matchen spelades i Kajsaniemiparken i Helsingfors i november 1920."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "In pesäpallo, which way does the pitcher throw the ball?",
+   "fi": "Mihin suuntaan pesäpallon syöttäjä heittää pallon?",
+   "sv": "I vilken riktning kastar mataren bollen i boboll?"
+  },
+  "o": [
+   {
+    "en": "Straight up",
+    "fi": "Suoraan ylös",
+    "sv": "Rakt upp"
+   },
+   {
+    "en": "Along the ground",
+    "fi": "Pitkin maata",
+    "sv": "Längs marken"
+   },
+   {
+    "en": "Sideways past the batter",
+    "fi": "Sivulta lyöjän ohi",
+    "sv": "Från sidan förbi slagmannen"
+   },
+   {
+    "en": "Overarm at the batter",
+    "fi": "Yläkautta lyöjää kohti",
+    "sv": "Överarm mot slagmannen"
+   }
+  ],
+  "n": {
+   "en": "It has to rise at least a metre above the pitcher's head and come down on the plate.",
+   "fi": "Pallon on noustava vähintään metrin syöttäjän pään yläpuolelle ja laskeuduttava lautaselle.",
+   "sv": "Bollen måste stiga minst en meter över matarens huvud och landa på plattan."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many field bases does a pesäpallo field have?",
+   "fi": "Kuinka monta pesää pesäpallokentällä on kotipesän lisäksi?",
+   "sv": "Hur många baser utöver hemmaplattan finns på en bobollsplan?"
+  },
+  "o": [
+   {
+    "en": "Three",
+    "fi": "Kolme",
+    "sv": "Tre"
+   },
+   {
+    "en": "Two",
+    "fi": "Kaksi",
+    "sv": "Två"
+   },
+   {
+    "en": "Four",
+    "fi": "Neljä",
+    "sv": "Fyra"
+   },
+   {
+    "en": "Five",
+    "fi": "Viisi",
+    "sv": "Fem"
+   }
+  ],
+  "n": {
+   "en": "They zig-zag across the field instead of forming a diamond, and a ball hit over the back line is a foul, so there are no home runs.",
+   "fi": "Pesät sijaitsevat siksakissa eivätkä timanttina, ja takarajan yli lyöty pallo on virhe, joten kunnareita ei ole.",
+   "sv": "Baserna ligger i sicksack i stället för i en diamant, och en boll som slås över baklinjen är fel, så det finns inga homeruns."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "In which Finnish village are the Wife Carrying World Championships held?",
+   "fi": "Missä suomalaisessa kunnassa järjestetään eukonkannon maailmanmestaruuskilpailut?",
+   "sv": "I vilken finsk by hålls VM i hustrubärning?"
+  },
+  "o": [
+   {
+    "en": "Sonkajärvi",
+    "fi": "Sonkajärvi",
+    "sv": "Sonkajärvi"
+   },
+   {
+    "en": "Nurmes",
+    "fi": "Nurmes",
+    "sv": "Nurmes"
+   },
+   {
+    "en": "Ilomantsi",
+    "fi": "Ilomantsi",
+    "sv": "Ilomants"
+   },
+   {
+    "en": "Sodankylä",
+    "fi": "Sodankylä",
+    "sv": "Sodankylä"
+   }
+  ],
+  "n": {
+   "en": "The course is 253.5 metres long and includes a water obstacle about a metre deep.",
+   "fi": "Rata on 253,5 metriä pitkä ja siihen kuuluu noin metrin syvyinen vesieste.",
+   "sv": "Banan är 253,5 meter lång och innehåller ett vattenhinder som är ungefär en meter djupt."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many Olympic gold medals did the ski jumper Matti Nykänen win?",
+   "fi": "Kuinka monta olympiakultaa mäkihyppääjä Matti Nykänen voitti?",
+   "sv": "Hur många OS-guld vann backhopparen Matti Nykänen?"
+  },
+  "o": [
+   {
+    "en": "Four",
+    "fi": "Neljä",
+    "sv": "Fyra"
+   },
+   {
+    "en": "Two",
+    "fi": "Kaksi",
+    "sv": "Två"
+   },
+   {
+    "en": "Three",
+    "fi": "Kolme",
+    "sv": "Tre"
+   },
+   {
+    "en": "Six",
+    "fi": "Kuusi",
+    "sv": "Sex"
+   }
+  ],
+  "n": {
+   "en": "Three of them came at the 1988 Calgary Games alone.",
+   "fi": "Kolme niistä tuli yksin Calgaryn kisoissa 1988.",
+   "sv": "Tre av dem kom under enbart Calgaryspelen 1988."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which Finn won the Olympic javelin title in 1948 and later became a much-loved singer?",
+   "fi": "Kuka suomalainen voitti keihäänheiton olympiakullan 1948 ja nousi myöhemmin rakastetuksi laulajaksi?",
+   "sv": "Vilken finländare vann OS-guld i spjut 1948 och blev senare en folkkär sångare?"
+  },
+  "o": [
+   {
+    "en": "Tapio Rautavaara",
+    "fi": "Tapio Rautavaara",
+    "sv": "Tapio Rautavaara"
+   },
+   {
+    "en": "Matti Järvinen",
+    "fi": "Matti Järvinen",
+    "sv": "Matti Järvinen"
+   },
+   {
+    "en": "Yrjö Nikkanen",
+    "fi": "Yrjö Nikkanen",
+    "sv": "Yrjö Nikkanen"
+   },
+   {
+    "en": "Toivo Hyytiäinen",
+    "fi": "Toivo Hyytiäinen",
+    "sv": "Toivo Hyytiäinen"
+   }
+  ],
+  "n": {
+   "en": "He also took a team gold at the world archery championships ten years later.",
+   "fi": "Hän voitti vielä kymmenen vuotta myöhemmin joukkuekultaa jousiammunnan MM-kilpailuissa.",
+   "sv": "Tio år senare tog han dessutom lagguld i VM i bågskytte."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "By what margin did Juha Mieto lose the Olympic 15 km cross-country race in 1980?",
+   "fi": "Kuinka pienellä erolla Juha Mieto hävisi olympialaisten 15 kilometrin hiihdon 1980?",
+   "sv": "Med vilken marginal förlorade Juha Mieto OS-loppet på 15 km 1980?"
+  },
+  "o": [
+   {
+    "en": "One hundredth of a second",
+    "fi": "Sadasosasekunti",
+    "sv": "En hundradels sekund"
+   },
+   {
+    "en": "One tenth of a second",
+    "fi": "Kymmenesosasekunti",
+    "sv": "En tiondels sekund"
+   },
+   {
+    "en": "One second",
+    "fi": "Sekunti",
+    "sv": "En sekund"
+   },
+   {
+    "en": "Four seconds",
+    "fi": "Neljä sekuntia",
+    "sv": "Fyra sekunder"
+   }
+  ],
+  "n": {
+   "en": "Right afterwards the sport switched to timing cross-country races in tenths of a second.",
+   "fi": "Heti sen jälkeen hiihdossa siirryttiin kymmenesosasekunnin tarkkuuteen.",
+   "sv": "Strax därefter gick längdskidåkningen över till att ta tid i tiondels sekunder."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which country did Finland beat in the 1995 ice hockey world championship final?",
+   "fi": "Minkä maan Suomi voitti jääkiekon MM-finaalissa 1995?",
+   "sv": "Vilket land besegrade Finland i VM-finalen i ishockey 1995?"
+  },
+  "o": [
+   {
+    "en": "Sweden",
+    "fi": "Ruotsi",
+    "sv": "Sverige"
+   },
+   {
+    "en": "Russia",
+    "fi": "Venäjä",
+    "sv": "Ryssland"
+   },
+   {
+    "en": "Canada",
+    "fi": "Kanada",
+    "sv": "Kanada"
+   },
+   {
+    "en": "The Czech Republic",
+    "fi": "Tšekki",
+    "sv": "Tjeckien"
+   }
+  ],
+  "n": {
+   "en": "Finland won 4-1, and did it in Stockholm, in Sweden's own arena.",
+   "fi": "Suomi voitti 4-1, ja vieläpä Tukholmassa, Ruotsin omassa hallissa.",
+   "sv": "Finland vann 4-1, och det i Stockholm, i Sveriges egen arena."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which Finnish city is the home of Rally Finland?",
+   "fi": "Mikä suomalainen kaupunki on Rally Finlandin kotipaikka?",
+   "sv": "Vilken finsk stad är hemort för Rally Finland?"
+  },
+  "o": [
+   {
+    "en": "Jyväskylä",
+    "fi": "Jyväskylä",
+    "sv": "Jyväskylä"
+   },
+   {
+    "en": "Tampere",
+    "fi": "Tampere",
+    "sv": "Tammerfors"
+   },
+   {
+    "en": "Kuopio",
+    "fi": "Kuopio",
+    "sv": "Kuopio"
+   },
+   {
+    "en": "Lahti",
+    "fi": "Lahti",
+    "sv": "Lahtis"
+   }
+  ],
+  "n": {
+   "en": "It was first run in 1951 as the Jyväskylä Grand Prix, and was long known as the Rally of the Thousand Lakes.",
+   "fi": "Se ajettiin ensi kerran 1951 Jyväskylän Suurajoina ja tunnettiin pitkään Tuhannen järven rallina.",
+   "sv": "Det kördes första gången 1951 som Jyväskylän Suurajot och kallades länge De tusen sjöarnas rally."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "What score do you need to win a game of mölkky?",
+   "fi": "Mihin pistemäärään mölkyssä on päästävä tasan voittaakseen?",
+   "sv": "Vilken poängsumma måste man nå exakt för att vinna i mölkky?"
+  },
+  "o": [
+   {
+    "en": "Exactly 50",
+    "fi": "Tasan 50",
+    "sv": "Exakt 50"
+   },
+   {
+    "en": "Exactly 21",
+    "fi": "Tasan 21",
+    "sv": "Exakt 21"
+   },
+   {
+    "en": "Exactly 40",
+    "fi": "Tasan 40",
+    "sv": "Exakt 40"
+   },
+   {
+    "en": "Exactly 100",
+    "fi": "Tasan 100",
+    "sv": "Exakt 100"
+   }
+  ],
+  "n": {
+   "en": "Go over the total and your score drops back down to 25.",
+   "fi": "Jos menee yli, pisteet putoavat takaisin 25:een.",
+   "sv": "Går man över faller poängen tillbaka till 25."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many numbered pins are used in mölkky?",
+   "fi": "Kuinka monta numeroitua keilaa mölkyssä on?",
+   "sv": "Hur många numrerade pinnar används i mölkky?"
+  },
+  "o": [
+   {
+    "en": "Twelve",
+    "fi": "Kaksitoista",
+    "sv": "Tolv"
+   },
+   {
+    "en": "Nine",
+    "fi": "Yhdeksän",
+    "sv": "Nio"
+   },
+   {
+    "en": "Ten",
+    "fi": "Kymmenen",
+    "sv": "Tio"
+   },
+   {
+    "en": "Fifteen",
+    "fi": "Viisitoista",
+    "sv": "Femton"
+   }
+  ],
+  "n": {
+   "en": "Knock over several pins at once and you score the number of pins, not the numbers written on them.",
+   "fi": "Jos kaatuu useita keiloja, pisteitä tulee keilojen lukumäärä eikä niissä olevat numerot.",
+   "sv": "Fäller man flera pinnar samtidigt får man poäng för antalet pinnar, inte för siffrorna på dem."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which city hosted the 1912 Summer Olympics?",
+   "fi": "Mikä kaupunki järjesti kesäolympialaiset 1912?",
+   "sv": "Vilken stad stod värd för sommarolympiaden 1912?"
+  },
+  "o": [
+   {
+    "en": "Stockholm",
+    "fi": "Tukholma",
+    "sv": "Stockholm"
+   },
+   {
+    "en": "Antwerp",
+    "fi": "Antwerpen",
+    "sv": "Antwerpen"
+   },
+   {
+    "en": "Paris",
+    "fi": "Pariisi",
+    "sv": "Paris"
+   },
+   {
+    "en": "Berlin",
+    "fi": "Berliini",
+    "sv": "Berlin"
+   }
+  ],
+  "n": {
+   "en": "Hannes Kolehmainen won three golds there, the first of the Flying Finns.",
+   "fi": "Hannes Kolehmainen voitti siellä kolme kultaa ensimmäisenä lentävänä suomalaisena.",
+   "sv": "Hannes Kolehmainen tog tre guld där, den förste av de flygande finnarna."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How long is the Swedish ski race Vasaloppet?",
+   "fi": "Kuinka pitkä on ruotsalainen hiihtokilpailu Vasaloppet?",
+   "sv": "Hur långt är Vasaloppet?"
+  },
+  "o": [
+   {
+    "en": "90 km",
+    "fi": "90 km",
+    "sv": "90 km"
+   },
+   {
+    "en": "50 km",
+    "fi": "50 km",
+    "sv": "50 km"
+   },
+   {
+    "en": "70 km",
+    "fi": "70 km",
+    "sv": "70 km"
+   },
+   {
+    "en": "120 km",
+    "fi": "120 km",
+    "sv": "120 km"
+   }
+  ],
+  "n": {
+   "en": "It runs from Sälen to Mora and recalls Gustav Vasa's flight through Dalarna around 1520; the first race was held in 1922.",
+   "fi": "Se hiihdetään Säleniltä Moraan ja muistuttaa Kustaa Vaasan paosta Taalainmaan halki noin 1520; ensimmäinen kilpailu hiihdettiin 1922.",
+   "sv": "Det går från Sälen till Mora och påminner om Gustav Vasas flykt genom Dalarna kring 1520; det första loppet kördes 1922."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "In which city is the Holmenkollen ski arena?",
+   "fi": "Missä kaupungissa Holmenkollenin hiihtostadion on?",
+   "sv": "I vilken stad ligger skidarenan Holmenkollen?"
+  },
+  "o": [
+   {
+    "en": "Oslo",
+    "fi": "Oslo",
+    "sv": "Oslo"
+   },
+   {
+    "en": "Stockholm",
+    "fi": "Tukholma",
+    "sv": "Stockholm"
+   },
+   {
+    "en": "Trondheim",
+    "fi": "Trondheim",
+    "sv": "Trondheim"
+   },
+   {
+    "en": "Lillehammer",
+    "fi": "Lillehammer",
+    "sv": "Lillehammer"
+   }
+  ],
+  "n": {
+   "en": "A ski festival has been held there every year since 1892, apart from one gap and the war years.",
+   "fi": "Siellä on järjestetty hiihtojuhlat vuosittain jo vuodesta 1892, yhtä väliin jäänyttä vuotta ja sotavuosia lukuun ottamatta.",
+   "sv": "Där har en skidfest hållits varje år sedan 1892, bortsett från ett enda år och krigsåren."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which Norwegian town hosted the 1994 Winter Olympics?",
+   "fi": "Mikä norjalainen kaupunki järjesti talviolympialaiset 1994?",
+   "sv": "Vilken norsk stad stod värd för vinterolympiaden 1994?"
+  },
+  "o": [
+   {
+    "en": "Lillehammer",
+    "fi": "Lillehammer",
+    "sv": "Lillehammer"
+   },
+   {
+    "en": "Oslo",
+    "fi": "Oslo",
+    "sv": "Oslo"
+   },
+   {
+    "en": "Trondheim",
+    "fi": "Trondheim",
+    "sv": "Trondheim"
+   },
+   {
+    "en": "Bergen",
+    "fi": "Bergen",
+    "sv": "Bergen"
+   }
+  ],
+  "n": {
+   "en": "Oslo had hosted the Winter Games back in 1952, the same year Helsinki hosted the Summer Games.",
+   "fi": "Oslo oli järjestänyt talvikisat jo 1952, samana vuonna kun Helsinki järjesti kesäkisat.",
+   "sv": "Oslo hade stått värd för vinterspelen redan 1952, samma år som Helsingfors hade sommarspelen."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How long is a marathon?",
+   "fi": "Kuinka pitkä on maraton?",
+   "sv": "Hur långt är ett maratonlopp?"
+  },
+  "o": [
+   {
+    "en": "42.195 km",
+    "fi": "42,195 km",
+    "sv": "42,195 km"
+   },
+   {
+    "en": "40.000 km",
+    "fi": "40,000 km",
+    "sv": "40,000 km"
+   },
+   {
+    "en": "41.195 km",
+    "fi": "41,195 km",
+    "sv": "41,195 km"
+   },
+   {
+    "en": "45.000 km",
+    "fi": "45,000 km",
+    "sv": "45,000 km"
+   }
+  ],
+  "n": {
+   "en": "The odd figure comes from the 1908 London course, from Windsor Castle to the royal box, and was fixed as the standard in 1921.",
+   "fi": "Omituinen luku on peräisin Lontoon 1908 radalta, joka kulki Windsorin linnasta kuninkaalliselle katsomoon, ja se vahvistettiin viralliseksi 1921.",
+   "sv": "Den udda siffran kommer från Londonbanan 1908, från Windsor Castle till den kungliga logen, och fastställdes som standard 1921."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Who invented basketball?",
+   "fi": "Kuka kehitti koripallon?",
+   "sv": "Vem uppfann basket?"
+  },
+  "o": [
+   {
+    "en": "James Naismith",
+    "fi": "James Naismith",
+    "sv": "James Naismith"
+   },
+   {
+    "en": "Walter Camp",
+    "fi": "Walter Camp",
+    "sv": "Walter Camp"
+   },
+   {
+    "en": "Abner Doubleday",
+    "fi": "Abner Doubleday",
+    "sv": "Abner Doubleday"
+   },
+   {
+    "en": "William G. Morgan",
+    "fi": "William G. Morgan",
+    "sv": "William G. Morgan"
+   }
+  ],
+  "n": {
+   "en": "He nailed two peach baskets to a gym balcony in Springfield in 1891, and someone had to fetch a ladder after every basket.",
+   "fi": "Hän naulasi kaksi persikkakoria salin parvekkeen kaiteeseen Springfieldissä 1891, ja joka korin jälkeen oli haettava tikkaat.",
+   "sv": "Han spikade upp två persikokorgar på en gymnastiksalsbalkong i Springfield 1891, och efter varje korg fick någon hämta en stege."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How high is a basketball hoop?",
+   "fi": "Kuinka korkealla on koripallokori?",
+   "sv": "Hur högt sitter en basketkorg?"
+  },
+  "o": [
+   {
+    "en": "3.05 m",
+    "fi": "3,05 m",
+    "sv": "3,05 m"
+   },
+   {
+    "en": "2.75 m",
+    "fi": "2,75 m",
+    "sv": "2,75 m"
+   },
+   {
+    "en": "3.25 m",
+    "fi": "3,25 m",
+    "sv": "3,25 m"
+   },
+   {
+    "en": "3.50 m",
+    "fi": "3,50 m",
+    "sv": "3,50 m"
+   }
+  ],
+  "n": {
+   "en": "It is exactly ten feet, because that was the height of the running-track railing the first baskets were hung on.",
+   "fi": "Se on tasan kymmenen jalkaa, koska juoksuradan kaide, johon ensimmäiset korit ripustettiin, oli sillä korkeudella.",
+   "sv": "Det är exakt tio fot, för så högt satt räcket till löparbanan där de första korgarna hängdes upp."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How far is the penalty spot from the goal line in football?",
+   "fi": "Kuinka kaukana rangaistuspotkupiste on maaliviivasta jalkapallossa?",
+   "sv": "Hur långt från mållinjen ligger straffpunkten i fotboll?"
+  },
+  "o": [
+   {
+    "en": "11 m",
+    "fi": "11 m",
+    "sv": "11 m"
+   },
+   {
+    "en": "9 m",
+    "fi": "9 m",
+    "sv": "9 m"
+   },
+   {
+    "en": "12 m",
+    "fi": "12 m",
+    "sv": "12 m"
+   },
+   {
+    "en": "15 m",
+    "fi": "15 m",
+    "sv": "15 m"
+   }
+  ],
+  "n": {
+   "en": "That is twelve yards, and the penalty kick was only written into the laws of the game in 1891.",
+   "fi": "Se on kaksitoista jaardia, ja rangaistuspotku kirjattiin sääntöihin vasta 1891.",
+   "sv": "Det är tolv yards, och straffsparken skrevs in i reglerna först 1891."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How wide is a football goal?",
+   "fi": "Kuinka leveä on jalkapallomaali?",
+   "sv": "Hur brett är ett fotbollsmål?"
+  },
+  "o": [
+   {
+    "en": "7.32 m",
+    "fi": "7,32 m",
+    "sv": "7,32 m"
+   },
+   {
+    "en": "6.40 m",
+    "fi": "6,40 m",
+    "sv": "6,40 m"
+   },
+   {
+    "en": "8.00 m",
+    "fi": "8,00 m",
+    "sv": "8,00 m"
+   },
+   {
+    "en": "9.15 m",
+    "fi": "9,15 m",
+    "sv": "9,15 m"
+   }
+  ],
+  "n": {
+   "en": "Eight yards between the posts, with the crossbar 2.44 metres up.",
+   "fi": "Kahdeksan jaardia tolppien väliä, ja poikkipuu 2,44 metrin korkeudella.",
+   "sv": "Åtta yards mellan stolparna, med ribban 2,44 meter upp."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "In which country was the first football World Cup played?",
+   "fi": "Missä maassa pelattiin jalkapallon ensimmäiset MM-kilpailut?",
+   "sv": "I vilket land spelades det första fotbolls-VM?"
+  },
+  "o": [
+   {
+    "en": "Uruguay",
+    "fi": "Uruguay",
+    "sv": "Uruguay"
+   },
+   {
+    "en": "Brazil",
+    "fi": "Brasilia",
+    "sv": "Brasilien"
+   },
+   {
+    "en": "Italy",
+    "fi": "Italia",
+    "sv": "Italien"
+   },
+   {
+    "en": "France",
+    "fi": "Ranska",
+    "sv": "Frankrike"
+   }
+  ],
+  "n": {
+   "en": "Uruguay hosted it in 1930 and won it, beating Argentina 4-2; thirteen teams took part and it is the only World Cup with no qualifying round.",
+   "fi": "Uruguay isännöi kisoja 1930 ja voitti ne kaataen Argentiinan 4-2; mukana oli kolmetoista maata, eikä karsintoja pelattu kertaakaan muissa kisoissa.",
+   "sv": "Uruguay var värd 1930 och vann genom att slå Argentina 4-2; tretton lag deltog och det är det enda VM utan kvalspel."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "At which World Cup were yellow and red cards first used?",
+   "fi": "Missä jalkapallon MM-kilpailuissa otettiin keltaiset ja punaiset kortit ensi kerran käyttöön?",
+   "sv": "I vilket fotbolls-VM användes gula och röda kort för första gången?"
+  },
+  "o": [
+   {
+    "en": "Mexico 1970",
+    "fi": "Meksiko 1970",
+    "sv": "Mexiko 1970"
+   },
+   {
+    "en": "Sweden 1958",
+    "fi": "Ruotsi 1958",
+    "sv": "Sverige 1958"
+   },
+   {
+    "en": "England 1966",
+    "fi": "Englanti 1966",
+    "sv": "England 1966"
+   },
+   {
+    "en": "West Germany 1974",
+    "fi": "Länsi-Saksa 1974",
+    "sv": "Västtyskland 1974"
+   }
+  ],
+  "n": {
+   "en": "An English referee took the idea from traffic lights, so that a decision would be understood in any language.",
+   "fi": "Englantilainen erotuomari sai idean liikennevaloista, jotta päätös ymmärrettäisiin kielestä riippumatta.",
+   "sv": "En engelsk domare fick idén från trafikljus, så att ett beslut skulle förstås oavsett språk."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "On which surface is Wimbledon played?",
+   "fi": "Millä alustalla Wimbledon pelataan?",
+   "sv": "På vilket underlag spelas Wimbledon?"
+  },
+  "o": [
+   {
+    "en": "Grass",
+    "fi": "Ruoho",
+    "sv": "Gräs"
+   },
+   {
+    "en": "Clay",
+    "fi": "Savi",
+    "sv": "Grus"
+   },
+   {
+    "en": "Hard court",
+    "fi": "Kovakenttä",
+    "sv": "Hardcourt"
+   },
+   {
+    "en": "Carpet",
+    "fi": "Matto",
+    "sv": "Matta"
+   }
+  ],
+  "n": {
+   "en": "First played in 1877, it is the oldest tennis tournament in the world and the only Grand Slam still on natural grass.",
+   "fi": "Se pelattiin ensi kerran 1877 ja on maailman vanhin tennisturnaus sekä ainoa Grand Slam yhä luonnonruoholla.",
+   "sv": "Den spelades första gången 1877 och är världens äldsta tennisturnering och den enda Grand Slam som fortfarande spelas på naturgräs."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "On which surface is the French Open played?",
+   "fi": "Millä alustalla Ranskan avoimet pelataan?",
+   "sv": "På vilket underlag spelas Franska öppna?"
+  },
+  "o": [
+   {
+    "en": "Clay",
+    "fi": "Savi",
+    "sv": "Grus"
+   },
+   {
+    "en": "Grass",
+    "fi": "Ruoho",
+    "sv": "Gräs"
+   },
+   {
+    "en": "Hard court",
+    "fi": "Kovakenttä",
+    "sv": "Hardcourt"
+   },
+   {
+    "en": "Indoor wood",
+    "fi": "Sisähallin parketti",
+    "sv": "Trägolv inomhus"
+   }
+  ],
+  "n": {
+   "en": "The red is only a few millimetres of crushed brick over white limestone, and the stadium is named after an aviator, not a tennis player.",
+   "fi": "Punainen pinta on vain muutaman millimetrin kerros tiilijauhetta valkoisen kalkkikiven päällä, ja stadion on nimetty lentäjän eikä tennispelaajan mukaan.",
+   "sv": "Det röda är bara några millimeter krossat tegel ovanpå vit kalksten, och stadion är uppkallad efter en flygare, inte en tennisspelare."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "In tennis, what is a score of zero called?",
+   "fi": "Mitä nollapistettä tenniksessä kutsutaan?",
+   "sv": "Vad kallas noll poäng i tennis?"
+  },
+  "o": [
+   {
+    "en": "Love",
+    "fi": "Love",
+    "sv": "Love"
+   },
+   {
+    "en": "Duck",
+    "fi": "Duck",
+    "sv": "Duck"
+   },
+   {
+    "en": "Nil",
+    "fi": "Nil",
+    "sv": "Nil"
+   },
+   {
+    "en": "Blank",
+    "fi": "Blank",
+    "sv": "Blank"
+   }
+  ],
+  "n": {
+   "en": "One explanation traces it to the French l'oeuf, an egg, for the shape of a nought.",
+   "fi": "Yhden selityksen mukaan se tulee ranskan sanasta l'oeuf, muna, nollan muodon mukaan.",
+   "sv": "En förklaring är franska l'oeuf, ett ägg, efter nollans form."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many holes does a full round of golf have?",
+   "fi": "Kuinka monta reikää täydellä golfkierroksella on?",
+   "sv": "Hur många hål har en full golfrunda?"
+  },
+  "o": [
+   {
+    "en": "18",
+    "fi": "18",
+    "sv": "18"
+   },
+   {
+    "en": "12",
+    "fi": "12",
+    "sv": "12"
+   },
+   {
+    "en": "16",
+    "fi": "16",
+    "sv": "16"
+   },
+   {
+    "en": "20",
+    "fi": "20",
+    "sv": "20"
+   }
+  ],
+  "n": {
+   "en": "St Andrews cut its course from 22 holes to 18 in 1764, and the rest of the world followed.",
+   "fi": "St Andrews supisti kenttänsä 22 reiästä 18:aan vuonna 1764, ja muu maailma seurasi perässä.",
+   "sv": "St Andrews minskade sin bana från 22 hål till 18 år 1764, och resten av världen följde efter."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "What is the diameter of a golf hole?",
+   "fi": "Mikä on golfreiän halkaisija?",
+   "sv": "Vilken diameter har ett golfhål?"
+  },
+  "o": [
+   {
+    "en": "108 mm",
+    "fi": "108 mm",
+    "sv": "108 mm"
+   },
+   {
+    "en": "88 mm",
+    "fi": "88 mm",
+    "sv": "88 mm"
+   },
+   {
+    "en": "128 mm",
+    "fi": "128 mm",
+    "sv": "128 mm"
+   },
+   {
+    "en": "150 mm",
+    "fi": "150 mm",
+    "sv": "150 mm"
+   }
+  ],
+  "n": {
+   "en": "That is 4.25 inches, said to come from the width of a piece of drainpipe used to line the first cups.",
+   "fi": "Se on 4,25 tuumaa, ja mitan kerrotaan tulevan viemäriputken pätkästä, jolla ensimmäiset reiät vuorattiin.",
+   "sv": "Det är 4,25 tum, och måttet sägs komma från en bit avloppsrör som användes att klä de första hålen med."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many players from each team are on the ice in ice hockey?",
+   "fi": "Kuinka monta pelaajaa kummallakin joukkueella on kerrallaan jäällä jääkiekossa?",
+   "sv": "Hur många spelare per lag är på isen i ishockey?"
+  },
+  "o": [
+   {
+    "en": "Six",
+    "fi": "Kuusi",
+    "sv": "Sex"
+   },
+   {
+    "en": "Five",
+    "fi": "Viisi",
+    "sv": "Fem"
+   },
+   {
+    "en": "Seven",
+    "fi": "Seitsemän",
+    "sv": "Sju"
+   },
+   {
+    "en": "Eleven",
+    "fi": "Yksitoista",
+    "sv": "Elva"
+   }
+  ],
+  "n": {
+   "en": "Five skaters and a goaltender, and a game is three periods of twenty minutes of actual play.",
+   "fi": "Viisi kentällistä ja maalivahti, ja peli käsittää kolme kahdenkymmenen minuutin erää tehokasta peliaikaa.",
+   "sv": "Fem utespelare och en målvakt, och matchen är tre perioder på tjugo minuters effektiv speltid."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many events make up the decathlon?",
+   "fi": "Kuinka monta lajia kymmenottelussa on?",
+   "sv": "Hur många grenar består tiokampen av?"
+  },
+  "o": [
+   {
+    "en": "Ten",
+    "fi": "Kymmenen",
+    "sv": "Tio"
+   },
+   {
+    "en": "Seven",
+    "fi": "Seitsemän",
+    "sv": "Sju"
+   },
+   {
+    "en": "Eight",
+    "fi": "Kahdeksan",
+    "sv": "Åtta"
+   },
+   {
+    "en": "Twelve",
+    "fi": "Kaksitoista",
+    "sv": "Tolv"
+   }
+  ],
+  "n": {
+   "en": "They are spread over two days and end with the 1500 metres; the women's heptathlon has seven.",
+   "fi": "Lajit jakautuvat kahdelle päivälle ja päättyvät 1500 metriin; naisten seitsenottelussa on seitsemän lajia.",
+   "sv": "Grenarna fördelas på två dagar och avslutas med 1500 meter; damernas sjukamp har sju grenar."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which high jump technique is named after the American who won Olympic gold with it in 1968?",
+   "fi": "Mikä korkeushypyn tekniikka on nimetty amerikkalaisen mukaan, joka voitti sillä olympiakultaa 1968?",
+   "sv": "Vilken höjdhoppsteknik är uppkallad efter amerikanen som vann OS-guld med den 1968?"
+  },
+  "o": [
+   {
+    "en": "The Fosbury Flop",
+    "fi": "Fosbury-flop",
+    "sv": "Fosburyflopp"
+   },
+   {
+    "en": "The Western roll",
+    "fi": "Western roll",
+    "sv": "Western roll"
+   },
+   {
+    "en": "The scissors",
+    "fi": "Saksihyppy",
+    "sv": "Saxhopp"
+   },
+   {
+    "en": "The straddle",
+    "fi": "Vatsatyyli",
+    "sv": "Dykstil"
+   }
+  ],
+  "n": {
+   "en": "He cleared 2.24 m going over backwards, and by the 1972 Games most of the field jumped that way.",
+   "fi": "Hän ylitti 2,24 metriä selkä edellä, ja vuoden 1972 kisoissa suurin osa kilpailijoista hyppäsi samalla tavalla.",
+   "sv": "Han klarade 2,24 m med ryggen först, och vid spelen 1972 hoppade större delen av fältet på samma sätt."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How heavy is the shot in the men's shot put?",
+   "fi": "Kuinka painava on kuula miesten kuulantyönnössä?",
+   "sv": "Hur tung är kulan i herrarnas kulstötning?"
+  },
+  "o": [
+   {
+    "en": "7.26 kg",
+    "fi": "7,26 kg",
+    "sv": "7,26 kg"
+   },
+   {
+    "en": "5.00 kg",
+    "fi": "5,00 kg",
+    "sv": "5,00 kg"
+   },
+   {
+    "en": "6.00 kg",
+    "fi": "6,00 kg",
+    "sv": "6,00 kg"
+   },
+   {
+    "en": "10.00 kg",
+    "fi": "10,00 kg",
+    "sv": "10,00 kg"
+   }
+  ],
+  "n": {
+   "en": "That is sixteen pounds; the women's shot weighs 4 kg, and the rules say the shot must be pushed from the shoulder rather than thrown.",
+   "fi": "Se on kuusitoista paunaa; naisten kuula painaa 4 kg, ja sääntöjen mukaan kuula on työnnettävä olkapäältä eikä heitettävä.",
+   "sv": "Det är sexton pund; damernas kula väger 4 kg, och reglerna säger att kulan ska stötas från axeln och inte kastas."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How long is an Olympic swimming pool?",
+   "fi": "Kuinka pitkä on olympiauima-allas?",
+   "sv": "Hur lång är en olympisk simbassäng?"
+  },
+  "o": [
+   {
+    "en": "50 m",
+    "fi": "50 m",
+    "sv": "50 m"
+   },
+   {
+    "en": "25 m",
+    "fi": "25 m",
+    "sv": "25 m"
+   },
+   {
+    "en": "33.3 m",
+    "fi": "33,3 m",
+    "sv": "33,3 m"
+   },
+   {
+    "en": "100 m",
+    "fi": "100 m",
+    "sv": "100 m"
+   }
+  ],
+  "n": {
+   "en": "Races in a 25 m pool count as short course and have their own separate record lists.",
+   "fi": "25 metrin altaassa uidut kilpailut ovat lyhyen radan uintia, ja niille pidetään omat ennätyslistat.",
+   "sv": "Lopp i en 25-metersbassäng räknas som kortbana och har egna rekordlistor."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which stroke comes first in the individual medley?",
+   "fi": "Mikä uintityyli uidaan ensimmäisenä sekauinnissa?",
+   "sv": "Vilket simsätt kommer först i individuellt medley?"
+  },
+  "o": [
+   {
+    "en": "Butterfly",
+    "fi": "Perhosuinti",
+    "sv": "Fjärilsim"
+   },
+   {
+    "en": "Backstroke",
+    "fi": "Selkäuinti",
+    "sv": "Ryggsim"
+   },
+   {
+    "en": "Breaststroke",
+    "fi": "Rintauinti",
+    "sv": "Bröstsim"
+   },
+   {
+    "en": "Freestyle",
+    "fi": "Vapaauinti",
+    "sv": "Frisim"
+   }
+  ],
+  "n": {
+   "en": "The medley relay starts with backstroke instead, because a backstroke swimmer starts in the water.",
+   "fi": "Viestissä aloitetaan sen sijaan selkäuinnilla, koska selkäuimari lähtee vedestä.",
+   "sv": "Medleylaget startar i stället med ryggsim, eftersom ryggsimmaren startar i vattnet."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "What colour is the jersey of the Tour de France leader?",
+   "fi": "Minkä värinen on Tour de Francen johtajan paita?",
+   "sv": "Vilken färg har ledartröjan i Tour de France?"
+  },
+  "o": [
+   {
+    "en": "Yellow",
+    "fi": "Keltainen",
+    "sv": "Gul"
+   },
+   {
+    "en": "Green",
+    "fi": "Vihreä",
+    "sv": "Grön"
+   },
+   {
+    "en": "Pink",
+    "fi": "Vaaleanpunainen",
+    "sv": "Rosa"
+   },
+   {
+    "en": "White with red dots",
+    "fi": "Valkoinen punaisin pilkuin",
+    "sv": "Vit med röda prickar"
+   }
+  ],
+  "n": {
+   "en": "The newspaper that founded the race, L'Auto, was printed on yellow newsprint.",
+   "fi": "Kilpailun perustanut sanomalehti L'Auto painettiin keltaiselle paperille.",
+   "sv": "Tidningen som grundade loppet, L'Auto, trycktes på gult papper."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which Grand Tour has a pink jersey for its leader?",
+   "fi": "Missä suuressa ympäriajossa johtaja pukeutuu vaaleanpunaiseen paitaan?",
+   "sv": "I vilket av de stora etapploppen bär ledaren rosa tröja?"
+  },
+  "o": [
+   {
+    "en": "The Giro d'Italia",
+    "fi": "Giro d'Italia",
+    "sv": "Giro d'Italia"
+   },
+   {
+    "en": "The Tour de France",
+    "fi": "Tour de France",
+    "sv": "Tour de France"
+   },
+   {
+    "en": "The Vuelta a España",
+    "fi": "Vuelta a España",
+    "sv": "Vuelta a España"
+   },
+   {
+    "en": "Paris-Nice",
+    "fi": "Paris-Nice",
+    "sv": "Paris-Nice"
+   }
+  ],
+  "n": {
+   "en": "La Gazzetta dello Sport, which created the race, is printed on pink paper, and the jersey appeared in 1931.",
+   "fi": "Kilpailun luonut La Gazzetta dello Sport painetaan vaaleanpunaiselle paperille, ja paita otettiin käyttöön 1931.",
+   "sv": "La Gazzetta dello Sport, som skapade loppet, trycks på rosa papper, och tröjan infördes 1931."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "In which year were the first modern Olympic Games held?",
+   "fi": "Minä vuonna järjestettiin ensimmäiset nykyaikaiset olympialaiset?",
+   "sv": "Vilket år hölls de första moderna olympiska spelen?"
+  },
+  "o": [
+   {
+    "en": "1896",
+    "fi": "1896",
+    "sv": "1896"
+   },
+   {
+    "en": "1888",
+    "fi": "1888",
+    "sv": "1888"
+   },
+   {
+    "en": "1900",
+    "fi": "1900",
+    "sv": "1900"
+   },
+   {
+    "en": "1906",
+    "fi": "1906",
+    "sv": "1906"
+   }
+  ],
+  "n": {
+   "en": "They were held in Athens, and the marathon was invented for them rather than inherited from antiquity.",
+   "fi": "Kisat pidettiin Ateenassa, ja maraton keksittiin niitä varten eikä periytynyt antiikista.",
+   "sv": "Spelen hölls i Athen, och maratonloppet hittades på för dem och ärvdes inte från antiken."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Who designed the five Olympic rings?",
+   "fi": "Kuka suunnitteli viisi olympiarengasta?",
+   "sv": "Vem ritade de fem olympiska ringarna?"
+  },
+  "o": [
+   {
+    "en": "Pierre de Coubertin",
+    "fi": "Pierre de Coubertin",
+    "sv": "Pierre de Coubertin"
+   },
+   {
+    "en": "Demetrios Vikelas",
+    "fi": "Demetrios Vikelas",
+    "sv": "Demetrios Vikelas"
+   },
+   {
+    "en": "Avery Brundage",
+    "fi": "Avery Brundage",
+    "sv": "Avery Brundage"
+   },
+   {
+    "en": "Carl Diem",
+    "fi": "Carl Diem",
+    "sv": "Carl Diem"
+   }
+  ],
+  "n": {
+   "en": "He drew them in 1913 and said the six colours, the white background included, could make up every national flag then flying.",
+   "fi": "Hän piirsi ne 1913 ja sanoi, että kuudesta väristä valkoinen pohja mukaan lukien saattoi koostaa kaikkien silloisten kansallislippujen värit.",
+   "sv": "Han ritade dem 1913 och menade att de sex färgerna, den vita bottnen inräknad, räckte till alla dåtidens nationsflaggor."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Where were the first Winter Olympic Games held?",
+   "fi": "Missä järjestettiin ensimmäiset talviolympialaiset?",
+   "sv": "Var hölls de första vinterolympiska spelen?"
+  },
+  "o": [
+   {
+    "en": "Chamonix",
+    "fi": "Chamonix",
+    "sv": "Chamonix"
+   },
+   {
+    "en": "St. Moritz",
+    "fi": "St. Moritz",
+    "sv": "St. Moritz"
+   },
+   {
+    "en": "Lake Placid",
+    "fi": "Lake Placid",
+    "sv": "Lake Placid"
+   },
+   {
+    "en": "Garmisch-Partenkirchen",
+    "fi": "Garmisch-Partenkirchen",
+    "sv": "Garmisch-Partenkirchen"
+   }
+  ],
+  "n": {
+   "en": "They were held in 1924 as an International Winter Sports Week, and were only counted as Olympic afterwards.",
+   "fi": "Ne järjestettiin 1924 kansainvälisenä talviurheiluviikkona, ja olympiastatus myönnettiin jälkikäteen.",
+   "sv": "De hölls 1924 som en internationell vintersportvecka och fick olympisk status först i efterhand."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "At which Olympics was the torch relay from Olympia first run?",
+   "fi": "Missä olympialaisissa juostiin ensimmäisen kerran soihtuviesti Olympiasta?",
+   "sv": "Vid vilka olympiska spel löptes facklöpet från Olympia för första gången?"
+  },
+  "o": [
+   {
+    "en": "Berlin 1936",
+    "fi": "Berliini 1936",
+    "sv": "Berlin 1936"
+   },
+   {
+    "en": "Amsterdam 1928",
+    "fi": "Amsterdam 1928",
+    "sv": "Amsterdam 1928"
+   },
+   {
+    "en": "Los Angeles 1932",
+    "fi": "Los Angeles 1932",
+    "sv": "Los Angeles 1932"
+   },
+   {
+    "en": "London 1948",
+    "fi": "Lontoo 1948",
+    "sv": "London 1948"
+   }
+  ],
+  "n": {
+   "en": "The idea came from the Berlin organisers, and more than 3,000 runners carried the flame across seven countries.",
+   "fi": "Idea tuli Berliinin järjestäjiltä, ja yli 3 000 juoksijaa kantoi tulta seitsemän maan läpi.",
+   "sv": "Idén kom från Berlins arrangörer, och över 3 000 löpare bar elden genom sju länder."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How high is the volleyball net in the men's game?",
+   "fi": "Kuinka korkealla on lentopalloverkko miesten pelissä?",
+   "sv": "Hur högt sitter volleybollnätet i herrarnas spel?"
+  },
+  "o": [
+   {
+    "en": "2.43 m",
+    "fi": "2,43 m",
+    "sv": "2,43 m"
+   },
+   {
+    "en": "2.24 m",
+    "fi": "2,24 m",
+    "sv": "2,24 m"
+   },
+   {
+    "en": "2.35 m",
+    "fi": "2,35 m",
+    "sv": "2,35 m"
+   },
+   {
+    "en": "2.55 m",
+    "fi": "2,55 m",
+    "sv": "2,55 m"
+   }
+  ],
+  "n": {
+   "en": "The women's net is 2.24 m, and the court is 18 by 9 metres.",
+   "fi": "Naisten verkko on 2,24 metriä, ja kenttä on 18 kertaa 9 metriä.",
+   "sv": "Damernas nät sitter på 2,24 m, och banan är 18 gånger 9 meter."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many players does a handball team have on court?",
+   "fi": "Kuinka monta pelaajaa käsipallojoukkueella on kentällä?",
+   "sv": "Hur många spelare har ett handbollslag på planen?"
+  },
+  "o": [
+   {
+    "en": "Seven",
+    "fi": "Seitsemän",
+    "sv": "Sju"
+   },
+   {
+    "en": "Six",
+    "fi": "Kuusi",
+    "sv": "Sex"
+   },
+   {
+    "en": "Five",
+    "fi": "Viisi",
+    "sv": "Fem"
+   },
+   {
+    "en": "Eleven",
+    "fi": "Yksitoista",
+    "sv": "Elva"
+   }
+  ],
+  "n": {
+   "en": "Six court players and a goalkeeper, on a court of 40 by 20 metres with goals 3 metres wide.",
+   "fi": "Kuusi kenttäpelaajaa ja maalivahti, 40 kertaa 20 metrin kentällä, jonka maalit ovat 3 metriä leveitä.",
+   "sv": "Sex utespelare och en målvakt, på en plan som är 40 gånger 20 meter med mål som är 3 meter breda."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many players are in a rugby union team?",
+   "fi": "Kuinka monta pelaajaa on rugby unionin joukkueessa?",
+   "sv": "Hur många spelare har ett lag i rugby union?"
+  },
+  "o": [
+   {
+    "en": "Fifteen",
+    "fi": "Viisitoista",
+    "sv": "Femton"
+   },
+   {
+    "en": "Thirteen",
+    "fi": "Kolmetoista",
+    "sv": "Tretton"
+   },
+   {
+    "en": "Eleven",
+    "fi": "Yksitoista",
+    "sv": "Elva"
+   },
+   {
+    "en": "Seventeen",
+    "fi": "Seitsemäntoista",
+    "sv": "Sjutton"
+   }
+  ],
+  "n": {
+   "en": "The other main code, rugby league, plays thirteen a side.",
+   "fi": "Lajin toinen päämuoto, rugby league, pelataan kolmentoista pelaajan joukkuein.",
+   "sv": "Den andra huvudgrenen, rugby league, spelas med tretton man per lag."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which Japanese educator founded judo?",
+   "fi": "Kuka japanilainen kasvattaja perusti judon?",
+   "sv": "Vilken japansk pedagog grundade judon?"
+  },
+  "o": [
+   {
+    "en": "Jigoro Kano",
+    "fi": "Jigoro Kano",
+    "sv": "Jigoro Kano"
+   },
+   {
+    "en": "Morihei Ueshiba",
+    "fi": "Morihei Ueshiba",
+    "sv": "Morihei Ueshiba"
+   },
+   {
+    "en": "Gichin Funakoshi",
+    "fi": "Gichin Funakoshi",
+    "sv": "Gichin Funakoshi"
+   },
+   {
+    "en": "Kanryo Higaonna",
+    "fi": "Kanryo Higaonna",
+    "sv": "Kanryo Higaonna"
+   }
+  ],
+  "n": {
+   "en": "He opened his Kodokan school in 1882, and the name judo means roughly the gentle way.",
+   "fi": "Hän perusti Kodokan-koulunsa vuonna 1882, ja nimi judo tarkoittaa suunnilleen pehmeää tietä.",
+   "sv": "Han grundade sin Kodokanskola 1882, och namnet judo betyder ungefär den mjuka vägen."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "What score does a leg of darts normally start from?",
+   "fi": "Mistä pistemäärästä darts-erä yleensä aloitetaan?",
+   "sv": "Från vilken poäng startar ett legg i dart normalt?"
+  },
+  "o": [
+   {
+    "en": "501",
+    "fi": "501",
+    "sv": "501"
+   },
+   {
+    "en": "301",
+    "fi": "301",
+    "sv": "301"
+   },
+   {
+    "en": "401",
+    "fi": "401",
+    "sv": "401"
+   },
+   {
+    "en": "601",
+    "fi": "601",
+    "sv": "601"
+   }
+  ],
+  "n": {
+   "en": "The most you can score with three darts is 180, and the leg has to be finished on a double.",
+   "fi": "Kolmella tikalla voi saada enintään 180 pistettä, ja erä on päätettävä kaksoiskenttään.",
+   "sv": "Med tre pilar kan man få högst 180 poäng, och legget måste avslutas på en dubbel."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "How many red balls are on the table at the start of a snooker frame?",
+   "fi": "Kuinka monta punaista palloa on pöydällä snookerin erän alussa?",
+   "sv": "Hur många röda bollar ligger på bordet när ett snookerframe börjar?"
+  },
+  "o": [
+   {
+    "en": "Fifteen",
+    "fi": "Viisitoista",
+    "sv": "Femton"
+   },
+   {
+    "en": "Twelve",
+    "fi": "Kaksitoista",
+    "sv": "Tolv"
+   },
+   {
+    "en": "Eighteen",
+    "fi": "Kahdeksantoista",
+    "sv": "Arton"
+   },
+   {
+    "en": "Twenty-one",
+    "fi": "Kaksikymmentäyksi",
+    "sv": "Tjugoen"
+   }
+  ],
+  "n": {
+   "en": "Fifteen reds each followed by a black, then the six colours in order, adds up to the maximum break of 147.",
+   "fi": "Viisitoista punaista kukin mustan kanssa ja sen jälkeen kuusi väripalloa järjestyksessä tekee suurimman mahdollisen sarjan 147.",
+   "sv": "Femton röda, var och en följd av svart, och sedan de sex färgerna i ordning ger den högsta möjliga serien 147."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "In which year was the first Formula 1 world championship held?",
+   "fi": "Minä vuonna ajettiin ensimmäinen Formula 1 -maailmanmestaruussarja?",
+   "sv": "Vilket år kördes det första Formel 1-VM?"
+  },
+  "o": [
+   {
+    "en": "1950",
+    "fi": "1950",
+    "sv": "1950"
+   },
+   {
+    "en": "1946",
+    "fi": "1946",
+    "sv": "1946"
+   },
+   {
+    "en": "1955",
+    "fi": "1955",
+    "sv": "1955"
+   },
+   {
+    "en": "1960",
+    "fi": "1960",
+    "sv": "1960"
+   }
+  ],
+  "n": {
+   "en": "The opening championship race was run at Silverstone in Britain in May 1950.",
+   "fi": "Sarjan avauskilpailu ajettiin Silverstonessa Britanniassa toukokuussa 1950.",
+   "sv": "Seriens första lopp kördes på Silverstone i Storbritannien i maj 1950."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which sport combines cross-country skiing with rifle shooting?",
+   "fi": "Mikä laji yhdistää maastohiihdon ja kiväärillä ampumisen?",
+   "sv": "Vilken sport kombinerar längdskidåkning med gevärsskytte?"
+  },
+  "o": [
+   {
+    "en": "Biathlon",
+    "fi": "Ampumahiihto",
+    "sv": "Skidskytte"
+   },
+   {
+    "en": "Nordic combined",
+    "fi": "Yhdistetty",
+    "sv": "Nordisk kombination"
+   },
+   {
+    "en": "Orienteering",
+    "fi": "Suunnistus",
+    "sv": "Orientering"
+   },
+   {
+    "en": "Modern pentathlon",
+    "fi": "Nykyaikainen viisiottelu",
+    "sv": "Modern femkamp"
+   }
+  ],
+  "n": {
+   "en": "The targets stand 50 metres away and are 4.5 cm wide for prone shooting but 11.5 cm for standing.",
+   "fi": "Taulut ovat 50 metrin päässä ja makuuasennossa 4,5 senttiä leveät, pystyasennossa 11,5 senttiä.",
+   "sv": "Måltavlorna står 50 meter bort och är 4,5 cm breda liggande men 11,5 cm stående."
+  }
+ }
+]

@@ -1,0 +1,562 @@
+[
+[
+"City",
+"Paris",
+"Vienna",
+"Brussels",
+"Lyon"
+],
+[
+"City",
+"Venice",
+"Amsterdam",
+"Bruges",
+"Stockholm"
+],
+[
+"City",
+"New York",
+"Chicago",
+"Toronto",
+"Boston"
+],
+[
+"City",
+"Sydney",
+"Auckland",
+"Melbourne",
+"Cape Town"
+],
+[
+"City",
+"Tokyo",
+"Seoul",
+"Osaka",
+"Taipei"
+],
+[
+"City",
+"Istanbul",
+"Cairo",
+"Tehran",
+"Baku"
+],
+[
+"City",
+"Rio de Janeiro",
+"Lisbon",
+"Havana",
+"Cartagena"
+],
+[
+"City",
+"Moscow",
+"Kyiv",
+"Minsk",
+"Warsaw"
+],
+[
+"City",
+"Barcelona",
+"Valencia",
+"Seville",
+"Porto"
+],
+[
+"City",
+"Amsterdam",
+"Copenhagen",
+"Hamburg",
+"Ghent"
+],
+[
+"City",
+"Prague",
+"Budapest",
+"Krakow",
+"Ljubljana"
+],
+[
+"City",
+"Dubai",
+"Doha",
+"Abu Dhabi",
+"Kuwait City"
+],
+[
+"City",
+"San Francisco",
+"Seattle",
+"Vancouver",
+"Portland"
+],
+[
+"City",
+"Helsinki",
+"Tallinn",
+"Riga",
+"Gothenburg"
+],
+[
+"City",
+"Stockholm",
+"Oslo",
+"Bergen",
+"Turku"
+],
+[
+"City",
+"Athens",
+"Rome",
+"Naples",
+"Thessaloniki"
+],
+[
+"City",
+"Singapore",
+"Hong Kong",
+"Shanghai",
+"Bangkok"
+],
+[
+"City",
+"Cape Town",
+"Durban",
+"Nairobi",
+"Casablanca"
+],
+[
+"City",
+"Edinburgh",
+"Dublin",
+"Glasgow",
+"York"
+],
+[
+"City",
+"St Petersburg",
+"Helsinki",
+"Tallinn",
+"Vilnius"
+],
+[
+"Landmark",
+"The Eiffel Tower",
+"The Blackpool Tower",
+"The Tokyo Tower",
+"The Berlin TV Tower"
+],
+[
+"Landmark",
+"The Colosseum",
+"The Arena of Nimes",
+"The Pula Arena",
+"The Theatre of Marcellus"
+],
+[
+"Landmark",
+"The Taj Mahal",
+"The Badshahi Mosque",
+"Humayun's Tomb",
+"The Pearl Mosque"
+],
+[
+"Landmark",
+"The Great Wall of China",
+"Hadrian's Wall",
+"The Walls of Dubrovnik",
+"The Kumbhalgarh Wall"
+],
+[
+"Landmark",
+"The Statue of Liberty",
+"The Motherland Calls",
+"Christ the Redeemer",
+"The Little Mermaid"
+],
+[
+"Landmark",
+"Big Ben",
+"The Rathaus Vienna",
+"The Belfry of Bruges",
+"Peace Tower Ottawa"
+],
+[
+"Landmark",
+"The Sagrada Familia",
+"Cologne Cathedral",
+"Milan Cathedral",
+"Notre-Dame de Paris"
+],
+[
+"Landmark",
+"Christ the Redeemer",
+"Cristo de la Concordia",
+"Christ of the Abyss",
+"The Christ of Havana"
+],
+[
+"Landmark",
+"Stonehenge",
+"The Ring of Brodgar",
+"Carnac stones",
+"Avebury"
+],
+[
+"Landmark",
+"Petra",
+"Abu Simbel",
+"Ellora Caves",
+"Lycian rock tombs"
+],
+[
+"Landmark",
+"The Parthenon",
+"The Temple of Hephaestus",
+"Paestum temple",
+"The Temple of Concordia"
+],
+[
+"Landmark",
+"The Leaning Tower of Pisa",
+"The Tower of Bologna",
+"The Suurhusen tower",
+"The Oldehove"
+],
+[
+"Landmark",
+"The Golden Gate Bridge",
+"The Brooklyn Bridge",
+"The Mackinac Bridge",
+"The Forth Bridge"
+],
+[
+"Landmark",
+"Mount Rushmore",
+"Stone Mountain",
+"Crazy Horse Memorial",
+"The Decebalus rock sculpture"
+],
+[
+"Landmark",
+"Neuschwanstein Castle",
+"Hohenzollern Castle",
+"Pena Palace",
+"Chateau de Chambord"
+],
+[
+"Landmark",
+"Angkor Wat",
+"Borobudur",
+"Bagan temples",
+"Prambanan"
+],
+[
+"Landmark",
+"The Pyramids of Giza",
+"The Pyramid of the Sun",
+"The Nubian pyramids",
+"Chichen Itza"
+],
+[
+"Landmark",
+"The Sydney Opera House",
+"The Oslo Opera House",
+"The Elbphilharmonie",
+"The Walt Disney Concert Hall"
+],
+[
+"Landmark",
+"The Brandenburg Gate",
+"The Arc de Triomphe",
+"The Arch of Titus",
+"The Siegestor"
+],
+[
+"Landmark",
+"The Moai of Easter Island",
+"The Olmec heads",
+"The Buddhas of Bamiyan",
+"The Nemrut statues"
+],
+[
+"Painting",
+"The Scream",
+"The Sick Child",
+"Anxiety Munch",
+"Despair Munch"
+],
+[
+"Painting",
+"The Starry Night",
+"Cafe Terrace at Night",
+"Wheatfield with Crows",
+"Starry Night Over the Rhone"
+],
+[
+"Painting",
+"Girl with a Pearl Earring",
+"The Milkmaid",
+"Study of a Young Woman",
+"The Lacemaker"
+],
+[
+"Painting",
+"The Birth of Venus",
+"Primavera Botticelli",
+"Venus of Urbino",
+"The Toilet of Venus"
+],
+[
+"Painting",
+"The Night Watch",
+"The Anatomy Lesson of Dr Tulp",
+"The Syndics",
+"The Jewish Bride"
+],
+[
+"Painting",
+"The Kiss",
+"Portrait of Adele Bloch-Bauer",
+"Judith and the Head of Holofernes",
+"Danae Klimt"
+],
+[
+"Painting",
+"Las Meninas",
+"The Surrender of Breda",
+"The Spinners Velazquez",
+"Portrait of Innocent X"
+],
+[
+"Painting",
+"The Great Wave off Kanagawa",
+"Red Fuji Hokusai",
+"Ejiri in Suruga Province",
+"Fifty-three Stations of the Tokaido"
+],
+[
+"Painting",
+"Water Lilies",
+"Impression Sunrise",
+"The Japanese Footbridge",
+"Haystacks Monet"
+],
+[
+"Painting",
+"The Garden of Earthly Delights",
+"The Haywain Triptych",
+"The Last Judgement Bosch",
+"The Temptation of St Anthony Bosch"
+],
+[
+"Painting",
+"The Last Supper",
+"The Wedding at Cana",
+"The Supper at Emmaus",
+"The Last Supper Tintoretto"
+],
+[
+"Painting",
+"The Creation of Adam",
+"The Separation of Light",
+"The Deluge Michelangelo",
+"The Last Judgement Michelangelo"
+],
+[
+"Painting",
+"Liberty Leading the People",
+"The Raft of the Medusa",
+"The Death of Sardanapalus",
+"The Oath of the Horatii"
+],
+[
+"Painting",
+"The Hay Wain",
+"The Fighting Temeraire",
+"Salisbury Cathedral Constable",
+"Rain Steam and Speed"
+],
+[
+"Painting",
+"The Arnolfini Portrait",
+"The Ghent Altarpiece",
+"Portrait of a Man in a Turban",
+"The Money Changer and His Wife"
+],
+[
+"Painting",
+"Whistler's Mother",
+"Madame X Sargent",
+"Portrait of Madame Recamier",
+"The Blue Boy"
+],
+[
+"Painting",
+"A Sunday Afternoon on La Grande Jatte",
+"Bathers at Asnieres",
+"The Circus Seurat",
+"Le Chahut"
+],
+[
+"Painting",
+"The Fighting Temeraire",
+"Rain Steam and Speed",
+"The Slave Ship",
+"Snow Storm Turner"
+],
+[
+"Painting",
+"Wanderer above the Sea of Fog",
+"The Monk by the Sea",
+"Chalk Cliffs on Rugen",
+"Two Men Contemplating the Moon"
+],
+[
+"Painting",
+"The Ninth Wave",
+"The Black Sea Aivazovsky",
+"Storm on the Sea of Azov",
+"Rainbow Aivazovsky"
+],
+[
+"Nature",
+"A puffin",
+"A razorbill",
+"A guillemot",
+"A little auk"
+],
+[
+"Nature",
+"An axolotl",
+"A newt",
+"A mudpuppy",
+"A salamander larva"
+],
+[
+"Nature",
+"A narwhal",
+"A beluga whale",
+"A walrus",
+"A pilot whale"
+],
+[
+"Nature",
+"A capybara",
+"A nutria",
+"A beaver",
+"A groundhog"
+],
+[
+"Nature",
+"A pangolin",
+"An armadillo",
+"An anteater",
+"An echidna"
+],
+[
+"Nature",
+"The northern lights",
+"Noctilucent clouds",
+"A solar eclipse",
+"The zodiacal light"
+],
+[
+"Nature",
+"A baobab tree",
+"A dragon blood tree",
+"A banyan",
+"A joshua tree"
+],
+[
+"Nature",
+"The Grand Canyon",
+"Bryce Canyon",
+"Zion Canyon",
+"Fish River Canyon"
+],
+[
+"Nature",
+"A Venus flytrap",
+"A pitcher plant",
+"A sundew",
+"A bladderwort"
+],
+[
+"Nature",
+"Giant's Causeway",
+"Fingal's Cave",
+"Devils Postpile",
+"Svartifoss"
+],
+[
+"Nature",
+"A manatee",
+"A dugong",
+"A walrus",
+"A sea lion"
+],
+[
+"Nature",
+"A red panda",
+"A raccoon",
+"A coati",
+"A kinkajou"
+],
+[
+"Nature",
+"Mount Fuji",
+"Mount Rainier",
+"Mount Mayon",
+"Mount Etna"
+],
+[
+"Nature",
+"The Dead Sea",
+"The Great Salt Lake",
+"Lake Natron",
+"Salar de Uyuni"
+],
+[
+"Nature",
+"A chameleon",
+"An iguana",
+"A gecko",
+"An anole"
+],
+[
+"Nature",
+"Victoria Falls",
+"Niagara Falls",
+"Iguazu Falls",
+"Angel Falls"
+],
+[
+"Nature",
+"A sloth",
+"A koala",
+"A lemur",
+"A loris"
+],
+[
+"Nature",
+"The Great Blue Hole",
+"The Blue Grotto",
+"Dean's Blue Hole",
+"The Cenote Ik Kil"
+],
+[
+"Nature",
+"A toucan",
+"A hornbill",
+"A puffin",
+"A kingfisher"
+],
+[
+"Nature",
+"Salar de Uyuni",
+"The Bonneville Salt Flats",
+"Etosha Pan",
+"Chott el Djerid"
+]
+]

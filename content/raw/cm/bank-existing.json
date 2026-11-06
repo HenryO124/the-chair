@@ -1,0 +1,5508 @@
+{
+ "TRIVIA": [
+  [
+   "History",
+   "In which year did the Berlin Wall fall?",
+   "1989",
+   "1987",
+   "1991",
+   "1985",
+   "It opened on the night of 9 November 1989."
+  ],
+  [
+   "History",
+   "Who was the first person to walk on the Moon?",
+   "Neil Armstrong",
+   "Buzz Aldrin",
+   "Yuri Gagarin",
+   "Michael Collins",
+   "Apollo 11, 20 July 1969. Aldrin followed him down the ladder."
+  ],
+  [
+   "History",
+   "Which empire did Genghis Khan found?",
+   "The Mongol Empire",
+   "The Ottoman Empire",
+   "The Persian Empire",
+   "The Roman Empire",
+   "At its height it was the largest contiguous land empire in history."
+  ],
+  [
+   "History",
+   "In which year did the Titanic sink?",
+   "1912",
+   "1905",
+   "1918",
+   "1923",
+   "Four days into her maiden voyage, after striking an iceberg."
+  ],
+  [
+   "History",
+   "Which war ended with the Treaty of Versailles?",
+   "The First World War",
+   "The Second World War",
+   "The Crimean War",
+   "The Franco-Prussian War",
+   "Signed in 1919, five years after the war began."
+  ],
+  [
+   "History",
+   "Who was the first Emperor of Rome?",
+   "Augustus",
+   "Julius Caesar",
+   "Nero",
+   "Caligula",
+   "Caesar was never emperor; his adopted heir took the title."
+  ],
+  [
+   "History",
+   "In which country did the Industrial Revolution begin?",
+   "Britain",
+   "France",
+   "Germany",
+   "The United States",
+   "Textiles and steam, from roughly the 1760s onward."
+  ],
+  [
+   "History",
+   "The French Revolution began in which year?",
+   "1789",
+   "1776",
+   "1799",
+   "1812",
+   "The Bastille was stormed on 14 July 1789."
+  ],
+  [
+   "History",
+   "Finland declared independence in which year?",
+   "1917",
+   "1905",
+   "1920",
+   "1939",
+   "6 December 1917, from the Russian Empire."
+  ],
+  [
+   "History",
+   "Which two countries fought the Winter War?",
+   "Finland and the Soviet Union",
+   "Finland and Sweden",
+   "Norway and Germany",
+   "Poland and the Soviet Union",
+   "105 days, from November 1939 to March 1940."
+  ],
+  [
+   "History",
+   "In which year did the Second World War end?",
+   "1945",
+   "1944",
+   "1946",
+   "1943",
+   "Germany surrendered in May, Japan in September."
+  ],
+  [
+   "History",
+   "Who wrote the Communist Manifesto with Friedrich Engels?",
+   "Karl Marx",
+   "Vladimir Lenin",
+   "Georg Hegel",
+   "Mikhail Bakunin",
+   "Published in 1848, a few weeks before revolutions swept Europe."
+  ],
+  [
+   "History",
+   "In which century was the Great Fire of London?",
+   "The 17th",
+   "The 15th",
+   "The 18th",
+   "The 16th",
+   "1666. It started in a bakery on Pudding Lane."
+  ],
+  [
+   "History",
+   "Which civilisation built Machu Picchu?",
+   "The Inca",
+   "The Maya",
+   "The Aztec",
+   "The Olmec",
+   "Built around 1450 in the Peruvian Andes."
+  ],
+  [
+   "History",
+   "The Rosetta Stone was the key to reading which script?",
+   "Egyptian hieroglyphs",
+   "Cuneiform",
+   "Linear B",
+   "Norse runes",
+   "The same decree appears in three scripts, one of them Greek."
+  ],
+  [
+   "History",
+   "Who led India's non-violent independence movement?",
+   "Mahatma Gandhi",
+   "Jawaharlal Nehru",
+   "Subhas Chandra Bose",
+   "B. R. Ambedkar",
+   "Independence came in 1947."
+  ],
+  [
+   "History",
+   "Which city was split by a wall from 1961 to 1989?",
+   "Berlin",
+   "Vienna",
+   "Prague",
+   "Budapest",
+   "Twenty-eight years, almost to the day."
+  ],
+  [
+   "History",
+   "What crippled Apollo 13 on its way to the Moon?",
+   "An oxygen tank exploded",
+   "A fire on the launch pad",
+   "An engine failed at liftoff",
+   "The guidance computer died",
+   "All three astronauts came home alive."
+  ],
+  [
+   "History",
+   "Which queen reigned over Britain for 70 years?",
+   "Elizabeth II",
+   "Victoria",
+   "Anne",
+   "Mary I",
+   "Victoria managed 63, which had been the record."
+  ],
+  [
+   "History",
+   "The Hundred Years' War was fought between England and which country?",
+   "France",
+   "Spain",
+   "Scotland",
+   "The Netherlands",
+   "It actually ran 116 years, on and off."
+  ],
+  [
+   "Geography",
+   "Which is the largest ocean?",
+   "The Pacific",
+   "The Atlantic",
+   "The Indian",
+   "The Arctic",
+   "It covers about a third of the planet's surface."
+  ],
+  [
+   "Geography",
+   "What is the capital of Australia?",
+   "Canberra",
+   "Sydney",
+   "Melbourne",
+   "Perth",
+   "Chosen as a compromise between Sydney and Melbourne."
+  ],
+  [
+   "Geography",
+   "Mount Everest sits on the border of Nepal and which country?",
+   "China",
+   "India",
+   "Bhutan",
+   "Pakistan",
+   "Tibet, in other words."
+  ],
+  [
+   "Geography",
+   "Which is the largest hot desert?",
+   "The Sahara",
+   "The Gobi",
+   "The Kalahari",
+   "The Arabian",
+   "Roughly the size of the United States."
+  ],
+  [
+   "Geography",
+   "What is the smallest country in the world?",
+   "Vatican City",
+   "Monaco",
+   "San Marino",
+   "Liechtenstein",
+   "About half a square kilometre."
+  ],
+  [
+   "Geography",
+   "Which US state is the largest by area?",
+   "Alaska",
+   "Texas",
+   "California",
+   "Montana",
+   "More than twice the size of Texas."
+  ],
+  [
+   "Geography",
+   "The Amazon rainforest lies mostly in which country?",
+   "Brazil",
+   "Peru",
+   "Colombia",
+   "Venezuela",
+   "About 60 per cent of it."
+  ],
+  [
+   "Geography",
+   "Which city stands on the Bosphorus?",
+   "Istanbul",
+   "Athens",
+   "Odesa",
+   "Baku",
+   "One foot in Europe, one in Asia."
+  ],
+  [
+   "Geography",
+   "How many time zones does Russia span?",
+   "Eleven",
+   "Seven",
+   "Nine",
+   "Thirteen",
+   "From Kaliningrad to Kamchatka."
+  ],
+  [
+   "Geography",
+   "Ankara is the capital of which country?",
+   "Turkey",
+   "Georgia",
+   "Kazakhstan",
+   "Azerbaijan",
+   "It replaced Istanbul as capital in 1923."
+  ],
+  [
+   "Geography",
+   "Which mountain range is the traditional border between Europe and Asia?",
+   "The Urals",
+   "The Alps",
+   "The Caucasus",
+   "The Carpathians",
+   "It runs roughly north to south through Russia."
+  ],
+  [
+   "Geography",
+   "What is the deepest point in the ocean?",
+   "The Mariana Trench",
+   "The Tonga Trench",
+   "The Java Trench",
+   "The Puerto Rico Trench",
+   "Nearly eleven kilometres down."
+  ],
+  [
+   "Geography",
+   "What is the capital of Iceland?",
+   "Reykjavik",
+   "Oslo",
+   "Torshavn",
+   "Nuuk",
+   "The northernmost capital of a sovereign state."
+  ],
+  [
+   "Geography",
+   "Nairobi is the capital of which country?",
+   "Kenya",
+   "Tanzania",
+   "Uganda",
+   "Ethiopia",
+   "It grew from a railway depot."
+  ],
+  [
+   "Geography",
+   "The Great Barrier Reef lies off the coast of which country?",
+   "Australia",
+   "Indonesia",
+   "The Philippines",
+   "Fiji",
+   "Over 2,300 kilometres of it."
+  ],
+  [
+   "Geography",
+   "Which is the largest island in the world?",
+   "Greenland",
+   "New Guinea",
+   "Borneo",
+   "Madagascar",
+   "Australia is counted as a continent, not an island."
+  ],
+  [
+   "Geography",
+   "Lake Baikal, the deepest lake on Earth, is in which country?",
+   "Russia",
+   "Mongolia",
+   "Kazakhstan",
+   "China",
+   "It holds about a fifth of the world's unfrozen fresh water."
+  ],
+  [
+   "Geography",
+   "Which strait separates Spain from Morocco?",
+   "Gibraltar",
+   "The Bosphorus",
+   "Hormuz",
+   "Malacca",
+   "Fourteen kilometres at its narrowest."
+  ],
+  [
+   "Geography",
+   "Which country has the most lakes?",
+   "Canada",
+   "Finland",
+   "Russia",
+   "Sweden",
+   "More than the rest of the world put together, by most counts."
+  ],
+  [
+   "Geography",
+   "Which sea lies between Finland and Sweden?",
+   "The Baltic",
+   "The North Sea",
+   "The Barents Sea",
+   "The Norwegian Sea",
+   "Its northern arm is the Gulf of Bothnia."
+  ],
+  [
+   "Science",
+   "What is the chemical symbol for gold?",
+   "Au",
+   "Ag",
+   "Go",
+   "Gd",
+   "From the Latin aurum. Ag is silver."
+  ],
+  [
+   "Science",
+   "How many bones are there in an adult human body?",
+   "206",
+   "186",
+   "226",
+   "246",
+   "Babies start with around 270; some fuse as they grow."
+  ],
+  [
+   "Science",
+   "Which planet is closest to the Sun?",
+   "Mercury",
+   "Venus",
+   "Mars",
+   "Earth",
+   "Venus is hotter, though, thanks to its atmosphere."
+  ],
+  [
+   "Science",
+   "Which gas do plants take in to photosynthesise?",
+   "Carbon dioxide",
+   "Oxygen",
+   "Nitrogen",
+   "Hydrogen",
+   "They give out oxygen as a by-product."
+  ],
+  [
+   "Science",
+   "Who developed the theory of general relativity?",
+   "Albert Einstein",
+   "Isaac Newton",
+   "Niels Bohr",
+   "Max Planck",
+   "Published in 1915."
+  ],
+  [
+   "Science",
+   "What is the hardest natural substance?",
+   "Diamond",
+   "Quartz",
+   "Corundum",
+   "Topaz",
+   "Ten out of ten on the Mohs scale."
+  ],
+  [
+   "Science",
+   "Roughly how fast does light travel?",
+   "300,000 km per second",
+   "30,000 km per second",
+   "3,000,000 km per second",
+   "150,000 km per second",
+   "Near enough 299,792 km/s in a vacuum."
+  ],
+  [
+   "Science",
+   "Which blood type is the universal donor?",
+   "O negative",
+   "AB positive",
+   "A positive",
+   "B negative",
+   "AB positive is the universal recipient."
+  ],
+  [
+   "Science",
+   "What does DNA stand for?",
+   "Deoxyribonucleic acid",
+   "Dinucleic acid",
+   "Deoxyribose nitrate",
+   "Diribonucleic acid",
+   "Its double-helix structure was described in 1953."
+  ],
+  [
+   "Science",
+   "Which element has atomic number 1?",
+   "Hydrogen",
+   "Helium",
+   "Carbon",
+   "Oxygen",
+   "The most abundant element in the universe."
+  ],
+  [
+   "Science",
+   "Which is the largest planet in the Solar System?",
+   "Jupiter",
+   "Saturn",
+   "Neptune",
+   "Uranus",
+   "More massive than all the others combined."
+  ],
+  [
+   "Science",
+   "Who formulated the three laws of motion?",
+   "Isaac Newton",
+   "Galileo Galilei",
+   "Johannes Kepler",
+   "Christiaan Huygens",
+   "Published in the Principia, 1687."
+  ],
+  [
+   "Science",
+   "Which part of the cell produces most of its energy?",
+   "The mitochondrion",
+   "The nucleus",
+   "The ribosome",
+   "The Golgi body",
+   "It has its own DNA, inherited from your mother."
+  ],
+  [
+   "Science",
+   "At what temperature does water boil at sea level?",
+   "100 degrees Celsius",
+   "90 degrees",
+   "110 degrees",
+   "80 degrees",
+   "Up a mountain it boils cooler."
+  ],
+  [
+   "Science",
+   "Which vitamin does your skin make in sunlight?",
+   "Vitamin D",
+   "Vitamin C",
+   "Vitamin B12",
+   "Vitamin A",
+   "Which is why northern winters are a problem."
+  ],
+  [
+   "Science",
+   "What is the study of fungi called?",
+   "Mycology",
+   "Botany",
+   "Entomology",
+   "Virology",
+   "Entomology is insects."
+  ],
+  [
+   "Science",
+   "Which subatomic particle carries a negative charge?",
+   "The electron",
+   "The proton",
+   "The neutron",
+   "The positron",
+   "Protons are positive, neutrons neutral."
+  ],
+  [
+   "Science",
+   "How long does sunlight take to reach Earth?",
+   "About 8 minutes",
+   "About 8 seconds",
+   "About 80 minutes",
+   "About 8 hours",
+   "So you always see the Sun as it was 8 minutes ago."
+  ],
+  [
+   "Science",
+   "Which gas makes up most of Earth's atmosphere?",
+   "Nitrogen",
+   "Oxygen",
+   "Carbon dioxide",
+   "Argon",
+   "About 78 per cent of it."
+  ],
+  [
+   "Science",
+   "Who discovered penicillin?",
+   "Alexander Fleming",
+   "Louis Pasteur",
+   "Joseph Lister",
+   "Robert Koch",
+   "By accident, from a contaminated petri dish in 1928."
+  ],
+  [
+   "Arts & culture",
+   "Who painted the Mona Lisa?",
+   "Leonardo da Vinci",
+   "Michelangelo",
+   "Raphael",
+   "Sandro Botticelli",
+   "He worked on it for years and never handed it over."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote Romeo and Juliet?",
+   "William Shakespeare",
+   "Christopher Marlowe",
+   "Geoffrey Chaucer",
+   "Ben Jonson",
+   "Written around 1595."
+  ],
+  [
+   "Arts & culture",
+   "Which museum holds the Mona Lisa?",
+   "The Louvre",
+   "The Prado",
+   "The Uffizi",
+   "The Rijksmuseum",
+   "Behind bulletproof glass in Paris."
+  ],
+  [
+   "Arts & culture",
+   "Who painted The Starry Night?",
+   "Vincent van Gogh",
+   "Claude Monet",
+   "Paul Cezanne",
+   "Paul Gauguin",
+   "Painted from the window of an asylum in 1889."
+  ],
+  [
+   "Arts & culture",
+   "Who composed the Ninth Symphony, with the Ode to Joy?",
+   "Ludwig van Beethoven",
+   "Wolfgang Amadeus Mozart",
+   "Johannes Brahms",
+   "Franz Schubert",
+   "He was almost completely deaf by then."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote the novel 1984?",
+   "George Orwell",
+   "Aldous Huxley",
+   "Ray Bradbury",
+   "H. G. Wells",
+   "Published in 1949."
+  ],
+  [
+   "Arts & culture",
+   "Which Finnish composer wrote Finlandia?",
+   "Jean Sibelius",
+   "Kaija Saariaho",
+   "Einojuhani Rautavaara",
+   "Leevi Madetoja",
+   "Written in 1899 as a protest against Russian censorship."
+  ],
+  [
+   "Arts & culture",
+   "Who sculpted the statue of David in Florence?",
+   "Michelangelo",
+   "Donatello",
+   "Gian Lorenzo Bernini",
+   "Auguste Rodin",
+   "Carved from a single block of marble others had given up on."
+  ],
+  [
+   "Arts & culture",
+   "The Kalevala is the national epic of which country?",
+   "Finland",
+   "Estonia",
+   "Iceland",
+   "Norway",
+   "Compiled by Elias Lonnrot from oral poetry."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote Pride and Prejudice?",
+   "Jane Austen",
+   "Charlotte Bronte",
+   "George Eliot",
+   "Elizabeth Gaskell",
+   "Published anonymously in 1813."
+  ],
+  [
+   "Arts & culture",
+   "Which painter cut off part of his own ear?",
+   "Vincent van Gogh",
+   "Paul Gauguin",
+   "Edvard Munch",
+   "Henri de Toulouse-Lautrec",
+   "After an argument with Gauguin in Arles."
+  ],
+  [
+   "Arts & culture",
+   "Who directed Jaws and E.T.?",
+   "Steven Spielberg",
+   "George Lucas",
+   "Martin Scorsese",
+   "Francis Ford Coppola",
+   "Jaws is usually called the first summer blockbuster."
+  ],
+  [
+   "Arts & culture",
+   "Which painting is famous for its melting clocks?",
+   "The Persistence of Memory",
+   "Guernica",
+   "The Scream",
+   "Water Lilies",
+   "Salvador Dali, 1931."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote The Lord of the Rings?",
+   "J. R. R. Tolkien",
+   "C. S. Lewis",
+   "Philip Pullman",
+   "Ursula K. Le Guin",
+   "He was a professor of Anglo-Saxon at Oxford."
+  ],
+  [
+   "Arts & culture",
+   "Which Norwegian painted The Scream?",
+   "Edvard Munch",
+   "Gustav Vigeland",
+   "Johan Christian Dahl",
+   "Christian Krohg",
+   "There are several versions of it."
+  ],
+  [
+   "Arts & culture",
+   "Who painted the ceiling of the Sistine Chapel?",
+   "Michelangelo",
+   "Raphael",
+   "Leonardo da Vinci",
+   "Titian",
+   "Four years of it, mostly standing up."
+  ],
+  [
+   "Arts & culture",
+   "Who created the Moomins?",
+   "Tove Jansson",
+   "Astrid Lindgren",
+   "Selma Lagerlof",
+   "Hans Christian Andersen",
+   "A Finnish author writing in Swedish."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote Don Quixote?",
+   "Miguel de Cervantes",
+   "Lope de Vega",
+   "Luis de Gongora",
+   "Pedro Calderon",
+   "Often called the first modern novel."
+  ],
+  [
+   "Arts & culture",
+   "Which Dutch painter made The Night Watch?",
+   "Rembrandt",
+   "Johannes Vermeer",
+   "Frans Hals",
+   "Jan Steen",
+   "It hangs in the Rijksmuseum in Amsterdam."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote the music for The Nutcracker?",
+   "Pyotr Ilyich Tchaikovsky",
+   "Igor Stravinsky",
+   "Sergei Prokofiev",
+   "Nikolai Rimsky-Korsakov",
+   "First performed in 1892."
+  ],
+  [
+   "Sport",
+   "How many players does a football team have on the pitch?",
+   "Eleven",
+   "Ten",
+   "Twelve",
+   "Nine",
+   "Including the goalkeeper."
+  ],
+  [
+   "Sport",
+   "How often are the Summer Olympics held?",
+   "Every four years",
+   "Every two years",
+   "Every three years",
+   "Every five years",
+   "The gap is called an Olympiad."
+  ],
+  [
+   "Sport",
+   "In which sport would you perform a slam dunk?",
+   "Basketball",
+   "Volleyball",
+   "Handball",
+   "Tennis",
+   "Worth the same two points as any other close-range shot."
+  ],
+  [
+   "Sport",
+   "How many rings are on the Olympic flag?",
+   "Five",
+   "Four",
+   "Six",
+   "Seven",
+   "One for each inhabited continent, as they counted them."
+  ],
+  [
+   "Sport",
+   "Which country has won the most football World Cups?",
+   "Brazil",
+   "Germany",
+   "Italy",
+   "Argentina",
+   "Five, and the only country to play in every tournament."
+  ],
+  [
+   "Sport",
+   "In tennis, what is a score of zero called?",
+   "Love",
+   "Nil",
+   "Duck",
+   "Blank",
+   "Possibly from the French l'oeuf, an egg."
+  ],
+  [
+   "Sport",
+   "How long is a marathon?",
+   "42.195 kilometres",
+   "40 kilometres",
+   "45 kilometres",
+   "38 kilometres",
+   "The odd distance was fixed at the 1908 London Games."
+  ],
+  [
+   "Sport",
+   "How many players per side are on the ice in ice hockey?",
+   "Six",
+   "Five",
+   "Seven",
+   "Four",
+   "Five skaters and a goaltender."
+  ],
+  [
+   "Sport",
+   "Which country did judo come from?",
+   "Japan",
+   "China",
+   "Korea",
+   "Brazil",
+   "Founded by Jigoro Kano in 1882."
+  ],
+  [
+   "Sport",
+   "The Tour de France is a race in which sport?",
+   "Cycling",
+   "Running",
+   "Motor racing",
+   "Rowing",
+   "Three weeks and around 3,500 kilometres."
+  ],
+  [
+   "Sport",
+   "How many points is a try worth in rugby union?",
+   "Five",
+   "Three",
+   "Four",
+   "Six",
+   "Plus two more for the conversion."
+  ],
+  [
+   "Sport",
+   "Which Finn won the Formula 1 world title in 1982?",
+   "Keke Rosberg",
+   "Mika Hakkinen",
+   "Kimi Raikkonen",
+   "Heikki Kovalainen",
+   "He won only one race that season and still took the title."
+  ],
+  [
+   "Sport",
+   "In golf, what is one shot under par called?",
+   "A birdie",
+   "An eagle",
+   "A bogey",
+   "An albatross",
+   "An eagle is two under."
+  ],
+  [
+   "Sport",
+   "Which sport is played with a shuttlecock?",
+   "Badminton",
+   "Squash",
+   "Table tennis",
+   "Pelota",
+   "The shuttle can leave the racket at over 400 km/h."
+  ],
+  [
+   "Sport",
+   "How many squares are there on a chessboard?",
+   "64",
+   "81",
+   "100",
+   "49",
+   "Eight by eight."
+  ],
+  [
+   "Sport",
+   "Which country does Usain Bolt run for?",
+   "Jamaica",
+   "Trinidad and Tobago",
+   "The United States",
+   "Barbados",
+   "He holds the 100 and 200 metre world records."
+  ],
+  [
+   "Sport",
+   "In baseball, how many strikes make an out?",
+   "Three",
+   "Two",
+   "Four",
+   "Five",
+   "Four balls, on the other hand, and you walk."
+  ],
+  [
+   "Sport",
+   "Which Finnish runner won nine Olympic golds in the 1920s?",
+   "Paavo Nurmi",
+   "Hannes Kolehmainen",
+   "Ville Ritola",
+   "Lasse Viren",
+   "They called him the Flying Finn."
+  ],
+  [
+   "Sport",
+   "How many holes are played in a full round of golf?",
+   "Eighteen",
+   "Nine",
+   "Twelve",
+   "Twenty-four",
+   "Usually a par of 70 to 72."
+  ],
+  [
+   "Sport",
+   "Which sport has the Ashes as its most famous series?",
+   "Cricket",
+   "Rugby",
+   "Hockey",
+   "Rowing",
+   "England against Australia since 1882."
+  ],
+  [
+   "Everyday",
+   "How many days are there in a leap year?",
+   "366",
+   "365",
+   "364",
+   "367",
+   "An extra day in February, roughly every four years."
+  ],
+  [
+   "Everyday",
+   "How many letters are there in the English alphabet?",
+   "26",
+   "24",
+   "25",
+   "27",
+   "Finnish has a few more."
+  ],
+  [
+   "Everyday",
+   "What is the currency of Japan?",
+   "The yen",
+   "The won",
+   "The yuan",
+   "The baht",
+   "The won is Korean, the yuan Chinese."
+  ],
+  [
+   "Everyday",
+   "How many minutes are there in a day?",
+   "1,440",
+   "1,240",
+   "1,640",
+   "1,200",
+   "Sixty times twenty-four."
+  ],
+  [
+   "Everyday",
+   "Which spice is the most expensive by weight?",
+   "Saffron",
+   "Vanilla",
+   "Cardamom",
+   "Cinnamon",
+   "It has to be picked by hand, three threads per flower."
+  ],
+  [
+   "Everyday",
+   "What does WWW stand for?",
+   "World Wide Web",
+   "World Web Wire",
+   "Wide World Web",
+   "Web World Wide",
+   "Proposed by Tim Berners-Lee in 1989."
+  ],
+  [
+   "Everyday",
+   "What is the largest living animal?",
+   "The blue whale",
+   "The African elephant",
+   "The giraffe",
+   "The sperm whale",
+   "Up to thirty metres long."
+  ],
+  [
+   "Everyday",
+   "How many strings does a standard guitar have?",
+   "Six",
+   "Four",
+   "Five",
+   "Seven",
+   "A bass has four."
+  ],
+  [
+   "Everyday",
+   "What is the main ingredient of guacamole?",
+   "Avocado",
+   "Courgette",
+   "Pea",
+   "Broad bean",
+   "The name comes from the Nahuatl for avocado sauce."
+  ],
+  [
+   "Everyday",
+   "Which planet is known as the Red Planet?",
+   "Mars",
+   "Venus",
+   "Jupiter",
+   "Mercury",
+   "Iron oxide in the soil, in other words rust."
+  ],
+  [
+   "Everyday",
+   "How many colours are traditionally listed in a rainbow?",
+   "Seven",
+   "Six",
+   "Five",
+   "Eight",
+   "Newton settled on seven to match the musical scale."
+  ],
+  [
+   "Everyday",
+   "What is the collective noun for crows?",
+   "A murder",
+   "A parliament",
+   "A pack",
+   "A gaggle",
+   "A parliament is owls."
+  ],
+  [
+   "Everyday",
+   "Which country drinks the most coffee per person?",
+   "Finland",
+   "Italy",
+   "Brazil",
+   "Sweden",
+   "Around four cups a day on average."
+  ],
+  [
+   "Everyday",
+   "How many degrees are there in a circle?",
+   "360",
+   "180",
+   "270",
+   "400",
+   "A number inherited from Babylonian astronomy."
+  ],
+  [
+   "Everyday",
+   "How many small squares are on one face of a Rubik's cube?",
+   "Nine",
+   "Four",
+   "Sixteen",
+   "Six",
+   "Three by three, on each of six faces."
+  ],
+  [
+   "Everyday",
+   "Which language has the most native speakers?",
+   "Mandarin Chinese",
+   "English",
+   "Spanish",
+   "Hindi",
+   "English wins if you count second-language speakers."
+  ],
+  [
+   "Everyday",
+   "In which month is Midsummer celebrated in Finland?",
+   "June",
+   "July",
+   "May",
+   "August",
+   "Juhannus, on the weekend nearest the solstice."
+  ],
+  [
+   "Everyday",
+   "What is the largest organ of the human body?",
+   "The skin",
+   "The liver",
+   "The lungs",
+   "The intestine",
+   "Around two square metres of it."
+  ],
+  [
+   "Everyday",
+   "How many sides does a hexagon have?",
+   "Six",
+   "Five",
+   "Seven",
+   "Eight",
+   "Like a honeycomb cell."
+  ],
+  [
+   "Everyday",
+   "Which metal is liquid at room temperature?",
+   "Mercury",
+   "Lead",
+   "Tin",
+   "Zinc",
+   "Which is why it was used in thermometers."
+  ],
+  [
+   "History",
+   "Which city was destroyed by Vesuvius in AD 79?",
+   "Pompeii",
+   "Carthage",
+   "Troy",
+   "Ephesus",
+   "Ash buried it so completely that the streets are still standing."
+  ],
+  [
+   "History",
+   "Who was the first woman to win a Nobel Prize?",
+   "Marie Curie",
+   "Rosalind Franklin",
+   "Lise Meitner",
+   "Dorothy Hodgkin",
+   "Physics in 1903, and chemistry again in 1911."
+  ],
+  [
+   "History",
+   "Which wall was begun by Emperor Hadrian?",
+   "A wall across northern Britain",
+   "The Great Wall of China",
+   "The walls of Constantinople",
+   "The Berlin Wall",
+   "Roughly 117 kilometres of it, finished around AD 128."
+  ],
+  [
+   "History",
+   "In which country did the Velvet Revolution take place?",
+   "Czechoslovakia",
+   "Poland",
+   "Hungary",
+   "Romania",
+   "November 1989, and almost nobody was hurt."
+  ],
+  [
+   "History",
+   "Which ship carried the Pilgrims to America in 1620?",
+   "The Mayflower",
+   "The Beagle",
+   "The Endeavour",
+   "The Victoria",
+   "102 passengers, 66 days at sea."
+  ],
+  [
+   "History",
+   "Who was the last tsar of Russia?",
+   "Nicholas II",
+   "Alexander III",
+   "Peter the Great",
+   "Paul I",
+   "He abdicated in March 1917."
+  ],
+  [
+   "History",
+   "Which country was the first to give women the vote in national elections?",
+   "New Zealand",
+   "Finland",
+   "Norway",
+   "Australia",
+   "1893. Finland was first to let them stand for election, in 1906."
+  ],
+  [
+   "History",
+   "What was the Silk Road?",
+   "A network of trade routes across Asia",
+   "A Roman military road",
+   "A canal between two seas",
+   "A medieval pilgrim path",
+   "Silk went west; paper, gunpowder and plague came with it."
+  ],
+  [
+   "History",
+   "Which Egyptian queen was the last pharaoh?",
+   "Cleopatra VII",
+   "Nefertiti",
+   "Hatshepsut",
+   "Ankhesenamun",
+   "Egypt became a Roman province after her death in 30 BC."
+  ],
+  [
+   "History",
+   "Which two cities were struck by atomic bombs in 1945?",
+   "Hiroshima and Nagasaki",
+   "Tokyo and Osaka",
+   "Kyoto and Kobe",
+   "Yokohama and Sendai",
+   "6 and 9 August. Japan surrendered within the month."
+  ],
+  [
+   "Geography",
+   "Which country has the longest coastline?",
+   "Canada",
+   "Russia",
+   "Indonesia",
+   "Australia",
+   "Over 200,000 kilometres, thanks to its islands."
+  ],
+  [
+   "Geography",
+   "Through how many countries does the Danube flow?",
+   "Ten",
+   "Four",
+   "Six",
+   "Fourteen",
+   "More than any other river in the world."
+  ],
+  [
+   "Geography",
+   "Which is the driest desert on Earth?",
+   "The Atacama",
+   "The Sahara",
+   "Death Valley",
+   "The Namib",
+   "Some weather stations there have never recorded rain."
+  ],
+  [
+   "Geography",
+   "Which country has the most volcanoes?",
+   "Indonesia",
+   "Japan",
+   "Iceland",
+   "Chile",
+   "It sits where three tectonic plates meet."
+  ],
+  [
+   "Geography",
+   "What separates North and South Korea?",
+   "The Demilitarized Zone",
+   "The Yalu River",
+   "The Sea of Japan",
+   "The Taebaek Mountains",
+   "Four kilometres wide, and one of the most fortified places on Earth."
+  ],
+  [
+   "Geography",
+   "Which sea is shrinking because its rivers were diverted?",
+   "The Aral Sea",
+   "The Dead Sea",
+   "The Caspian Sea",
+   "The Black Sea",
+   "Cotton irrigation in the 1960s took most of its water."
+  ],
+  [
+   "Geography",
+   "Which European capital stands on two continents?",
+   "Istanbul",
+   "Athens",
+   "Lisbon",
+   "Nicosia",
+   "Though Ankara, not Istanbul, is Turkey's capital."
+  ],
+  [
+   "Geography",
+   "What is the highest waterfall in the world?",
+   "Angel Falls",
+   "Niagara Falls",
+   "Victoria Falls",
+   "Iguazu Falls",
+   "979 metres, in Venezuela. Much of it turns to mist on the way down."
+  ],
+  [
+   "Geography",
+   "Which country is entirely surrounded by South Africa?",
+   "Lesotho",
+   "Eswatini",
+   "Botswana",
+   "Namibia",
+   "And the whole of it lies above 1,400 metres."
+  ],
+  [
+   "Geography",
+   "Which strait connects the Mediterranean to the Black Sea?",
+   "The Bosphorus",
+   "The Strait of Messina",
+   "The Kerch Strait",
+   "The Skagerrak",
+   "By way of the Sea of Marmara and the Dardanelles."
+  ],
+  [
+   "Science",
+   "What is the most common blood type worldwide?",
+   "O positive",
+   "A positive",
+   "B negative",
+   "AB positive",
+   "Roughly a third of all people."
+  ],
+  [
+   "Science",
+   "Which organ produces insulin?",
+   "The pancreas",
+   "The liver",
+   "The kidney",
+   "The thyroid",
+   "In clusters of cells called the islets of Langerhans."
+  ],
+  [
+   "Science",
+   "How many chambers does the human heart have?",
+   "Four",
+   "Two",
+   "Three",
+   "Six",
+   "Two atria on top, two ventricles below."
+  ],
+  [
+   "Science",
+   "What is absolute zero in Celsius?",
+   "About −273 degrees",
+   "About −100 degrees",
+   "About −460 degrees",
+   "About −1000 degrees",
+   "−273.15 exactly, where molecular motion stops."
+  ],
+  [
+   "Science",
+   "Which gas gives soft drinks their fizz?",
+   "Carbon dioxide",
+   "Nitrogen",
+   "Oxygen",
+   "Helium",
+   "Dissolved under pressure, and it leaves the moment you open the bottle."
+  ],
+  [
+   "Science",
+   "What does a seismograph measure?",
+   "Earthquakes",
+   "Wind speed",
+   "Air pressure",
+   "Humidity",
+   "The Richter scale is logarithmic: each step is ten times the shaking."
+  ],
+  [
+   "Science",
+   "Which animal has the largest brain?",
+   "The sperm whale",
+   "The elephant",
+   "The blue whale",
+   "The gorilla",
+   "About eight kilograms of it."
+  ],
+  [
+   "Science",
+   "What is the main gas in the Sun?",
+   "Hydrogen",
+   "Helium",
+   "Oxygen",
+   "Carbon",
+   "It fuses hydrogen into helium, which is where the light comes from."
+  ],
+  [
+   "Science",
+   "How many teeth does an adult human usually have?",
+   "32",
+   "28",
+   "24",
+   "36",
+   "Twenty-eight, plus four wisdom teeth that many people never get."
+  ],
+  [
+   "Science",
+   "What causes the tides?",
+   "The Moon's gravity",
+   "Ocean currents",
+   "The Earth's rotation alone",
+   "Wind over the sea",
+   "The Sun pulls too, but the Moon is closer and wins."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote The Divine Comedy?",
+   "Dante Alighieri",
+   "Petrarch",
+   "Boccaccio",
+   "Virgil",
+   "Written in the Tuscan dialect, which is largely why Italian sounds as it does."
+  ],
+  [
+   "Arts & culture",
+   "Which instrument did Miles Davis play?",
+   "The trumpet",
+   "The saxophone",
+   "The piano",
+   "The double bass",
+   "Kind of Blue is still the best-selling jazz record ever made."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote Crime and Punishment?",
+   "Fyodor Dostoevsky",
+   "Leo Tolstoy",
+   "Anton Chekhov",
+   "Ivan Turgenev",
+   "He wrote it against a deadline to pay off gambling debts."
+  ],
+  [
+   "Arts & culture",
+   "Which ballet features a swan princess?",
+   "Swan Lake",
+   "Giselle",
+   "Coppélia",
+   "La Bayadère",
+   "Tchaikovsky again, and it flopped at its premiere."
+  ],
+  [
+   "Arts & culture",
+   "Which art movement was Claude Monet part of?",
+   "Impressionism",
+   "Cubism",
+   "Surrealism",
+   "Expressionism",
+   "The name came from a hostile review of his painting Impression, Sunrise."
+  ],
+  [
+   "Arts & culture",
+   "Who composed The Four Seasons?",
+   "Antonio Vivaldi",
+   "Johann Pachelbel",
+   "George Handel",
+   "Henry Purcell",
+   "Four violin concertos, each with a sonnet printed alongside it."
+  ],
+  [
+   "Arts & culture",
+   "In which city is the Hermitage Museum?",
+   "St Petersburg",
+   "Moscow",
+   "Vienna",
+   "Warsaw",
+   "Founded by Catherine the Great as her private collection."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote the Sherlock Holmes stories?",
+   "Arthur Conan Doyle",
+   "Agatha Christie",
+   "Wilkie Collins",
+   "Edgar Allan Poe",
+   "He killed Holmes off and had to bring him back after the outcry."
+  ],
+  [
+   "Arts & culture",
+   "Which country does the tango come from?",
+   "Argentina",
+   "Spain",
+   "Brazil",
+   "Cuba",
+   "From the dockside districts of Buenos Aires. Finland then made it its own."
+  ],
+  [
+   "Arts & culture",
+   "Who designed the Finlandia Hall in Helsinki?",
+   "Alvar Aalto",
+   "Eliel Saarinen",
+   "Reima Pietilä",
+   "Juha Leiviskä",
+   "Finished in 1971, in white Carrara marble that hated the climate."
+  ],
+  [
+   "Sport",
+   "How many players are on a basketball team on court?",
+   "Five",
+   "Six",
+   "Four",
+   "Seven",
+   "Five a side, and unlimited substitutions."
+  ],
+  [
+   "Sport",
+   "In which country were the first modern Olympics held?",
+   "Greece",
+   "France",
+   "Britain",
+   "Italy",
+   "Athens, 1896, with fourteen nations taking part."
+  ],
+  [
+   "Sport",
+   "What is the maximum break in snooker?",
+   "147",
+   "155",
+   "120",
+   "180",
+   "Fifteen reds, each with a black, then the colours in order."
+  ],
+  [
+   "Sport",
+   "Which sport is known as the sweet science?",
+   "Boxing",
+   "Fencing",
+   "Wrestling",
+   "Chess boxing",
+   "A nineteenth-century phrase for the craft of hitting without being hit."
+  ],
+  [
+   "Sport",
+   "How wide is a football goal?",
+   "7.32 metres",
+   "6 metres",
+   "8.5 metres",
+   "10 metres",
+   "Eight yards, fixed in the 1860s and never changed."
+  ],
+  [
+   "Sport",
+   "In which sport do teams compete for the Stanley Cup?",
+   "Ice hockey",
+   "Basketball",
+   "Baseball",
+   "American football",
+   "The oldest trophy competed for by professional athletes in North America."
+  ],
+  [
+   "Sport",
+   "How many Grand Slam tournaments are there in tennis each year?",
+   "Four",
+   "Three",
+   "Five",
+   "Six",
+   "Australia, France, Wimbledon and the US Open."
+  ],
+  [
+   "Sport",
+   "Which country hosted the 1952 Summer Olympics?",
+   "Finland",
+   "Sweden",
+   "Australia",
+   "Italy",
+   "Helsinki, after the 1940 games were cancelled by the war."
+  ],
+  [
+   "Sport",
+   "What is the length of an Olympic swimming pool?",
+   "50 metres",
+   "25 metres",
+   "100 metres",
+   "33 metres",
+   "Ten lanes wide, though only eight are usually raced."
+  ],
+  [
+   "Sport",
+   "In which sport is the Fosbury flop used?",
+   "The high jump",
+   "The long jump",
+   "Diving",
+   "Gymnastics",
+   "Dick Fosbury won the 1968 Olympics jumping backwards, and everyone copied him."
+  ],
+  [
+   "Everyday",
+   "How many time zones are there in the world?",
+   "24",
+   "12",
+   "30",
+   "18",
+   "Though some countries use half-hour offsets, so in practice there are more."
+  ],
+  [
+   "Everyday",
+   "What does a philatelist collect?",
+   "Stamps",
+   "Coins",
+   "Books",
+   "Butterflies",
+   "A numismatist does the coins."
+  ],
+  [
+   "Everyday",
+   "Which blood vessel carries blood away from the heart?",
+   "An artery",
+   "A vein",
+   "A capillary",
+   "The aorta only",
+   "Veins bring it back. The aorta is simply the largest artery."
+  ],
+  [
+   "Everyday",
+   "What is the currency of Switzerland?",
+   "The franc",
+   "The euro",
+   "The krone",
+   "The mark",
+   "One of the few western European currencies that never became the euro."
+  ],
+  [
+   "Everyday",
+   "How many squares are there on a Sudoku grid?",
+   "81",
+   "64",
+   "100",
+   "72",
+   "Nine by nine, in nine boxes of nine."
+  ],
+  [
+   "Everyday",
+   "What is the tallest building in the world?",
+   "The Burj Khalifa",
+   "The Shanghai Tower",
+   "The Empire State Building",
+   "The Taipei 101",
+   "828 metres in Dubai, finished in 2010."
+  ],
+  [
+   "Everyday",
+   "Which fruit is used to make traditional cider?",
+   "Apples",
+   "Pears",
+   "Grapes",
+   "Plums",
+   "Pears make perry, which is a different drink entirely."
+  ],
+  [
+   "Everyday",
+   "How long does it take the Earth to orbit the Sun?",
+   "About 365 days",
+   "About 300 days",
+   "About 400 days",
+   "Exactly 360 days",
+   "365.24, which is why February occasionally gets an extra day."
+  ],
+  [
+   "Everyday",
+   "Which part of an egg is the albumen?",
+   "The white",
+   "The yolk",
+   "The shell",
+   "The membrane",
+   "Mostly water and protein, and it is what whips into meringue."
+  ],
+  [
+   "Everyday",
+   "What does the Richter scale measure?",
+   "Earthquake strength",
+   "Wind force",
+   "Rainfall",
+   "Sound volume",
+   "Each whole number is ten times the shaking and about thirty times the energy."
+  ],
+  [
+   "History",
+   "Which empire was ruled from Constantinople?",
+   "The Byzantine Empire",
+   "The Holy Roman Empire",
+   "The Mughal Empire",
+   "The Carthaginian Empire",
+   "It outlived the western Roman Empire by nearly a thousand years."
+  ],
+  [
+   "History",
+   "What was the Magna Carta?",
+   "A charter limiting the king's power",
+   "A peace treaty with France",
+   "A map of the known world",
+   "A church decree",
+   "Sealed in 1215 by a king who then tried to have it annulled."
+  ],
+  [
+   "History",
+   "Which disease killed roughly a third of Europe in the 1340s?",
+   "The Black Death",
+   "Cholera",
+   "Smallpox",
+   "Typhus",
+   "It reached Europe along the trade routes from the east."
+  ],
+  [
+   "History",
+   "Who sailed around the world first, in 1519–22?",
+   "Ferdinand Magellan's expedition",
+   "Christopher Columbus",
+   "Vasco da Gama",
+   "James Cook",
+   "Magellan died on the way; eighteen of 270 men came home."
+  ],
+  [
+   "History",
+   "Which country did Finland belong to before 1809?",
+   "Sweden",
+   "Russia",
+   "Denmark",
+   "Norway",
+   "Then six hundred years of Swedish rule gave way to a Russian grand duchy."
+  ],
+  [
+   "History",
+   "What ended in 1991 with the resignation of Mikhail Gorbachev?",
+   "The Soviet Union",
+   "The Warsaw Pact",
+   "The Cold War arms race",
+   "Yugoslavia",
+   "On 26 December 1991 the union formally ceased to exist."
+  ],
+  [
+   "History",
+   "Which ancient city was ruled by Hammurabi?",
+   "Babylon",
+   "Thebes",
+   "Athens",
+   "Nineveh",
+   "His code of laws is one of the oldest written legal texts we have."
+  ],
+  [
+   "History",
+   "Which two powers fought the Cold War?",
+   "The United States and the Soviet Union",
+   "Britain and Germany",
+   "China and India",
+   "France and Russia",
+   "Roughly 1947 to 1991, fought everywhere except directly between them."
+  ],
+  [
+   "History",
+   "What was invented by Johannes Gutenberg?",
+   "Printing with movable type in Europe",
+   "Paper",
+   "The telescope",
+   "The mechanical clock",
+   "Around 1440. Movable type already existed in Korea and China."
+  ],
+  [
+   "History",
+   "Which Finnish president served the longest?",
+   "Urho Kekkonen",
+   "J. K. Paasikivi",
+   "Mauno Koivisto",
+   "Risto Ryti",
+   "Twenty-five years, from 1956 to 1982."
+  ],
+  [
+   "Geography",
+   "Which country has the most people?",
+   "India",
+   "China",
+   "The United States",
+   "Indonesia",
+   "India passed China in 2023."
+  ],
+  [
+   "Geography",
+   "On which river does Cairo stand?",
+   "The Nile",
+   "The Euphrates",
+   "The Congo",
+   "The Niger",
+   "Almost all of Egypt's people live along it."
+  ],
+  [
+   "Geography",
+   "Which country owns Greenland?",
+   "Denmark",
+   "Norway",
+   "Iceland",
+   "Canada",
+   "A self-governing territory within the Kingdom of Denmark."
+  ],
+  [
+   "Geography",
+   "What is the capital of Canada?",
+   "Ottawa",
+   "Toronto",
+   "Vancouver",
+   "Montreal",
+   "Chosen in 1857 as a compromise between English and French Canada."
+  ],
+  [
+   "Geography",
+   "Which mountain is the highest in Africa?",
+   "Kilimanjaro",
+   "Mount Kenya",
+   "The Atlas",
+   "Mount Elgon",
+   "5,895 metres, and it is a volcano, not a range."
+  ],
+  [
+   "Geography",
+   "Which two countries share the longest border?",
+   "Canada and the United States",
+   "Russia and China",
+   "Chile and Argentina",
+   "India and Bangladesh",
+   "Nearly 8,900 kilometres of it."
+  ],
+  [
+   "Geography",
+   "Which city is known as the Eternal City?",
+   "Rome",
+   "Jerusalem",
+   "Athens",
+   "Cairo",
+   "A Roman poet called it that two thousand years ago and it stuck."
+  ],
+  [
+   "Geography",
+   "Which ocean lies between Africa and Australia?",
+   "The Indian Ocean",
+   "The Pacific",
+   "The Atlantic",
+   "The Southern Ocean",
+   "The only ocean named after a country."
+  ],
+  [
+   "Geography",
+   "How many islands does Finland have, roughly?",
+   "About 180,000",
+   "About 18,000",
+   "About 1,800",
+   "About 1.8 million",
+   "And about 188,000 lakes to go with them."
+  ],
+  [
+   "Geography",
+   "Which desert covers most of Mongolia's south?",
+   "The Gobi",
+   "The Taklamakan",
+   "The Karakum",
+   "The Thar",
+   "A cold desert: it snows there."
+  ],
+  [
+   "Science",
+   "What is the smallest unit of an element that keeps its properties?",
+   "The atom",
+   "The molecule",
+   "The electron",
+   "The cell",
+   "Split it and you get particles, not the element."
+  ],
+  [
+   "Science",
+   "Which scientist proposed the theory of evolution by natural selection?",
+   "Charles Darwin",
+   "Gregor Mendel",
+   "Carl Linnaeus",
+   "Jean-Baptiste Lamarck",
+   "Alfred Russel Wallace reached the same idea independently."
+  ],
+  [
+   "Science",
+   "What is the pH of pure water?",
+   "7",
+   "0",
+   "10",
+   "14",
+   "Below seven is acid, above it is alkaline."
+  ],
+  [
+   "Science",
+   "Which planet spins on its side?",
+   "Uranus",
+   "Neptune",
+   "Saturn",
+   "Venus",
+   "Tilted about 98 degrees, probably by an ancient collision."
+  ],
+  [
+   "Science",
+   "What does a barometer measure?",
+   "Air pressure",
+   "Temperature",
+   "Humidity",
+   "Wind direction",
+   "Falling pressure usually means weather is on the way."
+  ],
+  [
+   "Science",
+   "How many pairs of chromosomes does a human have?",
+   "23",
+   "46",
+   "12",
+   "30",
+   "Forty-six chromosomes in twenty-three pairs."
+  ],
+  [
+   "Science",
+   "What is the lightest metal?",
+   "Lithium",
+   "Aluminium",
+   "Magnesium",
+   "Titanium",
+   "Light enough to float on water, if it did not react with it."
+  ],
+  [
+   "Science",
+   "Which blood cells fight infection?",
+   "White blood cells",
+   "Red blood cells",
+   "Platelets",
+   "Plasma cells only",
+   "Red ones carry oxygen; platelets do the clotting."
+  ],
+  [
+   "Science",
+   "What is the speed of sound in air, roughly?",
+   "340 metres per second",
+   "34 metres per second",
+   "3,400 metres per second",
+   "1,000 metres per second",
+   "Faster in water, and faster still in steel."
+  ],
+  [
+   "Science",
+   "Which part of the brain controls balance?",
+   "The cerebellum",
+   "The cerebrum",
+   "The brain stem",
+   "The hypothalamus",
+   "It holds more neurons than the rest of the brain put together."
+  ],
+  [
+   "Arts & culture",
+   "Who painted Guernica?",
+   "Pablo Picasso",
+   "Joan Miró",
+   "Salvador Dalí",
+   "Francisco Goya",
+   "Painted in a month, after the bombing of a Basque town in 1937."
+  ],
+  [
+   "Arts & culture",
+   "Which novel begins 'Call me Ishmael'?",
+   "Moby-Dick",
+   "Treasure Island",
+   "The Old Man and the Sea",
+   "Robinson Crusoe",
+   "It sold badly in Melville's lifetime and was rediscovered decades later."
+  ],
+  [
+   "Arts & culture",
+   "Which city is the home of the Prado museum?",
+   "Madrid",
+   "Barcelona",
+   "Lisbon",
+   "Seville",
+   "Velázquez and Goya are both there in force."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote the opera The Magic Flute?",
+   "Mozart",
+   "Verdi",
+   "Wagner",
+   "Puccini",
+   "Premiered weeks before his death in 1791."
+  ],
+  [
+   "Arts & culture",
+   "What is the art of beautiful handwriting called?",
+   "Calligraphy",
+   "Typography",
+   "Lithography",
+   "Etching",
+   "From the Greek for beautiful writing."
+  ],
+  [
+   "Arts & culture",
+   "Which Russian wrote War and Peace?",
+   "Leo Tolstoy",
+   "Fyodor Dostoevsky",
+   "Nikolai Gogol",
+   "Boris Pasternak",
+   "Over half a million words, and he rewrote it by hand many times."
+  ],
+  [
+   "Arts & culture",
+   "Which instrument has 88 keys?",
+   "The piano",
+   "The organ",
+   "The accordion",
+   "The harpsichord",
+   "Fifty-two white and thirty-six black."
+  ],
+  [
+   "Arts & culture",
+   "Who directed the film Metropolis?",
+   "Fritz Lang",
+   "F. W. Murnau",
+   "Sergei Eisenstein",
+   "Carl Theodor Dreyer",
+   "1927, and a third of it was lost for eighty years."
+  ],
+  [
+   "Arts & culture",
+   "Which colour is made by mixing blue and yellow paint?",
+   "Green",
+   "Purple",
+   "Orange",
+   "Brown",
+   "With light it is different: blue and yellow light make white."
+  ],
+  [
+   "Arts & culture",
+   "Who wrote the Finnish national anthem's melody?",
+   "Fredrik Pacius",
+   "Jean Sibelius",
+   "Robert Kajanus",
+   "Oskar Merikanto",
+   "The same tune is also Estonia's national anthem."
+  ]
+ ],
+ "TRIVIA_FI": [
+  [
+   "Minä vuonna Berliinin muuri murtui?",
+   "1989",
+   "1987",
+   "1991",
+   "1985",
+   "Se avattiin 9. marraskuuta 1989 illalla."
+  ],
+  [
+   "Kuka käveli ensimmäisenä Kuussa?",
+   "Neil Armstrong",
+   "Buzz Aldrin",
+   "Juri Gagarin",
+   "Michael Collins",
+   "Apollo 11, 20. heinäkuuta 1969. Aldrin tuli tikkaita alas heti perässä."
+  ],
+  [
+   "Minkä valtakunnan Tšingis-kaani perusti?",
+   "Mongolivaltakunnan",
+   "Osmanivaltakunnan",
+   "Persian valtakunnan",
+   "Rooman valtakunnan",
+   "Laajimmillaan historian suurin yhtenäinen maavaltakunta."
+  ],
+  [
+   "Minä vuonna Titanic upposi?",
+   "1912",
+   "1905",
+   "1918",
+   "1923",
+   "Neljäntenä päivänä neitsytmatkallaan, jäävuoreen törmättyään."
+  ],
+  [
+   "Mikä sota päättyi Versailles'n rauhaan?",
+   "Ensimmäinen maailmansota",
+   "Toinen maailmansota",
+   "Krimin sota",
+   "Saksan-Ranskan sota",
+   "Allekirjoitettiin 1919, viisi vuotta sodan alusta."
+  ],
+  [
+   "Kuka oli Rooman ensimmäinen keisari?",
+   "Augustus",
+   "Julius Caesar",
+   "Nero",
+   "Caligula",
+   "Caesar ei koskaan ollut keisari; arvonimen otti hänen ottopoikansa."
+  ],
+  [
+   "Missä maassa teollinen vallankumous alkoi?",
+   "Britanniassa",
+   "Ranskassa",
+   "Saksassa",
+   "Yhdysvalloissa",
+   "Tekstiiliteollisuudesta ja höyrystä, noin 1760-luvulta alkaen."
+  ],
+  [
+   "Minä vuonna Ranskan vallankumous alkoi?",
+   "1789",
+   "1776",
+   "1799",
+   "1812",
+   "Bastilji vallattiin 14. heinäkuuta 1789."
+  ],
+  [
+   "Minä vuonna Suomi julistautui itsenäiseksi?",
+   "1917",
+   "1905",
+   "1920",
+   "1939",
+   "6. joulukuuta 1917, Venäjän keisarikunnasta."
+  ],
+  [
+   "Mitkä kaksi maata kävivät talvisodan?",
+   "Suomi ja Neuvostoliitto",
+   "Suomi ja Ruotsi",
+   "Norja ja Saksa",
+   "Puola ja Neuvostoliitto",
+   "105 päivää, marraskuusta 1939 maaliskuuhun 1940."
+  ],
+  [
+   "Minä vuonna toinen maailmansota päättyi?",
+   "1945",
+   "1944",
+   "1946",
+   "1943",
+   "Saksa antautui toukokuussa, Japani syyskuussa."
+  ],
+  [
+   "Kuka kirjoitti Kommunistisen manifestin yhdessä Friedrich Engelsin kanssa?",
+   "Karl Marx",
+   "Vladimir Lenin",
+   "Georg Hegel",
+   "Mihail Bakunin",
+   "Julkaistiin 1848, muutamaa viikkoa ennen Euroopan vallankumouksia."
+  ],
+  [
+   "Millä vuosisadalla Lontoon suurpalo riehui?",
+   "1600-luvulla",
+   "1400-luvulla",
+   "1700-luvulla",
+   "1500-luvulla",
+   "Vuonna 1666. Se alkoi leipomosta Pudding Lanella."
+  ],
+  [
+   "Mikä sivilisaatio rakensi Machu Picchun?",
+   "Inkat",
+   "Mayat",
+   "Atsteekit",
+   "Olmeekit",
+   "Rakennettu noin 1450 Perun Andeille."
+  ],
+  [
+   "Minkä kirjoituksen tulkinnassa Rosettan kivi oli avain?",
+   "Egyptin hieroglyfien",
+   "Nuolenpääkirjoituksen",
+   "Lineaari B:n",
+   "Riimukirjoituksen",
+   "Sama asetus on kivessä kolmella kirjoituksella, joista yksi on kreikka."
+  ],
+  [
+   "Kuka johti Intian väkivallatonta itsenäisyysliikettä?",
+   "Mohandas Gandhi",
+   "Jawaharlal Nehru",
+   "Subhas Chandra Bose",
+   "B. R. Ambedkar",
+   "Itsenäisyys tuli vuonna 1947."
+  ],
+  [
+   "Mikä kaupunki oli muurin jakama vuosina 1961–1989?",
+   "Berliini",
+   "Wien",
+   "Praha",
+   "Budapest",
+   "Kaksikymmentäkahdeksan vuotta, lähes päivälleen."
+  ],
+  [
+   "Mikä vaurioitti Apollo 13:a matkalla Kuuhun?",
+   "Happisäiliö räjähti",
+   "Tulipalo laukaisualustalla",
+   "Moottorivika nousussa",
+   "Ohjaustietokone hajosi",
+   "Kaikki kolme astronauttia palasivat elävinä."
+  ],
+  [
+   "Kuka kuningatar hallitsi Britanniaa 70 vuotta?",
+   "Elisabet II",
+   "Viktoria",
+   "Anna",
+   "Maria I",
+   "Viktoria ylsi 63 vuoteen, mikä oli siihen asti ennätys."
+  ],
+  [
+   "Englanti kävi satavuotisen sodan mitä maata vastaan?",
+   "Ranskaa",
+   "Espanjaa",
+   "Skotlantia",
+   "Alankomaita",
+   "Sota kesti itse asiassa 116 vuotta, katkoksin."
+  ],
+  [
+   "Mikä on maailman suurin valtameri?",
+   "Tyynimeri",
+   "Atlantti",
+   "Intian valtameri",
+   "Jäämeri",
+   "Se peittää noin kolmanneksen maapallon pinnasta."
+  ],
+  [
+   "Mikä on Australian pääkaupunki?",
+   "Canberra",
+   "Sydney",
+   "Melbourne",
+   "Perth",
+   "Valittiin kompromissina Sydneyn ja Melbournen välillä."
+  ],
+  [
+   "Mount Everest on Nepalin ja minkä maan rajalla?",
+   "Kiinan",
+   "Intian",
+   "Bhutanin",
+   "Pakistanin",
+   "Toisin sanoen Tiibetin."
+  ],
+  [
+   "Mikä on maailman suurin kuuma aavikko?",
+   "Sahara",
+   "Gobi",
+   "Kalahari",
+   "Arabian aavikko",
+   "Suunnilleen Yhdysvaltain kokoinen."
+  ],
+  [
+   "Mikä on maailman pienin valtio?",
+   "Vatikaani",
+   "Monaco",
+   "San Marino",
+   "Liechtenstein",
+   "Noin puoli neliökilometriä."
+  ],
+  [
+   "Mikä Yhdysvaltain osavaltio on pinta-alaltaan suurin?",
+   "Alaska",
+   "Teksas",
+   "Kalifornia",
+   "Montana",
+   "Yli kaksi kertaa Teksasin kokoinen."
+  ],
+  [
+   "Missä maassa suurin osa Amazonin sademetsästä sijaitsee?",
+   "Brasiliassa",
+   "Perussa",
+   "Kolumbiassa",
+   "Venezuelassa",
+   "Noin 60 prosenttia siitä."
+  ],
+  [
+   "Mikä kaupunki sijaitsee Bosporinsalmen rannalla?",
+   "Istanbul",
+   "Ateena",
+   "Odesa",
+   "Baku",
+   "Toinen jalka Euroopassa, toinen Aasiassa."
+  ],
+  [
+   "Kuinka monta aikavyöhykettä Venäjällä on?",
+   "Yksitoista",
+   "Seitsemän",
+   "Yhdeksän",
+   "Kolmetoista",
+   "Kaliningradista Kamtšatkalle."
+  ],
+  [
+   "Ankara on minkä maan pääkaupunki?",
+   "Turkin",
+   "Georgian",
+   "Kazakstanin",
+   "Azerbaidžanin",
+   "Se syrjäytti Istanbulin pääkaupunkina vuonna 1923."
+  ],
+  [
+   "Mikä vuoristo on perinteinen raja Euroopan ja Aasian välillä?",
+   "Ural",
+   "Alpit",
+   "Kaukasus",
+   "Karpaatit",
+   "Se kulkee pohjoisesta etelään Venäjän halki."
+  ],
+  [
+   "Mikä on valtamerten syvin kohta?",
+   "Mariaanien hauta",
+   "Tongan hauta",
+   "Jaavan hauta",
+   "Puerto Ricon hauta",
+   "Lähes yksitoista kilometriä alaspäin."
+  ],
+  [
+   "Mikä on Islannin pääkaupunki?",
+   "Reykjavík",
+   "Oslo",
+   "Tórshavn",
+   "Nuuk",
+   "Pohjoisin itsenäisen valtion pääkaupunki."
+  ],
+  [
+   "Nairobi on minkä maan pääkaupunki?",
+   "Kenian",
+   "Tansanian",
+   "Ugandan",
+   "Etiopian",
+   "Se kasvoi rautatien varikosta."
+  ],
+  [
+   "Iso valliriutta sijaitsee minkä maan rannikolla?",
+   "Australian",
+   "Indonesian",
+   "Filippiinien",
+   "Fidžin",
+   "Yli 2 300 kilometriä pitkä."
+  ],
+  [
+   "Mikä on maailman suurin saari?",
+   "Grönlanti",
+   "Uusi-Guinea",
+   "Borneo",
+   "Madagaskar",
+   "Australia lasketaan mantereeksi, ei saareksi."
+  ],
+  [
+   "Baikaljärvi, maailman syvin järvi, sijaitsee missä maassa?",
+   "Venäjällä",
+   "Mongoliassa",
+   "Kazakstanissa",
+   "Kiinassa",
+   "Siinä on noin viidennes maailman sulasta makeasta vedestä."
+  ],
+  [
+   "Mikä salmi erottaa Espanjan Marokosta?",
+   "Gibraltarinsalmi",
+   "Bosporinsalmi",
+   "Hormuzinsalmi",
+   "Malakansalmi",
+   "Kapeimmillaan neljätoista kilometriä."
+  ],
+  [
+   "Missä maassa on eniten järviä?",
+   "Kanadassa",
+   "Suomessa",
+   "Venäjällä",
+   "Ruotsissa",
+   "Useimpien laskutapojen mukaan enemmän kuin muussa maailmassa yhteensä."
+  ],
+  [
+   "Mikä meri on Suomen ja Ruotsin välissä?",
+   "Itämeri",
+   "Pohjanmeri",
+   "Barentsinmeri",
+   "Norjanmeri",
+   "Sen pohjoinen haara on Pohjanlahti."
+  ],
+  [
+   "Mikä on kullan kemiallinen merkki?",
+   "Au",
+   "Ag",
+   "Go",
+   "Gd",
+   "Latinan sanasta aurum. Ag on hopea."
+  ],
+  [
+   "Kuinka monta luuta aikuisen ihmisen kehossa on?",
+   "206",
+   "186",
+   "226",
+   "246",
+   "Vauvalla niitä on noin 270; osa luutuu yhteen kasvaessa."
+  ],
+  [
+   "Mikä planeetta on lähimpänä Aurinkoa?",
+   "Merkurius",
+   "Venus",
+   "Mars",
+   "Maa",
+   "Venus on silti kuumempi, ilmakehänsä ansiosta."
+  ],
+  [
+   "Mitä kaasua kasvit ottavat yhteyttämiseen?",
+   "Hiilidioksidia",
+   "Happea",
+   "Typpeä",
+   "Vetyä",
+   "Happi on sivutuote, jonka ne luovuttavat."
+  ],
+  [
+   "Kuka kehitti yleisen suhteellisuusteorian?",
+   "Albert Einstein",
+   "Isaac Newton",
+   "Niels Bohr",
+   "Max Planck",
+   "Julkaistiin vuonna 1915."
+  ],
+  [
+   "Mikä on kovin luonnonaine?",
+   "Timantti",
+   "Kvartsi",
+   "Korundi",
+   "Topaasi",
+   "Kymmenen kympistä Mohsin asteikolla."
+  ],
+  [
+   "Kuinka nopeasti valo suunnilleen kulkee?",
+   "300 000 km sekunnissa",
+   "30 000 km sekunnissa",
+   "3 000 000 km sekunnissa",
+   "150 000 km sekunnissa",
+   "Tarkkaan ottaen 299 792 km/s tyhjiössä."
+  ],
+  [
+   "Mikä veriryhmä on yleisluovuttaja?",
+   "O negatiivinen",
+   "AB positiivinen",
+   "A positiivinen",
+   "B negatiivinen",
+   "AB positiivinen on puolestaan yleisvastaanottaja."
+  ],
+  [
+   "Mitä DNA tarkoittaa?",
+   "Deoksiribonukleiinihappoa",
+   "Dinukleiinihappoa",
+   "Deoksiriboosinitraattia",
+   "Diribonukleiinihappoa",
+   "Sen kaksoiskierrerakenne kuvattiin vuonna 1953."
+  ],
+  [
+   "Minkä alkuaineen järjestysluku on 1?",
+   "Vety",
+   "Helium",
+   "Hiili",
+   "Happi",
+   "Maailmankaikkeuden yleisin alkuaine."
+  ],
+  [
+   "Mikä on aurinkokunnan suurin planeetta?",
+   "Jupiter",
+   "Saturnus",
+   "Neptunus",
+   "Uranus",
+   "Massiivisempi kuin kaikki muut yhteensä."
+  ],
+  [
+   "Kuka muotoili kolme liikelakia?",
+   "Isaac Newton",
+   "Galileo Galilei",
+   "Johannes Kepler",
+   "Christiaan Huygens",
+   "Julkaistiin Principiassa vuonna 1687."
+  ],
+  [
+   "Mikä solun osa tuottaa suurimman osan sen energiasta?",
+   "Mitokondrio",
+   "Tuma",
+   "Ribosomi",
+   "Golgin laite",
+   "Sillä on oma DNA, joka periytyy äidiltä."
+  ],
+  [
+   "Missä lämpötilassa vesi kiehuu merenpinnan tasolla?",
+   "100 celsiusasteessa",
+   "90 asteessa",
+   "110 asteessa",
+   "80 asteessa",
+   "Vuorella se kiehuu viileämpänä."
+  ],
+  [
+   "Minkä vitamiinin iho valmistaa auringonvalossa?",
+   "D-vitamiinin",
+   "C-vitamiinin",
+   "B12-vitamiinin",
+   "A-vitamiinin",
+   "Siksi pohjoinen talvi on ongelma."
+  ],
+  [
+   "Mitä sienten tutkimus on nimeltään?",
+   "Mykologia",
+   "Botaniikka",
+   "Entomologia",
+   "Virologia",
+   "Entomologia tutkii hyönteisiä."
+  ],
+  [
+   "Mikä alkeishiukkanen on negatiivisesti varautunut?",
+   "Elektroni",
+   "Protoni",
+   "Neutroni",
+   "Positroni",
+   "Protonit ovat positiivisia, neutronit varauksettomia."
+  ],
+  [
+   "Kauanko auringonvalolta kestää saapua Maahan?",
+   "Noin 8 minuuttia",
+   "Noin 8 sekuntia",
+   "Noin 80 minuuttia",
+   "Noin 8 tuntia",
+   "Näet Auringon siis aina sellaisena kuin se oli 8 minuuttia sitten."
+  ],
+  [
+   "Mikä kaasu on Maan ilmakehässä yleisin?",
+   "Typpi",
+   "Happi",
+   "Hiilidioksidi",
+   "Argon",
+   "Noin 78 prosenttia siitä."
+  ],
+  [
+   "Kuka keksi penisilliinin?",
+   "Alexander Fleming",
+   "Louis Pasteur",
+   "Joseph Lister",
+   "Robert Koch",
+   "Vahingossa, saastuneesta maljasta vuonna 1928."
+  ],
+  [
+   "Kuka maalasi Mona Lisan?",
+   "Leonardo da Vinci",
+   "Michelangelo",
+   "Rafael",
+   "Sandro Botticelli",
+   "Hän työsti sitä vuosia eikä koskaan luovuttanut sitä tilaajalle."
+  ],
+  [
+   "Kuka kirjoitti Romeon ja Julian?",
+   "William Shakespeare",
+   "Christopher Marlowe",
+   "Geoffrey Chaucer",
+   "Ben Jonson",
+   "Kirjoitettu noin vuonna 1595."
+  ],
+  [
+   "Missä museossa Mona Lisa on?",
+   "Louvressa",
+   "Pradossa",
+   "Uffizissa",
+   "Rijksmuseumissa",
+   "Panssarilasin takana Pariisissa."
+  ],
+  [
+   "Kuka maalasi Tähtikirkkaan yön?",
+   "Vincent van Gogh",
+   "Claude Monet",
+   "Paul Cézanne",
+   "Paul Gauguin",
+   "Maalattu mielisairaalan ikkunasta vuonna 1889."
+  ],
+  [
+   "Kuka sävelsi yhdeksännen sinfonian ja sen Oodin ilolle?",
+   "Ludwig van Beethoven",
+   "Wolfgang Amadeus Mozart",
+   "Johannes Brahms",
+   "Franz Schubert",
+   "Hän oli siinä vaiheessa lähes täysin kuuro."
+  ],
+  [
+   "Kuka kirjoitti romaanin 1984?",
+   "George Orwell",
+   "Aldous Huxley",
+   "Ray Bradbury",
+   "H. G. Wells",
+   "Julkaistiin vuonna 1949."
+  ],
+  [
+   "Kuka suomalaissäveltäjä kirjoitti Finlandian?",
+   "Jean Sibelius",
+   "Kaija Saariaho",
+   "Einojuhani Rautavaara",
+   "Leevi Madetoja",
+   "Sävelletty 1899 vastalauseeksi Venäjän sensuurille."
+  ],
+  [
+   "Kuka veisti Firenzen Daavid-patsaan?",
+   "Michelangelo",
+   "Donatello",
+   "Gian Lorenzo Bernini",
+   "Auguste Rodin",
+   "Veistetty yhdestä marmorilohkareesta, jonka muut olivat hylänneet."
+  ],
+  [
+   "Kalevala on minkä maan kansalliseepos?",
+   "Suomen",
+   "Viron",
+   "Islannin",
+   "Norjan",
+   "Elias Lönnrotin kokoama kansanrunoudesta."
+  ],
+  [
+   "Kuka kirjoitti Ylpeyden ja ennakkoluulon?",
+   "Jane Austen",
+   "Charlotte Brontë",
+   "George Eliot",
+   "Elizabeth Gaskell",
+   "Julkaistiin nimettömänä vuonna 1813."
+  ],
+  [
+   "Kuka taidemaalari leikkasi osan omasta korvastaan?",
+   "Vincent van Gogh",
+   "Paul Gauguin",
+   "Edvard Munch",
+   "Henri de Toulouse-Lautrec",
+   "Riidan jälkeen Gauguinin kanssa Arlesissa."
+  ],
+  [
+   "Kuka ohjasi elokuvat Tappajahai ja E.T.?",
+   "Steven Spielberg",
+   "George Lucas",
+   "Martin Scorsese",
+   "Francis Ford Coppola",
+   "Tappajahaita kutsutaan usein ensimmäiseksi kesähitiksi."
+  ],
+  [
+   "Mikä maalaus tunnetaan sulavista kelloistaan?",
+   "Muistin pysyvyys",
+   "Guernica",
+   "Huuto",
+   "Lumpeet",
+   "Salvador Dalí, 1931."
+  ],
+  [
+   "Kuka kirjoitti Taru sormusten herrasta?",
+   "J. R. R. Tolkien",
+   "C. S. Lewis",
+   "Philip Pullman",
+   "Ursula K. Le Guin",
+   "Hän oli muinaisenglannin professori Oxfordissa."
+  ],
+  [
+   "Kuka norjalainen maalasi Huudon?",
+   "Edvard Munch",
+   "Gustav Vigeland",
+   "Johan Christian Dahl",
+   "Christian Krohg",
+   "Siitä on olemassa useita versioita."
+  ],
+  [
+   "Kuka maalasi Sikstuksen kappelin katon?",
+   "Michelangelo",
+   "Rafael",
+   "Leonardo da Vinci",
+   "Tizian",
+   "Neljä vuotta, enimmäkseen seisaaltaan."
+  ],
+  [
+   "Kuka loi muumit?",
+   "Tove Jansson",
+   "Astrid Lindgren",
+   "Selma Lagerlöf",
+   "Hans Christian Andersen",
+   "Suomalainen kirjailija, joka kirjoitti ruotsiksi."
+  ],
+  [
+   "Kuka kirjoitti Don Quijoten?",
+   "Miguel de Cervantes",
+   "Lope de Vega",
+   "Luis de Góngora",
+   "Pedro Calderón",
+   "Sitä kutsutaan usein ensimmäiseksi moderniksi romaaniksi."
+  ],
+  [
+   "Kuka hollantilainen maalasi Yövartion?",
+   "Rembrandt",
+   "Johannes Vermeer",
+   "Frans Hals",
+   "Jan Steen",
+   "Se on Amsterdamin Rijksmuseumissa."
+  ],
+  [
+   "Kuka sävelsi Pähkinänsärkijän?",
+   "Pjotr Tšaikovski",
+   "Igor Stravinski",
+   "Sergei Prokofjev",
+   "Nikolai Rimski-Korsakov",
+   "Ensiesitys vuonna 1892."
+  ],
+  [
+   "Kuinka monta pelaajaa jalkapallojoukkueella on kentällä?",
+   "Yksitoista",
+   "Kymmenen",
+   "Kaksitoista",
+   "Yhdeksän",
+   "Maalivahti mukaan lukien."
+  ],
+  [
+   "Kuinka usein kesäolympialaiset järjestetään?",
+   "Joka neljäs vuosi",
+   "Joka toinen vuosi",
+   "Joka kolmas vuosi",
+   "Joka viides vuosi",
+   "Väliä kutsutaan olympiadiksi."
+  ],
+  [
+   "Missä lajissa tehdään donkkaus?",
+   "Koripallossa",
+   "Lentopallossa",
+   "Käsipallossa",
+   "Tenniksessä",
+   "Siitä saa saman kaksi pistettä kuin mistä tahansa lähiheitosta."
+  ],
+  [
+   "Kuinka monta rengasta olympialipussa on?",
+   "Viisi",
+   "Neljä",
+   "Kuusi",
+   "Seitsemän",
+   "Yksi kutakin asuttua maanosaa kohti, siten kuin ne silloin laskettiin."
+  ],
+  [
+   "Mikä maa on voittanut eniten jalkapallon MM-kultaa?",
+   "Brasilia",
+   "Saksa",
+   "Italia",
+   "Argentiina",
+   "Viisi, ja ainoa maa joka on pelannut jokaisessa turnauksessa."
+  ],
+  [
+   "Mikä on nollan nimi tenniksessä?",
+   "Love",
+   "Nil",
+   "Duck",
+   "Blank",
+   "Mahdollisesti ranskan sanasta l'œuf, muna."
+  ],
+  [
+   "Kuinka pitkä maraton on?",
+   "42,195 kilometriä",
+   "40 kilometriä",
+   "45 kilometriä",
+   "38 kilometriä",
+   "Omituinen matka vakiintui Lontoon kisoissa 1908."
+  ],
+  [
+   "Kuinka monta pelaajaa jäällä on puolellaan jääkiekossa?",
+   "Kuusi",
+   "Viisi",
+   "Seitsemän",
+   "Neljä",
+   "Viisi kenttäpelaajaa ja maalivahti."
+  ],
+  [
+   "Mistä maasta judo on kotoisin?",
+   "Japanista",
+   "Kiinasta",
+   "Koreasta",
+   "Brasiliasta",
+   "Jigoro Kanon perustama vuonna 1882."
+  ],
+  [
+   "Tour de France on minkä lajin kilpailu?",
+   "Pyöräilyn",
+   "Juoksun",
+   "Moottoriurheilun",
+   "Soudun",
+   "Kolme viikkoa ja noin 3 500 kilometriä."
+  ],
+  [
+   "Montako pistettä yritys on rugby unionissa?",
+   "Viisi",
+   "Kolme",
+   "Neljä",
+   "Kuusi",
+   "Plus kaksi lisää onnistuneesta korotuksesta."
+  ],
+  [
+   "Kuka suomalainen voitti formula ykkösten maailmanmestaruuden 1982?",
+   "Keke Rosberg",
+   "Mika Häkkinen",
+   "Kimi Räikkönen",
+   "Heikki Kovalainen",
+   "Hän voitti kaudella vain yhden osakilpailun ja silti mestaruuden."
+  ],
+  [
+   "Mikä on golfissa yksi lyönti alle parin?",
+   "Birdie",
+   "Eagle",
+   "Bogey",
+   "Albatrossi",
+   "Eagle on kaksi alle."
+  ],
+  [
+   "Missä lajissa käytetään sulkapalloa eli höyhenpalloa?",
+   "Sulkapallossa",
+   "Squashissa",
+   "Pöytätenniksessä",
+   "Pelotassa",
+   "Pallo voi lähteä mailasta yli 400 km/h."
+  ],
+  [
+   "Kuinka monta ruutua shakkilaudalla on?",
+   "64",
+   "81",
+   "100",
+   "49",
+   "Kahdeksan kertaa kahdeksan."
+  ],
+  [
+   "Mitä maata Usain Bolt edustaa?",
+   "Jamaikaa",
+   "Trinidad ja Tobagoa",
+   "Yhdysvaltoja",
+   "Barbadosta",
+   "Hän pitää hallussaan 100 ja 200 metrin maailmanennätyksiä."
+  ],
+  [
+   "Montako kolmen iskun sarjaa eli strikeä tekee ulosajon baseballissa?",
+   "Kolme",
+   "Kaksi",
+   "Neljä",
+   "Viisi",
+   "Neljä palloa taas oikeuttaa vapaapesään."
+  ],
+  [
+   "Kuka suomalainen juoksija voitti yhdeksän olympiakultaa 1920-luvulla?",
+   "Paavo Nurmi",
+   "Hannes Kolehmainen",
+   "Ville Ritola",
+   "Lasse Virén",
+   "Häntä kutsuttiin Lentäväksi suomalaiseksi."
+  ],
+  [
+   "Montako reikää täydellä golfkierroksella pelataan?",
+   "Kahdeksantoista",
+   "Yhdeksän",
+   "Kaksitoista",
+   "Kaksikymmentäneljä",
+   "Par on yleensä 70–72."
+  ],
+  [
+   "Minkä lajin kuuluisin ottelusarja on Ashes?",
+   "Krikettin",
+   "Rugbyn",
+   "Jääkiekon",
+   "Soudun",
+   "Englanti vastaan Australia vuodesta 1882."
+  ],
+  [
+   "Montako päivää karkausvuodessa on?",
+   "366",
+   "365",
+   "364",
+   "367",
+   "Helmikuuhun tulee lisäpäivä suunnilleen joka neljäs vuosi."
+  ],
+  [
+   "Montako kirjainta englannin aakkosissa on?",
+   "26",
+   "24",
+   "25",
+   "27",
+   "Suomessa niitä on muutama enemmän."
+  ],
+  [
+   "Mikä on Japanin valuutta?",
+   "Jeni",
+   "Won",
+   "Juan",
+   "Baht",
+   "Won on korealainen, juan kiinalainen."
+  ],
+  [
+   "Montako minuuttia vuorokaudessa on?",
+   "1 440",
+   "1 240",
+   "1 640",
+   "1 200",
+   "Kuusikymmentä kertaa kaksikymmentäneljä."
+  ],
+  [
+   "Mikä mauste on painoonsa nähden kallein?",
+   "Sahrami",
+   "Vanilja",
+   "Kardemumma",
+   "Kaneli",
+   "Se poimitaan käsin, kolme luottia kukkaa kohti."
+  ],
+  [
+   "Mitä WWW tarkoittaa?",
+   "World Wide Web",
+   "World Web Wire",
+   "Wide World Web",
+   "Web World Wide",
+   "Tim Berners-Leen ehdotus vuodelta 1989."
+  ],
+  [
+   "Mikä on suurin elävä eläin?",
+   "Sinivalas",
+   "Afrikannorsu",
+   "Kirahvi",
+   "Kaskelotti",
+   "Jopa kolmekymmentä metriä pitkä."
+  ],
+  [
+   "Montako kieltä tavallisessa kitarassa on?",
+   "Kuusi",
+   "Neljä",
+   "Viisi",
+   "Seitsemän",
+   "Bassossa niitä on neljä."
+  ],
+  [
+   "Mikä on guacamolen pääraaka-aine?",
+   "Avokado",
+   "Kesäkurpitsa",
+   "Herne",
+   "Härkäpapu",
+   "Nimi tulee nahuatlin kielen avokadokastikkeesta."
+  ],
+  [
+   "Mitä planeettaa kutsutaan punaiseksi planeetaksi?",
+   "Marsia",
+   "Venusta",
+   "Jupiteria",
+   "Merkuriusta",
+   "Maaperän rautaoksidi eli ruoste."
+  ],
+  [
+   "Montako väriä sateenkaaressa perinteisesti luetellaan?",
+   "Seitsemän",
+   "Kuusi",
+   "Viisi",
+   "Kahdeksan",
+   "Newton päätyi seitsemään, jotta se vastaisi sävelasteikkoa."
+  ],
+  [
+   "Mikä on varisparven englanninkielinen nimitys?",
+   "A murder",
+   "A parliament",
+   "A pack",
+   "A gaggle",
+   "A parliament tarkoittaa pöllöparvea."
+  ],
+  [
+   "Missä maassa juodaan eniten kahvia henkeä kohti?",
+   "Suomessa",
+   "Italiassa",
+   "Brasiliassa",
+   "Ruotsissa",
+   "Keskimäärin noin neljä kupillista päivässä."
+  ],
+  [
+   "Montako astetta ympyrässä on?",
+   "360",
+   "180",
+   "270",
+   "400",
+   "Luku on peräisin babylonialaisesta tähtitieteestä."
+  ],
+  [
+   "Montako pientä ruutua Rubikin kuution yhdellä sivulla on?",
+   "Yhdeksän",
+   "Neljä",
+   "Kuusitoista",
+   "Kuusi",
+   "Kolme kertaa kolme, kullakin kuudella sivulla."
+  ],
+  [
+   "Millä kielellä on eniten äidinkielisiä puhujia?",
+   "Mandariinikiinalla",
+   "Englannilla",
+   "Espanjalla",
+   "Hindillä",
+   "Englanti voittaa, jos toisen kielen puhujat lasketaan mukaan."
+  ],
+  [
+   "Minä kuukautena Suomessa vietetään juhannusta?",
+   "Kesäkuussa",
+   "Heinäkuussa",
+   "Toukokuussa",
+   "Elokuussa",
+   "Kesäpäivänseisausta lähinnä olevana viikonloppuna."
+  ],
+  [
+   "Mikä on ihmiskehon suurin elin?",
+   "Iho",
+   "Maksa",
+   "Keuhkot",
+   "Suolisto",
+   "Sitä on noin kaksi neliömetriä."
+  ],
+  [
+   "Montako sivua kuusikulmiossa on?",
+   "Kuusi",
+   "Viisi",
+   "Seitsemän",
+   "Kahdeksan",
+   "Kuten hunajakennossa."
+  ],
+  [
+   "Mikä metalli on huoneenlämmössä nestemäistä?",
+   "Elohopea",
+   "Lyijy",
+   "Tina",
+   "Sinkki",
+   "Siksi sitä käytettiin lämpömittareissa."
+  ],
+  [
+   "Minkä kaupungin Vesuvius tuhosi vuonna 79?",
+   "Pompeji",
+   "Karthago",
+   "Troija",
+   "Efesos",
+   "Tuhka hautasi sen niin tarkkaan, että kadut ovat yhä pystyssä."
+  ],
+  [
+   "Kuka oli ensimmäinen Nobel-palkinnon voittanut nainen?",
+   "Marie Curie",
+   "Rosalind Franklin",
+   "Lise Meitner",
+   "Dorothy Hodgkin",
+   "Fysiikan 1903 ja vielä kemian 1911."
+  ],
+  [
+   "Minkä muurin keisari Hadrianus aloitti?",
+   "Muurin Pohjois-Britannian poikki",
+   "Kiinan muurin",
+   "Konstantinopolin muurit",
+   "Berliinin muurin",
+   "Noin 117 kilometriä, valmiina noin vuonna 128."
+  ],
+  [
+   "Missä maassa tapahtui samettivallankumous?",
+   "Tšekkoslovakiassa",
+   "Puolassa",
+   "Unkarissa",
+   "Romaniassa",
+   "Marraskuussa 1989, eikä juuri kukaan loukkaantunut."
+  ],
+  [
+   "Mikä laiva vei pyhiinvaeltajat Amerikkaan vuonna 1620?",
+   "Mayflower",
+   "Beagle",
+   "Endeavour",
+   "Victoria",
+   "102 matkustajaa, 66 päivää merellä."
+  ],
+  [
+   "Kuka oli Venäjän viimeinen tsaari?",
+   "Nikolai II",
+   "Aleksanteri III",
+   "Pietari Suuri",
+   "Paavali I",
+   "Hän luopui kruunusta maaliskuussa 1917."
+  ],
+  [
+   "Mikä maa antoi ensimmäisenä naisille äänioikeuden valtiollisissa vaaleissa?",
+   "Uusi-Seelanti",
+   "Suomi",
+   "Norja",
+   "Australia",
+   "Vuonna 1893. Suomi oli ensimmäinen, jossa he saivat myös asettua ehdolle, 1906."
+  ],
+  [
+   "Mikä oli Silkkitie?",
+   "Kauppareittien verkosto Aasian halki",
+   "Roomalainen sotilastie",
+   "Kanava kahden meren välillä",
+   "Keskiaikainen pyhiinvaellusreitti",
+   "Silkki kulki länteen; mukana tuli paperi, ruuti ja rutto."
+  ],
+  [
+   "Kuka egyptiläinen kuningatar oli viimeinen farao?",
+   "Kleopatra VII",
+   "Nefertiti",
+   "Hatšepsut",
+   "Ankhesenamun",
+   "Egyptistä tuli Rooman provinssi hänen kuolemansa jälkeen vuonna 30 eaa."
+  ],
+  [
+   "Mitkä kaksi kaupunkia tuhoutuivat atomipommeissa vuonna 1945?",
+   "Hiroshima ja Nagasaki",
+   "Tokio ja Osaka",
+   "Kioto ja Kobe",
+   "Jokohama ja Sendai",
+   "6. ja 9. elokuuta. Japani antautui saman kuun aikana."
+  ],
+  [
+   "Millä maalla on pisin rantaviiva?",
+   "Kanadalla",
+   "Venäjällä",
+   "Indonesialla",
+   "Australialla",
+   "Yli 200 000 kilometriä, saarten ansiosta."
+  ],
+  [
+   "Kuinka monen maan läpi Tonava virtaa?",
+   "Kymmenen",
+   "Neljän",
+   "Kuuden",
+   "Neljäntoista",
+   "Enemmän kuin mikään muu joki maailmassa."
+  ],
+  [
+   "Mikä on maailman kuivin aavikko?",
+   "Atacama",
+   "Sahara",
+   "Kuolemanlaakso",
+   "Namib",
+   "Joillakin sen sääasemilla ei ole koskaan mitattu sadetta."
+  ],
+  [
+   "Missä maassa on eniten tulivuoria?",
+   "Indonesiassa",
+   "Japanissa",
+   "Islannissa",
+   "Chilessä",
+   "Se sijaitsee kolmen mannerlaatan kohtauspaikalla."
+  ],
+  [
+   "Mikä erottaa Pohjois- ja Etelä-Korean?",
+   "Demilitarisoitu vyöhyke",
+   "Yalu-joki",
+   "Japaninmeri",
+   "Taebaek-vuoret",
+   "Neljä kilometriä leveä ja yksi maailman linnoitetuimmista paikoista."
+  ],
+  [
+   "Mikä meri kuivuu, koska sen joet käännettiin muualle?",
+   "Araljärvi",
+   "Kuollutmeri",
+   "Kaspianmeri",
+   "Mustameri",
+   "Puuvillan kastelu 1960-luvulla vei suurimman osan sen vedestä."
+  ],
+  [
+   "Mikä Euroopan pääkaupunki sijaitsee kahdella mantereella?",
+   "Istanbul",
+   "Ateena",
+   "Lissabon",
+   "Nikosia",
+   "Tosin Turkin pääkaupunki on Ankara, ei Istanbul."
+  ],
+  [
+   "Mikä on maailman korkein vesiputous?",
+   "Angelin putous",
+   "Niagaran putoukset",
+   "Victorian putoukset",
+   "Iguazún putoukset",
+   "979 metriä, Venezuelassa. Suuri osa muuttuu sumuksi matkalla alas."
+  ],
+  [
+   "Mikä maa on kokonaan Etelä-Afrikan ympäröimä?",
+   "Lesotho",
+   "Eswatini",
+   "Botswana",
+   "Namibia",
+   "Ja koko maa on yli 1 400 metrin korkeudessa."
+  ],
+  [
+   "Mikä salmi yhdistää Välimeren Mustaanmereen?",
+   "Bosporinsalmi",
+   "Messinansalmi",
+   "Kertšinsalmi",
+   "Skagerrak",
+   "Marmaranmeren ja Dardanellien kautta."
+  ],
+  [
+   "Mikä on maailman yleisin veriryhmä?",
+   "O positiivinen",
+   "A positiivinen",
+   "B negatiivinen",
+   "AB positiivinen",
+   "Noin kolmasosa kaikista ihmisistä."
+  ],
+  [
+   "Mikä elin tuottaa insuliinia?",
+   "Haima",
+   "Maksa",
+   "Munuainen",
+   "Kilpirauhanen",
+   "Langerhansin saarekkeiksi kutsutuissa solurykelmissä."
+  ],
+  [
+   "Kuinka monta lokeroa ihmissydämessä on?",
+   "Neljä",
+   "Kaksi",
+   "Kolme",
+   "Kuusi",
+   "Kaksi eteistä ylhäällä, kaksi kammiota alhaalla."
+  ],
+  [
+   "Mikä on absoluuttinen nollapiste celsiusasteina?",
+   "Noin −273 astetta",
+   "Noin −100 astetta",
+   "Noin −460 astetta",
+   "Noin −1000 astetta",
+   "Tarkalleen −273,15, jossa molekyylien liike pysähtyy."
+  ],
+  [
+   "Mikä kaasu tekee limsasta poreilevaa?",
+   "Hiilidioksidi",
+   "Typpi",
+   "Happi",
+   "Helium",
+   "Liuotettuna paineessa, ja se karkaa heti kun pullo avataan."
+  ],
+  [
+   "Mitä seismografi mittaa?",
+   "Maanjäristyksiä",
+   "Tuulen nopeutta",
+   "Ilmanpainetta",
+   "Ilmankosteutta",
+   "Richterin asteikko on logaritminen: jokainen askel on kymmenkertainen tärinä."
+  ],
+  [
+   "Millä eläimellä on suurin aivot?",
+   "Kaskelotilla",
+   "Norsulla",
+   "Sinivalaalla",
+   "Gorillalla",
+   "Noin kahdeksan kiloa."
+  ],
+  [
+   "Mikä kaasu on Auringossa yleisin?",
+   "Vety",
+   "Helium",
+   "Happi",
+   "Hiili",
+   "Se yhdistää vetyä heliumiksi, ja siitä valo syntyy."
+  ],
+  [
+   "Kuinka monta hammasta aikuisella ihmisellä yleensä on?",
+   "32",
+   "28",
+   "24",
+   "36",
+   "Kaksikymmentäkahdeksan ja neljä viisaudenhammasta, joita monelle ei tule koskaan."
+  ],
+  [
+   "Mikä aiheuttaa vuorovedet?",
+   "Kuun vetovoima",
+   "Merivirrat",
+   "Pelkkä Maan pyöriminen",
+   "Tuuli meren yllä",
+   "Aurinkokin vetää, mutta Kuu on lähempänä ja voittaa."
+  ],
+  [
+   "Kuka kirjoitti Jumalaisen näytelmän?",
+   "Dante Alighieri",
+   "Petrarca",
+   "Boccaccio",
+   "Vergilius",
+   "Kirjoitettu toscanan murteella, mistä italia pitkälti saa äänensä."
+  ],
+  [
+   "Mitä soitinta Miles Davis soitti?",
+   "Trumpettia",
+   "Saksofonia",
+   "Pianoa",
+   "Kontrabassoa",
+   "Kind of Blue on yhä kaikkien aikojen myydyin jazzlevy."
+  ],
+  [
+   "Kuka kirjoitti Rikoksen ja rangaistuksen?",
+   "Fjodor Dostojevski",
+   "Leo Tolstoi",
+   "Anton Tšehov",
+   "Ivan Turgenev",
+   "Hän kirjoitti sen määräaikaa vasten maksaakseen peliveloistaan."
+  ],
+  [
+   "Missä baletissa on joutsenprinsessa?",
+   "Joutsenlampi",
+   "Giselle",
+   "Coppélia",
+   "Bajadeeri",
+   "Taas Tšaikovski, ja ensi-ilta oli pannukakku."
+  ],
+  [
+   "Mihin taidesuuntaukseen Claude Monet kuului?",
+   "Impressionismiin",
+   "Kubismiin",
+   "Surrealismiin",
+   "Ekspressionismiin",
+   "Nimi tuli ilkeästä arviosta hänen teoksestaan Vaikutelma, nouseva aurinko."
+  ],
+  [
+   "Kuka sävelsi Neljä vuodenaikaa?",
+   "Antonio Vivaldi",
+   "Johann Pachelbel",
+   "Georg Händel",
+   "Henry Purcell",
+   "Neljä viulukonserttoa, kullakin sonetti rinnalla."
+  ],
+  [
+   "Missä kaupungissa Eremitaasi sijaitsee?",
+   "Pietarissa",
+   "Moskovassa",
+   "Wienissä",
+   "Varsovassa",
+   "Katariina Suuren perustama yksityiskokoelmaksi."
+  ],
+  [
+   "Kuka kirjoitti Sherlock Holmes -tarinat?",
+   "Arthur Conan Doyle",
+   "Agatha Christie",
+   "Wilkie Collins",
+   "Edgar Allan Poe",
+   "Hän tappoi Holmesin ja joutui herättämään tämän henkiin kohun jälkeen."
+  ],
+  [
+   "Mistä maasta tango on kotoisin?",
+   "Argentiinasta",
+   "Espanjasta",
+   "Brasiliasta",
+   "Kuubasta",
+   "Buenos Airesin satamakortteleista. Suomi teki siitä sitten omansa."
+  ],
+  [
+   "Kuka suunnitteli Helsingin Finlandia-talon?",
+   "Alvar Aalto",
+   "Eliel Saarinen",
+   "Reima Pietilä",
+   "Juha Leiviskä",
+   "Valmistui 1971, valkoisesta Carraran marmorista joka ei kestänyt ilmastoa."
+  ],
+  [
+   "Montako pelaajaa koripallojoukkueella on kentällä?",
+   "Viisi",
+   "Kuusi",
+   "Neljä",
+   "Seitsemän",
+   "Viisi vastaan viisi, ja vaihtoja rajattomasti."
+  ],
+  [
+   "Missä maassa pidettiin ensimmäiset nykyaikaiset olympialaiset?",
+   "Kreikassa",
+   "Ranskassa",
+   "Britanniassa",
+   "Italiassa",
+   "Ateenassa 1896, mukana neljätoista maata."
+  ],
+  [
+   "Mikä on snookerin suurin mahdollinen sarja?",
+   "147",
+   "155",
+   "120",
+   "180",
+   "Viisitoista punaista mustan kanssa, sitten värit järjestyksessä."
+  ],
+  [
+   "Mitä lajia kutsutaan nimellä the sweet science?",
+   "Nyrkkeilyä",
+   "Miekkailua",
+   "Painia",
+   "Shakkinyrkkeilyä",
+   "1800-luvun sanonta taidosta lyödä ilman että itse saa osumaa."
+  ],
+  [
+   "Kuinka leveä jalkapallomaali on?",
+   "7,32 metriä",
+   "6 metriä",
+   "8,5 metriä",
+   "10 metriä",
+   "Kahdeksan jaardia, määrätty 1860-luvulla eikä muutettu koskaan."
+  ],
+  [
+   "Missä lajissa kilpaillaan Stanley Cupista?",
+   "Jääkiekossa",
+   "Koripallossa",
+   "Baseballissa",
+   "Amerikkalaisessa jalkapallossa",
+   "Pohjois-Amerikan vanhin ammattilaisurheilun pokaali."
+  ],
+  [
+   "Montako Grand Slam -turnausta tenniksessä on vuodessa?",
+   "Neljä",
+   "Kolme",
+   "Viisi",
+   "Kuusi",
+   "Australia, Ranska, Wimbledon ja US Open."
+  ],
+  [
+   "Missä maassa pidettiin kesäolympialaiset 1952?",
+   "Suomessa",
+   "Ruotsissa",
+   "Australiassa",
+   "Italiassa",
+   "Helsingissä, sen jälkeen kun vuoden 1940 kisat peruttiin sodan takia."
+  ],
+  [
+   "Kuinka pitkä olympia-allas on?",
+   "50 metriä",
+   "25 metriä",
+   "100 metriä",
+   "33 metriä",
+   "Kymmenen radan levyinen, vaikka yleensä kilpaillaan vain kahdeksalla."
+  ],
+  [
+   "Missä lajissa käytetään Fosburyn floppia?",
+   "Korkeushypyssä",
+   "Pituushypyssä",
+   "Uimahypyissä",
+   "Voimistelussa",
+   "Dick Fosbury voitti 1968 olympialaiset hyppäämällä selkä edellä, ja kaikki kopioivat."
+  ],
+  [
+   "Montako aikavyöhykettä maailmassa on?",
+   "24",
+   "12",
+   "30",
+   "18",
+   "Jotkin maat käyttävät puolen tunnin siirtymiä, joten käytännössä niitä on enemmän."
+  ],
+  [
+   "Mitä filatelisti kerää?",
+   "Postimerkkejä",
+   "Kolikoita",
+   "Kirjoja",
+   "Perhosia",
+   "Kolikot ovat numismaatikon alaa."
+  ],
+  [
+   "Mikä verisuoni vie verta sydämestä poispäin?",
+   "Valtimo",
+   "Laskimo",
+   "Hiussuoni",
+   "Vain aortta",
+   "Laskimot tuovat sen takaisin. Aortta on vain suurin valtimo."
+  ],
+  [
+   "Mikä on Sveitsin valuutta?",
+   "Frangi",
+   "Euro",
+   "Kruunu",
+   "Markka",
+   "Yksi harvoista Länsi-Euroopan valuutoista joista ei tullut euroa."
+  ],
+  [
+   "Montako ruutua sudokuruudukossa on?",
+   "81",
+   "64",
+   "100",
+   "72",
+   "Yhdeksän kertaa yhdeksän, yhdeksässä yhdeksän ruudun laatikossa."
+  ],
+  [
+   "Mikä on maailman korkein rakennus?",
+   "Burj Khalifa",
+   "Shanghai Tower",
+   "Empire State Building",
+   "Taipei 101",
+   "828 metriä Dubaissa, valmistui 2010."
+  ],
+  [
+   "Mistä hedelmästä perinteinen siideri tehdään?",
+   "Omenoista",
+   "Päärynöistä",
+   "Rypäleistä",
+   "Luumuista",
+   "Päärynöistä tulee perry, joka on aivan eri juoma."
+  ],
+  [
+   "Kuinka kauan Maalta kestää kiertää Aurinko?",
+   "Noin 365 päivää",
+   "Noin 300 päivää",
+   "Noin 400 päivää",
+   "Tasan 360 päivää",
+   "365,24, ja siksi helmikuu saa toisinaan ylimääräisen päivän."
+  ],
+  [
+   "Mikä osa kananmunaa on valkuainen?",
+   "Valkuainen",
+   "Keltuainen",
+   "Kuori",
+   "Kalvo",
+   "Enimmäkseen vettä ja proteiinia, ja siitä vatkautuu marenki."
+  ],
+  [
+   "Mitä Richterin asteikko mittaa?",
+   "Maanjäristyksen voimakkuutta",
+   "Tuulen voimaa",
+   "Sademäärää",
+   "Äänenvoimakkuutta",
+   "Jokainen kokonaisluku on kymmenkertainen tärinä ja noin kolminkymmenkertainen energia."
+  ],
+  [
+   "Mitä valtakuntaa hallittiin Konstantinopolista?",
+   "Bysantin valtakuntaa",
+   "Pyhää saksalais-roomalaista keisarikuntaa",
+   "Mogulivaltakuntaa",
+   "Karthagon valtakuntaa",
+   "Se eli läntistä Rooman valtakuntaa lähes tuhat vuotta pidempään."
+  ],
+  [
+   "Mikä oli Magna Carta?",
+   "Peruskirja joka rajoitti kuninkaan valtaa",
+   "Rauhansopimus Ranskan kanssa",
+   "Kartta tunnetusta maailmasta",
+   "Kirkollinen säädös",
+   "Sinetöity 1215 kuninkaan toimesta, joka yritti heti mitätöidä sen."
+  ],
+  [
+   "Mikä tauti tappoi noin kolmanneksen Euroopasta 1340-luvulla?",
+   "Musta surma",
+   "Kolera",
+   "Isorokko",
+   "Lavantauti",
+   "Se saapui Eurooppaan idän kauppareittejä pitkin."
+  ],
+  [
+   "Kenen retkikunta purjehti ensimmäisenä maailman ympäri 1519–22?",
+   "Ferdinand Magalhãesin retkikunta",
+   "Kristoffer Kolumbus",
+   "Vasco da Gama",
+   "James Cook",
+   "Magalhães kuoli matkalla; 270 miehestä palasi kahdeksantoista."
+  ],
+  [
+   "Mihin maahan Suomi kuului ennen vuotta 1809?",
+   "Ruotsiin",
+   "Venäjään",
+   "Tanskaan",
+   "Norjaan",
+   "Kuusisataa vuotta Ruotsin vallan alla vaihtui Venäjän suuriruhtinaskunnaksi."
+  ],
+  [
+   "Mikä päättyi 1991 Mihail Gorbatšovin eroon?",
+   "Neuvostoliitto",
+   "Varsovan liitto",
+   "Kylmän sodan asevarustelu",
+   "Jugoslavia",
+   "26. joulukuuta 1991 liitto lakkasi virallisesti olemasta."
+  ],
+  [
+   "Mitä muinaista kaupunkia Hammurabi hallitsi?",
+   "Babylonia",
+   "Thebaa",
+   "Ateenaa",
+   "Niniveä",
+   "Hänen lakikokoelmansa on vanhimpia säilyneitä kirjoitettuja lakitekstejä."
+  ],
+  [
+   "Mitkä kaksi suurvaltaa kävivät kylmää sotaa?",
+   "Yhdysvallat ja Neuvostoliitto",
+   "Britannia ja Saksa",
+   "Kiina ja Intia",
+   "Ranska ja Venäjä",
+   "Noin 1947–1991, käytiin kaikkialla paitsi suoraan niiden välillä."
+  ],
+  [
+   "Minkä Johannes Gutenberg keksi?",
+   "Irtokirjasinpainamisen Euroopassa",
+   "Paperin",
+   "Kaukoputken",
+   "Mekaanisen kellon",
+   "Noin 1440. Irtokirjasimet tunnettiin jo Koreassa ja Kiinassa."
+  ],
+  [
+   "Kuka Suomen presidentti istui pisimpään?",
+   "Urho Kekkonen",
+   "J. K. Paasikivi",
+   "Mauno Koivisto",
+   "Risto Ryti",
+   "Kaksikymmentäviisi vuotta, 1956–1982."
+  ],
+  [
+   "Missä maassa on eniten ihmisiä?",
+   "Intiassa",
+   "Kiinassa",
+   "Yhdysvalloissa",
+   "Indonesiassa",
+   "Intia ohitti Kiinan vuonna 2023."
+  ],
+  [
+   "Minkä joen varrella Kairo sijaitsee?",
+   "Niilin",
+   "Eufratin",
+   "Kongon",
+   "Nigerin",
+   "Lähes koko Egyptin väestö asuu sen varrella."
+  ],
+  [
+   "Mille maalle Grönlanti kuuluu?",
+   "Tanskalle",
+   "Norjalle",
+   "Islannille",
+   "Kanadalle",
+   "Itsehallintoalue Tanskan kuningaskunnassa."
+  ],
+  [
+   "Mikä on Kanadan pääkaupunki?",
+   "Ottawa",
+   "Toronto",
+   "Vancouver",
+   "Montreal",
+   "Valittiin 1857 kompromissiksi englannin- ja ranskankielisen Kanadan välillä."
+  ],
+  [
+   "Mikä on Afrikan korkein vuori?",
+   "Kilimanjaro",
+   "Mount Kenya",
+   "Atlas",
+   "Mount Elgon",
+   "5 895 metriä, ja se on tulivuori eikä vuorijono."
+  ],
+  [
+   "Millä kahdella maalla on pisin yhteinen raja?",
+   "Kanadalla ja Yhdysvalloilla",
+   "Venäjällä ja Kiinalla",
+   "Chilellä ja Argentiinalla",
+   "Intialla ja Bangladeshilla",
+   "Lähes 8 900 kilometriä."
+  ],
+  [
+   "Mitä kaupunkia kutsutaan ikuiseksi kaupungiksi?",
+   "Roomaa",
+   "Jerusalemia",
+   "Ateenaa",
+   "Kairoa",
+   "Roomalainen runoilija kutsui sitä niin kaksituhatta vuotta sitten."
+  ],
+  [
+   "Mikä valtameri on Afrikan ja Australian välissä?",
+   "Intian valtameri",
+   "Tyynimeri",
+   "Atlantti",
+   "Eteläinen jäämeri",
+   "Ainoa valtameri joka on nimetty maan mukaan."
+  ],
+  [
+   "Kuinka monta saarta Suomessa on suunnilleen?",
+   "Noin 180 000",
+   "Noin 18 000",
+   "Noin 1 800",
+   "Noin 1,8 miljoonaa",
+   "Ja noin 188 000 järveä niiden lisäksi."
+  ],
+  [
+   "Mikä aavikko peittää suurimman osan Mongolian eteläosaa?",
+   "Gobi",
+   "Taklamakan",
+   "Karakum",
+   "Thar",
+   "Kylmä aavikko: siellä sataa lunta."
+  ],
+  [
+   "Mikä on alkuaineen pienin osa joka säilyttää sen ominaisuudet?",
+   "Atomi",
+   "Molekyyli",
+   "Elektroni",
+   "Solu",
+   "Halkaise se ja saat hiukkasia, et alkuainetta."
+  ],
+  [
+   "Kuka tutkija esitti teorian evoluutiosta luonnonvalinnan kautta?",
+   "Charles Darwin",
+   "Gregor Mendel",
+   "Carl von Linné",
+   "Jean-Baptiste Lamarck",
+   "Alfred Russel Wallace päätyi samaan ajatukseen itsenäisesti."
+  ],
+  [
+   "Mikä on puhtaan veden pH?",
+   "7",
+   "0",
+   "10",
+   "14",
+   "Alle seitsemän on hapan, yli emäksinen."
+  ],
+  [
+   "Mikä planeetta pyörii kyljellään?",
+   "Uranus",
+   "Neptunus",
+   "Saturnus",
+   "Venus",
+   "Kallistunut noin 98 astetta, luultavasti muinaisen törmäyksen takia."
+  ],
+  [
+   "Mitä barometri mittaa?",
+   "Ilmanpainetta",
+   "Lämpötilaa",
+   "Ilmankosteutta",
+   "Tuulen suuntaa",
+   "Laskeva paine tietää yleensä säänmuutosta."
+  ],
+  [
+   "Montako kromosomiparia ihmisellä on?",
+   "23",
+   "46",
+   "12",
+   "30",
+   "Neljäkymmentäkuusi kromosomia kahdessakymmenessäkolmessa parissa."
+  ],
+  [
+   "Mikä on kevyin metalli?",
+   "Litium",
+   "Alumiini",
+   "Magnesium",
+   "Titaani",
+   "Niin kevyttä että kelluisi vedessä, ellei reagoisi sen kanssa."
+  ],
+  [
+   "Mitkä verisolut torjuvat infektioita?",
+   "Valkosolut",
+   "Punasolut",
+   "Verihiutaleet",
+   "Vain plasmasolut",
+   "Punasolut kuljettavat happea, verihiutaleet hyydyttävät."
+  ],
+  [
+   "Mikä on äänen nopeus ilmassa suunnilleen?",
+   "340 metriä sekunnissa",
+   "34 metriä sekunnissa",
+   "3 400 metriä sekunnissa",
+   "1 000 metriä sekunnissa",
+   "Nopeampi vedessä ja vielä nopeampi teräksessä."
+  ],
+  [
+   "Mikä aivojen osa säätelee tasapainoa?",
+   "Pikkuaivot",
+   "Isoaivot",
+   "Aivorunko",
+   "Hypotalamus",
+   "Siinä on enemmän hermosoluja kuin muissa aivoissa yhteensä."
+  ],
+  [
+   "Kuka maalasi Guernican?",
+   "Pablo Picasso",
+   "Joan Miró",
+   "Salvador Dalí",
+   "Francisco Goya",
+   "Maalattu kuukaudessa baskikaupungin pommituksen jälkeen 1937."
+  ],
+  [
+   "Mikä romaani alkaa sanoilla 'Call me Ishmael'?",
+   "Moby Dick",
+   "Aarresaari",
+   "Vanhus ja meri",
+   "Robinson Crusoe",
+   "Se myi huonosti Melvillen elinaikana ja löydettiin uudelleen vuosikymmeniä myöhemmin."
+  ],
+  [
+   "Missä kaupungissa Prado-museo on?",
+   "Madridissa",
+   "Barcelonassa",
+   "Lissabonissa",
+   "Sevillassa",
+   "Velázquez ja Goya ovat siellä molemmat vahvasti edustettuina."
+  ],
+  [
+   "Kuka sävelsi oopperan Taikahuilu?",
+   "Mozart",
+   "Verdi",
+   "Wagner",
+   "Puccini",
+   "Ensi-ilta viikkoja ennen hänen kuolemaansa 1791."
+  ],
+  [
+   "Mitä kaunokirjoituksen taidetta kutsutaan?",
+   "Kalligrafia",
+   "Typografia",
+   "Litografia",
+   "Etsaus",
+   "Kreikan sanoista kaunis kirjoitus."
+  ],
+  [
+   "Kuka venäläinen kirjoitti Sodan ja rauhan?",
+   "Leo Tolstoi",
+   "Fjodor Dostojevski",
+   "Nikolai Gogol",
+   "Boris Pasternak",
+   "Yli puoli miljoonaa sanaa, ja hän kirjoitti sen käsin uudelleen monta kertaa."
+  ],
+  [
+   "Missä soittimessa on 88 kosketinta?",
+   "Pianossa",
+   "Uruissa",
+   "Haitarissa",
+   "Cembalossa",
+   "Viisikymmentäkaksi valkoista ja kolmekymmentäkuusi mustaa."
+  ],
+  [
+   "Kuka ohjasi elokuvan Metropolis?",
+   "Fritz Lang",
+   "F. W. Murnau",
+   "Sergei Eisenstein",
+   "Carl Theodor Dreyer",
+   "Vuonna 1927, ja kolmannes siitä oli kateissa kahdeksankymmentä vuotta."
+  ],
+  [
+   "Mikä väri syntyy sekoittamalla sinistä ja keltaista maalia?",
+   "Vihreä",
+   "Violetti",
+   "Oranssi",
+   "Ruskea",
+   "Valon kanssa toisin: sininen ja keltainen valo tekevät valkoista."
+  ],
+  [
+   "Kuka sävelsi Suomen kansallislaulun melodian?",
+   "Fredrik Pacius",
+   "Jean Sibelius",
+   "Robert Kajanus",
+   "Oskar Merikanto",
+   "Sama sävelmä on myös Viron kansallislaulu."
+  ]
+ ],
+ "TRIVIA_SV": [
+  [
+   "Vilket år föll Berlinmuren?",
+   "1989",
+   "1987",
+   "1991",
+   "1985",
+   "Den öppnades natten till den 9 november 1989."
+  ],
+  [
+   "Vem gick först på månen?",
+   "Neil Armstrong",
+   "Buzz Aldrin",
+   "Jurij Gagarin",
+   "Michael Collins",
+   "Apollo 11, den 20 juli 1969. Aldrin kom strax efter."
+  ],
+  [
+   "Vilket rike grundade Djingis khan?",
+   "Mongolväldet",
+   "Osmanska riket",
+   "Persiska riket",
+   "Romerska riket",
+   "Som störst historiens största sammanhängande landrike."
+  ],
+  [
+   "Vilket år sjönk Titanic?",
+   "1912",
+   "1905",
+   "1918",
+   "1923",
+   "Fyra dygn in på jungfruresan, efter att ha träffat ett isberg."
+  ],
+  [
+   "Vilket krig avslutades med Versaillesfreden?",
+   "Första världskriget",
+   "Andra världskriget",
+   "Krimkriget",
+   "Fransk-tyska kriget",
+   "Undertecknad 1919, fem år efter krigsutbrottet."
+  ],
+  [
+   "Vem var Roms förste kejsare?",
+   "Augustus",
+   "Julius Caesar",
+   "Nero",
+   "Caligula",
+   "Caesar var aldrig kejsare; titeln togs av hans adoptivson."
+  ],
+  [
+   "I vilket land började den industriella revolutionen?",
+   "Storbritannien",
+   "Frankrike",
+   "Tyskland",
+   "USA",
+   "Textilier och ånga, från ungefär 1760-talet."
+  ],
+  [
+   "Vilket år började franska revolutionen?",
+   "1789",
+   "1776",
+   "1799",
+   "1812",
+   "Bastiljen stormades den 14 juli 1789."
+  ],
+  [
+   "Vilket år förklarade sig Finland självständigt?",
+   "1917",
+   "1905",
+   "1920",
+   "1939",
+   "Den 6 december 1917, från det ryska kejsardömet."
+  ],
+  [
+   "Vilka två länder utkämpade vinterkriget?",
+   "Finland och Sovjetunionen",
+   "Finland och Sverige",
+   "Norge och Tyskland",
+   "Polen och Sovjetunionen",
+   "105 dagar, från november 1939 till mars 1940."
+  ],
+  [
+   "Vilket år slutade andra världskriget?",
+   "1945",
+   "1944",
+   "1946",
+   "1943",
+   "Tyskland kapitulerade i maj, Japan i september."
+  ],
+  [
+   "Vem skrev Kommunistiska manifestet tillsammans med Friedrich Engels?",
+   "Karl Marx",
+   "Vladimir Lenin",
+   "Georg Hegel",
+   "Michail Bakunin",
+   "Utgivet 1848, några veckor före revolutionerna i Europa."
+  ],
+  [
+   "Under vilket århundrade brann Londons stora brand?",
+   "1600-talet",
+   "1400-talet",
+   "1700-talet",
+   "1500-talet",
+   "År 1666. Den började i ett bageri på Pudding Lane."
+  ],
+  [
+   "Vilken civilisation byggde Machu Picchu?",
+   "Inkariket",
+   "Mayafolket",
+   "Aztekerna",
+   "Olmekerna",
+   "Byggt omkring 1450 i de peruanska Anderna."
+  ],
+  [
+   "Rosettastenen var nyckeln till vilken skrift?",
+   "Egyptiska hieroglyfer",
+   "Kilskrift",
+   "Linear B",
+   "Runor",
+   "Samma förordning står på stenen med tre skrifter, varav en är grekiska."
+  ],
+  [
+   "Vem ledde Indiens icke-våldsamma frihetsrörelse?",
+   "Mohandas Gandhi",
+   "Jawaharlal Nehru",
+   "Subhas Chandra Bose",
+   "B. R. Ambedkar",
+   "Självständigheten kom 1947."
+  ],
+  [
+   "Vilken stad delades av en mur mellan 1961 och 1989?",
+   "Berlin",
+   "Wien",
+   "Prag",
+   "Budapest",
+   "Tjugoåtta år, nästan på dagen."
+  ],
+  [
+   "Vad skadade Apollo 13 på väg till månen?",
+   "En syretank exploderade",
+   "En brand på startplattan",
+   "Ett motorfel vid start",
+   "Styrdatorn gick sönder",
+   "Alla tre astronauter kom hem levande."
+  ],
+  [
+   "Vilken drottning regerade över Storbritannien i 70 år?",
+   "Elisabet II",
+   "Viktoria",
+   "Anna",
+   "Maria I",
+   "Viktoria nådde 63 år, vilket dittills var rekord."
+  ],
+  [
+   "England utkämpade hundraårskriget mot vilket land?",
+   "Frankrike",
+   "Spanien",
+   "Skottland",
+   "Nederländerna",
+   "Kriget varade egentligen 116 år, med avbrott."
+  ],
+  [
+   "Vilket är världens största hav?",
+   "Stilla havet",
+   "Atlanten",
+   "Indiska oceanen",
+   "Norra ishavet",
+   "Det täcker ungefär en tredjedel av jordens yta."
+  ],
+  [
+   "Vad heter Australiens huvudstad?",
+   "Canberra",
+   "Sydney",
+   "Melbourne",
+   "Perth",
+   "Valdes som kompromiss mellan Sydney och Melbourne."
+  ],
+  [
+   "Mount Everest ligger på gränsen mellan Nepal och vilket land?",
+   "Kina",
+   "Indien",
+   "Bhutan",
+   "Pakistan",
+   "Med andra ord Tibet."
+  ],
+  [
+   "Vilken är världens största varma öken?",
+   "Sahara",
+   "Gobi",
+   "Kalahari",
+   "Arabiska öknen",
+   "Ungefär lika stor som USA."
+  ],
+  [
+   "Vilket är världens minsta land?",
+   "Vatikanstaten",
+   "Monaco",
+   "San Marino",
+   "Liechtenstein",
+   "Ungefär en halv kvadratkilometer."
+  ],
+  [
+   "Vilken amerikansk delstat är störst till ytan?",
+   "Alaska",
+   "Texas",
+   "Kalifornien",
+   "Montana",
+   "Mer än dubbelt så stor som Texas."
+  ],
+  [
+   "I vilket land ligger större delen av Amazonas regnskog?",
+   "Brasilien",
+   "Peru",
+   "Colombia",
+   "Venezuela",
+   "Ungefär 60 procent av den."
+  ],
+  [
+   "Vilken stad ligger vid Bosporen?",
+   "Istanbul",
+   "Aten",
+   "Odesa",
+   "Baku",
+   "En fot i Europa, en i Asien."
+  ],
+  [
+   "Hur många tidszoner sträcker sig Ryssland över?",
+   "Elva",
+   "Sju",
+   "Nio",
+   "Tretton",
+   "Från Kaliningrad till Kamtjatka."
+  ],
+  [
+   "Ankara är huvudstad i vilket land?",
+   "Turkiet",
+   "Georgien",
+   "Kazakstan",
+   "Azerbajdzjan",
+   "Det ersatte Istanbul som huvudstad 1923."
+  ],
+  [
+   "Vilken bergskedja är den traditionella gränsen mellan Europa och Asien?",
+   "Uralbergen",
+   "Alperna",
+   "Kaukasus",
+   "Karpaterna",
+   "Den går från norr till söder genom Ryssland."
+  ],
+  [
+   "Var ligger havens djupaste punkt?",
+   "Marianergraven",
+   "Tongagraven",
+   "Javagraven",
+   "Puerto Rico-graven",
+   "Nästan elva kilometer ner."
+  ],
+  [
+   "Vad heter Islands huvudstad?",
+   "Reykjavik",
+   "Oslo",
+   "Torshamn",
+   "Nuuk",
+   "Den nordligaste huvudstaden i en självständig stat."
+  ],
+  [
+   "Nairobi är huvudstad i vilket land?",
+   "Kenya",
+   "Tanzania",
+   "Uganda",
+   "Etiopien",
+   "Staden växte fram ur en järnvägsdepå."
+  ],
+  [
+   "Stora barriärrevet ligger utanför vilket lands kust?",
+   "Australien",
+   "Indonesien",
+   "Filippinerna",
+   "Fiji",
+   "Över 2 300 kilometer långt."
+  ],
+  [
+   "Vilken är världens största ö?",
+   "Grönland",
+   "Nya Guinea",
+   "Borneo",
+   "Madagaskar",
+   "Australien räknas som kontinent, inte som ö."
+  ],
+  [
+   "Bajkalsjön, världens djupaste sjö, ligger i vilket land?",
+   "Ryssland",
+   "Mongoliet",
+   "Kazakstan",
+   "Kina",
+   "Den rymmer ungefär en femtedel av världens ofrusna sötvatten."
+  ],
+  [
+   "Vilket sund skiljer Spanien från Marocko?",
+   "Gibraltar sund",
+   "Bosporen",
+   "Hormuzsundet",
+   "Malackasundet",
+   "Fjorton kilometer som smalast."
+  ],
+  [
+   "Vilket land har flest sjöar?",
+   "Kanada",
+   "Finland",
+   "Ryssland",
+   "Sverige",
+   "Enligt de flesta sätt att räkna fler än resten av världen tillsammans."
+  ],
+  [
+   "Vilket hav ligger mellan Finland och Sverige?",
+   "Östersjön",
+   "Nordsjön",
+   "Barents hav",
+   "Norska havet",
+   "Dess norra arm är Bottniska viken."
+  ],
+  [
+   "Vad är den kemiska beteckningen för guld?",
+   "Au",
+   "Ag",
+   "Go",
+   "Gd",
+   "Från latinets aurum. Ag är silver."
+  ],
+  [
+   "Hur många ben har en vuxen människa?",
+   "206",
+   "186",
+   "226",
+   "246",
+   "Ett spädbarn har omkring 270; en del växer ihop."
+  ],
+  [
+   "Vilken planet ligger närmast solen?",
+   "Merkurius",
+   "Venus",
+   "Mars",
+   "Jorden",
+   "Venus är ändå hetare, tack vare sin atmosfär."
+  ],
+  [
+   "Vilken gas tar växterna upp vid fotosyntesen?",
+   "Koldioxid",
+   "Syre",
+   "Kväve",
+   "Väte",
+   "Syret är en biprodukt som de avger."
+  ],
+  [
+   "Vem utvecklade den allmänna relativitetsteorin?",
+   "Albert Einstein",
+   "Isaac Newton",
+   "Niels Bohr",
+   "Max Planck",
+   "Publicerad 1915."
+  ],
+  [
+   "Vilket är det hårdaste naturliga ämnet?",
+   "Diamant",
+   "Kvarts",
+   "Korund",
+   "Topas",
+   "Tio av tio på Mohs skala."
+  ],
+  [
+   "Ungefär hur fort färdas ljuset?",
+   "300 000 km per sekund",
+   "30 000 km per sekund",
+   "3 000 000 km per sekund",
+   "150 000 km per sekund",
+   "Närmare bestämt 299 792 km/s i vakuum."
+  ],
+  [
+   "Vilken blodgrupp är universalgivare?",
+   "0 negativ",
+   "AB positiv",
+   "A positiv",
+   "B negativ",
+   "AB positiv är i stället universalmottagare."
+  ],
+  [
+   "Vad står DNA för?",
+   "Deoxiribonukleinsyra",
+   "Dinukleinsyra",
+   "Deoxiribosnitrat",
+   "Diribonukleinsyra",
+   "Dess dubbelspiral beskrevs 1953."
+  ],
+  [
+   "Vilket grundämne har atomnummer 1?",
+   "Väte",
+   "Helium",
+   "Kol",
+   "Syre",
+   "Universums vanligaste grundämne."
+  ],
+  [
+   "Vilken är solsystemets största planet?",
+   "Jupiter",
+   "Saturnus",
+   "Neptunus",
+   "Uranus",
+   "Tyngre än alla de andra tillsammans."
+  ],
+  [
+   "Vem formulerade de tre rörelselagarna?",
+   "Isaac Newton",
+   "Galileo Galilei",
+   "Johannes Kepler",
+   "Christiaan Huygens",
+   "Publicerade i Principia 1687."
+  ],
+  [
+   "Vilken del av cellen producerar det mesta av dess energi?",
+   "Mitokondrien",
+   "Cellkärnan",
+   "Ribosomen",
+   "Golgiapparaten",
+   "Den har eget DNA, ärvt från modern."
+  ],
+  [
+   "Vid vilken temperatur kokar vatten vid havsnivå?",
+   "100 grader Celsius",
+   "90 grader",
+   "110 grader",
+   "80 grader",
+   "På ett berg kokar det vid lägre temperatur."
+  ],
+  [
+   "Vilket vitamin bildar huden i solljus?",
+   "D-vitamin",
+   "C-vitamin",
+   "B12-vitamin",
+   "A-vitamin",
+   "Därför är den nordliga vintern ett problem."
+  ],
+  [
+   "Vad kallas läran om svampar?",
+   "Mykologi",
+   "Botanik",
+   "Entomologi",
+   "Virologi",
+   "Entomologi handlar om insekter."
+  ],
+  [
+   "Vilken elementarpartikel har negativ laddning?",
+   "Elektronen",
+   "Protonen",
+   "Neutronen",
+   "Positronen",
+   "Protoner är positiva, neutroner neutrala."
+  ],
+  [
+   "Hur lång tid tar solljuset till jorden?",
+   "Ungefär 8 minuter",
+   "Ungefär 8 sekunder",
+   "Ungefär 80 minuter",
+   "Ungefär 8 timmar",
+   "Du ser alltså alltid solen som den var för 8 minuter sedan."
+  ],
+  [
+   "Vilken gas är vanligast i jordens atmosfär?",
+   "Kväve",
+   "Syre",
+   "Koldioxid",
+   "Argon",
+   "Ungefär 78 procent av den."
+  ],
+  [
+   "Vem upptäckte penicillinet?",
+   "Alexander Fleming",
+   "Louis Pasteur",
+   "Joseph Lister",
+   "Robert Koch",
+   "Av en slump, från en förorenad petriskål 1928."
+  ],
+  [
+   "Vem målade Mona Lisa?",
+   "Leonardo da Vinci",
+   "Michelangelo",
+   "Rafael",
+   "Sandro Botticelli",
+   "Han arbetade på den i åratal och lämnade aldrig ifrån sig den."
+  ],
+  [
+   "Vem skrev Romeo och Julia?",
+   "William Shakespeare",
+   "Christopher Marlowe",
+   "Geoffrey Chaucer",
+   "Ben Jonson",
+   "Skriven omkring 1595."
+  ],
+  [
+   "På vilket museum hänger Mona Lisa?",
+   "Louvren",
+   "Prado",
+   "Uffizierna",
+   "Rijksmuseum",
+   "Bakom pansarglas i Paris."
+  ],
+  [
+   "Vem målade Stjärnnatt?",
+   "Vincent van Gogh",
+   "Claude Monet",
+   "Paul Cézanne",
+   "Paul Gauguin",
+   "Målad från fönstret på ett sinnessjukhus 1889."
+  ],
+  [
+   "Vem komponerade nionde symfonin med Hymn till glädjen?",
+   "Ludwig van Beethoven",
+   "Wolfgang Amadeus Mozart",
+   "Johannes Brahms",
+   "Franz Schubert",
+   "Han var då nästan helt döv."
+  ],
+  [
+   "Vem skrev romanen 1984?",
+   "George Orwell",
+   "Aldous Huxley",
+   "Ray Bradbury",
+   "H. G. Wells",
+   "Utgiven 1949."
+  ],
+  [
+   "Vilken finländsk tonsättare skrev Finlandia?",
+   "Jean Sibelius",
+   "Kaija Saariaho",
+   "Einojuhani Rautavaara",
+   "Leevi Madetoja",
+   "Skriven 1899 som protest mot den ryska censuren."
+  ],
+  [
+   "Vem högg Davidstatyn i Florens?",
+   "Michelangelo",
+   "Donatello",
+   "Gian Lorenzo Bernini",
+   "Auguste Rodin",
+   "Huggen ur ett enda marmorblock som andra hade gett upp."
+  ],
+  [
+   "Kalevala är nationalepos i vilket land?",
+   "Finland",
+   "Estland",
+   "Island",
+   "Norge",
+   "Sammanställt av Elias Lönnrot ur folkdiktning."
+  ],
+  [
+   "Vem skrev Stolthet och fördom?",
+   "Jane Austen",
+   "Charlotte Brontë",
+   "George Eliot",
+   "Elizabeth Gaskell",
+   "Utgiven anonymt 1813."
+  ],
+  [
+   "Vilken målare skar av en del av sitt eget öra?",
+   "Vincent van Gogh",
+   "Paul Gauguin",
+   "Edvard Munch",
+   "Henri de Toulouse-Lautrec",
+   "Efter ett gräl med Gauguin i Arles."
+  ],
+  [
+   "Vem regisserade Hajen och E.T.?",
+   "Steven Spielberg",
+   "George Lucas",
+   "Martin Scorsese",
+   "Francis Ford Coppola",
+   "Hajen kallas ofta den första sommarsuccén."
+  ],
+  [
+   "Vilken målning är känd för sina smältande klockor?",
+   "Minnets envishet",
+   "Guernica",
+   "Skriet",
+   "Näckrosor",
+   "Salvador Dalí, 1931."
+  ],
+  [
+   "Vem skrev Sagan om ringen?",
+   "J. R. R. Tolkien",
+   "C. S. Lewis",
+   "Philip Pullman",
+   "Ursula K. Le Guin",
+   "Han var professor i fornengelska i Oxford."
+  ],
+  [
+   "Vilken norrman målade Skriet?",
+   "Edvard Munch",
+   "Gustav Vigeland",
+   "Johan Christian Dahl",
+   "Christian Krohg",
+   "Det finns flera versioner av den."
+  ],
+  [
+   "Vem målade taket i Sixtinska kapellet?",
+   "Michelangelo",
+   "Rafael",
+   "Leonardo da Vinci",
+   "Tizian",
+   "Fyra år, mestadels stående."
+  ],
+  [
+   "Vem skapade mumintrollen?",
+   "Tove Jansson",
+   "Astrid Lindgren",
+   "Selma Lagerlöf",
+   "Hans Christian Andersen",
+   "En finländsk författare som skrev på svenska."
+  ],
+  [
+   "Vem skrev Don Quijote?",
+   "Miguel de Cervantes",
+   "Lope de Vega",
+   "Luis de Góngora",
+   "Pedro Calderón",
+   "Den kallas ofta den första moderna romanen."
+  ],
+  [
+   "Vilken nederländare målade Nattvakten?",
+   "Rembrandt",
+   "Johannes Vermeer",
+   "Frans Hals",
+   "Jan Steen",
+   "Den hänger på Rijksmuseum i Amsterdam."
+  ],
+  [
+   "Vem komponerade Nötknäpparen?",
+   "Pjotr Tjajkovskij",
+   "Igor Stravinskij",
+   "Sergej Prokofjev",
+   "Nikolaj Rimskij-Korsakov",
+   "Uruppförd 1892."
+  ],
+  [
+   "Hur många spelare har ett fotbollslag på planen?",
+   "Elva",
+   "Tio",
+   "Tolv",
+   "Nio",
+   "Målvakten inräknad."
+  ],
+  [
+   "Hur ofta hålls sommar-OS?",
+   "Vart fjärde år",
+   "Vartannat år",
+   "Vart tredje år",
+   "Vart femte år",
+   "Mellanrummet kallas en olympiad."
+  ],
+  [
+   "I vilken sport gör man en dunk?",
+   "Basket",
+   "Volleyboll",
+   "Handboll",
+   "Tennis",
+   "Den ger samma två poäng som vilket närkast som helst."
+  ],
+  [
+   "Hur många ringar finns på den olympiska flaggan?",
+   "Fem",
+   "Fyra",
+   "Sex",
+   "Sju",
+   "En för varje bebodd världsdel, som man räknade dem då."
+  ],
+  [
+   "Vilket land har vunnit flest VM i fotboll?",
+   "Brasilien",
+   "Tyskland",
+   "Italien",
+   "Argentina",
+   "Fem, och det enda land som spelat i varje turnering."
+  ],
+  [
+   "Vad kallas noll i tennis?",
+   "Love",
+   "Nil",
+   "Duck",
+   "Blank",
+   "Möjligen från franskans l'œuf, ett ägg."
+  ],
+  [
+   "Hur långt är ett maratonlopp?",
+   "42,195 kilometer",
+   "40 kilometer",
+   "45 kilometer",
+   "38 kilometer",
+   "Den udda sträckan fastställdes vid OS i London 1908."
+  ],
+  [
+   "Hur många spelare per lag är på isen i ishockey?",
+   "Sex",
+   "Fem",
+   "Sju",
+   "Fyra",
+   "Fem utespelare och en målvakt."
+  ],
+  [
+   "Från vilket land kommer judo?",
+   "Japan",
+   "Kina",
+   "Korea",
+   "Brasilien",
+   "Grundad av Jigoro Kano 1882."
+  ],
+  [
+   "Tour de France är en tävling i vilken sport?",
+   "Cykling",
+   "Löpning",
+   "Motorsport",
+   "Rodd",
+   "Tre veckor och omkring 3 500 kilometer."
+  ],
+  [
+   "Hur många poäng ger ett försök i rugby union?",
+   "Fem",
+   "Tre",
+   "Fyra",
+   "Sex",
+   "Plus två till för en lyckad konvertering."
+  ],
+  [
+   "Vilken finländare vann formel 1-VM 1982?",
+   "Keke Rosberg",
+   "Mika Häkkinen",
+   "Kimi Räikkönen",
+   "Heikki Kovalainen",
+   "Han vann bara ett lopp den säsongen och tog ändå titeln."
+  ],
+  [
+   "Vad kallas ett slag under par i golf?",
+   "Birdie",
+   "Eagle",
+   "Bogey",
+   "Albatross",
+   "En eagle är två under."
+  ],
+  [
+   "I vilken sport används en fjäderboll?",
+   "Badminton",
+   "Squash",
+   "Bordtennis",
+   "Pelota",
+   "Bollen kan lämna racketen i över 400 km/h."
+  ],
+  [
+   "Hur många rutor finns på ett schackbräde?",
+   "64",
+   "81",
+   "100",
+   "49",
+   "Åtta gånger åtta."
+  ],
+  [
+   "Vilket land tävlar Usain Bolt för?",
+   "Jamaica",
+   "Trinidad och Tobago",
+   "USA",
+   "Barbados",
+   "Han har världsrekorden på 100 och 200 meter."
+  ],
+  [
+   "Hur många strikes blir en out i baseboll?",
+   "Tre",
+   "Två",
+   "Fyra",
+   "Fem",
+   "Fyra bollar ger däremot en frigång."
+  ],
+  [
+   "Vilken finländsk löpare vann nio OS-guld på 1920-talet?",
+   "Paavo Nurmi",
+   "Hannes Kolehmainen",
+   "Ville Ritola",
+   "Lasse Virén",
+   "Han kallades den flygande finländaren."
+  ],
+  [
+   "Hur många hål spelas på en full golfrunda?",
+   "Arton",
+   "Nio",
+   "Tolv",
+   "Tjugofyra",
+   "Par är vanligtvis 70 till 72."
+  ],
+  [
+   "I vilken sport är Ashes den mest berömda matchserien?",
+   "Cricket",
+   "Rugby",
+   "Ishockey",
+   "Rodd",
+   "England mot Australien sedan 1882."
+  ],
+  [
+   "Hur många dagar har ett skottår?",
+   "366",
+   "365",
+   "364",
+   "367",
+   "En extra dag i februari, ungefär vart fjärde år."
+  ],
+  [
+   "Hur många bokstäver har det engelska alfabetet?",
+   "26",
+   "24",
+   "25",
+   "27",
+   "Svenskan har några fler."
+  ],
+  [
+   "Vad heter Japans valuta?",
+   "Yen",
+   "Won",
+   "Yuan",
+   "Baht",
+   "Won är koreansk, yuan kinesisk."
+  ],
+  [
+   "Hur många minuter går det på ett dygn?",
+   "1 440",
+   "1 240",
+   "1 640",
+   "1 200",
+   "Sextio gånger tjugofyra."
+  ],
+  [
+   "Vilken krydda är dyrast per vikt?",
+   "Saffran",
+   "Vanilj",
+   "Kardemumma",
+   "Kanel",
+   "Den plockas för hand, tre strängar per blomma."
+  ],
+  [
+   "Vad står WWW för?",
+   "World Wide Web",
+   "World Web Wire",
+   "Wide World Web",
+   "Web World Wide",
+   "Föreslaget av Tim Berners-Lee 1989."
+  ],
+  [
+   "Vilket är det största nu levande djuret?",
+   "Blåvalen",
+   "Afrikanska elefanten",
+   "Giraffen",
+   "Kaskeloten",
+   "Upp till trettio meter lång."
+  ],
+  [
+   "Hur många strängar har en vanlig gitarr?",
+   "Sex",
+   "Fyra",
+   "Fem",
+   "Sju",
+   "En bas har fyra."
+  ],
+  [
+   "Vad är huvudingrediensen i guacamole?",
+   "Avokado",
+   "Zucchini",
+   "Ärta",
+   "Bondböna",
+   "Namnet kommer från nahuatl och betyder avokadosås."
+  ],
+  [
+   "Vilken planet kallas den röda planeten?",
+   "Mars",
+   "Venus",
+   "Jupiter",
+   "Merkurius",
+   "Järnoxid i jorden, med andra ord rost."
+  ],
+  [
+   "Hur många färger brukar man räkna i en regnbåge?",
+   "Sju",
+   "Sex",
+   "Fem",
+   "Åtta",
+   "Newton stannade vid sju för att matcha tonskalan."
+  ],
+  [
+   "Vad kallas en flock kråkor på engelska?",
+   "A murder",
+   "A parliament",
+   "A pack",
+   "A gaggle",
+   "A parliament är ugglor."
+  ],
+  [
+   "I vilket land dricker man mest kaffe per person?",
+   "Finland",
+   "Italien",
+   "Brasilien",
+   "Sverige",
+   "I snitt omkring fyra koppar om dagen."
+  ],
+  [
+   "Hur många grader har en cirkel?",
+   "360",
+   "180",
+   "270",
+   "400",
+   "Ett tal som ärvts från babylonisk astronomi."
+  ],
+  [
+   "Hur många små rutor finns på en sida av Rubiks kub?",
+   "Nio",
+   "Fyra",
+   "Sexton",
+   "Sex",
+   "Tre gånger tre, på var och en av sex sidor."
+  ],
+  [
+   "Vilket språk har flest modersmålstalare?",
+   "Mandarin",
+   "Engelska",
+   "Spanska",
+   "Hindi",
+   "Engelskan vinner om man räknar andraspråkstalare."
+  ],
+  [
+   "I vilken månad firas midsommar i Finland?",
+   "Juni",
+   "Juli",
+   "Maj",
+   "Augusti",
+   "Helgen närmast sommarsolståndet."
+  ],
+  [
+   "Vilket är människokroppens största organ?",
+   "Huden",
+   "Levern",
+   "Lungorna",
+   "Tarmen",
+   "Omkring två kvadratmeter av den."
+  ],
+  [
+   "Hur många sidor har en hexagon?",
+   "Sex",
+   "Fem",
+   "Sju",
+   "Åtta",
+   "Som en cell i en bikaka."
+  ],
+  [
+   "Vilken metall är flytande i rumstemperatur?",
+   "Kvicksilver",
+   "Bly",
+   "Tenn",
+   "Zink",
+   "Därför användes den i termometrar."
+  ],
+  [
+   "Vilken stad förstördes av Vesuvius år 79?",
+   "Pompeji",
+   "Kartago",
+   "Troja",
+   "Efesos",
+   "Askan begravde den så noggrant att gatorna står kvar."
+  ],
+  [
+   "Vem var den första kvinnan som vann ett nobelpris?",
+   "Marie Curie",
+   "Rosalind Franklin",
+   "Lise Meitner",
+   "Dorothy Hodgkin",
+   "Fysik 1903, och kemi igen 1911."
+  ],
+  [
+   "Vilken mur påbörjades av kejsar Hadrianus?",
+   "En mur tvärs över norra Britannien",
+   "Kinesiska muren",
+   "Konstantinopels murar",
+   "Berlinmuren",
+   "Ungefär 117 kilometer, färdig omkring år 128."
+  ],
+  [
+   "I vilket land ägde sammetsrevolutionen rum?",
+   "Tjeckoslovakien",
+   "Polen",
+   "Ungern",
+   "Rumänien",
+   "I november 1989, och nästan ingen kom till skada."
+  ],
+  [
+   "Vilket skepp förde pilgrimerna till Amerika 1620?",
+   "Mayflower",
+   "Beagle",
+   "Endeavour",
+   "Victoria",
+   "102 passagerare, 66 dagar till sjöss."
+  ],
+  [
+   "Vem var Rysslands siste tsar?",
+   "Nikolaj II",
+   "Alexander III",
+   "Peter den store",
+   "Paul I",
+   "Han abdikerade i mars 1917."
+  ],
+  [
+   "Vilket land gav först kvinnor rösträtt i nationella val?",
+   "Nya Zeeland",
+   "Finland",
+   "Norge",
+   "Australien",
+   "1893. Finland var först med att låta dem kandidera, 1906."
+  ],
+  [
+   "Vad var Sidenvägen?",
+   "Ett nät av handelsvägar genom Asien",
+   "En romersk militärväg",
+   "En kanal mellan två hav",
+   "En medeltida pilgrimsled",
+   "Siden gick västerut; med det kom papper, krut och pesten."
+  ],
+  [
+   "Vilken egyptisk drottning var den siste faraon?",
+   "Kleopatra VII",
+   "Nefertiti",
+   "Hatshepsut",
+   "Ankhesenamun",
+   "Egypten blev en romersk provins efter hennes död 30 f.Kr."
+  ],
+  [
+   "Vilka två städer träffades av atombomber 1945?",
+   "Hiroshima och Nagasaki",
+   "Tokyo och Osaka",
+   "Kyoto och Kobe",
+   "Yokohama och Sendai",
+   "Den 6 och 9 augusti. Japan kapitulerade inom månaden."
+  ],
+  [
+   "Vilket land har den längsta kustlinjen?",
+   "Kanada",
+   "Ryssland",
+   "Indonesien",
+   "Australien",
+   "Över 200 000 kilometer, tack vare öarna."
+  ],
+  [
+   "Genom hur många länder flyter Donau?",
+   "Tio",
+   "Fyra",
+   "Sex",
+   "Fjorton",
+   "Fler än någon annan flod i världen."
+  ],
+  [
+   "Vilken är jordens torraste öken?",
+   "Atacama",
+   "Sahara",
+   "Death Valley",
+   "Namib",
+   "Vissa väderstationer där har aldrig uppmätt regn."
+  ],
+  [
+   "Vilket land har flest vulkaner?",
+   "Indonesien",
+   "Japan",
+   "Island",
+   "Chile",
+   "Det ligger där tre kontinentalplattor möts."
+  ],
+  [
+   "Vad skiljer Nord- och Sydkorea åt?",
+   "Den demilitariserade zonen",
+   "Yalufloden",
+   "Japanska havet",
+   "Taebaekbergen",
+   "Fyra kilometer bred, och en av jordens mest befästa platser."
+  ],
+  [
+   "Vilket hav krymper för att dess floder leddes bort?",
+   "Aralsjön",
+   "Döda havet",
+   "Kaspiska havet",
+   "Svarta havet",
+   "Bomullsodlingens bevattning på 1960-talet tog det mesta av vattnet."
+  ],
+  [
+   "Vilken europeisk huvudstad ligger på två kontinenter?",
+   "Istanbul",
+   "Aten",
+   "Lissabon",
+   "Nicosia",
+   "Fast Turkiets huvudstad är Ankara, inte Istanbul."
+  ],
+  [
+   "Vilket är världens högsta vattenfall?",
+   "Angelfallen",
+   "Niagarafallen",
+   "Victoriafallen",
+   "Iguazufallen",
+   "979 meter, i Venezuela. Mycket av det blir dimma på vägen ner."
+  ],
+  [
+   "Vilket land omges helt av Sydafrika?",
+   "Lesotho",
+   "Eswatini",
+   "Botswana",
+   "Namibia",
+   "Och hela landet ligger över 1 400 meter."
+  ],
+  [
+   "Vilket sund förbinder Medelhavet med Svarta havet?",
+   "Bosporen",
+   "Messinasundet",
+   "Kertjsundet",
+   "Skagerrak",
+   "Via Marmarasjön och Dardanellerna."
+  ],
+  [
+   "Vilken är världens vanligaste blodgrupp?",
+   "0 positiv",
+   "A positiv",
+   "B negativ",
+   "AB positiv",
+   "Ungefär en tredjedel av alla människor."
+  ],
+  [
+   "Vilket organ producerar insulin?",
+   "Bukspottkörteln",
+   "Levern",
+   "Njuren",
+   "Sköldkörteln",
+   "I cellöar som kallas Langerhanska öarna."
+  ],
+  [
+   "Hur många rum har människans hjärta?",
+   "Fyra",
+   "Två",
+   "Tre",
+   "Sex",
+   "Två förmak upptill, två kammare nedtill."
+  ],
+  [
+   "Vad är absoluta nollpunkten i Celsius?",
+   "Cirka −273 grader",
+   "Cirka −100 grader",
+   "Cirka −460 grader",
+   "Cirka −1000 grader",
+   "Exakt −273,15, där molekylrörelsen upphör."
+  ],
+  [
+   "Vilken gas gör läsk bubblig?",
+   "Koldioxid",
+   "Kväve",
+   "Syre",
+   "Helium",
+   "Löst under tryck, och det försvinner så fort flaskan öppnas."
+  ],
+  [
+   "Vad mäter en seismograf?",
+   "Jordbävningar",
+   "Vindhastighet",
+   "Lufttryck",
+   "Luftfuktighet",
+   "Richterskalan är logaritmisk: varje steg är tio gånger skakningen."
+  ],
+  [
+   "Vilket djur har den största hjärnan?",
+   "Kaskeloten",
+   "Elefanten",
+   "Blåvalen",
+   "Gorillan",
+   "Omkring åtta kilo."
+  ],
+  [
+   "Vilken gas är vanligast i solen?",
+   "Väte",
+   "Helium",
+   "Syre",
+   "Kol",
+   "Den fuserar väte till helium, och därifrån kommer ljuset."
+  ],
+  [
+   "Hur många tänder har en vuxen människa vanligtvis?",
+   "32",
+   "28",
+   "24",
+   "36",
+   "Tjugoåtta, plus fyra visdomständer som många aldrig får."
+  ],
+  [
+   "Vad orsakar tidvattnet?",
+   "Månens dragningskraft",
+   "Havsströmmar",
+   "Enbart jordens rotation",
+   "Vind över havet",
+   "Solen drar också, men månen är närmare och vinner."
+  ],
+  [
+   "Vem skrev Den gudomliga komedin?",
+   "Dante Alighieri",
+   "Petrarca",
+   "Boccaccio",
+   "Vergilius",
+   "Skriven på toskansk dialekt, vilket till stor del gav italienskan dess ljud."
+  ],
+  [
+   "Vilket instrument spelade Miles Davis?",
+   "Trumpet",
+   "Saxofon",
+   "Piano",
+   "Kontrabas",
+   "Kind of Blue är fortfarande den mest sålda jazzskivan någonsin."
+  ],
+  [
+   "Vem skrev Brott och straff?",
+   "Fjodor Dostojevskij",
+   "Leo Tolstoj",
+   "Anton Tjechov",
+   "Ivan Turgenjev",
+   "Han skrev den mot en deadline för att betala spelskulder."
+  ],
+  [
+   "Vilken balett har en svanprinsessa?",
+   "Svansjön",
+   "Giselle",
+   "Coppélia",
+   "La Bayadère",
+   "Tjajkovskij igen, och premiären blev ett fiasko."
+  ],
+  [
+   "Vilken konstriktning tillhörde Claude Monet?",
+   "Impressionismen",
+   "Kubismen",
+   "Surrealismen",
+   "Expressionismen",
+   "Namnet kom från en elak recension av hans Impression, soluppgång."
+  ],
+  [
+   "Vem komponerade De fyra årstiderna?",
+   "Antonio Vivaldi",
+   "Johann Pachelbel",
+   "Georg Händel",
+   "Henry Purcell",
+   "Fyra violinkonserter, var och en med en sonett bredvid."
+  ],
+  [
+   "I vilken stad ligger Eremitaget?",
+   "Sankt Petersburg",
+   "Moskva",
+   "Wien",
+   "Warszawa",
+   "Grundat av Katarina den stora som hennes privata samling."
+  ],
+  [
+   "Vem skrev berättelserna om Sherlock Holmes?",
+   "Arthur Conan Doyle",
+   "Agatha Christie",
+   "Wilkie Collins",
+   "Edgar Allan Poe",
+   "Han dödade Holmes och fick återuppväcka honom efter ramaskriet."
+  ],
+  [
+   "Från vilket land kommer tangon?",
+   "Argentina",
+   "Spanien",
+   "Brasilien",
+   "Kuba",
+   "Från hamnkvarteren i Buenos Aires. Finland gjorde den sedan till sin."
+  ],
+  [
+   "Vem ritade Finlandiahuset i Helsingfors?",
+   "Alvar Aalto",
+   "Eliel Saarinen",
+   "Reima Pietilä",
+   "Juha Leiviskä",
+   "Färdigt 1971, i vit Carraramarmor som inte tålde klimatet."
+  ],
+  [
+   "Hur många spelare har ett basketlag på planen?",
+   "Fem",
+   "Sex",
+   "Fyra",
+   "Sju",
+   "Fem mot fem, och obegränsat med byten."
+  ],
+  [
+   "I vilket land hölls de första moderna olympiska spelen?",
+   "Grekland",
+   "Frankrike",
+   "Storbritannien",
+   "Italien",
+   "Aten 1896, med fjorton deltagande nationer."
+  ],
+  [
+   "Vad är den högsta möjliga breaket i snooker?",
+   "147",
+   "155",
+   "120",
+   "180",
+   "Femton röda med svart emellan, sedan färgerna i ordning."
+  ],
+  [
+   "Vilken sport kallas the sweet science?",
+   "Boxning",
+   "Fäktning",
+   "Brottning",
+   "Schackboxning",
+   "Ett uttryck från 1800-talet för konsten att slå utan att bli slagen."
+  ],
+  [
+   "Hur bred är ett fotbollsmål?",
+   "7,32 meter",
+   "6 meter",
+   "8,5 meter",
+   "10 meter",
+   "Åtta yards, fastställt på 1860-talet och aldrig ändrat."
+  ],
+  [
+   "I vilken sport tävlar man om Stanley Cup?",
+   "Ishockey",
+   "Basket",
+   "Baseboll",
+   "Amerikansk fotboll",
+   "Den äldsta trofén som proffsidrottare i Nordamerika tävlar om."
+  ],
+  [
+   "Hur många Grand Slam-turneringar finns i tennis per år?",
+   "Fyra",
+   "Tre",
+   "Fem",
+   "Sex",
+   "Australien, Frankrike, Wimbledon och US Open."
+  ],
+  [
+   "Vilket land stod värd för sommar-OS 1952?",
+   "Finland",
+   "Sverige",
+   "Australien",
+   "Italien",
+   "Helsingfors, efter att 1940 års spel ställts in av kriget."
+  ],
+  [
+   "Hur lång är en olympisk simbassäng?",
+   "50 meter",
+   "25 meter",
+   "100 meter",
+   "33 meter",
+   "Tio banor bred, men oftast tävlar man bara på åtta."
+  ],
+  [
+   "I vilken sport används Fosbury flop?",
+   "Höjdhopp",
+   "Längdhopp",
+   "Simhopp",
+   "Gymnastik",
+   "Dick Fosbury vann OS 1968 genom att hoppa baklänges, och alla kopierade honom."
+  ],
+  [
+   "Hur många tidszoner finns det i världen?",
+   "24",
+   "12",
+   "30",
+   "18",
+   "Vissa länder använder halvtimmesförskjutningar, så i praktiken finns det fler."
+  ],
+  [
+   "Vad samlar en filatelist på?",
+   "Frimärken",
+   "Mynt",
+   "Böcker",
+   "Fjärilar",
+   "Mynt är numismatikerns område."
+  ],
+  [
+   "Vilket blodkärl för blod bort från hjärtat?",
+   "En artär",
+   "En ven",
+   "En kapillär",
+   "Endast aortan",
+   "Vener för tillbaka det. Aortan är bara den största artären."
+  ],
+  [
+   "Vad är Schweiz valuta?",
+   "Francen",
+   "Euron",
+   "Kronan",
+   "Marken",
+   "En av få västeuropeiska valutor som aldrig blev euro."
+  ],
+  [
+   "Hur många rutor har ett sudokurutnät?",
+   "81",
+   "64",
+   "100",
+   "72",
+   "Nio gånger nio, i nio rutor om nio."
+  ],
+  [
+   "Vilken är världens högsta byggnad?",
+   "Burj Khalifa",
+   "Shanghai Tower",
+   "Empire State Building",
+   "Taipei 101",
+   "828 meter i Dubai, färdig 2010."
+  ],
+  [
+   "Vilken frukt används till traditionell cider?",
+   "Äpplen",
+   "Päron",
+   "Druvor",
+   "Plommon",
+   "Päron ger perry, som är en helt annan dryck."
+  ],
+  [
+   "Hur lång tid tar det för jorden att gå runt solen?",
+   "Cirka 365 dagar",
+   "Cirka 300 dagar",
+   "Cirka 400 dagar",
+   "Exakt 360 dagar",
+   "365,24, och därför får februari ibland en extra dag."
+  ],
+  [
+   "Vilken del av ett ägg är albumin?",
+   "Vitan",
+   "Gulan",
+   "Skalet",
+   "Hinnan",
+   "Mest vatten och protein, och det är det som vispas till maräng."
+  ],
+  [
+   "Vad mäter Richterskalan?",
+   "Jordbävningars styrka",
+   "Vindstyrka",
+   "Nederbörd",
+   "Ljudvolym",
+   "Varje heltal är tio gånger skakningen och ungefär trettio gånger energin."
+  ],
+  [
+   "Vilket rike styrdes från Konstantinopel?",
+   "Bysantinska riket",
+   "Tysk-romerska riket",
+   "Mogulriket",
+   "Karthagiska riket",
+   "Det överlevde västromerska riket med nästan tusen år."
+  ],
+  [
+   "Vad var Magna Carta?",
+   "Ett fördrag som begränsade kungens makt",
+   "Ett fredsavtal med Frankrike",
+   "En karta över den kända världen",
+   "Ett kyrkligt dekret",
+   "Beseglad 1215 av en kung som sedan försökte ogiltigförklara den."
+  ],
+  [
+   "Vilken sjukdom dödade ungefär en tredjedel av Europa på 1340-talet?",
+   "Digerdöden",
+   "Kolera",
+   "Smittkoppor",
+   "Tyfus",
+   "Den nådde Europa längs handelsvägarna från öster."
+  ],
+  [
+   "Vems expedition seglade först runt jorden 1519–22?",
+   "Ferdinand Magellans expedition",
+   "Christofer Columbus",
+   "Vasco da Gama",
+   "James Cook",
+   "Magellan dog på vägen; arton av 270 män kom hem."
+  ],
+  [
+   "Vilket land tillhörde Finland före 1809?",
+   "Sverige",
+   "Ryssland",
+   "Danmark",
+   "Norge",
+   "Sexhundra år under svenskt styre blev ett ryskt storfurstendöme."
+  ],
+  [
+   "Vad tog slut 1991 när Michail Gorbatjov avgick?",
+   "Sovjetunionen",
+   "Warszawapakten",
+   "Kalla krigets kapprustning",
+   "Jugoslavien",
+   "Den 26 december 1991 upphörde unionen formellt."
+  ],
+  [
+   "Vilken forntida stad styrdes av Hammurabi?",
+   "Babylon",
+   "Thebe",
+   "Aten",
+   "Nineve",
+   "Hans lagsamling är en av de äldsta bevarade skrivna lagtexterna."
+  ],
+  [
+   "Vilka två makter utkämpade kalla kriget?",
+   "USA och Sovjetunionen",
+   "Storbritannien och Tyskland",
+   "Kina och Indien",
+   "Frankrike och Ryssland",
+   "Ungefär 1947–1991, utkämpat överallt utom direkt mellan dem."
+  ],
+  [
+   "Vad uppfann Johannes Gutenberg?",
+   "Boktryck med lösa typer i Europa",
+   "Papperet",
+   "Teleskopet",
+   "Det mekaniska uret",
+   "Omkring 1440. Lösa typer fanns redan i Korea och Kina."
+  ],
+  [
+   "Vilken finländsk president satt längst?",
+   "Urho Kekkonen",
+   "J. K. Paasikivi",
+   "Mauno Koivisto",
+   "Risto Ryti",
+   "Tjugofem år, från 1956 till 1982."
+  ],
+  [
+   "Vilket land har flest invånare?",
+   "Indien",
+   "Kina",
+   "USA",
+   "Indonesien",
+   "Indien gick om Kina 2023."
+  ],
+  [
+   "Vid vilken flod ligger Kairo?",
+   "Nilen",
+   "Eufrat",
+   "Kongo",
+   "Niger",
+   "Nästan hela Egyptens befolkning bor längs den."
+  ],
+  [
+   "Vilket land äger Grönland?",
+   "Danmark",
+   "Norge",
+   "Island",
+   "Kanada",
+   "Ett självstyrande område inom Danmarks rike."
+  ],
+  [
+   "Vad är Kanadas huvudstad?",
+   "Ottawa",
+   "Toronto",
+   "Vancouver",
+   "Montreal",
+   "Valdes 1857 som en kompromiss mellan engelska och franska Kanada."
+  ],
+  [
+   "Vilket är Afrikas högsta berg?",
+   "Kilimanjaro",
+   "Mount Kenya",
+   "Atlas",
+   "Mount Elgon",
+   "5 895 meter, och det är en vulkan, inte en bergskedja."
+  ],
+  [
+   "Vilka två länder har den längsta gemensamma gränsen?",
+   "Kanada och USA",
+   "Ryssland och Kina",
+   "Chile och Argentina",
+   "Indien och Bangladesh",
+   "Nästan 8 900 kilometer."
+  ],
+  [
+   "Vilken stad kallas den eviga staden?",
+   "Rom",
+   "Jerusalem",
+   "Aten",
+   "Kairo",
+   "En romersk poet kallade den så för tvåtusen år sedan."
+  ],
+  [
+   "Vilket hav ligger mellan Afrika och Australien?",
+   "Indiska oceanen",
+   "Stilla havet",
+   "Atlanten",
+   "Södra ishavet",
+   "Det enda hav som är uppkallat efter ett land."
+  ],
+  [
+   "Hur många öar har Finland ungefär?",
+   "Omkring 180 000",
+   "Omkring 18 000",
+   "Omkring 1 800",
+   "Omkring 1,8 miljoner",
+   "Och omkring 188 000 sjöar därtill."
+  ],
+  [
+   "Vilken öken täcker större delen av södra Mongoliet?",
+   "Gobi",
+   "Taklamakan",
+   "Karakum",
+   "Thar",
+   "En kall öken: det snöar där."
+  ],
+  [
+   "Vilken är ett grundämnes minsta del som behåller dess egenskaper?",
+   "Atomen",
+   "Molekylen",
+   "Elektronen",
+   "Cellen",
+   "Dela den och du får partiklar, inte grundämnet."
+  ],
+  [
+   "Vilken forskare lade fram teorin om evolution genom naturligt urval?",
+   "Charles Darwin",
+   "Gregor Mendel",
+   "Carl von Linné",
+   "Jean-Baptiste Lamarck",
+   "Alfred Russel Wallace kom på samma idé oberoende."
+  ],
+  [
+   "Vilket pH har rent vatten?",
+   "7",
+   "0",
+   "10",
+   "14",
+   "Under sju är surt, över är basiskt."
+  ],
+  [
+   "Vilken planet roterar liggande?",
+   "Uranus",
+   "Neptunus",
+   "Saturnus",
+   "Venus",
+   "Lutad cirka 98 grader, troligen av en forntida kollision."
+  ],
+  [
+   "Vad mäter en barometer?",
+   "Lufttryck",
+   "Temperatur",
+   "Luftfuktighet",
+   "Vindriktning",
+   "Fallande tryck betyder oftast att vädret är på väg."
+  ],
+  [
+   "Hur många kromosompar har en människa?",
+   "23",
+   "46",
+   "12",
+   "30",
+   "Fyrtiosex kromosomer i tjugotre par."
+  ],
+  [
+   "Vilken är den lättaste metallen?",
+   "Litium",
+   "Aluminium",
+   "Magnesium",
+   "Titan",
+   "Lätt nog att flyta på vatten, om det inte reagerade med det."
+  ],
+  [
+   "Vilka blodkroppar bekämpar infektioner?",
+   "Vita blodkroppar",
+   "Röda blodkroppar",
+   "Blodplättar",
+   "Endast plasmaceller",
+   "Röda bär syre, blodplättar sköter koaguleringen."
+  ],
+  [
+   "Vilken är ljudets hastighet i luft ungefär?",
+   "340 meter per sekund",
+   "34 meter per sekund",
+   "3 400 meter per sekund",
+   "1 000 meter per sekund",
+   "Snabbare i vatten, och ännu snabbare i stål."
+  ],
+  [
+   "Vilken del av hjärnan styr balansen?",
+   "Lillhjärnan",
+   "Storhjärnan",
+   "Hjärnstammen",
+   "Hypotalamus",
+   "Den har fler nervceller än resten av hjärnan tillsammans."
+  ],
+  [
+   "Vem målade Guernica?",
+   "Pablo Picasso",
+   "Joan Miró",
+   "Salvador Dalí",
+   "Francisco Goya",
+   "Målad på en månad, efter bombningen av en baskisk stad 1937."
+  ],
+  [
+   "Vilken roman börjar med 'Call me Ishmael'?",
+   "Moby Dick",
+   "Skattkammarön",
+   "Den gamle och havet",
+   "Robinson Crusoe",
+   "Den sålde dåligt under Melvilles livstid och återupptäcktes årtionden senare."
+  ],
+  [
+   "I vilken stad ligger Pradomuseet?",
+   "Madrid",
+   "Barcelona",
+   "Lissabon",
+   "Sevilla",
+   "Både Velázquez och Goya finns där i mängd."
+  ],
+  [
+   "Vem skrev operan Trollflöjten?",
+   "Mozart",
+   "Verdi",
+   "Wagner",
+   "Puccini",
+   "Premiär veckor före hans död 1791."
+  ],
+  [
+   "Vad kallas konsten att skriva vackert för hand?",
+   "Kalligrafi",
+   "Typografi",
+   "Litografi",
+   "Etsning",
+   "Från grekiskans ord för vacker skrift."
+  ],
+  [
+   "Vilken ryss skrev Krig och fred?",
+   "Leo Tolstoj",
+   "Fjodor Dostojevskij",
+   "Nikolaj Gogol",
+   "Boris Pasternak",
+   "Över en halv miljon ord, och han skrev om den för hand många gånger."
+  ],
+  [
+   "Vilket instrument har 88 tangenter?",
+   "Pianot",
+   "Orgeln",
+   "Dragspelet",
+   "Cembalon",
+   "Femtiotvå vita och trettiosex svarta."
+  ],
+  [
+   "Vem regisserade filmen Metropolis?",
+   "Fritz Lang",
+   "F. W. Murnau",
+   "Sergej Eisenstein",
+   "Carl Theodor Dreyer",
+   "1927, och en tredjedel var försvunnen i åttio år."
+  ],
+  [
+   "Vilken färg blir det av blå och gul färg?",
+   "Grön",
+   "Lila",
+   "Orange",
+   "Brun",
+   "Med ljus är det annorlunda: blått och gult ljus ger vitt."
+  ],
+  [
+   "Vem komponerade melodin till Finlands nationalsång?",
+   "Fredrik Pacius",
+   "Jean Sibelius",
+   "Robert Kajanus",
+   "Oskar Merikanto",
+   "Samma melodi är också Estlands nationalsång."
+  ]
+ ]
+}

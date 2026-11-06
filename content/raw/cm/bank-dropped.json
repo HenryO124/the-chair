@@ -1,0 +1,590 @@
+[
+ {
+  "src": "sci-every.json",
+  "i": 1,
+  "why": "en duplicate of page row 141",
+  "q": "Which organ produces insulin?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 2,
+  "why": "pulled by the integrator: page row 209 already asks which part of the brain controls balance",
+  "q": "Which part of the brain looks after balance and coordination?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 9,
+  "why": "pulled by the integrator: page row 47 already asks for the universal donor blood type",
+  "q": "Which blood type can be given to almost anyone in an emergency?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 13,
+  "why": "sv duplicate of page row 54",
+  "q": "Which vitamin does the skin make in sunlight?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 15,
+  "why": "en duplicate of page row 59",
+  "q": "Who discovered penicillin?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 18,
+  "why": "en duplicate of page row 119",
+  "q": "Which metal is liquid at room temperature?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 24,
+  "why": "pulled by the integrator: page row 202 already asks the pH of pure water",
+  "q": "What is the pH of pure water at room temperature?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 25,
+  "why": "fi duplicate of page row 143",
+  "q": "What is absolute zero in degrees Celsius?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 31,
+  "why": "pulled by the integrator: page row 203 already asks which planet spins on its side",
+  "q": "Which planet is tipped so far over that it spins almost on its side?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 37,
+  "why": "en duplicate of page row 204",
+  "q": "What does a barometer measure?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 39,
+  "why": "pulled by the integrator: page row 31 already asks for the deepest point in the ocean",
+  "q": "Where is the deepest known point in the oceans?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 42,
+  "why": "pulled by the integrator: page row 106 already asks for the largest animal",
+  "q": "What is the largest animal that has ever lived?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 50,
+  "why": "en duplicate of page row 103",
+  "q": "How many minutes are there in a day?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 51,
+  "why": "en duplicate of page row 86",
+  "q": "How long is a marathon?"
+ },
+ {
+  "src": "sci-every.json",
+  "i": 62,
+  "why": "en duplicate of page row 104",
+  "q": "Which spice is the most expensive by weight?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 7,
+  "why": "pulled by the integrator: arts.json[2] already asks who compiled the Kalevala, and Arts & culture is where it belongs",
+  "q": "Who compiled the Kalevala?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 29,
+  "why": "en duplicate of page row 0",
+  "q": "In which year did the Berlin Wall fall?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 30,
+  "why": "en duplicate of page row 3",
+  "q": "In which year did the Titanic sink?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 33,
+  "why": "en duplicate of page row 1",
+  "q": "Who was the first person to walk on the Moon?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 42,
+  "why": "en duplicate of page row 125",
+  "q": "Who was the last tsar of Russia?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 48,
+  "why": "pulled by the integrator: gives the answer away: Pietarin -> Pietari Suuri, Sankt Petersburg -> Peter den store",
+  "q": "Which Russian ruler founded Saint Petersburg?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 59,
+  "why": "pulled by the integrator: page row 192 already asks who Greenland belongs to",
+  "q": "Which country is Greenland part of?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 65,
+  "why": "fi duplicate of page row 23",
+  "q": "Which is the largest hot desert in the world?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 68,
+  "why": "en duplicate of page row 21",
+  "q": "What is the capital of Australia?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 69,
+  "why": "en duplicate of page row 193",
+  "q": "What is the capital of Canada?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 73,
+  "why": "pulled by the integrator: page row 24 already asks for the smallest country",
+  "q": "Which is the smallest sovereign state in the world?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 87,
+  "why": "fi duplicate of page row 138",
+  "q": "Which country is completely surrounded by South Africa?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 88,
+  "why": "cut by fact checker: Duplicate: this is the same question, with the same four options in the same order and the same aside, as sci-every.json index 39, so the bank would ask it twice.",
+  "q": "Where is the deepest known point in the oceans?"
+ },
+ {
+  "src": "hist-geo.json",
+  "i": 89,
+  "why": "en duplicate of page row 20",
+  "q": "Which is the largest ocean?"
+ },
+ {
+  "src": "arts.json",
+  "i": 0,
+  "why": "pulled by the integrator: page row 66 already asks who wrote Finlandia",
+  "q": "Which composer wrote the tone poem Finlandia?"
+ },
+ {
+  "src": "arts.json",
+  "i": 6,
+  "why": "en duplicate of page row 76",
+  "q": "Who created the Moomins?"
+ },
+ {
+  "src": "arts.json",
+  "i": 8,
+  "why": "pulled by the integrator: page row 159 already asks who designed Finlandia Hall",
+  "q": "Which architect designed Finlandia Hall in Helsinki?"
+ },
+ {
+  "src": "arts.json",
+  "i": 16,
+  "why": "pulled by the integrator: page row 219 already asks who wrote the anthem melody",
+  "q": "Who composed the music of the Finnish national anthem?"
+ },
+ {
+  "src": "arts.json",
+  "i": 17,
+  "why": "pulled by the integrator: page row 74 already asks who painted The Scream",
+  "q": "Which Norwegian painter made The Scream?"
+ },
+ {
+  "src": "arts.json",
+  "i": 24,
+  "why": "en duplicate of page row 75",
+  "q": "Who painted the ceiling of the Sistine Chapel?"
+ },
+ {
+  "src": "arts.json",
+  "i": 25,
+  "why": "pulled by the integrator: page row 210 already asks who painted Guernica",
+  "q": "Which Spanish painter made Guernica?"
+ },
+ {
+  "src": "arts.json",
+  "i": 26,
+  "why": "pulled by the integrator: page row 62 already asks which museum holds the Mona Lisa",
+  "q": "In which museum does the Mona Lisa hang?"
+ },
+ {
+  "src": "arts.json",
+  "i": 27,
+  "why": "pulled by the integrator: page row 63 already asks who painted The Starry Night",
+  "q": "Which Dutch painter made The Starry Night?"
+ },
+ {
+  "src": "arts.json",
+  "i": 33,
+  "why": "pulled by the integrator: page row 152 already asks who wrote Crime and Punishment",
+  "q": "Which Russian author wrote Crime and Punishment?"
+ },
+ {
+  "src": "arts.json",
+  "i": 34,
+  "why": "en duplicate of page row 73",
+  "q": "Who wrote The Lord of the Rings?"
+ },
+ {
+  "src": "arts.json",
+  "i": 36,
+  "why": "pulled by the integrator: page row 64 already asks whose Ninth Symphony has the Ode to Joy",
+  "q": "Which composer's Ninth Symphony ends with a choir?"
+ },
+ {
+  "src": "arts.json",
+  "i": 39,
+  "why": "fi duplicate of page row 155",
+  "q": "Which composer wrote The Four Seasons?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 0,
+  "why": "en duplicate of dropped arts.json[0]",
+  "q": "Which composer wrote the tone poem Finlandia?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 1,
+  "why": "en duplicate of arts.json[1]",
+  "q": "How many numbered symphonies did Jean Sibelius complete?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 2,
+  "why": "en duplicate of arts.json[2]",
+  "q": "Who collected and compiled the Kalevala?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 3,
+  "why": "en duplicate of arts.json[3]",
+  "q": "Who wrote the novel Seven Brothers?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 4,
+  "why": "en duplicate of arts.json[4]",
+  "q": "Who wrote the novel The Unknown Soldier?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 5,
+  "why": "en duplicate of arts.json[5]",
+  "q": "Which Finnish writer has won the Nobel Prize in Literature?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 6,
+  "why": "en duplicate of page row 76",
+  "q": "Who created the Moomins?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 7,
+  "why": "en duplicate of arts.json[7]",
+  "q": "Which Moomin character leaves the valley every autumn with a harmonica?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 8,
+  "why": "en duplicate of dropped arts.json[8]",
+  "q": "Which architect designed Finlandia Hall in Helsinki?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 9,
+  "why": "en duplicate of arts.json[9]",
+  "q": "Which disease was Alvar Aalto's Paimio Sanatorium built to treat?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 10,
+  "why": "en duplicate of arts.json[10]",
+  "q": "Who designed Helsinki Central Railway Station?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 11,
+  "why": "en duplicate of arts.json[11]",
+  "q": "Which Helsinki church was blasted out of solid bedrock?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 12,
+  "why": "en duplicate of arts.json[12]",
+  "q": "Who painted The Wounded Angel?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 13,
+  "why": "en duplicate of arts.json[13]",
+  "q": "Which painter is best known for his Kalevala scenes, such as the Mother of Lemminkäinen?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 14,
+  "why": "en duplicate of arts.json[14]",
+  "q": "In which castle is the Savonlinna Opera Festival held?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 15,
+  "why": "en duplicate of arts.json[15]",
+  "q": "With which song did Lordi win the Eurovision Song Contest?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 16,
+  "why": "en duplicate of dropped arts.json[16]",
+  "q": "Who composed the music of the Finnish national anthem?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 17,
+  "why": "en duplicate of dropped arts.json[17]",
+  "q": "Which Norwegian painter made The Scream?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 18,
+  "why": "en duplicate of arts.json[18]",
+  "q": "Which Swedish author created Pippi Longstocking?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 19,
+  "why": "en duplicate of arts.json[19]",
+  "q": "Which Danish writer wrote The Little Mermaid?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 20,
+  "why": "en duplicate of arts.json[20]",
+  "q": "Which Norwegian playwright wrote A Doll's House?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 21,
+  "why": "en duplicate of arts.json[21]",
+  "q": "Which Swedish director made The Seventh Seal, where a knight plays chess with Death?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 22,
+  "why": "en duplicate of arts.json[22]",
+  "q": "Which Danish architect designed the Sydney Opera House?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 23,
+  "why": "en duplicate of arts.json[23]",
+  "q": "Which song won ABBA the Eurovision Song Contest in 1974?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 24,
+  "why": "en duplicate of page row 75",
+  "q": "Who painted the ceiling of the Sistine Chapel?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 25,
+  "why": "en duplicate of dropped arts.json[25]",
+  "q": "Which Spanish painter made Guernica?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 26,
+  "why": "en duplicate of dropped arts.json[26]",
+  "q": "In which museum does the Mona Lisa hang?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 27,
+  "why": "en duplicate of dropped arts.json[27]",
+  "q": "Which Dutch painter made The Starry Night?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 28,
+  "why": "en duplicate of arts.json[28]",
+  "q": "Which sculptor made The Thinker?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 29,
+  "why": "en duplicate of arts.json[29]",
+  "q": "Which architect designed the Sagrada Família in Barcelona?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 30,
+  "why": "en duplicate of arts.json[30]",
+  "q": "For which event was the Eiffel Tower built?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 31,
+  "why": "en duplicate of arts.json[31]",
+  "q": "Which Shakespeare play is set at Elsinore?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 32,
+  "why": "en duplicate of arts.json[32]",
+  "q": "Which Shakespeare play is set mostly in Scotland?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 33,
+  "why": "en duplicate of dropped arts.json[33]",
+  "q": "Which Russian author wrote Crime and Punishment?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 34,
+  "why": "en duplicate of page row 73",
+  "q": "Who wrote The Lord of the Rings?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 35,
+  "why": "en duplicate of arts.json[35]",
+  "q": "Which composer wrote the ballet Swan Lake?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 36,
+  "why": "en duplicate of dropped arts.json[36]",
+  "q": "Which composer's Ninth Symphony ends with a choir?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 37,
+  "why": "en duplicate of arts.json[37]",
+  "q": "Which Puccini opera was left unfinished when he died?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 38,
+  "why": "en duplicate of arts.json[38]",
+  "q": "In which Mozart opera does the Queen of the Night appear?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 39,
+  "why": "fi duplicate of page row 155",
+  "q": "Which composer wrote The Four Seasons?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 40,
+  "why": "en duplicate of arts.json[40]",
+  "q": "Which Dutch painter made Girl with a Pearl Earring?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 41,
+  "why": "en duplicate of arts.json[41]",
+  "q": "Which Tolstoy novel is set during Napoleon's invasion of Russia?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 42,
+  "why": "en duplicate of arts.json[42]",
+  "q": "What nationality did Agatha Christie give her detective Hercule Poirot?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 43,
+  "why": "en duplicate of arts.json[43]",
+  "q": "Which Kafka story begins with a man waking up as an insect?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 44,
+  "why": "en duplicate of arts.json[44]",
+  "q": "In which London theatre did Shakespeare's own company perform?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 45,
+  "why": "en duplicate of arts.json[45]",
+  "q": "Who directed the film Citizen Kane?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 46,
+  "why": "en duplicate of arts.json[46]",
+  "q": "Which Japanese director made Seven Samurai?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 47,
+  "why": "en duplicate of arts.json[47]",
+  "q": "Which ballet caused an uproar at its Paris premiere in 1913?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 48,
+  "why": "en duplicate of arts.json[48]",
+  "q": "Which Beatles album is named after the London street on its cover?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 49,
+  "why": "en duplicate of arts.json[49]",
+  "q": "Which Queen album contains Bohemian Rhapsody?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 68,
+  "why": "cut by fact checker: Duplicate: the same question with the same four options and the same answer already stands in the round-one bank as sci-every.json index 51 (and every.json index 1), where it was given a 'fix' verdict and kept. Keeping this copy asks the marathon twice. The content itself is correct.",
+  "q": "How long is a marathon?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 72,
+  "why": "en duplicate of page row 164",
+  "q": "How wide is a football goal?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 77,
+  "why": "en duplicate of page row 85",
+  "q": "In tennis, what is a score of zero called?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 80,
+  "why": "sv duplicate of page row 87",
+  "q": "How many players from each team are on the ice in ice hockey?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 81,
+  "why": "pulled by the integrator: gives the answer away: kymmenottelu -> Kymmenen, tiokamp -> Tio",
+  "q": "How many events make up the decathlon?"
+ },
+ {
+  "src": "arts-sport.json",
+  "i": 84,
+  "why": "sv duplicate of page row 168",
+  "q": "How long is an Olympic swimming pool?"
+ }
+]

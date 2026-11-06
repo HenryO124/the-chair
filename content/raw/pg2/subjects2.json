@@ -1,0 +1,1284 @@
+[
+ {
+  "row": 80,
+  "id": "cit-00",
+  "cat": "City",
+  "en": [
+   "London",
+   "Newcastle upon Tyne",
+   "Liverpool",
+   "Birmingham"
+  ],
+  "fi": [
+   "Lontoo",
+   "Newcastle",
+   "Liverpool",
+   "Birmingham"
+  ],
+  "sv": [
+   "London",
+   "Newcastle",
+   "Liverpool",
+   "Birmingham"
+  ],
+  "search": "Trafalgar Square London Nelson's Column",
+  "must": [
+   "trafalgar"
+  ],
+  "file": "TrafalgarSquareEvening.jpg",
+  "licence": "CC BY-SA 3.0",
+  "author": "Andreas Tille",
+  "size": "3072x1982",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/TrafalgarSquareEvening.jpg?width=1200",
+  "credit": "Andreas Tille · CC BY-SA 3.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:TrafalgarSquareEvening.jpg"
+ },
+ {
+  "row": 81,
+  "id": "cit-01",
+  "cat": "City",
+  "en": [
+   "Rome",
+   "Naples",
+   "Florence",
+   "Turin"
+  ],
+  "fi": [
+   "Rooma",
+   "Napoli",
+   "Firenze",
+   "Torino"
+  ],
+  "sv": [
+   "Rom",
+   "Neapel",
+   "Florens",
+   "Turin"
+  ],
+  "search": "Trevi Fountain Rome",
+  "must": [
+   "trevi"
+  ],
+  "file": "Fontaine Trevi - Rome.jpg",
+  "licence": "CC0",
+  "author": "Wilfredor",
+  "size": "11184x6790",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fontaine_Trevi_-_Rome.jpg?width=1200",
+  "credit": "Wilfredor · CC0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Fontaine_Trevi_-_Rome.jpg"
+ },
+ {
+  "row": 82,
+  "id": "cit-02",
+  "cat": "City",
+  "en": [
+   "Berlin",
+   "Vienna",
+   "Munich",
+   "Dresden"
+  ],
+  "fi": [
+   "Berliini",
+   "Wien",
+   "München",
+   "Dresden"
+  ],
+  "sv": [
+   "Berlin",
+   "Wien",
+   "München",
+   "Dresden"
+  ],
+  "search": "Reichstag building Berlin west facade exterior",
+  "must": [
+   "reichstag"
+  ],
+  "file": "View from the Reichstag Dome, Berlin 03.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Ank Kumar",
+  "size": "6000x4000",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View_from_the_Reichstag_Dome%2C_Berlin_03.jpg?width=1200",
+  "credit": "Ank Kumar · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:View_from_the_Reichstag_Dome%2C_Berlin_03.jpg"
+ },
+ {
+  "row": 83,
+  "id": "cit-03",
+  "cat": "City",
+  "en": [
+   "Vienna",
+   "Prague",
+   "Budapest",
+   "Dresden"
+  ],
+  "fi": [
+   "Wien",
+   "Praha",
+   "Budapest",
+   "Dresden"
+  ],
+  "sv": [
+   "Wien",
+   "Prag",
+   "Budapest",
+   "Dresden"
+  ],
+  "search": "Stephansplatz Vienna cathedral",
+  "must": [
+   "stephansplatz",
+   "stephansdom"
+  ],
+  "file": "Vienna Cathedral, from Stephansplatz.jpg",
+  "licence": "CC0",
+  "author": "Gerda Arendt",
+  "size": "3013x2250",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna_Cathedral%2C_from_Stephansplatz.jpg?width=1200",
+  "credit": "Gerda Arendt · CC0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Vienna_Cathedral%2C_from_Stephansplatz.jpg"
+ },
+ {
+  "row": 84,
+  "id": "cit-04",
+  "cat": "City",
+  "en": [
+   "Budapest",
+   "Vienna",
+   "Bucharest",
+   "Belgrade"
+  ],
+  "fi": [
+   "Budapest",
+   "Wien",
+   "Bukarest",
+   "Belgrad"
+  ],
+  "sv": [
+   "Budapest",
+   "Wien",
+   "Bukarest",
+   "Belgrad"
+  ],
+  "search": "Hungarian Parliament Building Budapest Danube night",
+  "must": [
+   "parliament",
+   "parlament"
+  ],
+  "file": "Hungarian Parliament Building 2023-9.jpg",
+  "licence": "CC0",
+  "author": "Pierre Blaché",
+  "size": "5078x2856",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hungarian_Parliament_Building_2023-9.jpg?width=1200",
+  "credit": "Pierre Blaché · CC0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Hungarian_Parliament_Building_2023-9.jpg"
+ },
+ {
+  "row": 85,
+  "id": "cit-05",
+  "cat": "City",
+  "en": [
+   "Lisbon",
+   "Porto",
+   "Seville",
+   "Cadiz"
+  ],
+  "fi": [
+   "Lissabon",
+   "Porto",
+   "Sevilla",
+   "Cádiz"
+  ],
+  "sv": [
+   "Lissabon",
+   "Porto",
+   "Sevilla",
+   "Cádiz"
+  ],
+  "search": "Belem Tower Lisbon",
+  "must": [
+   "belem",
+   "belém"
+  ],
+  "file": "Torre Belém April 2009-4a.jpg",
+  "licence": "CC BY-SA 3.0",
+  "author": "Alvesgaspar",
+  "size": "5035x4805",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Torre_Bel%C3%A9m_April_2009-4a.jpg?width=1200",
+  "credit": "Alvesgaspar · CC BY-SA 3.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Torre_Bel%C3%A9m_April_2009-4a.jpg"
+ },
+ {
+  "row": 86,
+  "id": "cit-06",
+  "cat": "City",
+  "en": [
+   "Copenhagen",
+   "Bergen",
+   "Gdansk",
+   "Amsterdam"
+  ],
+  "fi": [
+   "Kööpenhamina",
+   "Bergen",
+   "Gdansk",
+   "Amsterdam"
+  ],
+  "sv": [
+   "Köpenhamn",
+   "Bergen",
+   "Gdansk",
+   "Amsterdam"
+  ],
+  "search": "Nyhavn Copenhagen",
+  "must": [
+   "nyhavn"
+  ],
+  "file": "Kopenhagen (DK), Nyhavn -- 2017 -- 1711.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Dietmar Rabich",
+  "size": "5136x3424",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kopenhagen_%28DK%29%2C_Nyhavn_--_2017_--_1711.jpg?width=1200",
+  "credit": "Dietmar Rabich · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Kopenhagen_%28DK%29%2C_Nyhavn_--_2017_--_1711.jpg"
+ },
+ {
+  "row": 87,
+  "id": "cit-07",
+  "cat": "City",
+  "en": [
+   "Oslo",
+   "Gothenburg",
+   "Malmo",
+   "Aarhus"
+  ],
+  "fi": [
+   "Oslo",
+   "Göteborg",
+   "Malmö",
+   "Århus"
+  ],
+  "sv": [
+   "Oslo",
+   "Göteborg",
+   "Malmö",
+   "Århus"
+  ],
+  "search": "Oslo Aker Brygge harbour",
+  "must": [
+   "aker"
+  ],
+  "file": "Oslo-Aker Brygge.jpg",
+  "licence": "CC BY-SA 2.5",
+  "author": "The original uploader was Dagny at Polish Wikipedia.",
+  "size": "1600x1200",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Oslo-Aker_Brygge.jpg?width=1200",
+  "credit": "The original uploader was Dagny at Polish Wikipedia. · CC BY-SA 2.5 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Oslo-Aker_Brygge.jpg"
+ },
+ {
+  "row": 88,
+  "id": "cit-08",
+  "cat": "City",
+  "en": [
+   "Tallinn",
+   "Riga",
+   "Vilnius",
+   "Gdansk"
+  ],
+  "fi": [
+   "Tallinna",
+   "Riika",
+   "Vilna",
+   "Gdansk"
+  ],
+  "sv": [
+   "Tallinn",
+   "Riga",
+   "Vilnius",
+   "Gdansk"
+  ],
+  "search": "Tallinn old town hall square Raekoja plats",
+  "must": [
+   "tallinn",
+   "raekoja"
+  ],
+  "file": "Tallinn Raekoja plats (1).JPG",
+  "licence": "CC BY-SA 4.0",
+  "author": "PIERRE ANDRE LECLERCQ",
+  "size": "4474x2789",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tallinn_Raekoja_plats_%281%29.JPG?width=1200",
+  "credit": "PIERRE ANDRE LECLERCQ · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Tallinn_Raekoja_plats_%281%29.JPG"
+ },
+ {
+  "row": 89,
+  "id": "cit-09",
+  "cat": "City",
+  "en": [
+   "Riga",
+   "Tallinn",
+   "Vilnius",
+   "Lubeck"
+  ],
+  "fi": [
+   "Riika",
+   "Tallinna",
+   "Vilna",
+   "Lübeck"
+  ],
+  "sv": [
+   "Riga",
+   "Tallinn",
+   "Vilnius",
+   "Lübeck"
+  ],
+  "search": "Riga House of the Blackheads",
+  "must": [
+   "riga",
+   "blackheads"
+  ],
+  "file": "House of Blackheads and St. Peter's Church Tower, Riga, Latvia - Diliff.jpg",
+  "licence": "CC BY-SA 3.0",
+  "author": "Diliff",
+  "size": "7000x4922",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/House_of_Blackheads_and_St._Peter%27s_Church_Tower%2C_Riga%2C_Latvia_-_Diliff.jpg?width=1200",
+  "credit": "Diliff · CC BY-SA 3.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:House_of_Blackheads_and_St._Peter%27s_Church_Tower%2C_Riga%2C_Latvia_-_Diliff.jpg"
+ },
+ {
+  "row": 90,
+  "id": "cit-10",
+  "cat": "City",
+  "en": [
+   "Krakow",
+   "Prague",
+   "Wroclaw",
+   "Lviv"
+  ],
+  "fi": [
+   "Krakova",
+   "Praha",
+   "Wroclaw",
+   "Lviv"
+  ],
+  "sv": [
+   "Kraków",
+   "Prag",
+   "Wroclaw",
+   "Lviv"
+  ],
+  "search": "Krakow Main Market Square Cloth Hall",
+  "must": [
+   "krak"
+  ],
+  "file": "Kraków Cloth Hall, Café Noworolski, 3 Main Market square, Old Town, Kraków, Poland.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Igor123121",
+  "size": "5391x3028",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Krak%C3%B3w_Cloth_Hall%2C_Caf%C3%A9_Noworolski%2C_3_Main_Market_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg?width=1200",
+  "credit": "Igor123121 · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Krak%C3%B3w_Cloth_Hall%2C_Caf%C3%A9_Noworolski%2C_3_Main_Market_square%2C_Old_Town%2C_Krak%C3%B3w%2C_Poland.jpg"
+ },
+ {
+  "row": 91,
+  "id": "cit-11",
+  "cat": "City",
+  "en": [
+   "Dubrovnik",
+   "Split",
+   "Kotor",
+   "Valletta"
+  ],
+  "fi": [
+   "Dubrovnik",
+   "Split",
+   "Kotor",
+   "Valletta"
+  ],
+  "sv": [
+   "Dubrovnik",
+   "Split",
+   "Kotor",
+   "Valletta"
+  ],
+  "search": "Dubrovnik old town panorama red roofs harbour",
+  "must": [
+   "dubrovnik"
+  ],
+  "file": "Steep coast near the city wall in the Old Town of Dubrovnik, Croatia (48613191222).jpg",
+  "licence": "CC BY 2.0",
+  "author": "dronepicr",
+  "size": "5111x2872",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Steep_coast_near_the_city_wall_in_the_Old_Town_of_Dubrovnik%2C_Croatia_%2848613191222%29.jpg?width=1200",
+  "credit": "dronepicr · CC BY 2.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Steep_coast_near_the_city_wall_in_the_Old_Town_of_Dubrovnik%2C_Croatia_%2848613191222%29.jpg"
+ },
+ {
+  "row": 92,
+  "id": "cit-13",
+  "cat": "City",
+  "en": [
+   "Naples",
+   "Palermo",
+   "Bari",
+   "Catania"
+  ],
+  "fi": [
+   "Napoli",
+   "Palermo",
+   "Bari",
+   "Catania"
+  ],
+  "sv": [
+   "Neapel",
+   "Palermo",
+   "Bari",
+   "Catania"
+  ],
+  "search": "Napoli panorama golfo citta Vesuvio",
+  "must": [
+   "naples",
+   "napoli"
+  ],
+  "file": "Gezicht op Napels met aan de horizon de Vesuvius NAPOLI - Panorama (titel op object), RP-F-F01182-A.jpg",
+  "licence": "CC0",
+  "author": "Rijksmuseum",
+  "size": "3706x3062",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gezicht_op_Napels_met_aan_de_horizon_de_Vesuvius_NAPOLI_-_Panorama_%28titel_op_object%29%2C_RP-F-F01182-A.jpg?width=1200",
+  "credit": "Rijksmuseum · CC0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Gezicht_op_Napels_met_aan_de_horizon_de_Vesuvius_NAPOLI_-_Panorama_%28titel_op_object%29%2C_RP-F-F01182-A.jpg"
+ },
+ {
+  "row": 93,
+  "id": "cit-14",
+  "cat": "City",
+  "en": [
+   "Milan",
+   "Turin",
+   "Genoa",
+   "Trieste"
+  ],
+  "fi": [
+   "Milano",
+   "Torino",
+   "Genova",
+   "Trieste"
+  ],
+  "sv": [
+   "Milano",
+   "Turin",
+   "Genua",
+   "Trieste"
+  ],
+  "search": "Galleria Vittorio Emanuele II Milan",
+  "must": [
+   "galleria"
+  ],
+  "file": "Glass fome of the Galleria Vittorio Emanuele II in Milan.JPG",
+  "licence": "CC BY 3.0 de",
+  "author": "High Contrast",
+  "size": "2000x1500",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Glass_fome_of_the_Galleria_Vittorio_Emanuele_II_in_Milan.JPG?width=1200",
+  "credit": "High Contrast · CC BY 3.0 de · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Glass_fome_of_the_Galleria_Vittorio_Emanuele_II_in_Milan.JPG"
+ },
+ {
+  "row": 94,
+  "id": "cit-15",
+  "cat": "City",
+  "en": [
+   "Munich",
+   "Nuremberg",
+   "Salzburg",
+   "Innsbruck"
+  ],
+  "fi": [
+   "München",
+   "Nürnberg",
+   "Salzburg",
+   "Innsbruck"
+  ],
+  "sv": [
+   "München",
+   "Nürnberg",
+   "Salzburg",
+   "Innsbruck"
+  ],
+  "search": "Marienplatz Munich new town hall",
+  "must": [
+   "marienplatz"
+  ],
+  "file": "Rathaus and Marienplatz from Peterskirche - August 2006.jpg",
+  "licence": "CC BY-SA 3.0",
+  "author": "Diliff",
+  "size": "2089x1800",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg?width=1200",
+  "credit": "Diliff · CC BY-SA 3.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg"
+ },
+ {
+  "row": 95,
+  "id": "cit-16",
+  "cat": "City",
+  "en": [
+   "Hamburg",
+   "Bremen",
+   "Rotterdam",
+   "Antwerp"
+  ],
+  "fi": [
+   "Hampuri",
+   "Bremen",
+   "Rotterdam",
+   "Antwerpen"
+  ],
+  "sv": [
+   "Hamburg",
+   "Bremen",
+   "Rotterdam",
+   "Antwerpen"
+  ],
+  "search": "Speicherstadt Hamburg warehouse district",
+  "must": [
+   "speicherstadt"
+  ],
+  "file": "Hamburg, Speicherstadt, Block P -- 2016 -- 3330-6.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Dietmar Rabich",
+  "size": "5436x3624",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamburg%2C_Speicherstadt%2C_Block_P_--_2016_--_3330-6.jpg?width=1200",
+  "credit": "Dietmar Rabich · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Hamburg%2C_Speicherstadt%2C_Block_P_--_2016_--_3330-6.jpg"
+ },
+ {
+  "row": 96,
+  "id": "cit-17",
+  "cat": "City",
+  "en": [
+   "Zurich",
+   "Geneva",
+   "Bern",
+   "Basel"
+  ],
+  "fi": [
+   "Zürich",
+   "Geneve",
+   "Bern",
+   "Basel"
+  ],
+  "sv": [
+   "Zürich",
+   "Genève",
+   "Bern",
+   "Basel"
+  ],
+  "search": "Zurich Limmat river old town panorama",
+  "must": [
+   "zurich",
+   "zürich",
+   "limmat"
+  ],
+  "file": "Zürich view Quaibrücke 20200702.jpg",
+  "licence": "CC BY-SA 3.0",
+  "author": "Daniel Kraft",
+  "size": "12732x6619",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Z%C3%BCrich_view_Quaibr%C3%BCcke_20200702.jpg?width=1200",
+  "credit": "Daniel Kraft · CC BY-SA 3.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_view_Quaibr%C3%BCcke_20200702.jpg"
+ },
+ {
+  "row": 97,
+  "id": "cit-18",
+  "cat": "City",
+  "en": [
+   "Bruges",
+   "Ghent",
+   "Delft",
+   "Strasbourg"
+  ],
+  "fi": [
+   "Brugge",
+   "Gent",
+   "Delft",
+   "Strasbourg"
+  ],
+  "sv": [
+   "Brygge",
+   "Gent",
+   "Delft",
+   "Strasbourg"
+  ],
+  "search": "Rozenhoedkaai Bruges canal",
+  "must": [
+   "rozenhoedkaai",
+   "brugge",
+   "bruges"
+  ],
+  "file": "Rozenhoedkaai (canal) and Belfry of Bruges, Bruges, Belgium (Ank Kumar, Infosys Limited) 09.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Ank Kumar",
+  "size": "4750x3167",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rozenhoedkaai_%28canal%29_and_Belfry_of_Bruges%2C_Bruges%2C_Belgium_%28Ank_Kumar%2C_Infosys_Limited%29_09.jpg?width=1200",
+  "credit": "Ank Kumar · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Rozenhoedkaai_%28canal%29_and_Belfry_of_Bruges%2C_Bruges%2C_Belgium_%28Ank_Kumar%2C_Infosys_Limited%29_09.jpg"
+ },
+ {
+  "row": 98,
+  "id": "cit-19",
+  "cat": "City",
+  "en": [
+   "Seville",
+   "Granada",
+   "Cordoba",
+   "Valencia"
+  ],
+  "fi": [
+   "Sevilla",
+   "Granada",
+   "Córdoba",
+   "Valencia"
+  ],
+  "sv": [
+   "Sevilla",
+   "Granada",
+   "Córdoba",
+   "Valencia"
+  ],
+  "search": "Plaza de Espana Seville",
+  "must": [
+   "espa",
+   "seville",
+   "sevilla"
+  ],
+  "file": "Seville, Plaza de España (38625005691) (edited).jpg",
+  "licence": "CC BY 2.0",
+  "author": "Dmitry Dzhus from London",
+  "size": "4353x3453",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Seville%2C_Plaza_de_Espa%C3%B1a_%2838625005691%29_%28edited%29.jpg?width=1200",
+  "credit": "Dmitry Dzhus from London · CC BY 2.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Seville%2C_Plaza_de_Espa%C3%B1a_%2838625005691%29_%28edited%29.jpg"
+ },
+ {
+  "row": 99,
+  "id": "cit-20",
+  "cat": "City",
+  "en": [
+   "Porto",
+   "Bilbao",
+   "Vigo",
+   "Coimbra"
+  ],
+  "fi": [
+   "Porto",
+   "Bilbao",
+   "Vigo",
+   "Coimbra"
+  ],
+  "sv": [
+   "Porto",
+   "Bilbao",
+   "Vigo",
+   "Coimbra"
+  ],
+  "search": "Porto Ribeira Dom Luis bridge",
+  "must": [
+   "porto",
+   "ribeira"
+  ],
+  "file": "Ribeira from Dom Luis I bridge (4).jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Krzysztof Golik",
+  "size": "5520x2849",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ribeira_from_Dom_Luis_I_bridge_%284%29.jpg?width=1200",
+  "credit": "Krzysztof Golik · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Ribeira_from_Dom_Luis_I_bridge_%284%29.jpg"
+ },
+ {
+  "row": 100,
+  "id": "cit-21",
+  "cat": "City",
+  "en": [
+   "Marrakesh",
+   "Fez",
+   "Tunis",
+   "Algiers"
+  ],
+  "fi": [
+   "Marrakech",
+   "Fez",
+   "Tunis",
+   "Alger"
+  ],
+  "sv": [
+   "Marrakech",
+   "Fez",
+   "Tunis",
+   "Alger"
+  ],
+  "search": "Jemaa el-Fnaa square Marrakesh",
+  "must": [
+   "jemaa",
+   "marrakesh",
+   "marrakech"
+  ],
+  "file": "Jamaa El Fna, Marrakesh, Morocco, 20250124 1804 7017.jpg",
+  "licence": "CC BY 4.0",
+  "author": "Jakub Hałun",
+  "size": "5649x3074",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jamaa_El_Fna%2C_Marrakesh%2C_Morocco%2C_20250124_1804_7017.jpg?width=1200",
+  "credit": "Jakub Hałun · CC BY 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Jamaa_El_Fna%2C_Marrakesh%2C_Morocco%2C_20250124_1804_7017.jpg"
+ },
+ {
+  "row": 101,
+  "id": "cit-22",
+  "cat": "City",
+  "en": [
+   "Cairo",
+   "Alexandria",
+   "Khartoum",
+   "Baghdad"
+  ],
+  "fi": [
+   "Kairo",
+   "Aleksandria",
+   "Khartum",
+   "Bagdad"
+  ],
+  "sv": [
+   "Kairo",
+   "Alexandria",
+   "Khartoum",
+   "Bagdad"
+  ],
+  "search": "Cairo Nile river corniche city panorama",
+  "must": [
+   "cairo"
+  ],
+  "file": "Cairo Tower, al-Qāhirah, CG, EGY (40942425723).jpg",
+  "licence": "CC0",
+  "author": "Warren LeMay from Chicago, IL, United States",
+  "size": "1967x2623",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cairo_Tower%2C_al-Q%C4%81hirah%2C_CG%2C_EGY_%2840942425723%29.jpg?width=1200",
+  "credit": "Warren LeMay from Chicago, IL, United States · CC0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Cairo_Tower%2C_al-Q%C4%81hirah%2C_CG%2C_EGY_%2840942425723%29.jpg"
+ },
+ {
+  "row": 102,
+  "id": "cit-23",
+  "cat": "City",
+  "en": [
+   "Jerusalem",
+   "Amman",
+   "Damascus",
+   "Beirut"
+  ],
+  "fi": [
+   "Jerusalem",
+   "Amman",
+   "Damaskos",
+   "Beirut"
+  ],
+  "sv": [
+   "Jerusalem",
+   "Amman",
+   "Damaskus",
+   "Beirut"
+  ],
+  "search": "Jerusalem old city panorama Dome of the Rock",
+  "must": [
+   "jerusalem"
+  ],
+  "file": "Panorama with Dome of the Rock - Temple Mount - Old City - East Jerusalem (5684536532).jpg",
+  "licence": "CC BY-SA 2.0",
+  "author": "Adam Jones from Kelowna, BC, Canada",
+  "size": "4667x1080",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Panorama_with_Dome_of_the_Rock_-_Temple_Mount_-_Old_City_-_East_Jerusalem_%285684536532%29.jpg?width=1200",
+  "credit": "Adam Jones from Kelowna, BC, Canada · CC BY-SA 2.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Panorama_with_Dome_of_the_Rock_-_Temple_Mount_-_Old_City_-_East_Jerusalem_%285684536532%29.jpg"
+ },
+ {
+  "row": 103,
+  "id": "cit-24",
+  "cat": "City",
+  "en": [
+   "Mumbai",
+   "Chennai",
+   "Kolkata",
+   "Karachi"
+  ],
+  "fi": [
+   "Mumbai",
+   "Chennai",
+   "Kolkata",
+   "Karachi"
+  ],
+  "sv": [
+   "Mumbai",
+   "Chennai",
+   "Kolkata",
+   "Karachi"
+  ],
+  "search": "Gateway of India Mumbai",
+  "must": [
+   "gateway",
+   "mumbai",
+   "bombay"
+  ],
+  "file": "Panoramic view of Taj Palace Hotel and Taj Tower with the iconic Gateway of India in the background.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "iMahesh",
+  "size": "5515x3102",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Panoramic_view_of_Taj_Palace_Hotel_and_Taj_Tower_with_the_iconic_Gateway_of_India_in_the_background.jpg?width=1200",
+  "credit": "iMahesh · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Panoramic_view_of_Taj_Palace_Hotel_and_Taj_Tower_with_the_iconic_Gateway_of_India_in_the_background.jpg"
+ },
+ {
+  "row": 104,
+  "id": "cit-25",
+  "cat": "City",
+  "en": [
+   "Delhi",
+   "Jaipur",
+   "Lahore",
+   "Hyderabad"
+  ],
+  "fi": [
+   "Delhi",
+   "Jaipur",
+   "Lahore",
+   "Hyderabad"
+  ],
+  "sv": [
+   "Delhi",
+   "Jaipur",
+   "Lahore",
+   "Hyderabad"
+  ],
+  "search": "India Gate New Delhi",
+  "must": [
+   "india gate",
+   "delhi"
+  ],
+  "file": "India Gate 1 (New Delhi).jpg",
+  "licence": "CC BY-SA 3.0",
+  "author": "Subeesh Balan സുഭീഷ് ബാലൻ",
+  "size": "2736x3000",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_Gate_1_%28New_Delhi%29.jpg?width=1200",
+  "credit": "Subeesh Balan സുഭീഷ് ബാലൻ · CC BY-SA 3.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:India_Gate_1_%28New_Delhi%29.jpg"
+ },
+ {
+  "row": 105,
+  "id": "cit-26",
+  "cat": "City",
+  "en": [
+   "Beijing",
+   "Xi'an",
+   "Nanjing",
+   "Chongqing"
+  ],
+  "fi": [
+   "Peking",
+   "Xi'an",
+   "Nanjing",
+   "Chongqing"
+  ],
+  "sv": [
+   "Peking",
+   "Xi'an",
+   "Nanjing",
+   "Chongqing"
+  ],
+  "search": "Beijing central business district skyline",
+  "must": [
+   "beijing"
+  ],
+  "file": "Beijing central business district banner.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Codas",
+  "size": "6584x943",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Beijing_central_business_district_banner.jpg?width=1200",
+  "credit": "Codas · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Beijing_central_business_district_banner.jpg"
+ },
+ {
+  "row": 106,
+  "id": "cit-27",
+  "cat": "City",
+  "en": [
+   "Shanghai",
+   "Shenzhen",
+   "Guangzhou",
+   "Chongqing"
+  ],
+  "fi": [
+   "Shanghai",
+   "Shenzhen",
+   "Guangzhou",
+   "Chongqing"
+  ],
+  "sv": [
+   "Shanghai",
+   "Shenzhen",
+   "Guangzhou",
+   "Chongqing"
+  ],
+  "search": "Shanghai Pudong skyline from the Bund",
+  "must": [
+   "shanghai",
+   "pudong"
+  ],
+  "file": "Pudong Shanghai November 2017 panorama.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "King of Hearts",
+  "size": "10200x5100",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pudong_Shanghai_November_2017_panorama.jpg?width=1200",
+  "credit": "King of Hearts · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Pudong_Shanghai_November_2017_panorama.jpg"
+ },
+ {
+  "row": 107,
+  "id": "cit-28",
+  "cat": "City",
+  "en": [
+   "Seoul",
+   "Busan",
+   "Pyongyang",
+   "Kaesong"
+  ],
+  "fi": [
+   "Seoul",
+   "Busan",
+   "Pjongjang",
+   "Kaesong"
+  ],
+  "sv": [
+   "Seoul",
+   "Busan",
+   "Pyongyang",
+   "Kaesong"
+  ],
+  "search": "Gyeongbokgung palace Seoul",
+  "must": [
+   "gyeongbokgung",
+   "seoul"
+  ],
+  "file": "Gyeonghoeru (Royal Banquet Hall) at Gyeongbokgung Palace, Seoul.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Frank Schulenburg",
+  "size": "6425x4283",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gyeonghoeru_%28Royal_Banquet_Hall%29_at_Gyeongbokgung_Palace%2C_Seoul.jpg?width=1200",
+  "credit": "Frank Schulenburg · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Gyeonghoeru_%28Royal_Banquet_Hall%29_at_Gyeongbokgung_Palace%2C_Seoul.jpg"
+ },
+ {
+  "row": 108,
+  "id": "cit-29",
+  "cat": "City",
+  "en": [
+   "Kyoto",
+   "Nara",
+   "Osaka",
+   "Kanazawa"
+  ],
+  "fi": [
+   "Kioto",
+   "Nara",
+   "Osaka",
+   "Kanazawa"
+  ],
+  "sv": [
+   "Kyoto",
+   "Nara",
+   "Osaka",
+   "Kanazawa"
+  ],
+  "search": "Fushimi Inari shrine torii path Kyoto",
+  "must": [
+   "fushimi",
+   "inari"
+  ],
+  "file": "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Basile Morin",
+  "size": "5765x3843",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg?width=1200",
+  "credit": "Basile Morin · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg"
+ },
+ {
+  "row": 109,
+  "id": "cit-30",
+  "cat": "City",
+  "en": [
+   "Bangkok",
+   "Phnom Penh",
+   "Yangon",
+   "Vientiane"
+  ],
+  "fi": [
+   "Bangkok",
+   "Phnom Penh",
+   "Yangon",
+   "Vientiane"
+  ],
+  "sv": [
+   "Bangkok",
+   "Phnom Penh",
+   "Yangon",
+   "Vientiane"
+  ],
+  "search": "Wat Arun temple Bangkok river",
+  "must": [
+   "arun"
+  ],
+  "file": "Templo Wat Arun, Bangkok, Tailandia, 2013-08-22, DD 12.jpg",
+  "licence": "CC BY-SA 3.0",
+  "author": "Diego Delso",
+  "size": "2826x4621",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_12.jpg?width=1200",
+  "credit": "Diego Delso · CC BY-SA 3.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_12.jpg"
+ },
+ {
+  "row": 110,
+  "id": "lan-00",
+  "cat": "Landmark",
+  "en": [
+   "The Alhambra",
+   "The Mezquita of Cordoba",
+   "The Alcazar of Seville",
+   "The Aljaferia"
+  ],
+  "fi": [
+   "Alhambra",
+   "Córdoban Mezquita",
+   "Sevillan Alcázar",
+   "Aljafería"
+  ],
+  "sv": [
+   "Alhambra",
+   "Mezquitan i Córdoba",
+   "Alcázar i Sevilla",
+   "Aljafería"
+  ],
+  "search": "Alhambra Granada palace view",
+  "must": [
+   "alhambra"
+  ],
+  "file": "Window, Nasrid motto, Cuarto Dorado, Alhambra, Granada, Spain.jpg",
+  "licence": "CC0",
+  "author": "Jebulon",
+  "size": "3620x5040",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Window%2C_Nasrid_motto%2C_Cuarto_Dorado%2C_Alhambra%2C_Granada%2C_Spain.jpg?width=1200",
+  "credit": "Jebulon · CC0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Window%2C_Nasrid_motto%2C_Cuarto_Dorado%2C_Alhambra%2C_Granada%2C_Spain.jpg"
+ },
+ {
+  "row": 111,
+  "id": "lan-01",
+  "cat": "Landmark",
+  "en": [
+   "St Basil's Cathedral",
+   "The Church of the Savior on Blood",
+   "Kazan Cathedral",
+   "St Sophia in Kyiv"
+  ],
+  "fi": [
+   "Vasili Autuaan katedraali",
+   "Pietarin Verikirkko",
+   "Kazanin katedraali",
+   "Kiovan Sofian katedraali"
+  ],
+  "sv": [
+   "Vasilijkatedralen",
+   "Blodskyrkan i Sankt Petersburg",
+   "Kazankatedralen",
+   "Sofiakatedralen i Kiev"
+  ],
+  "search": "Saint Basil's Cathedral Moscow Red Square",
+  "must": [
+   "basil"
+  ],
+  "file": "Saint Basil's Cathedral (Moscow, 2004).jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Godot13",
+  "size": "3727x3830",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Basil%27s_Cathedral_%28Moscow%2C_2004%29.jpg?width=1200",
+  "credit": "Godot13 · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Saint_Basil%27s_Cathedral_%28Moscow%2C_2004%29.jpg"
+ },
+ {
+  "row": 112,
+  "id": "lan-02",
+  "cat": "Landmark",
+  "en": [
+   "The Hagia Sophia",
+   "The Blue Mosque",
+   "The Suleymaniye Mosque",
+   "The Chora Church"
+  ],
+  "fi": [
+   "Hagia Sofia",
+   "Sininen moskeija",
+   "Süleymanin moskeija",
+   "Khoran kirkko"
+  ],
+  "sv": [
+   "Hagia Sofia",
+   "Blå moskén",
+   "Süleymanmoskén",
+   "Chorakyrkan"
+  ],
+  "search": "Hagia Sophia Istanbul exterior",
+  "must": [
+   "hagia",
+   "sophia",
+   "sofia"
+  ],
+  "file": "Hagia Sophia Mars 2013.jpg",
+  "licence": "CC BY-SA 3.0",
+  "author": "Arild Vågen",
+  "size": "5514x3681",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hagia_Sophia_Mars_2013.jpg?width=1200",
+  "credit": "Arild Vågen · CC BY-SA 3.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_Mars_2013.jpg"
+ },
+ {
+  "row": 113,
+  "id": "lan-03",
+  "cat": "Landmark",
+  "en": [
+   "Chichen Itza",
+   "Teotihuacan",
+   "Tikal",
+   "Palenque"
+  ],
+  "fi": [
+   "Chichén Itzá",
+   "Teotihuacán",
+   "Tikal",
+   "Palenque"
+  ],
+  "sv": [
+   "Chichén Itzá",
+   "Teotihuacán",
+   "Tikal",
+   "Palenque"
+  ],
+  "search": "Chichen Itza El Castillo pyramid",
+  "must": [
+   "chichen"
+  ],
+  "file": "Chichen Itza 3.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Daniel Schwen",
+  "size": "9771x5197",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=1200",
+  "credit": "Daniel Schwen · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg"
+ },
+ {
+  "row": 114,
+  "id": "lan-04",
+  "cat": "Landmark",
+  "en": [
+   "The Charles Bridge",
+   "The Ponte Vecchio",
+   "The Pont Neuf",
+   "The Rialto Bridge"
+  ],
+  "fi": [
+   "Kaarlen silta",
+   "Ponte Vecchio",
+   "Pont Neuf",
+   "Rialtosilta"
+  ],
+  "sv": [
+   "Karlsbron",
+   "Ponte Vecchio",
+   "Pont Neuf",
+   "Rialtobron"
+  ],
+  "search": "Charles Bridge Prague",
+  "must": [
+   "charles bridge",
+   "karl"
+  ],
+  "file": "Prague 07-2016 view from Lesser Town Tower of Charles Bridge img5.jpg",
+  "licence": "FAL",
+  "author": "A.Savin",
+  "size": "4596x3064",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Prague_07-2016_view_from_Lesser_Town_Tower_of_Charles_Bridge_img5.jpg?width=1200",
+  "credit": "A.Savin · FAL · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Prague_07-2016_view_from_Lesser_Town_Tower_of_Charles_Bridge_img5.jpg"
+ },
+ {
+  "row": 115,
+  "id": "lan-05",
+  "cat": "Landmark",
+  "en": [
+   "The Tower of London",
+   "Windsor Castle",
+   "Edinburgh Castle",
+   "Conwy Castle"
+  ],
+  "fi": [
+   "Lontoon Tower",
+   "Windsorin linna",
+   "Edinburghin linna",
+   "Conwyn linna"
+  ],
+  "sv": [
+   "Towern i London",
+   "Windsor slott",
+   "Edinburghs slott",
+   "Conwy slott"
+  ],
+  "search": "Tower of London White Tower",
+  "must": [
+   "tower of london"
+  ],
+  "file": "Jubilee and Munin, Ravens, Tower of London 2016-04-30.jpg",
+  "licence": "CC BY-SA 4.0",
+  "author": "Colin",
+  "size": "2723x2723",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jubilee_and_Munin%2C_Ravens%2C_Tower_of_London_2016-04-30.jpg?width=1200",
+  "credit": "Colin · CC BY-SA 4.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:Jubilee_and_Munin%2C_Ravens%2C_Tower_of_London_2016-04-30.jpg"
+ },
+ {
+  "row": 116,
+  "id": "lan-07",
+  "cat": "Landmark",
+  "en": [
+   "The Burj Khalifa",
+   "The Shanghai Tower",
+   "Taipei 101",
+   "The Petronas Towers"
+  ],
+  "fi": [
+   "Burj Khalifa",
+   "Shanghai Tower",
+   "Taipei 101",
+   "Petronas-tornit"
+  ],
+  "sv": [
+   "Burj Khalifa",
+   "Shanghai Tower",
+   "Taipei 101",
+   "Petronastornen"
+  ],
+  "search": "Burj Khalifa Dubai tower",
+  "must": [
+   "burj khalifa"
+  ],
+  "file": "At the Top SKY @ Burj Khalifa @ Dubai (15263425154).jpg",
+  "licence": "CC BY 2.0",
+  "author": "Guilhem Vellut from Annecy, France",
+  "size": "3968x2976",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/At_the_Top_SKY_%40_Burj_Khalifa_%40_Dubai_%2815263425154%29.jpg?width=1200",
+  "credit": "Guilhem Vellut from Annecy, France · CC BY 2.0 · Wikimedia Commons",
+  "commons": "https://commons.wikimedia.org/wiki/File:At_the_Top_SKY_%40_Burj_Khalifa_%40_Dubai_%2815263425154%29.jpg"
+ }
+]

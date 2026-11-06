@@ -1,0 +1,3502 @@
+[
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which Swedish king founded Helsinki in 1550?",
+   "fi": "Kuka Ruotsin kuningas perusti Helsingin vuonna 1550?",
+   "sv": "Vilken svensk kung grundade Helsingfors år 1550?"
+  },
+  "o": [
+   {
+    "en": "Gustav Vasa",
+    "fi": "Kustaa Vaasa",
+    "sv": "Gustav Vasa"
+   },
+   {
+    "en": "Gustav II Adolf",
+    "fi": "Kustaa II Aadolf",
+    "sv": "Gustav II Adolf"
+   },
+   {
+    "en": "Charles XII",
+    "fi": "Kaarle XII",
+    "sv": "Karl XII"
+   },
+   {
+    "en": "Gustav III",
+    "fi": "Kustaa III",
+    "sv": "Gustav III"
+   }
+  ],
+  "n": {
+   "en": "He meant the new town to pull trade away from Reval, the city we now call Tallinn.",
+   "fi": "Uuden kaupungin oli tarkoitus viedä kauppaa Rääveliltä eli nykyiseltä Tallinnalta.",
+   "sv": "Den nya staden skulle dra handeln från Reval, staden vi i dag kallar Tallinn."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which Russian emperor moved Finland's capital to Helsinki?",
+   "fi": "Kuka Venäjän keisari siirsi Suomen pääkaupungin Helsinkiin?",
+   "sv": "Vilken rysk kejsare flyttade Finlands huvudstad till Helsingfors?"
+  },
+  "o": [
+   {
+    "en": "Alexander I",
+    "fi": "Aleksanteri I",
+    "sv": "Alexander I"
+   },
+   {
+    "en": "Nicholas I",
+    "fi": "Nikolai I",
+    "sv": "Nikolaj I"
+   },
+   {
+    "en": "Alexander II",
+    "fi": "Aleksanteri II",
+    "sv": "Alexander II"
+   },
+   {
+    "en": "Peter the Great",
+    "fi": "Pietari Suuri",
+    "sv": "Peter den store"
+   }
+  ],
+  "n": {
+   "en": "The move was made in 1812, partly because the old capital lay uncomfortably close to Sweden.",
+   "fi": "Siirto tehtiin vuonna 1812, osin siksi että vanha pääkaupunki oli kiusallisen lähellä Ruotsia.",
+   "sv": "Flytten gjordes 1812, delvis för att den gamla huvudstaden låg obehagligt nära Sverige."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "What was Finland officially called between 1809 and 1917?",
+   "fi": "Mikä oli Suomen virallinen nimi vuosina 1809–1917?",
+   "sv": "Vad hette Finland officiellt mellan 1809 och 1917?"
+  },
+  "o": [
+   {
+    "en": "The Grand Duchy of Finland",
+    "fi": "Suomen suuriruhtinaskunta",
+    "sv": "Storfurstendömet Finland"
+   },
+   {
+    "en": "The Kingdom of Finland",
+    "fi": "Suomen kuningaskunta",
+    "sv": "Konungariket Finland"
+   },
+   {
+    "en": "The Governorate of Finland",
+    "fi": "Suomen kuvernementti",
+    "sv": "Guvernementet Finland"
+   },
+   {
+    "en": "The Duchy of Finland",
+    "fi": "Suomen herttuakunta",
+    "sv": "Hertigdömet Finland"
+   }
+  ],
+  "n": {
+   "en": "Its ruler was the Russian emperor, who carried the separate title of Grand Duke alongside his own.",
+   "fi": "Sen hallitsija oli Venäjän keisari, jolla oli oman arvonsa rinnalla erillinen suuriruhtinaan arvonimi.",
+   "sv": "Dess regent var den ryske kejsaren, som vid sidan av sin egen värdighet bar titeln storfurste."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "In which year did Finland get its own currency, the markka?",
+   "fi": "Minä vuonna Suomi sai oman rahan, markan?",
+   "sv": "Vilket år fick Finland sin egen valuta, marken?"
+  },
+  "o": [
+   {
+    "en": "1860",
+    "fi": "1860",
+    "sv": "1860"
+   },
+   {
+    "en": "1809",
+    "fi": "1809",
+    "sv": "1809"
+   },
+   {
+    "en": "1878",
+    "fi": "1878",
+    "sv": "1878"
+   },
+   {
+    "en": "1917",
+    "fi": "1917",
+    "sv": "1917"
+   }
+  ],
+  "n": {
+   "en": "Its hundredth part was the penni, and the markka outlived the empire that allowed it by 85 years.",
+   "fi": "Sen sadasosa oli penni, ja markka säilyi 85 vuotta pidempään kuin luvan antanut keisarikunta.",
+   "sv": "Hundradelen kallades penni, och marken överlevde det kejsardöme som tillät den med 85 år."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "What did Nokia's first factory make when the company began in 1865?",
+   "fi": "Mitä Nokian ensimmäinen tehdas valmisti, kun yhtiö aloitti vuonna 1865?",
+   "sv": "Vad tillverkade Nokias första fabrik när bolaget startade 1865?"
+  },
+  "o": [
+   {
+    "en": "Wood pulp for paper",
+    "fi": "Puuhioketta paperiin",
+    "sv": "Trämassa till papper"
+   },
+   {
+    "en": "Rubber boots",
+    "fi": "Kumisaappaita",
+    "sv": "Gummistövlar"
+   },
+   {
+    "en": "Telephone cable",
+    "fi": "Puhelinkaapelia",
+    "sv": "Telefonkabel"
+   },
+   {
+    "en": "Bicycle tyres",
+    "fi": "Polkupyörän renkaita",
+    "sv": "Cykeldäck"
+   }
+  ],
+  "n": {
+   "en": "The firm took its name from the Nokianvirta river, where its second mill was built three years later.",
+   "fi": "Yhtiö sai nimensä Nokianvirrasta, jonka varrelle sen toinen tehdas nousi kolme vuotta myöhemmin.",
+   "sv": "Bolaget fick sitt namn av älven Nokianvirta, där den andra fabriken byggdes tre år senare."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "In which year did Finnish women win the right to vote?",
+   "fi": "Minä vuonna suomalaiset naiset saivat äänioikeuden?",
+   "sv": "Vilket år fick kvinnorna i Finland rösträtt?"
+  },
+  "o": [
+   {
+    "en": "1906",
+    "fi": "1906",
+    "sv": "1906"
+   },
+   {
+    "en": "1884",
+    "fi": "1884",
+    "sv": "1884"
+   },
+   {
+    "en": "1917",
+    "fi": "1917",
+    "sv": "1917"
+   },
+   {
+    "en": "1930",
+    "fi": "1930",
+    "sv": "1930"
+   }
+  ],
+  "n": {
+   "en": "The same reform let them stand for election, and nineteen women took seats in parliament the next year.",
+   "fi": "Sama uudistus antoi heille myös vaalikelpoisuuden, ja seuraavana vuonna eduskuntaan nousi 19 naista.",
+   "sv": "Samma reform gav dem också rätt att kandidera, och året därpå tog nitton kvinnor plats i riksdagen."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which years are remembered in Finland as the great hunger years?",
+   "fi": "Mitkä vuodet muistetaan Suomessa suurina nälkävuosina?",
+   "sv": "Vilka år minns man i Finland som de stora hungeråren?"
+  },
+  "o": [
+   {
+    "en": "1866–1868",
+    "fi": "1866–1868",
+    "sv": "1866–1868"
+   },
+   {
+    "en": "1808–1809",
+    "fi": "1808–1809",
+    "sv": "1808–1809"
+   },
+   {
+    "en": "1917–1918",
+    "fi": "1917–1918",
+    "sv": "1917–1918"
+   },
+   {
+    "en": "1696–1697",
+    "fi": "1696–1697",
+    "sv": "1696–1697"
+   }
+  ],
+  "n": {
+   "en": "Close to a tenth of the population died, and in the worst-hit parishes as much as a fifth.",
+   "fi": "Lähes kymmenesosa väestöstä kuoli, ja pahimmin kärsineissä pitäjissä jopa viidesosa.",
+   "sv": "Nära en tiondel av befolkningen dog, och i de värst drabbade socknarna upp till en femtedel."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Between which two towns did Finland's first railway run?",
+   "fi": "Minkä kahden kaupungin väliä kulki Suomen ensimmäinen rautatie?",
+   "sv": "Mellan vilka två städer gick Finlands första järnväg?"
+  },
+  "o": [
+   {
+    "en": "Helsinki and Hämeenlinna",
+    "fi": "Helsinki ja Hämeenlinna",
+    "sv": "Helsingfors och Tavastehus"
+   },
+   {
+    "en": "Helsinki and Turku",
+    "fi": "Helsinki ja Turku",
+    "sv": "Helsingfors och Åbo"
+   },
+   {
+    "en": "Turku and Tampere",
+    "fi": "Turku ja Tampere",
+    "sv": "Åbo och Tammerfors"
+   },
+   {
+    "en": "Helsinki and Viipuri",
+    "fi": "Helsinki ja Viipuri",
+    "sv": "Helsingfors och Viborg"
+   }
+  ],
+  "n": {
+   "en": "It opened in 1862, and Finnish track is still laid wider apart than most of Europe's.",
+   "fi": "Rata avattiin vuonna 1862, ja Suomen raideleveys on edelleen suurempi kuin suurimmassa osassa Eurooppaa.",
+   "sv": "Banan öppnades 1862, och finsk spårvidd är fortfarande bredare än i större delen av Europa."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which body awarded the Åland Islands to Finland in 1921?",
+   "fi": "Mikä elin ratkaisi Ahvenanmaan kuuluvan Suomelle vuonna 1921?",
+   "sv": "Vilket organ tillerkände Åland till Finland år 1921?"
+  },
+  "o": [
+   {
+    "en": "The League of Nations",
+    "fi": "Kansainliitto",
+    "sv": "Nationernas förbund"
+   },
+   {
+    "en": "The United Nations",
+    "fi": "Yhdistyneet kansakunnat",
+    "sv": "Förenta nationerna"
+   },
+   {
+    "en": "The court in The Hague",
+    "fi": "Haagin tuomioistuin",
+    "sv": "Domstolen i Haag"
+   },
+   {
+    "en": "The Nordic Council",
+    "fi": "Pohjoismaiden neuvosto",
+    "sv": "Nordiska rådet"
+   }
+  ],
+  "n": {
+   "en": "Most islanders had wanted to join Sweden, so Finland had to guarantee their language and self-rule.",
+   "fi": "Useimmat saarelaiset olivat halunneet Ruotsiin, joten Suomen oli taattava heidän kielensä ja itsehallintonsa.",
+   "sv": "De flesta öborna hade velat till Sverige, så Finland måste garantera deras språk och självstyre."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "How long was Finland meant to lease the Porkkala area to the Soviet Union?",
+   "fi": "Kuinka pitkäksi ajaksi Suomen oli määrä vuokrata Porkkalan alue Neuvostoliitolle?",
+   "sv": "Hur länge skulle Finland hyra ut Porkalaområdet till Sovjetunionen?"
+  },
+  "o": [
+   {
+    "en": "Fifty years",
+    "fi": "50 vuodeksi",
+    "sv": "I femtio år"
+   },
+   {
+    "en": "Ten years",
+    "fi": "10 vuodeksi",
+    "sv": "I tio år"
+   },
+   {
+    "en": "Twenty-five years",
+    "fi": "25 vuodeksi",
+    "sv": "I tjugofem år"
+   },
+   {
+    "en": "Ninety-nine years",
+    "fi": "99 vuodeksi",
+    "sv": "I nittionio år"
+   }
+  ],
+  "n": {
+   "en": "It came back after twelve, and trains crossing the area had to run with the window shutters closed.",
+   "fi": "Alue palautui 12 vuoden jälkeen, ja alueen läpi kulkevien junien ikkunaluukut oli pidettävä suljettuina.",
+   "sv": "Området återlämnades efter tolv år, och tågen genom det måste köra med fönsterluckorna stängda."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "What was the Suomenlinna sea fortress called in Finnish before 1918?",
+   "fi": "Millä nimellä Suomenlinnan merilinnoitus tunnettiin ennen vuotta 1918?",
+   "sv": "Vad hette sjöfästningen Sveaborg på finska före 1918?"
+  },
+  "o": [
+   {
+    "en": "Viapori",
+    "fi": "Viapori",
+    "sv": "Viapori"
+   },
+   {
+    "en": "Vallisaari",
+    "fi": "Vallisaari",
+    "sv": "Vallisaari"
+   },
+   {
+    "en": "Santahamina",
+    "fi": "Santahamina",
+    "sv": "Sandhamn"
+   },
+   {
+    "en": "Ruotsinsalmi",
+    "fi": "Ruotsinsalmi",
+    "sv": "Svensksund"
+   }
+  ],
+  "n": {
+   "en": "The Swedish name Sveaborg meant fortress of Sweden, which hardly suited a newly independent country.",
+   "fi": "Ruotsalainen nimi Sveaborg tarkoitti Ruotsin linnaa, mikä sopi huonosti juuri itsenäistyneelle maalle.",
+   "sv": "Namnet Sveaborg betydde Sveriges fäste, vilket passade illa i ett nyss självständigt land."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Roughly how many people were resettled from the Karelia that Finland ceded?",
+   "fi": "Kuinka moni ihminen siirrettiin asumaan muualle luovutetusta Karjalasta?",
+   "sv": "Hur många människor flyttades från det Karelen som Finland avträdde?"
+  },
+  "o": [
+   {
+    "en": "About 400,000",
+    "fi": "Noin 400 000",
+    "sv": "Omkring 400 000"
+   },
+   {
+    "en": "About 40,000",
+    "fi": "Noin 40 000",
+    "sv": "Omkring 40 000"
+   },
+   {
+    "en": "About 150,000",
+    "fi": "Noin 150 000",
+    "sv": "Omkring 150 000"
+   },
+   {
+    "en": "About 1.2 million",
+    "fi": "Noin 1,2 miljoonaa",
+    "sv": "Omkring 1,2 miljoner"
+   }
+  ],
+  "n": {
+   "en": "That was more than a tenth of the whole country, and every municipality had to take a share of them.",
+   "fi": "Se oli yli kymmenesosa koko maasta, ja jokaisen kunnan oli otettava osansa heistä.",
+   "sv": "Det var mer än en tiondel av hela landet, och varje kommun måste ta emot sin del."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "In which war did the Finnish hakkapeliitat make their name?",
+   "fi": "Missä sodassa suomalaiset hakkapeliitat niittivät mainetta?",
+   "sv": "I vilket krig gjorde de finska hakkapeliterna sig ett namn?"
+  },
+  "o": [
+   {
+    "en": "The Thirty Years' War",
+    "fi": "Kolmikymmenvuotisessa sodassa",
+    "sv": "Trettioåriga kriget"
+   },
+   {
+    "en": "The Great Northern War",
+    "fi": "Suuressa Pohjan sodassa",
+    "sv": "Stora nordiska kriget"
+   },
+   {
+    "en": "The Crimean War",
+    "fi": "Krimin sodassa",
+    "sv": "Krimkriget"
+   },
+   {
+    "en": "The Napoleonic Wars",
+    "fi": "Napoleonin sodissa",
+    "sv": "Napoleonkrigen"
+   }
+  ],
+  "n": {
+   "en": "Their name came from the battle cry hakkaa päälle, and a winter tyre has carried it since 1936.",
+   "fi": "Nimi tulee huudosta hakkaa päälle, ja talvirengas on kantanut sitä vuodesta 1936.",
+   "sv": "Namnet kommer från stridsropet hakkaa päälle, och ett vinterdäck har burit det sedan 1936."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which Swedish king was killed at the Battle of Lützen in 1632?",
+   "fi": "Kuka Ruotsin kuningas kaatui Lützenin taistelussa vuonna 1632?",
+   "sv": "Vilken svensk kung stupade i slaget vid Lützen år 1632?"
+  },
+  "o": [
+   {
+    "en": "Gustav II Adolf",
+    "fi": "Kustaa II Aadolf",
+    "sv": "Gustav II Adolf"
+   },
+   {
+    "en": "Charles XII",
+    "fi": "Kaarle XII",
+    "sv": "Karl XII"
+   },
+   {
+    "en": "Charles X",
+    "fi": "Kaarle X",
+    "sv": "Karl X"
+   },
+   {
+    "en": "Gustav Vasa",
+    "fi": "Kustaa Vaasa",
+    "sv": "Gustav Vasa"
+   }
+  ],
+  "n": {
+   "en": "His army won the battle without him, and Finnish cavalry rode in it.",
+   "fi": "Hänen armeijansa voitti taistelun ilman häntä, ja suomalainen ratsuväki oli siinä mukana.",
+   "sv": "Hans armé vann slaget utan honom, och finskt rytteri stred i det."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which Swedish king was shot at a masked ball in 1792?",
+   "fi": "Kuka Ruotsin kuningas ammuttiin naamiaisissa vuonna 1792?",
+   "sv": "Vilken svensk kung sköts på en maskeradbal år 1792?"
+  },
+  "o": [
+   {
+    "en": "Gustav III",
+    "fi": "Kustaa III",
+    "sv": "Gustav III"
+   },
+   {
+    "en": "Gustav IV Adolf",
+    "fi": "Kustaa IV Aadolf",
+    "sv": "Gustav IV Adolf"
+   },
+   {
+    "en": "Charles XIII",
+    "fi": "Kaarle XIII",
+    "sv": "Karl XIII"
+   },
+   {
+    "en": "Adolf Frederick",
+    "fi": "Adolf Fredrik",
+    "sv": "Adolf Fredrik"
+   }
+  ],
+  "n": {
+   "en": "Verdi later turned the murder into an opera, and the censors made him move it to Boston.",
+   "fi": "Verdi teki murhasta myöhemmin oopperan, ja sensuuri pakotti hänet siirtämään tapahtumat Bostoniin.",
+   "sv": "Verdi gjorde senare en opera av mordet, och censuren tvingade honom flytta handlingen till Boston."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which Swedish queen gave up her throne in 1654 and moved to Rome?",
+   "fi": "Kuka Ruotsin kuningatar luopui kruunustaan vuonna 1654 ja muutti Roomaan?",
+   "sv": "Vilken svensk drottning abdikerade 1654 och flyttade till Rom?"
+  },
+  "o": [
+   {
+    "en": "Kristina",
+    "fi": "Kristiina",
+    "sv": "Kristina"
+   },
+   {
+    "en": "Ulrika Eleonora",
+    "fi": "Ulrika Eleonora",
+    "sv": "Ulrika Eleonora"
+   },
+   {
+    "en": "Margaret",
+    "fi": "Margareeta",
+    "sv": "Margareta"
+   },
+   {
+    "en": "Desideria",
+    "fi": "Desideria",
+    "sv": "Desideria"
+   }
+  ],
+  "n": {
+   "en": "She became a Catholic, which a Swedish monarch was forbidden to be, and she is buried in St Peter's.",
+   "fi": "Hänestä tuli katolinen, mikä oli Ruotsin hallitsijalta kielletty, ja hän on haudattu Pietarinkirkkoon.",
+   "sv": "Hon blev katolik, vilket en svensk regent inte fick vara, och hon är begravd i Peterskyrkan."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "In which year did Sweden switch to driving on the right?",
+   "fi": "Minä vuonna Ruotsissa siirryttiin oikeanpuoleiseen liikenteeseen?",
+   "sv": "Vilket år gick Sverige över till högertrafik?"
+  },
+  "o": [
+   {
+    "en": "1967",
+    "fi": "1967",
+    "sv": "1967"
+   },
+   {
+    "en": "1948",
+    "fi": "1948",
+    "sv": "1948"
+   },
+   {
+    "en": "1955",
+    "fi": "1955",
+    "sv": "1955"
+   },
+   {
+    "en": "1971",
+    "fi": "1971",
+    "sv": "1971"
+   }
+  ],
+  "n": {
+   "en": "Iceland followed eight months later, and Swedes still call the changeover day Dagen H.",
+   "fi": "Islanti seurasi kahdeksan kuukautta myöhemmin, ja ruotsalaiset kutsuvat vaihtopäivää yhä nimellä Dagen H.",
+   "sv": "Island följde åtta månader senare, och dagen kallas fortfarande Dagen H."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which Danish king's nickname was borrowed for a wireless standard?",
+   "fi": "Minkä Tanskan kuninkaan lisänimi lainattiin langattomalle standardille?",
+   "sv": "Vilken dansk kungs tillnamn lånades till en trådlös standard?"
+  },
+  "o": [
+   {
+    "en": "Harald Bluetooth",
+    "fi": "Harald Sinihammas",
+    "sv": "Harald Blåtand"
+   },
+   {
+    "en": "Canute the Great",
+    "fi": "Knuut Suuri",
+    "sv": "Knut den store"
+   },
+   {
+    "en": "Sweyn Forkbeard",
+    "fi": "Sven Harjaparta",
+    "sv": "Sven Tveskägg"
+   },
+   {
+    "en": "Christian IV",
+    "fi": "Kristian IV",
+    "sv": "Kristian IV"
+   }
+  ],
+  "n": {
+   "en": "The standard is Bluetooth, and its logo is his two initials written as Nordic runes.",
+   "fi": "Standardi on Bluetooth, ja sen logo on hänen nimikirjaimensa pohjoismaisina riimuina.",
+   "sv": "Standarden är Bluetooth, och logon är hans initialer skrivna som nordiska runor."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Who gave Greenland its name?",
+   "fi": "Kuka antoi Grönlannille sen nimen?",
+   "sv": "Vem gav Grönland sitt namn?"
+  },
+  "o": [
+   {
+    "en": "Erik the Red",
+    "fi": "Erik Punainen",
+    "sv": "Erik Röde"
+   },
+   {
+    "en": "Leif Erikson",
+    "fi": "Leif Eriksson",
+    "sv": "Leif Eriksson"
+   },
+   {
+    "en": "Ingólfur Arnarson",
+    "fi": "Ingólfur Arnarson",
+    "sv": "Ingólfur Arnarson"
+   },
+   {
+    "en": "Snorri Sturluson",
+    "fi": "Snorri Sturluson",
+    "sv": "Snorre Sturlasson"
+   }
+  ],
+  "n": {
+   "en": "He was in exile and needed a name that would tempt settlers to a mostly frozen island.",
+   "fi": "Hän oli maanpaossa ja tarvitsi nimen, joka houkuttelisi uudisasukkaita lähes jäiselle saarelle.",
+   "sv": "Han var landsflyktig och behövde ett namn som lockade nybyggare till en mest isig ö."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which parliament, founded in 930, is often called the world's oldest?",
+   "fi": "Mikä vuonna 930 perustettu kansanedustuslaitos on usein sanottu maailman vanhimmaksi?",
+   "sv": "Vilken folkförsamling från år 930 kallas ofta världens äldsta?"
+  },
+  "o": [
+   {
+    "en": "Iceland's Alþingi",
+    "fi": "Islannin Alþingi",
+    "sv": "Islands Allting"
+   },
+   {
+    "en": "The Faroese Løgting",
+    "fi": "Färsaarten Løgting",
+    "sv": "Färöarnas Løgting"
+   },
+   {
+    "en": "The Manx Tynwald",
+    "fi": "Mansaaren Tynwald",
+    "sv": "Isle of Mans Tynwald"
+   },
+   {
+    "en": "The Norwegian Storting",
+    "fi": "Norjan suurkäräjät",
+    "sv": "Norges Storting"
+   }
+  ],
+  "n": {
+   "en": "It met in the open air at Þingvellir, in a rift valley where two continental plates are pulling apart.",
+   "fi": "Se kokoontui ulkosalla Þingvellirissä, repeämälaaksossa jossa kaksi mannerlaattaa loittonee toisistaan.",
+   "sv": "Den samlades utomhus på Þingvellir, i en sprickdal där två kontinentalplattor dras isär."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which city was called Leningrad from 1924 to 1991?",
+   "fi": "Mikä kaupunki oli Leningrad vuosina 1924–1991?",
+   "sv": "Vilken stad hette Leningrad mellan 1924 och 1991?"
+  },
+  "o": [
+   {
+    "en": "Saint Petersburg",
+    "fi": "Pietari",
+    "sv": "Sankt Petersburg"
+   },
+   {
+    "en": "Volgograd",
+    "fi": "Volgograd",
+    "sv": "Volgograd"
+   },
+   {
+    "en": "Nizhny Novgorod",
+    "fi": "Nižni Novgorod",
+    "sv": "Nizjnij Novgorod"
+   },
+   {
+    "en": "Yekaterinburg",
+    "fi": "Jekaterinburg",
+    "sv": "Jekaterinburg"
+   }
+  ],
+  "n": {
+   "en": "The city had already been renamed once, in 1914, because the old name sounded too German.",
+   "fi": "Kaupungin nimi oli vaihdettu kertaalleen jo 1914, koska vanha nimi kuulosti liian saksalaiselta.",
+   "sv": "Staden hade redan bytt namn en gång, 1914, eftersom det gamla lät alltför tyskt."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which Russian city was called Stalingrad until 1961?",
+   "fi": "Mikä venäläinen kaupunki oli nimeltään Stalingrad vuoteen 1961?",
+   "sv": "Vilken rysk stad hette Stalingrad fram till 1961?"
+  },
+  "o": [
+   {
+    "en": "Volgograd",
+    "fi": "Volgograd",
+    "sv": "Volgograd"
+   },
+   {
+    "en": "Samara",
+    "fi": "Samara",
+    "sv": "Samara"
+   },
+   {
+    "en": "Saratov",
+    "fi": "Saratov",
+    "sv": "Saratov"
+   },
+   {
+    "en": "Rostov",
+    "fi": "Rostov",
+    "sv": "Rostov"
+   }
+  ],
+  "n": {
+   "en": "Before 1925 it was Tsaritsyn, so the place has worn three different names inside one century.",
+   "fi": "Ennen vuotta 1925 se oli Tsaritsyn, joten paikalla on ollut kolme nimiä yhden vuosisadan sisällä.",
+   "sv": "Före 1925 hette den Tsaritsyn, så platsen har burit tre namn under ett enda sekel."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which German city became Kaliningrad in 1946?",
+   "fi": "Mikä saksalainen kaupunki muuttui Kaliningradiksi vuonna 1946?",
+   "sv": "Vilken tysk stad blev Kaliningrad år 1946?"
+  },
+  "o": [
+   {
+    "en": "Königsberg",
+    "fi": "Königsberg",
+    "sv": "Königsberg"
+   },
+   {
+    "en": "Stettin",
+    "fi": "Stettin",
+    "sv": "Stettin"
+   },
+   {
+    "en": "Breslau",
+    "fi": "Breslau",
+    "sv": "Breslau"
+   },
+   {
+    "en": "Memel",
+    "fi": "Memel",
+    "sv": "Memel"
+   }
+  ],
+  "n": {
+   "en": "The philosopher Immanuel Kant spent his whole life there, and his grave still stands by the cathedral.",
+   "fi": "Filosofi Immanuel Kant eli koko elämänsä siellä, ja hänen hautansa on yhä tuomiokirkon seinustalla.",
+   "sv": "Filosofen Immanuel Kant levde hela sitt liv där, och hans grav står kvar vid domkyrkan."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which country was called Siam until 1939?",
+   "fi": "Mikä maa oli nimeltään Siam vuoteen 1939?",
+   "sv": "Vilket land hette Siam fram till 1939?"
+  },
+  "o": [
+   {
+    "en": "Thailand",
+    "fi": "Thaimaa",
+    "sv": "Thailand"
+   },
+   {
+    "en": "Myanmar",
+    "fi": "Myanmar",
+    "sv": "Myanmar"
+   },
+   {
+    "en": "Cambodia",
+    "fi": "Kambodža",
+    "sv": "Kambodja"
+   },
+   {
+    "en": "Laos",
+    "fi": "Laos",
+    "sv": "Laos"
+   }
+  ],
+  "n": {
+   "en": "The new name means roughly land of the free, and the country was never taken as a colony.",
+   "fi": "Uusi nimi tarkoittaa suunnilleen vapaiden maata, eikä maasta koskaan tullut siirtomaata.",
+   "sv": "Det nya namnet betyder ungefär de frias land, och landet blev aldrig någon koloni."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which country was called Ceylon until 1972?",
+   "fi": "Mikä maa oli nimeltään Ceylon vuoteen 1972?",
+   "sv": "Vilket land hette Ceylon fram till 1972?"
+  },
+  "o": [
+   {
+    "en": "Sri Lanka",
+    "fi": "Sri Lanka",
+    "sv": "Sri Lanka"
+   },
+   {
+    "en": "Bangladesh",
+    "fi": "Bangladesh",
+    "sv": "Bangladesh"
+   },
+   {
+    "en": "The Maldives",
+    "fi": "Maledivit",
+    "sv": "Maldiverna"
+   },
+   {
+    "en": "Myanmar",
+    "fi": "Myanmar",
+    "sv": "Myanmar"
+   }
+  ],
+  "n": {
+   "en": "Tea from the island is still sold under the old name, because the brand was worth keeping.",
+   "fi": "Saaren teetä myydään yhä vanhalla nimellä, koska tuotemerkki kannatti säilyttää.",
+   "sv": "Teet från ön säljs fortfarande under det gamla namnet, för varumärket var värt att behålla."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which African country was called Upper Volta until 1984?",
+   "fi": "Mikä Afrikan maa oli nimeltään Ylä-Volta vuoteen 1984?",
+   "sv": "Vilket afrikanskt land hette Övre Volta fram till 1984?"
+  },
+  "o": [
+   {
+    "en": "Burkina Faso",
+    "fi": "Burkina Faso",
+    "sv": "Burkina Faso"
+   },
+   {
+    "en": "Mali",
+    "fi": "Mali",
+    "sv": "Mali"
+   },
+   {
+    "en": "Benin",
+    "fi": "Benin",
+    "sv": "Benin"
+   },
+   {
+    "en": "Niger",
+    "fi": "Niger",
+    "sv": "Niger"
+   }
+  ],
+  "n": {
+   "en": "The new name was stitched together from two local languages and means land of upright people.",
+   "fi": "Uusi nimi koottiin kahdesta paikallisesta kielestä ja tarkoittaa suorien ihmisten maata.",
+   "sv": "Det nya namnet sattes samman ur två lokala språk och betyder de redliga människornas land."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which Asian capital was called Batavia under Dutch rule?",
+   "fi": "Mikä Aasian pääkaupunki oli hollantilaisvallan aikana Batavia?",
+   "sv": "Vilken asiatisk huvudstad hette Batavia under holländskt styre?"
+  },
+  "o": [
+   {
+    "en": "Jakarta",
+    "fi": "Jakarta",
+    "sv": "Jakarta"
+   },
+   {
+    "en": "Manila",
+    "fi": "Manila",
+    "sv": "Manila"
+   },
+   {
+    "en": "Colombo",
+    "fi": "Colombo",
+    "sv": "Colombo"
+   },
+   {
+    "en": "Kuala Lumpur",
+    "fi": "Kuala Lumpur",
+    "sv": "Kuala Lumpur"
+   }
+  ],
+  "n": {
+   "en": "The Dutch named it after an ancient tribe they liked to claim as their own ancestors.",
+   "fi": "Hollantilaiset nimesivät sen muinaisen heimon mukaan, jota he mielellään pitivät esi-isinään.",
+   "sv": "Holländarna döpte den efter en forntida stam som de gärna utsåg till sina förfäder."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which line divided the new world between Spain and Portugal in 1494?",
+   "fi": "Mikä linja jakoi uuden maailman Espanjan ja Portugalin kesken vuonna 1494?",
+   "sv": "Vilken linje delade den nya världen mellan Spanien och Portugal år 1494?"
+  },
+  "o": [
+   {
+    "en": "The Tordesillas line",
+    "fi": "Tordesillasin linja",
+    "sv": "Tordesillaslinjen"
+   },
+   {
+    "en": "The Mason–Dixon line",
+    "fi": "Mason–Dixonin linja",
+    "sv": "Mason–Dixon-linjen"
+   },
+   {
+    "en": "The Radcliffe line",
+    "fi": "Radcliffen linja",
+    "sv": "Radcliffelinjen"
+   },
+   {
+    "en": "The Durand line",
+    "fi": "Durandin linja",
+    "sv": "Durandlinjen"
+   }
+  ],
+  "n": {
+   "en": "It is the reason Brazil ended up speaking Portuguese while its neighbours speak Spanish.",
+   "fi": "Juuri siksi Brasiliassa puhutaan portugalia ja naapurimaissa espanjaa.",
+   "sv": "Det är därför Brasilien talar portugisiska medan grannländerna talar spanska."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Who drew the border between India and Pakistan in 1947?",
+   "fi": "Kuka piirsi Intian ja Pakistanin välisen rajan vuonna 1947?",
+   "sv": "Vem ritade gränsen mellan Indien och Pakistan år 1947?"
+  },
+  "o": [
+   {
+    "en": "Cyril Radcliffe",
+    "fi": "Cyril Radcliffe",
+    "sv": "Cyril Radcliffe"
+   },
+   {
+    "en": "Lord Mountbatten",
+    "fi": "Lordi Mountbatten",
+    "sv": "Lord Mountbatten"
+   },
+   {
+    "en": "Lord Curzon",
+    "fi": "Lordi Curzon",
+    "sv": "Lord Curzon"
+   },
+   {
+    "en": "Henry McMahon",
+    "fi": "Henry McMahon",
+    "sv": "Henry McMahon"
+   }
+  ],
+  "n": {
+   "en": "He had about five weeks for the job and had never set foot in the country before.",
+   "fi": "Hänellä oli työhön noin viisi viikkoa, eikä hän ollut koskaan ennen käynyt maassa.",
+   "sv": "Han hade ungefär fem veckor på sig och hade aldrig satt sin fot i landet förut."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "At which conference did European powers carve up Africa in 1884?",
+   "fi": "Missä konferenssissa Euroopan suurvallat jakoivat Afrikan vuonna 1884?",
+   "sv": "Vid vilken konferens delade Europas stormakter upp Afrika år 1884?"
+  },
+  "o": [
+   {
+    "en": "The Berlin Conference",
+    "fi": "Berliinin konferenssissa",
+    "sv": "Berlinkonferensen"
+   },
+   {
+    "en": "The Congress of Vienna",
+    "fi": "Wienin kongressissa",
+    "sv": "Wienkongressen"
+   },
+   {
+    "en": "The Paris Peace Conference",
+    "fi": "Pariisin rauhankonferenssissa",
+    "sv": "Fredskonferensen i Paris"
+   },
+   {
+    "en": "The Congress of Berlin",
+    "fi": "Berliinin kongressissa",
+    "sv": "Berlinkongressen"
+   }
+  ],
+  "n": {
+   "en": "Not one African ruler was invited, and many of today's ruler-straight borders were drawn there.",
+   "fi": "Yhtään afrikkalaista hallitsijaa ei kutsuttu, ja monet nykyiset viivasuorat rajat piirrettiin siellä.",
+   "sv": "Inte en enda afrikansk härskare bjöds in, och många av dagens spikräta gränser drogs där."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which country sold Alaska to the United States?",
+   "fi": "Mikä maa myi Alaskan Yhdysvalloille?",
+   "sv": "Vilket land sålde Alaska till USA?"
+  },
+  "o": [
+   {
+    "en": "Russia",
+    "fi": "Venäjä",
+    "sv": "Ryssland"
+   },
+   {
+    "en": "Britain",
+    "fi": "Britannia",
+    "sv": "Storbritannien"
+   },
+   {
+    "en": "Spain",
+    "fi": "Espanja",
+    "sv": "Spanien"
+   },
+   {
+    "en": "Denmark",
+    "fi": "Tanska",
+    "sv": "Danmark"
+   }
+  ],
+  "n": {
+   "en": "The price in 1867 was 7.2 million dollars, about two cents an acre, and critics called the deal a folly.",
+   "fi": "Hinta vuonna 1867 oli 7,2 miljoonaa dollaria eli noin kaksi senttiä eekkeriltä, ja kauppaa pidettiin hulluutena.",
+   "sv": "Priset 1867 var 7,2 miljoner dollar, ungefär två cent per tunnland, och kritikerna kallade köpet dårskap."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which country sold Louisiana to the United States in 1803?",
+   "fi": "Mikä maa myi Louisianan Yhdysvalloille vuonna 1803?",
+   "sv": "Vilket land sålde Louisiana till USA år 1803?"
+  },
+  "o": [
+   {
+    "en": "France",
+    "fi": "Ranska",
+    "sv": "Frankrike"
+   },
+   {
+    "en": "Spain",
+    "fi": "Espanja",
+    "sv": "Spanien"
+   },
+   {
+    "en": "Britain",
+    "fi": "Britannia",
+    "sv": "Storbritannien"
+   },
+   {
+    "en": "Mexico",
+    "fi": "Meksiko",
+    "sv": "Mexiko"
+   }
+  ],
+  "n": {
+   "en": "The deal doubled the size of the United States overnight and covered parts of fifteen later states.",
+   "fi": "Kauppa kaksinkertaisti Yhdysvaltain pinta-alan yhdessä yössä ja kattoi osia viidestätoista myöhemmästä osavaltiosta.",
+   "sv": "Köpet fördubblade USA:s yta över en natt och omfattade delar av femton senare delstater."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "What was traded in the Dutch speculative bubble that burst in 1637?",
+   "fi": "Millä käytiin kauppaa hollantilaisessa kuplassa, joka puhkesi vuonna 1637?",
+   "sv": "Vad handlades det med i den holländska bubbla som sprack år 1637?"
+  },
+  "o": [
+   {
+    "en": "Tulip bulbs",
+    "fi": "Tulppaaninsipuleilla",
+    "sv": "Tulpanlökar"
+   },
+   {
+    "en": "Pepper",
+    "fi": "Pippurilla",
+    "sv": "Peppar"
+   },
+   {
+    "en": "Silver",
+    "fi": "Hopealla",
+    "sv": "Silver"
+   },
+   {
+    "en": "Whale oil",
+    "fi": "Valaanöljyllä",
+    "sv": "Valolja"
+   }
+  ],
+  "n": {
+   "en": "At the peak a single rare bulb could change hands for the price of a canal house in Amsterdam.",
+   "fi": "Huipulla yksi harvinainen sipuli saattoi vaihtaa omistajaa amsterdamilaisen kanavatalon hinnalla.",
+   "sv": "På toppen kunde en enda sällsynt lök byta ägare för priset på ett kanalhus i Amsterdam."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which trading company governed much of India before the Crown took over?",
+   "fi": "Mikä kauppakomppania hallitsi suurta osaa Intiasta ennen kuin kruunu otti vallan?",
+   "sv": "Vilket handelskompani styrde stora delar av Indien innan kronan tog över?"
+  },
+  "o": [
+   {
+    "en": "The British East India Company",
+    "fi": "Brittiläinen Itä-Intian kauppakomppania",
+    "sv": "Brittiska Ostindiska kompaniet"
+   },
+   {
+    "en": "The Dutch East India Company",
+    "fi": "Hollantilainen Itä-Intian kauppakomppania",
+    "sv": "Nederländska Ostindiska kompaniet"
+   },
+   {
+    "en": "The Hudson's Bay Company",
+    "fi": "Hudson's Bay Company",
+    "sv": "Hudson's Bay Company"
+   },
+   {
+    "en": "The Royal African Company",
+    "fi": "Royal African Company",
+    "sv": "Royal African Company"
+   }
+  ],
+  "n": {
+   "en": "It kept a private army that at times outnumbered the British one.",
+   "fi": "Sillä oli yksityinen armeija, joka oli ajoittain Britannian omaa suurempi.",
+   "sv": "Det hade en egen armé som ibland var större än Storbritanniens."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which island in New York harbour was the main gateway for immigrants?",
+   "fi": "Mikä New Yorkin sataman saari oli siirtolaisten pääportti?",
+   "sv": "Vilken ö i New Yorks hamn var invandrarnas huvudport?"
+  },
+  "o": [
+   {
+    "en": "Ellis Island",
+    "fi": "Ellis Island",
+    "sv": "Ellis Island"
+   },
+   {
+    "en": "Liberty Island",
+    "fi": "Liberty Island",
+    "sv": "Liberty Island"
+   },
+   {
+    "en": "Staten Island",
+    "fi": "Staten Island",
+    "sv": "Staten Island"
+   },
+   {
+    "en": "Governors Island",
+    "fi": "Governors Island",
+    "sv": "Governors Island"
+   }
+  ],
+  "n": {
+   "en": "More than twelve million people passed through before it closed its doors.",
+   "fi": "Yli kaksitoista miljoonaa ihmistä kulki siitä läpi ennen kuin se suljettiin.",
+   "sv": "Mer än tolv miljoner människor passerade innan den stängde sina dörrar."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "The failure of which crop drove a million people out of Ireland in the 1840s?",
+   "fi": "Minkä kasvin sadon tuho ajoi miljoona ihmistä pois Irlannista 1840-luvulla?",
+   "sv": "Vilken grödas missväxt drev en miljon människor ut ur Irland på 1840-talet?"
+  },
+  "o": [
+   {
+    "en": "Potatoes",
+    "fi": "Perunan",
+    "sv": "Potatis"
+   },
+   {
+    "en": "Wheat",
+    "fi": "Vehnän",
+    "sv": "Vete"
+   },
+   {
+    "en": "Oats",
+    "fi": "Kauran",
+    "sv": "Havre"
+   },
+   {
+    "en": "Barley",
+    "fi": "Ohran",
+    "sv": "Korn"
+   }
+  ],
+  "n": {
+   "en": "The island's population has still not climbed back to where it stood before the famine.",
+   "fi": "Saaren väkiluku ei ole vieläkään noussut takaisin nälänhätää edeltäneelle tasolle.",
+   "sv": "Öns befolkning har ännu inte kommit tillbaka till nivån före hungersnöden."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which treaty ended the Thirty Years' War?",
+   "fi": "Mikä rauha päätti kolmikymmenvuotisen sodan?",
+   "sv": "Vilken fred avslutade trettioåriga kriget?"
+  },
+  "o": [
+   {
+    "en": "The Peace of Westphalia",
+    "fi": "Westfalenin rauha",
+    "sv": "Westfaliska freden"
+   },
+   {
+    "en": "The Treaty of Utrecht",
+    "fi": "Utrechtin rauha",
+    "sv": "Freden i Utrecht"
+   },
+   {
+    "en": "The Peace of Augsburg",
+    "fi": "Augsburgin uskonrauha",
+    "sv": "Religionsfreden i Augsburg"
+   },
+   {
+    "en": "The Treaty of Vienna",
+    "fi": "Wienin rauha",
+    "sv": "Freden i Wien"
+   }
+  ],
+  "n": {
+   "en": "It was negotiated in two towns at once, because Catholic and Protestant envoys refused to share one.",
+   "fi": "Se neuvoteltiin kahdessa kaupungissa yhtä aikaa, koska katoliset ja protestanttiset lähettiläät eivät suostuneet samaan.",
+   "sv": "Den förhandlades i två städer samtidigt, för katolska och protestantiska sändebud vägrade dela en."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which West African empire did Mansa Musa rule?",
+   "fi": "Mitä Länsi-Afrikan valtakuntaa Mansa Musa hallitsi?",
+   "sv": "Vilket västafrikanskt rike styrde Mansa Musa?"
+  },
+  "o": [
+   {
+    "en": "Mali",
+    "fi": "Malia",
+    "sv": "Mali"
+   },
+   {
+    "en": "Ghana",
+    "fi": "Ghanaa",
+    "sv": "Ghana"
+   },
+   {
+    "en": "Songhai",
+    "fi": "Songhaita",
+    "sv": "Songhai"
+   },
+   {
+    "en": "Benin",
+    "fi": "Beninia",
+    "sv": "Benin"
+   }
+  ],
+  "n": {
+   "en": "His gold spending on the way to Mecca is said to have pushed the price of gold in Cairo down for years.",
+   "fi": "Kerrotaan, että hänen kullankäyttönsä Mekan-matkalla painoi Kairon kullan hintaa alas vuosiksi.",
+   "sv": "Hans guldutgifter på vägen till Mekka sägs ha pressat ner guldpriset i Kairo i flera år."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which city near the river Niger became famous for gold trading and libraries?",
+   "fi": "Mikä Niger-joen lähellä oleva kaupunki tuli tunnetuksi kultakaupasta ja kirjastoista?",
+   "sv": "Vilken stad nära floden Niger blev känd för guldhandel och bibliotek?"
+  },
+  "o": [
+   {
+    "en": "Timbuktu",
+    "fi": "Timbuktu",
+    "sv": "Timbuktu"
+   },
+   {
+    "en": "Marrakesh",
+    "fi": "Marrakech",
+    "sv": "Marrakech"
+   },
+   {
+    "en": "Zanzibar",
+    "fi": "Zanzibar",
+    "sv": "Zanzibar"
+   },
+   {
+    "en": "Mogadishu",
+    "fi": "Mogadishu",
+    "sv": "Mogadishu"
+   }
+  ],
+  "n": {
+   "en": "Families there still keep manuscript collections running to tens of thousands of volumes.",
+   "fi": "Sukujen hallussa on siellä yhä käsikirjoituskokoelmia, joissa on kymmeniätuhansia niteitä.",
+   "sv": "Familjer där förvarar fortfarande handskriftssamlingar på tiotusentals volymer."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which Chinese admiral led huge treasure fleets in the early 1400s?",
+   "fi": "Kuka kiinalainen amiraali johti suuria aarrelaivastoja 1400-luvun alussa?",
+   "sv": "Vilken kinesisk amiral ledde enorma skattflottor i början av 1400-talet?"
+  },
+  "o": [
+   {
+    "en": "Zheng He",
+    "fi": "Zheng He",
+    "sv": "Zheng He"
+   },
+   {
+    "en": "Kublai Khan",
+    "fi": "Kublai-kaani",
+    "sv": "Kublai khan"
+   },
+   {
+    "en": "Zhu Yuanzhang",
+    "fi": "Zhu Yuanzhang",
+    "sv": "Zhu Yuanzhang"
+   },
+   {
+    "en": "Yongle",
+    "fi": "Yongle",
+    "sv": "Yongle"
+   }
+  ],
+  "n": {
+   "en": "His biggest ships were far larger than anything Europe would launch for centuries, and then the voyages simply stopped.",
+   "fi": "Hänen suurimmat laivansa olivat paljon isompia kuin mikään Euroopan laiva vuosisatoihin, ja sitten matkat vain loppuivat.",
+   "sv": "Hans största skepp var vida större än något Europa skulle bygga på sekler, och sedan upphörde färderna."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which sea route did Vasco da Gama open in 1498?",
+   "fi": "Minkä meritien Vasco da Gama avasi vuonna 1498?",
+   "sv": "Vilken sjöväg öppnade Vasco da Gama år 1498?"
+  },
+  "o": [
+   {
+    "en": "The route to India around Africa",
+    "fi": "Tien Intiaan Afrikan ympäri",
+    "sv": "Vägen till Indien runt Afrika"
+   },
+   {
+    "en": "The northwest passage",
+    "fi": "Luoteisväylän",
+    "sv": "Nordvästpassagen"
+   },
+   {
+    "en": "The route around South America",
+    "fi": "Tien Etelä-Amerikan ympäri",
+    "sv": "Vägen runt Sydamerika"
+   },
+   {
+    "en": "The route across the Pacific",
+    "fi": "Tien Tyynenmeren yli",
+    "sv": "Vägen över Stilla havet"
+   }
+  ],
+  "n": {
+   "en": "Portugal guarded the pepper profits from that route for most of the century that followed.",
+   "fi": "Portugali varjeli tien pippurivoittoja suurimman osan seuraavasta vuosisadasta.",
+   "sv": "Portugal vaktade pepparvinsterna från den vägen under större delen av följande sekel."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which volcano's eruption in 1815 caused the year without a summer?",
+   "fi": "Minkä tulivuoren purkaus vuonna 1815 aiheutti kesättömän vuoden?",
+   "sv": "Vilken vulkans utbrott 1815 orsakade året utan sommar?"
+  },
+  "o": [
+   {
+    "en": "Tambora",
+    "fi": "Tambora",
+    "sv": "Tambora"
+   },
+   {
+    "en": "Krakatoa",
+    "fi": "Krakatau",
+    "sv": "Krakatau"
+   },
+   {
+    "en": "Vesuvius",
+    "fi": "Vesuvius",
+    "sv": "Vesuvius"
+   },
+   {
+    "en": "Etna",
+    "fi": "Etna",
+    "sv": "Etna"
+   }
+  ],
+  "n": {
+   "en": "Shut indoors by the cold grey summer by Lake Geneva, Mary Shelley began writing Frankenstein.",
+   "fi": "Kylmän ja harmaan kesän sulkemana Genevenjärven rannalla Mary Shelley aloitti Frankensteinin kirjoittamisen.",
+   "sv": "Instängd av den kalla gråa sommaren vid Genèvesjön började Mary Shelley skriva Frankenstein."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which European capital was flattened by an earthquake in 1755?",
+   "fi": "Mikä Euroopan pääkaupunki tuhoutui maanjäristyksessä vuonna 1755?",
+   "sv": "Vilken europeisk huvudstad ödelades av en jordbävning år 1755?"
+  },
+  "o": [
+   {
+    "en": "Lisbon",
+    "fi": "Lissabon",
+    "sv": "Lissabon"
+   },
+   {
+    "en": "Naples",
+    "fi": "Napoli",
+    "sv": "Neapel"
+   },
+   {
+    "en": "Athens",
+    "fi": "Ateena",
+    "sv": "Aten"
+   },
+   {
+    "en": "Madrid",
+    "fi": "Madrid",
+    "sv": "Madrid"
+   }
+  ],
+  "n": {
+   "en": "It struck on All Saints' Day, when the churches were full, and shook European ideas about divine justice.",
+   "fi": "Järistys tuli pyhäinpäivänä, kun kirkot olivat täynnä, ja ravisteli eurooppalaisia käsityksiä jumalallisesta oikeudesta.",
+   "sv": "Den kom på alla helgons dag, när kyrkorna var fulla, och skakade Europas syn på gudomlig rättvisa."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which American city was wrecked by an earthquake and fire in 1906?",
+   "fi": "Mikä amerikkalainen kaupunki tuhoutui maanjäristyksessä ja tulipalossa vuonna 1906?",
+   "sv": "Vilken amerikansk stad ödelades av jordbävning och brand år 1906?"
+  },
+  "o": [
+   {
+    "en": "San Francisco",
+    "fi": "San Francisco",
+    "sv": "San Francisco"
+   },
+   {
+    "en": "Los Angeles",
+    "fi": "Los Angeles",
+    "sv": "Los Angeles"
+   },
+   {
+    "en": "Seattle",
+    "fi": "Seattle",
+    "sv": "Seattle"
+   },
+   {
+    "en": "Portland",
+    "fi": "Portland",
+    "sv": "Portland"
+   }
+  ],
+  "n": {
+   "en": "Most of the damage was done not by the shaking but by the fires that burned for days afterwards.",
+   "fi": "Suurin osa tuhosta ei syntynyt tärinästä vaan tulipaloista, jotka paloivat sen jälkeen päiviä.",
+   "sv": "Den mesta förstörelsen kom inte av skalvet utan av bränderna som brann i dagar efteråt."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which airship caught fire while landing in 1937?",
+   "fi": "Mikä ilmalaiva syttyi palamaan laskeutuessaan vuonna 1937?",
+   "sv": "Vilket luftskepp fattade eld vid landning år 1937?"
+  },
+  "o": [
+   {
+    "en": "The Hindenburg",
+    "fi": "Hindenburg",
+    "sv": "Hindenburg"
+   },
+   {
+    "en": "The Graf Zeppelin",
+    "fi": "Graf Zeppelin",
+    "sv": "Graf Zeppelin"
+   },
+   {
+    "en": "The R101",
+    "fi": "R101",
+    "sv": "R101"
+   },
+   {
+    "en": "The Norge",
+    "fi": "Norge",
+    "sv": "Norge"
+   }
+  ],
+  "n": {
+   "en": "It was filled with hydrogen because the United States refused to sell Germany the safer helium.",
+   "fi": "Se oli täytetty vedyllä, koska Yhdysvallat kieltäytyi myymästä Saksalle turvallisempaa heliumia.",
+   "sv": "Det var fyllt med vätgas eftersom USA vägrade sälja det säkrare heliumet till Tyskland."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Who made the 1569 world map whose projection sailors still use?",
+   "fi": "Kuka laati vuoden 1569 maailmankartan, jonka projektiota merenkulkijat käyttävät yhä?",
+   "sv": "Vem gjorde 1569 års världskarta vars projektion sjöfarare än i dag använder?"
+  },
+  "o": [
+   {
+    "en": "Gerardus Mercator",
+    "fi": "Gerardus Mercator",
+    "sv": "Gerardus Mercator"
+   },
+   {
+    "en": "Abraham Ortelius",
+    "fi": "Abraham Ortelius",
+    "sv": "Abraham Ortelius"
+   },
+   {
+    "en": "Ptolemy",
+    "fi": "Ptolemaios",
+    "sv": "Ptolemaios"
+   },
+   {
+    "en": "Martin Behaim",
+    "fi": "Martin Behaim",
+    "sv": "Martin Behaim"
+   }
+  ],
+  "n": {
+   "en": "It keeps compass courses straight, at the cost of making Greenland look about the size of Africa.",
+   "fi": "Se pitää kompassisuunnat suorina, hintana se että Grönlanti näyttää lähes Afrikan kokoiselta.",
+   "sv": "Den håller kompasskurser raka, till priset av att Grönland ser nästan lika stort ut som Afrika."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "What did the Dutch call the colony that became New York?",
+   "fi": "Mikä oli hollantilaisten nimi siirtokunnalle, josta tuli New York?",
+   "sv": "Vad kallade holländarna kolonin som blev New York?"
+  },
+  "o": [
+   {
+    "en": "New Amsterdam",
+    "fi": "Uusi-Amsterdam",
+    "sv": "Nya Amsterdam"
+   },
+   {
+    "en": "New Holland",
+    "fi": "Uusi-Hollanti",
+    "sv": "Nya Holland"
+   },
+   {
+    "en": "New Antwerp",
+    "fi": "Uusi-Antwerpen",
+    "sv": "Nya Antwerpen"
+   },
+   {
+    "en": "New Leiden",
+    "fi": "Uusi-Leiden",
+    "sv": "Nya Leiden"
+   }
+  ],
+  "n": {
+   "en": "The English took it in 1664 and renamed it after the Duke of York.",
+   "fi": "Englantilaiset valtasivat sen vuonna 1664 ja nimesivät sen Yorkin herttuan mukaan.",
+   "sv": "Engelsmännen tog den 1664 och döpte om den efter hertigen av York."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Who built the first electric battery?",
+   "fi": "Kuka rakensi ensimmäisen sähköpariston?",
+   "sv": "Vem byggde det första elektriska batteriet?"
+  },
+  "o": [
+   {
+    "en": "Alessandro Volta",
+    "fi": "Alessandro Volta",
+    "sv": "Alessandro Volta"
+   },
+   {
+    "en": "Michael Faraday",
+    "fi": "Michael Faraday",
+    "sv": "Michael Faraday"
+   },
+   {
+    "en": "Luigi Galvani",
+    "fi": "Luigi Galvani",
+    "sv": "Luigi Galvani"
+   },
+   {
+    "en": "Benjamin Franklin",
+    "fi": "Benjamin Franklin",
+    "sv": "Benjamin Franklin"
+   }
+  ],
+  "n": {
+   "en": "His first pile was a stack of zinc and copper discs with brine-soaked cloth between them.",
+   "fi": "Hänen ensimmäinen pinonsa oli sinkki- ja kuparilevyjä, joiden välissä oli suolaveteen kastettua kangasta.",
+   "sv": "Hans första stapel var zink- och kopparskivor med saltvattendränkt tyg emellan."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Whose surname became a common word for the ballpoint pen?",
+   "fi": "Kenen sukunimi muuttui yleiseksi sanaksi kuulakärkikynälle?",
+   "sv": "Vems efternamn blev ett vardagsord för kulspetspennan?"
+  },
+  "o": [
+   {
+    "en": "László Bíró",
+    "fi": "László Bíró",
+    "sv": "László Bíró"
+   },
+   {
+    "en": "Lewis Waterman",
+    "fi": "Lewis Waterman",
+    "sv": "Lewis Waterman"
+   },
+   {
+    "en": "Walter Sheaffer",
+    "fi": "Walter Sheaffer",
+    "sv": "Walter Sheaffer"
+   },
+   {
+    "en": "Kenneth Parker",
+    "fi": "Kenneth Parker",
+    "sv": "Kenneth Parker"
+   }
+  ],
+  "n": {
+   "en": "He was a Hungarian journalist tired of smudged ink, and he patented the pen after fleeing to Argentina.",
+   "fi": "Hän oli unkarilainen toimittaja, joka oli kyllästynyt tahraavaan musteeseen, ja patentoi kynän paettuaan Argentiinaan.",
+   "sv": "Han var en ungersk journalist som tröttnat på kladdigt bläck och patenterade pennan efter flykten till Argentina."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which trading people gave Europe the alphabet it still uses?",
+   "fi": "Mikä kauppaa käyvä kansa antoi Euroopalle sen yhä käyttämän kirjaimiston?",
+   "sv": "Vilket handelsfolk gav Europa det alfabet som ännu används?"
+  },
+  "o": [
+   {
+    "en": "The Phoenicians",
+    "fi": "Foinikialaiset",
+    "sv": "Fenicierna"
+   },
+   {
+    "en": "The Sumerians",
+    "fi": "Sumerit",
+    "sv": "Sumererna"
+   },
+   {
+    "en": "The Etruscans",
+    "fi": "Etruskit",
+    "sv": "Etruskerna"
+   },
+   {
+    "en": "The Minoans",
+    "fi": "Minolaiset",
+    "sv": "Minoerna"
+   }
+  ],
+  "n": {
+   "en": "The Greeks borrowed the letters, added vowels, and passed the result on to Rome.",
+   "fi": "Kreikkalaiset lainasivat kirjaimet, lisäsivät vokaalit ja välittivät tuloksen Roomaan.",
+   "sv": "Grekerna lånade bokstäverna, lade till vokaler och förde resultatet vidare till Rom."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which sea arm lies between Denmark and Norway?",
+   "fi": "Mikä merenhaara on Tanskan ja Norjan välissä?",
+   "sv": "Vilket havsområde ligger mellan Danmark och Norge?"
+  },
+  "o": [
+   {
+    "en": "The Skagerrak",
+    "fi": "Skagerrak",
+    "sv": "Skagerrak"
+   },
+   {
+    "en": "The Kattegat",
+    "fi": "Kattegat",
+    "sv": "Kattegatt"
+   },
+   {
+    "en": "The Öresund",
+    "fi": "Juutinrauma",
+    "sv": "Öresund"
+   },
+   {
+    "en": "The Great Belt",
+    "fi": "Ison-Beltin salmi",
+    "sv": "Stora Bält"
+   }
+  ],
+  "n": {
+   "en": "Ships heading from the North Sea to the Baltic round the top of Denmark through it.",
+   "fi": "Pohjanmereltä Itämerelle matkaavat laivat kiertävät sen kautta Tanskan pohjoiskärjen.",
+   "sv": "Fartyg på väg från Nordsjön till Östersjön rundar Danmarks nordspets genom det."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which river forms most of the border between Finland and Sweden?",
+   "fi": "Mikä joki muodostaa suurimman osan Suomen ja Ruotsin rajasta?",
+   "sv": "Vilken älv bildar största delen av gränsen mellan Finland och Sverige?"
+  },
+  "o": [
+   {
+    "en": "The Torne",
+    "fi": "Tornionjoki",
+    "sv": "Torne älv"
+   },
+   {
+    "en": "The Kemijoki",
+    "fi": "Kemijoki",
+    "sv": "Kemi älv"
+   },
+   {
+    "en": "The Oulujoki",
+    "fi": "Oulujoki",
+    "sv": "Ule älv"
+   },
+   {
+    "en": "The Lule",
+    "fi": "Luulajanjoki",
+    "sv": "Lule älv"
+   }
+  ],
+  "n": {
+   "en": "Its valley is home to Meänkieli, a form of Finnish recognised as a minority language in Sweden.",
+   "fi": "Sen laaksossa puhutaan meänkieltä, suomen muotoa, joka on Ruotsissa tunnustettu vähemmistökieli.",
+   "sv": "I dess dalgång talas meänkieli, en form av finska som är erkänt minoritetsspråk i Sverige."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which village is the northernmost point of the European Union?",
+   "fi": "Mikä kylä on Euroopan unionin pohjoisin piste?",
+   "sv": "Vilken by är Europeiska unionens nordligaste punkt?"
+  },
+  "o": [
+   {
+    "en": "Nuorgam",
+    "fi": "Nuorgam",
+    "sv": "Nuorgam"
+   },
+   {
+    "en": "Kilpisjärvi",
+    "fi": "Kilpisjärvi",
+    "sv": "Kilpisjärvi"
+   },
+   {
+    "en": "Inari",
+    "fi": "Inari",
+    "sv": "Enare"
+   },
+   {
+    "en": "Kittilä",
+    "fi": "Kittilä",
+    "sv": "Kittilä"
+   }
+  ],
+  "n": {
+   "en": "It sits on the Teno, the salmon river that Finland shares with Norway.",
+   "fi": "Se sijaitsee Tenojoen varrella, lohijoen jonka Suomi jakaa Norjan kanssa.",
+   "sv": "Den ligger vid Tana, laxälven som Finland delar med Norge."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which lake supplies greater Helsinki with its tap water?",
+   "fi": "Mistä järvestä pääkaupunkiseutu saa hanavetensä?",
+   "sv": "Vilken sjö förser Helsingforsregionen med kranvatten?"
+  },
+  "o": [
+   {
+    "en": "Päijänne",
+    "fi": "Päijänne",
+    "sv": "Päijänne"
+   },
+   {
+    "en": "Saimaa",
+    "fi": "Saimaa",
+    "sv": "Saimen"
+   },
+   {
+    "en": "Vesijärvi",
+    "fi": "Vesijärvi",
+    "sv": "Vesijärvi"
+   },
+   {
+    "en": "Tuusulanjärvi",
+    "fi": "Tuusulanjärvi",
+    "sv": "Tusby träsk"
+   }
+  ],
+  "n": {
+   "en": "The water travels 120 kilometres through a tunnel blasted out of solid bedrock.",
+   "fi": "Vesi kulkee 120 kilometriä kallioon louhitussa tunnelissa.",
+   "sv": "Vattnet färdas 120 kilometer genom en tunnel sprängd i berggrunden."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "On which large lake did Finland lose its whole shore in the Second World War?",
+   "fi": "Minkä suuren järven rannat Suomi menetti toisessa maailmansodassa?",
+   "sv": "Vid vilken stor sjö förlorade Finland sin strand i andra världskriget?"
+  },
+  "o": [
+   {
+    "en": "Lake Ladoga",
+    "fi": "Laatokka",
+    "sv": "Ladoga"
+   },
+   {
+    "en": "Lake Onega",
+    "fi": "Ääninen",
+    "sv": "Onega"
+   },
+   {
+    "en": "Lake Peipus",
+    "fi": "Peipsijärvi",
+    "sv": "Peipus"
+   },
+   {
+    "en": "Lake Ilmen",
+    "fi": "Ilmen-järvi",
+    "sv": "Ilmen"
+   }
+  ],
+  "n": {
+   "en": "It is the largest lake in Europe, bigger than Vänern and Saimaa put together.",
+   "fi": "Se on Euroopan suurin järvi, suurempi kuin Vänern ja Saimaa yhteensä.",
+   "sv": "Den är Europas största sjö, större än Vänern och Saimen tillsammans."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which Swedish region belonged to Denmark until 1658?",
+   "fi": "Mikä Ruotsin maakunta kuului Tanskalle vuoteen 1658?",
+   "sv": "Vilket svenskt landskap tillhörde Danmark fram till 1658?"
+  },
+  "o": [
+   {
+    "en": "Scania",
+    "fi": "Skoone",
+    "sv": "Skåne"
+   },
+   {
+    "en": "Småland",
+    "fi": "Smaalanti",
+    "sv": "Småland"
+   },
+   {
+    "en": "Dalarna",
+    "fi": "Taalainmaa",
+    "sv": "Dalarna"
+   },
+   {
+    "en": "Värmland",
+    "fi": "Värmlanti",
+    "sv": "Värmland"
+   }
+  ],
+  "n": {
+   "en": "Denmark gave it up in the Treaty of Roskilde, and the local dialect still carries Danish sounds.",
+   "fi": "Tanska luovutti sen Roskilden rauhassa, ja paikallisessa murteessa kuuluu yhä tanskalaisia äänteitä.",
+   "sv": "Danmark avstod det i freden i Roskilde, och dialekten bär fortfarande danska ljud."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which is Iceland's largest glacier?",
+   "fi": "Mikä on Islannin suurin jäätikkö?",
+   "sv": "Vilken är Islands största glaciär?"
+  },
+  "o": [
+   {
+    "en": "Vatnajökull",
+    "fi": "Vatnajökull",
+    "sv": "Vatnajökull"
+   },
+   {
+    "en": "Langjökull",
+    "fi": "Langjökull",
+    "sv": "Langjökull"
+   },
+   {
+    "en": "Mýrdalsjökull",
+    "fi": "Mýrdalsjökull",
+    "sv": "Mýrdalsjökull"
+   },
+   {
+    "en": "Snæfellsjökull",
+    "fi": "Snæfellsjökull",
+    "sv": "Snæfellsjökull"
+   }
+  ],
+  "n": {
+   "en": "It covers about eight per cent of the whole country, with volcanoes hidden under the ice.",
+   "fi": "Se peittää noin kahdeksan prosenttia koko maasta, ja jään alla piilee tulivuoria.",
+   "sv": "Den täcker ungefär åtta procent av hela landet, med vulkaner dolda under isen."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which Icelandic hot spring gave its name to all spouting springs?",
+   "fi": "Mikä islantilainen kuuma lähde antoi nimensä kaikille purskuville lähteille?",
+   "sv": "Vilken isländsk varm källa gav sitt namn åt alla sprutande källor?"
+  },
+  "o": [
+   {
+    "en": "Geysir",
+    "fi": "Geysir",
+    "sv": "Geysir"
+   },
+   {
+    "en": "Strokkur",
+    "fi": "Strokkur",
+    "sv": "Strokkur"
+   },
+   {
+    "en": "Blesi",
+    "fi": "Blesi",
+    "sv": "Blesi"
+   },
+   {
+    "en": "Deildartunguhver",
+    "fi": "Deildartunguhver",
+    "sv": "Deildartunguhver"
+   }
+  ],
+  "n": {
+   "en": "The name comes from an Old Norse verb meaning to gush, and the spring itself now erupts only rarely.",
+   "fi": "Nimi tulee muinaisnorjan verbistä, joka tarkoittaa purskahtamista, ja lähde itse purkautuu nykyään harvoin.",
+   "sv": "Namnet kommer av ett fornnordiskt verb för att spruta, och källan själv sprutar nu sällan."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which peninsula makes up mainland Denmark?",
+   "fi": "Mikä niemimaa muodostaa Tanskan mantereen?",
+   "sv": "Vilken halvö utgör Danmarks fastland?"
+  },
+  "o": [
+   {
+    "en": "Jutland",
+    "fi": "Jyllanti",
+    "sv": "Jylland"
+   },
+   {
+    "en": "Zealand",
+    "fi": "Sjælland",
+    "sv": "Själland"
+   },
+   {
+    "en": "Funen",
+    "fi": "Fyn",
+    "sv": "Fyn"
+   },
+   {
+    "en": "Scania",
+    "fi": "Skoone",
+    "sv": "Skåne"
+   }
+  ],
+  "n": {
+   "en": "It is the only part of Denmark joined to the European mainland; everything else is an island.",
+   "fi": "Se on Tanskan ainoa osa, joka on kiinni Euroopan mantereessa; kaikki muu on saaria.",
+   "sv": "Det är Danmarks enda del som sitter fast i det europeiska fastlandet; allt annat är öar."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which Danish island lies far out in the Baltic, closer to Sweden than to Copenhagen?",
+   "fi": "Mikä tanskalainen saari on kauimpana Itämerellä, lähempänä Ruotsia kuin Kööpenhaminaa?",
+   "sv": "Vilken dansk ö ligger långt ute i Östersjön, närmare Sverige än Köpenhamn?"
+  },
+  "o": [
+   {
+    "en": "Bornholm",
+    "fi": "Bornholm",
+    "sv": "Bornholm"
+   },
+   {
+    "en": "Lolland",
+    "fi": "Lolland",
+    "sv": "Lolland"
+   },
+   {
+    "en": "Falster",
+    "fi": "Falster",
+    "sv": "Falster"
+   },
+   {
+    "en": "Langeland",
+    "fi": "Langeland",
+    "sv": "Langeland"
+   }
+  ],
+  "n": {
+   "en": "Its granite has been quarried for cobblestones that paved streets all over northern Europe.",
+   "fi": "Sen graniitista on louhittu mukulakiviä, joilla on kivetty katuja koko Pohjois-Euroopassa.",
+   "sv": "Dess granit har brutits till kullersten som stenlagt gator i hela Nordeuropa."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "What does the city name Turku originally mean?",
+   "fi": "Mitä kaupunginnimi Turku alun perin tarkoittaa?",
+   "sv": "Vad betyder stadsnamnet Turku ursprungligen?"
+  },
+  "o": [
+   {
+    "en": "A marketplace",
+    "fi": "Kauppapaikkaa",
+    "sv": "En marknadsplats"
+   },
+   {
+    "en": "A river mouth",
+    "fi": "Joensuuta",
+    "sv": "En åmynning"
+   },
+   {
+    "en": "A castle",
+    "fi": "Linnaa",
+    "sv": "En borg"
+   },
+   {
+    "en": "A ford",
+    "fi": "Kahlaamoa",
+    "sv": "Ett vadställe"
+   }
+  ],
+  "n": {
+   "en": "The word travelled in along Viking trade routes, while the Swedish name Åbo means a dwelling by the river.",
+   "fi": "Sana kulkeutui viikinkien kauppateiden varrella, kun taas ruotsinkielinen nimi Åbo tarkoittaa asumusta joen varrella.",
+   "sv": "Ordet kom in längs vikingarnas handelsvägar, medan det svenska namnet Åbo betyder en boplats vid ån."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which Finnish city was nicknamed the Manchester of the North?",
+   "fi": "Mitä Suomen kaupunkia kutsuttiin Pohjolan Manchesteriksi?",
+   "sv": "Vilken finsk stad kallades Nordens Manchester?"
+  },
+  "o": [
+   {
+    "en": "Tampere",
+    "fi": "Tampere",
+    "sv": "Tammerfors"
+   },
+   {
+    "en": "Turku",
+    "fi": "Turku",
+    "sv": "Åbo"
+   },
+   {
+    "en": "Oulu",
+    "fi": "Oulu",
+    "sv": "Uleåborg"
+   },
+   {
+    "en": "Lahti",
+    "fi": "Lahti",
+    "sv": "Lahtis"
+   }
+  ],
+  "n": {
+   "en": "Its cotton mills ran on the Tammerkoski rapids, and a Scot named Finlayson built the biggest of them.",
+   "fi": "Sen puuvillatehtaat kävivät Tammerkosken voimalla, ja suurimman niistä rakensi skotti nimeltä Finlayson.",
+   "sv": "Dess bomullsfabriker drevs av forsen Tammerkoski, och den största byggdes av skotten Finlayson."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which Finnish town shares a golf course with Sweden's Haparanda?",
+   "fi": "Mikä Suomen kaupunki jakaa golfkentän Ruotsin Haaparannan kanssa?",
+   "sv": "Vilken finsk stad delar golfbana med svenska Haparanda?"
+  },
+  "o": [
+   {
+    "en": "Tornio",
+    "fi": "Tornio",
+    "sv": "Torneå"
+   },
+   {
+    "en": "Kemi",
+    "fi": "Kemi",
+    "sv": "Kemi"
+   },
+   {
+    "en": "Rovaniemi",
+    "fi": "Rovaniemi",
+    "sv": "Rovaniemi"
+   },
+   {
+    "en": "Kolari",
+    "fi": "Kolari",
+    "sv": "Kolari"
+   }
+  ],
+  "n": {
+   "en": "The border runs straight across the fairways, and the two sides keep their clocks an hour apart.",
+   "fi": "Raja kulkee suoraan väylien yli, ja puolilla on tunnin aikaero.",
+   "sv": "Gränsen går rakt över banan, och de två sidorna håller klockan en timme isär."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which Nordic capital lies furthest north?",
+   "fi": "Mikä Pohjoismaiden pääkaupunki on pohjoisimpana?",
+   "sv": "Vilken nordisk huvudstad ligger längst norrut?"
+  },
+  "o": [
+   {
+    "en": "Reykjavík",
+    "fi": "Reykjavík",
+    "sv": "Reykjavik"
+   },
+   {
+    "en": "Helsinki",
+    "fi": "Helsinki",
+    "sv": "Helsingfors"
+   },
+   {
+    "en": "Oslo",
+    "fi": "Oslo",
+    "sv": "Oslo"
+   },
+   {
+    "en": "Stockholm",
+    "fi": "Tukholma",
+    "sv": "Stockholm"
+   }
+  ],
+  "n": {
+   "en": "At 64 degrees north it is the northernmost capital of any sovereign state in the world.",
+   "fi": "64. leveyspiirillä se on maailman pohjoisin itsenäisen valtion pääkaupunki.",
+   "sv": "På 64 grader nord är den världens nordligaste huvudstad i en självständig stat."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which is the largest Nordic country by area?",
+   "fi": "Mikä Pohjoismaa on alueeltaan suurin?",
+   "sv": "Vilket är det största nordiska landet till ytan?"
+  },
+  "o": [
+   {
+    "en": "Sweden",
+    "fi": "Ruotsi",
+    "sv": "Sverige"
+   },
+   {
+    "en": "Finland",
+    "fi": "Suomi",
+    "sv": "Finland"
+   },
+   {
+    "en": "Norway",
+    "fi": "Norja",
+    "sv": "Norge"
+   },
+   {
+    "en": "Iceland",
+    "fi": "Islanti",
+    "sv": "Island"
+   }
+  ],
+  "n": {
+   "en": "Greenland is many times bigger, but it is a self-governing part of Denmark rather than a country of its own.",
+   "fi": "Grönlanti on monin verroin suurempi, mutta se on Tanskan itsehallintoalue eikä oma maa.",
+   "sv": "Grönland är många gånger större, men är en självstyrande del av Danmark och inget eget land."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which sea has no coastline at all?",
+   "fi": "Millä merellä ei ole lainkaan rantaviivaa?",
+   "sv": "Vilket hav har ingen kust alls?"
+  },
+  "o": [
+   {
+    "en": "The Sargasso Sea",
+    "fi": "Sargassomeri",
+    "sv": "Sargassohavet"
+   },
+   {
+    "en": "The Coral Sea",
+    "fi": "Korallimeri",
+    "sv": "Korallhavet"
+   },
+   {
+    "en": "The Tasman Sea",
+    "fi": "Tasmaninmeri",
+    "sv": "Tasmanska havet"
+   },
+   {
+    "en": "The Weddell Sea",
+    "fi": "Weddellinmeri",
+    "sv": "Weddellhavet"
+   }
+  ],
+  "n": {
+   "en": "Eels from European and American rivers swim all the way there to spawn.",
+   "fi": "Euroopan ja Amerikan jokien ankeriaat uivat sinne asti kudulle.",
+   "sv": "Ålar från europeiska och amerikanska floder simmar hela vägen dit för att leka."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which canal links the North Sea to the Baltic?",
+   "fi": "Mikä kanava yhdistää Pohjanmeren Itämereen?",
+   "sv": "Vilken kanal förbinder Nordsjön med Östersjön?"
+  },
+  "o": [
+   {
+    "en": "The Kiel Canal",
+    "fi": "Kielin kanava",
+    "sv": "Kielkanalen"
+   },
+   {
+    "en": "The Göta Canal",
+    "fi": "Götan kanava",
+    "sv": "Göta kanal"
+   },
+   {
+    "en": "The Main–Danube Canal",
+    "fi": "Main–Tonavan kanava",
+    "sv": "Main–Donaukanalen"
+   },
+   {
+    "en": "The Saimaa Canal",
+    "fi": "Saimaan kanava",
+    "sv": "Saima kanal"
+   }
+  ],
+  "n": {
+   "en": "It spares ships the long and rough haul around the top of Denmark.",
+   "fi": "Se säästää laivoilta pitkän ja rajun kierroksen Tanskan pohjoiskärjen ympäri.",
+   "sv": "Den sparar fartygen den långa och hårda vägen runt Danmarks nordspets."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which river is known in China as the Long River?",
+   "fi": "Mikä joki tunnetaan Kiinassa Pitkänä jokena?",
+   "sv": "Vilken flod kallas i Kina den långa floden?"
+  },
+  "o": [
+   {
+    "en": "The Yangtze",
+    "fi": "Jangtse",
+    "sv": "Yangtze"
+   },
+   {
+    "en": "The Yellow River",
+    "fi": "Keltainen joki",
+    "sv": "Gula floden"
+   },
+   {
+    "en": "The Mekong",
+    "fi": "Mekong",
+    "sv": "Mekong"
+   },
+   {
+    "en": "The Pearl River",
+    "fi": "Helmijoki",
+    "sv": "Pärlfloden"
+   }
+  ],
+  "n": {
+   "en": "It is the longest river in Asia and the longest anywhere that never leaves one country.",
+   "fi": "Se on Aasian pisin joki ja maailman pisin joki, joka ei poistu yhden maan rajojen sisältä.",
+   "sv": "Den är Asiens längsta flod och världens längsta flod som aldrig lämnar ett enda land."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which river flows through Baghdad?",
+   "fi": "Mikä joki virtaa Bagdadin läpi?",
+   "sv": "Vilken flod rinner genom Bagdad?"
+  },
+  "o": [
+   {
+    "en": "The Tigris",
+    "fi": "Tigris",
+    "sv": "Tigris"
+   },
+   {
+    "en": "The Euphrates",
+    "fi": "Eufrat",
+    "sv": "Eufrat"
+   },
+   {
+    "en": "The Jordan",
+    "fi": "Jordan",
+    "sv": "Jordan"
+   },
+   {
+    "en": "The Orontes",
+    "fi": "Orontes",
+    "sv": "Orontes"
+   }
+  ],
+  "n": {
+   "en": "Together with its neighbour it gave Mesopotamia its name, which means between the rivers.",
+   "fi": "Yhdessä naapurijokensa kanssa se antoi Mesopotamialle nimen, joka tarkoittaa jokien välistä.",
+   "sv": "Tillsammans med sin grannflod gav den Mesopotamien sitt namn, som betyder mellan floderna."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which river forms much of the border between the United States and Mexico?",
+   "fi": "Mikä joki muodostaa suuren osan Yhdysvaltain ja Meksikon rajasta?",
+   "sv": "Vilken flod bildar stora delar av gränsen mellan USA och Mexiko?"
+  },
+  "o": [
+   {
+    "en": "The Rio Grande",
+    "fi": "Rio Grande",
+    "sv": "Rio Grande"
+   },
+   {
+    "en": "The Colorado",
+    "fi": "Colorado",
+    "sv": "Colorado"
+   },
+   {
+    "en": "The Pecos",
+    "fi": "Pecos",
+    "sv": "Pecos"
+   },
+   {
+    "en": "The Gila",
+    "fi": "Gila",
+    "sv": "Gila"
+   }
+  ],
+  "n": {
+   "en": "Mexicans call the same water the Río Bravo, so the river answers to two names at once.",
+   "fi": "Meksikolaiset kutsuvat samaa vettä nimellä Río Bravo, joten joella on kaksi nimeä yhtä aikaa.",
+   "sv": "Mexikaner kallar samma vatten Río Bravo, så floden bär två namn samtidigt."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "On which island do Haiti and the Dominican Republic sit?",
+   "fi": "Millä saarella Haiti ja Dominikaaninen tasavalta sijaitsevat?",
+   "sv": "På vilken ö ligger Haiti och Dominikanska republiken?"
+  },
+  "o": [
+   {
+    "en": "Hispaniola",
+    "fi": "Hispaniola",
+    "sv": "Hispaniola"
+   },
+   {
+    "en": "Cuba",
+    "fi": "Kuuba",
+    "sv": "Kuba"
+   },
+   {
+    "en": "Jamaica",
+    "fi": "Jamaika",
+    "sv": "Jamaica"
+   },
+   {
+    "en": "Puerto Rico",
+    "fi": "Puerto Rico",
+    "sv": "Puerto Rico"
+   }
+  ],
+  "n": {
+   "en": "Santo Domingo on its eastern side is the oldest city Europeans founded anywhere in the Americas.",
+   "fi": "Sen itälaidalla oleva Santo Domingo on vanhin eurooppalaisten perustama kaupunki Amerikoissa.",
+   "sv": "Santo Domingo på dess östra sida är den äldsta stad européer grundade i Amerika."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which island is divided between three countries?",
+   "fi": "Mikä saari on jaettu kolmen maan kesken?",
+   "sv": "Vilken ö är delad mellan tre länder?"
+  },
+  "o": [
+   {
+    "en": "Borneo",
+    "fi": "Borneo",
+    "sv": "Borneo"
+   },
+   {
+    "en": "New Guinea",
+    "fi": "Uusi-Guinea",
+    "sv": "Nya Guinea"
+   },
+   {
+    "en": "Timor",
+    "fi": "Timor",
+    "sv": "Timor"
+   },
+   {
+    "en": "Cyprus",
+    "fi": "Kypros",
+    "sv": "Cypern"
+   }
+  ],
+  "n": {
+   "en": "Indonesia and Malaysia take the bulk of it, with the small oil sultanate of Brunei squeezed onto the coast.",
+   "fi": "Indonesia ja Malesia ottavat siitä suurimman osan, ja rannikolle on puristunut pieni öljysulttaanikunta Brunei.",
+   "sv": "Indonesien och Malaysia tar merparten, med det lilla oljesultanatet Brunei inklämt vid kusten."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which two states are completely surrounded by Italy?",
+   "fi": "Mitkä kaksi valtiota ovat kokonaan Italian ympäröimiä?",
+   "sv": "Vilka två stater är helt omgivna av Italien?"
+  },
+  "o": [
+   {
+    "en": "Vatican City and San Marino",
+    "fi": "Vatikaani ja San Marino",
+    "sv": "Vatikanstaten och San Marino"
+   },
+   {
+    "en": "Monaco and Andorra",
+    "fi": "Monaco ja Andorra",
+    "sv": "Monaco och Andorra"
+   },
+   {
+    "en": "Liechtenstein and Monaco",
+    "fi": "Liechtenstein ja Monaco",
+    "sv": "Liechtenstein och Monaco"
+   },
+   {
+    "en": "Malta and Monaco",
+    "fi": "Malta ja Monaco",
+    "sv": "Malta och Monaco"
+   }
+  ],
+  "n": {
+   "en": "The larger of the two claims to be the oldest surviving republic anywhere in the world.",
+   "fi": "Niistä suurempi väittää olevansa maailman vanhin yhä olemassa oleva tasavalta.",
+   "sv": "Den större av dem hävdar sig vara världens äldsta bevarade republik."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which European country is landlocked and has only landlocked neighbours?",
+   "fi": "Mikä Euroopan maa on sisämaavaltio, jonka kaikki naapurit ovat myös sisämaavaltioita?",
+   "sv": "Vilket europeiskt land saknar kust och har bara kustlösa grannar?"
+  },
+  "o": [
+   {
+    "en": "Liechtenstein",
+    "fi": "Liechtenstein",
+    "sv": "Liechtenstein"
+   },
+   {
+    "en": "Luxembourg",
+    "fi": "Luxemburg",
+    "sv": "Luxemburg"
+   },
+   {
+    "en": "Andorra",
+    "fi": "Andorra",
+    "sv": "Andorra"
+   },
+   {
+    "en": "Slovakia",
+    "fi": "Slovakia",
+    "sv": "Slovakien"
+   }
+  ],
+  "n": {
+   "en": "Only one other country in the world is cut off from the sea twice over, and that is Uzbekistan.",
+   "fi": "Vain yksi muu maa maailmassa on kahteen kertaan erotettu merestä, ja se on Uzbekistan.",
+   "sv": "Bara ett annat land i världen är avskilt från havet två gånger om, och det är Uzbekistan."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which is the largest country lying entirely in Europe?",
+   "fi": "Mikä on kokonaan Euroopassa sijaitseva suurin maa?",
+   "sv": "Vilket är det största landet som ligger helt i Europa?"
+  },
+  "o": [
+   {
+    "en": "Ukraine",
+    "fi": "Ukraina",
+    "sv": "Ukraina"
+   },
+   {
+    "en": "France",
+    "fi": "Ranska",
+    "sv": "Frankrike"
+   },
+   {
+    "en": "Spain",
+    "fi": "Espanja",
+    "sv": "Spanien"
+   },
+   {
+    "en": "Poland",
+    "fi": "Puola",
+    "sv": "Polen"
+   }
+  ],
+  "n": {
+   "en": "Russia is far bigger, but most of it lies on the Asian side of the Urals.",
+   "fi": "Venäjä on paljon suurempi, mutta suurin osa siitä on Uralin Aasian puolella.",
+   "sv": "Ryssland är mycket större, men större delen ligger på Asiens sida av Uralbergen."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which is the southernmost point of Africa?",
+   "fi": "Mikä on Afrikan eteläisin kärki?",
+   "sv": "Vilken är Afrikas sydligaste punkt?"
+  },
+  "o": [
+   {
+    "en": "Cape Agulhas",
+    "fi": "Agulhasniemi",
+    "sv": "Kap Agulhas"
+   },
+   {
+    "en": "The Cape of Good Hope",
+    "fi": "Hyväntoivonniemi",
+    "sv": "Goda hoppsudden"
+   },
+   {
+    "en": "Cape Point",
+    "fi": "Cape Point",
+    "sv": "Cape Point"
+   },
+   {
+    "en": "Cape Verde",
+    "fi": "Cape Verde",
+    "sv": "Kap Verde"
+   }
+  ],
+  "n": {
+   "en": "Portuguese sailors called it the cape of needles, because the compass needle pointed true north there.",
+   "fi": "Portugalilaiset merimiehet kutsuivat sitä neulojen niemeksi, koska kompassineula osoitti siellä todelliseen pohjoiseen.",
+   "sv": "Portugisiska sjömän kallade det nålarnas kap, för kompassnålen pekade mot sann nord där."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which lake is the source of the Blue Nile?",
+   "fi": "Mikä järvi on Sinisen Niilin lähde?",
+   "sv": "Vilken sjö är Blå Nilens källa?"
+  },
+  "o": [
+   {
+    "en": "Lake Tana",
+    "fi": "Tana-järvi",
+    "sv": "Tanasjön"
+   },
+   {
+    "en": "Lake Victoria",
+    "fi": "Victoriajärvi",
+    "sv": "Victoriasjön"
+   },
+   {
+    "en": "Lake Albert",
+    "fi": "Albertjärvi",
+    "sv": "Albertsjön"
+   },
+   {
+    "en": "Lake Turkana",
+    "fi": "Turkana-järvi",
+    "sv": "Turkanasjön"
+   }
+  ],
+  "n": {
+   "en": "The Blue Nile carries most of the water that eventually reaches Egypt.",
+   "fi": "Sininen Niili tuo suurimman osan siitä vedestä, joka lopulta saapuu Egyptiin.",
+   "sv": "Blå Nilen för med sig största delen av det vatten som slutligen når Egypten."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which river plunges over the Victoria Falls?",
+   "fi": "Mikä joki syöksyy Victorian putouksilla?",
+   "sv": "Vilken flod störtar ner vid Victoriafallen?"
+  },
+  "o": [
+   {
+    "en": "The Zambezi",
+    "fi": "Zambezi",
+    "sv": "Zambezi"
+   },
+   {
+    "en": "The Congo",
+    "fi": "Kongo",
+    "sv": "Kongo"
+   },
+   {
+    "en": "The Limpopo",
+    "fi": "Limpopo",
+    "sv": "Limpopo"
+   },
+   {
+    "en": "The Orange",
+    "fi": "Oranjejoki",
+    "sv": "Oranjefloden"
+   }
+  ],
+  "n": {
+   "en": "Local people called the falls Mosi-oa-Tunya, the smoke that thunders.",
+   "fi": "Paikalliset kutsuivat putouksia nimellä Mosi-oa-Tunya, mikä tarkoittaa jyrisevää savua.",
+   "sv": "Lokalbefolkningen kallade fallen Mosi-oa-Tunya, röken som dånar."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "In which country is the Salar de Uyuni?",
+   "fi": "Missä maassa Salar de Uyuni sijaitsee?",
+   "sv": "I vilket land ligger Salar de Uyuni?"
+  },
+  "o": [
+   {
+    "en": "Bolivia",
+    "fi": "Bolivia",
+    "sv": "Bolivia"
+   },
+   {
+    "en": "Chile",
+    "fi": "Chile",
+    "sv": "Chile"
+   },
+   {
+    "en": "Peru",
+    "fi": "Peru",
+    "sv": "Peru"
+   },
+   {
+    "en": "Argentina",
+    "fi": "Argentiina",
+    "sv": "Argentina"
+   }
+  ],
+  "n": {
+   "en": "It is the world's largest salt flat, and a film of rain turns it into a mirror kilometres across.",
+   "fi": "Se on maailman suurin suolatasanko, ja ohut sadevesikerros muuttaa sen kilometrien laajuiseksi peiliksi.",
+   "sv": "Det är världens största saltslätt, och ett tunt regnvattenskikt gör den till en kilometerstor spegel."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of the Great Lakes of North America is the biggest?",
+   "fi": "Mikä Pohjois-Amerikan Suurista järvistä on suurin?",
+   "sv": "Vilken av Nordamerikas stora sjöar är störst?"
+  },
+  "o": [
+   {
+    "en": "Lake Superior",
+    "fi": "Superiorjärvi",
+    "sv": "Övre sjön"
+   },
+   {
+    "en": "Lake Michigan",
+    "fi": "Michiganjärvi",
+    "sv": "Michigansjön"
+   },
+   {
+    "en": "Lake Huron",
+    "fi": "Huronjärvi",
+    "sv": "Huronsjön"
+   },
+   {
+    "en": "Lake Erie",
+    "fi": "Eriejärvi",
+    "sv": "Eriesjön"
+   }
+  ],
+  "n": {
+   "en": "Its name translates the French lac supérieur, the upper lake, and no freshwater lake on Earth covers more ground.",
+   "fi": "Nimi kääntää ranskan ilmauksen lac supérieur eli ylempi järvi, eikä mikään makean veden järvi peitä suurempaa pinta-alaa.",
+   "sv": "Namnet översätter franskans lac supérieur, den övre sjön, och ingen sötvattensjö på jorden täcker större yta."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which ocean current keeps northwest Europe mild?",
+   "fi": "Mikä merivirta pitää Luoteis-Euroopan leutona?",
+   "sv": "Vilken havsström håller nordvästra Europa milt?"
+  },
+  "o": [
+   {
+    "en": "The Gulf Stream",
+    "fi": "Golfvirta",
+    "sv": "Golfströmmen"
+   },
+   {
+    "en": "The Humboldt Current",
+    "fi": "Humboldtin virta",
+    "sv": "Humboldtströmmen"
+   },
+   {
+    "en": "The Canary Current",
+    "fi": "Kanarian virta",
+    "sv": "Kanarieströmmen"
+   },
+   {
+    "en": "The Kuroshio",
+    "fi": "Kuroshio",
+    "sv": "Kuroshio"
+   }
+  ],
+  "n": {
+   "en": "It is named after the Gulf of Mexico, where the warm water it carries comes from.",
+   "fi": "Se on nimetty Meksikonlahden mukaan, josta sen kuljettama lämmin vesi on peräisin.",
+   "sv": "Den är uppkallad efter Mexikanska golfen, varifrån det varma vattnet kommer."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "What is the line of latitude at about 23 degrees north called?",
+   "fi": "Mikä on noin 23. pohjoisen leveyspiirin nimi?",
+   "sv": "Vad kallas breddgraden vid ungefär 23 grader nord?"
+  },
+  "o": [
+   {
+    "en": "The Tropic of Cancer",
+    "fi": "Kravun kääntöpiiri",
+    "sv": "Kräftans vändkrets"
+   },
+   {
+    "en": "The Tropic of Capricorn",
+    "fi": "Kauriin kääntöpiiri",
+    "sv": "Stenbockens vändkrets"
+   },
+   {
+    "en": "The Arctic Circle",
+    "fi": "Napapiiri",
+    "sv": "Polcirkeln"
+   },
+   {
+    "en": "The equator",
+    "fi": "Päiväntasaaja",
+    "sv": "Ekvatorn"
+   }
+  ],
+  "n": {
+   "en": "It is named after the constellation the Sun stood in at the June solstice some two thousand years ago.",
+   "fi": "Se on nimetty tähdistön mukaan, jossa Aurinko oli kesäpäivänseisauksena noin kaksituhatta vuotta sitten.",
+   "sv": "Den är namngiven efter stjärnbilden där solen stod vid sommarsolståndet för tvåtusen år sedan."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which mountain range separates France from Spain?",
+   "fi": "Mikä vuoristo erottaa Ranskan Espanjasta?",
+   "sv": "Vilken bergskedja skiljer Frankrike från Spanien?"
+  },
+  "o": [
+   {
+    "en": "The Pyrenees",
+    "fi": "Pyreneet",
+    "sv": "Pyrenéerna"
+   },
+   {
+    "en": "The Alps",
+    "fi": "Alpit",
+    "sv": "Alperna"
+   },
+   {
+    "en": "The Apennines",
+    "fi": "Apenniinit",
+    "sv": "Apenninerna"
+   },
+   {
+    "en": "The Cantabrian Mountains",
+    "fi": "Kantabrian vuoristo",
+    "sv": "Kantabriska bergen"
+   }
+  ],
+  "n": {
+   "en": "Andorra sits up in the middle of them, with no airport and no railway of its own.",
+   "fi": "Andorra istuu niiden keskellä ilman omaa lentokenttää ja rautatietä.",
+   "sv": "Andorra ligger uppe i mitten av dem, utan egen flygplats och utan järnväg."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which sea lies between Italy and the Balkans?",
+   "fi": "Mikä meri on Italian ja Balkanin välissä?",
+   "sv": "Vilket hav ligger mellan Italien och Balkan?"
+  },
+  "o": [
+   {
+    "en": "The Adriatic",
+    "fi": "Adrianmeri",
+    "sv": "Adriatiska havet"
+   },
+   {
+    "en": "The Aegean",
+    "fi": "Egeanmeri",
+    "sv": "Egeiska havet"
+   },
+   {
+    "en": "The Tyrrhenian",
+    "fi": "Tyrrhenanmeri",
+    "sv": "Tyrrenska havet"
+   },
+   {
+    "en": "The Ionian",
+    "fi": "Joonianmeri",
+    "sv": "Joniska havet"
+   }
+  ],
+  "n": {
+   "en": "Venice grew rich as the power that controlled it, and called it simply the gulf.",
+   "fi": "Venetsia rikastui sen hallitsijana ja kutsui sitä yksinkertaisesti lahdeksi.",
+   "sv": "Venedig blev rikt som dess herre och kallade det helt enkelt för bukten."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which country has three capital cities?",
+   "fi": "Millä maalla on kolme pääkaupunkia?",
+   "sv": "Vilket land har tre huvudstäder?"
+  },
+  "o": [
+   {
+    "en": "South Africa",
+    "fi": "Etelä-Afrikka",
+    "sv": "Sydafrika"
+   },
+   {
+    "en": "Bolivia",
+    "fi": "Bolivia",
+    "sv": "Bolivia"
+   },
+   {
+    "en": "Switzerland",
+    "fi": "Sveitsi",
+    "sv": "Schweiz"
+   },
+   {
+    "en": "Malaysia",
+    "fi": "Malesia",
+    "sv": "Malaysia"
+   }
+  ],
+  "n": {
+   "en": "Parliament sits in Cape Town, the government in Pretoria and the courts in Bloemfontein.",
+   "fi": "Parlamentti istuu Kapkaupungissa, hallitus Pretoriassa ja oikeuslaitos Bloemfonteinissa.",
+   "sv": "Parlamentet sitter i Kapstaden, regeringen i Pretoria och domstolarna i Bloemfontein."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which city's name comes from the Greek for new city?",
+   "fi": "Minkä kaupungin nimi tulee kreikan sanoista uusi kaupunki?",
+   "sv": "Vilken stads namn kommer från grekiskans nya stad?"
+  },
+  "o": [
+   {
+    "en": "Naples",
+    "fi": "Napoli",
+    "sv": "Neapel"
+   },
+   {
+    "en": "Athens",
+    "fi": "Ateena",
+    "sv": "Aten"
+   },
+   {
+    "en": "Venice",
+    "fi": "Venetsia",
+    "sv": "Venedig"
+   },
+   {
+    "en": "Nice",
+    "fi": "Nizza",
+    "sv": "Nice"
+   }
+  ],
+  "n": {
+   "en": "The Greek Neapolis became Napoli, which makes the new city nearly three thousand years old.",
+   "fi": "Kreikan Neapolis muuttui Napoliksi, joten uusi kaupunki on lähes kolmetuhatta vuotta vanha.",
+   "sv": "Grekiskans Neapolis blev Napoli, vilket gör den nya staden nästan tretusen år gammal."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "The country name Ecuador is the Spanish word for what?",
+   "fi": "Mitä espanjan sana Ecuador tarkoittaa?",
+   "sv": "Vad betyder det spanska ordet Ecuador?"
+  },
+  "o": [
+   {
+    "en": "The equator",
+    "fi": "Päiväntasaajaa",
+    "sv": "Ekvatorn"
+   },
+   {
+    "en": "Gold",
+    "fi": "Kultaa",
+    "sv": "Guld"
+   },
+   {
+    "en": "A volcano",
+    "fi": "Tulivuorta",
+    "sv": "En vulkan"
+   },
+   {
+    "en": "Sunrise",
+    "fi": "Auringonnousua",
+    "sv": "Soluppgång"
+   }
+  ],
+  "n": {
+   "en": "Its capital Quito sits almost on the line, yet never gets hot, because it stands high in the Andes.",
+   "fi": "Sen pääkaupunki Quito on lähes linjalla, mutta siellä ei koskaan ole kuuma, koska se on korkealla Andeilla.",
+   "sv": "Dess huvudstad Quito ligger nästan på linjen men blir aldrig het, eftersom den ligger högt i Anderna."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "What does the country name Argentina mean?",
+   "fi": "Mitä maannimi Argentiina tarkoittaa?",
+   "sv": "Vad betyder landsnamnet Argentina?"
+  },
+  "o": [
+   {
+    "en": "Silver",
+    "fi": "Hopeaa",
+    "sv": "Silver"
+   },
+   {
+    "en": "Gold",
+    "fi": "Kultaa",
+    "sv": "Guld"
+   },
+   {
+    "en": "Wide river",
+    "fi": "Leveää jokea",
+    "sv": "Bred flod"
+   },
+   {
+    "en": "Southern land",
+    "fi": "Eteläistä maata",
+    "sv": "Sydligt land"
+   }
+  ],
+  "n": {
+   "en": "Early Spaniards expected mountains of silver up the river they named the Río de la Plata.",
+   "fi": "Ensimmäiset espanjalaiset odottivat hopeavuoria joen varrelta, jolle he antoivat nimen Río de la Plata.",
+   "sv": "De första spanjorerna väntade sig silverberg uppströms floden de döpte till Río de la Plata."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "What does the word Sahara mean?",
+   "fi": "Mitä sana Sahara tarkoittaa?",
+   "sv": "Vad betyder ordet Sahara?"
+  },
+  "o": [
+   {
+    "en": "Desert",
+    "fi": "Aavikko",
+    "sv": "Öken"
+   },
+   {
+    "en": "Sand",
+    "fi": "Hiekka",
+    "sv": "Sand"
+   },
+   {
+    "en": "Sun",
+    "fi": "Aurinko",
+    "sv": "Sol"
+   },
+   {
+    "en": "Emptiness",
+    "fi": "Tyhjyys",
+    "sv": "Tomhet"
+   }
+  ],
+  "n": {
+   "en": "So anyone who says the Sahara desert is saying the same thing twice over.",
+   "fi": "Niinpä Saharan aavikosta puhuva sanoo saman asian kahdesti.",
+   "sv": "Den som säger Saharaöknen säger alltså samma sak två gånger."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which city's name means the victorious?",
+   "fi": "Minkä kaupungin nimi tarkoittaa voittoisaa?",
+   "sv": "Vilken stads namn betyder den segerrika?"
+  },
+  "o": [
+   {
+    "en": "Cairo",
+    "fi": "Kairo",
+    "sv": "Kairo"
+   },
+   {
+    "en": "Baghdad",
+    "fi": "Bagdad",
+    "sv": "Bagdad"
+   },
+   {
+    "en": "Damascus",
+    "fi": "Damaskos",
+    "sv": "Damaskus"
+   },
+   {
+    "en": "Tunis",
+    "fi": "Tunis",
+    "sv": "Tunis"
+   }
+  ],
+  "n": {
+   "en": "Egyptians mostly call it Masr in everyday speech, which is also their word for the country itself.",
+   "fi": "Egyptiläiset kutsuvat sitä arjessa useimmiten Masriksi, joka on heidän sanansa myös koko maalle.",
+   "sv": "Egyptier kallar den oftast Masr i vardagstal, vilket också är deras ord för hela landet."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which city's name means fragrant harbour?",
+   "fi": "Minkä kaupungin nimi tarkoittaa tuoksuvaa satamaa?",
+   "sv": "Vilken stads namn betyder den doftande hamnen?"
+  },
+  "o": [
+   {
+    "en": "Hong Kong",
+    "fi": "Hongkong",
+    "sv": "Hongkong"
+   },
+   {
+    "en": "Singapore",
+    "fi": "Singapore",
+    "sv": "Singapore"
+   },
+   {
+    "en": "Shanghai",
+    "fi": "Shanghai",
+    "sv": "Shanghai"
+   },
+   {
+    "en": "Macau",
+    "fi": "Macao",
+    "sv": "Macao"
+   }
+  ],
+  "n": {
+   "en": "The scent most likely came from the incense wood that was shipped out through it.",
+   "fi": "Tuoksu tuli mitä todennäköisimmin suitsukepuusta, jota sen kautta vietiin.",
+   "sv": "Doften kom sannolikt från det rökelseträ som skeppades ut genom den."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which capital was formed in 1873 by joining Buda and Pest?",
+   "fi": "Mikä pääkaupunki syntyi vuonna 1873, kun Buda ja Pest yhdistettiin?",
+   "sv": "Vilken huvudstad bildades 1873 när Buda och Pest slogs samman?"
+  },
+  "o": [
+   {
+    "en": "Budapest",
+    "fi": "Budapest",
+    "sv": "Budapest"
+   },
+   {
+    "en": "Belgrade",
+    "fi": "Belgrad",
+    "sv": "Belgrad"
+   },
+   {
+    "en": "Bratislava",
+    "fi": "Bratislava",
+    "sv": "Bratislava"
+   },
+   {
+    "en": "Bucharest",
+    "fi": "Bukarest",
+    "sv": "Bukarest"
+   }
+  ],
+  "n": {
+   "en": "A third town, Óbuda, was folded in at the same time but got no place in the name.",
+   "fi": "Samalla liitettiin mukaan kolmas kaupunki, Óbuda, joka ei päässyt nimeen lainkaan.",
+   "sv": "Samtidigt lades en tredje stad, Óbuda, till utan att få plats i namnet."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which strait separates Sicily from mainland Italy?",
+   "fi": "Mikä salmi erottaa Sisilian Italian mantereesta?",
+   "sv": "Vilket sund skiljer Sicilien från det italienska fastlandet?"
+  },
+  "o": [
+   {
+    "en": "The Strait of Messina",
+    "fi": "Messinansalmi",
+    "sv": "Messinasundet"
+   },
+   {
+    "en": "The Strait of Otranto",
+    "fi": "Otranton salmi",
+    "sv": "Otrantosundet"
+   },
+   {
+    "en": "The Strait of Bonifacio",
+    "fi": "Bonifacion salmi",
+    "sv": "Bonifaciosundet"
+   },
+   {
+    "en": "The Strait of Gibraltar",
+    "fi": "Gibraltarinsalmi",
+    "sv": "Gibraltar sund"
+   }
+  ],
+  "n": {
+   "en": "Greek sailors put the monsters Scylla and Charybdis on its two sides, and the currents really do swirl.",
+   "fi": "Kreikkalaiset merimiehet asettivat Skyllan ja Kharybdiksen sen kahdelle puolelle, ja virrat todella pyörteilevät.",
+   "sv": "Grekiska sjömän placerade Skylla och Charybdis på var sin sida, och strömmarna virvlar verkligen."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "The Canary Islands are usually said to be named after which animal?",
+   "fi": "Minkä eläimen mukaan Kanariansaaret sanotaan yleensä nimetyiksi?",
+   "sv": "Efter vilket djur sägs Kanarieöarna vanligen vara uppkallade?"
+  },
+  "o": [
+   {
+    "en": "Dogs",
+    "fi": "Koirien",
+    "sv": "Hundar"
+   },
+   {
+    "en": "Canary birds",
+    "fi": "Kanarialintujen",
+    "sv": "Kanariefåglar"
+   },
+   {
+    "en": "Goats",
+    "fi": "Vuohien",
+    "sv": "Getter"
+   },
+   {
+    "en": "Seals",
+    "fi": "Hylkeiden",
+    "sv": "Sälar"
+   }
+  ],
+  "n": {
+   "en": "The bird was named after the islands and not the other way round, and the islands belong to Spain.",
+   "fi": "Lintu on nimetty saarten mukaan eikä toisin päin, ja saaret kuuluvat Espanjalle.",
+   "sv": "Fågeln är uppkallad efter öarna och inte omvänt, och öarna tillhör Spanien."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "What does the island name Madeira mean?",
+   "fi": "Mitä saaren nimi Madeira tarkoittaa?",
+   "sv": "Vad betyder önamnet Madeira?"
+  },
+  "o": [
+   {
+    "en": "Timber",
+    "fi": "Puuta",
+    "sv": "Timmer"
+   },
+   {
+    "en": "Honey",
+    "fi": "Hunajaa",
+    "sv": "Honung"
+   },
+   {
+    "en": "Sunshine",
+    "fi": "Auringonpaistetta",
+    "sv": "Solsken"
+   },
+   {
+    "en": "Sugar",
+    "fi": "Sokeria",
+    "sv": "Socker"
+   }
+  ],
+  "n": {
+   "en": "Portuguese sailors found the island under thick forest in the 1420s, and it is Portuguese still.",
+   "fi": "Portugalilaiset merenkulkijat löysivät saaren paksun metsän peitossa 1420-luvulla, ja se on yhä Portugalin.",
+   "sv": "Portugisiska sjöfarare fann ön under tjock skog på 1420-talet, och den är portugisisk ännu."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which is the largest country in Africa by area?",
+   "fi": "Mikä on Afrikan laajin maa?",
+   "sv": "Vilket är Afrikas största land till ytan?"
+  },
+  "o": [
+   {
+    "en": "Algeria",
+    "fi": "Algeria",
+    "sv": "Algeriet"
+   },
+   {
+    "en": "Sudan",
+    "fi": "Sudan",
+    "sv": "Sudan"
+   },
+   {
+    "en": "Libya",
+    "fi": "Libya",
+    "sv": "Libyen"
+   },
+   {
+    "en": "Chad",
+    "fi": "Tšad",
+    "sv": "Tchad"
+   }
+  ],
+  "n": {
+   "en": "It only took the title in 2011, when Sudan split in two and lost the crown.",
+   "fi": "Se sai arvonimen vasta vuonna 2011, kun Sudan halkesi kahtia ja menetti kärkipaikan.",
+   "sv": "Landet tog titeln först 2011, när Sudan delades i två och förlorade förstaplatsen."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which Alpine pass carries the main road and rail route from Austria into Italy?",
+   "fi": "Mikä Alppien sola kantaa pääasiallisen tie- ja rautatiereitin Itävallasta Italiaan?",
+   "sv": "Vilket alppass bär huvudvägen och järnvägen från Österrike till Italien?"
+  },
+  "o": [
+   {
+    "en": "The Brenner Pass",
+    "fi": "Brennerin sola",
+    "sv": "Brennerpasset"
+   },
+   {
+    "en": "The St Gotthard Pass",
+    "fi": "Gotthardin sola",
+    "sv": "Gotthardpasset"
+   },
+   {
+    "en": "The Great St Bernard Pass",
+    "fi": "Suuri Pyhän Bernhardin sola",
+    "sv": "Stora Sankt Bernhardspasset"
+   },
+   {
+    "en": "The Simplon Pass",
+    "fi": "Simplonin sola",
+    "sv": "Simplonpasset"
+   }
+  ],
+  "n": {
+   "en": "At under 1,400 metres it is one of the lowest ways across the main Alpine chain, which is why Roman roads used it.",
+   "fi": "Vain noin 1 400 metrin korkeudessa se on yksi matalimmista reiteistä Alppien pääharjanteen yli, ja siksi roomalaiset tiet kulkivat siitä.",
+   "sv": "På under 1 400 meter är det en av de lägsta vägarna över Alpernas huvudkedja, därför gick romarvägarna där."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which port grew into one of the world's busiest at the mouth of the Rhine?",
+   "fi": "Mikä satama kasvoi maailman vilkkaimpiin Reinin suulla?",
+   "sv": "Vilken hamn växte till en av världens livligaste vid Rhens mynning?"
+  },
+  "o": [
+   {
+    "en": "Rotterdam",
+    "fi": "Rotterdam",
+    "sv": "Rotterdam"
+   },
+   {
+    "en": "Antwerp",
+    "fi": "Antwerpen",
+    "sv": "Antwerpen"
+   },
+   {
+    "en": "Hamburg",
+    "fi": "Hampuri",
+    "sv": "Hamburg"
+   },
+   {
+    "en": "Amsterdam",
+    "fi": "Amsterdam",
+    "sv": "Amsterdam"
+   }
+  ],
+  "n": {
+   "en": "Its old centre was bombed flat in 1940, which is why the city looks so startlingly modern today.",
+   "fi": "Sen vanha keskusta pommitettiin maan tasalle vuonna 1940, ja siksi kaupunki näyttää nykyään yllättävän modernilta.",
+   "sv": "Dess gamla centrum bombades sönder 1940, därför ser staden i dag så förvånansvärt modern ut."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which mountain range runs down the spine of Italy?",
+   "fi": "Mikä vuoristo kulkee Italian selkärankana?",
+   "sv": "Vilken bergskedja löper längs Italiens rygg?"
+  },
+  "o": [
+   {
+    "en": "The Apennines",
+    "fi": "Apenniinit",
+    "sv": "Apenninerna"
+   },
+   {
+    "en": "The Dolomites",
+    "fi": "Dolomiitit",
+    "sv": "Dolomiterna"
+   },
+   {
+    "en": "The Carpathians",
+    "fi": "Karpaatit",
+    "sv": "Karpaterna"
+   },
+   {
+    "en": "The Pindus",
+    "fi": "Pindos",
+    "sv": "Pindos"
+   }
+  ],
+  "n": {
+   "en": "The name is thought to come from a Celtic root meaning mountain top.",
+   "fi": "Nimen arvellaan tulevan kelttiläisestä sanajuuresta, joka tarkoittaa vuoren huippua.",
+   "sv": "Namnet tros komma från en keltisk rot som betyder bergstopp."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Most of Bangladesh sits on the delta of which two rivers?",
+   "fi": "Minkä kahden joen suistossa suurin osa Bangladeshista sijaitsee?",
+   "sv": "På vilka två floders delta ligger större delen av Bangladesh?"
+  },
+  "o": [
+   {
+    "en": "The Ganges and the Brahmaputra",
+    "fi": "Gangesin ja Brahmaputran",
+    "sv": "Ganges och Brahmaputra"
+   },
+   {
+    "en": "The Indus and the Sutlej",
+    "fi": "Indus-joen ja Sutlejin",
+    "sv": "Indus och Sutlej"
+   },
+   {
+    "en": "The Mekong and the Red River",
+    "fi": "Mekongin ja Punaisenjoen",
+    "sv": "Mekong och Röda floden"
+   },
+   {
+    "en": "The Irrawaddy and the Salween",
+    "fi": "Irrawaddyn ja Salweenin",
+    "sv": "Irrawaddy och Salween"
+   }
+  ],
+  "n": {
+   "en": "It is the largest river delta in the world, which is why so much of the country floods every monsoon.",
+   "fi": "Se on maailman suurin jokisuisto, ja siksi niin suuri osa maasta tulvii joka monsuunilla.",
+   "sv": "Det är världens största floddelta, därför översvämmas så mycket av landet varje monsun."
+  }
+ }
+]

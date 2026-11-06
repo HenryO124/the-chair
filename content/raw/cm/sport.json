@@ -1,0 +1,251 @@
+[
+{"cat":"Sport",
+ "q":{"en":"How many Olympic gold medals did the runner Paavo Nurmi win?","fi":"Kuinka monta olympiakultaa juoksija Paavo Nurmi voitti?","sv":"Hur många OS-guld vann löparen Paavo Nurmi?"},
+ "o":[{"en":"Nine","fi":"Yhdeksän","sv":"Nio"},{"en":"Five","fi":"Viisi","sv":"Fem"},{"en":"Seven","fi":"Seitsemän","sv":"Sju"},{"en":"Twelve","fi":"Kaksitoista","sv":"Tolv"}],
+ "n":{"en":"He opened the 1952 Helsinki Games by lighting the cauldron, then handed the torch on to Hannes Kolehmainen, who lit the beacon up in the tower.","fi":"Hän avasi Helsingin kisat 1952 sytyttämällä maljan ja ojensi soihdun Hannes Kolehmaiselle, joka sytytti tulen tornin huipulla.","sv":"Han invigde Helsingforsspelen 1952 genom att tända elden i skålen och lämnade sedan facklan till Hannes Kolehmainen, som tände lågan uppe i tornet."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which Nordic city hosted the 1952 Summer Olympics?","fi":"Mikä pohjoismainen kaupunki järjesti kesäolympialaiset 1952?","sv":"Vilken nordisk stad stod värd för sommarolympiaden 1952?"},
+ "o":[{"en":"Helsinki","fi":"Helsinki","sv":"Helsingfors"},{"en":"Stockholm","fi":"Tukholma","sv":"Stockholm"},{"en":"Oslo","fi":"Oslo","sv":"Oslo"},{"en":"Copenhagen","fi":"Kopenhamina","sv":"Köpenhamn"}],
+ "n":{"en":"Helsinki had also been awarded the 1940 Games, which were cancelled because of the war.","fi":"Helsingille oli myönnetty myös vuoden 1940 kisat, jotka peruttiin sodan vuoksi.","sv":"Helsingfors hade också fått 1940 års spel, som ställdes in på grund av kriget."}},
+
+{"cat":"Sport",
+ "q":{"en":"How tall is the tower of the Helsinki Olympic Stadium?","fi":"Kuinka korkea on Helsingin olympiastadionin torni?","sv":"Hur högt är tornet vid Helsingfors olympiastadion?"},
+ "o":[{"en":"72.71 m","fi":"72,71 m","sv":"72,71 m"},{"en":"52.71 m","fi":"52,71 m","sv":"52,71 m"},{"en":"62.71 m","fi":"62,71 m","sv":"62,71 m"},{"en":"82.71 m","fi":"82,71 m","sv":"82,71 m"}],
+ "n":{"en":"It matches the length of Matti Järvinen's gold medal javelin throw at the 1932 Olympics.","fi":"Se vastaa Matti Järvisen olympiavoittoheiton pituutta vuoden 1932 kisoissa.","sv":"Det motsvarar längden på Matti Järvinens guldkast i spjut vid OS 1932."}},
+
+{"cat":"Sport",
+ "q":{"en":"Who invented pesäpallo, Finnish baseball?","fi":"Kuka kehitti pesäpallon?","sv":"Vem skapade boboll, den finska bollsporten?"},
+ "o":[{"en":"Lauri \"Tahko\" Pihkala","fi":"Lauri \"Tahko\" Pihkala","sv":"Lauri \"Tahko\" Pihkala"},{"en":"Ville Ritola","fi":"Ville Ritola","sv":"Ville Ritola"},{"en":"Matti Järvinen","fi":"Matti Järvinen","sv":"Matti Järvinen"},{"en":"Hannes Kolehmainen","fi":"Hannes Kolehmainen","sv":"Hannes Kolehmainen"}],
+ "n":{"en":"The first game was played in Kaisaniemi park in Helsinki in November 1920.","fi":"Ensimmäinen peli pelattiin Helsingin Kaisaniemen puistossa marraskuussa 1920.","sv":"Den första matchen spelades i Kajsaniemiparken i Helsingfors i november 1920."}},
+
+{"cat":"Sport",
+ "q":{"en":"In pesäpallo, which way does the pitcher throw the ball?","fi":"Mihin suuntaan pesäpallon syöttäjä heittää pallon?","sv":"I vilken riktning kastar mataren bollen i boboll?"},
+ "o":[{"en":"Straight up","fi":"Suoraan ylös","sv":"Rakt upp"},{"en":"Along the ground","fi":"Pitkin maata","sv":"Längs marken"},{"en":"Sideways past the batter","fi":"Sivulta lyöjän ohi","sv":"Från sidan förbi slagmannen"},{"en":"Overarm at the batter","fi":"Yläkautta lyöjää kohti","sv":"Överarm mot slagmannen"}],
+ "n":{"en":"It has to rise at least a metre above the pitcher's head and come down on the plate.","fi":"Pallon on noustava vähintään metrin syöttäjän pään yläpuolelle ja laskeuduttava lautaselle.","sv":"Bollen måste stiga minst en meter över matarens huvud och landa på plattan."}},
+
+{"cat":"Sport",
+ "q":{"en":"How many field bases does a pesäpallo field have?","fi":"Kuinka monta pesää pesäpallokentällä on kotipesän lisäksi?","sv":"Hur många baser utöver hemmaplattan finns på en bobollsplan?"},
+ "o":[{"en":"Three","fi":"Kolme","sv":"Tre"},{"en":"Two","fi":"Kaksi","sv":"Två"},{"en":"Four","fi":"Neljä","sv":"Fyra"},{"en":"Five","fi":"Viisi","sv":"Fem"}],
+ "n":{"en":"They zig-zag across the field instead of forming a diamond, and a ball hit over the back line is a foul, so there are no home runs.","fi":"Pesät sijaitsevat siksakissa eivätkä timanttina, ja takarajan yli lyöty pallo on virhe, joten kunnareita ei ole.","sv":"Baserna ligger i sicksack i stället för i en diamant, och en boll som slås över baklinjen är fel, så det finns inga homeruns."}},
+
+{"cat":"Sport",
+ "q":{"en":"In which Finnish village are the Wife Carrying World Championships held?","fi":"Missä suomalaisessa kunnassa järjestetään eukonkannon maailmanmestaruuskilpailut?","sv":"I vilken finsk by hålls VM i hustrubärning?"},
+ "o":[{"en":"Sonkajärvi","fi":"Sonkajärvi","sv":"Sonkajärvi"},{"en":"Nurmes","fi":"Nurmes","sv":"Nurmes"},{"en":"Ilomantsi","fi":"Ilomantsi","sv":"Ilomants"},{"en":"Sodankylä","fi":"Sodankylä","sv":"Sodankylä"}],
+ "n":{"en":"The course is 253.5 metres long and includes a water obstacle about a metre deep.","fi":"Rata on 253,5 metriä pitkä ja siihen kuuluu noin metrin syvyinen vesieste.","sv":"Banan är 253,5 meter lång och innehåller ett vattenhinder som är ungefär en meter djupt."}},
+
+{"cat":"Sport",
+ "q":{"en":"How many Olympic gold medals did the ski jumper Matti Nykänen win?","fi":"Kuinka monta olympiakultaa mäkihyppääjä Matti Nykänen voitti?","sv":"Hur många OS-guld vann backhopparen Matti Nykänen?"},
+ "o":[{"en":"Four","fi":"Neljä","sv":"Fyra"},{"en":"Two","fi":"Kaksi","sv":"Två"},{"en":"Three","fi":"Kolme","sv":"Tre"},{"en":"Six","fi":"Kuusi","sv":"Sex"}],
+ "n":{"en":"Three of them came at the 1988 Calgary Games alone.","fi":"Kolme niistä tuli yksin Calgaryn kisoissa 1988.","sv":"Tre av dem kom under enbart Calgaryspelen 1988."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which Finn won the Olympic javelin title in 1948 and later became a much-loved singer?","fi":"Kuka suomalainen voitti keihäänheiton olympiakullan 1948 ja nousi myöhemmin rakastetuksi laulajaksi?","sv":"Vilken finländare vann OS-guld i spjut 1948 och blev senare en folkkär sångare?"},
+ "o":[{"en":"Tapio Rautavaara","fi":"Tapio Rautavaara","sv":"Tapio Rautavaara"},{"en":"Matti Järvinen","fi":"Matti Järvinen","sv":"Matti Järvinen"},{"en":"Yrjö Nikkanen","fi":"Yrjö Nikkanen","sv":"Yrjö Nikkanen"},{"en":"Toivo Hyytiäinen","fi":"Toivo Hyytiäinen","sv":"Toivo Hyytiäinen"}],
+ "n":{"en":"He also took a team gold at the world archery championships ten years later.","fi":"Hän voitti vielä kymmenen vuotta myöhemmin joukkuekultaa jousiammunnan MM-kilpailuissa.","sv":"Tio år senare tog han dessutom lagguld i VM i bågskytte."}},
+
+{"cat":"Sport",
+ "q":{"en":"By what margin did Juha Mieto lose the Olympic 15 km cross-country race in 1980?","fi":"Kuinka pienellä erolla Juha Mieto hävisi olympialaisten 15 kilometrin hiihdon 1980?","sv":"Med vilken marginal förlorade Juha Mieto OS-loppet på 15 km 1980?"},
+ "o":[{"en":"One hundredth of a second","fi":"Sadasosasekunti","sv":"En hundradels sekund"},{"en":"One tenth of a second","fi":"Kymmenesosasekunti","sv":"En tiondels sekund"},{"en":"One second","fi":"Sekunti","sv":"En sekund"},{"en":"Four seconds","fi":"Neljä sekuntia","sv":"Fyra sekunder"}],
+ "n":{"en":"Right afterwards the sport switched to timing cross-country races in tenths of a second.","fi":"Heti sen jälkeen hiihdossa siirryttiin kymmenesosasekunnin tarkkuuteen.","sv":"Strax därefter gick längdskidåkningen över till att ta tid i tiondels sekunder."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which country did Finland beat in the 1995 ice hockey world championship final?","fi":"Minkä maan Suomi voitti jääkiekon MM-finaalissa 1995?","sv":"Vilket land besegrade Finland i VM-finalen i ishockey 1995?"},
+ "o":[{"en":"Sweden","fi":"Ruotsi","sv":"Sverige"},{"en":"Russia","fi":"Venäjä","sv":"Ryssland"},{"en":"Canada","fi":"Kanada","sv":"Kanada"},{"en":"The Czech Republic","fi":"Tšekki","sv":"Tjeckien"}],
+ "n":{"en":"Finland won 4-1, and did it in Stockholm, in Sweden's own arena.","fi":"Suomi voitti 4-1, ja vieläpä Tukholmassa, Ruotsin omassa hallissa.","sv":"Finland vann 4-1, och det i Stockholm, i Sveriges egen arena."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which Finnish city is the home of Rally Finland?","fi":"Mikä suomalainen kaupunki on Rally Finlandin kotipaikka?","sv":"Vilken finsk stad är hemort för Rally Finland?"},
+ "o":[{"en":"Jyväskylä","fi":"Jyväskylä","sv":"Jyväskylä"},{"en":"Tampere","fi":"Tampere","sv":"Tammerfors"},{"en":"Kuopio","fi":"Kuopio","sv":"Kuopio"},{"en":"Lahti","fi":"Lahti","sv":"Lahtis"}],
+ "n":{"en":"It was first run in 1951 as the Jyväskylä Grand Prix, and was long known as the Rally of the Thousand Lakes.","fi":"Se ajettiin ensi kerran 1951 Jyväskylän Suurajoina ja tunnettiin pitkään Tuhannen järven rallina.","sv":"Det kördes första gången 1951 som Jyväskylän Suurajot och kallades länge De tusen sjöarnas rally."}},
+
+{"cat":"Sport",
+ "q":{"en":"What score do you need to win a game of mölkky?","fi":"Mihin pistemäärään mölkyssä on päästävä tasan voittaakseen?","sv":"Vilken poängsumma måste man nå exakt för att vinna i mölkky?"},
+ "o":[{"en":"Exactly 50","fi":"Tasan 50","sv":"Exakt 50"},{"en":"Exactly 21","fi":"Tasan 21","sv":"Exakt 21"},{"en":"Exactly 40","fi":"Tasan 40","sv":"Exakt 40"},{"en":"Exactly 100","fi":"Tasan 100","sv":"Exakt 100"}],
+ "n":{"en":"Go over the total and your score drops back down to 25.","fi":"Jos menee yli, pisteet putoavat takaisin 25:een.","sv":"Går man över faller poängen tillbaka till 25."}},
+
+{"cat":"Sport",
+ "q":{"en":"How many numbered pins are used in mölkky?","fi":"Kuinka monta numeroitua keilaa mölkyssä on?","sv":"Hur många numrerade pinnar används i mölkky?"},
+ "o":[{"en":"Twelve","fi":"Kaksitoista","sv":"Tolv"},{"en":"Nine","fi":"Yhdeksän","sv":"Nio"},{"en":"Ten","fi":"Kymmenen","sv":"Tio"},{"en":"Fifteen","fi":"Viisitoista","sv":"Femton"}],
+ "n":{"en":"Knock over several pins at once and you score the number of pins, not the numbers written on them.","fi":"Jos kaatuu useita keiloja, pisteitä tulee keilojen lukumäärä eikä niissä olevat numerot.","sv":"Fäller man flera pinnar samtidigt får man poäng för antalet pinnar, inte för siffrorna på dem."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which city hosted the 1912 Summer Olympics?","fi":"Mikä kaupunki järjesti kesäolympialaiset 1912?","sv":"Vilken stad stod värd för sommarolympiaden 1912?"},
+ "o":[{"en":"Stockholm","fi":"Tukholma","sv":"Stockholm"},{"en":"Antwerp","fi":"Antwerpen","sv":"Antwerpen"},{"en":"Paris","fi":"Pariisi","sv":"Paris"},{"en":"Berlin","fi":"Berliini","sv":"Berlin"}],
+ "n":{"en":"Hannes Kolehmainen won three golds there, the first of the Flying Finns.","fi":"Hannes Kolehmainen voitti siellä kolme kultaa ensimmäisenä lentävänä suomalaisena.","sv":"Hannes Kolehmainen tog tre guld där, den förste av de flygande finnarna."}},
+
+{"cat":"Sport",
+ "q":{"en":"How long is the Swedish ski race Vasaloppet?","fi":"Kuinka pitkä on ruotsalainen hiihtokilpailu Vasaloppet?","sv":"Hur långt är Vasaloppet?"},
+ "o":[{"en":"90 km","fi":"90 km","sv":"90 km"},{"en":"50 km","fi":"50 km","sv":"50 km"},{"en":"70 km","fi":"70 km","sv":"70 km"},{"en":"120 km","fi":"120 km","sv":"120 km"}],
+ "n":{"en":"It runs from Sälen to Mora and recalls Gustav Vasa's flight through Dalarna around 1520; the first race was held in 1922.","fi":"Se hiihdetään Säleniltä Moraan ja muistuttaa Kustaa Vaasan paosta Taalainmaan halki noin 1520; ensimmäinen kilpailu hiihdettiin 1922.","sv":"Det går från Sälen till Mora och påminner om Gustav Vasas flykt genom Dalarna kring 1520; det första loppet kördes 1922."}},
+
+{"cat":"Sport",
+ "q":{"en":"In which city is the Holmenkollen ski arena?","fi":"Missä kaupungissa Holmenkollenin hiihtostadion on?","sv":"I vilken stad ligger skidarenan Holmenkollen?"},
+ "o":[{"en":"Oslo","fi":"Oslo","sv":"Oslo"},{"en":"Stockholm","fi":"Tukholma","sv":"Stockholm"},{"en":"Trondheim","fi":"Trondheim","sv":"Trondheim"},{"en":"Lillehammer","fi":"Lillehammer","sv":"Lillehammer"}],
+ "n":{"en":"A ski festival has been held there every year since 1892, apart from one gap and the war years.","fi":"Siellä on järjestetty hiihtojuhlat vuosittain jo vuodesta 1892, yhtä väliin jäänyttä vuotta ja sotavuosia lukuun ottamatta.","sv":"Där har en skidfest hållits varje år sedan 1892, bortsett från ett enda år och krigsåren."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which Norwegian town hosted the 1994 Winter Olympics?","fi":"Mikä norjalainen kaupunki järjesti talviolympialaiset 1994?","sv":"Vilken norsk stad stod värd för vinterolympiaden 1994?"},
+ "o":[{"en":"Lillehammer","fi":"Lillehammer","sv":"Lillehammer"},{"en":"Oslo","fi":"Oslo","sv":"Oslo"},{"en":"Trondheim","fi":"Trondheim","sv":"Trondheim"},{"en":"Bergen","fi":"Bergen","sv":"Bergen"}],
+ "n":{"en":"Oslo had hosted the Winter Games back in 1952, the same year Helsinki hosted the Summer Games.","fi":"Oslo oli järjestänyt talvikisat jo 1952, samana vuonna kun Helsinki järjesti kesäkisat.","sv":"Oslo hade stått värd för vinterspelen redan 1952, samma år som Helsingfors hade sommarspelen."}},
+
+{"cat":"Sport",
+ "q":{"en":"How long is a marathon?","fi":"Kuinka pitkä on maraton?","sv":"Hur långt är ett maratonlopp?"},
+ "o":[{"en":"42.195 km","fi":"42,195 km","sv":"42,195 km"},{"en":"40.000 km","fi":"40,000 km","sv":"40,000 km"},{"en":"41.195 km","fi":"41,195 km","sv":"41,195 km"},{"en":"45.000 km","fi":"45,000 km","sv":"45,000 km"}],
+ "n":{"en":"The odd figure comes from the 1908 London course, from Windsor Castle to the royal box, and was fixed as the standard in 1921.","fi":"Omituinen luku on peräisin Lontoon 1908 radalta, joka kulki Windsorin linnasta kuninkaalliselle katsomoon, ja se vahvistettiin viralliseksi 1921.","sv":"Den udda siffran kommer från Londonbanan 1908, från Windsor Castle till den kungliga logen, och fastställdes som standard 1921."}},
+
+{"cat":"Sport",
+ "q":{"en":"Who invented basketball?","fi":"Kuka kehitti koripallon?","sv":"Vem uppfann basket?"},
+ "o":[{"en":"James Naismith","fi":"James Naismith","sv":"James Naismith"},{"en":"Walter Camp","fi":"Walter Camp","sv":"Walter Camp"},{"en":"Abner Doubleday","fi":"Abner Doubleday","sv":"Abner Doubleday"},{"en":"William G. Morgan","fi":"William G. Morgan","sv":"William G. Morgan"}],
+ "n":{"en":"He nailed two peach baskets to a gym balcony in Springfield in 1891, and someone had to fetch a ladder after every basket.","fi":"Hän naulasi kaksi persikkakoria salin parvekkeen kaiteeseen Springfieldissä 1891, ja joka korin jälkeen oli haettava tikkaat.","sv":"Han spikade upp två persikokorgar på en gymnastiksalsbalkong i Springfield 1891, och efter varje korg fick någon hämta en stege."}},
+
+{"cat":"Sport",
+ "q":{"en":"How high is a basketball hoop?","fi":"Kuinka korkealla on koripallokori?","sv":"Hur högt sitter en basketkorg?"},
+ "o":[{"en":"3.05 m","fi":"3,05 m","sv":"3,05 m"},{"en":"2.75 m","fi":"2,75 m","sv":"2,75 m"},{"en":"3.25 m","fi":"3,25 m","sv":"3,25 m"},{"en":"3.50 m","fi":"3,50 m","sv":"3,50 m"}],
+ "n":{"en":"It is exactly ten feet, because that was the height of the running-track railing the first baskets were hung on.","fi":"Se on tasan kymmenen jalkaa, koska juoksuradan kaide, johon ensimmäiset korit ripustettiin, oli sillä korkeudella.","sv":"Det är exakt tio fot, för så högt satt räcket till löparbanan där de första korgarna hängdes upp."}},
+
+{"cat":"Sport",
+ "q":{"en":"How far is the penalty spot from the goal line in football?","fi":"Kuinka kaukana rangaistuspotkupiste on maaliviivasta jalkapallossa?","sv":"Hur långt från mållinjen ligger straffpunkten i fotboll?"},
+ "o":[{"en":"11 m","fi":"11 m","sv":"11 m"},{"en":"9 m","fi":"9 m","sv":"9 m"},{"en":"12 m","fi":"12 m","sv":"12 m"},{"en":"15 m","fi":"15 m","sv":"15 m"}],
+ "n":{"en":"That is twelve yards, and the penalty kick was only written into the laws of the game in 1891.","fi":"Se on kaksitoista jaardia, ja rangaistuspotku kirjattiin sääntöihin vasta 1891.","sv":"Det är tolv yards, och straffsparken skrevs in i reglerna först 1891."}},
+
+{"cat":"Sport",
+ "q":{"en":"How wide is a football goal?","fi":"Kuinka leveä on jalkapallomaali?","sv":"Hur brett är ett fotbollsmål?"},
+ "o":[{"en":"7.32 m","fi":"7,32 m","sv":"7,32 m"},{"en":"6.40 m","fi":"6,40 m","sv":"6,40 m"},{"en":"8.00 m","fi":"8,00 m","sv":"8,00 m"},{"en":"9.15 m","fi":"9,15 m","sv":"9,15 m"}],
+ "n":{"en":"Eight yards between the posts, with the crossbar 2.44 metres up.","fi":"Kahdeksan jaardia tolppien väliä, ja poikkipuu 2,44 metrin korkeudella.","sv":"Åtta yards mellan stolparna, med ribban 2,44 meter upp."}},
+
+{"cat":"Sport",
+ "q":{"en":"In which country was the first football World Cup played?","fi":"Missä maassa pelattiin jalkapallon ensimmäiset MM-kilpailut?","sv":"I vilket land spelades det första fotbolls-VM?"},
+ "o":[{"en":"Uruguay","fi":"Uruguay","sv":"Uruguay"},{"en":"Brazil","fi":"Brasilia","sv":"Brasilien"},{"en":"Italy","fi":"Italia","sv":"Italien"},{"en":"France","fi":"Ranska","sv":"Frankrike"}],
+ "n":{"en":"Uruguay hosted it in 1930 and won it, beating Argentina 4-2; thirteen teams took part and it is the only World Cup with no qualifying round.","fi":"Uruguay isännöi kisoja 1930 ja voitti ne kaataen Argentiinan 4-2; mukana oli kolmetoista maata, eikä karsintoja pelattu kertaakaan muissa kisoissa.","sv":"Uruguay var värd 1930 och vann genom att slå Argentina 4-2; tretton lag deltog och det är det enda VM utan kvalspel."}},
+
+{"cat":"Sport",
+ "q":{"en":"At which World Cup were yellow and red cards first used?","fi":"Missä jalkapallon MM-kilpailuissa otettiin keltaiset ja punaiset kortit ensi kerran käyttöön?","sv":"I vilket fotbolls-VM användes gula och röda kort för första gången?"},
+ "o":[{"en":"Mexico 1970","fi":"Meksiko 1970","sv":"Mexiko 1970"},{"en":"Sweden 1958","fi":"Ruotsi 1958","sv":"Sverige 1958"},{"en":"England 1966","fi":"Englanti 1966","sv":"England 1966"},{"en":"West Germany 1974","fi":"Länsi-Saksa 1974","sv":"Västtyskland 1974"}],
+ "n":{"en":"An English referee took the idea from traffic lights, so that a decision would be understood in any language.","fi":"Englantilainen erotuomari sai idean liikennevaloista, jotta päätös ymmärrettäisiin kielestä riippumatta.","sv":"En engelsk domare fick idén från trafikljus, så att ett beslut skulle förstås oavsett språk."}},
+
+{"cat":"Sport",
+ "q":{"en":"On which surface is Wimbledon played?","fi":"Millä alustalla Wimbledon pelataan?","sv":"På vilket underlag spelas Wimbledon?"},
+ "o":[{"en":"Grass","fi":"Ruoho","sv":"Gräs"},{"en":"Clay","fi":"Savi","sv":"Grus"},{"en":"Hard court","fi":"Kovakenttä","sv":"Hardcourt"},{"en":"Carpet","fi":"Matto","sv":"Matta"}],
+ "n":{"en":"First played in 1877, it is the oldest tennis tournament in the world and the only Grand Slam still on natural grass.","fi":"Se pelattiin ensi kerran 1877 ja on maailman vanhin tennisturnaus sekä ainoa Grand Slam yhä luonnonruoholla.","sv":"Den spelades första gången 1877 och är världens äldsta tennisturnering och den enda Grand Slam som fortfarande spelas på naturgräs."}},
+
+{"cat":"Sport",
+ "q":{"en":"On which surface is the French Open played?","fi":"Millä alustalla Ranskan avoimet pelataan?","sv":"På vilket underlag spelas Franska öppna?"},
+ "o":[{"en":"Clay","fi":"Savi","sv":"Grus"},{"en":"Grass","fi":"Ruoho","sv":"Gräs"},{"en":"Hard court","fi":"Kovakenttä","sv":"Hardcourt"},{"en":"Indoor wood","fi":"Sisähallin parketti","sv":"Trägolv inomhus"}],
+ "n":{"en":"The red is only a few millimetres of crushed brick over white limestone, and the stadium is named after an aviator, not a tennis player.","fi":"Punainen pinta on vain muutaman millimetrin kerros tiilijauhetta valkoisen kalkkikiven päällä, ja stadion on nimetty lentäjän eikä tennispelaajan mukaan.","sv":"Det röda är bara några millimeter krossat tegel ovanpå vit kalksten, och stadion är uppkallad efter en flygare, inte en tennisspelare."}},
+
+{"cat":"Sport",
+ "q":{"en":"In tennis, what is a score of zero called?","fi":"Mitä nollapistettä tenniksessä kutsutaan?","sv":"Vad kallas noll poäng i tennis?"},
+ "o":[{"en":"Love","fi":"Love","sv":"Love"},{"en":"Duck","fi":"Duck","sv":"Duck"},{"en":"Nil","fi":"Nil","sv":"Nil"},{"en":"Blank","fi":"Blank","sv":"Blank"}],
+ "n":{"en":"One explanation traces it to the French l'oeuf, an egg, for the shape of a nought.","fi":"Yhden selityksen mukaan se tulee ranskan sanasta l'oeuf, muna, nollan muodon mukaan.","sv":"En förklaring är franska l'oeuf, ett ägg, efter nollans form."}},
+
+{"cat":"Sport",
+ "q":{"en":"How many holes does a full round of golf have?","fi":"Kuinka monta reikää täydellä golfkierroksella on?","sv":"Hur många hål har en full golfrunda?"},
+ "o":[{"en":"18","fi":"18","sv":"18"},{"en":"12","fi":"12","sv":"12"},{"en":"16","fi":"16","sv":"16"},{"en":"20","fi":"20","sv":"20"}],
+ "n":{"en":"St Andrews cut its course from 22 holes to 18 in 1764, and the rest of the world followed.","fi":"St Andrews supisti kenttänsä 22 reiästä 18:aan vuonna 1764, ja muu maailma seurasi perässä.","sv":"St Andrews minskade sin bana från 22 hål till 18 år 1764, och resten av världen följde efter."}},
+
+{"cat":"Sport",
+ "q":{"en":"What is the diameter of a golf hole?","fi":"Mikä on golfreiän halkaisija?","sv":"Vilken diameter har ett golfhål?"},
+ "o":[{"en":"108 mm","fi":"108 mm","sv":"108 mm"},{"en":"88 mm","fi":"88 mm","sv":"88 mm"},{"en":"128 mm","fi":"128 mm","sv":"128 mm"},{"en":"150 mm","fi":"150 mm","sv":"150 mm"}],
+ "n":{"en":"That is 4.25 inches, said to come from the width of a piece of drainpipe used to line the first cups.","fi":"Se on 4,25 tuumaa, ja mitan kerrotaan tulevan viemäriputken pätkästä, jolla ensimmäiset reiät vuorattiin.","sv":"Det är 4,25 tum, och måttet sägs komma från en bit avloppsrör som användes att klä de första hålen med."}},
+
+{"cat":"Sport",
+ "q":{"en":"How many players from each team are on the ice in ice hockey?","fi":"Kuinka monta pelaajaa kummallakin joukkueella on kerrallaan jäällä jääkiekossa?","sv":"Hur många spelare per lag är på isen i ishockey?"},
+ "o":[{"en":"Six","fi":"Kuusi","sv":"Sex"},{"en":"Five","fi":"Viisi","sv":"Fem"},{"en":"Seven","fi":"Seitsemän","sv":"Sju"},{"en":"Eleven","fi":"Yksitoista","sv":"Elva"}],
+ "n":{"en":"Five skaters and a goaltender, and a game is three periods of twenty minutes of actual play.","fi":"Viisi kentällistä ja maalivahti, ja peli käsittää kolme kahdenkymmenen minuutin erää tehokasta peliaikaa.","sv":"Fem utespelare och en målvakt, och matchen är tre perioder på tjugo minuters effektiv speltid."}},
+
+{"cat":"Sport",
+ "q":{"en":"How many events make up the decathlon?","fi":"Kuinka monta lajia kymmenottelussa on?","sv":"Hur många grenar består tiokampen av?"},
+ "o":[{"en":"Ten","fi":"Kymmenen","sv":"Tio"},{"en":"Seven","fi":"Seitsemän","sv":"Sju"},{"en":"Eight","fi":"Kahdeksan","sv":"Åtta"},{"en":"Twelve","fi":"Kaksitoista","sv":"Tolv"}],
+ "n":{"en":"They are spread over two days and end with the 1500 metres; the women's heptathlon has seven.","fi":"Lajit jakautuvat kahdelle päivälle ja päättyvät 1500 metriin; naisten seitsenottelussa on seitsemän lajia.","sv":"Grenarna fördelas på två dagar och avslutas med 1500 meter; damernas sjukamp har sju grenar."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which high jump technique is named after the American who won Olympic gold with it in 1968?","fi":"Mikä korkeushypyn tekniikka on nimetty amerikkalaisen mukaan, joka voitti sillä olympiakultaa 1968?","sv":"Vilken höjdhoppsteknik är uppkallad efter amerikanen som vann OS-guld med den 1968?"},
+ "o":[{"en":"The Fosbury Flop","fi":"Fosbury-flop","sv":"Fosburyflopp"},{"en":"The Western roll","fi":"Western roll","sv":"Western roll"},{"en":"The scissors","fi":"Saksihyppy","sv":"Saxhopp"},{"en":"The straddle","fi":"Vatsatyyli","sv":"Dykstil"}],
+ "n":{"en":"He cleared 2.24 m going over backwards, and by the 1972 Games most of the field jumped that way.","fi":"Hän ylitti 2,24 metriä selkä edellä, ja vuoden 1972 kisoissa suurin osa kilpailijoista hyppäsi samalla tavalla.","sv":"Han klarade 2,24 m med ryggen först, och vid spelen 1972 hoppade större delen av fältet på samma sätt."}},
+
+{"cat":"Sport",
+ "q":{"en":"How heavy is the shot in the men's shot put?","fi":"Kuinka painava on kuula miesten kuulantyönnössä?","sv":"Hur tung är kulan i herrarnas kulstötning?"},
+ "o":[{"en":"7.26 kg","fi":"7,26 kg","sv":"7,26 kg"},{"en":"5.00 kg","fi":"5,00 kg","sv":"5,00 kg"},{"en":"6.00 kg","fi":"6,00 kg","sv":"6,00 kg"},{"en":"10.00 kg","fi":"10,00 kg","sv":"10,00 kg"}],
+ "n":{"en":"That is sixteen pounds; the women's shot weighs 4 kg, and the rules say the shot must be pushed from the shoulder rather than thrown.","fi":"Se on kuusitoista paunaa; naisten kuula painaa 4 kg, ja sääntöjen mukaan kuula on työnnettävä olkapäältä eikä heitettävä.","sv":"Det är sexton pund; damernas kula väger 4 kg, och reglerna säger att kulan ska stötas från axeln och inte kastas."}},
+
+{"cat":"Sport",
+ "q":{"en":"How long is an Olympic swimming pool?","fi":"Kuinka pitkä on olympiauima-allas?","sv":"Hur lång är en olympisk simbassäng?"},
+ "o":[{"en":"50 m","fi":"50 m","sv":"50 m"},{"en":"25 m","fi":"25 m","sv":"25 m"},{"en":"33.3 m","fi":"33,3 m","sv":"33,3 m"},{"en":"100 m","fi":"100 m","sv":"100 m"}],
+ "n":{"en":"Races in a 25 m pool count as short course and have their own separate record lists.","fi":"25 metrin altaassa uidut kilpailut ovat lyhyen radan uintia, ja niille pidetään omat ennätyslistat.","sv":"Lopp i en 25-metersbassäng räknas som kortbana och har egna rekordlistor."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which stroke comes first in the individual medley?","fi":"Mikä uintityyli uidaan ensimmäisenä sekauinnissa?","sv":"Vilket simsätt kommer först i individuellt medley?"},
+ "o":[{"en":"Butterfly","fi":"Perhosuinti","sv":"Fjärilsim"},{"en":"Backstroke","fi":"Selkäuinti","sv":"Ryggsim"},{"en":"Breaststroke","fi":"Rintauinti","sv":"Bröstsim"},{"en":"Freestyle","fi":"Vapaauinti","sv":"Frisim"}],
+ "n":{"en":"The medley relay starts with backstroke instead, because a backstroke swimmer starts in the water.","fi":"Viestissä aloitetaan sen sijaan selkäuinnilla, koska selkäuimari lähtee vedestä.","sv":"Medleylaget startar i stället med ryggsim, eftersom ryggsimmaren startar i vattnet."}},
+
+{"cat":"Sport",
+ "q":{"en":"What colour is the jersey of the Tour de France leader?","fi":"Minkä värinen on Tour de Francen johtajan paita?","sv":"Vilken färg har ledartröjan i Tour de France?"},
+ "o":[{"en":"Yellow","fi":"Keltainen","sv":"Gul"},{"en":"Green","fi":"Vihreä","sv":"Grön"},{"en":"Pink","fi":"Vaaleanpunainen","sv":"Rosa"},{"en":"White with red dots","fi":"Valkoinen punaisin pilkuin","sv":"Vit med röda prickar"}],
+ "n":{"en":"The newspaper that founded the race, L'Auto, was printed on yellow newsprint.","fi":"Kilpailun perustanut sanomalehti L'Auto painettiin keltaiselle paperille.","sv":"Tidningen som grundade loppet, L'Auto, trycktes på gult papper."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which Grand Tour has a pink jersey for its leader?","fi":"Missä suuressa ympäriajossa johtaja pukeutuu vaaleanpunaiseen paitaan?","sv":"I vilket av de stora etapploppen bär ledaren rosa tröja?"},
+ "o":[{"en":"The Giro d'Italia","fi":"Giro d'Italia","sv":"Giro d'Italia"},{"en":"The Tour de France","fi":"Tour de France","sv":"Tour de France"},{"en":"The Vuelta a España","fi":"Vuelta a España","sv":"Vuelta a España"},{"en":"Paris-Nice","fi":"Paris-Nice","sv":"Paris-Nice"}],
+ "n":{"en":"La Gazzetta dello Sport, which created the race, is printed on pink paper, and the jersey appeared in 1931.","fi":"Kilpailun luonut La Gazzetta dello Sport painetaan vaaleanpunaiselle paperille, ja paita otettiin käyttöön 1931.","sv":"La Gazzetta dello Sport, som skapade loppet, trycks på rosa papper, och tröjan infördes 1931."}},
+
+{"cat":"Sport",
+ "q":{"en":"In which year were the first modern Olympic Games held?","fi":"Minä vuonna järjestettiin ensimmäiset nykyaikaiset olympialaiset?","sv":"Vilket år hölls de första moderna olympiska spelen?"},
+ "o":[{"en":"1896","fi":"1896","sv":"1896"},{"en":"1888","fi":"1888","sv":"1888"},{"en":"1900","fi":"1900","sv":"1900"},{"en":"1906","fi":"1906","sv":"1906"}],
+ "n":{"en":"They were held in Athens, and the marathon was invented for them rather than inherited from antiquity.","fi":"Kisat pidettiin Ateenassa, ja maraton keksittiin niitä varten eikä periytynyt antiikista.","sv":"Spelen hölls i Athen, och maratonloppet hittades på för dem och ärvdes inte från antiken."}},
+
+{"cat":"Sport",
+ "q":{"en":"Who designed the five Olympic rings?","fi":"Kuka suunnitteli viisi olympiarengasta?","sv":"Vem ritade de fem olympiska ringarna?"},
+ "o":[{"en":"Pierre de Coubertin","fi":"Pierre de Coubertin","sv":"Pierre de Coubertin"},{"en":"Demetrios Vikelas","fi":"Demetrios Vikelas","sv":"Demetrios Vikelas"},{"en":"Avery Brundage","fi":"Avery Brundage","sv":"Avery Brundage"},{"en":"Carl Diem","fi":"Carl Diem","sv":"Carl Diem"}],
+ "n":{"en":"He drew them in 1913 and said the six colours, the white background included, could make up every national flag then flying.","fi":"Hän piirsi ne 1913 ja sanoi, että kuudesta väristä valkoinen pohja mukaan lukien saattoi koostaa kaikkien silloisten kansallislippujen värit.","sv":"Han ritade dem 1913 och menade att de sex färgerna, den vita bottnen inräknad, räckte till alla dåtidens nationsflaggor."}},
+
+{"cat":"Sport",
+ "q":{"en":"Where were the first Winter Olympic Games held?","fi":"Missä järjestettiin ensimmäiset talviolympialaiset?","sv":"Var hölls de första vinterolympiska spelen?"},
+ "o":[{"en":"Chamonix","fi":"Chamonix","sv":"Chamonix"},{"en":"St. Moritz","fi":"St. Moritz","sv":"St. Moritz"},{"en":"Lake Placid","fi":"Lake Placid","sv":"Lake Placid"},{"en":"Garmisch-Partenkirchen","fi":"Garmisch-Partenkirchen","sv":"Garmisch-Partenkirchen"}],
+ "n":{"en":"They were held in 1924 as an International Winter Sports Week, and were only counted as Olympic afterwards.","fi":"Ne järjestettiin 1924 kansainvälisenä talviurheiluviikkona, ja olympiastatus myönnettiin jälkikäteen.","sv":"De hölls 1924 som en internationell vintersportvecka och fick olympisk status först i efterhand."}},
+
+{"cat":"Sport",
+ "q":{"en":"At which Olympics was the torch relay from Olympia first run?","fi":"Missä olympialaisissa juostiin ensimmäisen kerran soihtuviesti Olympiasta?","sv":"Vid vilka olympiska spel löptes facklöpet från Olympia för första gången?"},
+ "o":[{"en":"Berlin 1936","fi":"Berliini 1936","sv":"Berlin 1936"},{"en":"Amsterdam 1928","fi":"Amsterdam 1928","sv":"Amsterdam 1928"},{"en":"Los Angeles 1932","fi":"Los Angeles 1932","sv":"Los Angeles 1932"},{"en":"London 1948","fi":"Lontoo 1948","sv":"London 1948"}],
+ "n":{"en":"The idea came from the Berlin organisers, and more than 3,000 runners carried the flame across seven countries.","fi":"Idea tuli Berliinin järjestäjiltä, ja yli 3 000 juoksijaa kantoi tulta seitsemän maan läpi.","sv":"Idén kom från Berlins arrangörer, och över 3 000 löpare bar elden genom sju länder."}},
+
+{"cat":"Sport",
+ "q":{"en":"How high is the volleyball net in the men's game?","fi":"Kuinka korkealla on lentopalloverkko miesten pelissä?","sv":"Hur högt sitter volleybollnätet i herrarnas spel?"},
+ "o":[{"en":"2.43 m","fi":"2,43 m","sv":"2,43 m"},{"en":"2.24 m","fi":"2,24 m","sv":"2,24 m"},{"en":"2.35 m","fi":"2,35 m","sv":"2,35 m"},{"en":"2.55 m","fi":"2,55 m","sv":"2,55 m"}],
+ "n":{"en":"The women's net is 2.24 m, and the court is 18 by 9 metres.","fi":"Naisten verkko on 2,24 metriä, ja kenttä on 18 kertaa 9 metriä.","sv":"Damernas nät sitter på 2,24 m, och banan är 18 gånger 9 meter."}},
+
+{"cat":"Sport",
+ "q":{"en":"How many players does a handball team have on court?","fi":"Kuinka monta pelaajaa käsipallojoukkueella on kentällä?","sv":"Hur många spelare har ett handbollslag på planen?"},
+ "o":[{"en":"Seven","fi":"Seitsemän","sv":"Sju"},{"en":"Six","fi":"Kuusi","sv":"Sex"},{"en":"Five","fi":"Viisi","sv":"Fem"},{"en":"Eleven","fi":"Yksitoista","sv":"Elva"}],
+ "n":{"en":"Six court players and a goalkeeper, on a court of 40 by 20 metres with goals 3 metres wide.","fi":"Kuusi kenttäpelaajaa ja maalivahti, 40 kertaa 20 metrin kentällä, jonka maalit ovat 3 metriä leveitä.","sv":"Sex utespelare och en målvakt, på en plan som är 40 gånger 20 meter med mål som är 3 meter breda."}},
+
+{"cat":"Sport",
+ "q":{"en":"How many players are in a rugby union team?","fi":"Kuinka monta pelaajaa on rugby unionin joukkueessa?","sv":"Hur många spelare har ett lag i rugby union?"},
+ "o":[{"en":"Fifteen","fi":"Viisitoista","sv":"Femton"},{"en":"Thirteen","fi":"Kolmetoista","sv":"Tretton"},{"en":"Eleven","fi":"Yksitoista","sv":"Elva"},{"en":"Seventeen","fi":"Seitsemäntoista","sv":"Sjutton"}],
+ "n":{"en":"The other main code, rugby league, plays thirteen a side.","fi":"Lajin toinen päämuoto, rugby league, pelataan kolmentoista pelaajan joukkuein.","sv":"Den andra huvudgrenen, rugby league, spelas med tretton man per lag."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which Japanese educator founded judo?","fi":"Kuka japanilainen kasvattaja perusti judon?","sv":"Vilken japansk pedagog grundade judon?"},
+ "o":[{"en":"Jigoro Kano","fi":"Jigoro Kano","sv":"Jigoro Kano"},{"en":"Morihei Ueshiba","fi":"Morihei Ueshiba","sv":"Morihei Ueshiba"},{"en":"Gichin Funakoshi","fi":"Gichin Funakoshi","sv":"Gichin Funakoshi"},{"en":"Kanryo Higaonna","fi":"Kanryo Higaonna","sv":"Kanryo Higaonna"}],
+ "n":{"en":"He opened his Kodokan school in 1882, and the name judo means roughly the gentle way.","fi":"Hän perusti Kodokan-koulunsa vuonna 1882, ja nimi judo tarkoittaa suunnilleen pehmeää tietä.","sv":"Han grundade sin Kodokanskola 1882, och namnet judo betyder ungefär den mjuka vägen."}},
+
+{"cat":"Sport",
+ "q":{"en":"What score does a leg of darts normally start from?","fi":"Mistä pistemäärästä darts-erä yleensä aloitetaan?","sv":"Från vilken poäng startar ett legg i dart normalt?"},
+ "o":[{"en":"501","fi":"501","sv":"501"},{"en":"301","fi":"301","sv":"301"},{"en":"401","fi":"401","sv":"401"},{"en":"601","fi":"601","sv":"601"}],
+ "n":{"en":"The most you can score with three darts is 180, and the leg has to be finished on a double.","fi":"Kolmella tikalla voi saada enintään 180 pistettä, ja erä on päätettävä kaksoiskenttään.","sv":"Med tre pilar kan man få högst 180 poäng, och legget måste avslutas på en dubbel."}},
+
+{"cat":"Sport",
+ "q":{"en":"How many red balls are on the table at the start of a snooker frame?","fi":"Kuinka monta punaista palloa on pöydällä snookerin erän alussa?","sv":"Hur många röda bollar ligger på bordet när ett snookerframe börjar?"},
+ "o":[{"en":"Fifteen","fi":"Viisitoista","sv":"Femton"},{"en":"Twelve","fi":"Kaksitoista","sv":"Tolv"},{"en":"Eighteen","fi":"Kahdeksantoista","sv":"Arton"},{"en":"Twenty-one","fi":"Kaksikymmentäyksi","sv":"Tjugoen"}],
+ "n":{"en":"Fifteen reds each followed by a black, then the six colours in order, adds up to the maximum break of 147.","fi":"Viisitoista punaista kukin mustan kanssa ja sen jälkeen kuusi väripalloa järjestyksessä tekee suurimman mahdollisen sarjan 147.","sv":"Femton röda, var och en följd av svart, och sedan de sex färgerna i ordning ger den högsta möjliga serien 147."}},
+
+{"cat":"Sport",
+ "q":{"en":"In which year was the first Formula 1 world championship held?","fi":"Minä vuonna ajettiin ensimmäinen Formula 1 -maailmanmestaruussarja?","sv":"Vilket år kördes det första Formel 1-VM?"},
+ "o":[{"en":"1950","fi":"1950","sv":"1950"},{"en":"1946","fi":"1946","sv":"1946"},{"en":"1955","fi":"1955","sv":"1955"},{"en":"1960","fi":"1960","sv":"1960"}],
+ "n":{"en":"The opening championship race was run at Silverstone in Britain in May 1950.","fi":"Sarjan avauskilpailu ajettiin Silverstonessa Britanniassa toukokuussa 1950.","sv":"Seriens första lopp kördes på Silverstone i Storbritannien i maj 1950."}},
+
+{"cat":"Sport",
+ "q":{"en":"Which sport combines cross-country skiing with rifle shooting?","fi":"Mikä laji yhdistää maastohiihdon ja kiväärillä ampumisen?","sv":"Vilken sport kombinerar längdskidåkning med gevärsskytte?"},
+ "o":[{"en":"Biathlon","fi":"Ampumahiihto","sv":"Skidskytte"},{"en":"Nordic combined","fi":"Yhdistetty","sv":"Nordisk kombination"},{"en":"Orienteering","fi":"Suunnistus","sv":"Orientering"},{"en":"Modern pentathlon","fi":"Nykyaikainen viisiottelu","sv":"Modern femkamp"}],
+ "n":{"en":"The targets stand 50 metres away and are 4.5 cm wide for prone shooting but 11.5 cm for standing.","fi":"Taulut ovat 50 metrin päässä ja makuuasennossa 4,5 senttiä leveät, pystyasennossa 11,5 senttiä.","sv":"Måltavlorna står 50 meter bort och är 4,5 cm breda liggande men 11,5 cm stående."}}
+]

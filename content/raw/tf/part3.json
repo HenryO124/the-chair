@@ -1,0 +1,703 @@
+[
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "The length of the marathon comes from the 1908 London Olympics.",
+   "fi": "Maratonin pituus on peräisin Lontoon olympialaisista vuonna 1908.",
+   "sv": "Maratonloppets längd kommer från de olympiska spelen i London 1908."
+  },
+  "n": {
+   "en": "The athletics federation fixed 42.195 kilometres in May 1921, taking the figure straight from the London course.",
+   "fi": "Yleisurheiluliitto vahvisti 42,195 kilometrin matkan toukokuussa 1921 suoraan Lontoon radan mitasta.",
+   "sv": "Friidrottsförbundet fastställde 42,195 kilometer i maj 1921, direkt efter banan i London."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "An Olympic gold medal is mostly silver.",
+   "fi": "Olympiakultamitali on suurimmaksi osaksi hopeaa.",
+   "sv": "En olympisk guldmedalj består mest av silver."
+  },
+  "n": {
+   "en": "The rules require at least 92.5 per cent silver plated with six grams of gold; solid gold medals were last given out in 1912.",
+   "fi": "Säännöt vaativat vähintään 92,5 prosenttia hopeaa ja kuuden gramman kultauksen; umpikultaisia mitaleja jaettiin viimeksi 1912.",
+   "sv": "Reglerna kräver minst 92,5 procent silver med sex gram guld som plätering; medaljer av massivt guld delades ut senast 1912."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "The V-style in ski jumping was made famous by a Swede.",
+   "fi": "Mäkihypyn V-tyylin teki tunnetuksi ruotsalainen.",
+   "sv": "V-stilen i backhoppning gjordes känd av en svensk."
+  },
+  "n": {
+   "en": "Jan Boklöv popularised it at the end of the 1980s, and within a few years everyone was jumping that way.",
+   "fi": "Jan Boklöv teki sen tunnetuksi 1980-luvun lopulla, ja muutamassa vuodessa kaikki hyppäsivät niin.",
+   "sv": "Jan Boklöv gjorde den populär i slutet av 1980-talet, och inom några år hoppade alla så."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "Pesäpallo is the national sport of Finland.",
+   "fi": "Pesäpallo on Suomen kansallispeli.",
+   "sv": "Boboll är Finlands nationalsport."
+  },
+  "n": {
+   "en": "Lauri \"Tahko\" Pihkala worked the game up from American baseball in the 1920s.",
+   "fi": "Lauri \"Tahko\" Pihkala kehitti pelin amerikkalaisesta baseballista 1920-luvulla.",
+   "sv": "Lauri \"Tahko\" Pihkala utvecklade spelet från amerikansk baseboll på 1920-talet."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "Lasse Virén fell in an Olympic 10,000 metres final and still won it in a world record.",
+   "fi": "Lasse Virén kaatui olympialaisten 10 000 metrin finaalissa ja voitti sen silti maailmanennätyksellä.",
+   "sv": "Lasse Virén föll i en olympisk 10 000-metersfinal och vann den ändå på världsrekord."
+  },
+  "n": {
+   "en": "He went down on the twelfth lap in Munich on 3 September 1972, got up and ran 27:38.35.",
+   "fi": "Hän kaatui kahdennellatoista kierroksella Münchenissä 3. syyskuuta 1972, nousi ylös ja juoksi 27.38,35.",
+   "sv": "Han föll på tolfte varvet i München den 3 september 1972, reste sig och sprang 27.38,35."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "Paavo Nurmi usually raced with a stopwatch in his hand.",
+   "fi": "Paavo Nurmi juoksi kilpaa yleensä sekuntikello kädessään.",
+   "sv": "Paavo Nurmi sprang oftast sina tävlingar med en stoppklocka i handen."
+  },
+  "n": {
+   "en": "After losing to Joseph Guillemot in 1920 he took to pacing himself by the watch, and set 22 official world records.",
+   "fi": "Häviön Joseph Guillemot'lle 1920 jälkeen hän alkoi jakaa vauhtiaan kellon mukaan ja teki 22 virallista maailmanennätystä.",
+   "sv": "Efter förlusten mot Joseph Guillemot 1920 började han fördela farten efter klockan och satte 22 officiella världsrekord."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "The swamp football world championships are played in Finland.",
+   "fi": "Suojalkapallon maailmanmestaruuskilpailut pelataan Suomessa.",
+   "sv": "Världsmästerskapen i kärrfotboll spelas i Finland."
+  },
+  "n": {
+   "en": "The sport began in Finland in 1998 and the main event is held every summer at Hyrynsalmi, six to a side.",
+   "fi": "Laji syntyi Suomessa 1998, ja päätapahtuma pelataan joka kesä Hyrynsalmella kuuden hengen joukkuein.",
+   "sv": "Sporten uppstod i Finland 1998 och huvudevenemanget hålls varje sommar i Hyrynsalmi med sex spelare per lag."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "Wimbledon is the oldest tennis tournament in the world.",
+   "fi": "Wimbledon on maailman vanhin tennisturnaus.",
+   "sv": "Wimbledon är världens äldsta tennisturnering."
+  },
+  "n": {
+   "en": "The first championship began on 9 July 1877, and it is the only Grand Slam still played on grass.",
+   "fi": "Ensimmäinen turnaus alkoi 9. heinäkuuta 1877, ja se on ainoa Grand Slam, joka pelataan vielä ruoholla.",
+   "sv": "Den första turneringen inleddes den 9 juli 1877, och det är den enda Grand Slam som fortfarande spelas på gräs."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "Most of the world's curling stones come from one small Scottish island.",
+   "fi": "Suurin osa maailman curlingkivistä on peräisin yhdeltä pieneltä skotlantilaiselta saarelta.",
+   "sv": "De flesta curlingstenar i världen kommer från en liten skotsk ö."
+  },
+  "n": {
+   "en": "The microgranite of Ailsa Craig in the Firth of Clyde accounted for 60 to 70 per cent of all stones in use.",
+   "fi": "Ailsa Craigin mikrograniitti Clydenlahdella muodosti 60–70 prosenttia kaikista käytössä olevista kivistä.",
+   "sv": "Mikrograniten från Ailsa Craig i Firth of Clyde stod för 60–70 procent av alla stenar i bruk."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "The men's javelin was redesigned in 1986 and all the old world records were wiped out.",
+   "fi": "Miesten keihäs suunniteltiin uudelleen 1986, ja vanhat maailmanennätykset pyyhittiin pois.",
+   "sv": "Herrarnas spjut konstruerades om 1986 och alla gamla världsrekord ströks."
+  },
+  "n": {
+   "en": "Uwe Hohn had thrown 104.80 metres in 1984, and the throws were getting too long for a stadium to hold.",
+   "fi": "Uwe Hohn oli heittänyt 104,80 metriä vuonna 1984, ja heitot alkoivat olla liian pitkiä stadionille.",
+   "sv": "Uwe Hohn hade kastat 104,80 meter 1984, och kasten började bli för långa för en stadion."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "Mika Häkkinen won the Formula One world title two years running.",
+   "fi": "Mika Häkkinen voitti Formula 1:n maailmanmestaruuden kahtena vuonna putkeen.",
+   "sv": "Mika Häkkinen vann Formel 1-VM två år i rad."
+  },
+  "n": {
+   "en": "He took the championship in 1998 and defended it in 1999, the second of three Finnish world champions.",
+   "fi": "Hän voitti mestaruuden 1998 ja puolusti sitä 1999 – toinen Suomen kolmesta maailmanmestarista.",
+   "sv": "Han tog titeln 1998 och försvarade den 1999, den andra av Finlands tre världsmästare."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "The first Olympic ice hockey tournament was played at a Summer Games.",
+   "fi": "Ensimmäinen olympiajääkiekkoturnaus pelattiin kesäkisoissa.",
+   "sv": "Den första olympiska ishockeyturneringen spelades vid sommarspelen."
+  },
+  "n": {
+   "en": "It was held at the 1920 Summer Olympics in Antwerp, four years before the first Winter Games.",
+   "fi": "Se pelattiin Antwerpenin kesäolympialaisissa 1920, neljä vuotta ennen ensimmäisiä talvikisoja.",
+   "sv": "Den hölls vid sommarspelen i Antwerpen 1920, fyra år före de första vinterspelen."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": true,
+  "q": {
+   "en": "A computer beat the reigning world chess champion in a match in the 1990s.",
+   "fi": "Tietokone voitti hallitsevan shakin maailmanmestarin ottelussa 1990-luvulla.",
+   "sv": "En dator besegrade den regerande världsmästaren i schack i en match på 1990-talet."
+  },
+  "n": {
+   "en": "Deep Blue won the rematch against Garry Kasparov 3½–2½ in May 1997, a year after losing 4–2 to him.",
+   "fi": "Deep Blue voitti uusintaottelun Garri Kasparovista 3½–2½ toukokuussa 1997, vuosi sen jälkeen kun oli häviöllä 4–2.",
+   "sv": "Deep Blue vann returmatchen mot Garri Kasparov med 3½–2½ i maj 1997, ett år efter att ha förlorat 4–2 mot honom."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "Women took part in the first modern Olympic Games.",
+   "fi": "Naiset osallistuivat ensimmäisiin nykyaikaisiin olympialaisiin.",
+   "sv": "Kvinnor deltog i de första moderna olympiska spelen."
+  },
+  "n": {
+   "en": "The first Games with female competitors were Paris in 1900, where 22 women took part; Coubertin himself was against it.",
+   "fi": "Ensimmäiset kisat naiskilpailijoiden kanssa olivat Pariisi 1900, jossa oli 22 naista; Coubertin itse vastusti asiaa.",
+   "sv": "De första spelen med kvinnliga deltagare var Paris 1900, där 22 kvinnor tävlade; Coubertin själv motsatte sig det."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "A cricket Test match always ends with one side winning.",
+   "fi": "Krikettimaaottelu päättyy aina toisen osapuolen voittoon.",
+   "sv": "En testmatch i cricket slutar alltid med att ett lag vinner."
+  },
+  "n": {
+   "en": "Tests are scheduled over five days and often end in a draw, with no winner however strong one side's position.",
+   "fi": "Testiottelut pelataan viiden päivän aikana ja päättyvät usein tasapeliin ilman voittajaa, vaikka toinen olisi selvästi paremmalla.",
+   "sv": "Testmatcher spelas över fem dagar och slutar ofta oavgjort, utan vinnare hur stark ena sidans ställning än är."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "The first Tour de France was ridden in the 1930s.",
+   "fi": "Ensimmäinen Ranskan ympäriajo ajettiin 1930-luvulla.",
+   "sv": "Det första Tour de France kördes på 1930-talet."
+  },
+  "n": {
+   "en": "It was run from 1 to 19 July 1903, six stages and 2,428 kilometres, invented to sell more copies of the newspaper L'Auto.",
+   "fi": "Se ajettiin 1.–19. heinäkuuta 1903, kuusi etappia ja 2 428 kilometriä, ja se keksittiin L'Auto-lehden levikin kasvattamiseksi.",
+   "sv": "Det kördes 1–19 juli 1903, sex etapper och 2 428 kilometer, och hittades på för att öka upplagan för tidningen L'Auto."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "Each colour in the Olympic rings stands for one particular continent.",
+   "fi": "Jokainen olympiarenkaiden väri edustaa tiettyä maanosaa.",
+   "sv": "Varje färg i de olympiska ringarna står för en bestämd världsdel."
+  },
+  "n": {
+   "en": "The committee published such a list in 1949 but withdrew it in 1951; Coubertin said the colours were simply those found in the competing countries' flags.",
+   "fi": "Komitea julkaisi tällaisen listan 1949 mutta veti sen takaisin 1951; Coubertin sanoi värien olevan vain kilpailevien maiden lipuista löytyviä.",
+   "sv": "Kommittén publicerade en sådan lista 1949 men drog tillbaka den 1951; Coubertin sade att färgerna helt enkelt fanns i de deltagande ländernas flaggor."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "Finland has qualified for the football World Cup.",
+   "fi": "Suomi on päässyt jalkapallon MM-kilpailuihin.",
+   "sv": "Finland har kvalificerat sig till fotbolls-VM."
+  },
+  "n": {
+   "en": "Finland has never made a World Cup; its first big tournament was the European Championship it qualified for in 2019.",
+   "fi": "Suomi ei ole koskaan päässyt MM-kilpailuihin; ensimmäinen arvoturnaus oli EM-kilpailut, joihin se selvitti tiensä 2019.",
+   "sv": "Finland har aldrig nått ett VM; den första stora turneringen var EM, som laget kvalificerade sig till 2019."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "The three-point line was an invention of the NBA.",
+   "fi": "Kolmen pisteen viiva oli NBA:n keksintö.",
+   "sv": "Trepoängslinjen var NBA:s uppfinning."
+  },
+  "n": {
+   "en": "The American Basketball League used it in 1961; the NBA adopted it only in 1979 and FIBA in 1984.",
+   "fi": "American Basketball League käytti sitä jo 1961; NBA otti sen käyttöön vasta 1979 ja FIBA 1984.",
+   "sv": "American Basketball League använde den redan 1961; NBA införde den först 1979 och FIBA 1984."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "Finland has won more Olympic ski jumping golds than any other country.",
+   "fi": "Suomi on voittanut enemmän olympiakultaa mäkihypystä kuin mikään muu maa.",
+   "sv": "Finland har vunnit fler olympiska guld i backhoppning än något annat land."
+  },
+  "n": {
+   "en": "Norway leads with 14 golds; Finland is second with 10.",
+   "fi": "Norja johtaa 14 kullalla; Suomi on toinen kymmenellä.",
+   "sv": "Norge leder med 14 guld; Finland är tvåa med 10."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "Kimi Räikkönen won his Formula One world title by a comfortable margin.",
+   "fi": "Kimi Räikkönen voitti Formula 1:n maailmanmestaruutensa selvällä marginaalilla.",
+   "sv": "Kimi Räikkönen vann sitt Formel 1-VM med god marginal."
+  },
+  "n": {
+   "en": "He took the 2007 championship by a single point at the last race, 110 to 109.",
+   "fi": "Hän voitti vuoden 2007 mestaruuden yhdellä pisteellä viimeisessä kilpailussa, 110–109.",
+   "sv": "Han tog titeln 2007 med en enda poäng i sista loppet, 110 mot 109."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "Olympic marathons have always been run over 42.195 kilometres.",
+   "fi": "Olympiamaratonit on aina juostu 42,195 kilometrin matkalla.",
+   "sv": "Olympiska maratonlopp har alltid gått över 42,195 kilometer."
+  },
+  "n": {
+   "en": "The early races were about 40 kilometres, and the distance was only settled for good from 1924 onwards.",
+   "fi": "Ensimmäiset kisat juostiin noin 40 kilometrillä, ja matka vakiintui lopullisesti vasta vuodesta 1924.",
+   "sv": "De tidiga loppen var omkring 40 kilometer, och distansen fastställdes slutgiltigt först från 1924."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "Wimbledon's rule that players must wear white goes back to the 19th century.",
+   "fi": "Wimbledonin sääntö valkoisista peliasuista on 1800-luvulta.",
+   "sv": "Wimbledons regel om vita tävlingskläder är från 1800-talet."
+  },
+  "n": {
+   "en": "The tournament has been played since 1877, but its first dress code was only brought in in 1963.",
+   "fi": "Turnaus on pelattu vuodesta 1877, mutta ensimmäinen pukeutumissääntö otettiin käyttöön vasta 1963.",
+   "sv": "Turneringen har spelats sedan 1877, men den första klädkoden infördes först 1963."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "The mobile phone throwing world championships are held in Sweden.",
+   "fi": "Kännykänheiton maailmanmestaruuskilpailut järjestetään Ruotsissa.",
+   "sv": "Världsmästerskapen i mobiltelefonkastning hålls i Sverige."
+  },
+  "n": {
+   "en": "They have been thrown every August since 2000 in Savonlinna, Finland.",
+   "fi": "Niitä on heitetty joka elokuu vuodesta 2000 Savonlinnassa.",
+   "sv": "De har kastats varje augusti sedan 2000 i Nyslott i Finland."
+  }
+ },
+ {
+  "cat": "Sport",
+  "a": false,
+  "q": {
+   "en": "The air guitar world championships are an American invention.",
+   "fi": "Ilmakitaransoiton maailmanmestaruuskilpailut ovat amerikkalainen keksintö.",
+   "sv": "Världsmästerskapen i luftgitarr är en amerikansk uppfinning."
+  },
+  "n": {
+   "en": "They were first staged in 1996 as part of the Oulu Music Video Festival and have stayed in Oulu ever since.",
+   "fi": "Ne järjestettiin ensi kerran 1996 osana Oulun musiikkivideofestivaalia ja ovat pysyneet Oulussa siitä asti.",
+   "sv": "De ordnades första gången 1996 som del av musikvideofestivalen i Uleåborg och har stannat där sedan dess."
+  }
+ },
+
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "Bubble wrap was first meant to be wallpaper.",
+   "fi": "Kuplamuovi oli alun perin tarkoitettu tapetiksi.",
+   "sv": "Bubbelplast var ursprungligen tänkt som tapet."
+  },
+  "n": {
+   "en": "Alfred Fielding and Marc Chavannes were trying to make a three-dimensional plastic wallpaper in 1957; the idea flopped but the material packed well.",
+   "fi": "Alfred Fielding ja Marc Chavannes yrittivät tehdä vuonna 1957 kolmiulotteista muovitapettia; idea floppasi, mutta materiaali sopi pakkaamiseen.",
+   "sv": "Alfred Fielding och Marc Chavannes försökte 1957 göra en tredimensionell plasttapet; idén floppade men materialet packade bra."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "The name IKEA is made up of the founder's initials and two place names.",
+   "fi": "Nimi IKEA koostuu perustajan nimikirjaimista ja kahdesta paikannimestä.",
+   "sv": "Namnet IKEA består av grundarens initialer och två ortnamn."
+  },
+  "n": {
+   "en": "Ingvar Kamprad, the farm Elmtaryd and the village Agunnaryd; products are named after Swedish, Danish and Norwegian places by category.",
+   "fi": "Ingvar Kamprad, Elmtarydin maatila ja Agunnarydin kylä; tuotteet nimetään tuoteryhmän mukaan Ruotsin, Tanskan ja Norjan paikannimillä.",
+   "sv": "Ingvar Kamprad, gården Elmtaryd och byn Agunnaryd; produkterna namnges efter svenska, danska och norska orter beroende på kategori."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "The first Academy Awards were handed out in the 1920s.",
+   "fi": "Ensimmäiset Oscar-palkinnot jaettiin 1920-luvulla.",
+   "sv": "Den första Oscarsgalan hölls på 1920-talet."
+  },
+  "n": {
+   "en": "The first ceremony was a private dinner on 16 May 1929.",
+   "fi": "Ensimmäinen jakotilaisuus oli yksityinen illallinen 16. toukokuuta 1929.",
+   "sv": "Den första utdelningen var en privat middag den 16 maj 1929."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "The Linux kernel was started by a student in Helsinki.",
+   "fi": "Linux-ytimen aloitti opiskelija Helsingissä.",
+   "sv": "Linuxkärnan startades av en student i Helsingfors."
+  },
+  "n": {
+   "en": "Linus Torvalds, then 21 and studying at the University of Helsinki, announced it on 25 August 1991; he had wanted to call it Freax.",
+   "fi": "Linus Torvalds, tuolloin 21-vuotias Helsingin yliopiston opiskelija, julkisti sen 25. elokuuta 1991; hän olisi halunnut nimen Freax.",
+   "sv": "Linus Torvalds, då 21 år och student vid Helsingfors universitet, offentliggjorde den 25 augusti 1991; han hade velat kalla den Freax."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "Angry Birds was not the first game its Finnish maker released.",
+   "fi": "Angry Birds ei ollut suomalaisen tekijänsä ensimmäinen peli.",
+   "sv": "Angry Birds var inte det första spelet som dess finländska skapare gav ut."
+  },
+  "n": {
+   "en": "Rovio had made 51 games before it; Angry Birds, released in December 2009, was number 52.",
+   "fi": "Rovio oli tehnyt ennen sitä 51 peliä; joulukuussa 2009 julkaistu Angry Birds oli numero 52.",
+   "sv": "Rovio hade gjort 51 spel tidigare; Angry Birds, som kom i december 2009, var nummer 52."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "Xylitol is poisonous to dogs.",
+   "fi": "Ksylitoli on myrkyllistä koirille.",
+   "sv": "Xylitol är giftigt för hundar."
+  },
+  "n": {
+   "en": "In dogs it triggers a surge of insulin and dangerously low blood sugar; bigger doses can cause liver failure.",
+   "fi": "Koiralla se laukaisee insuliinin ryöpyn ja vaarallisen matalan verensokerin; suuremmat annokset voivat johtaa maksan vajaatoimintaan.",
+   "sv": "Hos hundar utlöser det en insulinpuls och farligt lågt blodsocker; större doser kan ge leversvikt."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "Bananas are slightly radioactive.",
+   "fi": "Banaanit ovat lievästi radioaktiivisia.",
+   "sv": "Bananer är lätt radioaktiva."
+  },
+  "n": {
+   "en": "About 0.012 per cent of natural potassium is the unstable isotope potassium-40, which gives one banana an activity of roughly 15 becquerels.",
+   "fi": "Noin 0,012 prosenttia luonnon kaliumista on epävakaata kalium-40:tä, mikä antaa yhdelle banaanille noin 15 becquerelin aktiivisuuden.",
+   "sv": "Omkring 0,012 procent av naturligt kalium är den instabila isotopen kalium-40, vilket ger en banan en aktivitet på cirka 15 becquerel."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "A banana counts as a berry in botany.",
+   "fi": "Banaani on kasvitieteellisesti marja.",
+   "sv": "Bananen räknas som ett bär i botaniken."
+  },
+  "n": {
+   "en": "Botanical berries include bananas, grapes, currants, tomatoes, aubergines and persimmons.",
+   "fi": "Kasvitieteellisiä marjoja ovat muun muassa banaani, viinirypäle, herukka, tomaatti, munakoiso ja persimoni.",
+   "sv": "Botaniska bär omfattar banan, vindruva, vinbär, tomat, aubergine och persimon."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "Velcro was thought up after burrs stuck to a dog's fur.",
+   "fi": "Tarranauha syntyi siitä, että takiaisen koukut tartuivat koiran karvoihin.",
+   "sv": "Kardborrebandet kom till efter att kardborrar fastnat i en hunds päls."
+  },
+  "n": {
+   "en": "The Swiss engineer George de Mestral came home from a hunting trip in 1941, looked at burdock burs under a microscope and saw their hooks.",
+   "fi": "Sveitsiläinen insinööri George de Mestral tuli metsästysretkeltä 1941, katsoi takiaisen koukkuja mikroskoopilla ja oivalsi idean.",
+   "sv": "Den schweiziske ingenjören George de Mestral kom hem från en jaktutflykt 1941, tittade på kardborrar i mikroskop och såg deras hakar."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "There are more than three million saunas in Finland.",
+   "fi": "Suomessa on yli kolme miljoonaa saunaa.",
+   "sv": "Det finns över tre miljoner bastur i Finland."
+  },
+  "n": {
+   "en": "That is more than one for every two inhabitants; a Finnish sauna is usually heated to 80 to 90 degrees.",
+   "fi": "Se on enemmän kuin yksi joka toista asukasta kohden; suomalainen sauna lämmitetään yleensä 80–90 asteeseen.",
+   "sv": "Det är fler än en per två invånare; en finsk bastu värms vanligen till 80–90 grader."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "The glue on a Post-it note was a failed attempt at a strong adhesive.",
+   "fi": "Post-it-lapun liima oli epäonnistunut yritys kehittää erittäin vahva liima.",
+   "sv": "Limmet på en Post-it-lapp var ett misslyckat försök att göra ett mycket starkt lim."
+  },
+  "n": {
+   "en": "Spencer Silver was aiming at a super-strong glue in 1968 and got a weak reusable one instead; the notes reached the shops only in 1980.",
+   "fi": "Spencer Silver tavoitteli vuonna 1968 superlujaa liimaa ja sai heikon, uudelleen käytettävän; laput tulivat kauppoihin vasta 1980.",
+   "sv": "Spencer Silver siktade 1968 på ett superstarkt lim och fick ett svagt som kunde användas om; lapparna nådde butikerna först 1980."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "The box of baby things the Finnish state gives expectant mothers is meant to work as the baby's first bed.",
+   "fi": "Suomen valtion odottaville äideille antama äitiyspakkaus on tarkoitettu toimimaan vauvan ensimmäisenä sänkynä.",
+   "sv": "Lådan med babysaker som finska staten ger blivande mödrar är tänkt att fungera som barnets första bädd."
+  },
+  "n": {
+   "en": "The box comes with a mattress, and mothers may take 170 euros in cash instead, though 87 per cent choose the box.",
+   "fi": "Pakkauksen mukana tulee patja, ja äiti voi valita sen sijaan 170 euron avustuksen, mutta 87 prosenttia valitsee pakkauksen.",
+   "sv": "Lådan innehåller en madrass, och mamman kan i stället välja 170 euro i pengar, men 87 procent väljer lådan."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": true,
+  "q": {
+   "en": "The kiwifruit comes from China, not New Zealand.",
+   "fi": "Kiivi on kotoisin Kiinasta, ei Uudesta-Seelannista.",
+   "sv": "Kiwifrukten kommer från Kina, inte Nya Zeeland."
+  },
+  "n": {
+   "en": "It was known in English as the Chinese gooseberry until New Zealand's exporters renamed it in 1959 to get it past American customs.",
+   "fi": "Sitä kutsuttiin englanniksi kiinankarviaiseksi, kunnes Uuden-Seelannin viejät vaihtoivat nimen 1959 päästäkseen Yhdysvaltain tullin läpi.",
+   "sv": "På engelska kallades den kinesiskt krusbär till dess att Nya Zeelands exportörer bytte namn 1959 för att komma genom amerikansk tull."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "The QWERTY keyboard was laid out to slow typists down.",
+   "fi": "QWERTY-näppäimistö suunniteltiin hidastamaan kirjoittajia.",
+   "sv": "QWERTY-tangentbordet utformades för att göra skrivandet långsammare."
+  },
+  "n": {
+   "en": "Christopher Latham Sholes's layout from the early 1870s was meant to speed typing up, largely by making the hands take turns.",
+   "fi": "Christopher Latham Sholesin 1870-luvun alun järjestys oli tarkoitettu nopeuttamaan kirjoittamista etenkin siten, että kädet vuorottelevat.",
+   "sv": "Christopher Latham Sholes layout från början av 1870-talet skulle snabba upp skrivandet, främst genom att händerna turas om."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "The bridges on the euro banknotes are real bridges somewhere in Europe.",
+   "fi": "Eurosetelien sillat ovat todellisia siltoja jossain Euroopassa.",
+   "sv": "Broarna på eurosedlarna är verkliga broar någonstans i Europa."
+  },
+  "n": {
+   "en": "They are invented, each in the style of a period; when Robert Kalina's first drawings turned out to resemble real bridges, they had to be redone.",
+   "fi": "Ne ovat kuviteltuja, kukin aikakautensa tyyliin; kun Robert Kalinan ensimmäiset luonnokset osoittautuivat todellisten siltojen kaltaisiksi, ne oli tehtävä uudelleen.",
+   "sv": "De är påhittade, var och en i en epokstil; när Robert Kalinas första skisser visade sig likna verkliga broar måste de göras om."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "Iceland's traditional hákarl is shark meat eaten fresh.",
+   "fi": "Islannin perinteinen hákarl on tuoreena syötävää hainlihaa.",
+   "sv": "Islands traditionella hákarl är hajkött som äts färskt."
+  },
+  "n": {
+   "en": "Greenland shark flesh is toxic when fresh because of its urea and trimethylamine oxide, so it is fermented and dried for months first.",
+   "fi": "Holkerin liha on tuoreena myrkyllistä urean ja trimetyyliamiinioksidin vuoksi, joten se käytetään ja kuivataan ensin kuukausien ajan.",
+   "sv": "Grönlandshajens kött är giftigt färskt på grund av urea och trimetylaminoxid, så det fermenteras och torkas i månader först."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "A strawberry is a true berry in botanical terms.",
+   "fi": "Mansikka on kasvitieteellisesti oikea marja.",
+   "sv": "Jordgubben är ett riktigt bär i botanisk mening."
+  },
+  "n": {
+   "en": "Strawberries and raspberries are expressly excluded from the botanical definition, while bananas and cucumbers are inside it.",
+   "fi": "Mansikka ja vadelma on nimenomaisesti jätetty marjan kasvitieteellisen määritelmän ulkopuolelle, kun taas banaani ja kurkku kuuluvat siihen.",
+   "sv": "Jordgubbar och hallon är uttryckligen uteslutna från den botaniska definitionen, medan bananer och gurkor hör dit."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "Nordic walking with poles came from Norway.",
+   "fi": "Sauvakävely on kotoisin Norjasta.",
+   "sv": "Stavgång kommer från Norge."
+  },
+  "n": {
+   "en": "It grew out of Finnish off-season ski training and was first set out in print in Finland in 1979.",
+   "fi": "Se kehittyi suomalaisesta hiihtäjien kesäharjoittelusta, ja se kuvattiin ensi kerran painettuna Suomessa 1979.",
+   "sv": "Den växte fram ur finsk barmarksträning för skidåkare och beskrevs första gången i tryck i Finland 1979."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "The Finnish long drink, lonkero, was invented in the 1980s.",
+   "fi": "Lonkero keksittiin 1980-luvulla.",
+   "sv": "Den finska long drinken, lonkero, uppfanns på 1980-talet."
+  },
+  "n": {
+   "en": "It appeared in 1952, when the state drinks monopoly bottled ready-mixed drinks for the crowds of foreign visitors expected that summer.",
+   "fi": "Se ilmestyi 1952, kun valtion alkoholiliike pullotti valmiiksi sekoitettuja juomia sinä kesänä odotetuille ulkomaisille vieraille.",
+   "sv": "Den kom 1952, när statens alkoholbolag tappade färdigblandade drinkar för de utländska besökare som väntades den sommaren."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "Iceland keeps a small standing army of its own.",
+   "fi": "Islannilla on oma pieni vakinainen armeija.",
+   "sv": "Island håller en egen liten stående armé."
+  },
+  "n": {
+   "en": "Iceland has no standing army at all, the only NATO member in that position; it relies on a coast guard, police units and allied air patrols.",
+   "fi": "Islannilla ei ole lainkaan vakinaista armeijaa, ainoana Naton jäsenenä; se luottaa rannikkovartiostoon, poliisiyksiköihin ja liittolaisten ilmavalvontaan.",
+   "sv": "Island har ingen stående armé alls, som enda Natomedlem; landet förlitar sig på kustbevakning, polisenheter och allierade flygpatruller."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "Ketchup has been a tomato sauce from the start.",
+   "fi": "Ketsuppi on ollut tomaattikastiketta alusta alkaen.",
+   "sv": "Ketchup har varit en tomatsås ända från början."
+  },
+  "n": {
+   "en": "The word appeared in 1682 and early British ketchup was made of mushrooms, shellfish or walnuts; the first tomato recipe was printed in 1812.",
+   "fi": "Sana ilmestyi 1682, ja varhainen brittiläinen ketsuppi tehtiin sienistä, äyriäisistä tai saksanpähkinöistä; ensimmäinen tomaattiohje painettiin 1812.",
+   "sv": "Ordet dök upp 1682 och tidig brittisk ketchup gjordes av svamp, skaldjur eller valnötter; det första tomatreceptet trycktes 1812."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "The reindeer is the largest deer in the world.",
+   "fi": "Poro on maailman suurin hirvieläin.",
+   "sv": "Renen är världens största hjortdjur."
+  },
+  "n": {
+   "en": "The moose is the tallest and heaviest deer alive, with bulls of 380 to 700 kilos, and it can dive more than five metres for water plants.",
+   "fi": "Hirvi on maailman korkein ja painavin hirvieläin, uroksen paino 380–700 kiloa, ja se sukeltaa yli viiden metrin syvyyteen vesikasvien perään.",
+   "sv": "Älgen är det högsta och tyngsta hjortdjuret, med hanar på 380–700 kilo, och den kan dyka mer än fem meter efter vattenväxter."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "WD-40 was first developed as a kitchen cleaner.",
+   "fi": "WD-40 kehitettiin alun perin keittiön puhdistusaineeksi.",
+   "sv": "WD-40 utvecklades ursprungligen som ett rengöringsmedel för köket."
+  },
+  "n": {
+   "en": "The 1953 formula was made to keep rust off the skin of the Atlas missile, and the name means water displacement, fortieth formula.",
+   "fi": "Vuoden 1953 kaava tehtiin estämään ruostetta Atlas-ohjuksen pinnalla, ja nimi tarkoittaa vedensyrjäytystä, neljäskymmenes kaava.",
+   "sv": "Formeln från 1953 togs fram för att hålla rosten borta från Atlas-robotens skal, och namnet betyder vattenförträngning, fyrtionde formeln."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "Cashews are sold in their shells like other nuts.",
+   "fi": "Cashewpähkinöitä myydään kuorineen kuten muitakin pähkinöitä.",
+   "sv": "Cashewnötter säljs med skal som andra nötter."
+  },
+  "n": {
+   "en": "The double shell holds an acid related to the irritant in poison ivy, so the nuts are always shelled and heat-treated before sale.",
+   "fi": "Kaksinkertaisessa kuoressa on happo, joka on sukua myrkkymuratin ärsyttävälle aineelle, joten pähkinät kuoritaan ja kuumakäsitellään aina ennen myyntiä.",
+   "sv": "Det dubbla skalet innehåller en syra som är släkt med giftsumakens irriterande ämne, så nötterna skalas och värmebehandlas alltid före försäljning."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "a": false,
+  "q": {
+   "en": "The banana is an official unit of radiation dose.",
+   "fi": "Banaani on virallinen säteilyannoksen yksikkö.",
+   "sv": "Bananen är en officiell enhet för stråldos."
+  },
+  "n": {
+   "en": "The banana equivalent dose, about a tenth of a microsievert, is only a teaching comparison and has never been formally adopted.",
+   "fi": "Banaaniekvivalenttiannos, noin kymmenesosa mikrosievertistä, on vain opetuksellinen vertailu eikä sitä ole koskaan virallistettu.",
+   "sv": "Banandosen, ungefär en tiondels mikrosievert, är bara en pedagogisk jämförelse och har aldrig blivit officiell."
+  }
+ }
+]
