@@ -1176,6 +1176,10 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
 .homefoot .menutile:hover{border-color:rgba(255,90,120,.5)}
 .homefoot .mticon{background:radial-gradient(closest-side,rgba(255,70,100,.35),rgba(20,6,10,.9));
   border:1px solid rgba(255,70,100,.3)}
+.setcard{text-align:left;max-width:520px}
+.setcard .setttl{margin:2px 0 16px;font-size:clamp(22px,3vw,30px)}
+.setcard .ytin{width:100%;margin:0 0 6px}
+.setcard .jorow{justify-content:flex-end}
 /* ---- the hero, as drawn: the chair on the left, the words in the middle ---- */
 .hero2{display:block;position:relative;text-align:center;margin:0 0 20px;padding:clamp(10px,3vh,34px) 0 clamp(14px,3vh,30px)}
 .hero2-art{position:absolute;left:0;top:50%;transform:translateY(-48%);width:min(28vw,340px);
@@ -1230,6 +1234,7 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
     <nav class="topnav" id="topnav">
       <button type="button" class="tn sel" id="nav-home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 11.2 12 4.5l8 6.7V20h-5.4v-5.1H9.4V20H4z"/></svg>Home</button>
       <button type="button" class="tn" id="nav-modes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg>Game modes</button>
+      <button type="button" class="tn" id="nav-set"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 14.5a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1v.3a2 2 0 1 1-4 0v-.2a1.6 1.6 0 0 0-2.8-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7h-.3a2 2 0 1 1 0-4h.2A1.6 1.6 0 0 0 4.6 7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 2.7-1.1v-.3a2 2 0 1 1 4 0v.2a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7h.3a2 2 0 1 1 0 4h-.2a1.6 1.6 0 0 0-1.4 1z"/></svg>Settings</button>
       <button type="button" class="tn" id="nav-learn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>How to play</button>
     </nav>
     <button type="button" class="mechip" id="me-chip" title="Your name on this device">
@@ -1820,6 +1825,36 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
 <audio id="menu-music" loop preload="none" src="menu.mp3"></audio>
 <div class="newver" id="newver" hidden>
   A newer version is out. <button type="button" id="newver-go">Reload</button>
+</div>
+
+<!-- settings: the few things that belong to this device, not to a game -->
+<div class="joinover" id="setover" hidden>
+  <div class="joincard setcard">
+    <div class="eyebrow">Settings</div>
+    <h2 class="setttl">This device</h2>
+
+    <div class="field-label">Language of the questions</div>
+    <div class="seg wrap" id="set-lang">
+      <button type="button" data-g="fi">Suomi</button>
+      <button type="button" data-g="sv">Svenska</button>
+      <button type="button" data-g="en">English</button>
+    </div>
+    <p class="pool thin" id="set-lang-note" style="margin:-6px 0 14px"></p>
+
+    <div class="field-label">Your name</div>
+    <input type="text" id="set-name" maxlength="14" autocomplete="off" placeholder="Player 1" class="ytin">
+
+    <div class="field-label">Menu music</div>
+    <div class="seg wrap" id="set-music">
+      <button type="button" data-m="on">On</button>
+      <button type="button" data-m="off">Off</button>
+    </div>
+
+    <div class="jorow" style="margin-top:18px">
+      <button type="button" class="btn" id="set-close">Done</button>
+    </div>
+    <p class="pool thin" id="set-ver" style="margin-top:12px"></p>
+  </div>
 </div>
 
 <!-- the opening titles: the light finds the chair, the name arrives, the party starts -->
@@ -2548,7 +2583,8 @@ $('rb-qr')&&($('rb-qr').onclick=openJoin);
 $('jo-close')&&($('jo-close').onclick=closeJoin);
 $('jo-copy')&&($('jo-copy').onclick=()=>{try{$('copy-link').click()}catch(e){}});
 $('joinover')&&($('joinover').onclick=e=>{if(e.target===$('joinover'))closeJoin()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeJoin()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeJoin();
+  try{closeSettings()}catch(e2){}}});
 $('rb-invite')&&($('rb-invite').onclick=()=>{try{$('copy-link').click()}catch(e){}});
 $('rb-copy')&&($('rb-copy').onclick=()=>{
   try{navigator.clipboard.writeText(PARTY.code)}catch(e){}
@@ -2592,6 +2628,45 @@ $('home-modes')&&($('home-modes').addEventListener('click',e=>{
 }));
 $('m-createroom')&&($('m-createroom').onclick=()=>openModes('create'));
 $('nav-home')&&($('nav-home').onclick=()=>show('s-home'));
+/* the settings card: the handful of choices that belong to this device */
+const LANGNAME={fi:'Suomi',sv:'Svenska',en:'English'};
+function drawSettings(){
+  document.querySelectorAll('#set-lang button').forEach(b=>
+    b.classList.toggle('sel',b.dataset.g===S.lang));
+  document.querySelectorAll('#set-music button').forEach(b=>
+    b.classList.toggle('sel',(b.dataset.m==='on')===!!musicOn));
+  const nt=$('set-lang-note');
+  if(nt)nt.textContent='The quiz and Picture Guess are asked in '+(LANGNAME[S.lang]||'English')
+    +'. The room follows this screen.';
+  try{$('set-name').value=MYNAME}catch(e){}
+  try{$('set-ver').textContent='Version '+BUILD}catch(e){}
+}
+function openSettings(){const o=$('setover');if(!o)return;drawSettings();o.hidden=false}
+function closeSettings(){const o=$('setover');if(o)o.hidden=true}
+$('nav-set')&&($('nav-set').onclick=openSettings);
+$('set-close')&&($('set-close').onclick=closeSettings);
+$('setover')&&($('setover').onclick=e=>{if(e.target===$('setover'))closeSettings()});
+$('set-lang')&&($('set-lang').onclick=e=>{
+  const b=e.target.closest('button[data-g]');if(!b)return;
+  S.lang=b.dataset.g;
+  try{localStorage.setItem('thechair.lang',S.lang)}catch(e2){}
+  try{segPick('lang','g',S.lang)}catch(e2){}      // the lobby's own picker agrees
+  try{S.cats=[];clearVotes();drawCats()}catch(e2){}
+  if(PARTY.role==='host')try{publishStage()}catch(e2){}
+  drawSettings();
+});
+$('set-music')&&($('set-music').onclick=e=>{
+  const b=e.target.closest('button[data-m]');if(!b)return;
+  const want=(b.dataset.m==='on');
+  if(want!==!!musicOn)try{$('music-btn').click()}catch(e2){}
+  drawSettings();
+});
+$('set-name')&&($('set-name').addEventListener('change',()=>{
+  MYNAME=cleanName($('set-name').value);
+  try{localStorage.setItem('thechair.myname',MYNAME)}catch(e){}
+  try{if($('join-name'))$('join-name').value=MYNAME}catch(e){}
+  drawMe();
+}));
 /* the name this device plays under: "Player 1" until somebody says otherwise */
 let MYNAME='';
 try{MYNAME=localStorage.getItem('thechair.myname')||''}catch(e){}
@@ -3179,7 +3254,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 21:13';
+const BUILD='06.11. 21:18';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
