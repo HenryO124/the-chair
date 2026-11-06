@@ -1628,6 +1628,33 @@ const $=id=>document.getElementById(id);
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=n=>n.toLocaleString('en-US');
+/* ---- the browser's own Back button ----------------------------------
+   One page means no history, so Back used to walk straight out of the party.
+   It now does whatever the Back button on the current screen does, and when a
+   screen has none it pauses the game rather than losing it. ------------- */
+const BACKVIA={                       // screen -> the button that already knows the way
+  's-setup':'modes-back','s-rules':'back-lobby','s-go':'back-rules',
+  's-chair':'join-back','s-listen':'break','s-quiz':'break','s-final':'restart'
+};
+const BACKTO={'s-lobby':'s-setup','s-break':'resume'};
+function goBack(){
+  const here=screenNow();
+  // playing alone there is no invite page to go back to
+  if(SOLO&&(here==='s-rules'||here==='s-lobby')){show('s-setup');return true}
+  const via=BACKVIA[here];
+  if(via){const b=$(via);if(b&&!b.disabled){b.click();return true}}
+  const to=BACKTO[here];
+  if(to){const b=$(to);if(b&&!b.disabled){b.click();return true}
+         if(document.getElementById(to)){show(to);return true}}
+  return false;                       // already at the front door
+}
+try{history.replaceState({chair:1},'')}catch(e){}
+window.addEventListener('popstate',()=>{
+  // keep one entry in reserve, so Back never leaves the page while a game is on
+  try{history.pushState({chair:1},'')}catch(e){}
+  goBack();
+});
+
 function show(id){
   try{drawMoney()}catch(e){}
   try{$('infopanel').classList.toggle('on',id==='s-listen')}catch(e){}
@@ -1635,6 +1662,7 @@ function show(id){
   // the top-bar nav only makes sense on the front door
   try{document.body.classList.toggle('screen-home',id==='s-home'||id==='s-setup')}catch(e){}
   try{musicSync()}catch(e){}
+  if(screenNow()!==id)try{history.pushState({chair:1,s:id},'')}catch(e){}
   document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));window.scrollTo(0,0);
   if(id==='s-listen')fitScreen();
   if(id==='s-go')try{drawGo()}catch(e){}
@@ -2648,7 +2676,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 19:43';
+const BUILD='06.11. 19:48';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
