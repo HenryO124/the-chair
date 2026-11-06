@@ -511,6 +511,14 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 .padwarn{margin:0 0 10px;padding:10px 12px;border-radius:10px;border:1px solid var(--gold);
   background:rgba(216,163,63,.12);color:var(--bone);font-size:13.5px;line-height:1.45}
 .padwarn[hidden]{display:none!important}
+.qgrid.two{grid-template-columns:1fr 1fr;gap:12px}
+.qgrid.two .qbtn{min-height:32vh;font-size:clamp(20px,6vw,30px);flex-direction:column;justify-content:center;
+  gap:10px;text-align:center}
+.qgrid.two .qbtn .key{display:none}
+.qgrid.two .qbtn .t{font-weight:800}
+.padrun{margin:12px 0 0;text-align:center;font-family:var(--mono);font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.padrun[hidden]{display:none!important}
 .padpic{width:100%;aspect-ratio:4/3;margin:0 0 10px;border-radius:12px;border:1px solid var(--line);
   background:#15110e center/contain no-repeat}
 .padpic[hidden]{display:none!important}
@@ -1384,6 +1392,7 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
       <button type="button" data-g="chair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4.6h10v7H7z"/><path d="M5.5 11.6h13v3.2h-13z"/><path d="M7 14.8V20M17 14.8V20"/></svg>The Chair</button>
       <button type="button" data-g="trivia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>Quiz</button>
       <button type="button" data-g="picture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>Picture Guess</button>
+      <button type="button" data-g="tf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 8.5h7M7 8.5V17"/><path d="M14 17V8.5h5.5M14 13h4.6"/></svg>True or False</button>
       <button type="button" data-g="artist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>Name the Artist</button>
     </div>
 
@@ -1482,6 +1491,23 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
                 2&ndash;8 players <span class="dot">&middot;</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
                 10&ndash;20 min
+              </span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="gamecard" data-game="tf">
+            <span class="gicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M3.5 8.5h7M7 8.5V17"/><path d="M14 17V8.5h5.5M14 13h4.6"/></svg></span>
+            <span class="gbody">
+              <span class="gtag">Keep your run</span>
+              <span class="gname">True or False</span>
+              <span class="gdesc">One statement at a time, half of them true. Everyone answers at once &mdash; and the longer your run of right answers, the more each one is worth.</span>
+              <span class="gmeta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
+                2&ndash;8 players <span class="dot">&middot;</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                10&ndash;15 min
               </span>
             </span>
             <span class="garrow">&rarr;</span>
@@ -1726,11 +1752,12 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
       <p class="padwarn" id="pad-warn" hidden></p>
       <div class="padpic" id="pad-pic" hidden></div>
       <div class="qgrid" id="pad-quiz" hidden></div>
+      <p class="padrun" id="pad-run" hidden></p>
       <button class="bigsign" id="pad-sign" disabled>SIGN THEM</button>
       <button class="bigskip" id="pad-skip" disabled>SKIP</button>
       <button class="bigskip" id="pad-hold" hidden>HOLD IT — NOT YET</button>
       <div class="blockpad" id="pad-blocks"></div>
-      <div class="myteam">
+      <div class="myteam" id="pad-myteam">
         <h4 id="pad-teamhead">Your team</h4>
         <div id="pad-team"></div>
       </div>
@@ -2384,6 +2411,12 @@ function pictureBank(){
     ask[r[0]]||ask['*'], r[1], r[2], r[3], r[4], '', 'p'+i ]);
 }
 function catBank(){
+  if(isTF()){
+    const all=tfBank();
+    if(!S.cats.length)return all;
+    const want=S.cats.map(catShown);
+    return all.filter(r=>want.indexOf(r[0])>=0);
+  }
   if(isPicture()){
     const all=pictureBank();
     if(!S.cats.length)return all;
@@ -2522,11 +2555,13 @@ try{const h=$('tpl-hero');
 const GAMEBLURB={chair:'Open a room, pass the code around, and everyone takes a chair from their own phone.',
   artist:'Open a room and pass the code around. Four names land on every phone, once per record.',
   trivia:'Open a room and pass the code around. Four answers land on every phone, question after question.',
-  picture:'Open a room and pass the code around. A picture goes up here, four answers on every phone.'};
+  picture:'Open a room and pass the code around. A picture goes up here, four answers on every phone.',
+  tf:'Open a room and pass the code around. One statement at a time, and every phone says true or false.'};
 const SOLOBLURB={chair:'One screen, one coach, and a pile of records. No room, nobody to wait for.',
   artist:'Four names on this screen, record after record, scored as you go.',
   trivia:'A hundred and twenty questions across six categories. Play as many as you like.',
-  picture:'Cities, landmarks, paintings and the odd animal. Name what you are looking at.'};
+  picture:'Cities, landmarks, paintings and the odd animal. Name what you are looking at.',
+  tf:'Statements, half of them true. Say which is which, and keep your run alive.'};
 let LEARNING=false, SOLO=false;
 function pickGame(name){
   if(!GAMEBLURB[name]||LEARNING)return;             // the unbuilt ones stay unpickable
@@ -2536,6 +2571,7 @@ function pickGame(name){
   // the room is watching from their phones: tell them what was picked, and
   // hand them the ballot for this game's topics
   S.cats=[];try{clearVotes();drawCats()}catch(e){}
+  try{$('meta').textContent=METALABEL[name]||''}catch(e){}
   if(PARTY.role==='host')publishStage();
 }
 // menu 2, dressed for whichever door you came through
@@ -5568,9 +5604,19 @@ var PICTURES=[["City","Paris","Vienna","Brussels","Lyon"],["City","Venice","Amst
 var PICASK={"en":{"City":"Which city is this?","Landmark":"What is this?","Painting":"Which painting is this?","Nature":"What is this?","*":"What is this?"},"fi":{"City":"Mikä kaupunki tämä on?","Landmark":"Mikä tämä on?","Painting":"Mikä maalaus tämä on?","Nature":"Mikä tämä on?","*":"Mikä tämä on?"},"sv":{"City":"Vilken stad är detta?","Landmark":"Vad är detta?","Painting":"Vilken målning är detta?","Nature":"Vad är detta?","*":"Vad är detta?"}};
 var PICCAT={"en":{"City":"City","Landmark":"Landmark","Painting":"Painting","Nature":"Nature"},"fi":{"City":"Kaupunki","Landmark":"Maamerkki","Painting":"Maalaus","Nature":"Luonto"},"sv":{"City":"Stad","Landmark":"Landmärke","Painting":"Målning","Nature":"Natur"}};
 /* ---- end pictures ---- */
+/* ---- true or false: generated, do not edit by hand ---- */
+var TFBANK=[["Science", true, "A banana plant is a herb, not a tree.", "Banaanikasvi on ruoho, ei puu.", "Bananplantan är en ört, inte ett träd.", "It has no woody trunk: what looks like one is a tight roll of leaf bases.", "Siinä ei ole puista runkoa — se mikä näyttää rungolta on tiukka kääry lehtitupkia.", "Den har ingen vedartad stam: det som ser ut som en är hoprullade bladslidor."], ["Science", false, "Lightning never strikes the same place twice.", "Salama ei koskaan iske samaan paikkaan kahdesti.", "Blixten slår aldrig ner på samma ställe två gånger.", "Tall towers are hit again and again — the Empire State Building takes about twenty strikes a year.", "Korkeat tornit saavat iskuja yhä uudelleen: Empire State Building noin kaksikymmentä kertaa vuodessa.", "Höga torn träffas om och om igen — Empire State Building ungefär tjugo gånger om året."], ["Science", true, "Honey found in ancient tombs was still edible.", "Muinaishaudoista löytynyt hunaja oli yhä syötävää.", "Honung från forntida gravar var fortfarande ätlig.", "Low water and high acidity keep bacteria out, so honey does not spoil.", "Vähäinen vesi ja happamuus pitävät bakteerit loitolla, joten hunaja ei pilaannu.", "Låg vattenhalt och hög surhet håller bakterier borta, så honung blir inte dålig."], ["Science", false, "Humans use only ten per cent of their brains.", "Ihminen käyttää aivoistaan vain kymmenen prosenttia.", "Människan använder bara tio procent av hjärnan.", "Scans show activity across the whole brain over a day; no large part sits idle.", "Kuvantaminen näyttää toimintaa kaikkialla aivoissa; mikään iso osa ei ole toimettomana.", "Hjärnavbildning visar aktivitet i hela hjärnan; ingen stor del ligger oanvänd."], ["Science", true, "Octopuses have blue blood.", "Mustekalalla on sinistä verta.", "Bläckfiskar har blått blod.", "They carry oxygen with copper-based haemocyanin instead of iron.", "Ne kuljettavat happea kuparipohjaisella hemosyaniinilla raudan sijaan.", "De transporterar syre med kopparbaserat hemocyanin i stället för järn."], ["Geography", true, "Finland has more lakes than any other country in Europe.", "Suomessa on enemmän järviä kuin missään muussa Euroopan maassa.", "Finland har fler sjöar än något annat land i Europa.", "Counting every pool over five ares, there are about 188,000 of them.", "Kun lasketaan kaikki yli viiden aarin lammet, niitä on noin 188 000.", "Räknar man varje vattensamling över fem ar finns omkring 188 000."], ["Geography", false, "The Great Wall of China is visible from the Moon with the naked eye.", "Kiinan muuri näkyy Kuusta paljain silmin.", "Kinesiska muren syns från månen med blotta ögat.", "It is too narrow; astronauts cannot pick it out even from low orbit without help.", "Se on liian kapea: astronautit eivät erota sitä edes matalalta kiertoradalta ilman apua.", "Den är för smal; astronauter ser den inte ens från låg omloppsbana utan hjälp."], ["Geography", true, "Russia borders fourteen countries.", "Venäjä rajoittuu neljääntoista maahan.", "Ryssland gränsar till fjorton länder.", "From Norway and Finland in the north-west round to North Korea in the east.", "Norjasta ja Suomesta luoteessa aina Pohjois-Koreaan idässä.", "Från Norge och Finland i nordväst till Nordkorea i öster."], ["Geography", false, "Sweden is larger than Finland by more than double.", "Ruotsi on yli kaksi kertaa Suomea suurempi.", "Sverige är mer än dubbelt så stort som Finland.", "450,000 against 338,000 square kilometres — about a third larger, not double.", "450 000 vastaan 338 000 neliökilometriä — noin kolmanneksen suurempi, ei kaksinkertainen.", "450 000 mot 338 000 kvadratkilometer — ungefär en tredjedel större, inte dubbelt."], ["History", true, "Oxford University is older than the Aztec empire.", "Oxfordin yliopisto on vanhempi kuin atsteekkien valtakunta.", "Oxfords universitet är äldre än aztekernas rike.", "Teaching began there by 1096; Tenochtitlan was founded in 1325.", "Opetus alkoi siellä vuoteen 1096 mennessä; Tenochtitlán perustettiin 1325.", "Undervisning fanns där 1096; Tenochtitlán grundades 1325."], ["History", false, "Vikings wore horned helmets.", "Viikingit käyttivät sarvikypäriä.", "Vikingarna bar hornprydda hjälmar.", "The horns came from a 19th-century opera costume, not from any grave.", "Sarvet ovat 1800-luvun oopperapuvusta, eivät mistään haudasta.", "Hornen kommer från en operakostym på 1800-talet, inte från någon grav."], ["History", true, "Finland declared independence in 1917.", "Suomi julistautui itsenäiseksi vuonna 1917.", "Finland förklarade sig självständigt 1917.", "The Senate's declaration was approved by parliament on 6 December 1917.", "Senaatin julistus hyväksyttiin eduskunnassa 6. joulukuuta 1917.", "Senatens förklaring godkändes av riksdagen den 6 december 1917."], ["History", false, "Napoleon Bonaparte was unusually short for his time.", "Napoleon Bonaparte oli aikalaisiinsa nähden poikkeuksellisen lyhyt.", "Napoleon Bonaparte var ovanligt kort för sin tid.", "At about 1.69 m he was average; the jibe comes from old French inches and British cartoons.", "Noin 169 senttiä oli keskimittaa; pilkka syntyi vanhoista ranskalaisista tuumista ja brittipilakuvista.", "Omkring 1,69 m var genomsnittligt; gliringen kommer från gamla franska tum och brittiska karikatyrer."], ["Everyday", true, "Carrots were purple before they were orange.", "Porkkanat olivat violetteja ennen kuin ne olivat oransseja.", "Morötter var lila innan de blev orange.", "Purple and yellow varieties came first; the orange one was bred later in the Netherlands.", "Violetit ja keltaiset lajikkeet tulivat ensin; oranssi jalostettiin myöhemmin Alankomaissa.", "Lila och gula sorter kom först; den orange förädlades senare i Nederländerna."], ["Everyday", false, "Shaving makes hair grow back thicker.", "Ajaminen saa karvan kasvamaan takaisin paksumpana.", "Rakning gör att håret växer tillbaka tjockare.", "The blunt cut end only feels coarser; the hair itself is unchanged.", "Tylpäksi leikattu pää vain tuntuu karheammalta; itse karva ei muutu.", "Den avklippta änden känns bara strävare; själva håret är oförändrat."], ["Everyday", true, "Finland drinks more coffee per person than any other country.", "Suomessa juodaan kahvia henkeä kohti enemmän kuin missään muualla.", "Finland dricker mer kaffe per person än något annat land.", "Around twelve kilos of beans a year each, well ahead of the other Nordics.", "Noin kaksitoista kiloa papuja vuodessa henkeä kohti, selvästi muita Pohjoismaita edellä.", "Omkring tolv kilo bönor per person och år, klart före övriga Norden."], ["Everyday", false, "You should wait an hour after eating before swimming.", "Syömisen jälkeen pitää odottaa tunti ennen uimaan menoa.", "Man bör vänta en timme efter maten innan man badar.", "No drowning has ever been traced to a full stomach; the advice is folklore.", "Yhtäkään hukkumista ei ole jäljitetty täyteen vatsaan; ohje on kansanperinnettä.", "Ingen drunkning har kunnat spåras till en full mage; rådet är folktro."], ["Arts & culture", true, "Mozart wrote his first symphony as a child.", "Mozart sävelsi ensimmäisen sinfoniansa lapsena.", "Mozart skrev sin första symfoni som barn.", "He was eight years old, in London in 1764.", "Hän oli kahdeksanvuotias, Lontoossa vuonna 1764.", "Han var åtta år, i London 1764."], ["Arts & culture", false, "Vincent van Gogh cut off his whole ear.", "Vincent van Gogh leikkasi koko korvansa irti.", "Vincent van Gogh skar av sig hela örat.", "He cut off most of the left lobe, not the whole ear.", "Hän leikkasi suurimman osan vasemmasta korvalehdestä, ei koko korvaa.", "Han skar av största delen av vänster öronsnibb, inte hela örat."], ["Arts & culture", true, "The Moomins were created by a Finnish author.", "Muumit loi suomalainen kirjailija.", "Muminerna skapades av en finländsk författare.", "Tove Jansson, who wrote them in Swedish.", "Tove Jansson, joka kirjoitti ne ruotsiksi.", "Tove Jansson, som skrev dem på svenska."], ["Sport", true, "A football match has two halves of forty-five minutes.", "Jalkapallo-ottelussa on kaksi 45 minuutin puoliaikaa.", "En fotbollsmatch har två halvlekar på 45 minuter.", "Plus whatever stoppage time the referee adds to each.", "Lisäksi erotuomarin lisäämä lisäaika kummassakin.", "Plus den tilläggstid domaren lägger på i vardera."], ["Sport", false, "The modern Olympic marathon has always been 42.195 km.", "Nykyaikainen olympiamaraton on aina ollut 42,195 kilometriä.", "Det moderna olympiska maratonloppet har alltid varit 42,195 km.", "The distance varied until 1921; the 1908 London course set the figure later made standard.", "Matka vaihteli vuoteen 1921 asti; Lontoon 1908 rata antoi luvun, josta tehtiin myöhemmin standardi.", "Distansen varierade till 1921; banan i London 1908 gav siffran som senare blev standard."], ["Sport", true, "Pesäpallo was invented in Finland in the 1920s.", "Pesäpallo kehitettiin Suomessa 1920-luvulla.", "Boboll uppfanns i Finland på 1920-talet.", "Lauri Pihkala built it from American baseball; the first match was played in 1920.", "Lauri Pihkala rakensi sen amerikkalaisesta baseballista; ensimmäinen ottelu pelattiin 1920.", "Lauri Pihkala byggde den av amerikansk baseboll; första matchen spelades 1920."], ["Sport", false, "A golf ball is smooth to make it fly further.", "Golfpallo on sileä jotta se lentäisi pidemmälle.", "En golfboll är slät för att flyga längre.", "The dimples are the point: they cut drag and roughly double the distance.", "Kuopat ovat koko juju: ne vähentävät vastusta ja suunnilleen kaksinkertaistavat matkan.", "Groparna är hela poängen: de minskar luftmotståndet och fördubblar ungefär längden."]];
+/* ---- end true or false ---- */
+const TFWORDS={en:['True','False'],fi:['Totta','Tarua'],sv:['Sant','Falskt']};
+const isTF=()=>S.game==='tf';
+function tfBank(){
+  const L=S.lang==='fi'?1:S.lang==='sv'?2:0;      // statement column offset
+  const W=TFWORDS[S.lang]||TFWORDS.en;
+  return TFBANK.map((r,i)=>[catShown(r[0]),r[2+L],r[1]?W[0]:W[1],'','','',r[5+L],'tf'+i]);
+}
 const isTrivia=()=>S.game==='trivia';
 const isPicture=()=>S.game==='picture';
-const isAsking=()=>isTrivia()||isPicture();   // the two games with a written question
+const isAsking=()=>isTrivia()||isPicture()||isTF();   // the games with a written question
 // an option is an act in Name the Artist and a plain string in the Quiz
 const optLabel=o=>isAsking()?o:o[0];
 function quizStart(){
@@ -5584,7 +5630,7 @@ function quizStart(){
     Q.deck=shuffle(p).slice(0,Q.of);
   }
   Q.round=0;Q.on=true;
-  S.players.forEach(pl=>{pl.score=0});
+  S.players.forEach(pl=>{pl.score=0;pl.run=0});
   quizNext();
 }
 function quizNext(){
@@ -5594,8 +5640,15 @@ function quizNext(){
   Q.answers={};Q.order=[];Q.revealed=false;
   if(isAsking()){
     Q.qid=Q.current[7];                            // its row in the bank, picture and all
-    Q.options=shuffle(Q.current.slice(2,6));
-    Q.correct=Q.options.indexOf(Q.current[2]);
+    if(isTF()){
+      // the two answers keep the same places all evening, so nobody misreads
+      const W=TFWORDS[S.lang]||TFWORDS.en;
+      Q.options=[W[0],W[1]];
+      Q.correct=(Q.current[2]===W[0])?0:1;
+    }else{
+      Q.options=shuffle(Q.current.slice(2,6));
+      Q.correct=Q.options.indexOf(Q.current[2]);
+    }
     $('q-curtain').classList.add('open');          // a question hides nothing
     $('q-next').textContent='Reveal';
     showQuizQuestion();
@@ -5668,7 +5721,19 @@ function quizReveal(){
   // ten points for the right name, five more for being first to it
   const firstRight=Q.order.find(id=>Q.answers[id]===Q.correct);
   S.players.forEach(p=>{
-    if(Q.answers[p.id]===Q.correct)p.score=(p.score||0)+10+(p.id===firstRight?5:0);
+    const right=Q.answers[p.id]===Q.correct;
+    if(isTF()){
+      // the Smart 10 nerve: the longer your run, the more each one is worth,
+      // and a single wrong answer takes you back to the start
+      if(right){
+        p.run=(p.run||0)+1;
+        p.score=(p.score||0)+10*Math.min(p.run,5);
+      }else{
+        p.run=0;
+      }
+      return;
+    }
+    if(right)p.score=(p.score||0)+10+(p.id===firstRight?5:0);
   });
   $('q-curtain').classList.add('open');
   $('q-next').textContent=Q.round>=Q.deck.length?'See the winner'
@@ -5681,7 +5746,8 @@ function quizReveal(){
 }
 function quizFinish(){
   Q.on=false;clearTimeout(Q.timer);
-  try{$('final-eyebrow').textContent=isPicture()?'Sharpest eye':isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
+  try{$('final-eyebrow').textContent=isPicture()?'Sharpest eye':isTF()?'Best nose for a lie'
+    :isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
   const box=$('q-screen');if(box)box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
   const best=[...S.players].sort((a,b)=>(b.score||0)-(a.score||0));
   const top=best[0]?(best[0].score||0):0;
@@ -5878,12 +5944,14 @@ function dirStart(){
   dirConnect();drawRooms();
   DIR.timer=setInterval(()=>{drawRooms()},10000);
 }
-const GAMELABEL={chair:'The Chair',artist:'Name the Artist',trivia:'Quiz',picture:'Picture Guess'};
+const GAMELABEL={chair:'The Chair',artist:'Name the Artist',trivia:'Quiz',picture:'Picture Guess',
+  tf:'True or False'};
 const GAMEICON={
   chair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4.6h10v7H7z"/><path d="M5.5 11.6h13v3.2h-13z"/><path d="M7 14.8V20M17 14.8V20"/></svg>',
   artist:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>',
   trivia:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>',
-  picture:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>'};
+  picture:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>',
+  tf:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 8.5h7M7 8.5V17"/><path d="M14 17V8.5h5.5M14 13h4.6"/></svg>'};
 function drawRooms(){
   const box=$('pub-list');if(!box)return;
   const now=Date.now();
@@ -6155,7 +6223,7 @@ function quizState(phase){
       :{name:Q.current[0],track:trackOf(Q.current),year:yearOf(Q.current)},
     options:Q.options.map(optLabel),
     seats:S.players.map(p=>({id:p.id,pid:p.pid||'',name:p.name,icon:p.icon,photo:p.photo||'',
-      said:(p.id in Q.answers),pick:Q.revealed?(p.id in Q.answers?Q.answers[p.id]:-1):-1,
+      said:(p.id in Q.answers),pick:Q.revealed?(p.id in Q.answers?Q.answers[p.id]:-1):-1,run:p.run||0,
       score:p.score||0,team:[],passed:false,full:false,blockUsed:false,total:p.score||0,
       reserved:false}))};
 }
@@ -6469,7 +6537,7 @@ function finalLine(st,me){
 /* --- the phone, when the game is Name the Artist --- */
 function drawPadQuiz(st,me){
   const box=$('pad-quiz');if(!box)return;
-  const chairBits=['pad-sign','pad-skip','pad-blocks','pad-hold','pad-team','pad-teamhead'];
+  const chairBits=['pad-sign','pad-skip','pad-blocks','pad-hold','pad-team','pad-teamhead','pad-myteam'];
   chairBits.forEach(id=>{const e=$(id);if(e)e.hidden=true});
   box.hidden=false;
   // the picture is the question in Picture Guess, and half the fun in the quiz
@@ -6511,8 +6579,14 @@ function drawPadQuiz(st,me){
     const pp2=$('pad-pic');if(pp2){pp2.hidden=true;pp2.dataset.u=''}
     return;
   }
-  box.className='qgrid';
+  box.className='qgrid'+((st.options||[]).length===2?' two':'');
   try{$('pad-seats').hidden=false}catch(e){}
+  const rl=$('pad-run');
+  if(rl){
+    const run=(me&&me.run)||0;
+    rl.hidden=!(st.game==='tf'&&run>0);
+    if(!rl.hidden)rl.textContent=run+' in a row \u00b7 next one is worth '+(10*Math.min(run+1,5));
+  }
   const opts=st.options||[];
   // the same four buttons stay in the page for the whole question: replacing
   // them mid-press threw the tap away, and in this game that is the round
@@ -6545,8 +6619,11 @@ $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
   b.classList.add('mine');
   sendAct('answer',myPick);
 }));
+const METALABEL={chair:'blind signings',artist:'name the artist',trivia:'general knowledge',
+  picture:'picture guess',tf:'true or false'};
 function drawPad(){
   const st=PARTY.stage,me=mySeat();
+  try{if(st&&st.game)$('meta').textContent=METALABEL[st.game]||''}catch(e){}
   // two different versions in one room is the one bug a phone can fix itself
   try{
     const wn=$('pad-warn');
@@ -6578,7 +6655,7 @@ function drawPad(){
     sp.hidden=!show;
     if(show)sp.innerHTML='<b>Tonight</b><br>'+esc(st.setup);
   }
-  if(st.game==='artist'||st.game==='trivia'||st.game==='picture'){
+  if(st.game==='artist'||st.game==='trivia'||st.game==='picture'||st.game==='tf'){
     // the record plays on the phone as well, behind a curtain until the reveal,
     // so somebody who could not make it in person can still hear it
     drawPadScreen({phase:(st.remote&&st.vid)?'live':'',vid:st.vid||'',hide:!st.revealed});
@@ -6587,7 +6664,7 @@ function drawPad(){
   }
   const qb=$('pad-quiz');if(qb)qb.hidden=true;
   const pq=$('pad-pic');if(pq){pq.hidden=true;pq.dataset.u=''}
-  ['pad-sign','pad-skip','pad-team','pad-teamhead'].forEach(id=>{const e=$(id);if(e)e.hidden=false});
+  ['pad-sign','pad-skip','pad-team','pad-teamhead','pad-myteam'].forEach(id=>{const e=$(id);if(e)e.hidden=false});
   if(!me){
     $('pad-round').textContent='Room '+PARTY.code;
     $('pad-state').textContent=st.phase==='lobby'
