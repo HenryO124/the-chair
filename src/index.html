@@ -2086,7 +2086,8 @@ const CATALOG=[
 ["The Killers","Mr. Brightside",2004,28,"Rock","Mr. Brightside",2003],
 ].filter(a=>a[3]>0);
 
-const S={players:[],deck:[],round:0,teamSize:3,game:'chair',len:15,era:0,genre:'Random',clip:0,turn:0,bids:[],current:null};
+const SHELVED={chair:1};         // built, not ready: no card, no filter chip
+const S={players:[],deck:[],round:0,teamSize:3,game:'trivia',len:15,era:0,genre:'Random',clip:0,turn:0,bids:[],current:null};
 const trackOf=a=>a[5];
 const yearOf=a=>a[6];
 const $=id=>document.getElementById(id);
@@ -2563,8 +2564,12 @@ const SOLOBLURB={chair:'One screen, one coach, and a pile of records. No room, n
   picture:'Cities, landmarks, paintings and the odd animal. Name what you are looking at.',
   tf:'Statements, half of them true. Say which is which, and keep your run alive.'};
 let LEARNING=false, SOLO=false;
+function firstGame(){
+  const c=document.querySelector('#s-setup .gamecard:not([hidden])');
+  return (c&&c.dataset.game)||'trivia';
+}
 function pickGame(name){
-  if(!GAMEBLURB[name]||LEARNING)return;             // the unbuilt ones stay unpickable
+  if(!GAMEBLURB[name]||LEARNING||SHELVED[name])return;   // the unbuilt ones stay unpickable
   S.game=name;
   document.querySelectorAll('.gamecard').forEach(c=>c.classList.toggle('sel',c.dataset.game===name));
   try{$('bar-hint').textContent=(SOLO?SOLOBLURB:GAMEBLURB)[name]}catch(e){}
@@ -2584,7 +2589,7 @@ function openModes(mode){
   if(go)go.textContent='Start on this screen';
   const lab=document.querySelector('#startbar .sbt');
   if(lab)lab.textContent='Play on your own';
-  if(!LEARNING)pickGame(GAMEBLURB[S.game]?S.game:'chair');
+  if(!LEARNING)pickGame(GAMEBLURB[S.game]&&!SHELVED[S.game]?S.game:firstGame());
   // creating a game opens the room straight away, so the code is there to pass around
   if(mode==='create'){$('startbar').hidden=true;$('roombar').hidden=false;openLobby('s-setup');return}
   $('roombar').hidden=true;$('startbar').hidden=LEARNING;
@@ -2606,7 +2611,7 @@ function startSolo(){
   show('s-lobby');
 }
 function goFromModes(){
-  if(!GAMEBLURB[S.game])pickGame('chair');
+  if(!GAMEBLURB[S.game]||SHELVED[S.game])pickGame(firstGame());
   if(SOLO)startSolo(); else toLobby();     // the room is already open by now
 }
 $('create-room')&&($('create-room').onclick=goFromModes);
@@ -6911,6 +6916,11 @@ $('pad-leave')&&($('pad-leave').onclick=()=>{partyEnd();openChairScreen()});
   drawSeats=wrap(drawSeats);doReveal=wrap(doReveal);nextRound=wrap(nextRound);finish=wrap(finish);
 })();
 
+// the shelved games leave the shelf: the code stays, the card goes
+try{Object.keys(SHELVED).forEach(g=>{
+  document.querySelectorAll('[data-game="'+g+'"]').forEach(c=>{c.hidden=true});
+  document.querySelectorAll('#mode-filter [data-g="'+g+'"]').forEach(c=>{c.hidden=true});
+})}catch(e){}
 try{drawVis();drawMax()}catch(e){}
 /* a party where two screens run two builds is a party full of small mysteries,
    so the page keeps an eye on the version it was served from */
