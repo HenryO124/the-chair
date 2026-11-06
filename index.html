@@ -2115,6 +2115,9 @@ function show(id){
    somebody has touched the page, so the first tap anywhere starts it. ----- */
 let musicOn=true;
 try{const m=localStorage.getItem('thechair.music');if(m!==null)musicOn=(m==='1')}catch(e){}
+// somebody who followed an invitation came to join, not to listen: without this
+// their phone quietly downloads 593 KB of music it will never play
+try{if(/^#[A-Za-z]{4}$/.test(location.hash||''))musicOn=false}catch(e){}
 function musicShouldPlay(){
   const id=screenNow();
   if(!musicOn)return false;
@@ -3254,14 +3257,14 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 21:18';
+const BUILD='06.11. 21:30';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
                'wss://test.mosquitto.org:8081/mqtt'];
 const CODE_LETTERS='ABCDEFGHJKLMNPQRSTUVWXYZ';   // no I, no O: they read as 1 and 0
-const MAX_CHAIRS=8;
+let MAX_CHAIRS=8;          // the host sets the size of the room
 const PARTY={role:'solo',code:'',client:null,pid:'',seq:0,seen:{},stage:null,
              joinTimer:null,pubTimer:null,formPlayers:null};
 
@@ -3319,6 +3322,7 @@ function partyConnect(onUp,onFail,setStatus){
 }
 function partyEnd(){
   if(PARTY.joinTimer){clearInterval(PARTY.joinTimer);PARTY.joinTimer=null}
+  try{if(DIR.pingTimer){clearInterval(DIR.pingTimer);DIR.pingTimer=null}}catch(e){}
   if(PARTY.client){
     try{
       if(PARTY.role==='host'&&PARTY.code)
@@ -5847,7 +5851,9 @@ function dirConnect(){
     c.on('error',giveUp);
     setTimeout(giveUp,7000);
     c.on('connect',()=>{
-      if(settled)return;settled=true;DIR.client=c;c.options.reconnectPeriod=0;
+      if(settled)return;settled=true;
+      if(DIR.stopped){try{c.end(true)}catch(e){}return}   // we left the front page
+      DIR.client=c;c.options.reconnectPeriod=0;
       c.subscribe(DIRTOP+'+',{qos:0});
       c.on('message',(t,p)=>{
         const code=String(t).slice(DIRTOP.length);
@@ -5859,10 +5865,12 @@ function dirConnect(){
   })();
 }
 function dirStop(){
+  DIR.stopped=true;                    // a socket still dialling must not be adopted
   if(DIR.timer){clearInterval(DIR.timer);DIR.timer=null}
   if(DIR.client){try{DIR.client.end(true)}catch(e){}DIR.client=null}
 }
 function dirStart(){
+  DIR.stopped=false;
   if(DIR.timer)return;
   dirConnect();drawRooms();
   DIR.timer=setInterval(()=>{drawRooms()},10000);
@@ -5984,6 +5992,16 @@ function hostJoin(m){
     held.pid=pid;held.icon=icon;if(name)held.name=name;
     drawLobbyList();publishStage();return;
   }
+  // an empty unnamed row on the host screen is not a person: give it away
+  // rather than turn the eighth friend away from a room that looks full
+  if(!p&&inPrep()&&S.players.length>=MAX_CHAIRS){
+    const spare=S.players.find(x=>!x.pid&&!x.reserved&&!(x.name||'').trim());
+    if(spare){
+      spare.pid=pid;spare.icon=icon;if(name)spare.name=name;
+      delete KNOCKS[pid];
+      drawLobbyList();drawRoomBar();publishStage();return;
+    }
+  }
   if(p){}
   // the room is open from the game menu onward, so a chair is free in all of it
   else if(!inPrep()||S.players.length>=MAX_CHAIRS){
@@ -6089,7 +6107,9 @@ function quizState(phase){
     remote:!!S.remote,
     vid:isAsking()||!Q.current||!S.remote?'':videoFor(Q.current),
     ask:isAsking()&&Q.current?Q.current[1]:'',
-    pic:(function(){try{const p=QIMG[String(Q.qid)];return p?p.u:''}catch(e){return ''}})(),
+    // the television keeps the big one; a phone gets a fifth of the bytes
+    pic:(function(){try{const p=QIMG[String(Q.qid)];
+      return p?String(p.u).replace(/([?&])width=\d+/,'$1width=500'):''}catch(e){return ''}})(),
     cat:isAsking()&&Q.current?Q.current[0]:'',
     act:!Q.revealed||!Q.current?null
       :isAsking()?{name:Q.current[2],track:'',year:''}
@@ -6179,6 +6199,22 @@ function drawAvatarPicker(){
       +'aria-label="Face '+(i+1)+'">'+avatarSVG(i,'pav')+'</button>';
   box.innerHTML=h;
 }
+/* the host has shut the room: say so, rather than leaving a phone staring at a
+   screen that will never change again */
+function roomClosed(){
+  PARTY.stage=null;
+  try{$('pad-quiz').hidden=true;$('pad-quiz').innerHTML='';$('pad-quiz').dataset.key=''}catch(e){}
+  try{$('pad-pic').hidden=true}catch(e){}
+  try{$('pad-vote').hidden=true;$('pad-setup').hidden=true;$('pad-seats').hidden=true}catch(e){}
+  try{$('pad-screen').hidden=true}catch(e){}
+  ['pad-sign','pad-skip','pad-hold','pad-blocks','pad-team','pad-teamhead']
+    .forEach(id=>{const e=$(id);if(e)e.hidden=true});
+  try{$('pad-round').textContent='Room '+PARTY.code}catch(e){}
+  try{$('pad-state').textContent='The host has closed the room. The party is over \u2014 '
+    +'or they are opening a new one, in which case you will need the new code.';
+    $('pad-state').className='mystate'}catch(e){}
+  try{$('pad-leave').textContent='Back to the start'}catch(e){}
+}
 function openChairScreen(){
   padIcon=0;drawAvatarPicker();
   $('chair-join').hidden=false;$('chair-pad').hidden=true;
@@ -6198,7 +6234,11 @@ function chairJoin(){
     c.on('message',(t,payload)=>{
       const face=facePid(t);
       if(face!==null){takeFace(face,payload.toString());return}
-      let m=null;try{m=JSON.parse(payload.toString())}catch(e){return}
+      const body=payload.toString();
+      if(t===topicFor(PARTY.code,'stage')&&!body.trim()){   // the host closed the room
+        roomClosed();return;
+      }
+      let m=null;try{m=JSON.parse(body)}catch(e){return}
       if(!m||typeof m!=='object'||!Array.isArray(m.seats))return;
       PARTY.stage=m;
       if(!mySeat()&&m.phase==='lobby'){
@@ -6420,7 +6460,7 @@ function drawPadQuiz(st,me){
   stEl.classList.toggle('good',!!got);
   stEl.classList.toggle('bad',!!(st.revealed&&!got&&mine>=0));
   if(st.phase==='over'){
-    box.className='padfinal';          // the four-answer grid has no business here
+    box.className='padfinal';box.dataset.key='';   // the four-answer grid has no business here
     box.innerHTML=finalBoard(st,me);
     try{$('pad-round').textContent='';$('pad-state').textContent='';
       $('pad-state').className='mystate';
@@ -6428,17 +6468,29 @@ function drawPadQuiz(st,me){
     return;
   }
   if(!me){                      // still typing a name: nothing here is yours yet
-    box.hidden=true;box.innerHTML='';
+    box.hidden=true;box.innerHTML='';box.dataset.key='';
     const pp2=$('pad-pic');if(pp2){pp2.hidden=true;pp2.dataset.u=''}
     return;
   }
   box.className='qgrid';
   try{$('pad-seats').hidden=false}catch(e){}
-  box.innerHTML=(st.options||[]).map((t,i)=>{
-    const cls=st.revealed?(i===st.correct?' right':(i===mine?' missed':' wrong')):(i===mine?' mine':'');
-    return '<button class="qbtn'+cls+'" data-ans="'+i+'"'+((said||st.revealed)?' disabled':'')+'>'
-      +'<span class="key">'+'ABCD'[i]+'</span><span class="t">'+esc(t)+'</span></button>';
-  }).join('');
+  const opts=st.options||[];
+  // the same four buttons stay in the page for the whole question: replacing
+  // them mid-press threw the tap away, and in this game that is the round
+  const key=String(st.round)+'\u0001'+opts.join('\u0001');
+  if(box.dataset.key!==key){
+    box.dataset.key=key;
+    box.innerHTML=opts.map((t,i)=>
+      '<button class="qbtn" data-ans="'+i+'">'
+      +'<span class="key">'+'ABCD'[i]+'</span><span class="t">'+esc(t)+'</span></button>').join('');
+  }
+  const btns=box.querySelectorAll('button[data-ans]');
+  opts.forEach((t,i)=>{
+    const b=btns[i];if(!b)return;
+    b.className='qbtn'+(st.revealed?(i===st.correct?' right':(i===mine?' missed':' wrong'))
+                                   :(i===mine?' mine':''));
+    b.disabled=!!(said||st.revealed);
+  });
 }
 $('pv-grid')&&($('pv-grid').addEventListener('click',e=>{
   const b=e.target.closest('button[data-v]');if(!b)return;
@@ -6606,7 +6658,8 @@ function followInvitation(){
 
 /* --- wiring --- */
 $('m-code')&&($('m-code').onclick=openChairScreen);
-$('lobby-back')&&($('lobby-back').onclick=closeLobby);
+// Back means back a screen. Shutting the room down is "← Main menu", which says so.
+$('lobby-back')&&($('lobby-back').onclick=()=>show('s-setup'));
 $('to-rules')&&($('to-rules').onclick=()=>{drawGo();show('s-go')});
 function dressRules(){
   try{dressWhere()}catch(e){}
@@ -6752,6 +6805,7 @@ try{drawVis();drawMax()}catch(e){}
   let newest='';
   function look(){
     try{
+    if(screenNow()==='s-chair')return;      // a phone in a game is not shopping for builds
     fetch('version.txt?t='+Date.now(),{cache:'no-store'})
       .then(r=>r.ok?r.text():null)
       .then(t=>{
