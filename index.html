@@ -868,9 +868,14 @@ body.learning .gamecard .garrow{display:none}
 .qasking,.qanswer{position:absolute;inset:0;display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:16px;text-align:center;padding:5% 7%}
 /* a picture behind the question, dimmed so the words still read */
-.qpic{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0}
+.qpicbg{position:absolute;inset:0;background-size:cover;background-position:center;
+  filter:blur(26px) saturate(.7) brightness(.45);transform:scale(1.12);opacity:0}
+.qpic{position:absolute;inset:0;background-size:contain;background-repeat:no-repeat;
+  background-position:center;opacity:0}
+.qpicbg.on{opacity:1;transition:opacity .45s ease}
 .qpic.on{opacity:1;transition:opacity .45s ease}
-.qshade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,6,9,.55),rgba(10,6,9,.82))}
+.qshade{position:absolute;inset:0;
+  background:radial-gradient(ellipse at center,rgba(10,6,9,.72),rgba(10,6,9,.5) 60%,rgba(10,6,9,.8))}
 .qanswer .qshade{background:linear-gradient(180deg,rgba(10,6,9,.4),rgba(10,6,9,.76))}
 .qcredit{position:absolute;right:9px;bottom:7px;z-index:3;max-width:70%;text-align:right;
   font-family:var(--mono);font-size:9px;line-height:1.4;color:rgba(240,231,216,.42)}
@@ -2638,7 +2643,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 19:30';
+const BUILD='06.11. 19:33';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
@@ -3335,21 +3340,27 @@ function showQuizQuestion(){
   const pic=QIMG[String(Q.qid)];
   // the url goes in through the style property, not through the markup:
   // a quoted URL inside an attribute closes the attribute and loses the picture
-  const back=pic?'<div class="qpic"></div><div class="qshade"></div>':'';
+  const bare=isPicture();            // the picture is the question; leave it alone
+  const back=pic?'<div class="qpicbg"></div><div class="qpic"></div>'
+    +(bare&&!Q.revealed?'':'<div class="qshade"></div>'):'';
   const credit=pic&&pic.c?'<div class="qcredit">'+esc(pic.c)+'</div>':'';
   box.innerHTML=back
     +(Q.revealed
       ? '<div class="qanswer"><div class="qa-right">'+esc(Q.current[2])+'</div>'
         +(Q.current[6]?'<div class="qa-note">'+esc(Q.current[6])+'</div>':'')+'</div>'
+      : bare ? ''
       : '<div class="qasking">'+esc(Q.current[1])+'</div>')
     +credit;
   // fade it in once the browser has it, so a slow picture never flashes half-drawn
-  const el=box.querySelector('.qpic');
+  const el=box.querySelector('.qpic'), bg=box.querySelector('.qpicbg');
   if(el&&pic){
-    el.style.backgroundImage='url("'+pic.u.replace(/"/g,'%22')+'")';
+    const css='url("'+pic.u.replace(/"/g,'%22')+'")';
+    el.style.backgroundImage=css;
+    if(bg)bg.style.backgroundImage=css;
     const im=new Image();
-    im.onload=()=>el.classList.add('on');
-    im.onerror=()=>{el.remove();const sh=box.querySelector('.qshade');if(sh)sh.remove()};
+    im.onload=()=>{el.classList.add('on');if(bg)bg.classList.add('on')};
+    im.onerror=()=>{el.remove();if(bg)bg.remove();
+      const sh=box.querySelector('.qshade');if(sh)sh.remove()};
     im.src=pic.u;
   }
 }
@@ -3416,7 +3427,9 @@ function quizFinish(){
 function drawQuiz(){
   if(!Q.current)return;
   $('q-count').textContent=(isAsking()?'Question ':'Record ')+Q.round+' of '+Q.deck.length;
-  $('q-ask').textContent=isAsking()
+  $('q-ask').textContent=isPicture()&&!Q.revealed
+    ? Q.current[0]+' \u2014 '+Q.current[1]
+    : isAsking()
     ? Q.current[0]
     : Q.revealed ? Q.current[0]+' — '+trackOf(Q.current)+', '+yearOf(Q.current)
     : 'Who is this?';
