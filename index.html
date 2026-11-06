@@ -803,6 +803,14 @@ body.learning .gamecard .garrow{display:none}
 /* the quiz puts a question where the video would be */
 .qasking,.qanswer{position:absolute;inset:0;display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:16px;text-align:center;padding:5% 7%}
+/* a picture behind the question, dimmed so the words still read */
+.qpic{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0}
+.qpic.on{opacity:1;transition:opacity .45s ease}
+.qshade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,6,9,.55),rgba(10,6,9,.82))}
+.qanswer .qshade{background:linear-gradient(180deg,rgba(10,6,9,.4),rgba(10,6,9,.76))}
+.qcredit{position:absolute;right:9px;bottom:7px;z-index:3;max-width:70%;text-align:right;
+  font-family:var(--mono);font-size:9px;line-height:1.4;color:rgba(240,231,216,.42)}
+.qasking,.qanswer{z-index:2;text-shadow:0 2px 18px rgba(0,0,0,.75)}
 .qasking{font-family:var(--disp);font-weight:800;line-height:1.14;
   font-size:clamp(22px,3.4vw,46px)}
 .qa-right{font-family:var(--disp);font-weight:800;line-height:1.1;color:#8FE3B0;
@@ -858,8 +866,8 @@ body.learning .gamecard .garrow{display:none}
     <h2>Take your time.</h2>
     <p class="sub">Nothing is running. Get a beer, argue about whether Roxette really sold that many, go to the toilet. The game is exactly where you left it.</p>
     <button class="btn gold" id="resume">Back to it</button>
-    <button class="btn ghost" id="to-setup">Setup &amp; video library</button>
-    <p class="note">Going to setup abandons the season in progress. Your video library is kept.</p>
+    <button class="btn ghost" id="to-setup">Back to the menu</button>
+    <p class="note">Going back to the menu abandons the game in progress.</p>
   </section>
 
   <!-- the hero is the same on both menus, so it is written once and cloned -->
@@ -958,10 +966,7 @@ body.learning .gamecard .garrow{display:none}
         </div>
       </div>
     </div>
-    <p class="homefoot">
-      <button type="button" class="sidelink" id="open-lib">Video library</button>
-      <span class="dot">&middot;</span><span id="buildtag"></span>
-    </p>
+    <p class="homefoot"><span id="buildtag"></span></p>
   </section>
 
   <!-- MENU 2: which game -->
@@ -1287,34 +1292,6 @@ body.learning .gamecard .garrow{display:none}
     </div>
   </section>
 
-  <!-- VIDEO LIBRARY -->
-  <section class="screen" id="s-library">
-    <div class="eyebrow">Video library</div>
-    <h2 style="margin-bottom:6px">One link per act.</h2>
-    <p class="sub">Paste a YouTube link beside any act and it plays on that act's reveal, tonight and every night after. Nothing here is required — acts with no link simply reveal without a video.</p>
-
-    <div class="libbar">
-      <input type="text" id="lib-search" class="ytin" placeholder="Search an artist or track" autocomplete="off">
-      <div class="seg wrap" id="lib-filter" style="margin:0">
-        <button data-f="all" class="sel">All</button>
-        <button data-f="missing">Missing</button>
-        <button data-f="saved">Saved</button>
-        <button data-f="unchecked">Unchecked</button>
-        <button data-f="flagged">Flagged</button>
-      </div>
-    </div>
-    <p class="pool" id="lib-count"></p>
-
-    <div class="libtable" id="lib-rows"></div>
-
-    <div class="btn-row" style="margin-top:18px">
-      <button class="btn ghost" id="lib-export">Export to a file</button>
-      <button class="btn ghost" id="lib-import">Import a file</button>
-    </div>
-    <input type="file" id="lib-file" accept="application/json,.json" style="display:none">
-    <p class="note" id="lib-msg">Export keeps your links safe if the browser is cleared, and lets you carry them to another computer.</p>
-    <button class="btn gold" id="lib-done" style="margin-top:14px">Back</button>
-  </section>
 
   <!-- AUDITION -->
   <section class="screen" id="s-listen">
@@ -2182,101 +2159,9 @@ $('v-del').onclick=()=>{
   $('vidctl').style.display='none';
 };
 
-/* --- the video library: build it once, keep it for good --- */
-let libFilter='all',libQuery='';
-function libList(){
-  return CATALOG.filter(a=>{
-    const saved=!!savedVideo(a);
-    const st=statusOf(a);
-    if(libFilter==='missing'&&saved)return false;
-    if(libFilter==='saved'&&!saved)return false;
-    if(libFilter==='unchecked'&&(!saved||st))return false;
-    if(libFilter==='flagged'&&st!=='bad')return false;
-    if(!libQuery)return true;
-    const q=libQuery.toLowerCase();
-    return a[0].toLowerCase().includes(q)||a[5].toLowerCase().includes(q)
-        || a[1].toLowerCase().includes(q);
-  });
-}
-function libCount(shown){
-  const have=CATALOG.filter(a=>savedVideo(a)).length;
-  $('lib-count').className='pool';
-  const okN=CATALOG.filter(a=>statusOf(a)==='ok').length;
-  const badN=CATALOG.filter(a=>statusOf(a)==='bad').length;
-  $('lib-count').textContent=have+' of '+CATALOG.length+' acts have a video · '
-    +okN+' checked · '+badN+' flagged'
-    +(shown===undefined?'':' · showing '+shown);
-}
-function drawLibrary(){
-  const rows=libList();
-  libCount(rows.length);
-  $('lib-rows').innerHTML=rows.map(a=>{
-    const k=videoKey(a), id=VIDEOS[k]||'', st=statusOf(a);
-    return '<div class="librow" data-k="'+encodeURIComponent(k)+'">'
-      +'<div class="who"><div class="wa">'+esc(a[0])+'</div>'
-      +'<div class="wt">'+esc(a[5])+' · '+a[6]+'</div></div>'
-      +'<input type="text" class="'+(id?'ok':'')+'" value="'+esc(id)+'" '
-      +'placeholder="YouTube link" autocomplete="off" spellcheck="false">'
-      +'<span class="mark '+(st==='ok'?'on':st==='bad'?'flag':id?'on dim':'')+'" title="'
-      +(st==='ok'?'checked, right':st==='bad'?'flagged as wrong':id?'not checked yet':'no video')
-      +'">'+(st==='bad'?'✗':id?'◉':'○')+'</span></div>';
-  }).join('')||'<div class="librow"><div class="who"><div class="wt">Nothing matches that.</div></div></div>';
-}
-$('lib-rows').addEventListener('input',e=>{
-  const inp=e.target.closest('input');if(!inp)return;
-  const row=inp.closest('.librow'); if(!row)return;
-  const k=decodeURIComponent(row.dataset.k), v=inp.value.trim();
-  const mark=row.querySelector('.mark');
-  if(!v){delete VIDEOS[k];delete VSTATUS[k];saveVideos();saveStatus();
-    inp.classList.remove('ok');mark.className='mark';mark.textContent='○';libCount();return}
-  const id=ytId(v);
-  if(id){if(VIDEOS[k]!==id){delete VSTATUS[k];saveStatus()}
-    VIDEOS[k]=id;saveVideos();inp.classList.add('ok');mark.className='mark on dim';mark.textContent='◉'}
-  else{inp.classList.remove('ok');mark.className='mark';mark.textContent='○'}
-  libCount();                   // the tally keeps up with typing, without redrawing the list
-});
-$('lib-search').oninput=e=>{libQuery=e.target.value.trim();drawLibrary()};
-segHandler('lib-filter','f',v=>{libFilter=v;drawLibrary()});
-$('open-lib').onclick=()=>{
-  drawLibrary();
-  if(!SERVED)$('lib-msg').textContent=fileWarning();
-  show('s-library');
-};
-$('lib-done').onclick=()=>show('s-home');
-
-$('lib-export').onclick=()=>{
-  const blob=new Blob([JSON.stringify({videos:VIDEOS,status:VSTATUS},null,2)],
-    {type:'application/json'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  a.href=url;a.download='the-chair-videos.json';a.click();
-  setTimeout(()=>URL.revokeObjectURL(url),2000);
-  $('lib-msg').textContent='Saved as the-chair-videos.json.';
-};
-$('lib-import').onclick=()=>$('lib-file').click();
-$('lib-file').onchange=e=>{
-  const f=e.target.files&&e.target.files[0];if(!f)return;
-  const r=new FileReader();
-  r.onload=()=>{
-    try{
-      const raw=JSON.parse(r.result);
-      if(!raw||typeof raw!=='object')throw new Error('not a library');
-      const vids=raw.videos&&typeof raw.videos==='object'?raw.videos:raw;  // old flat files still work
-      const sts=raw.status&&typeof raw.status==='object'?raw.status:{};
-      let added=0;
-      Object.keys(vids).forEach(k=>{
-        const id=ytId(vids[k]);
-        if(id&&VIDEOS[k]!==id){VIDEOS[k]=id;added++}
-      });
-      Object.keys(sts).forEach(k=>{if(sts[k]==='ok'||sts[k]==='bad')VSTATUS[k]=sts[k]});
-      saveVideos();saveStatus();drawLibrary();
-      $('lib-msg').textContent=added+' link'+(added===1?'':'s')+' merged in. Nothing was removed.';
-    }catch(err){$('lib-msg').textContent='That file could not be read as a video library.'}
-  };
-  r.readAsText(f);
-  e.target.value='';
-};
-
+/* The video library used to live here: a page for pasting YouTube links act by
+   act. It is gone, because nobody used it. What stays is the Wrong button on
+   the stage, which is how a bad video gets taken out of circulation. */
 
 /* --- chairs --- */
 function canTurn(p){return !full(p)&&p.id!==blockTarget&&!p.passed}
@@ -2576,7 +2461,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 17:33';
+const BUILD='06.11. 17:40';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
@@ -3194,9 +3079,10 @@ S.lang='fi';                       // the quiz speaks Finnish unless told otherw
 try{const l=localStorage.getItem('thechair.lang');if(l)S.lang=l}catch(e){}
 // one bank, in whichever language the room agreed on
 function langBank(){
-  if(S.lang==='en')return TRIVIA;
+  // the row keeps its number on the end, so the picture follows the translation
+  if(S.lang==='en')return TRIVIA.map((q,i)=>q.concat([i]));
   const t=S.lang==='sv'?TRIVIA_SV:TRIVIA_FI, names=CATNAME[S.lang]||{};
-  return TRIVIA.map((q,i)=>[names[q[0]]||q[0]].concat(t[i]));
+  return TRIVIA.map((q,i)=>[names[q[0]]||q[0]].concat(t[i]).concat([i]));
 }
 // a topic is chosen by its English name and shown in the local one
 function catKeys(){return Object.keys(CATNAME.fi)}
@@ -3226,6 +3112,7 @@ function quizNext(){
   Q.current=Q.deck[Q.round++];
   Q.answers={};Q.order=[];Q.revealed=false;
   if(isTrivia()){
+    Q.qid=Q.current[7];                            // its row in the bank, picture and all
     Q.options=shuffle(Q.current.slice(2,6));
     Q.correct=Q.options.indexOf(Q.current[2]);
     $('q-curtain').classList.add('open');          // a question hides nothing
@@ -3249,10 +3136,20 @@ function quizNext(){
 }
 function showQuizQuestion(){
   const box=$('q-screen');if(!box)return;
-  box.innerHTML=Q.revealed
-    ? '<div class="qanswer"><div class="qa-right">'+esc(Q.current[2])+'</div>'
-      +(Q.current[6]?'<div class="qa-note">'+esc(Q.current[6])+'</div>':'')+'</div>'
-    : '<div class="qasking">'+esc(Q.current[1])+'</div>';
+  const pic=QIMG[String(Q.qid)];
+  const back=pic
+    ? '<div class="qpic" style="background-image:url('+JSON.stringify(pic.u)+')"></div><div class="qshade"></div>'
+    : '';
+  const credit=pic&&pic.c?'<div class="qcredit">'+esc(pic.c)+'</div>':'';
+  box.innerHTML=back
+    +(Q.revealed
+      ? '<div class="qanswer"><div class="qa-right">'+esc(Q.current[2])+'</div>'
+        +(Q.current[6]?'<div class="qa-note">'+esc(Q.current[6])+'</div>':'')+'</div>'
+      : '<div class="qasking">'+esc(Q.current[1])+'</div>')
+    +credit;
+  // fade it in once the browser has it, so a slow picture never flashes half-drawn
+  const el=box.querySelector('.qpic');
+  if(el&&pic){const im=new Image();im.onload=()=>el.classList.add('on');im.src=pic.u}
 }
 function showQuizVideo(id){
   const box=$('q-screen');if(!box)return;
