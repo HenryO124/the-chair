@@ -1564,7 +1564,8 @@ body.learning .gamecard .garrow{display:none}
     <h2 style="text-align:center" id="champ"></h2>
     <p class="sub" style="text-align:center" id="champ-sub"></p>
     <div id="final-board"></div>
-    <button class="btn" id="restart" style="margin-top:22px">Pick another game</button>
+    <button class="btn" id="restart" style="margin-top:22px">Next game &mdash; same party &rarr;</button>
+    <p class="note" id="final-room"></p>
   </section>
 
 </div>
@@ -1827,6 +1828,7 @@ function show(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));window.scrollTo(0,0);
   if(id==='s-listen')fitScreen();
   if(id==='s-go')try{drawGo()}catch(e){}
+  if(id==='s-final')try{drawFinalRoom()}catch(e){}
   // nothing to take a break from on the menus
   try{$('break').style.display=(id==='s-chair'||id==='s-home'||id==='s-setup')?'none':''}catch(e){}
 }
@@ -2903,7 +2905,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 20:33';
+const BUILD='06.11. 20:41';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4324,6 +4326,14 @@ document.addEventListener('click',e=>{
 });
 
 /* where you finished, told on your own phone rather than squinted off the big screen */
+/* one game ends, the party does not: the room, the code and the chairs stay */
+function drawFinalRoom(){
+  const el=$('final-room');if(!el)return;
+  el.textContent=(PARTY.role==='host'&&PARTY.code)
+    ? 'Room '+PARTY.code+' stays open. Nobody has to be invited again \u2014 keep your phones, '
+      +'pick another game and everyone is already in it.'
+    : '';
+}
 function finalBoard(st,me){
   const seats=(st.seats||[]).slice().sort((a,b)=>(b.score||0)-(a.score||0));
   if(!seats.length)return '';
@@ -4345,7 +4355,7 @@ function finalBoard(st,me){
       +'<div class="nm">'+esc(nameOf(sv))+'</div>'
       +'<div class="pt">'+(sv.score||0)+' pts</div></div>').join('')+'</div>':'')
     +'<div class="roomline"><span class="dot"></span>Room <b>'+esc(PARTY.code||'')
-      +'</b> &middot; game finished</div>';
+      +'</b> &middot; stay seated, the next game is on its way</div>';
 }
 function finalLine(st,me){
   const seats=(st.seats||[]).slice().sort((a,b)=>(b.score||0)-(a.score||0));
@@ -4396,7 +4406,7 @@ function drawPadQuiz(st,me){
     box.innerHTML=finalBoard(st,me);
     try{$('pad-round').textContent='';$('pad-state').textContent='';
       $('pad-state').className='mystate';
-      $('pad-seats').hidden=true;$('pad-leave').textContent='Leave the game';}catch(e){}
+      $('pad-seats').hidden=true;$('pad-leave').textContent='Leave the party';}catch(e){}
     return;
   }
   if(!me){                      // still typing a name: nothing here is yours yet
