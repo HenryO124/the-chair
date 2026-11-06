@@ -951,11 +951,31 @@ button.rbtag.open{color:#49C27B;border-color:#2F6B46}
 #rb-qr{order:5}#rb-invite{order:6}#rb-next{order:7}
 .rbpeople{order:8;flex-basis:100%;display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;
   margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
-.rbchip.just{animation:arrived 2.4s ease-out}
+.rbchip.just{animation:arrived 3.4s cubic-bezier(.2,.9,.3,1)}
+.rblab.bump{animation:labbump 3.4s ease-out}
+@keyframes labbump{
+  0%{color:#36E27B;transform:scale(1.25)}
+  25%{color:#36E27B;transform:scale(1)}
+  100%{color:var(--muted)}}
+/* and said out loud, so the host sees it from across the room */
+.rbjoined{order:3;display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:22px;
+  background:rgba(54,226,123,.16);border:1px solid #36E27B;color:#8CF3B6;white-space:nowrap;
+  font-family:var(--disp);font-weight:800;font-size:15px;
+  box-shadow:0 0 22px rgba(54,226,123,.35);animation:joinpop 4s ease-out forwards}
+.rbjoined[hidden]{display:none!important}
+.rbjoined::before{content:'';width:10px;height:10px;border-radius:50%;background:#36E27B;
+  box-shadow:0 0 12px #36E27B}
+@keyframes joinpop{
+  0%{opacity:0;transform:translateY(-8px) scale(.9)}
+  8%{opacity:1;transform:none}
+  80%{opacity:1}
+  100%{opacity:0}}
 @keyframes arrived{
-  0%{border-color:#49C27B;background:rgba(73,194,123,.3);transform:translateY(-3px)}
-  60%{border-color:#49C27B;background:rgba(73,194,123,.14);transform:none}
-  100%{border-color:var(--line);background:var(--panel2)}}
+  0%{border-color:#36E27B;background:rgba(54,226,123,.45);transform:scale(1.35) translateY(-5px);
+     box-shadow:0 0 26px rgba(54,226,123,.6)}
+  18%{transform:scale(1.08) translateY(0)}
+  70%{border-color:#36E27B;background:rgba(54,226,123,.18);box-shadow:0 0 14px rgba(54,226,123,.3)}
+  100%{border-color:var(--line);background:var(--panel2);box-shadow:none}}
 @media (max-width:980px){.rbgap{display:none}.roombar .sbd{display:none}}
 
 /* "Learn the games" shows the same cards, but nothing to press */
@@ -1511,6 +1531,7 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
         <button type="button" id="mp-up" aria-label="More">+</button>
       </span>
       <span class="rbgap"></span>
+      <span class="rbjoined" id="rb-flash" hidden></span>
       <span class="rbpeople" id="rb-people">
         <span class="rbgroup" id="rb-joined"></span>
         <span class="rbgroup" id="rb-pending"></span>
@@ -5905,6 +5926,37 @@ function drawRooms(){
       +'</button></div>';
   }).join('');
 }
+/* Somebody walking into the party should be impossible to miss on a television
+   across the room: the name is said out loud in green, and two notes play. */
+let rbFlashTimer=null;
+function announceArrival(names){
+  const el=$('rb-flash');
+  if(el){
+    el.textContent=names.length===1
+      ? names[0]+' joined'
+      : names.slice(0,2).join(' and ')+(names.length>2?' and '+(names.length-2)+' more':'')+' joined';
+    el.hidden=false;
+    el.style.animation='none';void el.offsetWidth;el.style.animation='';
+    clearTimeout(rbFlashTimer);
+    rbFlashTimer=setTimeout(()=>{el.hidden=true},4000);
+  }
+  try{doorbell()}catch(e){}
+}
+function doorbell(){
+  if(!musicOn)return;                       // the music switch is the sound switch
+  const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+  const ac=doorbell.ac||(doorbell.ac=new AC());
+  if(ac.state==='suspended')ac.resume();
+  [[660,0],[990,.13]].forEach(([hz,at])=>{
+    const o=ac.createOscillator(),g=ac.createGain();
+    o.type='sine';o.frequency.value=hz;
+    const t=ac.currentTime+at;
+    g.gain.setValueAtTime(0,t);
+    g.gain.linearRampToValueAtTime(.16,t+.02);
+    g.gain.exponentialRampToValueAtTime(.0001,t+.34);
+    o.connect(g).connect(ac.destination);o.start(t);o.stop(t+.36);
+  });
+}
 let rbSeen=null;                 // who was already here last time we drew
 function drawRoomBar(){
   const bar=$('roombar');if(!bar)return;
@@ -5916,15 +5968,20 @@ function drawRoomBar(){
   const joined=S.players.filter(p=>!p.reserved||p.pid);
   const waiting=S.players.filter(p=>p.reserved&&!p.pid);
   const first=(rbSeen===null);
+  const fresh=[];
   const was=rbSeen||{};
   const now={};joined.forEach(p=>{if(p.pid)now[p.pid]=1});
   $('rb-joined').innerHTML='<span class="rblab ok">Joined ('+joined.length+'/'+MAX_CHAIRS+')</span>'
     +joined.map((p,i)=>{
-      const fresh=!first&&p.pid&&!was[p.pid];      // this one walked in just now
-      return '<span class="rbchip'+(i===0?' host':'')+(fresh?' just':'')+'">'+esc(shownName(p))
+      const isnew=!first&&p.pid&&!was[p.pid];     // this one walked in just now
+      if(isnew)fresh.push(shownName(p));
+      return '<span class="rbchip'+(i===0?' host':'')+(isnew?' just':'')+'">'+esc(shownName(p))
         +(i===0?' <i>&#9819;</i>':'')+'</span>';
     }).join('');
   rbSeen=now;
+  if(fresh.length)announceArrival(fresh);
+  const lab=$('rb-joined').querySelector('.rblab');
+  if(lab&&fresh.length){lab.classList.remove('bump');void lab.offsetWidth;lab.classList.add('bump')}
   $('rb-pending').innerHTML=waiting.length
     ? '<span class="rblab wait">Waiting ('+waiting.length+')</span>'
       +waiting.map(p=>'<span class="rbchip waiting">'+esc(shownName(p))+'</span>').join('')
