@@ -817,6 +817,10 @@ body.learning .gamecard .garrow{display:none}
 .startbar .sbd{width:1px;align-self:stretch;background:var(--line)}
 .startbar .sbx{flex:1 1 220px;color:var(--muted);font-size:13.5px}
 .startbar .btn{width:auto;flex:0 0 auto;margin:0;padding:13px 20px;font-size:14px}
+.knockrow{display:flex;align-items:center;gap:10px;padding:10px 13px;margin-bottom:8px;
+  border-radius:12px;border:1px solid var(--gold);background:rgba(216,163,63,.1)}
+.knockrow .kn{flex:1 1 auto;font-weight:700}
+.knockrow .kfull{font-family:var(--mono);font-size:10px;color:var(--muted)}
 .homefoot{text-align:center;color:var(--muted);font-family:var(--mono);font-size:11px;margin:4px 0 0}
 .homefoot .dot{margin:0 9px;opacity:.5}
 /* the top-bar nav belongs to the front door only */
@@ -932,6 +936,7 @@ body.learning .gamecard .garrow{display:none}
     <div class="eyebrow">Paused</div>
     <h2>Take your time.</h2>
     <p class="sub">Nothing is running. Get a beer, argue about whether Roxette really sold that many, go to the toilet. The game is exactly where you left it.</p>
+    <div id="knocks" hidden></div>
     <button class="btn gold" id="resume">Back to it</button>
     <button class="btn ghost" id="to-setup">Back to the menu</button>
     <p class="note">Going back to the menu abandons the game in progress.</p>
@@ -2633,7 +2638,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 18:59';
+const BUILD='06.11. 19:02';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
@@ -3564,10 +3569,18 @@ function hostJoin(m){
   }
   if(p){}
   // the room is open from the game menu onward, so a chair is free in all of it
-  else if(!inPrep()){
-    publishStage();return;                 // the season has begun; the teams are set
-  }else if(S.players.length>=MAX_CHAIRS){
-    publishStage();return;
+  else if(!inPrep()||S.players.length>=MAX_CHAIRS){
+    // people arrive during the third song. Say so on the big screen instead of
+    // turning them away in silence, and let the host seat them at the break.
+    const fresh=!KNOCKS[pid];
+    KNOCKS[pid]={pid:pid,name:name||'Somebody',icon:icon};
+    drawKnocks();
+    if(fresh){
+      try{$('turnline').textContent=(name||'Somebody')
+        +' wants in \u2014 press Break to open the door.'}catch(e){}
+      publishStage();                      // only on the first knock, not every retry
+    }
+    return;
   }else{
     p=mkPlayer(name||('Coach '+(S.players.length+1)),icon,nextPlayerId(),pid);
     S.players.push(p);
@@ -3576,6 +3589,35 @@ function hostJoin(m){
   if(!inPrep())drawSeats();
   publishStage();
 }
+/* who knocked while the game was running */
+const KNOCKS={};
+function drawKnocks(){
+  const box=$('knocks');if(!box)return;
+  const list=Object.keys(KNOCKS).map(k=>KNOCKS[k]);
+  box.hidden=!list.length;
+  if(!list.length)return;
+  const room=S.players.length<MAX_CHAIRS;
+  box.innerHTML='<div class="field-label">Waiting at the door</div>'
+    +list.map(k=>'<div class="knockrow"><span class="kn">'+esc(k.name)+'</span>'
+      +(room?'<button type="button" class="send" data-let="'+esc(k.pid)+'">LET THEM IN</button>'
+            :'<span class="kfull">room full</span>')
+      +'<button type="button" class="send drop" data-no="'+esc(k.pid)+'">\u00d7</button></div>').join('');
+}
+function letThemIn(pid){
+  const k=KNOCKS[pid];if(!k)return;
+  delete KNOCKS[pid];
+  if(S.players.length>=MAX_CHAIRS){drawKnocks();return}
+  const p=mkPlayer(k.name,k.icon,nextPlayerId(),pid);
+  S.players.push(p);
+  drawKnocks();drawLobbyList();drawGo();
+  try{drawSeats()}catch(e){}
+  publishStage();
+}
+$('knocks')&&($('knocks').addEventListener('click',e=>{
+  const yes=e.target.closest('button[data-let]'), no=e.target.closest('button[data-no]');
+  if(yes)letThemIn(yes.dataset.let);
+  else if(no){delete KNOCKS[no.dataset.no];drawKnocks();publishStage()}
+}));
 function hostAct(m){
   const pid=String(m.pid||'');
   const p=S.players.find(x=>x.pid&&x.pid===pid);
@@ -3754,6 +3796,7 @@ function chairJoin(){
     if(name)sendJoin(name);
     if(myFace)publishFace();
     PARTY.joinTimer=setInterval(()=>{
+      if(mySeat()){clearInterval(PARTY.joinTimer);PARTY.joinTimer=null;return}
       const n=cleanName($('join-name').value);
       if(!mySeat()&&n)sendJoin(n,PARTY.claim)
     },2500);
@@ -4005,7 +4048,7 @@ function drawPad(){
     $('pad-round').textContent='Room '+PARTY.code;
     $('pad-state').textContent=st.phase==='lobby'
       ?'Asking for a chair…'
-      :'The season already started, so there is no free chair. Ask the host for a new game.';
+      :'The host has been told you are here. They can let you in at the next break.';
     drawPadSeats(st,null);
     sign.disabled=true;skip.disabled=true;$('pad-blocks').innerHTML='';
     $('pad-team').innerHTML='';
