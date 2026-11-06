@@ -1,0 +1,3752 @@
+[
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which of these countries were founding members of the United Nations in 1945?",
+   "fi": "Mitkä näistä maista olivat YK:n perustajajäseniä vuonna 1945?",
+   "sv": "Vilka av dessa länder var med och grundade FN år 1945?"
+  },
+  "o": [
+   {
+    "en": "Denmark",
+    "fi": "Tanska",
+    "sv": "Danmark",
+    "t": true
+   },
+   {
+    "en": "Norway",
+    "fi": "Norja",
+    "sv": "Norge",
+    "t": true
+   },
+   {
+    "en": "Canada",
+    "fi": "Kanada",
+    "sv": "Kanada",
+    "t": true
+   },
+   {
+    "en": "Brazil",
+    "fi": "Brasilia",
+    "sv": "Brasilien",
+    "t": true
+   },
+   {
+    "en": "Mexico",
+    "fi": "Meksiko",
+    "sv": "Mexiko",
+    "t": true
+   },
+   {
+    "en": "Finland",
+    "fi": "Suomi",
+    "sv": "Finland",
+    "t": false
+   },
+   {
+    "en": "Sweden",
+    "fi": "Ruotsi",
+    "sv": "Sverige",
+    "t": false
+   },
+   {
+    "en": "Iceland",
+    "fi": "Islanti",
+    "sv": "Island",
+    "t": false
+   },
+   {
+    "en": "Italy",
+    "fi": "Italia",
+    "sv": "Italien",
+    "t": false
+   },
+   {
+    "en": "Switzerland",
+    "fi": "Sveitsi",
+    "sv": "Schweiz",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Of the Nordic countries only Denmark and Norway signed the Charter in 1945. Finland had to wait ten years.",
+   "fi": "Pohjoismaista vain Tanska ja Norja allekirjoittivat peruskirjan vuonna 1945. Suomi sai odottaa kymmenen vuotta.",
+   "sv": "Av de nordiska länderna skrev bara Danmark och Norge under stadgan 1945. Finland fick vänta tio år."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which of these countries were republics of the Soviet Union?",
+   "fi": "Mitkä näistä maista olivat Neuvostoliiton tasavaltoja?",
+   "sv": "Vilka av dessa länder var sovjetrepubliker?"
+  },
+  "o": [
+   {
+    "en": "Estonia",
+    "fi": "Viro",
+    "sv": "Estland",
+    "t": true
+   },
+   {
+    "en": "Latvia",
+    "fi": "Latvia",
+    "sv": "Lettland",
+    "t": true
+   },
+   {
+    "en": "Georgia",
+    "fi": "Georgia",
+    "sv": "Georgien",
+    "t": true
+   },
+   {
+    "en": "Moldova",
+    "fi": "Moldova",
+    "sv": "Moldavien",
+    "t": true
+   },
+   {
+    "en": "Kazakhstan",
+    "fi": "Kazakstan",
+    "sv": "Kazakstan",
+    "t": true
+   },
+   {
+    "en": "Finland",
+    "fi": "Suomi",
+    "sv": "Finland",
+    "t": false
+   },
+   {
+    "en": "Poland",
+    "fi": "Puola",
+    "sv": "Polen",
+    "t": false
+   },
+   {
+    "en": "Mongolia",
+    "fi": "Mongolia",
+    "sv": "Mongoliet",
+    "t": false
+   },
+   {
+    "en": "Bulgaria",
+    "fi": "Bulgaria",
+    "sv": "Bulgarien",
+    "t": false
+   },
+   {
+    "en": "Czechoslovakia",
+    "fi": "Tšekkoslovakia",
+    "sv": "Tjeckoslovakien",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "There were fifteen union republics in the end. Both Mongolia and Bulgaria asked to be let in and were turned down.",
+   "fi": "Liittotasavaltoja oli lopulta viisitoista. Sekä Mongolia että Bulgaria pyysivät päästä mukaan, ja molemmille sanottiin ei.",
+   "sv": "Till slut fanns det femton unionsrepubliker. Både Mongoliet och Bulgarien bad om att få komma med och fick nej."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which of these Romans were emperors?",
+   "fi": "Ketkä näistä roomalaisista olivat keisareita?",
+   "sv": "Vilka av dessa romare var kejsare?"
+  },
+  "o": [
+   {
+    "en": "Tiberius",
+    "fi": "Tiberius",
+    "sv": "Tiberius",
+    "t": true
+   },
+   {
+    "en": "Nero",
+    "fi": "Nero",
+    "sv": "Nero",
+    "t": true
+   },
+   {
+    "en": "Vespasian",
+    "fi": "Vespasianus",
+    "sv": "Vespasianus",
+    "t": true
+   },
+   {
+    "en": "Trajan",
+    "fi": "Traianus",
+    "sv": "Trajanus",
+    "t": true
+   },
+   {
+    "en": "Hadrian",
+    "fi": "Hadrianus",
+    "sv": "Hadrianus",
+    "t": true
+   },
+   {
+    "en": "Pompey",
+    "fi": "Pompeius",
+    "sv": "Pompejus",
+    "t": false
+   },
+   {
+    "en": "Cicero",
+    "fi": "Cicero",
+    "sv": "Cicero",
+    "t": false
+   },
+   {
+    "en": "Crassus",
+    "fi": "Crassus",
+    "sv": "Crassus",
+    "t": false
+   },
+   {
+    "en": "Sulla",
+    "fi": "Sulla",
+    "sv": "Sulla",
+    "t": false
+   },
+   {
+    "en": "Mark Antony",
+    "fi": "Marcus Antonius",
+    "sv": "Marcus Antonius",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The other five were men of the Republic, and all of them were dead before the first emperor took the title.",
+   "fi": "Loput viisi olivat tasavallan miehiä, ja kaikki kuolivat ennen kuin ensimmäinen keisari otti arvonimen.",
+   "sv": "De andra fem var republikens män och alla var döda innan den förste kejsaren tog titeln."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which of these were kings or queens of Sweden?",
+   "fi": "Ketkä näistä olivat Ruotsin kuninkaita tai kuningattaria?",
+   "sv": "Vilka av dessa var kungar eller regerande drottningar av Sverige?"
+  },
+  "o": [
+   {
+    "en": "Gustav Vasa",
+    "fi": "Kustaa Vaasa",
+    "sv": "Gustav Vasa",
+    "t": true
+   },
+   {
+    "en": "Gustav II Adolf",
+    "fi": "Kustaa II Aadolf",
+    "sv": "Gustav II Adolf",
+    "t": true
+   },
+   {
+    "en": "Charles XII",
+    "fi": "Kaarle XII",
+    "sv": "Karl XII",
+    "t": true
+   },
+   {
+    "en": "Queen Kristina",
+    "fi": "Kuningatar Kristiina",
+    "sv": "Drottning Kristina",
+    "t": true
+   },
+   {
+    "en": "Eric XIV",
+    "fi": "Eerik XIV",
+    "sv": "Erik XIV",
+    "t": true
+   },
+   {
+    "en": "Birger Jarl",
+    "fi": "Birger Jaarli",
+    "sv": "Birger jarl",
+    "t": false
+   },
+   {
+    "en": "Axel Oxenstierna",
+    "fi": "Axel Oxenstierna",
+    "sv": "Axel Oxenstierna",
+    "t": false
+   },
+   {
+    "en": "Harald Bluetooth",
+    "fi": "Harald Sinihammas",
+    "sv": "Harald Blåtand",
+    "t": false
+   },
+   {
+    "en": "Haakon VII",
+    "fi": "Haakon VII",
+    "sv": "Haakon VII",
+    "t": false
+   },
+   {
+    "en": "Olaf II of Norway",
+    "fi": "Olavi II Pyhä",
+    "sv": "Olav den helige",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Birger Jarl ran Sweden and fathered two kings, but never wore the crown himself.",
+   "fi": "Birger Jaarli johti Ruotsia ja oli kahden kuninkaan isä, mutta kruunua hän ei koskaan itse kantanut.",
+   "sv": "Birger jarl styrde Sverige och var far till två kungar, men bar aldrig själv kronan."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which of these men have been President of Finland?",
+   "fi": "Ketkä näistä ovat olleet Suomen presidenttejä?",
+   "sv": "Vilka av dessa har varit Finlands president?"
+  },
+  "o": [
+   {
+    "en": "Lauri Kristian Relander",
+    "fi": "Lauri Kristian Relander",
+    "sv": "Lauri Kristian Relander",
+    "t": true
+   },
+   {
+    "en": "Kyösti Kallio",
+    "fi": "Kyösti Kallio",
+    "sv": "Kyösti Kallio",
+    "t": true
+   },
+   {
+    "en": "Risto Ryti",
+    "fi": "Risto Ryti",
+    "sv": "Risto Ryti",
+    "t": true
+   },
+   {
+    "en": "C. G. E. Mannerheim",
+    "fi": "C. G. E. Mannerheim",
+    "sv": "C. G. E. Mannerheim",
+    "t": true
+   },
+   {
+    "en": "Mauno Koivisto",
+    "fi": "Mauno Koivisto",
+    "sv": "Mauno Koivisto",
+    "t": true
+   },
+   {
+    "en": "Väinö Tanner",
+    "fi": "Väinö Tanner",
+    "sv": "Väinö Tanner",
+    "t": false
+   },
+   {
+    "en": "Kalevi Sorsa",
+    "fi": "Kalevi Sorsa",
+    "sv": "Kalevi Sorsa",
+    "t": false
+   },
+   {
+    "en": "Harri Holkeri",
+    "fi": "Harri Holkeri",
+    "sv": "Harri Holkeri",
+    "t": false
+   },
+   {
+    "en": "Paavo Lipponen",
+    "fi": "Paavo Lipponen",
+    "sv": "Paavo Lipponen",
+    "t": false
+   },
+   {
+    "en": "Johannes Virolainen",
+    "fi": "Johannes Virolainen",
+    "sv": "Johannes Virolainen",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The other five were all prime ministers. Mannerheim took the office in 1944 and gave it up in 1946.",
+   "fi": "Loput viisi olivat pääministereitä. Mannerheim otti tehtävän vastaan 1944 ja luopui siitä 1946.",
+   "sv": "De andra fem var statsministrar. Mannerheim tog emot ämbetet 1944 och lämnade det 1946."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which of these were among the Seven Wonders of the Ancient World?",
+   "fi": "Mitkä näistä kuuluivat antiikin seitsemään ihmeeseen?",
+   "sv": "Vilka av dessa hörde till antikens sju underverk?"
+  },
+  "o": [
+   {
+    "en": "The Colossus of Rhodes",
+    "fi": "Rodoksen kolossi",
+    "sv": "Kolossen på Rhodos",
+    "t": true
+   },
+   {
+    "en": "The Mausoleum at Halicarnassus",
+    "fi": "Halikarnassoksen mausoleumi",
+    "sv": "Mausoleet i Halikarnassos",
+    "t": true
+   },
+   {
+    "en": "The Temple of Artemis at Ephesus",
+    "fi": "Efesoksen Artemiin temppeli",
+    "sv": "Artemistemplet i Efesos",
+    "t": true
+   },
+   {
+    "en": "The Statue of Zeus at Olympia",
+    "fi": "Olympian Zeuksen patsas",
+    "sv": "Zeusstatyn i Olympia",
+    "t": true
+   },
+   {
+    "en": "The Lighthouse of Alexandria",
+    "fi": "Aleksandrian majakka",
+    "sv": "Fyren i Alexandria",
+    "t": true
+   },
+   {
+    "en": "The Great Wall of China",
+    "fi": "Kiinan muuri",
+    "sv": "Kinesiska muren",
+    "t": false
+   },
+   {
+    "en": "The Colosseum in Rome",
+    "fi": "Rooman Colosseum",
+    "sv": "Colosseum i Rom",
+    "t": false
+   },
+   {
+    "en": "Stonehenge",
+    "fi": "Stonehenge",
+    "sv": "Stonehenge",
+    "t": false
+   },
+   {
+    "en": "The Parthenon",
+    "fi": "Parthenon",
+    "sv": "Parthenon",
+    "t": false
+   },
+   {
+    "en": "Petra",
+    "fi": "Petra",
+    "sv": "Petra",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The seventh was the Great Pyramid of Giza, and it is the only one of the seven still standing.",
+   "fi": "Seitsemäs oli Gizan suuri pyramidi, ja se on niistä ainoa, joka on edelleen pystyssä.",
+   "sv": "Det sjunde var Cheopspyramiden i Giza, och den är det enda av de sju som fortfarande står kvar."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which of these countries signed the North Atlantic Treaty when NATO was founded in 1949?",
+   "fi": "Mitkä näistä maista allekirjoittivat Pohjois-Atlantin sopimuksen, kun Nato perustettiin vuonna 1949?",
+   "sv": "Vilka av dessa länder skrev under Atlantpakten när Nato bildades 1949?"
+  },
+  "o": [
+   {
+    "en": "Denmark",
+    "fi": "Tanska",
+    "sv": "Danmark",
+    "t": true
+   },
+   {
+    "en": "Norway",
+    "fi": "Norja",
+    "sv": "Norge",
+    "t": true
+   },
+   {
+    "en": "Iceland",
+    "fi": "Islanti",
+    "sv": "Island",
+    "t": true
+   },
+   {
+    "en": "Portugal",
+    "fi": "Portugali",
+    "sv": "Portugal",
+    "t": true
+   },
+   {
+    "en": "Luxembourg",
+    "fi": "Luxemburg",
+    "sv": "Luxemburg",
+    "t": true
+   },
+   {
+    "en": "Finland",
+    "fi": "Suomi",
+    "sv": "Finland",
+    "t": false
+   },
+   {
+    "en": "Sweden",
+    "fi": "Ruotsi",
+    "sv": "Sverige",
+    "t": false
+   },
+   {
+    "en": "Germany",
+    "fi": "Saksa",
+    "sv": "Tyskland",
+    "t": false
+   },
+   {
+    "en": "Greece",
+    "fi": "Kreikka",
+    "sv": "Grekland",
+    "t": false
+   },
+   {
+    "en": "Spain",
+    "fi": "Espanja",
+    "sv": "Spanien",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Twelve countries signed in 1949. Greece came in 1952, Germany in 1955, Spain in 1982 and Finland in 2023.",
+   "fi": "Allekirjoittajia oli kaksitoista. Kreikka liittyi 1952, Saksa 1955, Espanja 1982 ja Suomi 2023.",
+   "sv": "Tolv länder skrev under 1949. Grekland kom 1952, Tyskland 1955, Spanien 1982 och Finland 2023."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which of these Americans were presidents of the United States?",
+   "fi": "Ketkä näistä amerikkalaisista olivat Yhdysvaltain presidenttejä?",
+   "sv": "Vilka av dessa amerikaner var presidenter i USA?"
+  },
+  "o": [
+   {
+    "en": "John Quincy Adams",
+    "fi": "John Quincy Adams",
+    "sv": "John Quincy Adams",
+    "t": true
+   },
+   {
+    "en": "James Madison",
+    "fi": "James Madison",
+    "sv": "James Madison",
+    "t": true
+   },
+   {
+    "en": "Ulysses S. Grant",
+    "fi": "Ulysses S. Grant",
+    "sv": "Ulysses S. Grant",
+    "t": true
+   },
+   {
+    "en": "Millard Fillmore",
+    "fi": "Millard Fillmore",
+    "sv": "Millard Fillmore",
+    "t": true
+   },
+   {
+    "en": "Chester A. Arthur",
+    "fi": "Chester A. Arthur",
+    "sv": "Chester A. Arthur",
+    "t": true
+   },
+   {
+    "en": "Benjamin Franklin",
+    "fi": "Benjamin Franklin",
+    "sv": "Benjamin Franklin",
+    "t": false
+   },
+   {
+    "en": "Alexander Hamilton",
+    "fi": "Alexander Hamilton",
+    "sv": "Alexander Hamilton",
+    "t": false
+   },
+   {
+    "en": "Aaron Burr",
+    "fi": "Aaron Burr",
+    "sv": "Aaron Burr",
+    "t": false
+   },
+   {
+    "en": "Henry Clay",
+    "fi": "Henry Clay",
+    "sv": "Henry Clay",
+    "t": false
+   },
+   {
+    "en": "Daniel Webster",
+    "fi": "Daniel Webster",
+    "sv": "Daniel Webster",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "John Quincy Adams was the son of John Adams, the second president — the first father and son to hold the job.",
+   "fi": "John Quincy Adams oli toisen presidentin John Adamsin poika — ensimmäinen isä–poika-pari tehtävässä.",
+   "sv": "John Quincy Adams var son till John Adams, den andre presidenten — det första far-och-son-paret på posten."
+  }
+ },
+ {
+  "cat": "History",
+  "q": {
+   "en": "Which of these happened while the Second World War was going on?",
+   "fi": "Mitkä näistä tapahtuivat toisen maailmansodan aikana?",
+   "sv": "Vilka av dessa hände medan andra världskriget pågick?"
+  },
+  "o": [
+   {
+    "en": "The attack on Pearl Harbor",
+    "fi": "Pearl Harborin hyökkäys",
+    "sv": "Angreppet på Pearl Harbor",
+    "t": true
+   },
+   {
+    "en": "The Normandy landings",
+    "fi": "Normandian maihinnousu",
+    "sv": "Landstigningen i Normandie",
+    "t": true
+   },
+   {
+    "en": "The Battle of Stalingrad",
+    "fi": "Stalingradin taistelu",
+    "sv": "Slaget om Stalingrad",
+    "t": true
+   },
+   {
+    "en": "Finland's Winter War",
+    "fi": "Suomen talvisota",
+    "sv": "Finlands vinterkrig",
+    "t": true
+   },
+   {
+    "en": "The Lapland War",
+    "fi": "Lapin sota",
+    "sv": "Lapplandskriget",
+    "t": true
+   },
+   {
+    "en": "The Molotov–Ribbentrop Pact",
+    "fi": "Molotov–Ribbentrop-sopimus",
+    "sv": "Molotov–Ribbentrop-pakten",
+    "t": false
+   },
+   {
+    "en": "The end of the Spanish Civil War",
+    "fi": "Espanjan sisällissodan päättyminen",
+    "sv": "Spanska inbördeskrigets slut",
+    "t": false
+   },
+   {
+    "en": "The Berlin Airlift",
+    "fi": "Berliinin ilmasilta",
+    "sv": "Luftbron till Berlin",
+    "t": false
+   },
+   {
+    "en": "The Korean War",
+    "fi": "Korean sota",
+    "sv": "Koreakriget",
+    "t": false
+   },
+   {
+    "en": "The founding of NATO",
+    "fi": "Naton perustaminen",
+    "sv": "Natos grundande",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The Molotov–Ribbentrop Pact was dated 23 August 1939, nine days before the war began.",
+   "fi": "Molotov–Ribbentrop-sopimus on päivätty 23. elokuuta 1939, yhdeksän päivää ennen sodan alkua.",
+   "sv": "Molotov–Ribbentrop-pakten är daterad den 23 augusti 1939, nio dagar innan kriget bröt ut."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of these countries have a coast on the Baltic Sea?",
+   "fi": "Mitkä näistä maista ovat Itämeren rannalla?",
+   "sv": "Vilka av dessa länder har kust mot Östersjön?"
+  },
+  "o": [
+   {
+    "en": "Latvia",
+    "fi": "Latvia",
+    "sv": "Lettland",
+    "t": true
+   },
+   {
+    "en": "Lithuania",
+    "fi": "Liettua",
+    "sv": "Litauen",
+    "t": true
+   },
+   {
+    "en": "Estonia",
+    "fi": "Viro",
+    "sv": "Estland",
+    "t": true
+   },
+   {
+    "en": "Poland",
+    "fi": "Puola",
+    "sv": "Polen",
+    "t": true
+   },
+   {
+    "en": "Germany",
+    "fi": "Saksa",
+    "sv": "Tyskland",
+    "t": true
+   },
+   {
+    "en": "Norway",
+    "fi": "Norja",
+    "sv": "Norge",
+    "t": false
+   },
+   {
+    "en": "Belarus",
+    "fi": "Valko-Venäjä",
+    "sv": "Belarus",
+    "t": false
+   },
+   {
+    "en": "Czechia",
+    "fi": "Tšekki",
+    "sv": "Tjeckien",
+    "t": false
+   },
+   {
+    "en": "Ukraine",
+    "fi": "Ukraina",
+    "sv": "Ukraina",
+    "t": false
+   },
+   {
+    "en": "The Netherlands",
+    "fi": "Alankomaat",
+    "sv": "Nederländerna",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Nine countries have a Baltic shore. Belarus, Czechia and Ukraine drain into the Baltic without touching it.",
+   "fi": "Itämeren rantaa on yhdeksällä maalla. Valko-Venäjän, Tšekin ja Ukrainan vedet valuvat Itämereen, mutta rantaa niillä ei ole.",
+   "sv": "Nio länder har Östersjökust. Belarus, Tjeckien och Ukraina avrinner till Östersjön utan att nå den."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of these countries are landlocked?",
+   "fi": "Mitkä näistä maista ovat sisämaavaltioita?",
+   "sv": "Vilka av dessa länder saknar kust helt?"
+  },
+  "o": [
+   {
+    "en": "Bolivia",
+    "fi": "Bolivia",
+    "sv": "Bolivia",
+    "t": true
+   },
+   {
+    "en": "Paraguay",
+    "fi": "Paraguay",
+    "sv": "Paraguay",
+    "t": true
+   },
+   {
+    "en": "Austria",
+    "fi": "Itävalta",
+    "sv": "Österrike",
+    "t": true
+   },
+   {
+    "en": "Hungary",
+    "fi": "Unkari",
+    "sv": "Ungern",
+    "t": true
+   },
+   {
+    "en": "Moldova",
+    "fi": "Moldova",
+    "sv": "Moldavien",
+    "t": true
+   },
+   {
+    "en": "Uruguay",
+    "fi": "Uruguay",
+    "sv": "Uruguay",
+    "t": false
+   },
+   {
+    "en": "Slovenia",
+    "fi": "Slovenia",
+    "sv": "Slovenien",
+    "t": false
+   },
+   {
+    "en": "Croatia",
+    "fi": "Kroatia",
+    "sv": "Kroatien",
+    "t": false
+   },
+   {
+    "en": "Albania",
+    "fi": "Albania",
+    "sv": "Albanien",
+    "t": false
+   },
+   {
+    "en": "Montenegro",
+    "fi": "Montenegro",
+    "sv": "Montenegro",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Bolivia and Paraguay are the only two landlocked countries in all of South America.",
+   "fi": "Bolivia ja Paraguay ovat Etelä-Amerikan ainoat sisämaavaltiot.",
+   "sv": "Bolivia och Paraguay är de enda två kustlösa länderna i hela Sydamerika."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of these countries does the Equator pass through?",
+   "fi": "Minkä näiden maiden läpi päiväntasaaja kulkee?",
+   "sv": "Vilka av dessa länder går ekvatorn genom?"
+  },
+  "o": [
+   {
+    "en": "Colombia",
+    "fi": "Kolumbia",
+    "sv": "Colombia",
+    "t": true
+   },
+   {
+    "en": "Brazil",
+    "fi": "Brasilia",
+    "sv": "Brasilien",
+    "t": true
+   },
+   {
+    "en": "Kenya",
+    "fi": "Kenia",
+    "sv": "Kenya",
+    "t": true
+   },
+   {
+    "en": "Uganda",
+    "fi": "Uganda",
+    "sv": "Uganda",
+    "t": true
+   },
+   {
+    "en": "Indonesia",
+    "fi": "Indonesia",
+    "sv": "Indonesien",
+    "t": true
+   },
+   {
+    "en": "Peru",
+    "fi": "Peru",
+    "sv": "Peru",
+    "t": false
+   },
+   {
+    "en": "Tanzania",
+    "fi": "Tansania",
+    "sv": "Tanzania",
+    "t": false
+   },
+   {
+    "en": "Venezuela",
+    "fi": "Venezuela",
+    "sv": "Venezuela",
+    "t": false
+   },
+   {
+    "en": "Angola",
+    "fi": "Angola",
+    "sv": "Angola",
+    "t": false
+   },
+   {
+    "en": "Nigeria",
+    "fi": "Nigeria",
+    "sv": "Nigeria",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "It also crosses Somalia, Gabon, both Congos, São Tomé and Príncipe — and Ecuador, which is named after it.",
+   "fi": "Se kulkee myös Somalian, Gabonin, molempien Kongojen ja São Tomé ja Príncipen läpi — sekä Ecuadorin, joka on saanut nimensä siitä.",
+   "sv": "Den går också genom Somalia, Gabon, båda Kongo, São Tomé och Príncipe — och Ecuador, som är uppkallat efter den."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of these rivers flow into the Baltic Sea?",
+   "fi": "Mitkä näistä joista laskevat Itämereen?",
+   "sv": "Vilka av dessa floder rinner ut i Östersjön?"
+  },
+  "o": [
+   {
+    "en": "The Vistula",
+    "fi": "Veiksel",
+    "sv": "Wisła",
+    "t": true
+   },
+   {
+    "en": "The Oder",
+    "fi": "Oder",
+    "sv": "Oder",
+    "t": true
+   },
+   {
+    "en": "The Neva",
+    "fi": "Neva",
+    "sv": "Neva",
+    "t": true
+   },
+   {
+    "en": "The Daugava",
+    "fi": "Väinäjoki",
+    "sv": "Daugava",
+    "t": true
+   },
+   {
+    "en": "The Kemijoki",
+    "fi": "Kemijoki",
+    "sv": "Kemi älv",
+    "t": true
+   },
+   {
+    "en": "The Elbe",
+    "fi": "Elbe",
+    "sv": "Elbe",
+    "t": false
+   },
+   {
+    "en": "The Weser",
+    "fi": "Weser",
+    "sv": "Weser",
+    "t": false
+   },
+   {
+    "en": "The Rhine",
+    "fi": "Rein",
+    "sv": "Rhen",
+    "t": false
+   },
+   {
+    "en": "The Volga",
+    "fi": "Volga",
+    "sv": "Volga",
+    "t": false
+   },
+   {
+    "en": "The Dnieper",
+    "fi": "Dnepr",
+    "sv": "Dnepr",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The Neva carries more water into the Baltic than any other river. The Volga ends in the Caspian and the Dnieper in the Black Sea.",
+   "fi": "Neva tuo Itämereen enemmän vettä kuin mikään muu joki. Volga päätyy Kaspianmereen ja Dnepr Mustaanmereen.",
+   "sv": "Neva för in mer vatten i Östersjön än någon annan flod. Volga slutar i Kaspiska havet och Dnepr i Svarta havet."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of these cities stand on the Danube?",
+   "fi": "Mitkä näistä kaupungeista ovat Tonavan varrella?",
+   "sv": "Vilka av dessa städer ligger vid Donau?"
+  },
+  "o": [
+   {
+    "en": "Vienna",
+    "fi": "Wien",
+    "sv": "Wien",
+    "t": true
+   },
+   {
+    "en": "Budapest",
+    "fi": "Budapest",
+    "sv": "Budapest",
+    "t": true
+   },
+   {
+    "en": "Belgrade",
+    "fi": "Belgrad",
+    "sv": "Belgrad",
+    "t": true
+   },
+   {
+    "en": "Bratislava",
+    "fi": "Bratislava",
+    "sv": "Bratislava",
+    "t": true
+   },
+   {
+    "en": "Regensburg",
+    "fi": "Regensburg",
+    "sv": "Regensburg",
+    "t": true
+   },
+   {
+    "en": "Prague",
+    "fi": "Praha",
+    "sv": "Prag",
+    "t": false
+   },
+   {
+    "en": "Bucharest",
+    "fi": "Bukarest",
+    "sv": "Bukarest",
+    "t": false
+   },
+   {
+    "en": "Zagreb",
+    "fi": "Zagreb",
+    "sv": "Zagreb",
+    "t": false
+   },
+   {
+    "en": "Sofia",
+    "fi": "Sofia",
+    "sv": "Sofia",
+    "t": false
+   },
+   {
+    "en": "Munich",
+    "fi": "München",
+    "sv": "München",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Ulm, Linz and Novi Sad are on the Danube too. Prague sits on the Vltava instead.",
+   "fi": "Myös Ulm, Linz ja Novi Sad ovat Tonavan varrella. Praha taas on Vltavan rannalla.",
+   "sv": "Även Ulm, Linz och Novi Sad ligger vid Donau. Prag ligger i stället vid Vltava."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of these mountains rise over 8,000 metres?",
+   "fi": "Mitkä näistä vuorista kohoavat yli 8 000 metriin?",
+   "sv": "Vilka av dessa berg når över 8 000 meter?"
+  },
+  "o": [
+   {
+    "en": "K2",
+    "fi": "K2",
+    "sv": "K2",
+    "t": true
+   },
+   {
+    "en": "Kangchenjunga",
+    "fi": "Kangchenjunga",
+    "sv": "Kangchenjunga",
+    "t": true
+   },
+   {
+    "en": "Lhotse",
+    "fi": "Lhotse",
+    "sv": "Lhotse",
+    "t": true
+   },
+   {
+    "en": "Nanga Parbat",
+    "fi": "Nanga Parbat",
+    "sv": "Nanga Parbat",
+    "t": true
+   },
+   {
+    "en": "Manaslu",
+    "fi": "Manaslu",
+    "sv": "Manaslu",
+    "t": true
+   },
+   {
+    "en": "Aconcagua",
+    "fi": "Aconcagua",
+    "sv": "Aconcagua",
+    "t": false
+   },
+   {
+    "en": "Denali",
+    "fi": "Denali",
+    "sv": "Denali",
+    "t": false
+   },
+   {
+    "en": "Kilimanjaro",
+    "fi": "Kilimanjaro",
+    "sv": "Kilimanjaro",
+    "t": false
+   },
+   {
+    "en": "Mont Blanc",
+    "fi": "Mont Blanc",
+    "sv": "Mont Blanc",
+    "t": false
+   },
+   {
+    "en": "Mount Elbrus",
+    "fi": "Elbrus",
+    "sv": "Elbrus",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "There are exactly fourteen peaks above 8,000 metres. Aconcagua, at 6,961 m, is the tallest of everything else.",
+   "fi": "Yli 8 000 metrin huippuja on tasan neljätoista. Aconcagua, 6 961 metriä, on kaikista muista korkein.",
+   "sv": "Det finns exakt fjorton toppar över 8 000 meter. Aconcagua, 6 961 m, är den högsta av alla övriga."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of these Finnish towns have a seaport?",
+   "fi": "Millä näistä Suomen kaupungeista on merisatama?",
+   "sv": "Vilka av dessa finska städer har en hamn vid havet?"
+  },
+  "o": [
+   {
+    "en": "Vaasa",
+    "fi": "Vaasa",
+    "sv": "Vasa",
+    "t": true
+   },
+   {
+    "en": "Rauma",
+    "fi": "Rauma",
+    "sv": "Raumo",
+    "t": true
+   },
+   {
+    "en": "Kokkola",
+    "fi": "Kokkola",
+    "sv": "Karleby",
+    "t": true
+   },
+   {
+    "en": "Oulu",
+    "fi": "Oulu",
+    "sv": "Uleåborg",
+    "t": true
+   },
+   {
+    "en": "Kotka",
+    "fi": "Kotka",
+    "sv": "Kotka",
+    "t": true
+   },
+   {
+    "en": "Jyväskylä",
+    "fi": "Jyväskylä",
+    "sv": "Jyväskylä",
+    "t": false
+   },
+   {
+    "en": "Kuopio",
+    "fi": "Kuopio",
+    "sv": "Kuopio",
+    "t": false
+   },
+   {
+    "en": "Joensuu",
+    "fi": "Joensuu",
+    "sv": "Joensuu",
+    "t": false
+   },
+   {
+    "en": "Mikkeli",
+    "fi": "Mikkeli",
+    "sv": "S:t Michel",
+    "t": false
+   },
+   {
+    "en": "Savonlinna",
+    "fi": "Savonlinna",
+    "sv": "Nyslott",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The other five are all Lakeland towns, well inland.",
+   "fi": "Loput viisi ovat Järvi-Suomen kaupunkeja, kaukana sisämaassa.",
+   "sv": "De andra fem ligger alla i Insjöfinland, långt inne i landet."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of these countries have a coast on the Mediterranean Sea?",
+   "fi": "Mitkä näistä maista ovat Välimeren rannalla?",
+   "sv": "Vilka av dessa länder har kust mot Medelhavet?"
+  },
+  "o": [
+   {
+    "en": "Slovenia",
+    "fi": "Slovenia",
+    "sv": "Slovenien",
+    "t": true
+   },
+   {
+    "en": "Albania",
+    "fi": "Albania",
+    "sv": "Albanien",
+    "t": true
+   },
+   {
+    "en": "Montenegro",
+    "fi": "Montenegro",
+    "sv": "Montenegro",
+    "t": true
+   },
+   {
+    "en": "Lebanon",
+    "fi": "Libanon",
+    "sv": "Libanon",
+    "t": true
+   },
+   {
+    "en": "Syria",
+    "fi": "Syyria",
+    "sv": "Syrien",
+    "t": true
+   },
+   {
+    "en": "Portugal",
+    "fi": "Portugali",
+    "sv": "Portugal",
+    "t": false
+   },
+   {
+    "en": "Serbia",
+    "fi": "Serbia",
+    "sv": "Serbien",
+    "t": false
+   },
+   {
+    "en": "North Macedonia",
+    "fi": "Pohjois-Makedonia",
+    "sv": "Nordmakedonien",
+    "t": false
+   },
+   {
+    "en": "Jordan",
+    "fi": "Jordania",
+    "sv": "Jordanien",
+    "t": false
+   },
+   {
+    "en": "Bulgaria",
+    "fi": "Bulgaria",
+    "sv": "Bulgarien",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Portugal is one of the European countries with no Mediterranean coastline at all — it faces only the Atlantic.",
+   "fi": "Portugali on yksi niistä Euroopan maista, joilla ei ole lainkaan Välimeren rantaa — sen rannat ovat Atlantilla.",
+   "sv": "Portugal är ett av de europeiska länder som helt saknar Medelhavskust — det vänder sig bara mot Atlanten."
+  }
+ },
+ {
+  "cat": "Geography",
+  "q": {
+   "en": "Which of these countries share a land border with China?",
+   "fi": "Millä näistä maista on maaraja Kiinan kanssa?",
+   "sv": "Vilka av dessa länder har landgräns mot Kina?"
+  },
+  "o": [
+   {
+    "en": "Pakistan",
+    "fi": "Pakistan",
+    "sv": "Pakistan",
+    "t": true
+   },
+   {
+    "en": "Vietnam",
+    "fi": "Vietnam",
+    "sv": "Vietnam",
+    "t": true
+   },
+   {
+    "en": "Kazakhstan",
+    "fi": "Kazakstan",
+    "sv": "Kazakstan",
+    "t": true
+   },
+   {
+    "en": "Afghanistan",
+    "fi": "Afganistan",
+    "sv": "Afghanistan",
+    "t": true
+   },
+   {
+    "en": "Laos",
+    "fi": "Laos",
+    "sv": "Laos",
+    "t": true
+   },
+   {
+    "en": "Thailand",
+    "fi": "Thaimaa",
+    "sv": "Thailand",
+    "t": false
+   },
+   {
+    "en": "Bangladesh",
+    "fi": "Bangladesh",
+    "sv": "Bangladesh",
+    "t": false
+   },
+   {
+    "en": "Cambodia",
+    "fi": "Kambodža",
+    "sv": "Kambodja",
+    "t": false
+   },
+   {
+    "en": "Uzbekistan",
+    "fi": "Uzbekistan",
+    "sv": "Uzbekistan",
+    "t": false
+   },
+   {
+    "en": "Iran",
+    "fi": "Iran",
+    "sv": "Iran",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "China has fourteen land neighbours. Bangladesh is not one of them, and neither is Thailand.",
+   "fi": "Kiinalla on neljätoista maanaapuria. Bangladesh ei ole niistä yksi, eikä Thaimaakaan.",
+   "sv": "Kina har fjorton landgrannar. Bangladesh är inte en av dem, och inte Thailand heller."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which of these are SI base units?",
+   "fi": "Mitkä näistä ovat SI-perusyksiköitä?",
+   "sv": "Vilka av dessa är SI-grundenheter?"
+  },
+  "o": [
+   {
+    "en": "The mole",
+    "fi": "Mooli",
+    "sv": "Mol",
+    "t": true
+   },
+   {
+    "en": "The candela",
+    "fi": "Kandela",
+    "sv": "Candela",
+    "t": true
+   },
+   {
+    "en": "The ampere",
+    "fi": "Ampeeri",
+    "sv": "Ampere",
+    "t": true
+   },
+   {
+    "en": "The kelvin",
+    "fi": "Kelvin",
+    "sv": "Kelvin",
+    "t": true
+   },
+   {
+    "en": "The second",
+    "fi": "Sekunti",
+    "sv": "Sekund",
+    "t": true
+   },
+   {
+    "en": "The newton",
+    "fi": "Newton",
+    "sv": "Newton",
+    "t": false
+   },
+   {
+    "en": "The joule",
+    "fi": "Joule",
+    "sv": "Joule",
+    "t": false
+   },
+   {
+    "en": "The volt",
+    "fi": "Voltti",
+    "sv": "Volt",
+    "t": false
+   },
+   {
+    "en": "The pascal",
+    "fi": "Pascal",
+    "sv": "Pascal",
+    "t": false
+   },
+   {
+    "en": "The litre",
+    "fi": "Litra",
+    "sv": "Liter",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "There are seven base units in all; metre and kilogram are the other two. Everything else in SI is built from them.",
+   "fi": "Perusyksiköitä on seitsemän; metri ja kilogramma ovat kaksi muuta. Kaikki muu SI:ssä rakennetaan niistä.",
+   "sv": "Det finns sju grundenheter; meter och kilogram är de två andra. Allt annat i SI byggs av dem."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which of these vitamins are fat-soluble?",
+   "fi": "Mitkä näistä vitamiineista ovat rasvaliukoisia?",
+   "sv": "Vilka av dessa vitaminer är fettlösliga?"
+  },
+  "o": [
+   {
+    "en": "Vitamin A",
+    "fi": "A-vitamiini",
+    "sv": "A-vitamin",
+    "t": true
+   },
+   {
+    "en": "Vitamin D",
+    "fi": "D-vitamiini",
+    "sv": "D-vitamin",
+    "t": true
+   },
+   {
+    "en": "Vitamin E",
+    "fi": "E-vitamiini",
+    "sv": "E-vitamin",
+    "t": true
+   },
+   {
+    "en": "Vitamin K",
+    "fi": "K-vitamiini",
+    "sv": "K-vitamin",
+    "t": true
+   },
+   {
+    "en": "Vitamin C",
+    "fi": "C-vitamiini",
+    "sv": "C-vitamin",
+    "t": false
+   },
+   {
+    "en": "Vitamin B1, thiamine",
+    "fi": "B1-vitamiini eli tiamiini",
+    "sv": "B1-vitamin, tiamin",
+    "t": false
+   },
+   {
+    "en": "Vitamin B2, riboflavin",
+    "fi": "B2-vitamiini eli riboflaviini",
+    "sv": "B2-vitamin, riboflavin",
+    "t": false
+   },
+   {
+    "en": "Vitamin B6",
+    "fi": "B6-vitamiini",
+    "sv": "B6-vitamin",
+    "t": false
+   },
+   {
+    "en": "Vitamin B12",
+    "fi": "B12-vitamiini",
+    "sv": "B12-vitamin",
+    "t": false
+   },
+   {
+    "en": "Folate, vitamin B9",
+    "fi": "Folaatti eli B9-vitamiini",
+    "sv": "Folat, B9-vitamin",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Only four are fat-soluble, and they are the ones that can build up in the body. The water-soluble rest mostly leave in your urine.",
+   "fi": "Rasvaliukoisia on vain neljä, ja juuri ne voivat kertyä kehoon. Vesiliukoiset poistuvat enimmäkseen virtsan mukana.",
+   "sv": "Bara fyra är fettlösliga, och det är de som kan lagras i kroppen. De vattenlösliga lämnar mest med urinen."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which of these elements are named after a place?",
+   "fi": "Mitkä näistä alkuaineista on nimetty paikan mukaan?",
+   "sv": "Vilka av dessa grundämnen är uppkallade efter en plats?"
+  },
+  "o": [
+   {
+    "en": "Scandium",
+    "fi": "Skandium",
+    "sv": "Skandium",
+    "t": true
+   },
+   {
+    "en": "Hafnium",
+    "fi": "Hafnium",
+    "sv": "Hafnium",
+    "t": true
+   },
+   {
+    "en": "Holmium",
+    "fi": "Holmium",
+    "sv": "Holmium",
+    "t": true
+   },
+   {
+    "en": "Polonium",
+    "fi": "Polonium",
+    "sv": "Polonium",
+    "t": true
+   },
+   {
+    "en": "Germanium",
+    "fi": "Germanium",
+    "sv": "Germanium",
+    "t": true
+   },
+   {
+    "en": "Curium",
+    "fi": "Curium",
+    "sv": "Curium",
+    "t": false
+   },
+   {
+    "en": "Einsteinium",
+    "fi": "Einsteinium",
+    "sv": "Einsteinium",
+    "t": false
+   },
+   {
+    "en": "Nobelium",
+    "fi": "Nobelium",
+    "sv": "Nobelium",
+    "t": false
+   },
+   {
+    "en": "Mendelevium",
+    "fi": "Mendelevium",
+    "sv": "Mendelevium",
+    "t": false
+   },
+   {
+    "en": "Bohrium",
+    "fi": "Bohrium",
+    "sv": "Bohrium",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Hafnium is Copenhagen and holmium is Stockholm. The other five are all named after scientists.",
+   "fi": "Hafnium on Kopenhamina ja holmium Tukholma. Loput viisi on nimetty tutkijoiden mukaan.",
+   "sv": "Hafnium är Köpenhamn och holmium är Stockholm. De andra fem är uppkallade efter forskare."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which of these elements are noble gases?",
+   "fi": "Mitkä näistä alkuaineista ovat jalokaasuja?",
+   "sv": "Vilka av dessa grundämnen är ädelgaser?"
+  },
+  "o": [
+   {
+    "en": "Neon",
+    "fi": "Neon",
+    "sv": "Neon",
+    "t": true
+   },
+   {
+    "en": "Argon",
+    "fi": "Argon",
+    "sv": "Argon",
+    "t": true
+   },
+   {
+    "en": "Krypton",
+    "fi": "Krypton",
+    "sv": "Krypton",
+    "t": true
+   },
+   {
+    "en": "Xenon",
+    "fi": "Ksenon",
+    "sv": "Xenon",
+    "t": true
+   },
+   {
+    "en": "Radon",
+    "fi": "Radon",
+    "sv": "Radon",
+    "t": true
+   },
+   {
+    "en": "Hydrogen",
+    "fi": "Vety",
+    "sv": "Väte",
+    "t": false
+   },
+   {
+    "en": "Nitrogen",
+    "fi": "Typpi",
+    "sv": "Kväve",
+    "t": false
+   },
+   {
+    "en": "Oxygen",
+    "fi": "Happi",
+    "sv": "Syre",
+    "t": false
+   },
+   {
+    "en": "Chlorine",
+    "fi": "Kloori",
+    "sv": "Klor",
+    "t": false
+   },
+   {
+    "en": "Fluorine",
+    "fi": "Fluori",
+    "sv": "Fluor",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "All ten are gases at room temperature, but only group 18 of the periodic table counts as noble. Helium is the sixth.",
+   "fi": "Kaikki kymmenen ovat huoneenlämmössä kaasuja, mutta jalokaasuja ovat vain jaksollisen järjestelmän ryhmän 18 aineet. Helium on kuudes.",
+   "sv": "Alla tio är gaser vid rumstemperatur, men bara grupp 18 i periodiska systemet räknas som ädelgaser. Helium är den sjätte."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which of these are moons of Jupiter?",
+   "fi": "Mitkä näistä ovat Jupiterin kuita?",
+   "sv": "Vilka av dessa är Jupiters månar?"
+  },
+  "o": [
+   {
+    "en": "Io",
+    "fi": "Io",
+    "sv": "Io",
+    "t": true
+   },
+   {
+    "en": "Europa",
+    "fi": "Europa",
+    "sv": "Europa",
+    "t": true
+   },
+   {
+    "en": "Ganymede",
+    "fi": "Ganymedes",
+    "sv": "Ganymedes",
+    "t": true
+   },
+   {
+    "en": "Callisto",
+    "fi": "Kallisto",
+    "sv": "Callisto",
+    "t": true
+   },
+   {
+    "en": "Amalthea",
+    "fi": "Amalthea",
+    "sv": "Amalthea",
+    "t": true
+   },
+   {
+    "en": "Titan",
+    "fi": "Titan",
+    "sv": "Titan",
+    "t": false
+   },
+   {
+    "en": "Enceladus",
+    "fi": "Enceladus",
+    "sv": "Enceladus",
+    "t": false
+   },
+   {
+    "en": "Triton",
+    "fi": "Triton",
+    "sv": "Triton",
+    "t": false
+   },
+   {
+    "en": "Titania",
+    "fi": "Titania",
+    "sv": "Titania",
+    "t": false
+   },
+   {
+    "en": "Mimas",
+    "fi": "Mimas",
+    "sv": "Mimas",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Himalia and Elara are Jupiter's as well — the planet has dozens of named moons.",
+   "fi": "Myös Himalia ja Elara ovat Jupiterin — planeetalla on kymmeniä nimettyjä kuita.",
+   "sv": "Himalia och Elara hör också till Jupiter — planeten har dussintals namngivna månar."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which of these illnesses are caused by a virus?",
+   "fi": "Mitkä näistä sairauksista aiheutuvat viruksesta?",
+   "sv": "Vilka av dessa sjukdomar orsakas av ett virus?"
+  },
+  "o": [
+   {
+    "en": "Measles",
+    "fi": "Tuhkarokko",
+    "sv": "Mässling",
+    "t": true
+   },
+   {
+    "en": "Mumps",
+    "fi": "Sikotauti",
+    "sv": "Påssjuka",
+    "t": true
+   },
+   {
+    "en": "Rabies",
+    "fi": "Raivotauti",
+    "sv": "Rabies",
+    "t": true
+   },
+   {
+    "en": "Polio",
+    "fi": "Polio",
+    "sv": "Polio",
+    "t": true
+   },
+   {
+    "en": "Chickenpox",
+    "fi": "Vesirokko",
+    "sv": "Vattkoppor",
+    "t": true
+   },
+   {
+    "en": "Tuberculosis",
+    "fi": "Tuberkuloosi",
+    "sv": "Tuberkulos",
+    "t": false
+   },
+   {
+    "en": "Tetanus",
+    "fi": "Jäykkäkouristus",
+    "sv": "Stelkramp",
+    "t": false
+   },
+   {
+    "en": "Typhoid fever",
+    "fi": "Lavantauti",
+    "sv": "Tyfoidfeber",
+    "t": false
+   },
+   {
+    "en": "Diphtheria",
+    "fi": "Kurkkumätä",
+    "sv": "Difteri",
+    "t": false
+   },
+   {
+    "en": "Malaria",
+    "fi": "Malaria",
+    "sv": "Malaria",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Four of the other five are bacterial. Malaria is the odd one out: it comes from a parasite.",
+   "fi": "Lopuista neljä on bakteeritauteja. Malaria on poikkeus: sen aiheuttaja on loinen.",
+   "sv": "Fyra av de andra är bakteriesjukdomar. Malaria är undantaget: den orsakas av en parasit."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which of these animals are amphibians?",
+   "fi": "Mitkä näistä eläimistä ovat sammakkoeläimiä?",
+   "sv": "Vilka av dessa djur är groddjur?"
+  },
+  "o": [
+   {
+    "en": "The frog",
+    "fi": "Sammakko",
+    "sv": "Grodan",
+    "t": true
+   },
+   {
+    "en": "The toad",
+    "fi": "Konna",
+    "sv": "Paddan",
+    "t": true
+   },
+   {
+    "en": "The newt",
+    "fi": "Vesilisko",
+    "sv": "Vattensalamandern",
+    "t": true
+   },
+   {
+    "en": "The salamander",
+    "fi": "Salamanteri",
+    "sv": "Salamandern",
+    "t": true
+   },
+   {
+    "en": "The axolotl",
+    "fi": "Aksolotli",
+    "sv": "Axolotlen",
+    "t": true
+   },
+   {
+    "en": "The lizard",
+    "fi": "Sisilisko",
+    "sv": "Ödlan",
+    "t": false
+   },
+   {
+    "en": "The turtle",
+    "fi": "Kilpikonna",
+    "sv": "Skölpaddan",
+    "t": false
+   },
+   {
+    "en": "The snake",
+    "fi": "Käärme",
+    "sv": "Ormen",
+    "t": false
+   },
+   {
+    "en": "The crocodile",
+    "fi": "Krokotiili",
+    "sv": "Krokodilen",
+    "t": false
+   },
+   {
+    "en": "The gecko",
+    "fi": "Gekko",
+    "sv": "Geckon",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Amphibians come in three orders: frogs and toads, salamanders and newts, and the burrowing caecilians. The other five are reptiles.",
+   "fi": "Sammakkoeläimet jakautuvat kolmeen lahkoon: sammakot ja konnat, salamanterit ja vesiliskot sekä kaivautuvat jalattomat. Loput viisi ovat matelijoita.",
+   "sv": "Groddjuren delas i tre ordningar: grodor och paddor, salamandrar och vattensalamandrar, samt de grävande maskgroddjuren. De andra fem är kräldjur."
+  }
+ },
+ {
+  "cat": "Science",
+  "q": {
+   "en": "Which of these are chemical elements rather than alloys?",
+   "fi": "Mitkä näistä ovat alkuaineita eivätkä metalliseoksia?",
+   "sv": "Vilka av dessa är grundämnen och inte legeringar?"
+  },
+  "o": [
+   {
+    "en": "Tungsten",
+    "fi": "Volframi",
+    "sv": "Volfram",
+    "t": true
+   },
+   {
+    "en": "Tin",
+    "fi": "Tina",
+    "sv": "Tenn",
+    "t": true
+   },
+   {
+    "en": "Zinc",
+    "fi": "Sinkki",
+    "sv": "Zink",
+    "t": true
+   },
+   {
+    "en": "Bismuth",
+    "fi": "Vismutti",
+    "sv": "Vismut",
+    "t": true
+   },
+   {
+    "en": "Antimony",
+    "fi": "Antimoni",
+    "sv": "Antimon",
+    "t": true
+   },
+   {
+    "en": "Bronze",
+    "fi": "Pronssi",
+    "sv": "Brons",
+    "t": false
+   },
+   {
+    "en": "Brass",
+    "fi": "Messinki",
+    "sv": "Messing",
+    "t": false
+   },
+   {
+    "en": "Steel",
+    "fi": "Teräs",
+    "sv": "Stål",
+    "t": false
+   },
+   {
+    "en": "Pewter",
+    "fi": "Pewter eli tinaseos",
+    "sv": "Pewter, en tennlegering",
+    "t": false
+   },
+   {
+    "en": "Solder",
+    "fi": "Juotostina",
+    "sv": "Lödtinn",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Bronze is copper and tin, brass copper and zinc, and pewter is mostly tin with a little copper, antimony and bismuth.",
+   "fi": "Pronssi on kuparia ja tinaa, messinki kuparia ja sinkkiä, ja peltteri enimmäkseen tinaa pienellä määrällä kuparia, antimonia ja vismuttia.",
+   "sv": "Brons är koppar och tenn, messing koppar och zink, och pewter mest tenn med lite koppar, antimon och vismut."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which of these films won the Oscar for Best Picture?",
+   "fi": "Mitkä näistä elokuvista voittivat parhaan elokuvan Oscarin?",
+   "sv": "Vilka av dessa filmer vann Oscar för bästa film?"
+  },
+  "o": [
+   {
+    "en": "Casablanca",
+    "fi": "Casablanca",
+    "sv": "Casablanca",
+    "t": true
+   },
+   {
+    "en": "Rocky",
+    "fi": "Rocky",
+    "sv": "Rocky",
+    "t": true
+   },
+   {
+    "en": "Gandhi",
+    "fi": "Gandhi",
+    "sv": "Gandhi",
+    "t": true
+   },
+   {
+    "en": "Gladiator",
+    "fi": "Gladiaattori",
+    "sv": "Gladiator",
+    "t": true
+   },
+   {
+    "en": "The Sound of Music",
+    "fi": "Sound of Music",
+    "sv": "Sound of Music",
+    "t": true
+   },
+   {
+    "en": "Citizen Kane",
+    "fi": "Citizen Kane",
+    "sv": "Citizen Kane",
+    "t": false
+   },
+   {
+    "en": "Pulp Fiction",
+    "fi": "Pulp Fiction",
+    "sv": "Pulp Fiction",
+    "t": false
+   },
+   {
+    "en": "Saving Private Ryan",
+    "fi": "Pelastakaa sotamies Ryan",
+    "sv": "Rädda menige Ryan",
+    "t": false
+   },
+   {
+    "en": "Goodfellas",
+    "fi": "Mafiaveljet",
+    "sv": "Goodfellas",
+    "t": false
+   },
+   {
+    "en": "Apocalypse Now",
+    "fi": "Ilmestyskirja. Nyt.",
+    "sv": "Apocalypse Now",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Citizen Kane is routinely called the greatest film ever made, and it is not on the list of Best Picture winners.",
+   "fi": "Citizen Kanea sanotaan tavan takaa kaikkien aikojen parhaaksi elokuvaksi, eikä se silti ole parhaan elokuvan voittajien listalla.",
+   "sv": "Citizen Kane kallas gång på gång filmhistoriens bästa film, och den står ändå inte på listan över vinnare av bästa film."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which of these operas did Mozart write?",
+   "fi": "Mitkä näistä oopperoista ovat Mozartin käsialaa?",
+   "sv": "Vilka av dessa operor skrev Mozart?"
+  },
+  "o": [
+   {
+    "en": "Idomeneo",
+    "fi": "Idomeneo",
+    "sv": "Idomeneo",
+    "t": true
+   },
+   {
+    "en": "La clemenza di Tito",
+    "fi": "La clemenza di Tito",
+    "sv": "La clemenza di Tito",
+    "t": true
+   },
+   {
+    "en": "Così fan tutte",
+    "fi": "Così fan tutte",
+    "sv": "Così fan tutte",
+    "t": true
+   },
+   {
+    "en": "The Abduction from the Seraglio",
+    "fi": "Ryöstö seraljista",
+    "sv": "Enleveringen ur seraljen",
+    "t": true
+   },
+   {
+    "en": "La finta giardiniera",
+    "fi": "La finta giardiniera",
+    "sv": "La finta giardiniera",
+    "t": true
+   },
+   {
+    "en": "The Barber of Seville",
+    "fi": "Sevillan parturi",
+    "sv": "Barberaren i Sevilla",
+    "t": false
+   },
+   {
+    "en": "Fidelio",
+    "fi": "Fidelio",
+    "sv": "Fidelio",
+    "t": false
+   },
+   {
+    "en": "Der Freischütz",
+    "fi": "Der Freischütz",
+    "sv": "Friskytten",
+    "t": false
+   },
+   {
+    "en": "Norma",
+    "fi": "Norma",
+    "sv": "Norma",
+    "t": false
+   },
+   {
+    "en": "Der Rosenkavalier",
+    "fi": "Ruusuritari",
+    "sv": "Rosenkavaljeren",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Mozart left 23 operas. The others are Rossini, Beethoven, Weber, Bellini and Richard Strauss.",
+   "fi": "Mozartilta jäi 23 oopperaa. Muut ovat Rossinia, Beethovenia, Weberiä, Bellinia ja Richard Straussia.",
+   "sv": "Mozart lämnade efter sig 23 operor. De andra är Rossini, Beethoven, Weber, Bellini och Richard Strauss."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which of these plays did Shakespeare write?",
+   "fi": "Mitkä näistä näytelmistä ovat Shakespearen kirjoittamia?",
+   "sv": "Vilka av dessa pjäser skrev Shakespeare?"
+  },
+  "o": [
+   {
+    "en": "Cymbeline",
+    "fi": "Cymbeline",
+    "sv": "Cymbeline",
+    "t": true
+   },
+   {
+    "en": "Pericles",
+    "fi": "Perikles",
+    "sv": "Perikles",
+    "t": true
+   },
+   {
+    "en": "Troilus and Cressida",
+    "fi": "Troilos ja Kressida",
+    "sv": "Troilus och Cressida",
+    "t": true
+   },
+   {
+    "en": "Coriolanus",
+    "fi": "Coriolanus",
+    "sv": "Coriolanus",
+    "t": true
+   },
+   {
+    "en": "Timon of Athens",
+    "fi": "Timon Ateenalainen",
+    "sv": "Timon av Athen",
+    "t": true
+   },
+   {
+    "en": "Doctor Faustus",
+    "fi": "Tohtori Faustus",
+    "sv": "Doktor Faustus",
+    "t": false
+   },
+   {
+    "en": "The Duchess of Malfi",
+    "fi": "Malfin herttuatar",
+    "sv": "Hertiginnan av Malfi",
+    "t": false
+   },
+   {
+    "en": "Volpone",
+    "fi": "Volpone",
+    "sv": "Volpone",
+    "t": false
+   },
+   {
+    "en": "The Spanish Tragedy",
+    "fi": "Espanjalainen tragedia",
+    "sv": "Den spanska tragedin",
+    "t": false
+   },
+   {
+    "en": "Edward II",
+    "fi": "Edvard II",
+    "sv": "Edvard II",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The five others are by Shakespeare's rivals and contemporaries: Marlowe, Webster and Ben Jonson among them.",
+   "fi": "Loput viisi ovat Shakespearen kilpakumppanien ja aikalaisten töitä: muun muassa Marlowen, Websterin ja Ben Jonsonin.",
+   "sv": "De andra fem är skrivna av Shakespeares rivaler och samtida: bland dem Marlowe, Webster och Ben Jonson."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which of these writers won the Nobel Prize in Literature?",
+   "fi": "Ketkä näistä kirjailijoista saivat Nobelin kirjallisuuspalkinnon?",
+   "sv": "Vilka av dessa författare fick Nobelpriset i litteratur?"
+  },
+  "o": [
+   {
+    "en": "Selma Lagerlöf",
+    "fi": "Selma Lagerlöf",
+    "sv": "Selma Lagerlöf",
+    "t": true
+   },
+   {
+    "en": "Knut Hamsun",
+    "fi": "Knut Hamsun",
+    "sv": "Knut Hamsun",
+    "t": true
+   },
+   {
+    "en": "Sigrid Undset",
+    "fi": "Sigrid Undset",
+    "sv": "Sigrid Undset",
+    "t": true
+   },
+   {
+    "en": "Halldór Laxness",
+    "fi": "Halldór Laxness",
+    "sv": "Halldór Laxness",
+    "t": true
+   },
+   {
+    "en": "Tomas Tranströmer",
+    "fi": "Tomas Tranströmer",
+    "sv": "Tomas Tranströmer",
+    "t": true
+   },
+   {
+    "en": "Henrik Ibsen",
+    "fi": "Henrik Ibsen",
+    "sv": "Henrik Ibsen",
+    "t": false
+   },
+   {
+    "en": "August Strindberg",
+    "fi": "August Strindberg",
+    "sv": "August Strindberg",
+    "t": false
+   },
+   {
+    "en": "Leo Tolstoy",
+    "fi": "Leo Tolstoi",
+    "sv": "Leo Tolstoj",
+    "t": false
+   },
+   {
+    "en": "James Joyce",
+    "fi": "James Joyce",
+    "sv": "James Joyce",
+    "t": false
+   },
+   {
+    "en": "Vladimir Nabokov",
+    "fi": "Vladimir Nabokov",
+    "sv": "Vladimir Nabokov",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Ibsen and Strindberg were both alive and famous in the prize's early years, and neither of them ever got it.",
+   "fi": "Ibsen ja Strindberg olivat palkinnon alkuvuosina elossa ja kuuluisia, eikä kumpikaan sitä koskaan saanut.",
+   "sv": "Ibsen och Strindberg levde och var berömda under prisets första år, och ingen av dem fick det någonsin."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which of these songs won the Eurovision Song Contest?",
+   "fi": "Mitkä näistä kappaleista voittivat Euroviisut?",
+   "sv": "Vilka av dessa låtar vann Eurovisionsschlagerfestivalen?"
+  },
+  "o": [
+   {
+    "en": "Euphoria",
+    "fi": "Euphoria",
+    "sv": "Euphoria",
+    "t": true
+   },
+   {
+    "en": "Fairytale",
+    "fi": "Fairytale",
+    "sv": "Fairytale",
+    "t": true
+   },
+   {
+    "en": "Save Your Kisses for Me",
+    "fi": "Save Your Kisses for Me",
+    "sv": "Save Your Kisses for Me",
+    "t": true
+   },
+   {
+    "en": "Ne partez pas sans moi",
+    "fi": "Ne partez pas sans moi",
+    "sv": "Ne partez pas sans moi",
+    "t": true
+   },
+   {
+    "en": "Rise Like a Phoenix",
+    "fi": "Rise Like a Phoenix",
+    "sv": "Rise Like a Phoenix",
+    "t": true
+   },
+   {
+    "en": "Cha Cha Cha",
+    "fi": "Cha Cha Cha",
+    "sv": "Cha Cha Cha",
+    "t": false
+   },
+   {
+    "en": "Eres tú",
+    "fi": "Eres tú",
+    "sv": "Eres tú",
+    "t": false
+   },
+   {
+    "en": "Nel blu dipinto di blu, Volare",
+    "fi": "Nel blu dipinto di blu eli Volare",
+    "sv": "Nel blu dipinto di blu, Volare",
+    "t": false
+   },
+   {
+    "en": "Dschinghis Khan",
+    "fi": "Dschinghis Khan",
+    "sv": "Dschinghis Khan",
+    "t": false
+   },
+   {
+    "en": "Congratulations",
+    "fi": "Congratulations",
+    "sv": "Congratulations",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Käärijä's Cha Cha Cha won the public vote in 2023 but finished second overall, behind Sweden's Tattoo.",
+   "fi": "Käärijän Cha Cha Cha voitti yleisöäänet 2023 mutta jäi kokonaiskilpailussa toiseksi Ruotsin Tattoon taakse.",
+   "sv": "Käärijäs Cha Cha Cha vann publikrösterna 2023 men slutade tvåa totalt, bakom Sveriges Tattoo."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which of these are woodwind instruments?",
+   "fi": "Mitkä näistä ovat puupuhaltimia?",
+   "sv": "Vilka av dessa är träblåsinstrument?"
+  },
+  "o": [
+   {
+    "en": "The saxophone",
+    "fi": "Saksofoni",
+    "sv": "Saxofonen",
+    "t": true
+   },
+   {
+    "en": "The piccolo",
+    "fi": "Pikkolohuilu",
+    "sv": "Piccolaflöjten",
+    "t": true
+   },
+   {
+    "en": "The recorder",
+    "fi": "Nokkahuilu",
+    "sv": "Blockflöjten",
+    "t": true
+   },
+   {
+    "en": "The cor anglais",
+    "fi": "Englannintorvi",
+    "sv": "Engelskt horn",
+    "t": true
+   },
+   {
+    "en": "The bassoon",
+    "fi": "Fagotti",
+    "sv": "Fagotten",
+    "t": true
+   },
+   {
+    "en": "The trumpet",
+    "fi": "Trumpetti",
+    "sv": "Trumpeten",
+    "t": false
+   },
+   {
+    "en": "The trombone",
+    "fi": "Pasuuna",
+    "sv": "Trombonen",
+    "t": false
+   },
+   {
+    "en": "The French horn",
+    "fi": "Käyrätorvi",
+    "sv": "Valthornet",
+    "t": false
+   },
+   {
+    "en": "The cornet",
+    "fi": "Kornetti",
+    "sv": "Kornetten",
+    "t": false
+   },
+   {
+    "en": "The euphonium",
+    "fi": "Eufonium",
+    "sv": "Eufonium",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The saxophone is made of brass and still counts as a woodwind, because the sound comes off a reed.",
+   "fi": "Saksofoni on messingistä ja kuuluu silti puupuhaltimiin, koska ääni syntyy lehdykästä.",
+   "sv": "Saxofonen är gjord av messing och räknas ändå som träblås, eftersom ljudet bildas av ett rörblad."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which of these pieces of music are by Sibelius?",
+   "fi": "Mitkä näistä teoksista ovat Sibeliuksen?",
+   "sv": "Vilka av dessa verk är av Sibelius?"
+  },
+  "o": [
+   {
+    "en": "Valse triste",
+    "fi": "Valse triste",
+    "sv": "Valse triste",
+    "t": true
+   },
+   {
+    "en": "The Karelia Suite",
+    "fi": "Karelia-sarja",
+    "sv": "Karelia-sviten",
+    "t": true
+   },
+   {
+    "en": "The Swan of Tuonela",
+    "fi": "Tuonelan joutsen",
+    "sv": "Tuonelas svan",
+    "t": true
+   },
+   {
+    "en": "Tapiola",
+    "fi": "Tapiola",
+    "sv": "Tapiola",
+    "t": true
+   },
+   {
+    "en": "En saga",
+    "fi": "En saga",
+    "sv": "En saga",
+    "t": true
+   },
+   {
+    "en": "Peer Gynt",
+    "fi": "Peer Gynt",
+    "sv": "Peer Gynt",
+    "t": false
+   },
+   {
+    "en": "The Sorcerer's Apprentice",
+    "fi": "Noidan oppipoika",
+    "sv": "Trollkarlens lärling",
+    "t": false
+   },
+   {
+    "en": "Scheherazade",
+    "fi": "Šeherazade",
+    "sv": "Scheherazade",
+    "t": false
+   },
+   {
+    "en": "The Moldau",
+    "fi": "Vltava",
+    "sv": "Moldau",
+    "t": false
+   },
+   {
+    "en": "Pictures at an Exhibition",
+    "fi": "Näyttelykuvia",
+    "sv": "Tavlor på en utställning",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The five others are Grieg, Dukas, Rimsky-Korsakov, Smetana and Mussorgsky — none of them in Sibelius's catalogue.",
+   "fi": "Loput viisi ovat Griegiä, Dukas'ta, Rimski-Korsakovia, Smetanaa ja Musorgskia — yhtäkään ei löydy Sibeliuksen teosluettelosta.",
+   "sv": "De andra fem är Grieg, Dukas, Rimskij-Korsakov, Smetana och Musorgskij — ingen av dem finns i Sibelius verkförteckning."
+  }
+ },
+ {
+  "cat": "Arts & culture",
+  "q": {
+   "en": "Which of these are Moomin characters?",
+   "fi": "Ketkä näistä ovat muumihahmoja?",
+   "sv": "Vilka av dessa är muminfigurer?"
+  },
+  "o": [
+   {
+    "en": "The Groke",
+    "fi": "Mörkö",
+    "sv": "Mårran",
+    "t": true
+   },
+   {
+    "en": "Little My",
+    "fi": "Pikku Myy",
+    "sv": "Lilla My",
+    "t": true
+   },
+   {
+    "en": "The Hemulen",
+    "fi": "Hemuli",
+    "sv": "Hemulen",
+    "t": true
+   },
+   {
+    "en": "The Fillyjonk",
+    "fi": "Vilijonkka",
+    "sv": "Filifjonkan",
+    "t": true
+   },
+   {
+    "en": "Too-Ticky",
+    "fi": "Tuutikki",
+    "sv": "Too-ticki",
+    "t": true
+   },
+   {
+    "en": "Pippi Longstocking",
+    "fi": "Peppi Pitkätossu",
+    "sv": "Pippi Långstrump",
+    "t": false
+   },
+   {
+    "en": "Karlsson on the Roof",
+    "fi": "Katto-Kassinen",
+    "sv": "Karlsson på taket",
+    "t": false
+   },
+   {
+    "en": "Emil of Lönneberga",
+    "fi": "Vaahteramäen Eemeli",
+    "sv": "Emil i Lönneberga",
+    "t": false
+   },
+   {
+    "en": "Ronia the Robber's Daughter",
+    "fi": "Ronja Ryövärintytär",
+    "sv": "Ronja Rövardotter",
+    "t": false
+   },
+   {
+    "en": "Nils Holgersson",
+    "fi": "Nils Holgersson",
+    "sv": "Nils Holgersson",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The other five come out of Swedish children's books: four by Astrid Lindgren and one by Selma Lagerlöf.",
+   "fi": "Loput viisi ovat ruotsalaisista lastenkirjoista: neljä Astrid Lindgreniä ja yksi Selma Lagerlöfiä.",
+   "sv": "De andra fem kommer ur svenska barnböcker: fyra av Astrid Lindgren och en av Selma Lagerlöf."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which of these sports were on the programme at the first Winter Olympics, Chamonix 1924?",
+   "fi": "Mitkä näistä lajeista olivat ohjelmassa ensimmäisissä talviolympialaisissa Chamonix'ssa 1924?",
+   "sv": "Vilka av dessa grenar fanns på programmet vid de första olympiska vinterspelen, Chamonix 1924?"
+  },
+  "o": [
+   {
+    "en": "Curling",
+    "fi": "Curling",
+    "sv": "Curling",
+    "t": true
+   },
+   {
+    "en": "Ice hockey",
+    "fi": "Jääkiekko",
+    "sv": "Ishockey",
+    "t": true
+   },
+   {
+    "en": "Bobsleigh",
+    "fi": "Rattikelkkailu",
+    "sv": "Bob",
+    "t": true
+   },
+   {
+    "en": "Ski jumping",
+    "fi": "Mäkihyppy",
+    "sv": "Backhoppning",
+    "t": true
+   },
+   {
+    "en": "Military patrol",
+    "fi": "Partiohiihto",
+    "sv": "Militärpatrull",
+    "t": true
+   },
+   {
+    "en": "Alpine skiing",
+    "fi": "Alppihiihto",
+    "sv": "Alpin skidåkning",
+    "t": false
+   },
+   {
+    "en": "Biathlon",
+    "fi": "Ampumahiihto",
+    "sv": "Skidskytte",
+    "t": false
+   },
+   {
+    "en": "Luge",
+    "fi": "Rinnekelkkailu",
+    "sv": "Rodel",
+    "t": false
+   },
+   {
+    "en": "Skeleton",
+    "fi": "Skeleton",
+    "sv": "Skeleton",
+    "t": false
+   },
+   {
+    "en": "Snowboarding",
+    "fi": "Lumilautailu",
+    "sv": "Snowboard",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Military patrol, the ancestor of the biathlon, was there from the start. Biathlon itself only arrived in 1960.",
+   "fi": "Partiohiihto, ampumahiihdon esi-isä, oli mukana heti alusta. Ampumahiihto itse tuli ohjelmaan vasta 1960.",
+   "sv": "Militärpatrull, skidskyttets förfader, fanns med från början. Skidskytte självt kom först 1960."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which of these countries won the football World Cup during the twentieth century?",
+   "fi": "Mitkä näistä maista voittivat jalkapallon MM-kullan 1900-luvulla?",
+   "sv": "Vilka av dessa länder vann fotbolls-VM under 1900-talet?"
+  },
+  "o": [
+   {
+    "en": "West Germany",
+    "fi": "Länsi-Saksa",
+    "sv": "Västtyskland",
+    "t": true
+   },
+   {
+    "en": "England",
+    "fi": "Englanti",
+    "sv": "England",
+    "t": true
+   },
+   {
+    "en": "Argentina",
+    "fi": "Argentiina",
+    "sv": "Argentina",
+    "t": true
+   },
+   {
+    "en": "France",
+    "fi": "Ranska",
+    "sv": "Frankrike",
+    "t": true
+   },
+   {
+    "en": "Italy",
+    "fi": "Italia",
+    "sv": "Italien",
+    "t": true
+   },
+   {
+    "en": "Spain",
+    "fi": "Espanja",
+    "sv": "Spanien",
+    "t": false
+   },
+   {
+    "en": "The Netherlands",
+    "fi": "Alankomaat",
+    "sv": "Nederländerna",
+    "t": false
+   },
+   {
+    "en": "Hungary",
+    "fi": "Unkari",
+    "sv": "Ungern",
+    "t": false
+   },
+   {
+    "en": "Sweden",
+    "fi": "Ruotsi",
+    "sv": "Sverige",
+    "t": false
+   },
+   {
+    "en": "Czechoslovakia",
+    "fi": "Tšekkoslovakia",
+    "sv": "Tjeckoslovakien",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Spain is the trap: its one title came in 2010. The Netherlands, Hungary, Sweden and Czechoslovakia have all lost finals and never won one.",
+   "fi": "Espanja on ansa: sen ainoa mestaruus tuli 2010. Alankomaat, Unkari, Ruotsi ja Tšekkoslovakia ovat kaikki hävinneet finaalin eivätkä voittaneet yhtäkään.",
+   "sv": "Spanien är fällan: deras enda titel kom 2010. Nederländerna, Ungern, Sverige och Tjeckoslovakien har alla förlorat finaler och aldrig vunnit."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which of these are events in the men's decathlon?",
+   "fi": "Mitkä näistä lajeista kuuluvat miesten kymmenotteluun?",
+   "sv": "Vilka av dessa grenar ingår i herrarnas tiokamp?"
+  },
+  "o": [
+   {
+    "en": "100 metres",
+    "fi": "100 metriä",
+    "sv": "100 meter",
+    "t": true
+   },
+   {
+    "en": "Long jump",
+    "fi": "Pituushyppy",
+    "sv": "Längdhopp",
+    "t": true
+   },
+   {
+    "en": "400 metres",
+    "fi": "400 metriä",
+    "sv": "400 meter",
+    "t": true
+   },
+   {
+    "en": "Discus throw",
+    "fi": "Kiekonheitto",
+    "sv": "Diskuskastning",
+    "t": true
+   },
+   {
+    "en": "Javelin throw",
+    "fi": "Keihäänheitto",
+    "sv": "Spjutkastning",
+    "t": true
+   },
+   {
+    "en": "200 metres",
+    "fi": "200 metriä",
+    "sv": "200 meter",
+    "t": false
+   },
+   {
+    "en": "800 metres",
+    "fi": "800 metriä",
+    "sv": "800 meter",
+    "t": false
+   },
+   {
+    "en": "Triple jump",
+    "fi": "Kolmiloikka",
+    "sv": "Trestegshopp",
+    "t": false
+   },
+   {
+    "en": "Hammer throw",
+    "fi": "Moukarinheitto",
+    "sv": "Släggkastning",
+    "t": false
+   },
+   {
+    "en": "400 metres hurdles",
+    "fi": "400 metrin aidat",
+    "sv": "400 meter häck",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The other five are the shot put, high jump, 110 m hurdles, pole vault and 1500 m. The 200 m and 800 m belong to the women's heptathlon.",
+   "fi": "Loput viisi ovat kuulantyöntö, korkeushyppy, 110 metrin aidat, seiväshyppy ja 1500 metriä. 200 m ja 800 m kuuluvat naisten seitsenotteluun.",
+   "sv": "De andra fem är kulstötning, höjdhopp, 110 m häck, stavhopp och 1500 m. 200 m och 800 m hör till damernas sjukamp."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which of these cities have hosted the Summer Olympics?",
+   "fi": "Mitkä näistä kaupungeista ovat isännöineet kesäolympialaisia?",
+   "sv": "Vilka av dessa städer har arrangerat olympiska sommarspel?"
+  },
+  "o": [
+   {
+    "en": "Moscow",
+    "fi": "Moskova",
+    "sv": "Moskva",
+    "t": true
+   },
+   {
+    "en": "Antwerp",
+    "fi": "Antwerpen",
+    "sv": "Antwerpen",
+    "t": true
+   },
+   {
+    "en": "Amsterdam",
+    "fi": "Amsterdam",
+    "sv": "Amsterdam",
+    "t": true
+   },
+   {
+    "en": "Melbourne",
+    "fi": "Melbourne",
+    "sv": "Melbourne",
+    "t": true
+   },
+   {
+    "en": "Montreal",
+    "fi": "Montreal",
+    "sv": "Montreal",
+    "t": true
+   },
+   {
+    "en": "Oslo",
+    "fi": "Oslo",
+    "sv": "Oslo",
+    "t": false
+   },
+   {
+    "en": "Innsbruck",
+    "fi": "Innsbruck",
+    "sv": "Innsbruck",
+    "t": false
+   },
+   {
+    "en": "Sapporo",
+    "fi": "Sapporo",
+    "sv": "Sapporo",
+    "t": false
+   },
+   {
+    "en": "Copenhagen",
+    "fi": "Kopenhamina",
+    "sv": "København",
+    "t": false
+   },
+   {
+    "en": "Istanbul",
+    "fi": "Istanbul",
+    "sv": "Istanbul",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Oslo, Innsbruck and Sapporo have all had Winter Games instead. Copenhagen and Istanbul have never had either.",
+   "fi": "Oslossa, Innsbruckissa ja Sapporossa on sen sijaan järjestetty talvikisat. Kopenhaminassa ja Istanbulissa ei kumpiakaan.",
+   "sv": "Oslo, Innsbruck och Sapporo har i stället alla haft vinterspel. København och Istanbul har aldrig haft något av dem."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which of these sports were on the programme at the Helsinki Olympics of 1952?",
+   "fi": "Mitkä näistä lajeista olivat ohjelmassa Helsingin olympialaisissa 1952?",
+   "sv": "Vilka av dessa grenar fanns på programmet vid OS i Helsingfors 1952?"
+  },
+  "o": [
+   {
+    "en": "Modern pentathlon",
+    "fi": "Nykyaikainen viisiottelu",
+    "sv": "Modern femkamp",
+    "t": true
+   },
+   {
+    "en": "Canoeing",
+    "fi": "Melonta",
+    "sv": "Kanot",
+    "t": true
+   },
+   {
+    "en": "Field hockey",
+    "fi": "Maahockey",
+    "sv": "Landhockey",
+    "t": true
+   },
+   {
+    "en": "Weightlifting",
+    "fi": "Painonnosto",
+    "sv": "Tyngdlyftning",
+    "t": true
+   },
+   {
+    "en": "Water polo",
+    "fi": "Vesipallo",
+    "sv": "Vattenpolo",
+    "t": true
+   },
+   {
+    "en": "Judo",
+    "fi": "Judo",
+    "sv": "Judo",
+    "t": false
+   },
+   {
+    "en": "Volleyball",
+    "fi": "Lentopallo",
+    "sv": "Volleyboll",
+    "t": false
+   },
+   {
+    "en": "Archery",
+    "fi": "Jousiammunta",
+    "sv": "Bågskytte",
+    "t": false
+   },
+   {
+    "en": "Badminton",
+    "fi": "Sulkapallo",
+    "sv": "Badminton",
+    "t": false
+   },
+   {
+    "en": "Triathlon",
+    "fi": "Triathlon",
+    "sv": "Triathlon",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Seventeen sports were contested in Helsinki. Pesäpallo was played too, but only as a demonstration.",
+   "fi": "Helsingissä kilpailtiin seitsemässätoista lajissa. Pesäpalloakin pelattiin, mutta vain näytöslajina.",
+   "sv": "I Helsingfors tävlades det i sjutton grenar. Pesäpallo spelades också, men bara som uppvisningsgren."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which of these are throwing events in athletics?",
+   "fi": "Mitkä näistä ovat yleisurheilun heittolajeja?",
+   "sv": "Vilka av dessa är kastgrenar i friidrott?"
+  },
+  "o": [
+   {
+    "en": "Shot put",
+    "fi": "Kuulantyöntö",
+    "sv": "Kulstötning",
+    "t": true
+   },
+   {
+    "en": "Discus throw",
+    "fi": "Kiekonheitto",
+    "sv": "Diskuskastning",
+    "t": true
+   },
+   {
+    "en": "Javelin throw",
+    "fi": "Keihäänheitto",
+    "sv": "Spjutkastning",
+    "t": true
+   },
+   {
+    "en": "Hammer throw",
+    "fi": "Moukarinheitto",
+    "sv": "Släggkastning",
+    "t": true
+   },
+   {
+    "en": "Pole vault",
+    "fi": "Seiväshyppy",
+    "sv": "Stavhopp",
+    "t": false
+   },
+   {
+    "en": "Triple jump",
+    "fi": "Kolmiloikka",
+    "sv": "Trestegshopp",
+    "t": false
+   },
+   {
+    "en": "High jump",
+    "fi": "Korkeushyppy",
+    "sv": "Höjdhopp",
+    "t": false
+   },
+   {
+    "en": "Long jump",
+    "fi": "Pituushyppy",
+    "sv": "Längdhopp",
+    "t": false
+   },
+   {
+    "en": "110 metres hurdles",
+    "fi": "110 metrin aidat",
+    "sv": "110 meter häck",
+    "t": false
+   },
+   {
+    "en": "1500 metres",
+    "fi": "1500 metriä",
+    "sv": "1500 meter",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Only four, and the shot is pushed rather than thrown — which is why it is a put and not a throw.",
+   "fi": "Vain neljä, ja kuula työnnetään eikä heitetä — siksi se on kuulantyöntö eikä kuulanheitto.",
+   "sv": "Bara fyra, och kulan stöts i stället för att kastas — därför heter det kulstötning och inte kulkastning."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which of these drivers won the Formula One world championship?",
+   "fi": "Ketkä näistä kuljettajista voittivat Formula 1:n maailmanmestaruuden?",
+   "sv": "Vilka av dessa förare vann VM-titeln i formel 1?"
+  },
+  "o": [
+   {
+    "en": "Niki Lauda",
+    "fi": "Niki Lauda",
+    "sv": "Niki Lauda",
+    "t": true
+   },
+   {
+    "en": "Jim Clark",
+    "fi": "Jim Clark",
+    "sv": "Jim Clark",
+    "t": true
+   },
+   {
+    "en": "Jacques Villeneuve",
+    "fi": "Jacques Villeneuve",
+    "sv": "Jacques Villeneuve",
+    "t": true
+   },
+   {
+    "en": "Jody Scheckter",
+    "fi": "Jody Scheckter",
+    "sv": "Jody Scheckter",
+    "t": true
+   },
+   {
+    "en": "Alan Jones",
+    "fi": "Alan Jones",
+    "sv": "Alan Jones",
+    "t": true
+   },
+   {
+    "en": "Gilles Villeneuve",
+    "fi": "Gilles Villeneuve",
+    "sv": "Gilles Villeneuve",
+    "t": false
+   },
+   {
+    "en": "Stirling Moss",
+    "fi": "Stirling Moss",
+    "sv": "Stirling Moss",
+    "t": false
+   },
+   {
+    "en": "Ronnie Peterson",
+    "fi": "Ronnie Peterson",
+    "sv": "Ronnie Peterson",
+    "t": false
+   },
+   {
+    "en": "Chris Amon",
+    "fi": "Chris Amon",
+    "sv": "Chris Amon",
+    "t": false
+   },
+   {
+    "en": "Heikki Kovalainen",
+    "fi": "Heikki Kovalainen",
+    "sv": "Heikki Kovalainen",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Jacques Villeneuve took the 1997 title; his father Gilles never won one. Stirling Moss is not on the list of champions either.",
+   "fi": "Jacques Villeneuve otti mestaruuden 1997; hänen isänsä Gilles ei voittanut ainuttakaan. Stirling Mossia ei löydy mestarien listalta sen enempää.",
+   "sv": "Jacques Villeneuve tog titeln 1997; hans far Gilles vann aldrig någon. Stirling Moss finns inte heller på listan över mästare."
+  }
+ },
+ {
+  "cat": "Sport",
+  "q": {
+   "en": "Which of these countries have hosted the Winter Olympics?",
+   "fi": "Mitkä näistä maista ovat isännöineet talviolympialaisia?",
+   "sv": "Vilka av dessa länder har arrangerat olympiska vinterspel?"
+  },
+  "o": [
+   {
+    "en": "Norway",
+    "fi": "Norja",
+    "sv": "Norge",
+    "t": true
+   },
+   {
+    "en": "Japan",
+    "fi": "Japani",
+    "sv": "Japan",
+    "t": true
+   },
+   {
+    "en": "Italy",
+    "fi": "Italia",
+    "sv": "Italien",
+    "t": true
+   },
+   {
+    "en": "Austria",
+    "fi": "Itävalta",
+    "sv": "Österrike",
+    "t": true
+   },
+   {
+    "en": "Canada",
+    "fi": "Kanada",
+    "sv": "Kanada",
+    "t": true
+   },
+   {
+    "en": "Sweden",
+    "fi": "Ruotsi",
+    "sv": "Sverige",
+    "t": false
+   },
+   {
+    "en": "Finland",
+    "fi": "Suomi",
+    "sv": "Finland",
+    "t": false
+   },
+   {
+    "en": "Denmark",
+    "fi": "Tanska",
+    "sv": "Danmark",
+    "t": false
+   },
+   {
+    "en": "Spain",
+    "fi": "Espanja",
+    "sv": "Spanien",
+    "t": false
+   },
+   {
+    "en": "The Netherlands",
+    "fi": "Alankomaat",
+    "sv": "Nederländerna",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Norway has had two, Oslo in 1952 and Lillehammer in 1994. Sweden and Finland have never had any.",
+   "fi": "Norjassa on ollut kahdet, Oslo 1952 ja Lillehammer 1994. Ruotsissa ja Suomessa ei kertaakaan.",
+   "sv": "Norge har haft två, Oslo 1952 och Lillehammer 1994. Sverige och Finland har aldrig haft några."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which of these years are leap years?",
+   "fi": "Mitkä näistä vuosista ovat karkausvuosia?",
+   "sv": "Vilka av dessa år är skottår?"
+  },
+  "o": [
+   {
+    "en": "1600",
+    "fi": "1600",
+    "sv": "1600",
+    "t": true
+   },
+   {
+    "en": "2000",
+    "fi": "2000",
+    "sv": "2000",
+    "t": true
+   },
+   {
+    "en": "2400",
+    "fi": "2400",
+    "sv": "2400",
+    "t": true
+   },
+   {
+    "en": "2800",
+    "fi": "2800",
+    "sv": "2800",
+    "t": true
+   },
+   {
+    "en": "3200",
+    "fi": "3200",
+    "sv": "3200",
+    "t": true
+   },
+   {
+    "en": "1700",
+    "fi": "1700",
+    "sv": "1700",
+    "t": false
+   },
+   {
+    "en": "1800",
+    "fi": "1800",
+    "sv": "1800",
+    "t": false
+   },
+   {
+    "en": "1900",
+    "fi": "1900",
+    "sv": "1900",
+    "t": false
+   },
+   {
+    "en": "2100",
+    "fi": "2100",
+    "sv": "2100",
+    "t": false
+   },
+   {
+    "en": "2200",
+    "fi": "2200",
+    "sv": "2200",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "A century year is a leap year only if it divides by 400. That is why 1900 was not one and 2000 was.",
+   "fi": "Satavuosi on karkausvuosi vain, jos se on jaollinen 400:lla. Siksi 1900 ei ollut ja 2000 oli.",
+   "sv": "Ett sekelår är skottår bara om det är delbart med 400. Därför var 1900 inget skottår men 2000 var det."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "In which of these countries do they drive on the left?",
+   "fi": "Missä näistä maista ajetaan vasemmalla?",
+   "sv": "I vilka av dessa länder kör man på vänster sida?"
+  },
+  "o": [
+   {
+    "en": "Japan",
+    "fi": "Japani",
+    "sv": "Japan",
+    "t": true
+   },
+   {
+    "en": "Thailand",
+    "fi": "Thaimaa",
+    "sv": "Thailand",
+    "t": true
+   },
+   {
+    "en": "Indonesia",
+    "fi": "Indonesia",
+    "sv": "Indonesien",
+    "t": true
+   },
+   {
+    "en": "South Africa",
+    "fi": "Etelä-Afrikka",
+    "sv": "Sydafrika",
+    "t": true
+   },
+   {
+    "en": "Ireland",
+    "fi": "Irlanti",
+    "sv": "Irland",
+    "t": true
+   },
+   {
+    "en": "Vietnam",
+    "fi": "Vietnam",
+    "sv": "Vietnam",
+    "t": false
+   },
+   {
+    "en": "The Philippines",
+    "fi": "Filippiinit",
+    "sv": "Filippinerna",
+    "t": false
+   },
+   {
+    "en": "South Korea",
+    "fi": "Etelä-Korea",
+    "sv": "Sydkorea",
+    "t": false
+   },
+   {
+    "en": "Egypt",
+    "fi": "Egypti",
+    "sv": "Egypten",
+    "t": false
+   },
+   {
+    "en": "Brazil",
+    "fi": "Brasilia",
+    "sv": "Brasilien",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Thailand and Indonesia drive on the left while all their neighbours drive on the right. Myanmar switched sides in 1970.",
+   "fi": "Thaimaassa ja Indonesiassa ajetaan vasemmalla, vaikka kaikissa naapureissa ajetaan oikealla. Myanmar vaihtoi puolta 1970.",
+   "sv": "I Thailand och Indonesien kör man till vänster fast alla grannar kör till höger. Myanmar bytte sida 1970."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which of these fruits are citrus fruits?",
+   "fi": "Mitkä näistä hedelmistä ovat sitrushedelmiä?",
+   "sv": "Vilka av dessa frukter är citrusfrukter?"
+  },
+  "o": [
+   {
+    "en": "The pomelo",
+    "fi": "Pomelo",
+    "sv": "Pomelo",
+    "t": true
+   },
+   {
+    "en": "The citron",
+    "fi": "Sukaattisitruuna",
+    "sv": "Cedercitron",
+    "t": true
+   },
+   {
+    "en": "The mandarin",
+    "fi": "Mandariini",
+    "sv": "Mandarin",
+    "t": true
+   },
+   {
+    "en": "The grapefruit",
+    "fi": "Greippi",
+    "sv": "Grapefrukt",
+    "t": true
+   },
+   {
+    "en": "The kumquat",
+    "fi": "Kumkvatti",
+    "sv": "Kumquat",
+    "t": true
+   },
+   {
+    "en": "The kiwifruit",
+    "fi": "Kiivi",
+    "sv": "Kiwi",
+    "t": false
+   },
+   {
+    "en": "The lychee",
+    "fi": "Litsi",
+    "sv": "Litchi",
+    "t": false
+   },
+   {
+    "en": "The persimmon",
+    "fi": "Persimoni",
+    "sv": "Persimon",
+    "t": false
+   },
+   {
+    "en": "The pomegranate",
+    "fi": "Granaattiomena",
+    "sv": "Granatäpple",
+    "t": false
+   },
+   {
+    "en": "The guava",
+    "fi": "Guava",
+    "sv": "Guava",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "Lemons, limes and oranges are all hybrids; the pomelo, the mandarin and the citron are the ancestors they came from.",
+   "fi": "Sitruuna, lime ja appelsiini ovat kaikki risteymiä; pomelo, mandariini ja sukaattisitruuna ovat niiden kantamuodot.",
+   "sv": "Citron, lime och apelsin är alla hybrider; pomelo, mandarin och cedercitron är de stamarter de kommer ur."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which of these dog breeds come from the Nordic countries?",
+   "fi": "Mitkä näistä koiraroduista ovat pohjoismaisia?",
+   "sv": "Vilka av dessa hundraser kommer från Norden?"
+  },
+  "o": [
+   {
+    "en": "The Finnish Spitz",
+    "fi": "Suomenpystykorva",
+    "sv": "Finsk spets",
+    "t": true
+   },
+   {
+    "en": "The Karelian Bear Dog",
+    "fi": "Karjalankarhukoira",
+    "sv": "Karelsk björnhund",
+    "t": true
+   },
+   {
+    "en": "The Norwegian Elkhound",
+    "fi": "Norjanhirvikoira",
+    "sv": "Norsk elghund",
+    "t": true
+   },
+   {
+    "en": "The Swedish Vallhund",
+    "fi": "Västgötanspetsi",
+    "sv": "Västgötaspets",
+    "t": true
+   },
+   {
+    "en": "The Icelandic Sheepdog",
+    "fi": "Islanninlammaskoira",
+    "sv": "Isländsk fårhund",
+    "t": true
+   },
+   {
+    "en": "The Siberian Husky",
+    "fi": "Siperianhusky",
+    "sv": "Siberian husky",
+    "t": false
+   },
+   {
+    "en": "The Shiba Inu",
+    "fi": "Shiba",
+    "sv": "Shiba inu",
+    "t": false
+   },
+   {
+    "en": "The Dachshund",
+    "fi": "Mäyräkoira",
+    "sv": "Tax",
+    "t": false
+   },
+   {
+    "en": "The Border Collie",
+    "fi": "Bordercollie",
+    "sv": "Border collie",
+    "t": false
+   },
+   {
+    "en": "The Alaskan Malamute",
+    "fi": "Alaskanmalamuutti",
+    "sv": "Alaskan malamute",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The Finnish Spitz was named Finland's national dog in 1979. The Siberian Husky's official country of origin is the United States.",
+   "fi": "Suomenpystykorva nimettiin Suomen kansalliskoiraksi vuonna 1979. Siperianhuskyn virallinen kotimaa on Yhdysvallat.",
+   "sv": "Finsk spets utsågs till Finlands nationalhund 1979. Siberian huskys officiella hemland är USA."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which of these internet country codes belong to a Nordic country?",
+   "fi": "Mitkä näistä internetin maatunnuksista kuuluvat Pohjoismaille?",
+   "sv": "Vilka av dessa landsdomäner på internet hör till ett nordiskt land?"
+  },
+  "o": [
+   {
+    "en": ".fi",
+    "fi": ".fi",
+    "sv": ".fi",
+    "t": true
+   },
+   {
+    "en": ".se",
+    "fi": ".se",
+    "sv": ".se",
+    "t": true
+   },
+   {
+    "en": ".no",
+    "fi": ".no",
+    "sv": ".no",
+    "t": true
+   },
+   {
+    "en": ".dk",
+    "fi": ".dk",
+    "sv": ".dk",
+    "t": true
+   },
+   {
+    "en": ".is",
+    "fi": ".is",
+    "sv": ".is",
+    "t": true
+   },
+   {
+    "en": ".ee",
+    "fi": ".ee",
+    "sv": ".ee",
+    "t": false
+   },
+   {
+    "en": ".lv",
+    "fi": ".lv",
+    "sv": ".lv",
+    "t": false
+   },
+   {
+    "en": ".lt",
+    "fi": ".lt",
+    "sv": ".lt",
+    "t": false
+   },
+   {
+    "en": ".nl",
+    "fi": ".nl",
+    "sv": ".nl",
+    "t": false
+   },
+   {
+    "en": ".at",
+    "fi": ".at",
+    "sv": ".at",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The false five are Estonia, Latvia, Lithuania, the Netherlands and Austria. Åland has one of its own, .ax.",
+   "fi": "Väärät viisi ovat Viro, Latvia, Liettua, Alankomaat ja Itävalta. Ahvenanmaalla on oma tunnus .ax.",
+   "sv": "De fem felaktiga är Estland, Lettland, Litauen, Nederländerna och Österrike. Åland har en egen, .ax."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which of these mammals live wild in Finland?",
+   "fi": "Mitkä näistä nisäkkäistä elävät luonnonvaraisina Suomessa?",
+   "sv": "Vilka av dessa däggdjur lever vilt i Finland?"
+  },
+  "o": [
+   {
+    "en": "The wolverine",
+    "fi": "Ahma",
+    "sv": "Järven",
+    "t": true
+   },
+   {
+    "en": "The Siberian flying squirrel",
+    "fi": "Liito-orava",
+    "sv": "Flygekorren",
+    "t": true
+   },
+   {
+    "en": "The Arctic fox",
+    "fi": "Naali",
+    "sv": "Fjällräven",
+    "t": true
+   },
+   {
+    "en": "The raccoon dog",
+    "fi": "Supikoira",
+    "sv": "Mårdhunden",
+    "t": true
+   },
+   {
+    "en": "The European badger",
+    "fi": "Mäyrä",
+    "sv": "Grävlingen",
+    "t": true
+   },
+   {
+    "en": "The red deer",
+    "fi": "Saksanhirvi",
+    "sv": "Kronhjorten",
+    "t": false
+   },
+   {
+    "en": "The chamois",
+    "fi": "Gemssi",
+    "sv": "Gemsen",
+    "t": false
+   },
+   {
+    "en": "The Alpine ibex",
+    "fi": "Alppikauris",
+    "sv": "Alpstenbocken",
+    "t": false
+   },
+   {
+    "en": "The golden jackal",
+    "fi": "Kultasakaali",
+    "sv": "Guldschakalen",
+    "t": false
+   },
+   {
+    "en": "The Iberian lynx",
+    "fi": "Pardoilves",
+    "sv": "Iberiskt lodjur",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The raccoon dog is not originally Finnish at all — it was brought to the Soviet Union and spread west from there.",
+   "fi": "Supikoira ei ole alun perin suomalainen lainkaan — se tuotiin Neuvostoliittoon ja levisi sieltä länteen.",
+   "sv": "Mårdhunden är inte ursprungligen finsk alls — den fördes in i Sovjetunionen och spred sig därifrån västerut."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which of these are units of volume?",
+   "fi": "Mitkä näistä ovat tilavuuden yksiköitä?",
+   "sv": "Vilka av dessa är volymenheter?"
+  },
+  "o": [
+   {
+    "en": "The gallon",
+    "fi": "Gallona",
+    "sv": "Gallon",
+    "t": true
+   },
+   {
+    "en": "The pint",
+    "fi": "Pintti",
+    "sv": "Pint",
+    "t": true
+   },
+   {
+    "en": "The barrel",
+    "fi": "Barreli",
+    "sv": "Barrel",
+    "t": true
+   },
+   {
+    "en": "The bushel",
+    "fi": "Busheli",
+    "sv": "Bushel",
+    "t": true
+   },
+   {
+    "en": "The fluid ounce",
+    "fi": "Nestemäinen unssi",
+    "sv": "Fluid ounce",
+    "t": true
+   },
+   {
+    "en": "The acre",
+    "fi": "Eekkeri",
+    "sv": "Acre",
+    "t": false
+   },
+   {
+    "en": "The hectare",
+    "fi": "Hehtaari",
+    "sv": "Hektar",
+    "t": false
+   },
+   {
+    "en": "The furlong",
+    "fi": "Furlong",
+    "sv": "Furlong",
+    "t": false
+   },
+   {
+    "en": "The knot",
+    "fi": "Solmu",
+    "sv": "Knop",
+    "t": false
+   },
+   {
+    "en": "The fathom",
+    "fi": "Syli",
+    "sv": "Famn",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "The acre and the hectare measure area, the furlong and the fathom length, and the knot is a speed.",
+   "fi": "Eekkeri ja hehtaari mittaavat pinta-alaa, furlong ja syli pituutta, ja solmu on nopeuden yksikkö.",
+   "sv": "Acre och hektar mäter yta, furlong och famn längd, och knop är ett mått på fart."
+  }
+ },
+ {
+  "cat": "Everyday",
+  "q": {
+   "en": "Which of these numbers are prime?",
+   "fi": "Mitkä näistä luvuista ovat alkulukuja?",
+   "sv": "Vilka av dessa tal är primtal?"
+  },
+  "o": [
+   {
+    "en": "17",
+    "fi": "17",
+    "sv": "17",
+    "t": true
+   },
+   {
+    "en": "31",
+    "fi": "31",
+    "sv": "31",
+    "t": true
+   },
+   {
+    "en": "61",
+    "fi": "61",
+    "sv": "61",
+    "t": true
+   },
+   {
+    "en": "97",
+    "fi": "97",
+    "sv": "97",
+    "t": true
+   },
+   {
+    "en": "2",
+    "fi": "2",
+    "sv": "2",
+    "t": true
+   },
+   {
+    "en": "51",
+    "fi": "51",
+    "sv": "51",
+    "t": false
+   },
+   {
+    "en": "57",
+    "fi": "57",
+    "sv": "57",
+    "t": false
+   },
+   {
+    "en": "87",
+    "fi": "87",
+    "sv": "87",
+    "t": false
+   },
+   {
+    "en": "91",
+    "fi": "91",
+    "sv": "91",
+    "t": false
+   },
+   {
+    "en": "119",
+    "fi": "119",
+    "sv": "119",
+    "t": false
+   }
+  ],
+  "n": {
+   "en": "51 is 3 times 17, 57 is 3 times 19, 87 is 3 times 29, 91 is 7 times 13 and 119 is 7 times 17.",
+   "fi": "51 on 3 × 17, 57 on 3 × 19, 87 on 3 × 29, 91 on 7 × 13 ja 119 on 7 × 17.",
+   "sv": "51 är 3 × 17, 57 är 3 × 19, 87 är 3 × 29, 91 är 7 × 13 och 119 är 7 × 17."
+  }
+ }
+]
