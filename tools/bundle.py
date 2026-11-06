@@ -21,4 +21,6 @@ stamp = datetime.datetime.now().strftime('%d.%m. %H:%M')
 s = s.replace('__BUILD__', stamp)
 
 open(out, 'w', encoding='utf-8').write(s)
+# the page asks this file whether it is still the newest one in the room
+open(os.path.join(root, 'version.txt'), 'w', encoding='utf-8').write(stamp + '\n')
 print('bundled %d bytes, version %s -> %s' % (len(s), stamp, out))
