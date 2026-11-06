@@ -896,6 +896,16 @@ button.rbtag.open{color:#49C27B;border-color:#2F6B46}
 .rbchip.host i{font-style:normal;color:var(--gold)}
 .rbchip.waiting{border-style:dashed;background:none;color:var(--muted);font-weight:400}
 .rbgap{flex:1 1 auto}
+.rbmax{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:11px;
+  background:var(--panel2);padding:3px}
+.rbmaxlab{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);padding:0 6px}
+.rbmax button{width:28px;height:28px;border:0;border-radius:8px;background:none;color:var(--bone);
+  font-size:16px;cursor:pointer;line-height:1}
+.rbmax button:hover{background:var(--line)}
+.rbmax button:disabled{opacity:.3;cursor:default;background:none}
+.rbmax b{min-width:22px;text-align:center;font-family:var(--mono);font-size:14px;color:var(--gold)}
+.roombar .rbmax{order:4}
 /* the room on one line, the people who turned up on the next */
 .roombar{flex-wrap:wrap;row-gap:0}
 .roombar .sbi{order:1}.roombar .rbhead{order:2}.roombar .sbd{order:3}.roombar .rbgap{order:4}
@@ -1152,9 +1162,7 @@ body.learning .gamecard .garrow{display:none}
       </div>
     </div>
 
-    <div class="homegrid">
-     <div class="hcol">
-      <div class="modefilter" id="mode-filter">
+    <div class="modefilter" id="mode-filter">
       <span class="mflab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
         <path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>Filter by game</span>
       <button type="button" data-g="all" class="sel">All games</button>
@@ -1166,47 +1174,16 @@ body.learning .gamecard .garrow{display:none}
 
     <div class="hpanel">
       <div class="hphead">
-        <span class="hptitle"><span class="livedot"></span>Live public rooms</span>
+        <span class="hptitle"><span class="livedot"></span>Live public parties</span>
         <div class="seg hpfilter" id="pub-filter">
           <button type="button" data-f="all" class="sel">All</button>
           <button type="button" data-f="wait">Waiting</button>
           <button type="button" data-f="live">In progress</button>
         </div>
       </div>
-      <p class="pool thin" id="pub-sub">Rooms other people have left open. Yours shows up here only if you make it public.</p>
+      <p class="pool thin" id="pub-sub">Open games you can join right now. Yours is listed here only if you make the room public.</p>
         <div id="pub-list"></div>
       </div>
-     </div>
-
-     <div class="hpanel cpanel">
-      <div class="hphead"><span class="hptitle">Create your party</span></div>
-      <p id="pub-sub2">Set it up here, then invite the others.</p>
-
-      <div class="field-label">Room visibility</div>
-      <div class="seg wrap" id="vis">
-        <button type="button" data-v="public">Public</button>
-        <button type="button" data-v="private" class="sel">Private</button>
-      </div>
-      <p class="pool thin" id="vis-note" style="margin:-6px 0 14px">Only people with the code or the QR get in.</p>
-
-      <div class="field-label">Max players</div>
-      <div class="stepper">
-        <button type="button" id="mp-down" aria-label="Fewer">&minus;</button>
-        <b id="mp-n">8</b>
-        <button type="button" id="mp-up" aria-label="More">+</button>
-      </div>
-
-      <div class="field-label">Game</div>
-      <div class="modegrid" id="home-modes">
-        <button type="button" class="modebtn sel" data-game="chair">The Chair</button>
-        <button type="button" class="modebtn" data-game="artist">Name the Artist</button>
-        <button type="button" class="modebtn" data-game="trivia">Quiz</button>
-        <button type="button" class="modebtn" data-game="picture">Picture Guess</button>
-      </div>
-
-      <button type="button" class="btn" id="m-createroom">+ Create room</button>
-     </div>
-    </div>
 
     <div class="homefoot">
       <button type="button" class="menutile" id="m-solo">
@@ -1332,6 +1309,12 @@ body.learning .gamecard .garrow{display:none}
           <rect x="4.5" y="10.5" width="15" height="9.5" rx="2.4"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>Private room</button>
       </span>
       <span class="sbd"></span>
+      <span class="rbmax">
+        <span class="rbmaxlab">Max</span>
+        <button type="button" id="mp-down" aria-label="Fewer">&minus;</button>
+        <b id="mp-n">8</b>
+        <button type="button" id="mp-up" aria-label="More">+</button>
+      </span>
       <span class="rbgap"></span>
       <span class="rbpeople" id="rb-people">
         <span class="rbgroup" id="rb-joined"></span>
@@ -2992,7 +2975,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 20:46';
+const BUILD='06.11. 20:48';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
