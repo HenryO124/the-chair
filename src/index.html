@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
 <title>The Chair — blind signings</title>
 <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
 <link rel="preconnect" href="https://www.youtube.com" crossorigin>
@@ -14,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme:dark;        /* or Chrome repaints the whole thing lilac */
   --ink:#120B10; --panel:#1F1319; --panel2:#2A1B22; --line:#3E2830;
   --gold:#D8A33F; --red:#C4342C; --red-dim:#7A211C;
   --bone:#F0E7D8; --muted:#9A868D;
@@ -301,17 +303,18 @@ input:focus{outline:none;border-color:var(--gold)}
   font-family:var(--mono);font-size:clamp(10px,1.1vw,14px);letter-spacing:.34em;color:rgba(240,231,216,.18)}
 .eq{position:absolute;inset:0;display:none;align-items:flex-end;justify-content:center;
   gap:clamp(3px,.6vw,7px);padding:0 8% 14%}
-.eq i{display:block;flex:1;max-width:14px;border-radius:2px 2px 0 0;height:12%;
+.eq i{display:block;flex:1;max-width:14px;border-radius:2px 2px 0 0;
+  height:78%;transform:scaleY(.15);transform-origin:bottom;
   background:linear-gradient(180deg,var(--gold),var(--red));
   animation:bounce 1.1s ease-in-out infinite}
 .eq i:nth-child(2n){animation-duration:.8s}
 .eq i:nth-child(3n){animation-duration:1.4s}
 .eq i:nth-child(4n){animation-duration:.95s}
 .eq i:nth-child(5n){animation-duration:1.25s}
-@keyframes bounce{0%,100%{height:12%}50%{height:78%}}
+@keyframes bounce{0%,100%{transform:scaleY(.15)}50%{transform:scaleY(1)}}
 .playing .eq{display:flex}
 .playing .vw-idle{display:none}
-@media (prefers-reduced-motion:reduce){.eq i{animation:none;height:40%}}
+@media (prefers-reduced-motion:reduce){.eq i{animation:none;transform:scaleY(.5)}}
 .clock{position:absolute;z-index:3;right:clamp(8px,1vw,14px);top:clamp(8px,1vw,14px);
   width:clamp(46px,5vw,70px);height:clamp(46px,5vw,70px)}
 .clock svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
@@ -511,6 +514,7 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   text-transform:uppercase;margin:0 0 4px}
 .chairpad .mystate{font-size:clamp(17px,4.5vw,22px);font-weight:700;margin:0 0 14px;min-height:1.4em;
   text-wrap:balance}
+.bigsign,.bigskip{touch-action:manipulation}
 .bigsign{display:block;width:100%;padding:clamp(26px,9vw,42px) 10px;border-radius:18px;border:0;
   font-family:var(--disp);font-weight:800;letter-spacing:.03em;font-size:clamp(22px,7vw,32px);
   color:#FFF0EC;background:linear-gradient(150deg,#E34C41,var(--red) 55%,#8E2620);
@@ -616,6 +620,14 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 .padsetup{margin:-6px 0 14px;padding:10px 13px;border-radius:12px;border:1px dashed var(--line);
   background:var(--panel);font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--muted)}
 .padsetup b{color:var(--bone);font-weight:700}
+/* the final table, on every phone and not only on the television */
+.padboard{display:grid;gap:7px;margin:4px 0 2px}
+.pbrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel)}
+.pbrow.lead{border-color:var(--gold);background:rgba(216,163,63,.12)}
+.pbrow.me .pbn{color:var(--bone)}
+.pbrow .pbn{font-weight:700;font-size:14px;color:var(--muted)}
+.pbrow .pbv{font-family:var(--mono);font-size:13px;color:var(--gold)}
 /* the ballot on a phone: tap the topics you want tonight */
 .padvote{margin:0 0 14px;padding:12px 13px;border-radius:12px;
   border:1px solid var(--line);background:var(--panel)}
@@ -812,7 +824,7 @@ body.learning .gamecard .garrow{display:none}
   border-radius:12px;border:1px solid var(--line);background:var(--panel2);color:var(--bone);
   font-weight:700;font-size:clamp(14px,1.5vw,19px);cursor:pointer;min-width:0}
 .qbtn .key{font-family:var(--mono);font-size:11px;color:var(--muted);flex:0 0 auto}
-.qbtn span.t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qbtn span.t{overflow:hidden;overflow-wrap:anywhere;hyphens:auto}
 .qbtn:hover:not(:disabled){border-color:var(--bone)}
 .qbtn:disabled{cursor:default}
 /* the right name goes solid green, so the room can read it from the sofa */
@@ -1118,7 +1130,7 @@ body.learning .gamecard .garrow{display:none}
     <div class="steps"><span class="step on">1 Invite</span><span class="step">2 How we play</span><span class="step">3 Go</span></div>
     <div class="eyebrow">Invite the room</div>
     <h2>Their phones are the chairs.</h2>
-    <p class="sub">Keep this screen on the television. Everyone else opens the same page on their phone, taps <em style="font-style:normal;color:var(--bone)">Join a game</em> and types the code. Their chair appears here as they arrive.</p>
+    <p class="sub">Keep this screen on the television. Everyone else opens the same page on their phone, taps <em style="font-style:normal;color:var(--bone)">Join with code</em> and types it in. Their chair appears here as they arrive.</p>
 
     <div class="lobbygrid">
       <div class="lobbycode">
@@ -1395,7 +1407,7 @@ body.learning .gamecard .garrow{display:none}
 </aside>
 </div>
 
-<audio id="menu-music" loop preload="auto" src="menu.mp3"></audio>
+<audio id="menu-music" loop preload="none" src="menu.mp3"></audio>
 <script src="lib-mqtt.js"></script>
 <script src="lib-qr.js"></script>
 <script>
@@ -1583,7 +1595,10 @@ let musicOn=true;
 try{const m=localStorage.getItem('thechair.music');if(m!==null)musicOn=(m==='1')}catch(e){}
 function musicShouldPlay(){
   const id=screenNow();
-  return musicOn&&(id==='s-home'||id==='s-setup');
+  if(!musicOn)return false;
+  if(id==='s-home'||id==='s-setup')return true;
+  // the two games with no record of their own would otherwise play in silence
+  return id==='s-quiz'&&(S.game==='trivia'||S.game==='picture');
 }
 function drawMusicBtn(){
   const b=$('music-btn');if(!b)return;
@@ -1597,7 +1612,8 @@ function musicSync(){
   const a=$('menu-music');if(!a)return;
   drawMusicBtn();
   if(musicShouldPlay()){
-    a.volume=0.4;                         // under the conversation, not over it
+    a.preload='auto';                       // fetched when wanted, not on arrival
+    a.volume=screenNow()==='s-quiz'?0.18:0.4;   // under the thinking, not over it                         // under the conversation, not over it
     const p=a.play();
     if(p&&p.catch)p.catch(()=>{});        // blocked until a tap; the handler below retries
   }else{
@@ -1634,7 +1650,7 @@ function stopAutoNext(quiet){
 function startAutoNext(){
   stopAutoNext(true);
   if(seasonDone())return;              // the last word belongs to the final screen
-  autoLeft=5;renderAuto();publishStage();
+  autoLeft=12;renderAuto();publishStage();   // long enough to read the reveal out loud
   autoTimer=setInterval(()=>{
     autoLeft--;
     if(autoLeft<=0){stopAutoNext(true);$('next').click();return}
@@ -2114,7 +2130,7 @@ function nextRound(){
   $('round-tag').innerHTML='<div class="rc-label">Audition</div>'
     +'<div class="rc-num">'+S.round+'<span> of '+S.deck.length+'</span></div>'
     +(S.season?'<div class="rc-season">'+esc(S.season)+'</div>':'');
-  $('meta').textContent=yearOf(S.current);
+  $('meta').textContent='blind audition';   // the year is part of the answer, so it waits
   $('videowall').classList.remove('playing');clearVideo();videoShown=false;refreshVideoBox();
   $('vidctl').style.display='none';
   $('drop').style.display='block';$('drop').textContent='Start the audition';
@@ -3520,7 +3536,10 @@ function hostAct(m){
   const p=S.players.find(x=>x.pid&&x.pid===pid);
   if(!p)return;
   const seq=+m.seq||0;
-  if(seq<=(PARTY.seen[pid]||0))return;     // a repeat of something already done
+  const last=PARTY.seen[pid]||0;
+  // a lower number used to mean "already handled"; it usually means the phone
+  // reloaded and started counting again, and silencing it is worse than a repeat
+  if(seq<=last&&seq>last-5000)return;
   PARTY.seen[pid]=seq;
   if(m.type==='answer'){                   // Name the Artist: four names, one tap
     quizAnswer(p,+m.target);
@@ -3624,15 +3643,20 @@ function stageState(){
       passed:!!p.passed,full:full(p),blockUsed:!!p.blockUsed,total:teamTotal(p),
       team:p.team.map(x=>({n:x[0],m:sold(x)}))}))};
 }
+let lastPub=0;
+function sendStage(){
+  if(PARTY.role!=='host'||!PARTY.client)return;
+  lastPub=Date.now();
+  try{PARTY.client.publish(topicFor(PARTY.code,'stage'),JSON.stringify(stageState()),
+    {retain:true,qos:0})}catch(e){}
+}
 function publishStage(){
   if(PARTY.role!=='host'||!PARTY.client)return;
-  if(PARTY.pubTimer)return;                 // coalesce a burst into one message
-  PARTY.pubTimer=setTimeout(()=>{
-    PARTY.pubTimer=null;
-    if(PARTY.role!=='host'||!PARTY.client)return;
-    try{PARTY.client.publish(topicFor(PARTY.code,'stage'),JSON.stringify(stageState()),
-      {retain:true,qos:0})}catch(e){}
-  },70);
+  // the first message goes immediately — waiting 70ms to open the race meant the
+  // host screen said "go" before any phone could answer. Only a burst waits.
+  if(!PARTY.pubTimer&&Date.now()-lastPub>=70){sendStage();return}
+  if(PARTY.pubTimer)return;
+  PARTY.pubTimer=setTimeout(()=>{PARTY.pubTimer=null;sendStage()},70);
 }
 
 /* ================= a phone, being a chair ================= */
@@ -3660,7 +3684,7 @@ function chairJoin(){
   const name=cleanName($('join-name').value);
   if(code.length!==4){joinStatus('The code is four letters.','bad');return}
   if(PARTY.client&&!name){joinStatus('Type your name first.','bad');return}
-  PARTY.role='chair';PARTY.code=code;PARTY.pid=myPid();PARTY.seq=0;
+  PARTY.role='chair';PARTY.code=code;PARTY.pid=myPid();PARTY.seq=Date.now();
   $('join-go').disabled=true;
   partyConnect(c=>{
     $('join-go').disabled=false;
@@ -3813,6 +3837,15 @@ document.addEventListener('click',e=>{
 });
 
 /* where you finished, told on your own phone rather than squinted off the big screen */
+function finalBoard(st,me){
+  const seats=(st.seats||[]).slice().sort((a,b)=>(b.score||0)-(a.score||0));
+  if(!seats.length)return '';
+  const top=seats[0].score||0;
+  return '<div class="padboard">'+seats.map((sdata,i)=>
+    '<div class="pbrow'+(i===0&&top>0?' lead':'')+(me&&sdata.id===me.id?' me':'')+'">'
+    +'<span class="pbn">'+(i+1)+'. '+esc(sdata.name||('Coach '+(sdata.id+1)))+'</span>'
+    +'<span class="pbv">'+(sdata.score||0)+'</span></div>').join('')+'</div>';
+}
 function finalLine(st,me){
   const seats=(st.seats||[]).slice().sort((a,b)=>(b.score||0)-(a.score||0));
   if(!me||!seats.length)return 'That is the game.';
@@ -3845,7 +3878,7 @@ function drawPadQuiz(st,me){
   // green when you had it, red when you did not: readable at arm's length
   stEl.classList.toggle('good',!!got);
   stEl.classList.toggle('bad',!!(st.revealed&&!got&&mine>=0));
-  if(st.phase==='over'){box.innerHTML='';return}
+  if(st.phase==='over'){box.innerHTML=finalBoard(st,me);return}
   box.innerHTML=(st.options||[]).map((t,i)=>{
     const cls=st.revealed?(i===st.correct?' right':(i===mine?' missed':' wrong')):(i===mine?' mine':'');
     return '<button class="qbtn'+cls+'" data-ans="'+i+'"'+((said||st.revealed)?' disabled':'')+'>'
@@ -4108,7 +4141,22 @@ $('join-back')&&($('join-back').onclick=()=>{partyEnd();show('s-home')});
 $('join-code')&&($('join-code').addEventListener('input',e=>{
   e.target.value=e.target.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);
 }));
-$('pad-sign')&&($('pad-sign').onclick=()=>{$('pad-sign').disabled=true;sendAct('sign')});
+// The race is decided on pointerdown, not click: a touch click waits for the
+// browser to rule out a scroll or a double tap, and that wait is not the same
+// on every phone. Click stays as a fallback for anything without pointer events.
+function raceTap(){
+  const b=$('pad-sign');
+  if(!b||b.disabled)return;
+  b.disabled=true;sendAct('sign');
+}
+if($('pad-sign')){
+  let viaPointer=false;
+  $('pad-sign').addEventListener('pointerdown',e=>{
+    if(e.isPrimary===false)return;
+    viaPointer=true;e.preventDefault();raceTap();
+  });
+  $('pad-sign').addEventListener('click',()=>{if(!viaPointer)raceTap()});
+}
 $('pad-skip')&&($('pad-skip').onclick=()=>{$('pad-skip').disabled=true;sendAct('skip')});
 $('pad-hold')&&($('pad-hold').onclick=()=>{$('pad-hold').hidden=true;sendAct('hold')});
 $('pad-blocks')&&($('pad-blocks').addEventListener('click',e=>{
