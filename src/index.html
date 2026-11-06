@@ -76,6 +76,7 @@ input[type=text]{flex:1;background:var(--panel2);border:1px solid var(--line);co
 input:focus{outline:none;border-color:var(--gold)}
 .kill{width:46px;flex:none;background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:9px;font-size:18px}
 .kill:hover{color:var(--red);border-color:var(--red)}
+[hidden]{display:none!important}
 .seg{display:flex;gap:8px;margin:4px 0 22px}
 .seg button{flex:1;padding:12px 4px;border-radius:9px;background:var(--panel2);border:1px solid var(--line);
   color:var(--muted);font-family:var(--mono);font-size:14px}
@@ -612,6 +613,9 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;border:1px solid var(--line);
   background:rgba(12,7,10,.85);color:var(--muted);cursor:pointer}
 .soundbtn:hover{border-color:var(--gold);color:var(--gold)}
+.padsetup{margin:-6px 0 14px;padding:10px 13px;border-radius:12px;border:1px dashed var(--line);
+  background:var(--panel);font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--muted)}
+.padsetup b{color:var(--bone);font-weight:700}
 /* in Name the Artist the record plays on the phone too, with the picture covered */
 .padcurtain{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;
   background:repeating-linear-gradient(90deg,#4A1016,#4A1016 10px,#5C141B 10px,#5C141B 22px);
@@ -1125,7 +1129,7 @@ body.learning .gamecard .garrow{display:none}
     <div class="steps"><span class="step done">1 Invite</span><span class="step on">2 How we play</span><span class="step">3 Go</span></div>
     <div class="eyebrow">How we play</div>
     <h2>Decide it together.</h2>
-    <p class="sub">Nobody has to agree with the host. Argue about the years, settle on a genre, then go.</p>
+    <p class="sub" id="rules-sub">Nobody has to agree with the host. Argue about the years, settle on a genre, then go.</p>
 <div class="field-label">Start the season in</div>
     <div class="seg wrap" id="eras">
       <button data-e="1">Any year</button>
@@ -1156,6 +1160,25 @@ body.learning .gamecard .garrow{display:none}
       <button data-l="30">30</button>
       <button data-l="0">Until teams fill</button>
     </div>
+
+    <div class="field-label" id="cats-label">Topics</div>
+    <div class="seg wrap" id="cats">
+      <button data-c="*" class="sel">Everything</button>
+      <button data-c="History">History</button>
+      <button data-c="Geography">Geography</button>
+      <button data-c="Science">Science</button>
+      <button data-c="Arts &amp; culture">Arts &amp; culture</button>
+      <button data-c="Sport">Sport</button>
+      <button data-c="Everyday">Everyday</button>
+    </div>
+    <p class="pool thin" id="cats-note" style="margin:-6px 0 14px"></p>
+
+    <div class="field-label">Where is everyone</div>
+    <div class="seg wrap" id="where">
+      <button data-w="room" class="sel">All in this room</button>
+      <button data-w="away">Some are somewhere else</button>
+    </div>
+    <p class="pool thin" id="where-note" style="margin:-6px 0 14px"></p>
 
     <div class="field-label">Singers per team</div>
     <div class="seg wrap" id="teamsize">
@@ -1219,6 +1242,7 @@ body.learning .gamecard .garrow{display:none}
       <div class="padscreen" id="pad-screen" hidden></div>
       <div class="padseats" id="pad-seats"></div>
       <p class="mystate" id="pad-state">The host has not started yet.</p>
+      <p class="padsetup" id="pad-setup" hidden></p>
       <div class="qgrid" id="pad-quiz" hidden></div>
       <button class="bigsign" id="pad-sign" disabled>SIGN THEM</button>
       <button class="bigskip" id="pad-skip" disabled>SKIP</button>
@@ -1704,6 +1728,39 @@ function segHandler(id,key,onPick){
   $(id).onclick=e=>{const b=e.target.closest('button');if(!b)return;
     document.querySelectorAll('#'+id+' button').forEach(x=>x.classList.remove('sel'));
     b.classList.add('sel');onPick(b.dataset[key])};
+}
+S.cats=[];                       // empty means every topic
+$('cats')&&($('cats').onclick=e=>{
+  const b=e.target.closest('button');if(!b)return;
+  const c=b.dataset.c;
+  if(c==='*')S.cats=[];
+  else{
+    const i=S.cats.indexOf(c);
+    if(i<0)S.cats.push(c); else S.cats.splice(i,1);
+  }
+  drawCats();
+  if(PARTY.role==='host')publishStage();
+});
+function catBank(){
+  return S.cats.length?TRIVIA.filter(q=>S.cats.indexOf(q[0])>=0):TRIVIA;
+}
+function drawCats(){
+  const box=$('cats');if(!box)return;
+  [...box.querySelectorAll('button')].forEach(b=>
+    b.classList.toggle('sel',b.dataset.c==='*'?!S.cats.length:S.cats.indexOf(b.dataset.c)>=0));
+  const n=catBank().length;
+  const note=$('cats-note');
+  if(note)note.textContent=(S.cats.length?S.cats.length+' of six topics':'All six topics')
+    +' \u00b7 '+n+' question'+(n===1?'':'s')+' to draw from';
+  try{updateStartState()}catch(e){}
+}
+segHandler('where','w',v=>{S.remote=(v==='away');dressWhere();
+  if(PARTY.role==='host')publishStage()});   // nothing to tell if no room is open
+function dressWhere(){
+  const n=$('where-note');if(!n)return;
+  n.textContent=S.remote
+    ? 'Every phone gets the record as well, with its own sound. Use headphones, or the room will echo.'
+    : 'Phones are buttons only. The record plays here, on the one screen everybody can see.';
 }
 segHandler('teamsize','t',v=>{S.teamSize=+v;updatePool()});
 segHandler('length','l',v=>{S.len=+v;updatePool()});
@@ -2843,8 +2900,9 @@ const isTrivia=()=>S.game==='trivia';
 const optLabel=o=>isTrivia()?o:o[0];
 function quizStart(){
   if(isTrivia()){
-    Q.of=Math.min(S.len||10,TRIVIA.length);
-    Q.deck=shuffle(TRIVIA).slice(0,Q.of);
+    const bank=catBank();
+    Q.of=Math.min(S.len||10,bank.length);
+    Q.deck=shuffle(bank).slice(0,Q.of);
   }else{
     const p=pool().filter(a=>videoFor(a));        // no video, no question
     Q.of=Math.min(S.len||10,p.length);
@@ -3157,7 +3215,9 @@ function quizState(phase){
   return {v:1,game:isTrivia()?'trivia':'artist',phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
     round:Q.round,of:Q.deck.length,revealed:!!Q.revealed,
     correct:Q.revealed?Q.correct:-1,
-    vid:isTrivia()||!Q.current?'':videoFor(Q.current),
+    setup:setupLine(),
+    remote:!!S.remote,
+    vid:isTrivia()||!Q.current||!S.remote?'':videoFor(Q.current),
     ask:isTrivia()&&Q.current?Q.current[1]:'',
     cat:isTrivia()&&Q.current?Q.current[0]:'',
     act:!Q.revealed||!Q.current?null
@@ -3169,6 +3229,22 @@ function quizState(phase){
       score:p.score||0,team:[],passed:false,full:false,blockUsed:false,total:p.score||0,
       reserved:false}))};
 }
+// everyone on a phone should see what is being chosen, so they can argue about it
+function setupLine(){
+  const g=S.game==='trivia'?'Quiz':S.game==='artist'?'Name the Artist':'The Chair';
+  const bits=[g];
+  if(S.game==='trivia'){
+    bits.push(S.cats&&S.cats.length?S.cats.join(', '):'All six topics');
+    bits.push((S.len||10)+' questions');
+  }else{
+    bits.push(S.era?S.era+'s onward':'Any year');
+    bits.push(S.genre&&S.genre!=='Random'?S.genre:'Any genre');
+    bits.push(S.len?S.len+(S.game==='artist'?' records':' auditions'):'Until the teams fill');
+    if(S.game==='chair')bits.push(S.teamSize+' per team');
+  }
+  bits.push(S.remote?'Everyone on their own screen':'All in one room');
+  return bits.join(' \u00b7 ');
+}
 function stageState(){
   const a=S.current;
   const revealed=!!a&&!turnsOpen&&(!!winner||walked);
@@ -3177,7 +3253,7 @@ function stageState(){
     :turnsOpen?'live':revealed?'locked':'between';
   if((S.game==='artist'||S.game==='trivia')&&!inPrep())
     return quizState(phase);
-  return {v:1,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
+  return {setup:setupLine(),remote:!!S.remote,v:1,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
     blockTarget:(blockTarget===null?null:blockTarget),
     blockOwner:(blockOwner===null?null:blockOwner),
     winner:winner?winner.id:null,
@@ -3353,6 +3429,8 @@ $('join-sound')&&($('join-sound').addEventListener('click',e=>{
 }));
 function drawPadScreen(st){
   const box=$('pad-screen');if(!box)return;
+  // in a shared room the phone is a button; the record belongs to the big screen
+  if(st&&st.remote===false)st={phase:'',vid:''};
   const want=(st&&st.phase==='live'&&st.vid)?String(st.vid):'';
   const hide=!!(st&&st.hide);
   const key=want+'|'+(padSound?'1':'0')+'|'+(hide?'c':'o');
@@ -3423,10 +3501,17 @@ function drawPad(){
   const st=PARTY.stage,me=mySeat();
   const sign=$('pad-sign'),skip=$('pad-skip');
   if(!st)return;
+  // while the room is still deciding, show everyone what is on the table
+  const sp=$('pad-setup');
+  if(sp){
+    const show=st.phase==='lobby'&&st.setup;
+    sp.hidden=!show;
+    if(show)sp.innerHTML='<b>Tonight</b><br>'+esc(st.setup);
+  }
   if(st.game==='artist'||st.game==='trivia'){
     // the record plays on the phone as well, behind a curtain until the reveal,
     // so somebody who could not make it in person can still hear it
-    drawPadScreen({phase:st.vid?'live':'',vid:st.vid||'',hide:!st.revealed});
+    drawPadScreen({phase:(st.remote&&st.vid)?'live':'',vid:st.vid||'',hide:!st.revealed});
     drawPadSeats(st,me);drawPadQuiz(st,me);
     return;
   }
@@ -3544,6 +3629,7 @@ $('m-code')&&($('m-code').onclick=openChairScreen);
 $('lobby-back')&&($('lobby-back').onclick=closeLobby);
 $('to-rules')&&($('to-rules').onclick=()=>{updatePool();dressRules();show('s-rules')});
 function dressRules(){
+  try{dressWhere()}catch(e){}
   const triv=S.game==='trivia';
   const quiz=S.game==='artist'||triv;      // neither builds teams
   // the era and genre filters belong to the record collection, not to trivia
@@ -3553,6 +3639,12 @@ function dressRules(){
     if(lab&&lab.classList.contains('field-label'))lab.hidden=triv;
   });
   try{$('pool').hidden=triv}catch(e){}
+  try{$('rules-sub').textContent=triv
+    ? 'Nobody has to agree with the host. Pick the topics you want and how long the night runs.'
+    : 'Nobody has to agree with the host. Argue about the years, settle on a genre, then go.'}catch(e){}
+  // the topics belong to the quiz, the way era and genre belong to the records
+  ['cats','cats-label','cats-note'].forEach(id=>{const e=$(id);if(e)e.hidden=!triv});
+  if(triv)try{drawCats()}catch(e){}
   const ts=$('teamsize'),lab=ts&&ts.previousElementSibling;
   if(ts)ts.hidden=quiz;
   if(lab&&lab.classList.contains('field-label'))lab.hidden=quiz;
