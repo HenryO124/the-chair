@@ -1748,7 +1748,11 @@ function validate(){
 // the only thing that can stop a season now is a mix with nobody in it
 function updateStartState(){
   let empty=false;
-  try{empty=S.genre!=='Random'&&!!S.era&&pool().length===0}
+  try{
+    empty=isAsking()
+      ? catBank().length===0                  // a quiz with no questions is not a game
+      : S.genre!=='Random'&&!!S.era&&pool().length===0;
+  }
   catch(e){return}      // the form draws before the catalogue is in place
   try{$('lobby-start').disabled=empty}catch(e){}
 }
@@ -2001,15 +2005,6 @@ function openModes(mode){
   $('roombar').hidden=true;$('startbar').hidden=LEARNING;
   show('s-setup');
 }
-// a game with no content behind it is not offered at all
-(function(){
-  const card=document.querySelector('.gamecard[data-game="picture"]');
-  if(card&&!(typeof PICTURES!=='undefined'&&PICTURES.length)){
-    card.classList.add('soon');card.disabled=true;
-    const tag=card.querySelector('.gtag');
-    if(tag)tag.innerHTML+='<span class="soontag">Not built yet</span>';
-  }
-})();
 document.querySelectorAll('.gamecard').forEach(c=>{
   if(c.classList.contains('soon'))return;
   c.onclick=()=>pickGame(c.dataset.game);
@@ -2556,6 +2551,8 @@ $('restart').onclick=()=>{
   try{stopVideo()}catch(e){}
   S.players.forEach(p=>{p.team=[];p.blockUsed=false;p.passed=false;p.score=0});
   S.round=0;S.current=null;S.deck=[];
+  // the next game has its own topics; Trivia's "Sport" means nothing to Picture Guess
+  S.cats=[];try{clearVotes()}catch(e){}
   try{$('meta').textContent=''}catch(e){}
   if(PARTY.role==='host'){
     LEARNING=SOLO=false;document.body.classList.remove('learning');
@@ -3218,7 +3215,7 @@ const isTrivia=()=>S.game==='trivia';
 const isPicture=()=>S.game==='picture';
 const isAsking=()=>isTrivia()||isPicture();   // the two games with a written question
 // an option is an act in Name the Artist and a plain string in the Quiz
-const optLabel=o=>isTrivia()?o:o[0];
+const optLabel=o=>isAsking()?o:o[0];
 function quizStart(){
   if(isAsking()){
     const bank=catBank();
@@ -3328,11 +3325,16 @@ function quizFinish(){
   const won=best.filter(p=>(p.score||0)===top);
   $('champ').textContent=won.length>1?'A tie':shownName(won[0]||{});
   // out of what was actually played, not what was planned: the host may end it early
-  const played=Math.max(Q.round,0), outOf=played*15;
+  // finished rounds only: the one still on screen when the host stops does not count
+  const played=Math.max(Q.revealed?Q.round:Q.round-1,0), outOf=played*15;
+  const word=isPicture()?'picture':isTrivia()?'question':'record';
+  const names=won.map(shownName);
+  const tied=names.length<=2?names.join(' and ')
+    :names.slice(0,-1).join(', ')+' and '+names[names.length-1];
   $('champ-sub').textContent=(won.length>1
-    ? won.map(shownName).join(' and ')+' both finished on '+top+' points'
+    ? tied+' all finished on '+top+' points'
     : top+' points out of '+outOf)
-    +' · '+played+' record'+(played===1?'':'s')+' played.';
+    +' · '+played+' '+word+(played===1?'':'s')+' played.';
   $('final-board').innerHTML='<div class="board">'+best.map((p,i)=>
     '<div class="brow'+(i===0&&top>0?' lead':'')+'"><span class="bn">'+(i+1)+'. '+esc(shownName(p))+'</span>'
     +'<span class="bv">'+(p.score||0)+' pts</span></div>').join('')+'</div>';
