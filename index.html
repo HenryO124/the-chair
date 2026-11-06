@@ -616,6 +616,18 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 .padsetup{margin:-6px 0 14px;padding:10px 13px;border-radius:12px;border:1px dashed var(--line);
   background:var(--panel);font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--muted)}
 .padsetup b{color:var(--bone);font-weight:700}
+/* the ballot on a phone: tap the topics you want tonight */
+.padvote{margin:0 0 14px;padding:12px 13px;border-radius:12px;
+  border:1px solid var(--line);background:var(--panel)}
+.pvhead{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:9px}
+.pvgrid{display:flex;flex-wrap:wrap;gap:8px}
+.pvbtn{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border-radius:20px;
+  border:1px solid var(--line);background:var(--panel2);color:var(--bone);
+  font:inherit;font-size:13.5px;font-weight:700;cursor:pointer}
+.pvbtn.mine{border-color:var(--gold);background:rgba(216,163,63,.16);color:var(--gold)}
+.pvbtn .n{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.pvbtn.mine .n{color:var(--gold)}
 /* in Name the Artist the record plays on the phone too, with the picture covered */
 .padcurtain{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;
   background:repeating-linear-gradient(90deg,#4A1016,#4A1016 10px,#5C141B 10px,#5C141B 22px);
@@ -748,6 +760,9 @@ body.learning .gamecard .garrow{display:none}
 .gamecard .garrow{flex:0 0 auto;align-self:center;color:var(--muted);font-size:19px;line-height:1}
 .gamecard:hover:not(.soon) .garrow,.gamecard.sel .garrow{color:var(--red)}
 .gamecard.soon{opacity:.45;cursor:default}
+.seg .votes{display:inline-block;margin-left:7px;padding:0 6px;border-radius:9px;
+  background:var(--gold);color:#1A1206;font-family:var(--mono);font-size:10px;font-weight:700}
+.seg button.sel .votes{background:#1A1206;color:var(--gold)}
 .soontag{display:inline-block;margin-left:9px;padding:2px 7px;border-radius:5px;vertical-align:middle;
   border:1px solid var(--line);font-family:var(--mono);font-weight:400;font-size:8.5px;line-height:1.4;
   letter-spacing:.12em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
@@ -1187,15 +1202,7 @@ body.learning .gamecard .garrow{display:none}
     </div>
 
     <div class="field-label" id="cats-label">Topics</div>
-    <div class="seg wrap" id="cats">
-      <button data-c="*" class="sel">Everything</button>
-      <button data-c="History">History</button>
-      <button data-c="Geography">Geography</button>
-      <button data-c="Science">Science</button>
-      <button data-c="Arts &amp; culture">Arts &amp; culture</button>
-      <button data-c="Sport">Sport</button>
-      <button data-c="Everyday">Everyday</button>
-    </div>
+    <div class="seg wrap" id="cats"></div>
     <p class="pool thin" id="cats-note" style="margin:-6px 0 14px"></p>
 
     <div class="field-label">Where is everyone</div>
@@ -1268,6 +1275,10 @@ body.learning .gamecard .garrow{display:none}
       <div class="padseats" id="pad-seats"></div>
       <p class="mystate" id="pad-state">The host has not started yet.</p>
       <p class="padsetup" id="pad-setup" hidden></p>
+      <div class="padvote" id="pad-vote" hidden>
+        <div class="pvhead" id="pv-head">Which topics do you want?</div>
+        <div class="pvgrid" id="pv-grid"></div>
+      </div>
       <div class="qgrid" id="pad-quiz" hidden></div>
       <button class="bigsign" id="pad-sign" disabled>SIGN THEM</button>
       <button class="bigskip" id="pad-skip" disabled>SKIP</button>
@@ -1796,6 +1807,46 @@ $('cats')&&($('cats').onclick=e=>{
   drawCats();
   if(PARTY.role==='host')publishStage();
 });
+/* ---- the room votes on the topics ------------------------------------
+   The host used to pick alone. Now every phone gets the same list, taps the
+   ones it wants, and the night is made of whatever got votes. Nobody voting
+   means everybody is happy with everything. --------------------------- */
+const VOTES={};                    // pid -> [topic key, ...]
+function ballot(){
+  if(S.game==='trivia')return catKeys();
+  if(S.game==='picture')return ['City','Landmark','Painting','Nature'];
+  return [];
+}
+function ballotLabel(key){
+  if(S.game==='picture')return (PICCAT[S.lang]||PICCAT.en)[key]||key;
+  return catShown(key);
+}
+function voteCount(key){
+  let n=0;
+  for(const pid in VOTES)if(VOTES[pid].indexOf(key)>=0)n++;
+  return n;
+}
+function votedKeys(){
+  return ballot().filter(k=>voteCount(k)>0);
+}
+// the vote decides the topics, unless nobody voted
+function applyVotes(){
+  const won=votedKeys();
+  S.cats=won.length&&won.length<ballot().length?won.slice():[];
+  try{drawCats()}catch(e){}
+}
+function takeVote(p,key){
+  if(!inPrep())return;                       // the ballot closes when the game starts
+  if(ballot().indexOf(key)<0)return;
+  const pid=p.pid||('local'+p.id);
+  const mine=VOTES[pid]||(VOTES[pid]=[]);
+  const i=mine.indexOf(key);
+  if(i<0)mine.push(key); else mine.splice(i,1);
+  if(!mine.length)delete VOTES[pid];
+  applyVotes();publishStage();
+}
+function clearVotes(){for(const k in VOTES)delete VOTES[k]}
+
 // Picture Guess has its own bank, and every row of it carries a picture
 function pictureBank(){
   const ask=PICASK[S.lang]||PICASK.en;
@@ -1803,7 +1854,12 @@ function pictureBank(){
     ask[r[0]]||ask['*'], r[1], r[2], r[3], r[4], '', 'p'+i ]);
 }
 function catBank(){
-  if(isPicture())return pictureBank();
+  if(isPicture()){
+    const all=pictureBank();
+    if(!S.cats.length)return all;
+    const want=S.cats.map(k=>(PICCAT[S.lang]||PICCAT.en)[k]||k);
+    return all.filter(r=>want.indexOf(r[0])>=0);
+  }
   const bank=langBank();
   if(!S.cats.length)return bank;
   // topics are stored by their English key, whatever language they are shown in
@@ -1812,16 +1868,21 @@ function catBank(){
 }
 function drawCats(){
   const box=$('cats');if(!box)return;
-  [...box.querySelectorAll('button')].forEach(b=>{
-    b.classList.toggle('sel',b.dataset.c==='*'?!S.cats.length:S.cats.indexOf(b.dataset.c)>=0);
-    if(b.dataset.c!=='*')b.textContent=catShown(b.dataset.c);
-    else b.textContent=S.lang==='fi'?'Kaikki':S.lang==='sv'?'Allt':'Everything';
-  });
+  const all=S.lang==='fi'?'Kaikki':S.lang==='sv'?'Allt':'Everything';
+  box.innerHTML='<button type="button" data-c="*"'+(!S.cats.length?' class="sel"':'')+'>'+esc(all)+'</button>'
+    +ballot().map(k=>{
+      const n=voteCount(k);
+      return '<button type="button" data-c="'+esc(k)+'"'+(S.cats.indexOf(k)>=0?' class="sel"':'')+'>'
+        +esc(ballotLabel(k))+(n?' <b class="votes">'+n+'</b>':'')+'</button>';
+    }).join('');
   const n=catBank().length;
   const note=$('cats-note');
-  if(note)note.textContent=(S.cats.length?S.cats.length+' of six topics':'All six topics')
-    +' \u00b7 '+n+' question'+(n===1?'':'s')+' to draw from \u00b7 '
-    +(S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English');
+  const total=ballot().length;
+  const voters=Object.keys(VOTES).length;
+  if(note)note.textContent=(S.cats.length?S.cats.length+' of '+total+' topics':'All '+total+' topics')
+    +' \u00b7 '+n+(S.game==='picture'?' picture':' question')+(n===1?'':'s')+' to draw from'
+    +(S.game==='trivia'?' \u00b7 '+(S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English'):'')
+    +(voters?' \u00b7 '+voters+' voted from their phone'+(voters===1?'':'s'):'');
   try{updateStartState()}catch(e){}
 }
 segHandler('lang','g',v=>{
@@ -2532,7 +2593,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 17:58';
+const BUILD='06.11. 18:22';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
@@ -2744,6 +2805,7 @@ function openLobby(goTo){
   S.players.forEach((p,i)=>{p.id=i;p.team=[];p.blockUsed=false;p.passed=false});
   // a new game always starts empty: tap a friend to hold a chair for tonight
   FRIENDS.forEach(f=>{f.on=false});saveFriends();drawFriends();
+  clearVotes();S.cats=[];
   PARTY.role='host';PARTY.code=newCode();PARTY.seen={};
   $('lobby-code').textContent=PARTY.code;
   $('lobby-link').textContent=joinLink();
@@ -3165,8 +3227,8 @@ function catShown(key){
 /* ---- pictures: generated, do not edit by hand ---- */
 /* Pictures from Wikimedia Commons, each verified to exist and named
    after its subject. The credit rides with the picture. */
-var QIMG={"0":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/West_and_East_Germans_at_the_Brandenburg_Gate_in_1989.jpg?width=1200","c":"Unknown photographer, Reproduction by Lear 21 at English… · CC BY-SA 3.0 · Wikimedia Commons"},"2":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/YuanEmperorAlbumGenghisPortrait.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"3":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/LuxuriesVersusLifeboatsPuckMagazine1912.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"4":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Sketch_of_the_Table_in_the_Hall_of_Mirrors%2C_at_which_the_Treaty_of_Versailles_was_Signed_Art.IWMART4213.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"5":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Statue-Augustus.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"7":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Prise_de_la_Bastille_clean.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"8":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Sj%C3%A4lvst%C3%A4ndighetsf%C3%B6rklaringen_4_12_1917_1.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"9":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/A_Finnish_Maxim_M-32_machine_gun_nest_during_the_Winter_War.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"12":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Great_Fire_London.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"13":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/80_-_Machu_Picchu_-_Juin_2009_-_edit.jpg?width=1200","c":"Martin St-Amant (S23678) · CC BY-SA 3.0 · Wikimedia Commons"},"14":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta_Stone.JPG?width=1200","c":"Hans Hillewaert · CC BY-SA 4.0 · Wikimedia Commons"},"16":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Berlinermauer.jpg?width=1200","c":"Noir · CC BY-SA 3.0 · Wikimedia Commons"},"21":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Parliament_House_Canberra_from_above.jpg?width=1200","c":"Malcolm Tredinnick from Sydney, Australia · CC BY 2.0 · Wikimedia Commons"},"22":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Everest_as_seen_from_Drukair2_PLW_edit_Cropped.jpg?width=1200","c":"Mount_Everest_as_seen_from_Drukair2.jpg: shrimpo1967 deri… · CC BY-SA 2.0 · Wikimedia Commons"},"23":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Utah_Dunes_Landscape_-_West_Desert_District.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"24":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Vatican_City_and_St._Peter_Square_evening_twilight_aerial_view.jpg?width=1200","c":"lafiguradelpadre Congreso · CC BY 2.0 · Wikimedia Commons"},"25":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mountain_Peak%2C_Alaska_%281999%29.jpg?width=1200","c":"Godot13 · CC BY-SA 4.0 · Wikimedia Commons"},"26":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Amazon_rainforest_%28Satellite_picture%29_-_2.jpg?width=1200","c":"Alexander Gerst · CC BY 2.0 · Wikimedia Commons"},"27":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Istanbul_asv2020-02_img58_15July_Martyrs_Bridge.jpg?width=1200","c":"A.Savin · FAL · Wikimedia Commons"},"31":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mariana_trench.png?width=1200","c":"astrobob · CC BY-SA 4.0 · Wikimedia Commons"},"32":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/City_View_of_Reykjavik_from_Hallgr%C3%ADmskirkja_-_2013.08_-_panoramio.jpg?width=1200","c":"rheins · CC BY 3.0 · Wikimedia Commons"},"34":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_View_of_Great_Barrier_Reef_%28Ank_Kumar%29_05.jpg?width=1200","c":"Ank Kumar · CC BY-SA 4.0 · Wikimedia Commons"},"35":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Greenland-ice_sheet_hg.jpg?width=1200","c":"Hannes Grobe 20:10, 16 December 2007 (UTC) · CC BY-SA 2.5 · Wikimedia Commons"},"36":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Baikal_in_winter.jpg?width=1200","c":"Sergey Pesterev · CC BY-SA 4.0 · Wikimedia Commons"},"37":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Gibraltar_%28satellite_view%29.jpg?width=1200","c":"Axelspace Corporation · CC BY-SA 4.0 · Wikimedia Commons"},"40":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Gold_nugget_%28placer_gold%29_1_%2817001285916%29.jpg?width=1200","c":"James St. John · CC BY 2.0 · Wikimedia Commons"},"42":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mercury_in_color_-_Prockter07_centered.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"45":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Colorado_Diamond_Crystal%2C_Freedom_Diamond%2C_Uncle_Sam_Diamond%2C_Canary_Diamond.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"49":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Hydrogen_discharge_tube_cropped.jpg?width=1200","c":"Heinrich Pniok (alchemist-hp) · FAL · Wikimedia Commons"},"51":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_Sir_Isaac_Newton%2C_1689.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"60":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"61":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Shakespeare.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"62":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_Courtyard%2C_Looking_West.jpg?width=1200","c":"Benh LIEU SONG (Flickr) · CC BY-SA 4.0 · Wikimedia Commons"},"63":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/VanGogh-starry_night_ballance1.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"64":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"67":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Florence_Italy_Bronze-replica-of-Michelangelos-David-at-Piazzale-Michelangelo-01.jpg?width=1200","c":"CEphoto, Uwe Aranas · CC BY-SA 3.0 · Wikimedia Commons"},"68":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Old_Kalevala2.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"69":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_%281870%29.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"70":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Self-Portrait_with_a_Bandaged_Ear_-_Vincent_van_Gogh.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"75":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/%27Sistine_Chapel_ceiling%27_by_Michelangelo_JBU21.JPG?width=1200","c":"Jörg Bittner Unna · CC BY 3.0 · Wikimedia Commons"},"77":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Don_Quixote_1.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"78":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"79":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Nutcracker_ballet.jpg?width=1200","c":"RickDikeman · CC0 · Wikimedia Commons"},"83":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Olympic_flag_border.png?width=1200","c":"Public domain · Wikimedia Commons"},"84":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Award_ceremony_of_the_World_Cup_in_Brazil_09.jpg?width=1200","c":"Agência Brasil · CC BY 3.0 br · Wikimedia Commons"},"85":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Watching_the_tennis_at_Wimbledon_centre_court_-_geograph.org.uk_-_1375626.jpg?width=1200","c":"Steve F · CC BY-SA 2.0 · Wikimedia Commons"},"86":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Marathon_runners_near_the_end_of_the_race_-_geograph.org.uk_-_6142899.jpg?width=1200","c":"Stephen Craven · CC BY-SA 2.0 · Wikimedia Commons"},"88":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Judo_throw.jpg?width=1200","c":"Schnuffel2002 · CC BY-SA 3.0 · Wikimedia Commons"},"93":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Volant_badminton.jpg?width=1200","c":"No machine-readable author provided. Badplayer~commonswik… · CC BY-SA 2.5 · Wikimedia Commons"},"94":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Chess_on_an_Infinite_Plane_%28detail_of_starting_setup%29.png?width=1200","c":"LithiumFlash · CC BY-SA 4.0 · Wikimedia Commons"},"104":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Saffron_threads_in_a_glass_jar_%28_Viora_Saffron_packaging%29.jpg?width=1200","c":"ulleo · CC0 · Wikimedia Commons"},"106":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Humpback_Whale_underwater_shot.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"109":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/MarsSunset.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"111":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Carrion_crow_%28Corvus_corone%29_head.jpg?width=1200","c":"Alexis Lours · CC BY 4.0 · Wikimedia Commons"},"114":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Solved_Rubik%27s_cube.jpg?width=1200","c":"Alessandro Di Pretoro · CC BY-SA 4.0 · Wikimedia Commons"},"116":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/A_midsummer_bonfire_in_Sakkola_1917_%28JOKAOT4SK1917_25-7%29.tif?width=1200","c":"CC BY 4.0 · Wikimedia Commons"},"119":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Liquid_metal_insect_%283506396611%29.jpg?width=1200","c":"Anders Sandberg from Oxford, UK · CC BY 2.0 · Wikimedia Commons"}};
-var PICTURES=[];
+var QIMG={"0":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/West_and_East_Germans_at_the_Brandenburg_Gate_in_1989.jpg?width=1200","c":"Unknown photographer, Reproduction by Lear 21 at English… · CC BY-SA 3.0 · Wikimedia Commons"},"2":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/YuanEmperorAlbumGenghisPortrait.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"3":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/LuxuriesVersusLifeboatsPuckMagazine1912.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"4":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Sketch_of_the_Table_in_the_Hall_of_Mirrors%2C_at_which_the_Treaty_of_Versailles_was_Signed_Art.IWMART4213.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"5":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Statue-Augustus.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"7":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Prise_de_la_Bastille_clean.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"8":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Sj%C3%A4lvst%C3%A4ndighetsf%C3%B6rklaringen_4_12_1917_1.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"9":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/A_Finnish_Maxim_M-32_machine_gun_nest_during_the_Winter_War.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"12":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Great_Fire_London.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"13":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/80_-_Machu_Picchu_-_Juin_2009_-_edit.jpg?width=1200","c":"Martin St-Amant (S23678) · CC BY-SA 3.0 · Wikimedia Commons"},"14":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Rosetta_Stone.JPG?width=1200","c":"Hans Hillewaert · CC BY-SA 4.0 · Wikimedia Commons"},"16":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Berlinermauer.jpg?width=1200","c":"Noir · CC BY-SA 3.0 · Wikimedia Commons"},"21":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Parliament_House_Canberra_from_above.jpg?width=1200","c":"Malcolm Tredinnick from Sydney, Australia · CC BY 2.0 · Wikimedia Commons"},"22":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Everest_as_seen_from_Drukair2_PLW_edit_Cropped.jpg?width=1200","c":"Mount_Everest_as_seen_from_Drukair2.jpg: shrimpo1967 deri… · CC BY-SA 2.0 · Wikimedia Commons"},"23":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Utah_Dunes_Landscape_-_West_Desert_District.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"24":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Vatican_City_and_St._Peter_Square_evening_twilight_aerial_view.jpg?width=1200","c":"lafiguradelpadre Congreso · CC BY 2.0 · Wikimedia Commons"},"25":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mountain_Peak%2C_Alaska_%281999%29.jpg?width=1200","c":"Godot13 · CC BY-SA 4.0 · Wikimedia Commons"},"26":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Amazon_rainforest_%28Satellite_picture%29_-_2.jpg?width=1200","c":"Alexander Gerst · CC BY 2.0 · Wikimedia Commons"},"27":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Istanbul_asv2020-02_img58_15July_Martyrs_Bridge.jpg?width=1200","c":"A.Savin · FAL · Wikimedia Commons"},"31":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mariana_trench.png?width=1200","c":"astrobob · CC BY-SA 4.0 · Wikimedia Commons"},"32":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/City_View_of_Reykjavik_from_Hallgr%C3%ADmskirkja_-_2013.08_-_panoramio.jpg?width=1200","c":"rheins · CC BY 3.0 · Wikimedia Commons"},"34":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_View_of_Great_Barrier_Reef_%28Ank_Kumar%29_05.jpg?width=1200","c":"Ank Kumar · CC BY-SA 4.0 · Wikimedia Commons"},"35":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Greenland-ice_sheet_hg.jpg?width=1200","c":"Hannes Grobe 20:10, 16 December 2007 (UTC) · CC BY-SA 2.5 · Wikimedia Commons"},"36":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Baikal_in_winter.jpg?width=1200","c":"Sergey Pesterev · CC BY-SA 4.0 · Wikimedia Commons"},"37":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Gibraltar_%28satellite_view%29.jpg?width=1200","c":"Axelspace Corporation · CC BY-SA 4.0 · Wikimedia Commons"},"40":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Gold_nugget_%28placer_gold%29_1_%2817001285916%29.jpg?width=1200","c":"James St. John · CC BY 2.0 · Wikimedia Commons"},"42":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mercury_in_color_-_Prockter07_centered.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"45":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Colorado_Diamond_Crystal%2C_Freedom_Diamond%2C_Uncle_Sam_Diamond%2C_Canary_Diamond.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"49":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Hydrogen_discharge_tube_cropped.jpg?width=1200","c":"Heinrich Pniok (alchemist-hp) · FAL · Wikimedia Commons"},"51":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_Sir_Isaac_Newton%2C_1689.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"60":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"61":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Shakespeare.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"62":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_Courtyard%2C_Looking_West.jpg?width=1200","c":"Benh LIEU SONG (Flickr) · CC BY-SA 4.0 · Wikimedia Commons"},"63":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/VanGogh-starry_night_ballance1.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"64":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"67":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Florence_Italy_Bronze-replica-of-Michelangelos-David-at-Piazzale-Michelangelo-01.jpg?width=1200","c":"CEphoto, Uwe Aranas · CC BY-SA 3.0 · Wikimedia Commons"},"68":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Old_Kalevala2.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"69":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Jane_Austen%2C_from_A_Memoir_of_Jane_Austen_%281870%29.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"70":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Self-Portrait_with_a_Bandaged_Ear_-_Vincent_van_Gogh.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"75":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/%27Sistine_Chapel_ceiling%27_by_Michelangelo_JBU21.JPG?width=1200","c":"Jörg Bittner Unna · CC BY 3.0 · Wikimedia Commons"},"77":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Don_Quixote_1.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"78":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"79":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Nutcracker_ballet.jpg?width=1200","c":"RickDikeman · CC0 · Wikimedia Commons"},"83":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Olympic_flag_border.png?width=1200","c":"Public domain · Wikimedia Commons"},"84":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Award_ceremony_of_the_World_Cup_in_Brazil_09.jpg?width=1200","c":"Agência Brasil · CC BY 3.0 br · Wikimedia Commons"},"85":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Watching_the_tennis_at_Wimbledon_centre_court_-_geograph.org.uk_-_1375626.jpg?width=1200","c":"Steve F · CC BY-SA 2.0 · Wikimedia Commons"},"86":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Marathon_runners_near_the_end_of_the_race_-_geograph.org.uk_-_6142899.jpg?width=1200","c":"Stephen Craven · CC BY-SA 2.0 · Wikimedia Commons"},"88":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Judo_throw.jpg?width=1200","c":"Schnuffel2002 · CC BY-SA 3.0 · Wikimedia Commons"},"93":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Volant_badminton.jpg?width=1200","c":"No machine-readable author provided. Badplayer~commonswik… · CC BY-SA 2.5 · Wikimedia Commons"},"94":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Chess_on_an_Infinite_Plane_%28detail_of_starting_setup%29.png?width=1200","c":"LithiumFlash · CC BY-SA 4.0 · Wikimedia Commons"},"104":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Saffron_threads_in_a_glass_jar_%28_Viora_Saffron_packaging%29.jpg?width=1200","c":"ulleo · CC0 · Wikimedia Commons"},"106":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Humpback_Whale_underwater_shot.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"109":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/MarsSunset.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"111":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Carrion_crow_%28Corvus_corone%29_head.jpg?width=1200","c":"Alexis Lours · CC BY 4.0 · Wikimedia Commons"},"114":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Solved_Rubik%27s_cube.jpg?width=1200","c":"Alessandro Di Pretoro · CC BY-SA 4.0 · Wikimedia Commons"},"116":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/A_midsummer_bonfire_in_Sakkola_1917_%28JOKAOT4SK1917_25-7%29.tif?width=1200","c":"CC BY 4.0 · Wikimedia Commons"},"119":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Liquid_metal_insect_%283506396611%29.jpg?width=1200","c":"Anders Sandberg from Oxford, UK · CC BY 2.0 · Wikimedia Commons"},"p0":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Venice_awakes_%2820618763815%29.jpg?width=1200","c":"Benh LIEU SONG (Flickr) · CC BY-SA 4.0 · Wikimedia Commons"},"p1":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach%2C_New_York.jpg?width=1200","c":"Christian David · CC BY-SA 4.0 · Wikimedia Commons"},"p2":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge_night.jpg?width=1200","c":"Diliff · CC BY-SA 3.0 · Wikimedia Commons"},"p3":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg?width=1200","c":"Benh LIEU SONG (Flickr) · CC BY-SA 2.0 · Wikimedia Commons"},"p4":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Fatihistanbul.jpg?width=1200","c":"Hunanuk · CC0 · Wikimedia Commons"},"p5":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Rio_de_Janeiro_skyline_and_Sugarloaf_Mountain_at_sunset%2C_Brazil_3.jpg?width=1200","c":"Wilfredor · CC0 · Wikimedia Commons"},"p6":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/St_Basils_Cathedral-500px.jpg?width=1200","c":"David Crawshaw · CC BY-SA 3.0 · Wikimedia Commons"},"p7":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Barcelona%2C_Sagrada_Familia%2C_construcci%C3%B3n_2013.jpg?width=1200","c":"Czeva · CC BY-SA 3.0 · Wikimedia Commons"},"p8":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Bicycles_in_front_of_Amsterdam_Canal_House_%2852556309871%29.jpg?width=1200","c":"Nan Palmero from San Antonio, TX, USA · CC BY 2.0 · Wikimedia Commons"},"p9":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Prague_Charles_Bridge_2021_11.jpg?width=1200","c":"Scotch Mist · CC BY-SA 4.0 · Wikimedia Commons"},"p10":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Dubai_Skyline_mit_Burj_Khalifa_%2818241030269%29.jpg?width=1200","c":"Tim Reckmann from Hamm, Deutschland · CC BY 2.0 · Wikimedia Commons"},"p11":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/San_Francisco_%28CA%2C_USA%29%2C_Golden_Gate_Bridge_--_2022_--_3023_%28bw%29.jpg?width=1200","c":"Dietmar Rabich · CC BY-SA 4.0 · Wikimedia Commons"},"p12":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Helsinki_Senate_Square_and_Helsinki_Cathedral_in_May_2026.jpg?width=1200","c":"JIP · CC BY-SA 4.0 · Wikimedia Commons"},"p13":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Waterfront_vista_of_Stockholm%27s_Gamla_stan.JPG?width=1200","c":"Public domain · Wikimedia Commons"},"p14":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Athens_from_the_Acropolis_2.jpg?width=1200","c":"Kurtkaiser · CC0 · Wikimedia Commons"},"p15":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/ArtScience_Museum%2C_Marina_Bay_Sands%2C_Singapore.jpg?width=1200","c":"Basile Morin · CC BY-SA 4.0 · Wikimedia Commons"},"p16":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Cape_Town_City_Bowl_and_Table_Mountain_at_dawn.jpg?width=1200","c":"Daniel Case · CC BY-SA 3.0 · Wikimedia Commons"},"p17":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_cannon_and_old_town_20211020.jpg?width=1200","c":"Daniel Kraft · CC BY-SA 3.0 · Wikimedia Commons"},"p18":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Spb_06-2017_img47_Church_on_the_Blood.jpg?width=1200","c":"A.Savin · FAL · Wikimedia Commons"},"p19":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Tour_Eiffel_Wikimedia_Commons.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p20":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum_of_Rome_and_Roman_forum.jpg?width=1200","c":"Wilfredor · CC0 · Wikimedia Commons"},"p21":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal%2C_Agra%2C_India_edit2.jpg?width=1200","c":"Yann; edited by King of Hearts · CC BY-SA 4.0 · Wikimedia Commons"},"p22":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg?width=1200","c":"CEphoto, Uwe Aranas · CC BY-SA 3.0 · Wikimedia Commons"},"p23":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Liberty_Island_photo_Don_Ramey_Logan.jpg?width=1200","c":"Don Ramey Logan · CC BY 4.0 · Wikimedia Commons"},"p24":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Big_Ben_Elizabeth_Tower_London_2023_01.jpg?width=1200","c":"Julian Herzog (Website) · CC BY 4.0 · Wikimedia Commons"},"p25":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Barcelona_-_Exterior_of_the_Apse_of_the_Sagrada_Fam%C3%ADlia_-_Western_exposure.jpg?width=1200","c":"Didier Descouens · CC BY-SA 4.0 · Wikimedia Commons"},"p26":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Unique_Moment_with_the_Moon_and_Christ_the_Redeemer_3.jpg?width=1200","c":"Donatas Dabravolskas · CC BY-SA 4.0 · Wikimedia Commons"},"p27":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge_Heel_Stone.jpg?width=1200","c":"DeFacto · CC BY-SA 4.0 · Wikimedia Commons"},"p28":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Al_Khazneh_Petra_edit_2.jpg?width=1200","c":"Al_Khazneh_Petra.jpg: Graham Racher from London, UK deriv… · CC BY-SA 2.0 · Wikimedia Commons"},"p29":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Attica_06-13_Athens_50_View_from_Philopappos_-_Acropolis_Hill.jpg?width=1200","c":"A.Savin · CC BY-SA 3.0 · Wikimedia Commons"},"p30":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/The_Duomo_and_Tower_of_Pisa_at_sunrise.jpg?width=1200","c":"MHoser · CC BY-SA 4.0 · Wikimedia Commons"},"p31":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/San_Francisco_%28CA%2C_USA%29%2C_Golden_Gate_Bridge_--_2022_--_3023_%28bw%29.jpg?width=1200","c":"Dietmar Rabich · CC BY-SA 4.0 · Wikimedia Commons"},"p32":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Dean_Franklin_-_06.04.03_Mount_Rushmore_Monument_%28by-sa%29.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p33":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein_Castle_2024-02.jpg?width=1200","c":"Wilfredor · CC0 · Wikimedia Commons"},"p34":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Angkor_Wat_with_its_reflection_%28cropped%29.jpg?width=1200","c":"Satdeep Gill · CC BY-SA 4.0 · Wikimedia Commons"},"p35":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/The_Great_Sphinx%2C_Pyramids_of_Gizeh-1839%29_by_David_Roberts%2C_RA.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p36":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Opera_House_-_Dec_2008.jpg?width=1200","c":"Diliff · CC BY-SA 3.0 · Wikimedia Commons"},"p37":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Brandenburg_Gate_Quadriga_at_Night.jpg?width=1200","c":"א (Aleph) Creator: Johann Gottfried Schadow · CC BY-SA 2.5 · Wikimedia Commons"},"p38":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Ahu-Tongariki-and-Traveling-Moai.jpg?width=1200","c":"Bjørn Christian Tørrissen · CC BY-SA 3.0 · Wikimedia Commons"},"p39":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p40":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/VanGogh-starry_night_ballance1.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p41":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/1665_Girl_with_a_Pearl_Earring.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p42":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Sandro_Botticelli_046.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p43":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Tsunami_by_hokusai_19th_century.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p44":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Detail_of_%22The_Water-Lily_Pond%22_by_Claude_Monet_02.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p45":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/The_Garden_of_Earthly_Delights_by_Bosch_High_Resolution.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p46":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_%281452-1519%29_-_The_Last_Supper_%281495-1498%29.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p47":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Sistine_Chapel_ceiling%2C_Creation_of_Adam.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p48":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/John_Constable_-_The_Hay_Wain_%281821%29.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p49":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Van_Eyck_-_Arnolfini_Portrait.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p50":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Whistlers_Mother_high_res.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p51":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p52":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p53":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p54":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Atlantic_puffin_-_DPLA_-_bedca4311582f59c234bd449f7d69627.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p55":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Narwhal_tusk%2C_1701-1930_Wellcome_L0059030.jpg?width=1200","c":"CC BY 4.0 · Wikimedia Commons"},"p56":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Pangolin_scale_and_claw_worn_as_talisman_-_oo_246940_%28cropped_to_D%29.jpg?width=1200","c":"D’Cruze N, Singh B, Mookerjee A, Harrington LA, Macdonald… · CC BY 4.0 · Wikimedia Commons"},"p57":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Aurora_borealis_over_Saana_fell.jpg?width=1200","c":"WikiLucas00 · CC BY-SA 4.0 · Wikimedia Commons"},"p58":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Twin_Baobab_tree_in_Avenue_of_Baobabs_in_Madagascar.jpg?width=1200","c":"Rudolphfurtado · CC BY 4.0 · Wikimedia Commons"},"p59":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon_South_Rim_at_Sunset.jpg?width=1200","c":"Mgimelfarb · CC0 · Wikimedia Commons"},"p60":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Venus_Flytrap_showing_trigger_hairs.jpg?width=1200","c":"Noah Elhardt · CC BY-SA 2.5 · Wikimedia Commons"},"p61":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Basalt_Columns_at_Giant%27s_Causeway_in_Northern_Ireland_-_geograph_5571889.jpg?width=1200","c":"David Dixon (https://www.geograph.org.uk/profile/43729) · CC BY-SA 2.0 · Wikimedia Commons"},"p62":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Florida_Manatee_FWS_23.jpg?width=1200","c":"Public domain · Wikimedia Commons"},"p63":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Ailurus_fulgens_-_Karlsruhe_Zoo_01.jpg?width=1200","c":"H. Zell · CC BY-SA 3.0 · Wikimedia Commons"},"p64":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_at_sunset%2C_March_2025.jpg?width=1200","c":"Romain Guy from San Francisco, USA · CC0 · Wikimedia Commons"},"p65":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Dead_Sea_salt_formation_%28Aerial_view%2C_2007%29.jpg?width=1200","c":"Godot13 · CC BY-SA 4.0 · Wikimedia Commons"},"p66":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Cataratas_Victoria%2C_Zambia-Zimbabue%2C_2018-07-27%2C_DD_30-34_PAN.jpg?width=1200","c":"Diego Delso · CC BY-SA 4.0 · Wikimedia Commons"},"p67":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Belize_Blue_Hole_%28TMP%29_%2816912331906%29.jpg?width=1200","c":"The TerraMar Project · CC BY 2.0 · Wikimedia Commons"},"p68":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/006_Toco_toucan_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg?width=1200","c":"Giles Laurent · CC BY-SA 4.0 · Wikimedia Commons"},"p69":{"u":"https://commons.wikimedia.org/wiki/Special:FilePath/Salar_de_Uyuni%2C_Bolivia%2C_2016-02-04%2C_DD_16-18_HDR.JPG?width=1200","c":"Diego Delso · CC BY-SA 4.0 · Wikimedia Commons"}};
+var PICTURES=[["City","Venice","Amsterdam","Bruges","Stockholm"],["City","New York","Chicago","Toronto","Boston"],["City","Sydney","Auckland","Melbourne","Cape Town"],["City","Tokyo","Seoul","Osaka","Taipei"],["City","Istanbul","Cairo","Tehran","Baku"],["City","Rio de Janeiro","Lisbon","Havana","Cartagena"],["City","Moscow","Kyiv","Minsk","Warsaw"],["City","Barcelona","Valencia","Seville","Porto"],["City","Amsterdam","Copenhagen","Hamburg","Ghent"],["City","Prague","Budapest","Krakow","Ljubljana"],["City","Dubai","Doha","Abu Dhabi","Kuwait City"],["City","San Francisco","Seattle","Vancouver","Portland"],["City","Helsinki","Tallinn","Riga","Gothenburg"],["City","Stockholm","Oslo","Bergen","Turku"],["City","Athens","Rome","Naples","Thessaloniki"],["City","Singapore","Hong Kong","Shanghai","Bangkok"],["City","Cape Town","Durban","Nairobi","Casablanca"],["City","Edinburgh","Dublin","Glasgow","York"],["City","St Petersburg","Helsinki","Tallinn","Vilnius"],["Landmark","The Eiffel Tower","The Blackpool Tower","The Tokyo Tower","The Berlin TV Tower"],["Landmark","The Colosseum","The Arena of Nimes","The Pula Arena","The Theatre of Marcellus"],["Landmark","The Taj Mahal","The Badshahi Mosque","Humayun's Tomb","The Pearl Mosque"],["Landmark","The Great Wall of China","Hadrian's Wall","The Walls of Dubrovnik","The Kumbhalgarh Wall"],["Landmark","The Statue of Liberty","The Motherland Calls","Christ the Redeemer","The Little Mermaid"],["Landmark","Big Ben","The Rathaus Vienna","The Belfry of Bruges","Peace Tower Ottawa"],["Landmark","The Sagrada Familia","Cologne Cathedral","Milan Cathedral","Notre-Dame de Paris"],["Landmark","Christ the Redeemer","Cristo de la Concordia","Christ of the Abyss","The Christ of Havana"],["Landmark","Stonehenge","The Ring of Brodgar","Carnac stones","Avebury"],["Landmark","Petra","Abu Simbel","Ellora Caves","Lycian rock tombs"],["Landmark","The Parthenon","The Temple of Hephaestus","Paestum temple","The Temple of Concordia"],["Landmark","The Leaning Tower of Pisa","The Tower of Bologna","The Suurhusen tower","The Oldehove"],["Landmark","The Golden Gate Bridge","The Brooklyn Bridge","The Mackinac Bridge","The Forth Bridge"],["Landmark","Mount Rushmore","Stone Mountain","Crazy Horse Memorial","The Decebalus rock sculpture"],["Landmark","Neuschwanstein Castle","Hohenzollern Castle","Pena Palace","Chateau de Chambord"],["Landmark","Angkor Wat","Borobudur","Bagan temples","Prambanan"],["Landmark","The Pyramids of Giza","The Pyramid of the Sun","The Nubian pyramids","Chichen Itza"],["Landmark","The Sydney Opera House","The Oslo Opera House","The Elbphilharmonie","The Walt Disney Concert Hall"],["Landmark","The Brandenburg Gate","The Arc de Triomphe","The Arch of Titus","The Siegestor"],["Landmark","The Moai of Easter Island","The Olmec heads","The Buddhas of Bamiyan","The Nemrut statues"],["Painting","The Scream","The Sick Child","Anxiety Munch","Despair Munch"],["Painting","The Starry Night","Cafe Terrace at Night","Wheatfield with Crows","Starry Night Over the Rhone"],["Painting","Girl with a Pearl Earring","The Milkmaid","Study of a Young Woman","The Lacemaker"],["Painting","The Birth of Venus","Primavera Botticelli","Venus of Urbino","The Toilet of Venus"],["Painting","The Great Wave off Kanagawa","Red Fuji Hokusai","Ejiri in Suruga Province","Fifty-three Stations of the Tokaido"],["Painting","Water Lilies","Impression Sunrise","The Japanese Footbridge","Haystacks Monet"],["Painting","The Garden of Earthly Delights","The Haywain Triptych","The Last Judgement Bosch","The Temptation of St Anthony Bosch"],["Painting","The Last Supper","The Wedding at Cana","The Supper at Emmaus","The Last Supper Tintoretto"],["Painting","The Creation of Adam","The Separation of Light","The Deluge Michelangelo","The Last Judgement Michelangelo"],["Painting","The Hay Wain","The Fighting Temeraire","Salisbury Cathedral Constable","Rain Steam and Speed"],["Painting","The Arnolfini Portrait","The Ghent Altarpiece","Portrait of a Man in a Turban","The Money Changer and His Wife"],["Painting","Whistler's Mother","Madame X Sargent","Portrait of Madame Recamier","The Blue Boy"],["Painting","A Sunday Afternoon on La Grande Jatte","Bathers at Asnieres","The Circus Seurat","Le Chahut"],["Painting","The Fighting Temeraire","Rain Steam and Speed","The Slave Ship","Snow Storm Turner"],["Painting","Wanderer above the Sea of Fog","The Monk by the Sea","Chalk Cliffs on Rugen","Two Men Contemplating the Moon"],["Nature","A puffin","A razorbill","A guillemot","A little auk"],["Nature","A narwhal","A beluga whale","A walrus","A pilot whale"],["Nature","A pangolin","An armadillo","An anteater","An echidna"],["Nature","The northern lights","Noctilucent clouds","A solar eclipse","The zodiacal light"],["Nature","A baobab tree","A dragon blood tree","A banyan","A joshua tree"],["Nature","The Grand Canyon","Bryce Canyon","Zion Canyon","Fish River Canyon"],["Nature","A Venus flytrap","A pitcher plant","A sundew","A bladderwort"],["Nature","Giant's Causeway","Fingal's Cave","Devils Postpile","Svartifoss"],["Nature","A manatee","A dugong","A walrus","A sea lion"],["Nature","A red panda","A raccoon","A coati","A kinkajou"],["Nature","Mount Fuji","Mount Rainier","Mount Mayon","Mount Etna"],["Nature","The Dead Sea","The Great Salt Lake","Lake Natron","Salar de Uyuni"],["Nature","Victoria Falls","Niagara Falls","Iguazu Falls","Angel Falls"],["Nature","The Great Blue Hole","The Blue Grotto","Dean's Blue Hole","The Cenote Ik Kil"],["Nature","A toucan","A hornbill","A puffin","A kingfisher"],["Nature","Salar de Uyuni","The Bonneville Salt Flats","Etosha Pan","Chott el Djerid"]];
 var PICASK={"en":{"City":"Which city is this?","Landmark":"What is this?","Painting":"Which painting is this?","Nature":"What is this?","*":"What is this?"},"fi":{"City":"Mikä kaupunki tämä on?","Landmark":"Mikä tämä on?","Painting":"Mikä maalaus tämä on?","Nature":"Mikä tämä on?","*":"Mikä tämä on?"},"sv":{"City":"Vilken stad är detta?","Landmark":"Vad är detta?","Painting":"Vilken målning är detta?","Nature":"Vad är detta?","*":"Vad är detta?"}};
 var PICCAT={"en":{"City":"City","Landmark":"Landmark","Painting":"Painting","Nature":"Nature"},"fi":{"City":"Kaupunki","Landmark":"Maamerkki","Painting":"Maalaus","Nature":"Luonto"},"sv":{"City":"Stad","Landmark":"Landmärke","Painting":"Målning","Nature":"Natur"}};
 /* ---- end pictures ---- */
@@ -3456,7 +3518,8 @@ function hostJoin(m){
     drawLobbyList();publishStage();return;
   }
   if(p){}
-  else if(screenNow()!=='s-lobby'){
+  // the room is open from the game menu onward, so a chair is free in all of it
+  else if(!inPrep()){
     publishStage();return;                 // the season has begun; the teams are set
   }else if(S.players.length>=MAX_CHAIRS){
     publishStage();return;
@@ -3477,6 +3540,10 @@ function hostAct(m){
   PARTY.seen[pid]=seq;
   if(m.type==='answer'){                   // Name the Artist: four names, one tap
     quizAnswer(p,+m.target);
+    return;
+  }
+  if(m.type==='vote'){                     // a topic the room wants tonight
+    takeVote(p,String(m.topic||''));
     return;
   }
   if(m.type==='hold'){                     // anyone may stop the clock between acts
@@ -3509,6 +3576,8 @@ function quizState(phase){
   return {v:1,game:S.game,phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
     round:Q.round,of:Q.deck.length,revealed:!!Q.revealed,
     correct:Q.revealed?Q.correct:-1,
+    vote:ballotState(),
+    
     setup:setupLine(),
     remote:!!S.remote,
     vid:isAsking()||!Q.current||!S.remote?'':videoFor(Q.current),
@@ -3522,6 +3591,14 @@ function quizState(phase){
       said:(p.id in Q.answers),pick:Q.revealed?(p.id in Q.answers?Q.answers[p.id]:-1):-1,
       score:p.score||0,team:[],passed:false,full:false,blockUsed:false,total:p.score||0,
       reserved:false}))};
+}
+// the ballot, as the phones need to draw it
+function ballotState(){
+  if(!inPrep())return null;
+  const keys=ballot();
+  if(!keys.length)return null;
+  return keys.map(k=>({k:k,l:ballotLabel(k),n:voteCount(k),
+    w:Object.keys(VOTES).filter(pid=>VOTES[pid].indexOf(k)>=0)}));
 }
 // everyone on a phone should see what is being chosen, so they can argue about it
 function setupLine(){
@@ -3551,7 +3628,7 @@ function stageState(){
     :turnsOpen?'live':revealed?'locked':'between';
   if((S.game==='artist'||isAsking())&&!inPrep())
     return quizState(phase);
-  return {setup:setupLine(),remote:!!S.remote,v:1,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
+  return {vote:ballotState(),setup:setupLine(),remote:!!S.remote,v:1,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
     blockTarget:(blockTarget===null?null:blockTarget),
     blockOwner:(blockOwner===null?null:blockOwner),
     winner:winner?winner.id:null,
@@ -3651,13 +3728,14 @@ function mySeat(){
   const st=PARTY.stage;if(!st)return null;
   return st.seats.find(s=>s.pid===PARTY.pid)||null;
 }
-function sendAct(type,target){
+function sendAct(type,target,extra){
   const st=PARTY.stage;
   if(!PARTY.client||!st)return;
   PARTY.seq++;
-  try{PARTY.client.publish(topicFor(PARTY.code,'act'),
-    JSON.stringify({pid:PARTY.pid,seq:PARTY.seq,type:type,
-      target:(target===undefined?null:target),round:st.round}),{qos:0})}catch(e){}
+  const msg={pid:PARTY.pid,seq:PARTY.seq,type:type,
+    target:(target===undefined?null:target),round:st.round};
+  if(extra)for(const k in extra)msg[k]=extra[k];   // a vote carries its topic
+  try{PARTY.client.publish(topicFor(PARTY.code,'act'),JSON.stringify(msg),{qos:0})}catch(e){}
 }
 
 /* --- the row of chairs as a joined device sees it: yours lit, the rest dim,
@@ -3790,6 +3868,11 @@ function drawPadQuiz(st,me){
       +'<span class="key">'+'ABCD'[i]+'</span><span class="t">'+esc(t)+'</span></button>';
   }).join('');
 }
+$('pv-grid')&&($('pv-grid').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-v]');if(!b)return;
+  b.classList.toggle('mine');                       // answer the tap at once
+  sendAct('vote',0,{topic:b.dataset.v});
+}));
 $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
   const b=e.target.closest('button[data-ans]');if(!b||b.disabled)return;
   [...$('pad-quiz').querySelectorAll('button')].forEach(x=>x.disabled=true);
@@ -3799,6 +3882,18 @@ function drawPad(){
   const st=PARTY.stage,me=mySeat();
   const sign=$('pad-sign'),skip=$('pad-skip');
   if(!st)return;
+  // the ballot, while the room is still deciding
+  const vb=$('pad-vote');
+  if(vb){
+    const ball=(st.phase==='lobby'&&st.vote)||null;
+    vb.hidden=!ball;
+    if(ball){
+      const me=PARTY.pid;
+      $('pv-grid').innerHTML=ball.map(b=>
+        '<button type="button" class="pvbtn'+(((b.w||[]).indexOf(me)>=0)?' mine':'')+'" data-v="'+esc(b.k)+'">'
+        +esc(b.l)+(b.n?'<span class="n">'+b.n+'</span>':'')+'</button>').join('');
+    }
+  }
   // while the room is still deciding, show everyone what is on the table
   const sp=$('pad-setup');
   if(sp){
@@ -3944,9 +4039,11 @@ function dressRules(){
     ? 'Nobody has to agree with the host. Pick the topics you want and how long the night runs.'
     : 'Nobody has to agree with the host. Argue about the years, settle on a genre, then go.'}catch(e){}
   // the topics belong to the quiz, the way era and genre belong to the records
-  ['cats','cats-label','cats-note','lang','lang-label'].forEach(id=>{const e=$(id);if(e)e.hidden=!triv});
-  if(triv)try{
-    segPick('lang','g',S.lang);
+  ['cats','cats-label','cats-note'].forEach(id=>{const e=$(id);if(e)e.hidden=!(triv||pic)});
+  ['lang','lang-label'].forEach(id=>{const e=$(id);if(e)e.hidden=!triv});
+  try{$('cats-label').textContent=S.game==='picture'?'Picture topics':'Topics'}catch(e){}
+  if(triv||pic)try{
+    if(triv)segPick('lang','g',S.lang);
     drawCats();
   }catch(e){}
   const ts=$('teamsize'),lab=ts&&ts.previousElementSibling;
