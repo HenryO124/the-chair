@@ -612,6 +612,11 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;border:1px solid var(--line);
   background:rgba(12,7,10,.85);color:var(--muted);cursor:pointer}
 .soundbtn:hover{border-color:var(--gold);color:var(--gold)}
+/* in Name the Artist the record plays on the phone too, with the picture covered */
+.padcurtain{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;
+  background:repeating-linear-gradient(90deg,#4A1016,#4A1016 10px,#5C141B 10px,#5C141B 22px);
+  box-shadow:inset 0 0 50px rgba(0,0,0,.7);font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.26em;color:rgba(255,235,220,.45);text-transform:uppercase}
 
 /* page one is one decision; the rest waits quietly underneath */
 .sidelinks{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 20px}
@@ -2484,7 +2489,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 17:11';
+const BUILD='06.11. 17:18';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
@@ -3170,6 +3175,7 @@ function quizState(phase){
   return {v:1,game:isTrivia()?'trivia':'artist',phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
     round:Q.round,of:Q.deck.length,revealed:!!Q.revealed,
     correct:Q.revealed?Q.correct:-1,
+    vid:isTrivia()||!Q.current?'':videoFor(Q.current),
     ask:isTrivia()&&Q.current?Q.current[1]:'',
     cat:isTrivia()&&Q.current?Q.current[0]:'',
     act:!Q.revealed||!Q.current?null
@@ -3366,7 +3372,8 @@ $('join-sound')&&($('join-sound').addEventListener('click',e=>{
 function drawPadScreen(st){
   const box=$('pad-screen');if(!box)return;
   const want=(st&&st.phase==='live'&&st.vid)?String(st.vid):'';
-  const key=want+'|'+(padSound?'1':'0');
+  const hide=!!(st&&st.hide);
+  const key=want+'|'+(padSound?'1':'0')+'|'+(hide?'c':'o');
   if(key===padVid)return;
   padVid=key;
   if(!want||!/^[\w-]{11}$/.test(want)){box.hidden=true;box.innerHTML='';return}
@@ -3375,6 +3382,7 @@ function drawPadScreen(st){
     +'?autoplay=1&mute='+(padSound?'0':'1')+'&rel=0&playsinline=1&controls=1" title="The record"'
     +' allow="autoplay; encrypted-media; fullscreen"'
     +' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+    +(hide?'<div class="padcurtain">Curtain closed</div>':'')
     +'<button class="soundbtn" id="pad-sound">'
     +(padSound?'\ud83d\udd0a SOUND ON':'\ud83d\udd07 MUTED \u2014 TAP FOR SOUND')+'</button>';
 }
@@ -3434,7 +3442,9 @@ function drawPad(){
   const sign=$('pad-sign'),skip=$('pad-skip');
   if(!st)return;
   if(st.game==='artist'||st.game==='trivia'){
-    drawPadScreen({phase:'',vid:''});          // the curtain is the host's business
+    // the record plays on the phone as well, behind a curtain until the reveal,
+    // so somebody who could not make it in person can still hear it
+    drawPadScreen({phase:st.vid?'live':'',vid:st.vid||'',hide:!st.revealed});
     drawPadSeats(st,me);drawPadQuiz(st,me);
     return;
   }
