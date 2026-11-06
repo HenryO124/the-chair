@@ -30,8 +30,9 @@ body{
   display:flex; flex-direction:column; align-items:center; padding:14px 16px 10px;
 }
 .wrap{flex:1;min-width:0}
-.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
   margin-bottom:10px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.masthead>*{min-width:0}
 .logo{font-size:22px;font-weight:800;letter-spacing:-.02em}
 .logo span{color:var(--red)}
 .meta{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
@@ -752,7 +753,7 @@ body:not(.screen-home) .topnav{display:none}
   color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase}
 .tn:hover{color:var(--bone)}
 .tn.sel{color:var(--bone);border-color:var(--line);background:var(--panel2)}
-@media (max-width:860px){.topnav{display:none!important}}
+@media (max-width:1100px){.topnav{display:none!important}}
 .mechip{display:inline-flex;align-items:center;gap:9px;background:var(--panel2);border:1px solid var(--line);
   border-radius:22px;padding:5px 14px 5px 5px;cursor:pointer;color:var(--bone);font-family:var(--disp);
   font-weight:700;font-size:13.5px}
@@ -802,6 +803,25 @@ body:not(.screen-home) .mechip{display:none}
   color:var(--muted);cursor:pointer;font-family:var(--disp);font-weight:700;font-size:13.5px}
 .modefilter button:hover{color:var(--bone)}
 .modefilter button.sel{color:#fff;border-color:var(--red);background:rgba(196,52,44,.3)}
+
+/* the front page is two columns: what is open, and what you are about to open */
+.homegrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px;align-items:start}
+.hcol{min-width:0}
+@media (max-width:1040px){.homegrid{grid-template-columns:1fr}}
+#pub-sub2{color:var(--muted);font-family:var(--disp);font-size:13.5px;margin:4px 0 14px}
+.stepper{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel2);padding:4px;margin:0 0 14px}
+.stepper button{width:38px;height:36px;border:0;border-radius:9px;background:none;color:var(--bone);
+  font-size:18px;cursor:pointer}
+.stepper button:hover{background:var(--line)}
+.stepper button:disabled{opacity:.3;cursor:default;background:none}
+.stepper b{min-width:46px;text-align:center;font-family:var(--mono);font-size:17px;color:var(--gold)}
+.modegrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 16px}
+.modebtn{padding:13px 10px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);
+  color:var(--bone);cursor:pointer;font-family:var(--disp);font-weight:700;font-size:14px}
+.modebtn:hover{border-color:var(--muted)}
+.modebtn.sel{border-color:var(--red);background:rgba(196,52,44,.22)}
+.cpanel .btn{width:100%;margin:0}
 
 /* the list of open rooms */
 .hpanel{background:var(--panel);border:1px solid var(--line);border-radius:16px;
@@ -1132,7 +1152,9 @@ body.learning .gamecard .garrow{display:none}
       </div>
     </div>
 
-    <div class="modefilter" id="mode-filter">
+    <div class="homegrid">
+     <div class="hcol">
+      <div class="modefilter" id="mode-filter">
       <span class="mflab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
         <path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>Filter by game</span>
       <button type="button" data-g="all" class="sel">All games</button>
@@ -1152,7 +1174,38 @@ body.learning .gamecard .garrow{display:none}
         </div>
       </div>
       <p class="pool thin" id="pub-sub">Rooms other people have left open. Yours shows up here only if you make it public.</p>
-      <div id="pub-list"></div>
+        <div id="pub-list"></div>
+      </div>
+     </div>
+
+     <div class="hpanel cpanel">
+      <div class="hphead"><span class="hptitle">Create your party</span></div>
+      <p id="pub-sub2">Set it up here, then invite the others.</p>
+
+      <div class="field-label">Room visibility</div>
+      <div class="seg wrap" id="vis">
+        <button type="button" data-v="public">Public</button>
+        <button type="button" data-v="private" class="sel">Private</button>
+      </div>
+      <p class="pool thin" id="vis-note" style="margin:-6px 0 14px">Only people with the code or the QR get in.</p>
+
+      <div class="field-label">Max players</div>
+      <div class="stepper">
+        <button type="button" id="mp-down" aria-label="Fewer">&minus;</button>
+        <b id="mp-n">8</b>
+        <button type="button" id="mp-up" aria-label="More">+</button>
+      </div>
+
+      <div class="field-label">Game</div>
+      <div class="modegrid" id="home-modes">
+        <button type="button" class="modebtn sel" data-game="chair">The Chair</button>
+        <button type="button" class="modebtn" data-game="artist">Name the Artist</button>
+        <button type="button" class="modebtn" data-game="trivia">Quiz</button>
+        <button type="button" class="modebtn" data-game="picture">Picture Guess</button>
+      </div>
+
+      <button type="button" class="btn" id="m-createroom">+ Create room</button>
+     </div>
     </div>
 
     <div class="homefoot">
@@ -2317,6 +2370,40 @@ $('rb-copy')&&($('rb-copy').onclick=()=>{
 });
 $('m-create')&&($('m-create').onclick=()=>openModes('create'));
 $('rb-vis')&&($('rb-vis').onclick=toggleVis);
+/* the party is set up before it is opened */
+function drawVis(){
+  document.querySelectorAll('#vis button').forEach(b=>
+    b.classList.toggle('sel',(b.dataset.v==='public')===!!S.public));
+  const nt=$('vis-note');
+  if(nt)nt.textContent=S.public
+    ? 'Listed on this page for anyone to join — and that means anyone.'
+    : 'Only people with the code or the QR get in.';
+  const b=$('rb-vis');
+  if(b){b.classList.toggle('open',!!S.public);b.lastChild.textContent=S.public?'Public room':'Private room'}
+}
+$('vis')&&($('vis').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-v]');if(!b)return;
+  S.public=(b.dataset.v==='public');
+  drawVis();
+  if(PARTY.role==='host'){if(S.public)dirPing(true); else dirClear()}
+}));
+function drawMax(){
+  try{$('mp-n').textContent=MAX_CHAIRS;
+    $('mp-down').disabled=MAX_CHAIRS<=2;$('mp-up').disabled=MAX_CHAIRS>=8}catch(e){}
+}
+function setMax(v){
+  MAX_CHAIRS=Math.max(2,Math.min(8,v));
+  drawMax();
+  try{drawRoomBar()}catch(e){}
+  if(PARTY.role==='host')try{dirPing(true);publishStage()}catch(e){}
+}
+$('mp-down')&&($('mp-down').onclick=()=>setMax(MAX_CHAIRS-1));
+$('mp-up')&&($('mp-up').onclick=()=>setMax(MAX_CHAIRS+1));
+$('home-modes')&&($('home-modes').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-game]');if(!b)return;
+  pickGame(b.dataset.game);
+}));
+$('m-createroom')&&($('m-createroom').onclick=()=>openModes('create'));
 $('nav-home')&&($('nav-home').onclick=()=>show('s-home'));
 /* the name this device plays under: "Player 1" until somebody says otherwise */
 let MYNAME='';
@@ -2905,7 +2992,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 20:41';
+const BUILD='06.11. 20:46';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -3826,11 +3913,7 @@ function dirClear(code){
 }
 function toggleVis(){
   S.public=!S.public;
-  const b=$('rb-vis');
-  if(b){
-    b.classList.toggle('open',S.public);
-    b.lastChild.textContent=S.public?'Public room':'Private room';
-  }
+  try{drawVis()}catch(e){}
   if(S.public)dirPing(true); else dirClear();
 }
 /* the front page keeps its own connection, so browsing never disturbs a game */
@@ -4724,6 +4807,7 @@ $('pad-leave')&&($('pad-leave').onclick=()=>{partyEnd();openChairScreen()});
   drawSeats=wrap(drawSeats);doReveal=wrap(doReveal);nextRound=wrap(nextRound);finish=wrap(finish);
 })();
 
+try{drawVis();drawMax()}catch(e){}
 /* the front page starts listening for open rooms once everything is defined */
 try{if(screenNow()==='s-home')dirStart()}catch(e){}
 </script>
