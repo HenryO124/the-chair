@@ -791,7 +791,14 @@ body.learning .gamecard .garrow{display:none}
 .qbtn.missed{border-color:var(--red);background:rgba(196,52,44,.16);color:#FFB9B3}
 .qbtn.wrong{opacity:.4}
 .qbtn.mine{box-shadow:inset 0 0 0 2px var(--bone)}
-.qsc.ok{border-color:#49C27B;background:rgba(73,194,123,.14);color:#BFF3D2}
+/* the quiz puts a question where the video would be */
+.qasking,.qanswer{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:16px;text-align:center;padding:5% 7%}
+.qasking{font-family:var(--disp);font-weight:800;line-height:1.14;
+  font-size:clamp(22px,3.4vw,46px)}
+.qa-right{font-family:var(--disp);font-weight:800;line-height:1.1;color:#8FE3B0;
+  font-size:clamp(26px,4vw,56px)}
+.qa-note{max-width:34ch;color:var(--muted);font-size:clamp(13px,1.3vw,17px);line-height:1.55}
 #pad-state.good{color:#7DDCA3}
 #pad-state.bad{color:#FFA9A2}
 /* the quiz scoreboard on the final screen */
@@ -812,6 +819,8 @@ body.learning .gamecard .garrow{display:none}
 .qsc b{color:var(--gold);font-family:var(--mono);font-size:12px}
 .qsc.done{border-color:var(--gold)}
 .qsc.waiting{opacity:.5}
+.qsc.ok,.qsc.done.ok{border-color:#49C27B;background:rgba(73,194,123,.14);color:#BFF3D2}
+.qsc.ok b{color:#8FE3B0}
 
 </style>
 </head>
@@ -991,11 +1000,11 @@ body.learning .gamecard .garrow{display:none}
             <span class="garrow">&rarr;</span>
           </button>
 
-          <button type="button" class="gamecard soon" disabled data-game="trivia">
+          <button type="button" class="gamecard" data-game="trivia">
             <span class="gicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
               <path d="M9.2 9a2.9 2.9 0 1 1 3.8 2.8c-.8.3-1 1-1 1.8"/><circle cx="12" cy="17.4" r="1.1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="9"/></svg></span>
             <span class="gbody">
-              <span class="gtag">General knowledge quiz<span class="soontag">Not built yet</span></span>
+              <span class="gtag">General knowledge quiz</span>
               <span class="gname">Quiz</span>
               <span class="gdesc">Questions from a wide range of categories &mdash; history, geography, science, arts &amp; culture, sport and more. Four answers, one of them right.</span>
               <span class="gmeta">
@@ -1800,9 +1809,11 @@ try{const h=$('tpl-hero');
 }catch(e){}
 
 const GAMEBLURB={chair:'Open a room, pass the code around, and everyone takes a chair from their own phone.',
-  artist:'Open a room and pass the code around. Four names land on every phone, once per record.'};
+  artist:'Open a room and pass the code around. Four names land on every phone, once per record.',
+  trivia:'Open a room and pass the code around. Four answers land on every phone, question after question.'};
 const SOLOBLURB={chair:'One screen, one coach, and a pile of records. No room, nobody to wait for.',
-  artist:'Four names on this screen, record after record, scored as you go.'};
+  artist:'Four names on this screen, record after record, scored as you go.',
+  trivia:'A hundred and twenty questions across six categories. Play as many as you like.'};
 let LEARNING=false, SOLO=false;
 function pickGame(name){
   if(!GAMEBLURB[name]||LEARNING)return;             // the unbuilt ones stay unpickable
@@ -2473,7 +2484,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 16:53';
+const BUILD='06.11. 17:05';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
@@ -2710,13 +2721,148 @@ function closeLobby(){
    NAME THE ARTIST — the record plays behind a closed curtain, four
    names on every phone, and the curtain lifts once everyone has said.
    ================================================================== */
+/* ==================================================================
+   QUIZ — general knowledge, six categories, no record involved.
+   Each row is [category, question, right answer, three wrong, note].
+   ================================================================== */
+const TRIVIA=[
+["History", "In which year did the Berlin Wall fall?", "1989", "1987", "1991", "1985", "It opened on the night of 9 November 1989."],
+["History", "Who was the first person to walk on the Moon?", "Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "Michael Collins", "Apollo 11, 20 July 1969. Aldrin followed him down the ladder."],
+["History", "Which empire did Genghis Khan found?", "The Mongol Empire", "The Ottoman Empire", "The Persian Empire", "The Roman Empire", "At its height it was the largest contiguous land empire in history."],
+["History", "In which year did the Titanic sink?", "1912", "1905", "1918", "1923", "Four days into her maiden voyage, after striking an iceberg."],
+["History", "Which war ended with the Treaty of Versailles?", "The First World War", "The Second World War", "The Crimean War", "The Franco-Prussian War", "Signed in 1919, five years after the war began."],
+["History", "Who was the first Emperor of Rome?", "Augustus", "Julius Caesar", "Nero", "Caligula", "Caesar was never emperor; his adopted heir took the title."],
+["History", "In which country did the Industrial Revolution begin?", "Britain", "France", "Germany", "The United States", "Textiles and steam, from roughly the 1760s onward."],
+["History", "The French Revolution began in which year?", "1789", "1776", "1799", "1812", "The Bastille was stormed on 14 July 1789."],
+["History", "Finland declared independence in which year?", "1917", "1905", "1920", "1939", "6 December 1917, from the Russian Empire."],
+["History", "Which two countries fought the Winter War?", "Finland and the Soviet Union", "Finland and Sweden", "Norway and Germany", "Poland and the Soviet Union", "105 days, from November 1939 to March 1940."],
+["History", "In which year did the Second World War end?", "1945", "1944", "1946", "1943", "Germany surrendered in May, Japan in September."],
+["History", "Who wrote the Communist Manifesto with Friedrich Engels?", "Karl Marx", "Vladimir Lenin", "Georg Hegel", "Mikhail Bakunin", "Published in 1848, a few weeks before revolutions swept Europe."],
+["History", "In which century was the Great Fire of London?", "The 17th", "The 15th", "The 18th", "The 16th", "1666. It started in a bakery on Pudding Lane."],
+["History", "Which civilisation built Machu Picchu?", "The Inca", "The Maya", "The Aztec", "The Olmec", "Built around 1450 in the Peruvian Andes."],
+["History", "The Rosetta Stone was the key to reading which script?", "Egyptian hieroglyphs", "Cuneiform", "Linear B", "Norse runes", "The same decree appears in three scripts, one of them Greek."],
+["History", "Who led India's non-violent independence movement?", "Mahatma Gandhi", "Jawaharlal Nehru", "Subhas Chandra Bose", "B. R. Ambedkar", "Independence came in 1947."],
+["History", "Which city was split by a wall from 1961 to 1989?", "Berlin", "Vienna", "Prague", "Budapest", "Twenty-eight years, almost to the day."],
+["History", "What crippled Apollo 13 on its way to the Moon?", "An oxygen tank exploded", "A fire on the launch pad", "An engine failed at liftoff", "The guidance computer died", "All three astronauts came home alive."],
+["History", "Which queen reigned over Britain for 70 years?", "Elizabeth II", "Victoria", "Anne", "Mary I", "Victoria managed 63, which had been the record."],
+["History", "The Hundred Years' War was fought between England and which country?", "France", "Spain", "Scotland", "The Netherlands", "It actually ran 116 years, on and off."],
+["Geography", "Which is the largest ocean?", "The Pacific", "The Atlantic", "The Indian", "The Arctic", "It covers about a third of the planet's surface."],
+["Geography", "What is the capital of Australia?", "Canberra", "Sydney", "Melbourne", "Perth", "Chosen as a compromise between Sydney and Melbourne."],
+["Geography", "Mount Everest sits on the border of Nepal and which country?", "China", "India", "Bhutan", "Pakistan", "Tibet, in other words."],
+["Geography", "Which is the largest hot desert?", "The Sahara", "The Gobi", "The Kalahari", "The Arabian", "Roughly the size of the United States."],
+["Geography", "What is the smallest country in the world?", "Vatican City", "Monaco", "San Marino", "Liechtenstein", "About half a square kilometre."],
+["Geography", "Which US state is the largest by area?", "Alaska", "Texas", "California", "Montana", "More than twice the size of Texas."],
+["Geography", "The Amazon rainforest lies mostly in which country?", "Brazil", "Peru", "Colombia", "Venezuela", "About 60 per cent of it."],
+["Geography", "Which city stands on the Bosphorus?", "Istanbul", "Athens", "Odesa", "Baku", "One foot in Europe, one in Asia."],
+["Geography", "How many time zones does Russia span?", "Eleven", "Seven", "Nine", "Thirteen", "From Kaliningrad to Kamchatka."],
+["Geography", "Ankara is the capital of which country?", "Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "It replaced Istanbul as capital in 1923."],
+["Geography", "Which mountain range is the traditional border between Europe and Asia?", "The Urals", "The Alps", "The Caucasus", "The Carpathians", "It runs roughly north to south through Russia."],
+["Geography", "What is the deepest point in the ocean?", "The Mariana Trench", "The Tonga Trench", "The Java Trench", "The Puerto Rico Trench", "Nearly eleven kilometres down."],
+["Geography", "What is the capital of Iceland?", "Reykjavik", "Oslo", "Torshavn", "Nuuk", "The northernmost capital of a sovereign state."],
+["Geography", "Nairobi is the capital of which country?", "Kenya", "Tanzania", "Uganda", "Ethiopia", "It grew from a railway depot."],
+["Geography", "The Great Barrier Reef lies off the coast of which country?", "Australia", "Indonesia", "The Philippines", "Fiji", "Over 2,300 kilometres of it."],
+["Geography", "Which is the largest island in the world?", "Greenland", "New Guinea", "Borneo", "Madagascar", "Australia is counted as a continent, not an island."],
+["Geography", "Lake Baikal, the deepest lake on Earth, is in which country?", "Russia", "Mongolia", "Kazakhstan", "China", "It holds about a fifth of the world's unfrozen fresh water."],
+["Geography", "Which strait separates Spain from Morocco?", "Gibraltar", "The Bosphorus", "Hormuz", "Malacca", "Fourteen kilometres at its narrowest."],
+["Geography", "Which country has the most lakes?", "Canada", "Finland", "Russia", "Sweden", "More than the rest of the world put together, by most counts."],
+["Geography", "Which sea lies between Finland and Sweden?", "The Baltic", "The North Sea", "The Barents Sea", "The Norwegian Sea", "Its northern arm is the Gulf of Bothnia."],
+["Science", "What is the chemical symbol for gold?", "Au", "Ag", "Go", "Gd", "From the Latin aurum. Ag is silver."],
+["Science", "How many bones are there in an adult human body?", "206", "186", "226", "246", "Babies start with around 270; some fuse as they grow."],
+["Science", "Which planet is closest to the Sun?", "Mercury", "Venus", "Mars", "Earth", "Venus is hotter, though, thanks to its atmosphere."],
+["Science", "Which gas do plants take in to photosynthesise?", "Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen", "They give out oxygen as a by-product."],
+["Science", "Who developed the theory of general relativity?", "Albert Einstein", "Isaac Newton", "Niels Bohr", "Max Planck", "Published in 1915."],
+["Science", "What is the hardest natural substance?", "Diamond", "Quartz", "Corundum", "Topaz", "Ten out of ten on the Mohs scale."],
+["Science", "Roughly how fast does light travel?", "300,000 km per second", "30,000 km per second", "3,000,000 km per second", "150,000 km per second", "Near enough 299,792 km/s in a vacuum."],
+["Science", "Which blood type is the universal donor?", "O negative", "AB positive", "A positive", "B negative", "AB positive is the universal recipient."],
+["Science", "What does DNA stand for?", "Deoxyribonucleic acid", "Dinucleic acid", "Deoxyribose nitrate", "Diribonucleic acid", "Its double-helix structure was described in 1953."],
+["Science", "Which element has atomic number 1?", "Hydrogen", "Helium", "Carbon", "Oxygen", "The most abundant element in the universe."],
+["Science", "Which is the largest planet in the Solar System?", "Jupiter", "Saturn", "Neptune", "Uranus", "More massive than all the others combined."],
+["Science", "Who formulated the three laws of motion?", "Isaac Newton", "Galileo Galilei", "Johannes Kepler", "Christiaan Huygens", "Published in the Principia, 1687."],
+["Science", "Which part of the cell produces most of its energy?", "The mitochondrion", "The nucleus", "The ribosome", "The Golgi body", "It has its own DNA, inherited from your mother."],
+["Science", "At what temperature does water boil at sea level?", "100 degrees Celsius", "90 degrees", "110 degrees", "80 degrees", "Up a mountain it boils cooler."],
+["Science", "Which vitamin does your skin make in sunlight?", "Vitamin D", "Vitamin C", "Vitamin B12", "Vitamin A", "Which is why northern winters are a problem."],
+["Science", "What is the study of fungi called?", "Mycology", "Botany", "Entomology", "Virology", "Entomology is insects."],
+["Science", "Which subatomic particle carries a negative charge?", "The electron", "The proton", "The neutron", "The positron", "Protons are positive, neutrons neutral."],
+["Science", "How long does sunlight take to reach Earth?", "About 8 minutes", "About 8 seconds", "About 80 minutes", "About 8 hours", "So you always see the Sun as it was 8 minutes ago."],
+["Science", "Which gas makes up most of Earth's atmosphere?", "Nitrogen", "Oxygen", "Carbon dioxide", "Argon", "About 78 per cent of it."],
+["Science", "Who discovered penicillin?", "Alexander Fleming", "Louis Pasteur", "Joseph Lister", "Robert Koch", "By accident, from a contaminated petri dish in 1928."],
+["Arts & culture", "Who painted the Mona Lisa?", "Leonardo da Vinci", "Michelangelo", "Raphael", "Sandro Botticelli", "He worked on it for years and never handed it over."],
+["Arts & culture", "Who wrote Romeo and Juliet?", "William Shakespeare", "Christopher Marlowe", "Geoffrey Chaucer", "Ben Jonson", "Written around 1595."],
+["Arts & culture", "Which museum holds the Mona Lisa?", "The Louvre", "The Prado", "The Uffizi", "The Rijksmuseum", "Behind bulletproof glass in Paris."],
+["Arts & culture", "Who painted The Starry Night?", "Vincent van Gogh", "Claude Monet", "Paul Cezanne", "Paul Gauguin", "Painted from the window of an asylum in 1889."],
+["Arts & culture", "Who composed the Ninth Symphony, with the Ode to Joy?", "Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johannes Brahms", "Franz Schubert", "He was almost completely deaf by then."],
+["Arts & culture", "Who wrote the novel 1984?", "George Orwell", "Aldous Huxley", "Ray Bradbury", "H. G. Wells", "Published in 1949."],
+["Arts & culture", "Which Finnish composer wrote Finlandia?", "Jean Sibelius", "Kaija Saariaho", "Einojuhani Rautavaara", "Leevi Madetoja", "Written in 1899 as a protest against Russian censorship."],
+["Arts & culture", "Who sculpted the statue of David in Florence?", "Michelangelo", "Donatello", "Gian Lorenzo Bernini", "Auguste Rodin", "Carved from a single block of marble others had given up on."],
+["Arts & culture", "The Kalevala is the national epic of which country?", "Finland", "Estonia", "Iceland", "Norway", "Compiled by Elias Lonnrot from oral poetry."],
+["Arts & culture", "Who wrote Pride and Prejudice?", "Jane Austen", "Charlotte Bronte", "George Eliot", "Elizabeth Gaskell", "Published anonymously in 1813."],
+["Arts & culture", "Which painter cut off part of his own ear?", "Vincent van Gogh", "Paul Gauguin", "Edvard Munch", "Henri de Toulouse-Lautrec", "After an argument with Gauguin in Arles."],
+["Arts & culture", "Who directed Jaws and E.T.?", "Steven Spielberg", "George Lucas", "Martin Scorsese", "Francis Ford Coppola", "Jaws is usually called the first summer blockbuster."],
+["Arts & culture", "Which painting is famous for its melting clocks?", "The Persistence of Memory", "Guernica", "The Scream", "Water Lilies", "Salvador Dali, 1931."],
+["Arts & culture", "Who wrote The Lord of the Rings?", "J. R. R. Tolkien", "C. S. Lewis", "Philip Pullman", "Ursula K. Le Guin", "He was a professor of Anglo-Saxon at Oxford."],
+["Arts & culture", "Which Norwegian painted The Scream?", "Edvard Munch", "Gustav Vigeland", "Johan Christian Dahl", "Christian Krohg", "There are several versions of it."],
+["Arts & culture", "Who painted the ceiling of the Sistine Chapel?", "Michelangelo", "Raphael", "Leonardo da Vinci", "Titian", "Four years of it, mostly standing up."],
+["Arts & culture", "Who created the Moomins?", "Tove Jansson", "Astrid Lindgren", "Selma Lagerlof", "Hans Christian Andersen", "A Finnish author writing in Swedish."],
+["Arts & culture", "Who wrote Don Quixote?", "Miguel de Cervantes", "Lope de Vega", "Luis de Gongora", "Pedro Calderon", "Often called the first modern novel."],
+["Arts & culture", "Which Dutch painter made The Night Watch?", "Rembrandt", "Johannes Vermeer", "Frans Hals", "Jan Steen", "It hangs in the Rijksmuseum in Amsterdam."],
+["Arts & culture", "Who wrote the music for The Nutcracker?", "Pyotr Ilyich Tchaikovsky", "Igor Stravinsky", "Sergei Prokofiev", "Nikolai Rimsky-Korsakov", "First performed in 1892."],
+["Sport", "How many players does a football team have on the pitch?", "Eleven", "Ten", "Twelve", "Nine", "Including the goalkeeper."],
+["Sport", "How often are the Summer Olympics held?", "Every four years", "Every two years", "Every three years", "Every five years", "The gap is called an Olympiad."],
+["Sport", "In which sport would you perform a slam dunk?", "Basketball", "Volleyball", "Handball", "Tennis", "Worth the same two points as any other close-range shot."],
+["Sport", "How many rings are on the Olympic flag?", "Five", "Four", "Six", "Seven", "One for each inhabited continent, as they counted them."],
+["Sport", "Which country has won the most football World Cups?", "Brazil", "Germany", "Italy", "Argentina", "Five, and the only country to play in every tournament."],
+["Sport", "In tennis, what is a score of zero called?", "Love", "Nil", "Duck", "Blank", "Possibly from the French l'oeuf, an egg."],
+["Sport", "How long is a marathon?", "42.195 kilometres", "40 kilometres", "45 kilometres", "38 kilometres", "The odd distance was fixed at the 1908 London Games."],
+["Sport", "How many players per side are on the ice in ice hockey?", "Six", "Five", "Seven", "Four", "Five skaters and a goaltender."],
+["Sport", "Which country did judo come from?", "Japan", "China", "Korea", "Brazil", "Founded by Jigoro Kano in 1882."],
+["Sport", "The Tour de France is a race in which sport?", "Cycling", "Running", "Motor racing", "Rowing", "Three weeks and around 3,500 kilometres."],
+["Sport", "How many points is a try worth in rugby union?", "Five", "Three", "Four", "Six", "Plus two more for the conversion."],
+["Sport", "Which Finn won the Formula 1 world title in 1982?", "Keke Rosberg", "Mika Hakkinen", "Kimi Raikkonen", "Heikki Kovalainen", "He won only one race that season and still took the title."],
+["Sport", "In golf, what is one shot under par called?", "A birdie", "An eagle", "A bogey", "An albatross", "An eagle is two under."],
+["Sport", "Which sport is played with a shuttlecock?", "Badminton", "Squash", "Table tennis", "Pelota", "The shuttle can leave the racket at over 400 km/h."],
+["Sport", "How many squares are there on a chessboard?", "64", "81", "100", "49", "Eight by eight."],
+["Sport", "Which country does Usain Bolt run for?", "Jamaica", "Trinidad and Tobago", "The United States", "Barbados", "He holds the 100 and 200 metre world records."],
+["Sport", "In baseball, how many strikes make an out?", "Three", "Two", "Four", "Five", "Four balls, on the other hand, and you walk."],
+["Sport", "Which Finnish runner won nine Olympic golds in the 1920s?", "Paavo Nurmi", "Hannes Kolehmainen", "Ville Ritola", "Lasse Viren", "They called him the Flying Finn."],
+["Sport", "How many holes are played in a full round of golf?", "Eighteen", "Nine", "Twelve", "Twenty-four", "Usually a par of 70 to 72."],
+["Sport", "Which sport has the Ashes as its most famous series?", "Cricket", "Rugby", "Hockey", "Rowing", "England against Australia since 1882."],
+["Everyday", "How many days are there in a leap year?", "366", "365", "364", "367", "An extra day in February, roughly every four years."],
+["Everyday", "How many letters are there in the English alphabet?", "26", "24", "25", "27", "Finnish has a few more."],
+["Everyday", "What is the currency of Japan?", "The yen", "The won", "The yuan", "The baht", "The won is Korean, the yuan Chinese."],
+["Everyday", "How many minutes are there in a day?", "1,440", "1,240", "1,640", "1,200", "Sixty times twenty-four."],
+["Everyday", "Which spice is the most expensive by weight?", "Saffron", "Vanilla", "Cardamom", "Cinnamon", "It has to be picked by hand, three threads per flower."],
+["Everyday", "What does WWW stand for?", "World Wide Web", "World Web Wire", "Wide World Web", "Web World Wide", "Proposed by Tim Berners-Lee in 1989."],
+["Everyday", "What is the largest living animal?", "The blue whale", "The African elephant", "The giraffe", "The sperm whale", "Up to thirty metres long."],
+["Everyday", "How many strings does a standard guitar have?", "Six", "Four", "Five", "Seven", "A bass has four."],
+["Everyday", "What is the main ingredient of guacamole?", "Avocado", "Courgette", "Pea", "Broad bean", "The name comes from the Nahuatl for avocado sauce."],
+["Everyday", "Which planet is known as the Red Planet?", "Mars", "Venus", "Jupiter", "Mercury", "Iron oxide in the soil, in other words rust."],
+["Everyday", "How many colours are traditionally listed in a rainbow?", "Seven", "Six", "Five", "Eight", "Newton settled on seven to match the musical scale."],
+["Everyday", "What is the collective noun for crows?", "A murder", "A parliament", "A pack", "A gaggle", "A parliament is owls."],
+["Everyday", "Which country drinks the most coffee per person?", "Finland", "Italy", "Brazil", "Sweden", "Around four cups a day on average."],
+["Everyday", "How many degrees are there in a circle?", "360", "180", "270", "400", "A number inherited from Babylonian astronomy."],
+["Everyday", "How many small squares are on one face of a Rubik's cube?", "Nine", "Four", "Sixteen", "Six", "Three by three, on each of six faces."],
+["Everyday", "Which language has the most native speakers?", "Mandarin Chinese", "English", "Spanish", "Hindi", "English wins if you count second-language speakers."],
+["Everyday", "In which month is Midsummer celebrated in Finland?", "June", "July", "May", "August", "Juhannus, on the weekend nearest the solstice."],
+["Everyday", "What is the largest organ of the human body?", "The skin", "The liver", "The lungs", "The intestine", "Around two square metres of it."],
+["Everyday", "How many sides does a hexagon have?", "Six", "Five", "Seven", "Eight", "Like a honeycomb cell."],
+["Everyday", "Which metal is liquid at room temperature?", "Mercury", "Lead", "Tin", "Zinc", "Which is why it was used in thermometers."],
+];
+
 const Q={on:false,round:0,of:10,deck:[],current:null,options:[],correct:0,
          answers:{},order:[],revealed:false,timer:null};
 
+const isTrivia=()=>S.game==='trivia';
+// an option is an act in Name the Artist and a plain string in the Quiz
+const optLabel=o=>isTrivia()?o:o[0];
 function quizStart(){
-  const p=pool().filter(a=>videoFor(a));          // no video, no question
-  Q.of=Math.min(S.len||10,p.length);
-  Q.deck=shuffle(p).slice(0,Q.of);
+  if(isTrivia()){
+    Q.of=Math.min(S.len||10,TRIVIA.length);
+    Q.deck=shuffle(TRIVIA).slice(0,Q.of);
+  }else{
+    const p=pool().filter(a=>videoFor(a));        // no video, no question
+    Q.of=Math.min(S.len||10,p.length);
+    Q.deck=shuffle(p).slice(0,Q.of);
+  }
   Q.round=0;Q.on=true;
   S.players.forEach(pl=>{pl.score=0});
   quizNext();
@@ -2726,6 +2872,15 @@ function quizNext(){
   clearTimeout(Q.timer);
   Q.current=Q.deck[Q.round++];
   Q.answers={};Q.order=[];Q.revealed=false;
+  if(isTrivia()){
+    Q.options=shuffle(Q.current.slice(2,6));
+    Q.correct=Q.options.indexOf(Q.current[2]);
+    $('q-curtain').classList.add('open');          // a question hides nothing
+    $('q-next').textContent='Reveal';
+    showQuizQuestion();
+    drawQuiz();publishStage();
+    return;
+  }
   // three names that are not the answer, from the same corner of the catalogue
   const near=CATALOG.filter(a=>a!==Q.current&&a[4]===Q.current[4]);
   const far=CATALOG.filter(a=>a!==Q.current&&a[4]!==Q.current[4]);
@@ -2738,6 +2893,13 @@ function quizNext(){
   $('q-next').textContent='Reveal';
   showQuizVideo(videoFor(Q.current));
   drawQuiz();publishStage();
+}
+function showQuizQuestion(){
+  const box=$('q-screen');if(!box)return;
+  box.innerHTML=Q.revealed
+    ? '<div class="qanswer"><div class="qa-right">'+esc(Q.current[2])+'</div>'
+      +(Q.current[6]?'<div class="qa-note">'+esc(Q.current[6])+'</div>':'')+'</div>'
+    : '<div class="qasking">'+esc(Q.current[1])+'</div>';
 }
 function showQuizVideo(id){
   const box=$('q-screen');if(!box)return;
@@ -2766,14 +2928,17 @@ function quizReveal(){
     if(Q.answers[p.id]===Q.correct)p.score=(p.score||0)+10+(p.id===firstRight?5:0);
   });
   $('q-curtain').classList.add('open');
-  $('q-next').textContent=Q.round>=Q.deck.length?'See the winner':'Next record';
+  $('q-next').textContent=Q.round>=Q.deck.length?'See the winner'
+    :isTrivia()?'Next question':'Next record';
+  if(isTrivia())showQuizQuestion();
   drawQuiz();publishStage();
   clearTimeout(Q.timer);
-  Q.timer=setTimeout(()=>{if(Q.revealed&&Q.on)quizNext()},10000);   // ten seconds of the video
+  // long enough to read the answer out loud, and the video to be worth watching
+  Q.timer=setTimeout(()=>{if(Q.revealed&&Q.on)quizNext()},isTrivia()?9000:10000);
 }
 function quizFinish(){
   Q.on=false;clearTimeout(Q.timer);
-  try{$('final-eyebrow').textContent='Sharpest ear'}catch(e){}
+  try{$('final-eyebrow').textContent=isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
   const box=$('q-screen');if(box)box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
   const best=[...S.players].sort((a,b)=>(b.score||0)-(a.score||0));
   const top=best[0]?(best[0].score||0):0;
@@ -2793,15 +2958,16 @@ function quizFinish(){
 }
 function drawQuiz(){
   if(!Q.current)return;
-  $('q-count').textContent='Record '+Q.round+' of '+Q.deck.length;
-  $('q-ask').textContent=Q.revealed
-    ? Q.current[0]+' — '+trackOf(Q.current)+', '+yearOf(Q.current)
+  $('q-count').textContent=(isTrivia()?'Question ':'Record ')+Q.round+' of '+Q.deck.length;
+  $('q-ask').textContent=isTrivia()
+    ? Q.current[0]
+    : Q.revealed ? Q.current[0]+' — '+trackOf(Q.current)+', '+yearOf(Q.current)
     : 'Who is this?';
   if(Q.revealed)$('q-curtain').textContent='';
   $('q-options').innerHTML=Q.options.map((a,i)=>{
     const cls=Q.revealed?(i===Q.correct?' right':' wrong'):'';
     return '<button class="qbtn'+cls+'" data-opt="'+i+'"'+(Q.revealed?' disabled':'')+'>'
-      +'<span class="key">'+'ABCD'[i]+'</span><span class="t">'+esc(a[0])+'</span></button>';
+      +'<span class="key">'+'ABCD'[i]+'</span><span class="t">'+esc(optLabel(a))+'</span></button>';
   }).join('');
   $('q-scores').innerHTML=S.players.map(p=>{
     const said=p.id in Q.answers;
@@ -3001,11 +3167,15 @@ function hostAct(m){
 }
 
 function quizState(phase){
-  return {v:1,game:'artist',phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
+  return {v:1,game:isTrivia()?'trivia':'artist',phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
     round:Q.round,of:Q.deck.length,revealed:!!Q.revealed,
     correct:Q.revealed?Q.correct:-1,
-    act:Q.revealed&&Q.current?{name:Q.current[0],track:trackOf(Q.current),year:yearOf(Q.current)}:null,
-    options:Q.options.map(a=>a[0]),
+    ask:isTrivia()&&Q.current?Q.current[1]:'',
+    cat:isTrivia()&&Q.current?Q.current[0]:'',
+    act:!Q.revealed||!Q.current?null
+      :isTrivia()?{name:Q.current[2],track:'',year:''}
+      :{name:Q.current[0],track:trackOf(Q.current),year:yearOf(Q.current)},
+    options:Q.options.map(optLabel),
     seats:S.players.map(p=>({id:p.id,pid:p.pid||'',name:p.name,icon:p.icon,
       said:(p.id in Q.answers),pick:Q.revealed?(p.id in Q.answers?Q.answers[p.id]:-1):-1,
       score:p.score||0,team:[],passed:false,full:false,blockUsed:false,total:p.score||0,
@@ -3017,7 +3187,8 @@ function stageState(){
   const phase=inPrep()?'lobby'
     :screenNow()==='s-final'?'over'
     :turnsOpen?'live':revealed?'locked':'between';
-  if(S.game==='artist'&&screenNow()!=='s-lobby'&&screenNow()!=='s-rules'&&screenNow()!=='s-go')
+  if((S.game==='artist'||S.game==='trivia')
+     &&screenNow()!=='s-lobby'&&screenNow()!=='s-rules'&&screenNow()!=='s-go')
     return quizState(phase);
   return {v:1,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
     blockTarget:(blockTarget===null?null:blockTarget),
@@ -3236,12 +3407,13 @@ function drawPadQuiz(st,me){
   const mine=me?me.pick:-1, said=me?me.said:false;
   const got=st.revealed&&mine===st.correct;
   $('pad-round').textContent=st.phase==='over'?'That is the game'
-    :'Record '+st.round+' of '+st.of;
+    :(st.cat?st.cat+' \u00b7 ':'')+(st.ask?'Question ':'Record ')+st.round+' of '+st.of;
   const stEl=$('pad-state');
   stEl.textContent=st.phase==='over'?finalLine(st,me)
     :st.phase==='lobby'?'You are in. Watch the big screen.'
     :st.revealed&&st.act?(got?'Right — '+st.act.name:'It was '+st.act.name)
     :said?'Locked in. Waiting for the others…'
+    :st.ask?st.ask
     :'Who is this?';
   // green when you had it, red when you did not: readable at arm's length
   stEl.classList.toggle('good',!!got);
@@ -3262,7 +3434,7 @@ function drawPad(){
   const st=PARTY.stage,me=mySeat();
   const sign=$('pad-sign'),skip=$('pad-skip');
   if(!st)return;
-  if(st.game==='artist'){
+  if(st.game==='artist'||st.game==='trivia'){
     drawPadScreen({phase:'',vid:''});          // the curtain is the host's business
     drawPadSeats(st,me);drawPadQuiz(st,me);
     return;
@@ -3381,17 +3553,28 @@ $('m-code')&&($('m-code').onclick=openChairScreen);
 $('lobby-back')&&($('lobby-back').onclick=closeLobby);
 $('to-rules')&&($('to-rules').onclick=()=>{updatePool();dressRules();show('s-rules')});
 function dressRules(){
-  const quiz=S.game==='artist';
+  const triv=S.game==='trivia';
+  const quiz=S.game==='artist'||triv;      // neither builds teams
+  // the era and genre filters belong to the record collection, not to trivia
+  [['eras'],['genres']].forEach(id=>{
+    const box=$(id[0]),lab=box&&box.previousElementSibling;
+    if(box)box.hidden=triv;
+    if(lab&&lab.classList.contains('field-label'))lab.hidden=triv;
+  });
+  try{$('pool').hidden=triv}catch(e){}
   const ts=$('teamsize'),lab=ts&&ts.previousElementSibling;
   if(ts)ts.hidden=quiz;
   if(lab&&lab.classList.contains('field-label'))lab.hidden=quiz;
   const ln=$('length'),lnlab=ln&&ln.previousElementSibling;
-  if(lnlab)lnlab.textContent=quiz?'How many records tonight':'How many auditions tonight';
+  if(lnlab)lnlab.textContent=triv?'How many questions tonight'
+    :quiz?'How many records tonight':'How many auditions tonight';
   const until=ln&&[...ln.querySelectorAll('button')].find(b=>b.dataset.l==='0');
   if(until)until.hidden=quiz;                 // a quiz has no teams to fill
   if(quiz&&!S.len){S.len=10;segPick('length','l','10')}
   const note=$('rules-note');
-  if(note)note.textContent=quiz
+  if(note)note.textContent=triv
+    ? 'Six categories, mixed. Everyone answers, then the answer goes up.'
+    : quiz
     ? 'The record plays behind the curtain. Everyone answers, then it opens.'
     : 'No clock. The video runs until somebody turns or everybody skips.';
 }
@@ -3412,8 +3595,8 @@ $('lobby-start')&&($('lobby-start').onclick=()=>{
   }
   S.players.filter(p=>p.pid).forEach(p=>addFriend(p.name));   // worth remembering
   drawFriends();
-  if(S.game==='artist'){
-    try{$('meta').textContent='name the artist'}catch(e){}
+  if(S.game==='artist'||S.game==='trivia'){
+    try{$('meta').textContent=S.game==='trivia'?'quiz':'name the artist'}catch(e){}
     show('s-quiz');fitScreen();quizStart();
   }
   else beginSeason();
