@@ -642,18 +642,74 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 .gosum{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.8;margin:0 0 18px}
 .gosum b{color:var(--bone);font-weight:700}
 
+/* ---- the front door: hero on the left, the games on the right ---- */
+.home{display:grid;grid-template-columns:minmax(240px,0.9fr) 2fr;gap:clamp(20px,4vw,56px);
+  align-items:start;margin:clamp(8px,2vh,26px) 0 0}
+.hero-title{font-family:var(--disp);font-weight:800;line-height:.95;margin:2px 0 14px;
+  font-size:clamp(34px,4.3vw,58px);white-space:nowrap}
+.home-hero .sub{margin:0;max-width:34ch}
+/* one chair in one spotlight, drawn rather than photographed */
+.spot{position:relative;margin:clamp(10px,2vh,24px) auto 0;width:100%;max-width:280px;aspect-ratio:1/1}
+.spot .beam{position:absolute;left:50%;top:-6%;width:84%;height:86%;transform:translateX(-50%);
+  background:linear-gradient(to bottom,rgba(214,72,58,.34),rgba(214,72,58,.1) 55%,transparent);
+  clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);filter:blur(13px)}
+.spot .pool{position:absolute;left:50%;bottom:9%;width:80%;height:15%;transform:translateX(-50%);
+  border-radius:50%;background:radial-gradient(ellipse at center,rgba(230,110,86,.55),transparent 68%);filter:blur(9px)}
+.spot svg{position:absolute;inset:0;width:100%;height:100%}
+.modes-title{font-family:var(--disp);font-weight:800;margin:2px 0 16px;font-size:clamp(28px,3.6vw,46px)}
+
 /* the shelf of games */
-.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:6px 0 18px}
-.gamecard{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:16px;
-  padding:clamp(16px,2vw,22px);cursor:pointer;color:inherit;font:inherit;transition:border-color .15s,transform .15s}
-.gamecard:hover{border-color:var(--gold);transform:translateY(-2px)}
-.gamecard .gtag{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--red);
+.shelf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 18px}
+@media (max-width:1040px){.shelf{grid-template-columns:1fr}}
+.gamecard{display:flex;align-items:flex-start;gap:14px;text-align:left;
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  padding:clamp(14px,1.7vw,20px);cursor:pointer;color:inherit;font:inherit;
+  transition:border-color .15s,transform .15s,background .15s}
+.gamecard:hover:not(.soon){border-color:var(--gold);transform:translateY(-2px)}
+.gamecard.sel{border-color:var(--red);background:linear-gradient(180deg,rgba(196,52,44,.12),transparent 70%)}
+.gamecard .gicon{flex:0 0 auto;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+  border:1px solid var(--line);background:var(--panel2);color:var(--red)}
+.gamecard .gicon svg{width:24px;height:24px;display:block}
+.gamecard .gbody{flex:1 1 auto;min-width:0}
+.gamecard .gtag{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--red);
   text-transform:uppercase}
-.gamecard h3{font-family:var(--disp);font-size:clamp(21px,2.4vw,27px);margin:6px 0 8px;line-height:1.1}
-.gamecard p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
-.gamecard .meta{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted)}
-.gamecard.soon{opacity:.5;cursor:default}
-.gamecard.soon:hover{border-color:var(--line);transform:none}
+.gamecard .gname{display:block;font-family:var(--disp);font-size:clamp(19px,2.1vw,25px);
+  font-weight:800;margin:5px 0 7px;line-height:1.1}
+.gamecard .gdesc{display:block;margin:0;color:var(--muted);font-size:13.5px;line-height:1.5}
+.gamecard .gmeta{display:flex;align-items:center;gap:7px;margin-top:11px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.gamecard .gmeta svg{width:13px;height:13px;flex:0 0 auto;opacity:.8}
+.gamecard .garrow{flex:0 0 auto;align-self:center;color:var(--muted);font-size:19px;line-height:1}
+.gamecard:hover:not(.soon) .garrow,.gamecard.sel .garrow{color:var(--red)}
+.gamecard.soon{opacity:.45;cursor:default}
+.gamecard .soontag{display:inline-block;margin-left:8px;padding:1px 6px;border-radius:5px;
+  border:1px solid var(--line);font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;color:var(--muted)}
+
+/* the bar along the bottom: this is where a night actually begins */
+.startbar{display:flex;align-items:center;gap:clamp(10px,1.6vw,18px);flex-wrap:wrap;
+  border:1px solid var(--line);border-radius:16px;background:var(--panel);
+  padding:clamp(12px,1.6vw,18px) clamp(14px,2vw,22px);margin:clamp(10px,2vh,22px) 0 14px}
+.startbar .sbi{flex:0 0 auto;color:var(--bone);display:grid;place-items:center}
+.startbar .sbi svg{width:26px;height:26px;display:block}
+.startbar .sbt{font-family:var(--disp);font-weight:800;font-size:clamp(17px,1.9vw,22px)}
+.startbar .sbd{width:1px;align-self:stretch;background:var(--line)}
+.startbar .sbx{flex:1 1 220px;color:var(--muted);font-size:13.5px}
+.startbar .btn{width:auto;flex:0 0 auto;margin:0;padding:13px 20px;font-size:14px}
+.homefoot{text-align:center;color:var(--muted);font-family:var(--mono);font-size:11px;margin:4px 0 0}
+.homefoot .dot{margin:0 9px;opacity:.5}
+/* the top-bar nav belongs to the front door only */
+.hnav{display:none;gap:clamp(12px,2vw,26px);align-items:center}
+.screen-home .hnav{display:flex}
+.screen-home #meta{display:none}
+.hnav button{background:none;border:0;padding:4px 0;cursor:pointer;color:var(--muted);
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.hnav button:hover{color:var(--bone)}
+.hnav button.on{color:var(--bone);border-bottom:2px solid var(--red)}
+@media (max-width:760px){
+  .home{grid-template-columns:1fr}
+  .spot{max-width:190px}
+  .hnav{display:none!important}
+}
 
 /* the curtain: you hear the record, you do not see who it is */
 .curtain{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;
@@ -700,9 +756,9 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 
 </style>
 </head>
-<body>
+<body class="screen-home">
 <div class="shell">
-<aside class="leftcol" id="leftcol">
+<aside class="leftcol" id="leftcol" style="display:none">
   <div class="roundcard" id="round-tag"></div>
   <div class="rail" id="rail"></div>
 </aside>
@@ -711,6 +767,9 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   <div class="masthead">
     <div class="logo">THE <span>CHAIR</span></div>
     <div style="display:flex;align-items:center;gap:12px">
+      <nav class="hnav">
+        <button type="button" class="on">Game modes</button>
+      </nav>
       <div class="meta" id="meta">blind signings</div>
       <button class="brk" id="break">Break</button>
     </div>
@@ -731,32 +790,131 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 
   <!-- START: pick a game -->
   <section class="screen on" id="s-setup">
-    <div class="eyebrow">Party night</div>
-    <h2>Pick a game.</h2>
-    <p class="sub">Everyone plays from their own phone. One screen in the middle does the work.</p>
+    <div class="home">
 
-    <div class="shelf">
-      <button type="button" class="gamecard" id="start" data-game="chair">
-        <div class="gtag">The original</div>
-        <h3>The Chair</h3>
-        <p>One record at a time, from before anyone had heard of them. Hit your chair the moment you want them &mdash; the first to turn gets them. Whoever's team sold the most records wins.</p>
-        <div class="meta">2&ndash;8 coaches &middot; 20&ndash;60 min</div>
-      </button>
-      <button type="button" class="gamecard" id="start-artist" data-game="artist">
-        <div class="gtag">Curtains closed</div>
-        <h3>Name the Artist</h3>
-        <p>The record plays behind a closed curtain. Four names on your phone, one of them right. Everyone answers, the curtain opens, and you find out together.</p>
-        <div class="meta">2&ndash;8 players &middot; 10&ndash;20 min</div>
-      </button>
+      <aside class="home-hero">
+        <div class="eyebrow">Party game</div>
+        <div class="hero-title">The Chair</div>
+        <p class="sub">A game night with a few different games in it. Everyone plays from their own phone; this screen does the work.</p>
+        <div class="spot" aria-hidden="true">
+          <div class="beam"></div>
+          <svg viewBox="0 0 300 300" fill="none">
+            <!-- a plain wooden chair under the light: drawn, not photographed -->
+            <defs>
+              <linearGradient id="chairlit" x1="0" y1="0" x2="1" y2="0.4">
+                <stop offset="0" stop-color="#8C4529"/><stop offset=".45" stop-color="#E39A68"/>
+                <stop offset="1" stop-color="#9B5030"/>
+              </linearGradient>
+            </defs>
+            <g fill="url(#chairlit)">
+              <!-- back legs, behind the seat -->
+              <path d="M112 168h9l3 76h-9z" opacity=".62"/>
+              <path d="M183 168h9l3 76h-9z" opacity=".62"/>
+              <!-- back posts and the two slats -->
+              <path d="M104 64h11v112h-11zM189 64h11v112h-11z"/>
+              <path d="M104 72h96v15h-96zM104 106h96v15h-96z"/>
+              <!-- seat, with its front edge catching the light -->
+              <path d="M94 170h116l9 18H85z"/>
+              <path d="M85 188h134v9H85z" opacity=".8"/>
+              <!-- front legs -->
+              <path d="M90 196h11l-6 78h-11zM208 196h11l6 78h-11z"/>
+            </g>
+          </svg>
+          <div class="pool"></div>
+        </div>
+      </aside>
+
+      <div class="home-main">
+        <div class="eyebrow">Choose a game</div>
+        <div class="modes-title">Game Modes</div>
+
+        <div class="shelf">
+          <button type="button" class="gamecard sel" id="start" data-game="chair">
+            <span class="gicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.6"/><path d="M12 5.6a6.4 6.4 0 0 1 6.4 6.4"/></svg></span>
+            <span class="gbody">
+              <span class="gtag">The original</span>
+              <span class="gname">The Chair</span>
+              <span class="gdesc">One record at a time, from before anyone had heard of them. Hit your chair the moment you want them &mdash; the first to turn gets them.</span>
+              <span class="gmeta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
+                2&ndash;8 coaches <span class="dot">&middot;</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                20&ndash;60 min
+              </span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="gamecard" id="start-artist" data-game="artist">
+            <span class="gicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M3 3h18"/><path d="M7 3c0 6 1.5 11-2 18"/><path d="M17 3c0 6-1.5 11 2 18"/><path d="M12 3v18"/></svg></span>
+            <span class="gbody">
+              <span class="gtag">Curtains closed</span>
+              <span class="gname">Name the Artist</span>
+              <span class="gdesc">The record plays behind a closed curtain. Four names on your phone, one of them right. The curtain lifts once everyone has answered.</span>
+              <span class="gmeta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
+                2&ndash;8 players <span class="dot">&middot;</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                10&ndash;20 min
+              </span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="gamecard soon" disabled data-game="trivia">
+            <span class="gicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M9.2 9a2.9 2.9 0 1 1 3.8 2.8c-.8.3-1 1-1 1.8"/><circle cx="12" cy="17.4" r="1.1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="9"/></svg></span>
+            <span class="gbody">
+              <span class="gtag">General knowledge quiz<span class="soontag">Not built yet</span></span>
+              <span class="gname">Quiz</span>
+              <span class="gdesc">Questions from a wide range of categories &mdash; history, geography, science, arts &amp; culture, sport and more. Four answers, one of them right.</span>
+              <span class="gmeta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
+                2&ndash;8 players <span class="dot">&middot;</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                10&ndash;20 min
+              </span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="gamecard soon" disabled data-game="picture">
+            <span class="gicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="4.5" width="18" height="15" rx="2.4"/><circle cx="8.6" cy="10" r="1.7"/><path d="M3.6 17.4 9 12.6l4 3.3 3.2-2.6 4.2 3.6"/></svg></span>
+            <span class="gbody">
+              <span class="gtag">Picture guess<span class="soontag">Not built yet</span></span>
+              <span class="gname">Picture Guess</span>
+              <span class="gdesc">Identify what is in the picture &mdash; a city, a famous painting, a landmark, a historical figure, or something else. Four answers, one of them right.</span>
+              <span class="gmeta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
+                2&ndash;8 players <span class="dot">&middot;</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                10&ndash;20 min
+              </span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <p class="pool thin" id="start-hint" style="margin:-4px 0 10px"></p>
-    <p class="sidelinks">
-      <button type="button" class="sidelink" id="join-open">Someone invited me</button>
-      <span class="dot">·</span>
+    <div class="startbar">
+      <span class="sbi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="8.4" cy="8" r="3"/><path d="M2.5 19c0-3.2 2.6-4.9 5.9-4.9S14.3 15.8 14.3 19"/>
+        <path d="M15.6 5.6a3 3 0 0 1 0 5"/><path d="M17.4 14.4c2 .7 3.1 2.2 3.1 4.6"/></svg></span>
+      <span class="sbt">Start a game</span>
+      <span class="sbd"></span>
+      <span class="sbx" id="bar-hint">Open a room, pass the code around, and everyone takes a chair from their own phone.</span>
+      <button type="button" class="btn ghost" id="join-open">Join with code</button>
+      <button type="button" class="btn" id="create-room">+ Create room</button>
+    </div>
+
+    <p class="homefoot">
       <button type="button" class="sidelink" id="open-lib">Video library</button>
+      <span class="dot">&middot;</span><span id="buildtag"></span>
     </p>
-    <p class="pool thin" id="buildtag"></p>
   </section>
 
   <!-- LOBBY: the chairs arrive on their own phones -->
@@ -786,6 +944,7 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
     <div id="players"></div>
     <input type="file" id="row-file" accept="image/*" style="display:none">
     <button class="btn ghost" id="add">Add another coach on this screen</button>
+    <p class="pool thin" id="start-hint"></p>
     <p class="pool thin">Everyone else joins from their own phone in the next step.</p>
         <div class="field-label">Friends</div>
     <div class="friends" id="friends-list"></div>
@@ -1212,7 +1371,10 @@ const fmt=n=>n.toLocaleString('en-US');
 function show(id){
   try{drawMoney()}catch(e){}
   try{$('infopanel').classList.toggle('on',id==='s-listen')}catch(e){}
-  try{$('leftcol').style.display=(id==='s-listen')?'':'none'}catch(e){}document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));window.scrollTo(0,0);
+  try{$('leftcol').style.display=(id==='s-listen')?'':'none'}catch(e){}
+  // the top-bar nav only makes sense on the front door
+  try{document.body.classList.toggle('screen-home',id==='s-setup')}catch(e){}
+  document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));window.scrollTo(0,0);
   if(id==='s-listen')fitScreen();
   if(id==='s-go')try{drawGo()}catch(e){}
   try{$('break').style.display=(id==='s-chair')?'none':''}catch(e){}
@@ -1467,8 +1629,22 @@ function resolveRandom(){
   S.era=c.e;S.genre=c.g;
 }
 
-$('start').onclick=()=>{S.game='chair';openLobby()};
-$('start-artist')&&($('start-artist').onclick=()=>{S.game='artist';openLobby()});
+/* --- the front door: pick a game, then open the room --- */
+const GAMEBLURB={chair:'Open a room, pass the code around, and everyone takes a chair from their own phone.',
+  artist:'Open a room and pass the code around. Four names land on every phone, once per record.'};
+function pickGame(name){
+  if(!GAMEBLURB[name])return;                       // the unbuilt ones stay unpickable
+  S.game=name;
+  document.querySelectorAll('.gamecard').forEach(c=>c.classList.toggle('sel',c.dataset.game===name));
+  try{$('bar-hint').textContent=GAMEBLURB[name]}catch(e){}
+}
+document.querySelectorAll('.gamecard').forEach(c=>{
+  if(c.classList.contains('soon'))return;
+  c.onclick=()=>pickGame(c.dataset.game);
+  c.ondblclick=()=>{pickGame(c.dataset.game);openLobby()};   // for the impatient
+});
+$('create-room')&&($('create-room').onclick=()=>{if(!GAMEBLURB[S.game])pickGame('chair');openLobby()});
+$('nav-lib')&&($('nav-lib').onclick=()=>{try{$('open-lib').click()}catch(e){}});
 function beginSeason(){
   // whatever route we came by, every chair must be a full player before the first record
   S.players=S.players.map((p,i)=>p&&p.team?p
