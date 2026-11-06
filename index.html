@@ -1176,6 +1176,38 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
 .homefoot .menutile:hover{border-color:rgba(255,90,120,.5)}
 .homefoot .mticon{background:radial-gradient(closest-side,rgba(255,70,100,.35),rgba(20,6,10,.9));
   border:1px solid rgba(255,70,100,.3)}
+/* ---- the hero, as drawn: the chair on the left, the words in the middle ---- */
+.hero2{display:block;position:relative;text-align:center;margin:0 0 20px;padding:clamp(10px,3vh,34px) 0 clamp(14px,3vh,30px)}
+.hero2-art{position:absolute;left:0;top:50%;transform:translateY(-48%);width:min(28vw,340px);
+  pointer-events:none}
+.armchair{display:block;width:100%;height:auto;filter:drop-shadow(0 0 46px rgba(228,24,46,.5))}
+.armchair .acbeam{filter:blur(14px)}
+.hero2-mid{position:relative;z-index:1;max-width:1020px;margin:0 auto}
+.hero2-title{font-size:clamp(34px,5.4vw,70px);text-shadow:0 0 46px rgba(228,24,46,.5)}
+.hero2-sub{letter-spacing:.34em;margin:10px 0 22px;color:#C9AEB6}
+.hero2-row{justify-content:center}
+.hero2-row .btn.big{border-radius:14px;padding:16px 34px}
+.joinpill{border-radius:16px;padding:8px 10px 8px 18px}
+.jp-lab{font-size:12px;color:#E7D8DC}
+@media (max-width:1100px){.hero2-art{display:none}}
+/* the wordmark */
+.logo{display:inline-flex;align-items:center;gap:10px;letter-spacing:.14em;font-size:21px}
+.logomark{width:30px;height:30px;filter:drop-shadow(0 0 10px rgba(228,24,46,.65))}
+/* a party row, with its host and its dividers */
+.prow .pn span{display:inline-flex;align-items:center;gap:7px;margin-top:3px}
+.phost{width:16px;height:16px;border-radius:50%;flex:0 0 auto;
+  background:linear-gradient(140deg,#FF2E88,#E4182E);box-shadow:0 0 8px rgba(255,46,136,.6)}
+.pthumb{width:76px;height:56px}
+.pthumb svg{width:30px;height:30px}
+.prow .btn svg{width:17px;height:17px}
+/* the two tiles, one panel, a divider between them */
+.homefoot.onepanel{gap:0;background:rgba(26,8,14,.62);border:1px solid rgba(255,70,100,.22);
+  border-radius:16px;box-shadow:var(--glowsoft);padding:6px}
+.homefoot.onepanel .menutile{background:none;border:0;box-shadow:none}
+.homefoot.onepanel .menutile:first-child{border-right:1px solid rgba(255,70,100,.2)}
+.homefoot.onepanel .menutile:hover{background:rgba(255,70,100,.07)}
+@media (max-width:820px){.homefoot.onepanel .menutile:first-child{border-right:0;
+  border-bottom:1px solid rgba(255,70,100,.2)}}
 /* the opening titles get the same light */
 .introname{text-shadow:0 0 50px rgba(228,24,46,.5)}
 </style>
@@ -1189,7 +1221,12 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
 <div class="wrap">
 
   <div class="masthead">
-    <div class="logo">THE <span>CHAIR</span></div>
+    <div class="logo"><svg class="logomark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M6 10c0-4 2.6-6 6-6s6 2 6 6v5H6z" fill="#8E1322" stroke="#FF5C72" stroke-width="1.2"/>
+      <path d="M3.4 12.6c0-1.6 1-2.6 2.3-2.6s2.3 1 2.3 2.6V18H3.4z" fill="#6E1020" stroke="#FF5C72" stroke-width="1.1"/>
+      <path d="M16 12.6c0-1.6 1-2.6 2.3-2.6s2.3 1 2.3 2.6V18H16z" fill="#6E1020" stroke="#FF5C72" stroke-width="1.1"/>
+      <rect x="4.4" y="15" width="15.2" height="4.4" rx="1.6" fill="#B2182C" stroke="#FF6B82" stroke-width="1.1"/>
+    </svg>THE <span>CHAIR</span></div>
     <nav class="topnav" id="topnav">
       <button type="button" class="tn sel" id="nav-home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 11.2 12 4.5l8 6.7V20h-5.4v-5.1H9.4V20H4z"/></svg>Home</button>
       <button type="button" class="tn" id="nav-modes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg>Game modes</button>
@@ -1259,10 +1296,46 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
   <!-- MENU 1: what do you want to do tonight -->
   <section class="screen on" id="s-home">
     <div class="hero2">
-      <aside class="home-hero"></aside>
+      <div class="hero2-art"><svg class="armchair" viewBox="0 0 320 300" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="acBeam" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#FF4A63" stop-opacity=".55"/>
+      <stop offset="60%" stop-color="#E4182E" stop-opacity=".12"/>
+      <stop offset="100%" stop-color="#E4182E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="acBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C21B32"/><stop offset="100%" stop-color="#5A0C18"/>
+    </linearGradient>
+    <linearGradient id="acSeat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E02038"/><stop offset="100%" stop-color="#7A0F20"/>
+    </linearGradient>
+    <radialGradient id="acPod" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B82" stop-opacity=".85"/>
+      <stop offset="70%" stop-color="#E4182E" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#E4182E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path class="acbeam" d="M160 -40 40 240h240z" fill="url(#acBeam)"/>
+  <ellipse cx="160" cy="252" rx="128" ry="30" fill="url(#acPod)"/>
+  <ellipse cx="160" cy="248" rx="104" ry="22" fill="#2A0710" stroke="#FF5C72" stroke-opacity=".55"/>
+  <ellipse cx="160" cy="241" rx="104" ry="22" fill="#420C19" stroke="#FF5C72" stroke-opacity=".3"/>
+  <!-- the chair itself: a deep buttoned armchair, lit from above -->
+  <path d="M96 232v-14h128v14z" fill="#2E0810"/>
+  <path d="M104 112c0-30 18-46 56-46s56 16 56 46v62H104z" fill="url(#acBody)"
+        stroke="#FF5C72" stroke-opacity=".35"/>
+  <path d="M118 120c0-20 12-32 42-32s42 12 42 32v44h-84z" fill="#8E1526" opacity=".9"/>
+  <path d="M78 150c0-12 8-20 20-20s20 8 20 20v56H78z" fill="url(#acBody)"
+        stroke="#FF5C72" stroke-opacity=".3"/>
+  <path d="M202 150c0-12 8-20 20-20s20 8 20 20v56h-40z" fill="url(#acBody)"
+        stroke="#FF5C72" stroke-opacity=".3"/>
+  <path d="M86 196h148c7 0 12 5 12 12v18c0 7-5 12-12 12H86c-7 0-12-5-12-12v-18c0-7 5-12 12-12z"
+        fill="url(#acSeat)" stroke="#FF6B82" stroke-opacity=".4"/>
+  <path d="M100 206h120" stroke="#FF8097" stroke-opacity=".35" stroke-width="2"/>
+  <path d="M104 72c14-8 38-10 56-10s42 2 56 10" stroke="#FF8097" stroke-opacity=".45" stroke-width="2.5"/>
+</svg></div>
       <div class="hero2-mid">
         <h1 class="hero2-title">Your next game starts here</h1>
-        <p class="hero2-sub">Party quiz game &middot; every phone is a chair</p>
+        <p class="hero2-sub">Multiplayer party quiz game</p>
         <div class="hero2-row">
           <button type="button" class="btn big" id="m-create">+ Create a party</button>
           <div class="joinpill">
@@ -1302,7 +1375,7 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
         <div id="pub-list"></div>
       </div>
 
-    <div class="homefoot">
+    <div class="homefoot onepanel">
       <button type="button" class="menutile" id="m-solo">
         <span class="mticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
           stroke-linejoin="round"><path d="M13.2 2.6 4.6 13.4h5.6l-1.4 8 8.6-10.8h-5.6z"/></svg></span>
@@ -3106,7 +3179,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 21:11';
+const BUILD='06.11. 21:13';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -5748,7 +5821,8 @@ function drawRooms(){
     const name=esc(r.n||'Someone');
     return '<div class="prow">'
       +'<div class="pthumb">'+(GAMEICON[r.g]||GAMEICON.chair)+'</div>'
-      +'<div class="pn"><b>'+name+'\u2019s party</b><span>Room '+esc(r.c)+'</span></div>'
+      +'<div class="pn"><b>'+name+'\u2019s party</b>'
+      +'<span><i class="phost"></i>Host: '+name+' &middot; room '+esc(r.c)+'</span></div>'
       +'<div class="pg">'+(GAMEICON[r.g]||'')+esc(GAMELABEL[r.g]||'A game')+'</div>'
       +'<div class="pg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">'
       +'<circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/>'
@@ -5756,7 +5830,14 @@ function drawRooms(){
       +r.p+'/'+r.m+' players</div>'
       +'<span class="ptag '+(live?'live':'wait')+'">'+(live?'In progress':'Waiting')+'</span>'
       +'<button type="button" class="btn'+((full&&!live)?' ghost':'')+'" data-join="'+esc(r.c)+'">'
-      +(live?'Ask to join':full?'Full':'Join')+'</button></div>';
+      +(live
+        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">'
+          +'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/>'
+          +'<circle cx="12" cy="12" r="2.8"/></svg>Ask to join'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">'
+          +'<path d="M14 4.5h4.2c1 0 1.8.8 1.8 1.8v11.4c0 1-.8 1.8-1.8 1.8H14"/>'
+          +'<path d="M10 8.2 13.8 12 10 15.8M13.4 12H3.6"/></svg>'+(full?'Full':'Join'))
+      +'</button></div>';
   }).join('');
 }
 let rbSeen=null;                 // who was already here last time we drew
