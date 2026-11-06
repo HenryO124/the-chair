@@ -504,6 +504,9 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   cursor:pointer;display:grid;place-items:center;color:#241f1a;font-family:var(--mono);font-size:8px}
 .rbqr svg{display:block;width:100%;height:100%}
 .rbqr:hover{box-shadow:0 0 0 2px var(--gold)}
+.padwarn{margin:0 0 10px;padding:10px 12px;border-radius:10px;border:1px solid var(--gold);
+  background:rgba(216,163,63,.12);color:var(--bone);font-size:13.5px;line-height:1.45}
+.padwarn[hidden]{display:none!important}
 .padpic{width:100%;aspect-ratio:4/3;margin:0 0 10px;border-radius:12px;border:1px solid var(--line);
   background:#15110e center/contain no-repeat}
 .padpic[hidden]{display:none!important}
@@ -1453,6 +1456,7 @@ body.learning .gamecard .garrow{display:none}
         <div class="pvhead" id="pv-head">Which topics do you want?</div>
         <div class="pvgrid" id="pv-grid"></div>
       </div>
+      <p class="padwarn" id="pad-warn" hidden></p>
       <div class="padpic" id="pad-pic" hidden></div>
       <div class="qgrid" id="pad-quiz" hidden></div>
       <button class="bigsign" id="pad-sign" disabled>SIGN THEM</button>
@@ -4012,7 +4016,7 @@ function hostAct(m){
 }
 
 function quizState(phase){
-  return {v:1,game:S.game,phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
+  return {v:1,b:BUILD,game:S.game,phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
     round:Q.round,of:Q.deck.length,revealed:!!Q.revealed,
     correct:Q.revealed?Q.correct:-1,
     vote:ballotState(),
@@ -4068,7 +4072,7 @@ function stageState(){
     :turnsOpen?'live':revealed?'locked':'between';
   if((S.game==='artist'||isAsking())&&!inPrep())
     return quizState(phase);
-  return {vote:ballotState(),setup:setupLine(),remote:!!S.remote,v:1,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
+  return {vote:ballotState(),setup:setupLine(),remote:!!S.remote,v:1,b:BUILD,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
     blockTarget:(blockTarget===null?null:blockTarget),
     blockOwner:(blockOwner===null?null:blockOwner),
     winner:winner?winner.id:null,
@@ -4375,6 +4379,16 @@ $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
 }));
 function drawPad(){
   const st=PARTY.stage,me=mySeat();
+  // two different versions in one room is the one bug a phone can fix itself
+  try{
+    const wn=$('pad-warn');
+    if(wn){
+      const old=st&&st.b&&st.b!==BUILD;
+      wn.hidden=!old;
+      if(old)wn.textContent='This phone is on an older version than the big screen ('
+        +BUILD+' vs '+st.b+'). Reload this page to see the pictures.';
+    }
+  }catch(e){}
   const sign=$('pad-sign'),skip=$('pad-skip');
   if(!st)return;
   // the ballot, while the room is still deciding
