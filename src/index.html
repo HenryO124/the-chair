@@ -773,6 +773,12 @@ body.learning .gamecard .garrow{display:none}
   font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
 .hnav button:hover{color:var(--bone)}
 .hnav button.on{color:var(--bone);border-bottom:2px solid var(--red)}
+/* the menu theme, and the one button that silences it */
+.musicbtn{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;
+  border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;padding:0}
+.musicbtn svg{width:16px;height:16px;display:block}
+.musicbtn:hover{border-color:var(--gold);color:var(--gold)}
+.musicbtn.playing{color:var(--gold);border-color:var(--gold)}
 @media (max-width:760px){
   .home{grid-template-columns:1fr}
   .spot{max-width:190px}
@@ -852,6 +858,13 @@ body.learning .gamecard .garrow{display:none}
   <div class="masthead">
     <div class="logo">THE <span>CHAIR</span></div>
     <div style="display:flex;align-items:center;gap:12px">
+      <button type="button" class="musicbtn" id="music-btn" title="Menu music" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="music-on">
+          <path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="music-off" hidden>
+          <path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/>
+          <path d="M3 3l18 18" stroke-width="2.2"/></svg>
+      </button>
       <div class="meta" id="meta">blind signings</div>
       <button class="brk" id="break" style="display:none">Break</button>
     </div>
@@ -1031,11 +1044,11 @@ body.learning .gamecard .garrow{display:none}
             <span class="garrow">&rarr;</span>
           </button>
 
-          <button type="button" class="gamecard soon" disabled data-game="picture">
+          <button type="button" class="gamecard" data-game="picture">
             <span class="gicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
               <rect x="3" y="4.5" width="18" height="15" rx="2.4"/><circle cx="8.6" cy="10" r="1.7"/><path d="M3.6 17.4 9 12.6l4 3.3 3.2-2.6 4.2 3.6"/></svg></span>
             <span class="gbody">
-              <span class="gtag">Picture guess<span class="soontag">Not built yet</span></span>
+              <span class="gtag">Picture guess</span>
               <span class="gname">Picture Guess</span>
               <span class="gdesc">Identify what is in the picture &mdash; a city, a famous painting, a landmark, a historical figure, or something else. Four answers, one of them right.</span>
               <span class="gmeta">
@@ -1371,6 +1384,7 @@ body.learning .gamecard .garrow{display:none}
 </aside>
 </div>
 
+<audio id="menu-music" loop preload="auto" src="menu.mp3"></audio>
 <script src="lib-mqtt.js"></script>
 <script src="lib-qr.js"></script>
 <script>
@@ -1541,6 +1555,7 @@ function show(id){
   try{$('leftcol').style.display=(id==='s-listen')?'':'none'}catch(e){}
   // the top-bar nav only makes sense on the front door
   try{document.body.classList.toggle('screen-home',id==='s-home'||id==='s-setup')}catch(e){}
+  try{musicSync()}catch(e){}
   document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));window.scrollTo(0,0);
   if(id==='s-listen')fitScreen();
   if(id==='s-go')try{drawGo()}catch(e){}
@@ -1548,6 +1563,44 @@ function show(id){
   try{$('break').style.display=(id==='s-chair'||id==='s-home'||id==='s-setup')?'none':''}catch(e){}
 }
 
+
+/* --- the menu theme ---------------------------------------------------
+   It belongs to the menus and nowhere else: the moment a game starts, the
+   records need the room to themselves. Browsers refuse to start audio before
+   somebody has touched the page, so the first tap anywhere starts it. ----- */
+let musicOn=true;
+try{const m=localStorage.getItem('thechair.music');if(m!==null)musicOn=(m==='1')}catch(e){}
+function musicShouldPlay(){
+  const id=screenNow();
+  return musicOn&&(id==='s-home'||id==='s-setup');
+}
+function drawMusicBtn(){
+  const b=$('music-btn');if(!b)return;
+  b.hidden=!(screenNow()==='s-home'||screenNow()==='s-setup');
+  b.classList.toggle('playing',musicOn);
+  const on=$('music-on'),off=$('music-off');
+  if(on)on.hidden=!musicOn;
+  if(off)off.hidden=musicOn;
+}
+function musicSync(){
+  const a=$('menu-music');if(!a)return;
+  drawMusicBtn();
+  if(musicShouldPlay()){
+    a.volume=0.4;                         // under the conversation, not over it
+    const p=a.play();
+    if(p&&p.catch)p.catch(()=>{});        // blocked until a tap; the handler below retries
+  }else{
+    try{a.pause()}catch(e){}
+  }
+}
+$('music-btn')&&($('music-btn').onclick=()=>{
+  musicOn=!musicOn;
+  try{localStorage.setItem('thechair.music',musicOn?'1':'0')}catch(e){}
+  musicSync();
+});
+// the first touch anywhere is the permission the browser was waiting for
+document.addEventListener('click',()=>{if(musicShouldPlay())musicSync()},{once:true});
+try{musicSync()}catch(e){}          // the page opens on a menu, so set the button now
 
 /* --- the night rolls on by itself, unless somebody holds it --- */
 let autoTimer=null,autoLeft=0;
@@ -1725,7 +1778,14 @@ $('cats')&&($('cats').onclick=e=>{
   drawCats();
   if(PARTY.role==='host')publishStage();
 });
+// Picture Guess has its own bank, and every row of it carries a picture
+function pictureBank(){
+  const ask=PICASK[S.lang]||PICASK.en;
+  return PICTURES.map((r,i)=>[ (PICCAT[S.lang]||PICCAT.en)[r[0]]||r[0],
+    ask[r[0]]||ask['*'], r[1], r[2], r[3], r[4], '', 'p'+i ]);
+}
 function catBank(){
+  if(isPicture())return pictureBank();
   const bank=langBank();
   if(!S.cats.length)return bank;
   // topics are stored by their English key, whatever language they are shown in
@@ -1852,10 +1912,12 @@ try{const h=$('tpl-hero');
 
 const GAMEBLURB={chair:'Open a room, pass the code around, and everyone takes a chair from their own phone.',
   artist:'Open a room and pass the code around. Four names land on every phone, once per record.',
-  trivia:'Open a room and pass the code around. Four answers land on every phone, question after question.'};
+  trivia:'Open a room and pass the code around. Four answers land on every phone, question after question.',
+  picture:'Open a room and pass the code around. A picture goes up here, four answers on every phone.'};
 const SOLOBLURB={chair:'One screen, one coach, and a pile of records. No room, nobody to wait for.',
   artist:'Four names on this screen, record after record, scored as you go.',
-  trivia:'A hundred and twenty questions across six categories. Play as many as you like.'};
+  trivia:'A hundred and twenty questions across six categories. Play as many as you like.',
+  picture:'Cities, landmarks, paintings and the odd animal. Name what you are looking at.'};
 let LEARNING=false, SOLO=false;
 function pickGame(name){
   if(!GAMEBLURB[name]||LEARNING)return;             // the unbuilt ones stay unpickable
@@ -1878,6 +1940,15 @@ function openModes(mode){
   $('roombar').hidden=true;$('startbar').hidden=LEARNING;
   show('s-setup');
 }
+// a game with no content behind it is not offered at all
+(function(){
+  const card=document.querySelector('.gamecard[data-game="picture"]');
+  if(card&&!(typeof PICTURES!=='undefined'&&PICTURES.length)){
+    card.classList.add('soon');card.disabled=true;
+    const tag=card.querySelector('.gtag');
+    if(tag)tag.innerHTML+='<span class="soontag">Not built yet</span>';
+  }
+})();
 document.querySelectorAll('.gamecard').forEach(c=>{
   if(c.classList.contains('soon'))return;
   c.onclick=()=>pickGame(c.dataset.game);
@@ -3071,11 +3142,18 @@ function catKeys(){return Object.keys(CATNAME.fi)}
 function catShown(key){
   return S.lang==='en'?key:((CATNAME[S.lang]||{})[key]||key);
 }
+/* Pictures live in their own tables so they can be refreshed without touching
+   the questions. A question with no picture simply shows its words. */
+var QIMG=QIMG||{};          /* quiz row number -> {u:url, c:credit} */
+var PICTURES=PICTURES||[];  /* Picture Guess: [category, answer, w1, w2, w3] */
+var PICASK={en:{}},PICCAT={en:{}};
 const isTrivia=()=>S.game==='trivia';
+const isPicture=()=>S.game==='picture';
+const isAsking=()=>isTrivia()||isPicture();   // the two games with a written question
 // an option is an act in Name the Artist and a plain string in the Quiz
 const optLabel=o=>isTrivia()?o:o[0];
 function quizStart(){
-  if(isTrivia()){
+  if(isAsking()){
     const bank=catBank();
     Q.of=Math.min(S.len||10,bank.length);
     Q.deck=shuffle(bank).slice(0,Q.of);
@@ -3093,7 +3171,7 @@ function quizNext(){
   clearTimeout(Q.timer);
   Q.current=Q.deck[Q.round++];
   Q.answers={};Q.order=[];Q.revealed=false;
-  if(isTrivia()){
+  if(isAsking()){
     Q.qid=Q.current[7];                            // its row in the bank, picture and all
     Q.options=shuffle(Q.current.slice(2,6));
     Q.correct=Q.options.indexOf(Q.current[2]);
@@ -3119,9 +3197,9 @@ function quizNext(){
 function showQuizQuestion(){
   const box=$('q-screen');if(!box)return;
   const pic=QIMG[String(Q.qid)];
-  const back=pic
-    ? '<div class="qpic" style="background-image:url('+JSON.stringify(pic.u)+')"></div><div class="qshade"></div>'
-    : '';
+  // the url goes in through the style property, not through the markup:
+  // a quoted URL inside an attribute closes the attribute and loses the picture
+  const back=pic?'<div class="qpic"></div><div class="qshade"></div>':'';
   const credit=pic&&pic.c?'<div class="qcredit">'+esc(pic.c)+'</div>':'';
   box.innerHTML=back
     +(Q.revealed
@@ -3131,7 +3209,13 @@ function showQuizQuestion(){
     +credit;
   // fade it in once the browser has it, so a slow picture never flashes half-drawn
   const el=box.querySelector('.qpic');
-  if(el&&pic){const im=new Image();im.onload=()=>el.classList.add('on');im.src=pic.u}
+  if(el&&pic){
+    el.style.backgroundImage='url("'+pic.u.replace(/"/g,'%22')+'")';
+    const im=new Image();
+    im.onload=()=>el.classList.add('on');
+    im.onerror=()=>{el.remove();const sh=box.querySelector('.qshade');if(sh)sh.remove()};
+    im.src=pic.u;
+  }
 }
 function showQuizVideo(id){
   const box=$('q-screen');if(!box)return;
@@ -3161,16 +3245,16 @@ function quizReveal(){
   });
   $('q-curtain').classList.add('open');
   $('q-next').textContent=Q.round>=Q.deck.length?'See the winner'
-    :isTrivia()?'Next question':'Next record';
-  if(isTrivia())showQuizQuestion();
+    :isAsking()?'Next question':'Next record';
+  if(isAsking())showQuizQuestion();
   drawQuiz();publishStage();
   clearTimeout(Q.timer);
   // long enough to read the answer out loud, and the video to be worth watching
-  Q.timer=setTimeout(()=>{if(Q.revealed&&Q.on)quizNext()},isTrivia()?9000:10000);
+  Q.timer=setTimeout(()=>{if(Q.revealed&&Q.on)quizNext()},isAsking()?9000:10000);
 }
 function quizFinish(){
   Q.on=false;clearTimeout(Q.timer);
-  try{$('final-eyebrow').textContent=isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
+  try{$('final-eyebrow').textContent=isPicture()?'Sharpest eye':isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
   const box=$('q-screen');if(box)box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
   const best=[...S.players].sort((a,b)=>(b.score||0)-(a.score||0));
   const top=best[0]?(best[0].score||0):0;
@@ -3190,8 +3274,8 @@ function quizFinish(){
 }
 function drawQuiz(){
   if(!Q.current)return;
-  $('q-count').textContent=(isTrivia()?'Question ':'Record ')+Q.round+' of '+Q.deck.length;
-  $('q-ask').textContent=isTrivia()
+  $('q-count').textContent=(isAsking()?'Question ':'Record ')+Q.round+' of '+Q.deck.length;
+  $('q-ask').textContent=isAsking()
     ? Q.current[0]
     : Q.revealed ? Q.current[0]+' — '+trackOf(Q.current)+', '+yearOf(Q.current)
     : 'Who is this?';
@@ -3399,16 +3483,16 @@ function hostAct(m){
 }
 
 function quizState(phase){
-  return {v:1,game:isTrivia()?'trivia':'artist',phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
+  return {v:1,game:S.game,phase:screenNow()==='s-final'?'over':(Q.on?'live':phase),
     round:Q.round,of:Q.deck.length,revealed:!!Q.revealed,
     correct:Q.revealed?Q.correct:-1,
     setup:setupLine(),
     remote:!!S.remote,
-    vid:isTrivia()||!Q.current||!S.remote?'':videoFor(Q.current),
-    ask:isTrivia()&&Q.current?Q.current[1]:'',
-    cat:isTrivia()&&Q.current?Q.current[0]:'',
+    vid:isAsking()||!Q.current||!S.remote?'':videoFor(Q.current),
+    ask:isAsking()&&Q.current?Q.current[1]:'',
+    cat:isAsking()&&Q.current?Q.current[0]:'',
     act:!Q.revealed||!Q.current?null
-      :isTrivia()?{name:Q.current[2],track:'',year:''}
+      :isAsking()?{name:Q.current[2],track:'',year:''}
       :{name:Q.current[0],track:trackOf(Q.current),year:yearOf(Q.current)},
     options:Q.options.map(optLabel),
     seats:S.players.map(p=>({id:p.id,pid:p.pid||'',name:p.name,icon:p.icon,
@@ -3418,9 +3502,12 @@ function quizState(phase){
 }
 // everyone on a phone should see what is being chosen, so they can argue about it
 function setupLine(){
-  const g=S.game==='trivia'?'Quiz':S.game==='artist'?'Name the Artist':'The Chair';
+  const g=S.game==='trivia'?'Quiz':S.game==='picture'?'Picture Guess'
+    :S.game==='artist'?'Name the Artist':'The Chair';
   const bits=[g];
-  if(S.game==='trivia'){
+  if(S.game==='picture'){
+    bits.push((S.len||10)+' pictures');
+  }else if(S.game==='trivia'){
     bits.push(S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English');
     bits.push(S.cats&&S.cats.length?S.cats.map(catShown).join(', '):'All six topics');
     bits.push((S.len||10)+' questions');
@@ -3439,7 +3526,7 @@ function stageState(){
   const phase=inPrep()?'lobby'
     :screenNow()==='s-final'?'over'
     :turnsOpen?'live':revealed?'locked':'between';
-  if((S.game==='artist'||S.game==='trivia')&&!inPrep())
+  if((S.game==='artist'||isAsking())&&!inPrep())
     return quizState(phase);
   return {setup:setupLine(),remote:!!S.remote,v:1,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
     blockTarget:(blockTarget===null?null:blockTarget),
@@ -3696,7 +3783,7 @@ function drawPad(){
     sp.hidden=!show;
     if(show)sp.innerHTML='<b>Tonight</b><br>'+esc(st.setup);
   }
-  if(st.game==='artist'||st.game==='trivia'){
+  if(st.game==='artist'||st.game==='trivia'||st.game==='picture'){
     // the record plays on the phone as well, behind a curtain until the reveal,
     // so somebody who could not make it in person can still hear it
     drawPadScreen({phase:(st.remote&&st.vid)?'live':'',vid:st.vid||'',hide:!st.revealed});
@@ -3819,15 +3906,18 @@ $('to-rules')&&($('to-rules').onclick=()=>{updatePool();dressRules();show('s-rul
 function dressRules(){
   try{dressWhere()}catch(e){}
   const triv=S.game==='trivia';
-  const quiz=S.game==='artist'||triv;      // neither builds teams
+  const pic=S.game==='picture';
+  const quiz=S.game==='artist'||triv||pic;   // none of them build teams
   // the era and genre filters belong to the record collection, not to trivia
   [['eras'],['genres']].forEach(id=>{
     const box=$(id[0]),lab=box&&box.previousElementSibling;
-    if(box)box.hidden=triv;
-    if(lab&&lab.classList.contains('field-label'))lab.hidden=triv;
+    if(box)box.hidden=triv||pic;
+    if(lab&&lab.classList.contains('field-label'))lab.hidden=triv||pic;
   });
-  try{$('pool').hidden=triv}catch(e){}
-  try{$('rules-sub').textContent=triv
+  try{$('pool').hidden=triv||pic}catch(e){}
+  try{$('rules-sub').textContent=pic
+    ? 'Nobody has to agree with the host. Settle on how many pictures and where everyone is sitting.'
+    : triv
     ? 'Nobody has to agree with the host. Pick the topics you want and how long the night runs.'
     : 'Nobody has to agree with the host. Argue about the years, settle on a genre, then go.'}catch(e){}
   // the topics belong to the quiz, the way era and genre belong to the records
@@ -3840,13 +3930,16 @@ function dressRules(){
   if(ts)ts.hidden=quiz;
   if(lab&&lab.classList.contains('field-label'))lab.hidden=quiz;
   const ln=$('length'),lnlab=ln&&ln.previousElementSibling;
-  if(lnlab)lnlab.textContent=triv?'How many questions tonight'
+  if(lnlab)lnlab.textContent=pic?'How many pictures tonight'
+    :triv?'How many questions tonight'
     :quiz?'How many records tonight':'How many auditions tonight';
   const until=ln&&[...ln.querySelectorAll('button')].find(b=>b.dataset.l==='0');
   if(until)until.hidden=quiz;                 // a quiz has no teams to fill
   if(quiz&&!S.len){S.len=10;segPick('length','l','10')}
   const note=$('rules-note');
-  if(note)note.textContent=triv
+  if(note)note.textContent=pic
+    ? 'Cities, landmarks, paintings and nature, mixed. Everyone answers, then the answer goes up.'
+    : triv
     ? 'Six categories, mixed. Everyone answers, then the answer goes up.'
     : quiz
     ? 'The record plays behind the curtain. Everyone answers, then it opens.'
@@ -3869,8 +3962,8 @@ $('lobby-start')&&($('lobby-start').onclick=()=>{
   }
   S.players.filter(p=>p.pid).forEach(p=>addFriend(p.name));   // worth remembering
   drawFriends();
-  if(S.game==='artist'||S.game==='trivia'){
-    try{$('meta').textContent=S.game==='trivia'?'quiz':'name the artist'}catch(e){}
+  if(S.game==='artist'||isAsking()){
+    try{$('meta').textContent=S.game==='trivia'?'quiz':S.game==='picture'?'picture guess':'name the artist'}catch(e){}
     show('s-quiz');fitScreen();quizStart();
   }
   else beginSeason();
