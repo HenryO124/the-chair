@@ -657,6 +657,36 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   border-radius:50%;background:radial-gradient(ellipse at center,rgba(230,110,86,.55),transparent 68%);filter:blur(9px)}
 .spot svg{position:absolute;inset:0;width:100%;height:100%}
 .modes-title{font-family:var(--disp);font-weight:800;margin:2px 0 16px;font-size:clamp(28px,3.6vw,46px)}
+.backlink{background:none;border:0;padding:0 0 6px;cursor:pointer;color:var(--muted);
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.backlink:hover{color:var(--bone)}
+
+/* menu 1: a short list of the things you can do tonight */
+.menugrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.menutile{grid-column:span 1;display:flex;align-items:center;gap:15px;text-align:left;
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;color:inherit;font:inherit;
+  padding:clamp(14px,1.7vw,20px);cursor:pointer;transition:border-color .15s,transform .15s}
+.menutile.lead{grid-column:1/-1;border-color:var(--red);
+  background:linear-gradient(110deg,rgba(196,52,44,.9),rgba(140,33,27,.72))}
+.menutile.lead .mtdesc{color:rgba(255,240,236,.82)}
+.menutile.lead .mticon{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#FFF1ED}
+.menutile.lead .garrow{color:#FFF1ED}
+.menutile:hover:not(.soon){border-color:var(--gold);transform:translateY(-2px)}
+.menutile.lead:hover{border-color:#FFD9CF}
+.menutile .mticon{flex:0 0 auto;width:48px;height:48px;border-radius:13px;display:grid;place-items:center;
+  border:1px solid var(--line);background:var(--panel2);color:var(--red)}
+.menutile .mticon svg{width:25px;height:25px;display:block}
+.menutile .mtbody{flex:1 1 auto;min-width:0}
+.menutile .mtname{display:block;font-family:var(--disp);font-weight:800;line-height:1.15;
+  font-size:clamp(18px,2vw,24px)}
+.menutile .mtdesc{display:block;margin-top:5px;color:var(--muted);font-size:13.5px;line-height:1.5}
+.menutile.soon{opacity:.45;cursor:default}
+@media (max-width:1040px){.menugrid{grid-template-columns:1fr}.menutile.lead{grid-column:auto}}
+/* "Learn the games" shows the same cards, but nothing to press */
+body.learning .startbar{display:none}
+body.learning .gamecard{cursor:default}
+body.learning .gamecard.sel{border-color:var(--line);background:var(--panel)}
+body.learning .gamecard .garrow{display:none}
 
 /* the shelf of games */
 .shelf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 18px}
@@ -682,8 +712,9 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 .gamecard .garrow{flex:0 0 auto;align-self:center;color:var(--muted);font-size:19px;line-height:1}
 .gamecard:hover:not(.soon) .garrow,.gamecard.sel .garrow{color:var(--red)}
 .gamecard.soon{opacity:.45;cursor:default}
-.gamecard .soontag{display:inline-block;margin-left:8px;padding:1px 6px;border-radius:5px;
-  border:1px solid var(--line);font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;color:var(--muted)}
+.soontag{display:inline-block;margin-left:9px;padding:2px 7px;border-radius:5px;vertical-align:middle;
+  border:1px solid var(--line);font-family:var(--mono);font-weight:400;font-size:8.5px;line-height:1.4;
+  letter-spacing:.12em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
 
 /* the bar along the bottom: this is where a night actually begins */
 .startbar{display:flex;align-items:center;gap:clamp(10px,1.6vw,18px);flex-wrap:wrap;
@@ -767,11 +798,8 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   <div class="masthead">
     <div class="logo">THE <span>CHAIR</span></div>
     <div style="display:flex;align-items:center;gap:12px">
-      <nav class="hnav">
-        <button type="button" class="on">Game modes</button>
-      </nav>
       <div class="meta" id="meta">blind signings</div>
-      <button class="brk" id="break">Break</button>
+      <button class="brk" id="break" style="display:none">Break</button>
     </div>
   </div>
 
@@ -788,14 +816,11 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
     <p class="note">Going to setup abandons the season in progress. Your video library is kept.</p>
   </section>
 
-  <!-- START: pick a game -->
-  <section class="screen on" id="s-setup">
-    <div class="home">
-
-      <aside class="home-hero">
+  <!-- the hero is the same on both menus, so it is written once and cloned -->
+  <template id="tpl-hero">
         <div class="eyebrow">Party game</div>
         <div class="hero-title">The Chair</div>
-        <p class="sub">A game night with a few different games in it. Everyone plays from their own phone; this screen does the work.</p>
+        <p class="sub">A party game platform with several game modes. Play with friends and family, each on their own phone.</p>
         <div class="spot" aria-hidden="true">
           <div class="beam"></div>
           <svg viewBox="0 0 300 300" fill="none">
@@ -822,10 +847,86 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
           </svg>
           <div class="pool"></div>
         </div>
-      </aside>
+  </template>
+
+  <!-- MENU 1: what do you want to do tonight -->
+  <section class="screen on" id="s-home">
+    <div class="home">
+      <aside class="home-hero"></aside>
+      <div class="home-main">
+        <div class="eyebrow">Main menu</div>
+        <div class="modes-title">Play The Chair</div>
+
+        <div class="menugrid">
+          <button type="button" class="menutile lead" id="m-create">
+            <span class="mticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M12 8.4v7.2M8.4 12h7.2"/></svg></span>
+            <span class="mtbody">
+              <span class="mtname">Create a game</span>
+              <span class="mtdesc">Open a room, pick a game, agree the settings together, and invite the others.</span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="menutile soon" disabled id="m-public">
+            <span class="mticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.8 2.6 15.2 0 18"/><path d="M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg></span>
+            <span class="mtbody">
+              <span class="mtname">Join public games<span class="soontag">Not built yet</span></span>
+              <span class="mtdesc">Browse rooms other people have left open and drop into one.</span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="menutile" id="m-code">
+            <span class="mticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="8.6" cy="8.4" r="3.1"/><path d="M2.6 19.2c0-3.3 2.7-5 6-5s6 1.7 6 5"/>
+              <path d="M16 5.9a3 3 0 0 1 0 5.2"/><path d="M17.9 14.6c2 .7 3.1 2.2 3.1 4.6"/></svg></span>
+            <span class="mtbody">
+              <span class="mtname">Join with code</span>
+              <span class="mtdesc">Someone has a room open. Type the four letters and take a chair.</span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="menutile" id="m-solo">
+            <span class="mticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+              stroke-linejoin="round"><path d="M13.2 2.6 4.6 13.4h5.6l-1.4 8 8.6-10.8h-5.6z"/></svg></span>
+            <span class="mtbody">
+              <span class="mtname">Quick start, on your own</span>
+              <span class="mtdesc">No room, no phones, no waiting. Straight into a game on this screen.</span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="menutile" id="m-learn">
+            <span class="mticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="2.5" y="7" width="19" height="10.5" rx="4"/><path d="M7 12.2h3M8.5 10.7v3"/>
+              <circle cx="16" cy="11.3" r=".9" fill="currentColor" stroke="none"/>
+              <circle cx="17.9" cy="13.6" r=".9" fill="currentColor" stroke="none"/></svg></span>
+            <span class="mtbody">
+              <span class="mtname">Learn the games</span>
+              <span class="mtdesc">What each game is and how a round of it actually goes.</span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <p class="homefoot">
+      <button type="button" class="sidelink" id="open-lib">Video library</button>
+      <span class="dot">&middot;</span><span id="buildtag"></span>
+    </p>
+  </section>
+
+  <!-- MENU 2: which game -->
+  <section class="screen" id="s-setup">
+    <div class="home">
+      <aside class="home-hero"></aside>
 
       <div class="home-main">
-        <div class="eyebrow">Choose a game</div>
+        <button type="button" class="backlink" id="modes-back">&larr; Main menu</button>
+        <div class="eyebrow" id="modes-eyebrow">Create a game</div>
         <div class="modes-title">Game Modes</div>
 
         <div class="shelf">
@@ -907,14 +1008,8 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
       <span class="sbt">Start a game</span>
       <span class="sbd"></span>
       <span class="sbx" id="bar-hint">Open a room, pass the code around, and everyone takes a chair from their own phone.</span>
-      <button type="button" class="btn ghost" id="join-open">Join with code</button>
       <button type="button" class="btn" id="create-room">+ Create room</button>
     </div>
-
-    <p class="homefoot">
-      <button type="button" class="sidelink" id="open-lib">Video library</button>
-      <span class="dot">&middot;</span><span id="buildtag"></span>
-    </p>
   </section>
 
   <!-- LOBBY: the chairs arrive on their own phones -->
@@ -1373,11 +1468,12 @@ function show(id){
   try{$('infopanel').classList.toggle('on',id==='s-listen')}catch(e){}
   try{$('leftcol').style.display=(id==='s-listen')?'':'none'}catch(e){}
   // the top-bar nav only makes sense on the front door
-  try{document.body.classList.toggle('screen-home',id==='s-setup')}catch(e){}
+  try{document.body.classList.toggle('screen-home',id==='s-home'||id==='s-setup')}catch(e){}
   document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));window.scrollTo(0,0);
   if(id==='s-listen')fitScreen();
   if(id==='s-go')try{drawGo()}catch(e){}
-  try{$('break').style.display=(id==='s-chair')?'none':''}catch(e){}
+  // nothing to take a break from on the menus
+  try{$('break').style.display=(id==='s-chair'||id==='s-home'||id==='s-setup')?'none':''}catch(e){}
 }
 
 
@@ -1629,22 +1725,60 @@ function resolveRandom(){
   S.era=c.e;S.genre=c.g;
 }
 
-/* --- the front door: pick a game, then open the room --- */
+/* ===== the two menus: what are we doing, then which game ===== */
+// the hero is written once in a <template> and cloned into both menus
+try{const h=$('tpl-hero');
+  document.querySelectorAll('.home-hero').forEach(a=>a.appendChild(h.content.cloneNode(true)));
+}catch(e){}
+
 const GAMEBLURB={chair:'Open a room, pass the code around, and everyone takes a chair from their own phone.',
   artist:'Open a room and pass the code around. Four names land on every phone, once per record.'};
+const SOLOBLURB={chair:'One screen, one coach, and a pile of records. No room, nobody to wait for.',
+  artist:'Four names on this screen, record after record, scored as you go.'};
+let LEARNING=false, SOLO=false;
 function pickGame(name){
-  if(!GAMEBLURB[name])return;                       // the unbuilt ones stay unpickable
+  if(!GAMEBLURB[name]||LEARNING)return;             // the unbuilt ones stay unpickable
   S.game=name;
   document.querySelectorAll('.gamecard').forEach(c=>c.classList.toggle('sel',c.dataset.game===name));
-  try{$('bar-hint').textContent=GAMEBLURB[name]}catch(e){}
+  try{$('bar-hint').textContent=(SOLO?SOLOBLURB:GAMEBLURB)[name]}catch(e){}
+}
+// menu 2, dressed for whichever door you came through
+function openModes(mode){
+  LEARNING=(mode==='learn'); SOLO=(mode==='solo');
+  document.body.classList.toggle('learning',LEARNING);
+  $('modes-eyebrow').textContent=LEARNING?'How they play':SOLO?'Quick start, on your own':'Create a game';
+  const go=$('create-room');
+  if(go)go.textContent=SOLO?'Start on this screen':'+ Create room';
+  const bar=document.querySelector('.startbar .sbt');
+  if(bar)bar.textContent=SOLO?'Play on your own':'Start a game';
+  if(!LEARNING)pickGame(GAMEBLURB[S.game]?S.game:'chair');
+  show('s-setup');
 }
 document.querySelectorAll('.gamecard').forEach(c=>{
   if(c.classList.contains('soon'))return;
   c.onclick=()=>pickGame(c.dataset.game);
-  c.ondblclick=()=>{pickGame(c.dataset.game);openLobby()};   // for the impatient
+  c.ondblclick=()=>{if(!LEARNING){pickGame(c.dataset.game);goFromModes()}};   // for the impatient
 });
-$('create-room')&&($('create-room').onclick=()=>{if(!GAMEBLURB[S.game])pickGame('chair');openLobby()});
-$('nav-lib')&&($('nav-lib').onclick=()=>{try{$('open-lib').click()}catch(e){}});
+// one chair, this screen, no broker: straight to the settings and away
+function startSolo(){
+  try{partyEnd()}catch(e){}
+  const keep=S.players[0]&&S.players[0].photo;
+  S.players=[mkPlayer('',0,0,'',keep)];
+  S.players.forEach(p=>{p.team=[];p.blockUsed=false;p.passed=false;p.score=0});
+  try{drawPlayers();validate()}catch(e){}
+  try{updatePool();dressRules()}catch(e){}
+  show('s-rules');
+}
+function goFromModes(){
+  if(!GAMEBLURB[S.game])pickGame('chair');
+  if(SOLO)startSolo(); else openLobby();
+}
+$('create-room')&&($('create-room').onclick=goFromModes);
+$('m-create')&&($('m-create').onclick=()=>openModes('create'));
+$('m-solo')&&($('m-solo').onclick=()=>openModes('solo'));
+$('m-learn')&&($('m-learn').onclick=()=>openModes('learn'));
+$('modes-back')&&($('modes-back').onclick=()=>{LEARNING=SOLO=false;
+  document.body.classList.remove('learning');show('s-home')});
 function beginSeason(){
   // whatever route we came by, every chair must be a full player before the first record
   S.players=S.players.map((p,i)=>p&&p.team?p
@@ -1931,7 +2065,7 @@ $('open-lib').onclick=()=>{
   if(!SERVED)$('lib-msg').textContent=fileWarning();
   show('s-library');
 };
-$('lib-done').onclick=()=>show('s-setup');
+$('lib-done').onclick=()=>show('s-home');
 
 $('lib-export').onclick=()=>{
   const blob=new Blob([JSON.stringify({videos:VIDEOS,status:VSTATUS},null,2)],
@@ -2139,10 +2273,10 @@ $('break').onclick=()=>{
 $('to-setup').onclick=()=>{
   clearInterval(timer);timer=null;heldClip=false;
   $('infopanel').classList.remove('on');
-  show('s-setup');
+  show('s-home');
 };
 $('resume').onclick=()=>{
-  const back=$('resume').dataset.back||'s-setup';
+  const back=$('resume').dataset.back||'s-home';
   show(back);
   if(back==='s-listen'){
     if(heldClip)resumeClip();
@@ -2247,7 +2381,7 @@ $('restart').onclick=()=>{
   S.players.forEach(p=>{p.team=[];p.blockUsed=false;p.passed=false;p.score=0});
   S.round=0;S.current=null;
   try{$('meta').textContent=''}catch(e){}
-  try{closeLobby()}catch(e){show('s-setup')}
+  try{closeLobby()}catch(e){show('s-home')}
 };
 
 /* ==================================================================
@@ -2485,7 +2619,7 @@ function closeLobby(){
   partyEnd();
   S.players=S.players.filter(p=>!p.pid&&!p.reserved);   // the phones are not here any more
   if(!S.players.length)S.players=[mkPlayer('',0,0,'')];
-  drawPlayers();validate();show('s-setup');
+  drawPlayers();validate();show('s-home');
 }
 
 
@@ -3145,7 +3279,7 @@ function followInvitation(){
 }
 
 /* --- wiring --- */
-$('join-open')&&($('join-open').onclick=openChairScreen);
+$('m-code')&&($('m-code').onclick=openChairScreen);
 $('lobby-back')&&($('lobby-back').onclick=closeLobby);
 $('to-rules')&&($('to-rules').onclick=()=>{updatePool();dressRules();show('s-rules')});
 function dressRules(){
@@ -3218,7 +3352,7 @@ $('join-chips')&&($('join-chips').addEventListener('click',e=>{
   $('join-chips').hidden=true;
   sendJoin(b.textContent,PARTY.claim);
 }));
-$('join-back')&&($('join-back').onclick=()=>{partyEnd();show('s-setup')});
+$('join-back')&&($('join-back').onclick=()=>{partyEnd();show('s-home')});
 $('join-code')&&($('join-code').addEventListener('input',e=>{
   e.target.value=e.target.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);
 }));
