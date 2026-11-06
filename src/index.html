@@ -5624,11 +5624,29 @@ const isPicture=()=>S.game==='picture';
 const isAsking=()=>isTrivia()||isPicture()||isTF();   // the games with a written question
 // an option is an act in Name the Artist and a plain string in the Quiz
 const optLabel=o=>isAsking()?o:o[0];
+function evenDeck(bank,want){
+  // one from each topic in turn, so a thin topic gets as many as a fat one
+  const by={},order=[];
+  bank.forEach(q=>{const k=q[0];if(!by[k]){by[k]=[];order.push(k)}by[k].push(q)});
+  order.forEach(k=>{by[k]=shuffle(by[k])});
+  const out=[],turn=shuffle(order);
+  let i=0;
+  while(out.length<want){
+    let took=false;
+    for(let t=0;t<turn.length&&out.length<want;t++){
+      const pile=by[turn[t]];
+      if(i<pile.length){out.push(pile[i]);took=true}
+    }
+    if(!took)break;                       // every pile is empty
+    i++;
+  }
+  return shuffle(out);                    // dealt evenly, then asked in any order
+}
 function quizStart(){
   if(isAsking()){
     const bank=catBank();
     Q.of=Math.min(S.len||10,bank.length);
-    Q.deck=shuffle(bank).slice(0,Q.of);
+    Q.deck=evenDeck(bank,Q.of);
   }else{
     const p=pool().filter(a=>videoFor(a));        // no video, no question
     Q.of=Math.min(S.len||10,p.length);
