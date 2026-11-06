@@ -1100,6 +1100,84 @@ body.learning .gamecard .garrow{display:none}
 .qsc.ok,.qsc.done.ok{border-color:#49C27B;background:rgba(73,194,123,.14);color:#BFF3D2}
 .qsc.ok b{color:#8FE3B0}
 
+
+/* ============ the neon pass: the front page as drawn in the mockup ======== */
+:root{
+  --red:#E4182E; --red-dim:#8A0F1D; --mag:#FF2E88;
+  --glow:0 0 22px rgba(228,24,46,.42);
+  --glowsoft:0 0 30px rgba(228,24,46,.2);
+}
+body.screen-home{
+  background:
+    radial-gradient(60% 42% at 50% -8%,rgba(228,24,46,.30) 0%,transparent 70%),
+    radial-gradient(45% 50% at 96% 8%,rgba(255,46,136,.16) 0%,transparent 70%),
+    radial-gradient(70% 50% at 50% 108%,rgba(140,16,60,.22) 0%,transparent 70%),
+    #0B0507;
+}
+body.screen-home .masthead{border-bottom-color:rgba(255,70,100,.22)}
+/* the bar across the top */
+.tn{display:inline-flex;align-items:center;gap:8px;border-radius:22px;padding:8px 16px;
+  font-family:var(--disp);font-weight:700;font-size:13.5px;letter-spacing:0;text-transform:none;
+  color:#C9AEB6}
+.tn svg{width:17px;height:17px}
+.tn.sel{color:#fff;background:linear-gradient(180deg,#E4182E,#A50F22);border-color:#FF4A63;
+  box-shadow:var(--glow)}
+.mechip{border-color:rgba(255,70,100,.3);box-shadow:var(--glowsoft)}
+.meav{background:linear-gradient(140deg,#FF2E88,#E4182E)}
+/* the hero */
+body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
+.hero2 .home-hero .spot .beam{
+  background:linear-gradient(to bottom,rgba(255,60,90,.5),rgba(228,24,46,.16) 55%,transparent)}
+.hero2 .home-hero .spot::after{             /* the podium the chair stands on */
+  content:'';position:absolute;left:50%;bottom:2%;width:76%;height:15%;transform:translateX(-50%);
+  border-radius:50%;background:radial-gradient(closest-side,rgba(255,70,100,.55),rgba(228,24,46,.12) 70%,transparent);
+  filter:blur(6px)}
+.hero2-row .btn.big{background:linear-gradient(180deg,#F02038,#A50F22);border:1px solid #FF5C72;
+  box-shadow:0 0 28px rgba(228,24,46,.5),inset 0 1px 0 rgba(255,255,255,.25)}
+.hero2-row .btn.big:hover{filter:brightness(1.08)}
+.joinpill{border-color:rgba(255,70,100,.34);box-shadow:var(--glowsoft);background:rgba(32,10,16,.72)}
+#home-code{border-color:rgba(255,70,100,.34);color:#FFD37A;background:#15070B}
+.jp-go{background:linear-gradient(180deg,#F02038,#A50F22);box-shadow:var(--glow)}
+/* the filter row */
+.modefilter{background:rgba(26,8,14,.7);border-color:rgba(255,70,100,.22);box-shadow:var(--glowsoft)}
+.modefilter button{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;
+  border-color:rgba(255,70,100,.26);background:rgba(44,12,22,.6);color:#D9C2C8}
+.modefilter button svg{width:16px;height:16px}
+.modefilter button.sel{background:linear-gradient(180deg,#E4182E,#A50F22);border-color:#FF5C72;
+  box-shadow:var(--glow);color:#fff}
+/* the list of open parties */
+.hpanel{background:rgba(26,8,14,.62);border-color:rgba(255,70,100,.22);box-shadow:var(--glowsoft)}
+.hptitle{font-size:15px;font-family:var(--disp);font-weight:800;letter-spacing:.06em}
+.livedot{background:#36E27B;box-shadow:0 0 14px rgba(54,226,123,.8)}
+.hpfilter button{border-color:rgba(255,70,100,.26);background:rgba(44,12,22,.6);color:#D9C2C8;
+  padding:8px 18px;font-size:12.5px;font-family:var(--disp);font-weight:700}
+.hpfilter button.sel{background:linear-gradient(180deg,#E4182E,#A50F22);border-color:#FF5C72;
+  box-shadow:var(--glow);color:#fff}
+.prow{gap:16px;padding:12px;margin:10px 0;border:1px solid rgba(255,70,100,.2);border-radius:14px;
+  background:rgba(40,12,22,.45)}
+.prow:last-child{border-bottom:1px solid rgba(255,70,100,.2)}
+.prow:hover{border-color:rgba(255,90,120,.45);box-shadow:var(--glowsoft)}
+.pthumb{width:64px;height:48px;border-radius:10px;flex:0 0 auto;display:grid;place-items:center;
+  background:radial-gradient(closest-side,rgba(255,70,100,.4),rgba(20,6,10,.9));
+  border:1px solid rgba(255,70,100,.3)}
+.pthumb svg{width:26px;height:26px;color:#FF8097}
+.prow .pn b{font-size:17px}
+.prow .pg{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;
+  padding-left:16px;border-left:1px solid rgba(255,70,100,.18)}
+.prow .pg svg{width:16px;height:16px;color:#FF8097}
+.ptag.wait{color:#FFD15C;border-color:rgba(255,209,92,.6);box-shadow:0 0 14px rgba(255,209,92,.18)}
+.ptag.live{color:#5BC8FF;border-color:rgba(91,200,255,.6);box-shadow:0 0 14px rgba(91,200,255,.18)}
+.prow .btn{background:linear-gradient(180deg,#F02038,#A50F22);border:1px solid #FF5C72;
+  box-shadow:var(--glow);display:inline-flex;align-items:center;gap:8px}
+.prow .btn.ghost{background:none;border-color:rgba(255,70,100,.35);box-shadow:none}
+/* the two tiles at the bottom */
+.homefoot .menutile{border-color:rgba(255,70,100,.22);background:rgba(26,8,14,.62);
+  box-shadow:var(--glowsoft);border-radius:16px}
+.homefoot .menutile:hover{border-color:rgba(255,90,120,.5)}
+.homefoot .mticon{background:radial-gradient(closest-side,rgba(255,70,100,.35),rgba(20,6,10,.9));
+  border:1px solid rgba(255,70,100,.3)}
+/* the opening titles get the same light */
+.introname{text-shadow:0 0 50px rgba(228,24,46,.5)}
 </style>
 </head>
 <body class="screen-home">
@@ -1113,9 +1191,9 @@ body.learning .gamecard .garrow{display:none}
   <div class="masthead">
     <div class="logo">THE <span>CHAIR</span></div>
     <nav class="topnav" id="topnav">
-      <button type="button" class="tn sel" id="nav-home">Home</button>
-      <button type="button" class="tn" id="nav-modes">Game modes</button>
-      <button type="button" class="tn" id="nav-learn">How to play</button>
+      <button type="button" class="tn sel" id="nav-home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 11.2 12 4.5l8 6.7V20h-5.4v-5.1H9.4V20H4z"/></svg>Home</button>
+      <button type="button" class="tn" id="nav-modes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg>Game modes</button>
+      <button type="button" class="tn" id="nav-learn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>How to play</button>
     </nav>
     <button type="button" class="mechip" id="me-chip" title="Your name on this device">
       <span class="meav"></span><span id="me-name">Player 1</span></button>
@@ -1204,11 +1282,11 @@ body.learning .gamecard .garrow{display:none}
     <div class="modefilter" id="mode-filter">
       <span class="mflab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
         <path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>Filter by game</span>
-      <button type="button" data-g="all" class="sel">All games</button>
-      <button type="button" data-g="chair">The Chair</button>
-      <button type="button" data-g="trivia">Quiz</button>
-      <button type="button" data-g="picture">Picture Guess</button>
-      <button type="button" data-g="artist">Name the Artist</button>
+      <button type="button" data-g="all" class="sel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg>All games</button>
+      <button type="button" data-g="chair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4.6h10v7H7z"/><path d="M5.5 11.6h13v3.2h-13z"/><path d="M7 14.8V20M17 14.8V20"/></svg>The Chair</button>
+      <button type="button" data-g="trivia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>Quiz</button>
+      <button type="button" data-g="picture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>Picture Guess</button>
+      <button type="button" data-g="artist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>Name the Artist</button>
     </div>
 
     <div class="hpanel">
@@ -3028,7 +3106,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 20:51';
+const BUILD='06.11. 21:05';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -3986,6 +4064,11 @@ function dirStart(){
   DIR.timer=setInterval(()=>{drawRooms()},10000);
 }
 const GAMELABEL={chair:'The Chair',artist:'Name the Artist',trivia:'Quiz',picture:'Picture Guess'};
+const GAMEICON={
+  chair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4.6h10v7H7z"/><path d="M5.5 11.6h13v3.2h-13z"/><path d="M7 14.8V20M17 14.8V20"/></svg>',
+  artist:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>',
+  trivia:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>',
+  picture:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>'};
 function drawRooms(){
   const box=$('pub-list');if(!box)return;
   const now=Date.now();
@@ -4008,9 +4091,13 @@ function drawRooms(){
     const full=r.p>=r.m, live=r.s==='live';
     const name=esc(r.n||'Someone');
     return '<div class="prow">'
-      +'<div class="pn"><b>'+name+'\u2019s room</b><span>Room '+esc(r.c)+'</span></div>'
-      +'<div class="pg">'+esc(GAMELABEL[r.g]||'A game')+'</div>'
-      +'<div class="pg">'+r.p+'/'+r.m+' players</div>'
+      +'<div class="pthumb">'+(GAMEICON[r.g]||GAMEICON.chair)+'</div>'
+      +'<div class="pn"><b>'+name+'\u2019s party</b><span>Room '+esc(r.c)+'</span></div>'
+      +'<div class="pg">'+(GAMEICON[r.g]||'')+esc(GAMELABEL[r.g]||'A game')+'</div>'
+      +'<div class="pg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">'
+      +'<circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/>'
+      +'<path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>'
+      +r.p+'/'+r.m+' players</div>'
       +'<span class="ptag '+(live?'live':'wait')+'">'+(live?'In progress':'Waiting')+'</span>'
       +'<button type="button" class="btn'+((full&&!live)?' ghost':'')+'" data-join="'+esc(r.c)+'">'
       +(live?'Ask to join':full?'Full':'Join')+'</button></div>';
