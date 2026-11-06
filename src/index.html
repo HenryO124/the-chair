@@ -621,13 +621,40 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   background:var(--panel);font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--muted)}
 .padsetup b{color:var(--bone);font-weight:700}
 /* the final table, on every phone and not only on the television */
-.padboard{display:grid;gap:7px;margin:4px 0 2px}
-.pbrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
-  padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel)}
-.pbrow.lead{border-color:var(--gold);background:rgba(216,163,63,.12)}
-.pbrow.me .pbn{color:var(--bone)}
-.pbrow .pbn{font-weight:700;font-size:14px;color:var(--muted)}
-.pbrow .pbv{font-family:var(--mono);font-size:13px;color:var(--gold)}
+.padfinal{display:block}
+/* the podium: the winner big, everybody else in a row beneath */
+.podium{text-align:center;padding:4px 0 2px}
+.podium .crown{font-size:30px;line-height:1;margin-bottom:-6px;
+  filter:drop-shadow(0 3px 10px rgba(216,163,63,.55))}
+.podium .seat{position:relative;width:104px;height:104px;margin:0 auto;border-radius:20px;
+  overflow:hidden;border:2px solid var(--gold);background:var(--panel2);
+  box-shadow:0 0 0 6px rgba(216,163,63,.1),0 14px 40px rgba(216,163,63,.22)}
+.podium .seat svg,.podium .seat img{display:block;width:100%;height:100%}
+.podium .step{width:150px;height:13px;margin:-4px auto 12px;border-radius:0 0 13px 13px;
+  background:linear-gradient(180deg,var(--gold),rgba(216,163,63,.25))}
+.podium .who{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:20px;
+  border:1px solid var(--gold);font-family:var(--disp);font-weight:800;font-size:17px}
+.podium .who em{font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;
+  color:var(--gold)}
+.podium .line{margin:13px 0 2px;font-family:var(--disp);font-weight:800;
+  font-size:clamp(19px,5.4vw,25px);line-height:1.2}
+.restrow{display:flex;gap:10px;overflow-x:auto;padding:12px 2px 4px;margin:10px 0 0;
+  border-top:1px solid var(--line)}
+.restrow .r{flex:0 0 auto;width:72px;text-align:center}
+.restrow .rank{display:inline-grid;place-items:center;width:21px;height:21px;border-radius:50%;
+  border:1px solid var(--line);background:var(--panel2);margin-bottom:5px;
+  font-family:var(--mono);font-size:10px;color:var(--muted)}
+.restrow .r.me .rank{border-color:var(--bone);color:var(--bone)}
+.restrow .av{width:56px;height:56px;margin:0 auto 6px;border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);background:var(--panel2)}
+.restrow .av svg,.restrow .av img{display:block;width:100%;height:100%}
+.restrow .nm{font-size:12px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.restrow .pt{font-family:var(--mono);font-size:10.5px;color:var(--gold)}
+.roomline{display:flex;align-items:center;justify-content:center;gap:8px;margin:14px 0 2px;
+  padding:9px 12px;border-radius:20px;border:1px solid var(--line);background:var(--panel);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--muted)}
+.roomline b{color:var(--gold);letter-spacing:.14em}
+.roomline .dot{width:9px;height:9px;border-radius:50%;background:#49C27B}
 /* the ballot on a phone: tap the topics you want tonight */
 .padvote{margin:0 0 14px;padding:12px 13px;border-radius:12px;
   border:1px solid var(--line);background:var(--panel)}
@@ -3590,7 +3617,7 @@ function quizState(phase){
       :isAsking()?{name:Q.current[2],track:'',year:''}
       :{name:Q.current[0],track:trackOf(Q.current),year:yearOf(Q.current)},
     options:Q.options.map(optLabel),
-    seats:S.players.map(p=>({id:p.id,pid:p.pid||'',name:p.name,icon:p.icon,
+    seats:S.players.map(p=>({id:p.id,pid:p.pid||'',name:p.name,icon:p.icon,photo:p.photo||'',
       said:(p.id in Q.answers),pick:Q.revealed?(p.id in Q.answers?Q.answers[p.id]:-1):-1,
       score:p.score||0,team:[],passed:false,full:false,blockUsed:false,total:p.score||0,
       reserved:false}))};
@@ -3840,11 +3867,25 @@ document.addEventListener('click',e=>{
 function finalBoard(st,me){
   const seats=(st.seats||[]).slice().sort((a,b)=>(b.score||0)-(a.score||0));
   if(!seats.length)return '';
-  const top=seats[0].score||0;
-  return '<div class="padboard">'+seats.map((sdata,i)=>
-    '<div class="pbrow'+(i===0&&top>0?' lead':'')+(me&&sdata.id===me.id?' me':'')+'">'
-    +'<span class="pbn">'+(i+1)+'. '+esc(sdata.name||('Coach '+(sdata.id+1)))+'</span>'
-    +'<span class="pbv">'+(sdata.score||0)+'</span></div>').join('')+'</div>';
+  const nameOf=sv=>sv.name||('Coach '+(sv.id+1));
+  const w=seats[0], iWon=!!me&&w.id===me.id;
+  const rest=seats.slice(1);
+  return '<div class="podium">'
+    +'<div class="crown">\u265B</div>'
+    +'<div class="seat">'+backArt({icon:w.icon,photo:w.photo,name:nameOf(w)},'pav')+'</div>'
+    +'<div class="step"></div>'
+    +'<div class="who">'+esc(nameOf(w))+(iWon?' <em>YOU</em>':'')+'</div>'
+    +'<div class="line">'+(iWon?'You won it \u2014 ':esc(nameOf(w))+' won it \u2014 ')
+      +(w.score||0)+' points</div>'
+    +'</div>'
+    +(rest.length?'<div class="restrow">'+rest.map((sv,i)=>
+      '<div class="r'+(me&&sv.id===me.id?' me':'')+'">'
+      +'<div class="rank">'+(i+2)+'</div>'
+      +'<div class="av">'+backArt({icon:sv.icon,photo:sv.photo,name:nameOf(sv)},'rav')+'</div>'
+      +'<div class="nm">'+esc(nameOf(sv))+'</div>'
+      +'<div class="pt">'+(sv.score||0)+' pts</div></div>').join('')+'</div>':'')
+    +'<div class="roomline"><span class="dot"></span>Room <b>'+esc(PARTY.code||'')
+      +'</b> &middot; game finished</div>';
 }
 function finalLine(st,me){
   const seats=(st.seats||[]).slice().sort((a,b)=>(b.score||0)-(a.score||0));
@@ -3864,7 +3905,9 @@ function drawPadQuiz(st,me){
   const chairBits=['pad-sign','pad-skip','pad-blocks','pad-hold','pad-team','pad-teamhead'];
   chairBits.forEach(id=>{const e=$(id);if(e)e.hidden=true});
   box.hidden=false;
-  const mine=me?me.pick:-1, said=me?me.said:false;
+  const said=me?me.said:false;
+  const mine=(me&&me.pick>=0)?me.pick:(said?myPick:-1);
+  if(!said)myPick=-1;              // a new question, a clean slate
   const got=st.revealed&&mine===st.correct;
   $('pad-round').textContent=st.phase==='over'?'That is the game'
     :(st.cat?st.cat+' \u00b7 ':'')+(st.ask?'Question ':'Record ')+st.round+' of '+st.of;
@@ -3878,7 +3921,16 @@ function drawPadQuiz(st,me){
   // green when you had it, red when you did not: readable at arm's length
   stEl.classList.toggle('good',!!got);
   stEl.classList.toggle('bad',!!(st.revealed&&!got&&mine>=0));
-  if(st.phase==='over'){box.innerHTML=finalBoard(st,me);return}
+  if(st.phase==='over'){
+    box.className='padfinal';          // the four-answer grid has no business here
+    box.innerHTML=finalBoard(st,me);
+    try{$('pad-round').textContent='';$('pad-state').textContent='';
+      $('pad-state').className='mystate';
+      $('pad-seats').hidden=true;$('pad-leave').textContent='Leave the game';}catch(e){}
+    return;
+  }
+  box.className='qgrid';
+  try{$('pad-seats').hidden=false}catch(e){}
   box.innerHTML=(st.options||[]).map((t,i)=>{
     const cls=st.revealed?(i===st.correct?' right':(i===mine?' missed':' wrong')):(i===mine?' mine':'');
     return '<button class="qbtn'+cls+'" data-ans="'+i+'"'+((said||st.revealed)?' disabled':'')+'>'
@@ -3890,10 +3942,14 @@ $('pv-grid')&&($('pv-grid').addEventListener('click',e=>{
   b.classList.toggle('mine');                       // answer the tap at once
   sendAct('vote',0,{topic:b.dataset.v});
 }));
+let myPick=-1;                     // the host hides every pick until the reveal,
+                                   // so the phone has to remember its owner's own
 $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
   const b=e.target.closest('button[data-ans]');if(!b||b.disabled)return;
-  [...$('pad-quiz').querySelectorAll('button')].forEach(x=>x.disabled=true);
-  sendAct('answer',+b.dataset.ans);
+  myPick=+b.dataset.ans;
+  [...$('pad-quiz').querySelectorAll('button')].forEach(x=>{x.disabled=true;x.classList.remove('mine')});
+  b.classList.add('mine');
+  sendAct('answer',myPick);
 }));
 function drawPad(){
   const st=PARTY.stage,me=mySeat();
