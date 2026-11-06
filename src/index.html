@@ -670,9 +670,22 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 .qbtn span.t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .qbtn:hover:not(:disabled){border-color:var(--bone)}
 .qbtn:disabled{cursor:default}
-.qbtn.right{border-color:var(--gold);background:rgba(216,163,63,.14);color:var(--gold)}
-.qbtn.wrong{border-color:var(--red);opacity:.6}
+/* the right name goes solid green, so the room can read it from the sofa */
+.qbtn.right{border-color:#49C27B;background:#1F7A46;color:#EAFFF1}
+.qbtn.right .key{color:rgba(234,255,241,.75)}
+.qbtn.missed{border-color:var(--red);background:rgba(196,52,44,.16);color:#FFB9B3}
+.qbtn.wrong{opacity:.4}
 .qbtn.mine{box-shadow:inset 0 0 0 2px var(--bone)}
+.qsc.ok{border-color:#49C27B;background:rgba(73,194,123,.14);color:#BFF3D2}
+#pad-state.good{color:#7DDCA3}
+#pad-state.bad{color:#FFA9A2}
+/* the quiz scoreboard on the final screen */
+.board{max-width:520px;margin:18px auto 0;display:grid;gap:8px}
+.brow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--panel)}
+.brow.lead{border-color:var(--gold);background:rgba(216,163,63,.1)}
+.brow .bn{font-weight:700}
+.brow .bv{font-family:var(--mono);font-size:13px;color:var(--gold);white-space:nowrap}
 .qhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 0 6px}
 .qhead .ask{font-family:var(--disp);font-size:clamp(17px,2vw,24px);font-weight:800}
 .qhead .cnt{font-family:var(--mono);font-size:11px;color:var(--muted)}
@@ -1006,7 +1019,7 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
     <h2 style="text-align:center" id="champ"></h2>
     <p class="sub" style="text-align:center" id="champ-sub"></p>
     <div id="final-board"></div>
-    <button class="btn" id="restart" style="margin-top:22px">New season</button>
+    <button class="btn" id="restart" style="margin-top:22px">Back to the menu</button>
   </section>
 
 </div>
@@ -2048,11 +2061,17 @@ function finish(){
     +(missed?'<p class="note">The one that got away: '+esc(missed[0])+' walked out unsigned with '
       +fmt(sold(missed))+'m.</p>':'');
   $('meta').textContent='season over';
-  show('s-final');
+  show('s-final');try{publishStage()}catch(e){}
 }
+// the night is done: back to the shelf, where the next game is picked
 $('restart').onclick=()=>{
-  S.players=S.players.map(p=>({name:p.name,icon:p.icon,team:[],blockUsed:false,id:p.id}));
-  S.deck=shuffle(CATALOG);S.round=0;nextRound();
+  try{Q.on=false;clearTimeout(Q.timer)}catch(e){}
+  try{stopAutoNext(true)}catch(e){}
+  try{stopVideo()}catch(e){}
+  S.players.forEach(p=>{p.team=[];p.blockUsed=false;p.passed=false;p.score=0});
+  S.round=0;S.current=null;
+  try{$('meta').textContent=''}catch(e){}
+  try{closeLobby()}catch(e){show('s-setup')}
 };
 
 /* ==================================================================
@@ -2367,14 +2386,17 @@ function quizFinish(){
   const top=best[0]?(best[0].score||0):0;
   const won=best.filter(p=>(p.score||0)===top);
   $('champ').textContent=won.length>1?'A tie':shownName(won[0]||{});
-  $('champ-sub').textContent=won.length>1
-    ? won.map(shownName).join(' and ')+' both finished on '+top+' points.'
-    : top+' points out of '+(Q.deck.length*15)+'.';
+  // out of what was actually played, not what was planned: the host may end it early
+  const played=Math.max(Q.round,0), outOf=played*15;
+  $('champ-sub').textContent=(won.length>1
+    ? won.map(shownName).join(' and ')+' both finished on '+top+' points'
+    : top+' points out of '+outOf)
+    +' · '+played+' record'+(played===1?'':'s')+' played.';
   $('final-board').innerHTML='<div class="board">'+best.map((p,i)=>
-    '<div class="brow"><span class="bn">'+(i+1)+'. '+esc(shownName(p))+'</span>'
+    '<div class="brow'+(i===0&&top>0?' lead':'')+'"><span class="bn">'+(i+1)+'. '+esc(shownName(p))+'</span>'
     +'<span class="bv">'+(p.score||0)+' pts</span></div>').join('')+'</div>';
   try{$('meta').textContent='game over'}catch(e){}
-  publishStage();show('s-final');
+  show('s-final');publishStage();   // the screen moves first, so the phones hear 'over'
 }
 function drawQuiz(){
   if(!Q.current)return;
@@ -2391,7 +2413,7 @@ function drawQuiz(){
   $('q-scores').innerHTML=S.players.map(p=>{
     const said=p.id in Q.answers;
     const right=Q.revealed&&Q.answers[p.id]===Q.correct;
-    return '<span class="qsc'+(said?' done':' waiting')+'">'
+    return '<span class="qsc'+(said?' done':' waiting')+(right?' ok':'')+'">'
       +'<span class="av">'+backArt(p,'qav')+'</span>'+esc(shownName(p))
       +' <b>'+(p.score||0)+'</b>'+(right?' ✓':'')+'</span>';
   }).join('');
@@ -2784,6 +2806,19 @@ document.addEventListener('click',e=>{
   setPadSound(!padSound);
 });
 
+/* where you finished, told on your own phone rather than squinted off the big screen */
+function finalLine(st,me){
+  const seats=(st.seats||[]).slice().sort((a,b)=>(b.score||0)-(a.score||0));
+  if(!me||!seats.length)return 'That is the game.';
+  const place=seats.findIndex(s=>s.id===me.id)+1;
+  if(place<1)return 'That is the game.';
+  const top=seats[0].score||0, mine=me.score||0;
+  const alone=seats.filter(s=>(s.score||0)===top).length===1;
+  if(mine===top&&alone)return 'You won it — '+mine+' points.';
+  if(mine===top)return 'A tie at the top — '+mine+' points.';
+  return (['','1st','2nd','3rd'][place]||place+'th')+' with '+mine+' points. The best was '+top+'.';
+}
+
 /* --- the phone, when the game is Name the Artist --- */
 function drawPadQuiz(st,me){
   const box=$('pad-quiz');if(!box)return;
@@ -2791,14 +2826,21 @@ function drawPadQuiz(st,me){
   chairBits.forEach(id=>{const e=$(id);if(e)e.hidden=true});
   box.hidden=false;
   const mine=me?me.pick:-1, said=me?me.said:false;
+  const got=st.revealed&&mine===st.correct;
   $('pad-round').textContent=st.phase==='over'?'That is the game'
     :'Record '+st.round+' of '+st.of;
-  $('pad-state').textContent=st.phase==='lobby'?'You are in. Watch the big screen.'
-    :st.revealed&&st.act?(mine===st.correct?'Right — '+st.act.name:'It was '+st.act.name)
+  const stEl=$('pad-state');
+  stEl.textContent=st.phase==='over'?finalLine(st,me)
+    :st.phase==='lobby'?'You are in. Watch the big screen.'
+    :st.revealed&&st.act?(got?'Right — '+st.act.name:'It was '+st.act.name)
     :said?'Locked in. Waiting for the others…'
     :'Who is this?';
+  // green when you had it, red when you did not: readable at arm's length
+  stEl.classList.toggle('good',!!got);
+  stEl.classList.toggle('bad',!!(st.revealed&&!got&&mine>=0));
+  if(st.phase==='over'){box.innerHTML='';return}
   box.innerHTML=(st.options||[]).map((t,i)=>{
-    const cls=st.revealed?(i===st.correct?' right':(i===mine?' wrong':'')):(i===mine?' mine':'');
+    const cls=st.revealed?(i===st.correct?' right':(i===mine?' missed':' wrong')):(i===mine?' mine':'');
     return '<button class="qbtn'+cls+'" data-ans="'+i+'"'+((said||st.revealed)?' disabled':'')+'>'
       +'<span class="key">'+'ABCD'[i]+'</span><span class="t">'+esc(t)+'</span></button>';
   }).join('');
