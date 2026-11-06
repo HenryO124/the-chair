@@ -2060,6 +2060,10 @@ function pickGame(name){
   S.game=name;
   document.querySelectorAll('.gamecard').forEach(c=>c.classList.toggle('sel',c.dataset.game===name));
   try{$('bar-hint').textContent=(SOLO?SOLOBLURB:GAMEBLURB)[name]}catch(e){}
+  // the room is watching from their phones: tell them what was picked, and
+  // hand them the ballot for this game's topics
+  S.cats=[];try{clearVotes();drawCats()}catch(e){}
+  if(PARTY.role==='host')publishStage();
 }
 // menu 2, dressed for whichever door you came through
 function openModes(mode){
@@ -2643,7 +2647,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 19:33';
+const BUILD='06.11. 19:35';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',

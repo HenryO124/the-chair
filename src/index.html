@@ -2042,6 +2042,10 @@ function pickGame(name){
   S.game=name;
   document.querySelectorAll('.gamecard').forEach(c=>c.classList.toggle('sel',c.dataset.game===name));
   try{$('bar-hint').textContent=(SOLO?SOLOBLURB:GAMEBLURB)[name]}catch(e){}
+  // the room is watching from their phones: tell them what was picked, and
+  // hand them the ballot for this game's topics
+  S.cats=[];try{clearVotes();drawCats()}catch(e){}
+  if(PARTY.role==='host')publishStage();
 }
 // menu 2, dressed for whichever door you came through
 function openModes(mode){
