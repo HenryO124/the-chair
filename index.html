@@ -2484,7 +2484,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 17:05';
+const BUILD='06.11. 17:11';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
@@ -2500,7 +2500,7 @@ const joinLink=()=>partyLink()+'#'+PARTY.code;        // the link an invited gue
 function newCode(){let s='';for(let i=0;i<4;i++)s+=CODE_LETTERS[Math.floor(Math.random()*CODE_LETTERS.length)];return s}
 function cleanName(s){return String(s==null?'':s).replace(/[\u0000-\u001F\u007F]/g,'').trim().slice(0,14)}
 function screenNow(){const s=document.querySelector('.screen.on');return s?s.id:''}
-const PREP=['s-lobby','s-rules','s-go'];
+const PREP=['s-setup','s-lobby','s-rules','s-go'];
 const inPrep=()=>PREP.indexOf(screenNow())>=0;    // still gathering: phones may join
 function mkPlayer(name,icon,id,pid,photo){
   return {name:name,icon:(icon===undefined||icon===null?-1:icon),team:[],
@@ -3187,8 +3187,7 @@ function stageState(){
   const phase=inPrep()?'lobby'
     :screenNow()==='s-final'?'over'
     :turnsOpen?'live':revealed?'locked':'between';
-  if((S.game==='artist'||S.game==='trivia')
-     &&screenNow()!=='s-lobby'&&screenNow()!=='s-rules'&&screenNow()!=='s-go')
+  if((S.game==='artist'||S.game==='trivia')&&!inPrep())
     return quizState(phase);
   return {v:1,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
     blockTarget:(blockTarget===null?null:blockTarget),
