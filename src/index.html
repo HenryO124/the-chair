@@ -512,15 +512,15 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   background:rgba(216,163,63,.12);color:var(--bone);font-size:13.5px;line-height:1.45}
 .padwarn[hidden]{display:none!important}
 .qgrid.two{grid-template-columns:1fr 1fr;gap:12px}
-.qgrid.two .qbtn{min-height:32vh;font-size:clamp(20px,6vw,30px);flex-direction:column;justify-content:center;
+.qgrid.two .qbtn{min-height:26vh;font-size:clamp(20px,6vw,30px);flex-direction:column;justify-content:center;
   gap:10px;text-align:center}
 .qgrid.two .qbtn .key{display:none}
 .qgrid.two .qbtn .t{font-weight:800}
 .padrun{margin:12px 0 0;text-align:center;font-family:var(--mono);font-size:12px;
   letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .padrun[hidden]{display:none!important}
-.padpic{width:100%;aspect-ratio:4/3;margin:0 0 10px;border-radius:12px;border:1px solid var(--line);
-  background:#15110e center/contain no-repeat}
+.padpic{width:100%;aspect-ratio:4/3;max-height:34vh;margin:0 0 10px;border-radius:12px;
+  border:1px solid var(--line);background:#15110e center/contain no-repeat}
 .padpic[hidden]{display:none!important}
 /* when the host screen is a version behind, the page says so itself */
 .newver{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:130;display:flex;
@@ -5660,6 +5660,7 @@ function quizNext(){
     drawQuiz();publishStage();
     return;
   }
+  Q.qid='';                       // this game has no pictures: forget the last one's
   // three names that are not the answer, from the same corner of the catalogue
   const near=CATALOG.filter(a=>a!==Q.current&&a[4]===Q.current[4]);
   const far=CATALOG.filter(a=>a!==Q.current&&a[4]!==Q.current[4]);
@@ -6220,7 +6221,9 @@ function quizState(phase){
     vid:isAsking()||!Q.current||!S.remote?'':videoFor(Q.current),
     ask:isAsking()&&Q.current?Q.current[1]:'',
     // the television keeps the big one; a phone gets a fifth of the bytes
-    pic:(function(){try{const p=QIMG[String(Q.qid)];
+    pic:(function(){try{
+      if(!isAsking())return '';                    // only a written question carries a picture
+      const p=QIMG[String(Q.qid)];
       return p?String(p.u).replace(/([?&])width=\d+/,'$1width=500'):''}catch(e){return ''}})(),
     cat:isAsking()&&Q.current?Q.current[0]:'',
     act:!Q.revealed||!Q.current?null
@@ -6585,7 +6588,9 @@ function drawPadQuiz(st,me){
     return;
   }
   box.className='qgrid'+((st.options||[]).length===2?' two':'');
-  try{$('pad-seats').hidden=false}catch(e){}
+  // the television already shows who is in: on a phone that strip only pushes
+  // the answers below the fold, and an answer you must scroll to is an answer lost
+  try{$('pad-seats').hidden=true}catch(e){}
   const rl=$('pad-run');
   if(rl){
     const run=(me&&me.run)||0;
@@ -6628,6 +6633,7 @@ const METALABEL={chair:'blind signings',artist:'name the artist',trivia:'general
   picture:'picture guess',tf:'true or false'};
 function drawPad(){
   const st=PARTY.stage,me=mySeat();
+  if(me)try{joinStatus('','')}catch(e){}    // seated: the join chatter is over
   try{if(st&&st.game)$('meta').textContent=METALABEL[st.game]||''}catch(e){}
   // two different versions in one room is the one bug a phone can fix itself
   try{
