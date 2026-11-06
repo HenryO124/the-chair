@@ -1242,6 +1242,506 @@ body.screen-home .hero2-title{text-shadow:0 0 40px rgba(228,24,46,.45)}
   border-bottom:1px solid rgba(255,70,100,.2)}}
 /* the opening titles get the same light */
 .introname{text-shadow:0 0 50px rgba(228,24,46,.5)}
+
+/* ============ the same studio: every screen behind the front door ========
+   The front page was brought to the mockup first. These blocks carry the same
+   light, the same borders and the same glow through the rest of the product,
+   and give the television type it can be read at three metres with. ======= */
+/* ---- the light in the room: the same behind every door ----------------- */
+body{
+  background:
+    radial-gradient(58% 40% at 50% -10%,rgba(228,24,46,.24) 0%,transparent 70%),
+    radial-gradient(42% 46% at 97% 4%,rgba(255,46,136,.12) 0%,transparent 70%),
+    radial-gradient(72% 48% at 50% 106%,rgba(140,16,60,.20) 0%,transparent 70%),
+    #0B0507;
+  background-attachment:fixed;
+}
+.masthead{border-bottom-color:rgba(255,70,100,.22)}
+.meta{color:#C9AEB6}
+.brk{border-color:rgba(255,70,100,.3);color:#C9AEB6}
+.brk:hover{border-color:#FF5C72;color:#fff}
+
+/* ---- one panel, one border, one glow ----------------------------------- */
+.lobbycode,.lobbyseats,.golist,.myteam,.joincard,.padvote,.padsetup,
+.libtable,.bidboard,.cue,.rail,.roundcard{
+  border-color:rgba(255,70,100,.22);
+  background:rgba(26,8,14,.62);
+  box-shadow:var(--glowsoft);
+}
+.cue{border-style:solid}
+
+/* ---- the words above a heading -----------------------------------------
+   small caps, wide, in the red of the light; the heading itself gets air   */
+.eyebrow{color:#FF5565;letter-spacing:.2em}
+.field-label{color:#C9AEB6;letter-spacing:.18em}
+h2{text-shadow:0 0 38px rgba(228,24,46,.4)}
+.sub{color:#C9AEB6}
+
+/* ---- the steps along the top are a trail of lights, not labels ---------- */
+.step{border-color:rgba(255,70,100,.24);background:rgba(44,12,22,.5);
+  padding:7px 16px;letter-spacing:.14em}
+.step.on{background:linear-gradient(180deg,#E4182E,#A50F22);border-color:#FF5C72;
+  color:#fff;box-shadow:var(--glow)}
+.step.done{color:#FF9AA8;border-color:rgba(255,90,120,.45);background:rgba(44,12,22,.5)}
+.backlink{background:rgba(44,12,22,.6);border-color:rgba(255,70,100,.26);color:#C9AEB6}
+.backlink:hover{border-color:#FF5C72;color:#fff}
+
+/* ---- buttons: one loud, the rest quiet ---------------------------------
+   The red one is the thing to press. Everything beside it is an outline.   */
+.btn{background:linear-gradient(180deg,#F02038,#A50F22);border:1px solid #FF5C72;
+  box-shadow:0 0 26px rgba(228,24,46,.45),inset 0 1px 0 rgba(255,255,255,.22)}
+.btn:hover{background:linear-gradient(180deg,#FF2A44,#B91126);filter:brightness(1.06)}
+.btn.ghost{background:rgba(32,10,16,.6);border-color:rgba(255,70,100,.3);
+  color:#D9C2C8;box-shadow:none;font-weight:700}
+.btn.ghost:hover{border-color:#FF5C72;color:#fff;background:rgba(60,14,26,.6)}
+.btn.gold{background:linear-gradient(180deg,#F0BC55,#C08A26);color:#1A1206;
+  border:1px solid #FFD98A;box-shadow:0 0 26px rgba(216,163,63,.38)}
+.btn:disabled{box-shadow:none}
+.note,.pool,.conn{color:#9E858C}
+.pool.thin{color:#E0A860}
+
+/* ---- the fields you type into ------------------------------------------ */
+input[type=text],.ytin,.codein,.friendadd input,.mechip input{
+  background:#15070B;border-color:rgba(255,70,100,.28);color:var(--bone)}
+input:focus,.ytin:focus,.codein:focus{border-color:#FF5C72;
+  box-shadow:0 0 0 3px rgba(228,24,46,.18)}
+.codein{color:#FFD37A;letter-spacing:.3em}
+/* ---- type that survives three metres -----------------------------------
+   An 11px label is a 7mm glyph on a television across a living room, which
+   is nobody's idea of readable. Above 1400px the room is the audience, so
+   the small print grows with it. Phones and laptops are left alone.        */
+@media (min-width:1400px){
+  .eyebrow{font-size:15px}
+  .field-label{font-size:14px}
+  .sub{font-size:19px;line-height:1.5}
+  h2{font-size:clamp(38px,3.6vw,62px)}
+  .note,.pool,.conn,.gosum,.meta,.step,.striparound{font-size:15px}
+  .brk{font-size:13px;padding:8px 18px}
+  .seg:not(.hpfilter) button{font-size:17px}
+  .btn{font-size:20px;padding:18px 20px}
+  .bigcode{font-size:clamp(64px,5.4vw,104px)}
+  .gorow .who{font-size:23px}
+  .gorow .st{font-size:13px;padding:5px 12px}
+  .gorow .av{width:54px;height:54px;border-radius:14px}
+  .joinrow .who{font-size:20px}
+  .joinrow .tag{font-size:12px}
+  .joinrow .av{width:44px;height:44px}
+  .brow{padding:16px 22px}
+  .brow .bn{font-size:21px}
+  .brow .bv{font-size:18px}
+  .qhead .cnt{font-size:16px}
+  .qsc{font-size:19px;padding:9px 16px}
+  .qsc b{font-size:17px}
+  .qsc .av{width:30px;height:30px;border-radius:8px}
+  .lobbycode,.lobbyseats,.golist,.myteam{padding:26px 28px}
+  .modes-title{font-size:clamp(40px,3.4vw,58px)}
+}
+@media (min-width:1700px){
+  .eyebrow{font-size:17px}
+  .field-label{font-size:16px}
+  .sub{font-size:22px}
+  .note,.pool,.conn,.gosum,.meta,.step{font-size:17px}
+  .seg:not(.hpfilter) button{font-size:19px}
+  .gorow .who{font-size:27px}
+  .qsc{font-size:22px}
+}
+/* ---- the question screen: twenty minutes of a room staring at it -------
+   The picture is given a fixed share of the height so the four answers are
+   never squeezed into a strip. Everything is centred, because a television
+   is looked at from a sofa and not read from left to right.               */
+#s-quiz{max-width:1680px;margin:0 auto}
+#s-quiz .stageset.big{height:auto;min-height:0;display:block;padding:0}
+#s-quiz .videowall{height:min(44vh,38vw);margin:0 0 clamp(14px,2.4vh,30px)}
+/* on anything with room, the whole screen is one page: the picture takes
+   whatever the question, the answers and the scoreboard have not used */
+@media (min-width:860px) and (min-height:620px){
+  #s-quiz.on{display:flex;flex-direction:column;height:calc(100vh - 92px)}
+  #s-quiz .stageset.big{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+  #s-quiz .videowall{flex:1 1 auto;height:auto;min-height:0}
+  #s-quiz .screenwrap{height:100%;width:auto;max-width:100%;max-height:100%}
+  #s-quiz .qhead,#s-quiz .qgrid,#s-quiz .qscores,#s-quiz .btn-row{flex:0 0 auto}
+}
+#s-quiz .vw-screen{border-radius:clamp(10px,1vw,18px);
+  border:1px solid rgba(255,70,100,.34);
+  box-shadow:0 0 56px rgba(228,24,46,.28),inset 0 1px 0 rgba(255,255,255,.08),
+             0 24px 50px rgba(0,0,0,.7)}
+#s-quiz .curtain{background:repeating-linear-gradient(90deg,#49070F,#49070F 16px,#60101C 16px,#60101C 34px);
+  color:rgba(255,160,175,.6);font-size:clamp(11px,.9vw,16px)}
+.qasking{text-shadow:0 2px 20px rgba(0,0,0,.8),0 0 50px rgba(228,24,46,.35)}
+.qa-right{color:#8FF0B8;text-shadow:0 0 42px rgba(73,194,123,.5)}
+.qa-note{color:#C9AEB6}
+
+/* the counter is the small-caps label and the question is the heading;
+   column-reverse puts the label above it without touching the markup */
+#s-quiz .qhead{flex-direction:column-reverse;align-items:center;text-align:center;
+  gap:clamp(7px,1vh,13px);margin:0 0 clamp(12px,2.2vh,24px)}
+#s-quiz .qhead .cnt{font-family:var(--mono);font-size:clamp(10px,.82vw,16px);
+  letter-spacing:.22em;text-transform:uppercase;color:#FF8097;
+  border:1px solid rgba(255,70,100,.3);background:rgba(44,12,22,.6);
+  border-radius:20px;padding:6px 16px;box-shadow:var(--glowsoft)}
+#s-quiz .qhead .ask{font-size:clamp(19px,2.4vw,44px);line-height:1.12;
+  max-width:min(100%,40ch);text-shadow:0 0 36px rgba(228,24,46,.4)}
+
+/* four answers, each a lit panel with its letter in a ring */
+#s-quiz .qgrid{gap:clamp(10px,1.1vw,20px);margin-top:0}
+#s-quiz .qbtn{align-items:center;gap:clamp(10px,1vw,20px);
+  min-height:clamp(56px,8.6vh,104px);
+  padding:clamp(11px,1.7vh,24px) clamp(14px,1.3vw,26px);
+  border-radius:clamp(12px,1vw,18px);
+  border:1px solid rgba(255,70,100,.28);
+  background:linear-gradient(180deg,rgba(58,14,26,.7),rgba(26,8,14,.7));
+  box-shadow:var(--glowsoft);
+  font-size:clamp(16px,1.8vw,34px);line-height:1.15}
+#s-quiz .qbtn .key{flex:0 0 auto;display:grid;place-items:center;
+  width:clamp(26px,2.3vw,46px);height:clamp(26px,2.3vw,46px);border-radius:50%;
+  border:1px solid rgba(255,70,100,.42);background:rgba(16,5,9,.85);
+  color:#FF8097;font-weight:700;font-size:clamp(11px,1vw,19px)}
+#s-quiz .qbtn:hover:not(:disabled){border-color:#FF5C72;box-shadow:var(--glow)}
+#s-quiz .qbtn.right{border-color:#5BE49A;color:#EAFFF1;
+  background:linear-gradient(180deg,#249757,#15633A);
+  box-shadow:0 0 40px rgba(73,194,123,.45)}
+#s-quiz .qbtn.right .key{border-color:rgba(234,255,241,.55);color:#EAFFF1;background:rgba(0,0,0,.22)}
+#s-quiz .qbtn.missed{border-color:#FF5C72;background:rgba(228,24,46,.2);color:#FFC2BC;
+  box-shadow:0 0 30px rgba(228,24,46,.3)}
+#s-quiz .qbtn.wrong{opacity:.26;box-shadow:none}
+
+/* who is in, and what they have — a row of lit chips under the answers */
+#s-quiz .qscores{justify-content:center;gap:clamp(7px,.75vw,14px);
+  margin-top:clamp(12px,2.2vh,24px)}
+#s-quiz .qsc{border-color:rgba(255,70,100,.24);background:rgba(40,12,22,.5);
+  border-radius:24px}
+#s-quiz .qsc.done{border-color:rgba(255,90,120,.55);box-shadow:var(--glowsoft)}
+#s-quiz .qsc.ok,#s-quiz .qsc.done.ok{border-color:#5BE49A;background:rgba(73,194,123,.16);
+  color:#D3FBE2;box-shadow:0 0 20px rgba(73,194,123,.22)}
+#s-quiz .qsc b{color:#FFD37A}
+#s-quiz .qsc.ok b{color:#9CF0C0}
+
+/* ---- Reveal is the button. End the game is a door marked exit. -------- */
+#s-quiz .btn-row{justify-content:center;align-items:center;
+  gap:clamp(14px,2vw,36px);flex-wrap:wrap}
+#q-next{flex:0 0 auto;width:auto;margin:0;
+  min-width:clamp(200px,20vw,400px);
+  border-radius:14px;padding:clamp(13px,1.7vh,22px) clamp(26px,3vw,48px);
+  font-size:clamp(17px,1.45vw,27px);letter-spacing:.01em;
+  color:#FFF3EF;background:linear-gradient(180deg,#F02038,#A50F22);
+  border:1px solid #FF5C72;
+  box-shadow:0 0 36px rgba(228,24,46,.55),inset 0 1px 0 rgba(255,255,255,.25)}
+#q-next:hover{background:linear-gradient(180deg,#FF2A44,#B91126)}
+#q-quit{flex:0 0 auto;width:auto;margin:0;background:none;box-shadow:none;
+  border:1px solid rgba(255,70,100,.18);color:#8D757C;font-weight:600;
+  font-size:clamp(12px,.82vw,15px);padding:9px 20px;border-radius:20px}
+#q-quit:hover{background:none;color:#FF8097;border-color:rgba(255,70,100,.5)}
+/* ---- the phone: held 30cm away in a dark room -------------------------
+   The opposite problem to the television. Nothing here needs to be large
+   for distance; it needs the thumb to land, and the four answers to be on
+   the screen without a scroll. The money strip belongs to the big screen
+   and only pushes the answers below the fold here, so it goes.           */
+body:has(#s-chair.on) .railstrip,
+body:has(#s-chair.on) .striproundwrap{display:none}
+
+#s-chair{max-width:520px;margin:0 auto}
+.chairpad{max-width:520px}
+.chairpad .nowplaying{font-size:11.5px;letter-spacing:.2em;color:#FF8097;
+  margin:0 0 8px}
+.chairpad .mystate{font-size:clamp(19px,5.2vw,26px);line-height:1.2;margin:0 0 16px;
+  text-shadow:0 0 30px rgba(228,24,46,.3)}
+#pad-state.good{color:#8FF0B8;text-shadow:0 0 28px rgba(73,194,123,.4)}
+#pad-state.bad{color:#FFB3AC;text-shadow:0 0 28px rgba(228,24,46,.4)}
+
+/* the picture is the question in half the games: give it the room */
+.padpic{aspect-ratio:4/3;max-height:40vh;border-radius:16px;
+  border:1px solid rgba(255,70,100,.3);background-color:#14070B;
+  box-shadow:0 0 34px rgba(228,24,46,.22),0 14px 30px rgba(0,0,0,.6)}
+.padscreen{border-radius:16px;border:1px solid rgba(255,70,100,.3);
+  box-shadow:0 0 34px rgba(228,24,46,.22),0 14px 30px rgba(0,0,0,.6)}
+.padcurtain{color:rgba(255,160,175,.6)}
+
+/* four answers, thumb-sized, lit */
+#pad-quiz.qgrid{gap:10px}
+#pad-quiz .qbtn{align-items:center;gap:11px;min-height:64px;padding:13px 14px;
+  border-radius:15px;border:1px solid rgba(255,70,100,.3);
+  background:linear-gradient(180deg,rgba(58,14,26,.78),rgba(26,8,14,.78));
+  box-shadow:var(--glowsoft);font-size:17px;line-height:1.18}
+#pad-quiz .qbtn .key{flex:0 0 auto;display:grid;place-items:center;
+  width:28px;height:28px;border-radius:50%;font-size:12px;font-weight:700;
+  border:1px solid rgba(255,70,100,.45);background:rgba(16,5,9,.85);color:#FF8097}
+#pad-quiz .qbtn.mine{border-color:#FF5C72;box-shadow:0 0 26px rgba(228,24,46,.5);
+  background:linear-gradient(180deg,#E4182E,#8A0F1D);color:#fff}
+#pad-quiz .qbtn.mine .key{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(0,0,0,.2)}
+#pad-quiz .qbtn.right{border-color:#5BE49A;color:#EAFFF1;
+  background:linear-gradient(180deg,#249757,#15633A);
+  box-shadow:0 0 30px rgba(73,194,123,.42)}
+#pad-quiz .qbtn.right .key{border-color:rgba(234,255,241,.55);color:#EAFFF1;background:rgba(0,0,0,.22)}
+#pad-quiz .qbtn.missed{border-color:#FF5C72;background:rgba(228,24,46,.2);color:#FFC2BC}
+#pad-quiz .qbtn.wrong{opacity:.25}
+#pad-quiz.qgrid.two .qbtn{min-height:22vh}
+
+/* the chair game's own big buttons keep their weight, in the new red */
+.bigsign{border:1px solid #FF5C72;border-radius:20px;
+  background:linear-gradient(180deg,#F02038,#A50F22);
+  box-shadow:0 0 40px rgba(228,24,46,.5),inset 0 1px 0 rgba(255,255,255,.24)}
+.bigsign:disabled{background:rgba(40,12,22,.6);border-color:rgba(255,70,100,.2);
+  color:#8D757C}
+.bigskip{border-color:rgba(255,70,100,.26);color:#C9AEB6;background:rgba(32,10,16,.5)}
+.blockpad button{border-color:rgba(255,70,100,.26);color:#C9AEB6}
+.padseats .ptag{border-color:rgba(255,70,100,.24)}
+
+/* leaving is not an answer: it reads as a way out, not as a fifth button */
+#pad-leave{width:auto;margin:22px auto 0;padding:10px 22px;border-radius:20px;
+  background:none;border:1px solid rgba(255,70,100,.18);color:#8D757C;
+  font-weight:600;font-size:13px;box-shadow:none}
+#pad-leave:hover{background:none;color:#FF8097;border-color:rgba(255,70,100,.45)}
+.padver{color:#6E585E}
+.padvote,.padsetup{border-style:solid}
+.pvbtn{border-color:rgba(255,70,100,.26);color:#D9C2C8;background:rgba(44,12,22,.6)}
+.pvbtn.mine{border-color:#FF5C72;background:rgba(228,24,46,.22);color:#FFC7CF}
+.pvbtn.mine .n{color:#FF8097}
+
+/* ---- the join form: the first thing a guest ever sees ----------------- */
+#chair-join{max-width:430px;margin:0 auto;text-align:center}
+#chair-join .field-label{text-align:left}
+#chair-join .codein{font-size:clamp(34px,11vw,46px);text-align:center;
+  padding:16px 14px;border-radius:16px;border-width:1px;
+  box-shadow:inset 0 0 40px rgba(228,24,46,.14)}
+#chair-join .seg button{border-color:rgba(255,70,100,.24);background:rgba(44,12,22,.6);
+  color:#C9AEB6;font-size:12.5px;line-height:1.35}
+#chair-join .seg button.sel{background:linear-gradient(180deg,#E4182E,#A50F22);
+  border-color:#FF5C72;color:#fff;box-shadow:var(--glow)}
+#join-go{border-radius:16px;padding:19px;font-size:19px}
+.namechips button{border-color:rgba(255,70,100,.45);color:#FFC7CF;
+  background:rgba(44,12,22,.7);box-shadow:var(--glowsoft)}
+.avpickrow button.sel{border-color:#FF5C72;box-shadow:var(--glow)}
+.photobtn{border-color:rgba(255,70,100,.3);color:#C9AEB6}
+.photobtn:hover,.photobtn.has{border-color:#FF5C72;color:#FFC7CF}
+/* ---- menu 2: four game cards and the room bar -------------------------
+   The cards get the party-row treatment from the front page: a lit tile,
+   a small-caps label in red above the name, a divider line of meta, and a
+   border that catches the light when you point at it.                    */
+#s-setup .modes-title{text-shadow:0 0 40px rgba(228,24,46,.4)}
+.shelf{gap:clamp(12px,1.2vw,20px)}
+.gamecard{border-color:rgba(255,70,100,.22);background:rgba(26,8,14,.62);
+  box-shadow:var(--glowsoft);border-radius:18px;
+  padding:clamp(15px,1.8vw,24px);gap:clamp(13px,1.3vw,20px)}
+.gamecard:hover:not(.soon){border-color:rgba(255,90,120,.55);
+  box-shadow:0 0 30px rgba(228,24,46,.3);transform:translateY(-2px)}
+.gamecard.sel{border-color:#FF5C72;
+  background:linear-gradient(180deg,rgba(228,24,46,.18),rgba(26,8,14,.62) 72%);
+  box-shadow:var(--glow)}
+.gamecard .gicon{width:clamp(46px,3.4vw,62px);height:clamp(46px,3.4vw,62px);
+  border-radius:14px;color:#FF8097;
+  border:1px solid rgba(255,70,100,.3);
+  background:radial-gradient(closest-side,rgba(255,70,100,.38),rgba(20,6,10,.9))}
+.gamecard .gicon svg{width:60%;height:60%}
+.gamecard .gtag{color:#FF5565;letter-spacing:.18em;font-size:10.5px}
+.gamecard .gname{font-size:clamp(20px,1.9vw,30px);margin:6px 0 8px}
+.gamecard .gdesc{color:#C0A8AF;font-size:clamp(13.5px,.92vw,17px)}
+.gamecard .gmeta{color:#9E858C;font-size:clamp(10px,.68vw,13px);
+  padding-top:11px;margin-top:12px;border-top:1px solid rgba(255,70,100,.16)}
+.gamecard .gmeta svg{color:#FF8097;opacity:1;width:1.25em;height:1.25em}
+.gamecard .garrow{color:#7E666D;font-size:clamp(19px,1.5vw,26px)}
+.gamecard:hover:not(.soon) .garrow,.gamecard.sel .garrow{color:#FF5C72}
+
+/* the chair on the left of menu 2 stands in the same red light as the
+   one on the front page, instead of a dusty orange one */
+#s-setup .home-hero .spot .beam{
+  background:linear-gradient(to bottom,rgba(255,60,90,.46),rgba(228,24,46,.14) 55%,transparent)}
+#s-setup .home-hero .spot .pool{
+  background:radial-gradient(ellipse at center,rgba(255,70,100,.55),transparent 68%)}
+#s-setup .home-hero .spot svg{filter:drop-shadow(0 0 34px rgba(228,24,46,.45))}
+#s-setup .home-hero .hero-title{text-shadow:0 0 40px rgba(228,24,46,.4)}
+
+/* ---- the bar along the bottom: where the night actually begins -------- */
+.startbar{border-color:rgba(255,70,100,.24);background:rgba(26,8,14,.7);
+  box-shadow:var(--glowsoft);border-radius:18px}
+.startbar .sbi{color:#FF8097}
+.startbar .sbd{background:rgba(255,70,100,.2)}
+.startbar .sbx{color:#C0A8AF}
+.startbar .btn{padding:14px 24px;font-size:15px;border-radius:12px}
+.startbar .btn.ghost{background:rgba(32,10,16,.6)}
+.rbroom b{color:#FFD37A}
+.rbtag{border-color:rgba(255,70,100,.3);color:#C9AEB6}
+.rbchip{border-color:rgba(255,70,100,.26);background:rgba(44,12,22,.6)}
+.rbchip.host{border-color:#FFD37A}
+.rbmax{border-color:rgba(255,70,100,.26)}
+.rbqr:hover{box-shadow:0 0 0 2px #FF5C72}
+@media (min-width:1400px){
+  .startbar .sbt{font-size:26px}
+  .startbar .sbx{font-size:17px}
+  .startbar .btn{font-size:18px;padding:16px 28px}
+  .rbroom{font-size:24px}
+  .rbchip{font-size:15px;padding:7px 15px}
+  .rblab{font-size:13px}
+  .rbtag{font-size:12px}
+}
+/* ---- the party room ---------------------------------------------------
+   Five segmented controls laid out three-per-row at full width is most of
+   why this screen was two thousand pixels tall. Each control becomes a row
+   of pills that take the width of their own words, which puts every one of
+   them on a single line, and on a wide screen the two panels sit side by
+   side so the start button is on the first screenful.                    */
+.seg:not(.hpfilter){margin:4px 0 16px;flex-wrap:wrap}
+.seg:not(.hpfilter) button{flex:0 1 auto;width:auto;min-width:0;
+  padding:10px 18px;border-radius:22px;
+  border-color:rgba(255,70,100,.24);background:rgba(44,12,22,.6);color:#C9AEB6}
+.seg:not(.hpfilter) button:hover:not(.sel){border-color:rgba(255,90,120,.5);color:#fff}
+.seg:not(.hpfilter) button.sel{background:linear-gradient(180deg,#E4182E,#A50F22);
+  border-color:#FF5C72;color:#fff;font-weight:700;box-shadow:var(--glow)}
+/* random is still the odd one out, but it no longer shouts over the rest */
+.seg:not(.hpfilter) button.rnd{border-style:dashed;border-color:rgba(216,163,63,.55);color:#E0A860}
+.seg:not(.hpfilter) button.rnd.sel{background:linear-gradient(180deg,rgba(216,163,63,.3),rgba(216,163,63,.1));
+  border-style:solid;border-color:#E6B554;color:#FFE1A6;
+  box-shadow:0 0 22px rgba(216,163,63,.3)}
+.seg .votes{background:#E6B554}
+.blockrow button{flex:0 1 auto;min-width:0;padding:10px 18px;border-radius:22px;
+  border-color:rgba(255,70,100,.24);background:rgba(44,12,22,.6)}
+.blockrow button.sel{background:linear-gradient(180deg,#E4182E,#A50F22);border-color:#FF5C72}
+
+#s-lobby .bigcode{color:#FFD37A;text-shadow:0 0 44px rgba(255,180,90,.4)}
+#s-lobby .qrbox{border:1px solid rgba(255,70,100,.3);box-shadow:var(--glowsoft)}
+.qrbox.empty{border:1px dashed rgba(255,70,100,.3);background:rgba(20,6,10,.6)}
+.joinrow{border-bottom-color:rgba(255,70,100,.16)}
+.joinrow .tag{border-color:rgba(255,70,100,.26);color:#C9AEB6}
+.joinrow .tag.live{color:#FFD37A;border-color:rgba(255,209,92,.6);
+  box-shadow:0 0 14px rgba(255,209,92,.18)}
+.joinrow .send{border-color:rgba(255,70,100,.26);color:#C9AEB6}
+.joinrow .send:hover{border-color:#FF5C72;color:#fff}
+.friend{border-color:rgba(255,70,100,.24);background:rgba(44,12,22,.6)}
+.friend.on{border-color:#FF5C72;color:#FFC7CF;background:rgba(228,24,46,.16)}
+.friendadd button{border-color:rgba(255,70,100,.26);color:#C9AEB6}
+.friendadd button:hover{border-color:#FF5C72;color:#fff}
+
+/* the code and its QR stand side by side instead of in a tall stack, so
+   the invitation panel is a header and not a whole screenful */
+@media (min-width:900px){
+  #s-lobby .lobbygrid > .lobbycode{display:grid;align-content:start;
+    grid-template-columns:minmax(0,190px) minmax(0,1fr);column-gap:24px}
+  #s-lobby .lobbygrid > .lobbycode > *{grid-column:2}
+  #s-lobby #lobby-qr{grid-column:1;grid-row:1/span 6;width:100%;margin:0;align-self:start}
+  #s-lobby .bigcode{margin:2px 0 10px;text-align:left}
+  #s-lobby #copy-link{width:auto;justify-self:start;padding:13px 24px}
+}
+
+/* the two settings panels sit beside each other once there is room for
+   them, which brings the start button up onto the first screenful */
+@media (min-width:1100px){
+  #s-lobby.on{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:18px;align-items:start}
+  #s-lobby.on > *{grid-column:1/-1}
+  #s-lobby.on > .lobbycode{grid-column:auto;margin-top:0}
+  #s-lobby .lobbygrid{margin-bottom:0}
+}
+/* and it stays within reach however far down the room has been scrolled.
+   Only where the room is the television: on a phone it would sit on top of
+   the QR code the host is trying to hold up. */
+@media (min-width:720px) and (min-height:560px){
+  #to-rules{position:sticky;bottom:clamp(10px,2vh,20px);z-index:12;
+    box-shadow:0 0 40px rgba(228,24,46,.55),0 12px 34px rgba(0,0,0,.7),
+               inset 0 1px 0 rgba(255,255,255,.22)}
+}
+#to-rules{border-radius:14px}
+/* the invitation is a header, not an essay */
+#s-lobby h2{margin-bottom:6px}
+#s-lobby #lobby-sub{margin-bottom:14px;max-width:88ch}
+#s-lobby #add{width:auto;padding:12px 22px;border-radius:22px;font-size:14px}
+#s-lobby .friendadd{margin:6px 0 10px;align-items:center}
+#s-lobby .lobbyseats #lobby-list:empty::after{content:'Nobody yet.';
+  font-family:var(--mono);font-size:11px;color:#8D757C}
+.pool.thin{color:#CBA97E}
+#s-lobby #lobby-back,#s-lobby .backlink{display:inline-block;width:auto;
+  margin-right:10px;vertical-align:middle}
+@media (min-width:1400px){
+  #s-lobby .bigcode{font-size:clamp(70px,5.6vw,112px)}
+  #s-lobby #to-rules{font-size:23px;padding:21px}
+}
+/* ---- GO, the break and the final standings ---------------------------
+   Three short screens that were stretched across the whole width of a
+   television, which put a two-metre GO button under a two-metre list.
+   They get a column, a centre line and one loud button each.            */
+#s-go,#s-break,#s-final{max-width:980px;margin:0 auto}
+#s-go,#s-break{text-align:center}
+#s-go .steps,#s-break .steps{justify-content:center}
+#s-go .gosum{text-align:center}
+#s-go .note,#s-break .note,#s-final .note{text-align:center}
+
+.gorow{border-bottom-color:rgba(255,70,100,.16);padding:12px 4px}
+.gorow .st{border-color:rgba(255,70,100,.26);color:#C9AEB6}
+.gorow .st.here{color:#FFD37A;border-color:rgba(255,209,92,.6);
+  box-shadow:0 0 14px rgba(255,209,92,.18)}
+.golist{text-align:left}
+
+/* one button to press, and it is the size of the decision */
+#lobby-start,#restart,#resume{width:auto;display:block;margin:clamp(14px,2.6vh,26px) auto 10px;
+  padding:clamp(16px,2vh,24px) clamp(44px,6vw,96px);border-radius:16px;
+  font-size:clamp(20px,1.8vw,34px);letter-spacing:.04em}
+#lobby-start{letter-spacing:.22em}
+#back-rules,#to-setup,#lobby-start+.btn.ghost{width:auto;display:block;
+  margin:0 auto;padding:11px 26px;border-radius:22px;font-size:14px}
+#s-break #resume{letter-spacing:.01em}
+
+/* the trophy stands in the same light as the chair on the front page */
+#s-final .trophy{position:relative;box-shadow:none}
+#s-final .trophy::before{content:'';position:absolute;left:50%;top:50%;
+  width:210%;height:210%;transform:translate(-50%,-50%);z-index:-1;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(228,24,46,.4),rgba(228,24,46,.08) 58%,transparent);
+  filter:blur(10px);pointer-events:none}
+#s-final #champ{font-size:clamp(40px,5vw,86px);text-shadow:0 0 54px rgba(228,24,46,.5)}
+#s-final #champ-sub{font-size:clamp(14px,1.1vw,21px)}
+.board{max-width:620px}
+.brow{border-color:rgba(255,70,100,.22);background:rgba(26,8,14,.62);
+  box-shadow:var(--glowsoft);border-radius:14px}
+.brow.lead{border-color:#FFD37A;
+  background:linear-gradient(90deg,rgba(216,163,63,.22),rgba(26,8,14,.62) 70%);
+  box-shadow:0 0 26px rgba(216,163,63,.28)}
+.brow .bv{color:#FFD37A}
+
+/* the break is a held breath, not a dead end */
+#s-break .sub{max-width:52ch;margin-left:auto;margin-right:auto}
+.knockrow{border-color:rgba(255,209,92,.5);background:rgba(216,163,63,.1)}
+@media (min-width:1400px){
+  #s-go,#s-break,#s-final{max-width:1120px}
+  #s-final .board{max-width:720px}
+}
+/* ---- last touches ----------------------------------------------------- */
+/* coming back from a break is the same kind of act as GO, so it is the
+   same red button; gold is kept for scores and for the trophy */
+#resume{color:#FFF3EF;background:linear-gradient(180deg,#F02038,#A50F22);
+  border:1px solid #FF5C72;
+  box-shadow:0 0 36px rgba(228,24,46,.5),inset 0 1px 0 rgba(255,255,255,.22)}
+#resume:hover{background:linear-gradient(180deg,#FF2A44,#B91126)}
+
+/* the join form needs air between a field and the next label */
+#chair-join .ytin,#chair-join .codein{margin-bottom:4px}
+#chair-join .field-label{margin-top:18px}
+#chair-join .seg{margin-bottom:10px}
+
+/* the overlay that gets held up to the room, and the device settings */
+.joinover{background:rgba(7,3,5,.84)}
+.joincard{border-radius:22px}
+.joincard .bigcode{color:#FFD37A;text-shadow:0 0 44px rgba(255,180,90,.4)}
+.joincard .qrbox{border:1px solid rgba(255,70,100,.3)}
+.setcard .setttl{text-shadow:0 0 34px rgba(228,24,46,.35)}
+
+/* the stage of the chair game keeps the same frame as the question screen */
+#s-listen .vw-screen{border-color:rgba(255,70,100,.3);
+  box-shadow:0 0 50px rgba(228,24,46,.22),inset 0 1px 0 rgba(255,255,255,.07),
+             0 20px 44px rgba(0,0,0,.65)}
+.stagectl .btn{border-radius:12px}
+.turnline{color:#9E858C}
+.infopanel>.ip-idle,.infopanel>.ip-body,.rail,.roundcard{
+  border-color:rgba(255,70,100,.18)}
+
+/* the bar that says a newer build is out */
+.newver{border-color:rgba(255,70,100,.35);box-shadow:var(--glowsoft)}
+/* ---- a question with no picture should not sit in an empty frame ------
+   Most quiz questions have no image behind them. The stage frame is for a
+   picture; without one it is a large black rectangle with words floating
+   in the middle of it, so it loses its border and its reserved height.  */
+#s-quiz .videowall:not(:has(.qpic)) .vw-screen{border:0;box-shadow:none;background:none}
+#s-quiz .videowall:not(:has(.qpic)){flex:0 1 auto;
+  height:clamp(150px,30vh,340px);min-height:0;margin-bottom:clamp(6px,1vh,16px)}
+#s-quiz .videowall:not(:has(.qpic)) .qasking{font-size:clamp(22px,3vw,54px);
+  padding:clamp(10px,2.4vh,34px) 2vw;max-width:34ch;margin:0 auto}
+/*@STUDIO-END*/
 </style>
 </head>
 <body class="screen-home">
@@ -3319,7 +3819,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 22:21';
+const BUILD='06.11. 22:49';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
