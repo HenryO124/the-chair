@@ -1161,6 +1161,13 @@ body.learning .gamecard .garrow{display:none}
       <button data-l="0">Until teams fill</button>
     </div>
 
+    <div class="field-label" id="lang-label">Language of the questions</div>
+    <div class="seg wrap" id="lang">
+      <button data-g="fi" class="sel">Suomi</button>
+      <button data-g="sv">Svenska</button>
+      <button data-g="en">English</button>
+    </div>
+
     <div class="field-label" id="cats-label">Topics</div>
     <div class="seg wrap" id="cats">
       <button data-c="*" class="sel">Everything</button>
@@ -1361,7 +1368,7 @@ body.learning .gamecard .garrow{display:none}
     <h2 style="text-align:center" id="champ"></h2>
     <p class="sub" style="text-align:center" id="champ-sub"></p>
     <div id="final-board"></div>
-    <button class="btn" id="restart" style="margin-top:22px">Back to the menu</button>
+    <button class="btn" id="restart" style="margin-top:22px">Pick another game</button>
   </section>
 
 </div>
@@ -1760,18 +1767,32 @@ $('cats')&&($('cats').onclick=e=>{
   if(PARTY.role==='host')publishStage();
 });
 function catBank(){
-  return S.cats.length?TRIVIA.filter(q=>S.cats.indexOf(q[0])>=0):TRIVIA;
+  const bank=langBank();
+  if(!S.cats.length)return bank;
+  // topics are stored by their English key, whatever language they are shown in
+  const want=S.cats.map(catShown);
+  return bank.filter(q=>want.indexOf(q[0])>=0);
 }
 function drawCats(){
   const box=$('cats');if(!box)return;
-  [...box.querySelectorAll('button')].forEach(b=>
-    b.classList.toggle('sel',b.dataset.c==='*'?!S.cats.length:S.cats.indexOf(b.dataset.c)>=0));
+  [...box.querySelectorAll('button')].forEach(b=>{
+    b.classList.toggle('sel',b.dataset.c==='*'?!S.cats.length:S.cats.indexOf(b.dataset.c)>=0);
+    if(b.dataset.c!=='*')b.textContent=catShown(b.dataset.c);
+    else b.textContent=S.lang==='fi'?'Kaikki':S.lang==='sv'?'Allt':'Everything';
+  });
   const n=catBank().length;
   const note=$('cats-note');
   if(note)note.textContent=(S.cats.length?S.cats.length+' of six topics':'All six topics')
-    +' \u00b7 '+n+' question'+(n===1?'':'s')+' to draw from';
+    +' \u00b7 '+n+' question'+(n===1?'':'s')+' to draw from \u00b7 '
+    +(S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English');
   try{updateStartState()}catch(e){}
 }
+segHandler('lang','g',v=>{
+  S.lang=v;
+  try{localStorage.setItem('thechair.lang',v)}catch(e){}
+  drawCats();
+  if(PARTY.role==='host')publishStage();
+});
 segHandler('where','w',v=>{S.remote=(v==='away');dressWhere();
   if(PARTY.role==='host')publishStage()});   // nothing to tell if no room is open
 function dressWhere(){
@@ -2529,15 +2550,24 @@ function finish(){
   $('meta').textContent='season over';
   show('s-final');try{publishStage()}catch(e){}
 }
-// the night is done: back to the shelf, where the next game is picked
+// that game is done — but the room is not. Back to the shelf with everybody still in it.
 $('restart').onclick=()=>{
   try{Q.on=false;clearTimeout(Q.timer)}catch(e){}
   try{stopAutoNext(true)}catch(e){}
   try{stopVideo()}catch(e){}
   S.players.forEach(p=>{p.team=[];p.blockUsed=false;p.passed=false;p.score=0});
-  S.round=0;S.current=null;
+  S.round=0;S.current=null;S.deck=[];
   try{$('meta').textContent=''}catch(e){}
-  try{closeLobby()}catch(e){show('s-home')}
+  if(PARTY.role==='host'){
+    LEARNING=SOLO=false;document.body.classList.remove('learning');
+    $('startbar').hidden=true;$('roombar').hidden=false;
+    drawRoomBar();show('s-setup');publishStage();    // the phones follow us back
+    return;
+  }
+  // nobody else is in the room, so there is nothing to hold open
+  LEARNING=false;SOLO=true;
+  $('roombar').hidden=true;$('startbar').hidden=false;
+  show('s-setup');
 };
 
 /* ==================================================================
@@ -2546,7 +2576,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='06.11. 17:26';
+const BUILD='06.11. 17:33';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://broker.hivemq.com:8884/mqtt',
@@ -2913,6 +2943,266 @@ const TRIVIA=[
 const Q={on:false,round:0,of:10,deck:[],current:null,options:[],correct:0,
          answers:{},order:[],revealed:false,timer:null};
 
+/* the same 120 questions in Finnish and Swedish, row for row */
+const TRIVIA_FI=[
+["Minä vuonna Berliinin muuri murtui?", "1989", "1987", "1991", "1985", "Se avattiin 9. marraskuuta 1989 illalla."],
+["Kuka käveli ensimmäisenä Kuussa?", "Neil Armstrong", "Buzz Aldrin", "Juri Gagarin", "Michael Collins", "Apollo 11, 20. heinäkuuta 1969. Aldrin tuli tikkaita alas heti perässä."],
+["Minkä valtakunnan Tšingis-kaani perusti?", "Mongolivaltakunnan", "Osmanivaltakunnan", "Persian valtakunnan", "Rooman valtakunnan", "Laajimmillaan historian suurin yhtenäinen maavaltakunta."],
+["Minä vuonna Titanic upposi?", "1912", "1905", "1918", "1923", "Neljäntenä päivänä neitsytmatkallaan, jäävuoreen törmättyään."],
+["Mikä sota päättyi Versailles'n rauhaan?", "Ensimmäinen maailmansota", "Toinen maailmansota", "Krimin sota", "Saksan-Ranskan sota", "Allekirjoitettiin 1919, viisi vuotta sodan alusta."],
+["Kuka oli Rooman ensimmäinen keisari?", "Augustus", "Julius Caesar", "Nero", "Caligula", "Caesar ei koskaan ollut keisari; arvonimen otti hänen ottopoikansa."],
+["Missä maassa teollinen vallankumous alkoi?", "Britanniassa", "Ranskassa", "Saksassa", "Yhdysvalloissa", "Tekstiiliteollisuudesta ja höyrystä, noin 1760-luvulta alkaen."],
+["Minä vuonna Ranskan vallankumous alkoi?", "1789", "1776", "1799", "1812", "Bastilji vallattiin 14. heinäkuuta 1789."],
+["Minä vuonna Suomi julistautui itsenäiseksi?", "1917", "1905", "1920", "1939", "6. joulukuuta 1917, Venäjän keisarikunnasta."],
+["Mitkä kaksi maata kävivät talvisodan?", "Suomi ja Neuvostoliitto", "Suomi ja Ruotsi", "Norja ja Saksa", "Puola ja Neuvostoliitto", "105 päivää, marraskuusta 1939 maaliskuuhun 1940."],
+["Minä vuonna toinen maailmansota päättyi?", "1945", "1944", "1946", "1943", "Saksa antautui toukokuussa, Japani syyskuussa."],
+["Kuka kirjoitti Kommunistisen manifestin yhdessä Friedrich Engelsin kanssa?", "Karl Marx", "Vladimir Lenin", "Georg Hegel", "Mihail Bakunin", "Julkaistiin 1848, muutamaa viikkoa ennen Euroopan vallankumouksia."],
+["Millä vuosisadalla Lontoon suurpalo riehui?", "1600-luvulla", "1400-luvulla", "1700-luvulla", "1500-luvulla", "Vuonna 1666. Se alkoi leipomosta Pudding Lanella."],
+["Mikä sivilisaatio rakensi Machu Picchun?", "Inkat", "Mayat", "Atsteekit", "Olmeekit", "Rakennettu noin 1450 Perun Andeille."],
+["Minkä kirjoituksen tulkinnassa Rosettan kivi oli avain?", "Egyptin hieroglyfien", "Nuolenpääkirjoituksen", "Lineaari B:n", "Riimukirjoituksen", "Sama asetus on kivessä kolmella kirjoituksella, joista yksi on kreikka."],
+["Kuka johti Intian väkivallatonta itsenäisyysliikettä?", "Mohandas Gandhi", "Jawaharlal Nehru", "Subhas Chandra Bose", "B. R. Ambedkar", "Itsenäisyys tuli vuonna 1947."],
+["Mikä kaupunki oli muurin jakama vuosina 1961–1989?", "Berliini", "Wien", "Praha", "Budapest", "Kaksikymmentäkahdeksan vuotta, lähes päivälleen."],
+["Mikä vaurioitti Apollo 13:a matkalla Kuuhun?", "Happisäiliö räjähti", "Tulipalo laukaisualustalla", "Moottorivika nousussa", "Ohjaustietokone hajosi", "Kaikki kolme astronauttia palasivat elävinä."],
+["Kuka kuningatar hallitsi Britanniaa 70 vuotta?", "Elisabet II", "Viktoria", "Anna", "Maria I", "Viktoria ylsi 63 vuoteen, mikä oli siihen asti ennätys."],
+["Englanti kävi satavuotisen sodan mitä maata vastaan?", "Ranskaa", "Espanjaa", "Skotlantia", "Alankomaita", "Sota kesti itse asiassa 116 vuotta, katkoksin."],
+["Mikä on maailman suurin valtameri?", "Tyynimeri", "Atlantti", "Intian valtameri", "Jäämeri", "Se peittää noin kolmanneksen maapallon pinnasta."],
+["Mikä on Australian pääkaupunki?", "Canberra", "Sydney", "Melbourne", "Perth", "Valittiin kompromissina Sydneyn ja Melbournen välillä."],
+["Mount Everest on Nepalin ja minkä maan rajalla?", "Kiinan", "Intian", "Bhutanin", "Pakistanin", "Toisin sanoen Tiibetin."],
+["Mikä on maailman suurin kuuma aavikko?", "Sahara", "Gobi", "Kalahari", "Arabian aavikko", "Suunnilleen Yhdysvaltain kokoinen."],
+["Mikä on maailman pienin valtio?", "Vatikaani", "Monaco", "San Marino", "Liechtenstein", "Noin puoli neliökilometriä."],
+["Mikä Yhdysvaltain osavaltio on pinta-alaltaan suurin?", "Alaska", "Teksas", "Kalifornia", "Montana", "Yli kaksi kertaa Teksasin kokoinen."],
+["Missä maassa suurin osa Amazonin sademetsästä sijaitsee?", "Brasiliassa", "Perussa", "Kolumbiassa", "Venezuelassa", "Noin 60 prosenttia siitä."],
+["Mikä kaupunki sijaitsee Bosporinsalmen rannalla?", "Istanbul", "Ateena", "Odesa", "Baku", "Toinen jalka Euroopassa, toinen Aasiassa."],
+["Kuinka monta aikavyöhykettä Venäjällä on?", "Yksitoista", "Seitsemän", "Yhdeksän", "Kolmetoista", "Kaliningradista Kamtšatkalle."],
+["Ankara on minkä maan pääkaupunki?", "Turkin", "Georgian", "Kazakstanin", "Azerbaidžanin", "Se syrjäytti Istanbulin pääkaupunkina vuonna 1923."],
+["Mikä vuoristo on perinteinen raja Euroopan ja Aasian välillä?", "Ural", "Alpit", "Kaukasus", "Karpaatit", "Se kulkee pohjoisesta etelään Venäjän halki."],
+["Mikä on valtamerten syvin kohta?", "Mariaanien hauta", "Tongan hauta", "Jaavan hauta", "Puerto Ricon hauta", "Lähes yksitoista kilometriä alaspäin."],
+["Mikä on Islannin pääkaupunki?", "Reykjavík", "Oslo", "Tórshavn", "Nuuk", "Pohjoisin itsenäisen valtion pääkaupunki."],
+["Nairobi on minkä maan pääkaupunki?", "Kenian", "Tansanian", "Ugandan", "Etiopian", "Se kasvoi rautatien varikosta."],
+["Iso valliriutta sijaitsee minkä maan rannikolla?", "Australian", "Indonesian", "Filippiinien", "Fidžin", "Yli 2 300 kilometriä pitkä."],
+["Mikä on maailman suurin saari?", "Grönlanti", "Uusi-Guinea", "Borneo", "Madagaskar", "Australia lasketaan mantereeksi, ei saareksi."],
+["Baikaljärvi, maailman syvin järvi, sijaitsee missä maassa?", "Venäjällä", "Mongoliassa", "Kazakstanissa", "Kiinassa", "Siinä on noin viidennes maailman sulasta makeasta vedestä."],
+["Mikä salmi erottaa Espanjan Marokosta?", "Gibraltarinsalmi", "Bosporinsalmi", "Hormuzinsalmi", "Malakansalmi", "Kapeimmillaan neljätoista kilometriä."],
+["Missä maassa on eniten järviä?", "Kanadassa", "Suomessa", "Venäjällä", "Ruotsissa", "Useimpien laskutapojen mukaan enemmän kuin muussa maailmassa yhteensä."],
+["Mikä meri on Suomen ja Ruotsin välissä?", "Itämeri", "Pohjanmeri", "Barentsinmeri", "Norjanmeri", "Sen pohjoinen haara on Pohjanlahti."],
+["Mikä on kullan kemiallinen merkki?", "Au", "Ag", "Go", "Gd", "Latinan sanasta aurum. Ag on hopea."],
+["Kuinka monta luuta aikuisen ihmisen kehossa on?", "206", "186", "226", "246", "Vauvalla niitä on noin 270; osa luutuu yhteen kasvaessa."],
+["Mikä planeetta on lähimpänä Aurinkoa?", "Merkurius", "Venus", "Mars", "Maa", "Venus on silti kuumempi, ilmakehänsä ansiosta."],
+["Mitä kaasua kasvit ottavat yhteyttämiseen?", "Hiilidioksidia", "Happea", "Typpeä", "Vetyä", "Happi on sivutuote, jonka ne luovuttavat."],
+["Kuka kehitti yleisen suhteellisuusteorian?", "Albert Einstein", "Isaac Newton", "Niels Bohr", "Max Planck", "Julkaistiin vuonna 1915."],
+["Mikä on kovin luonnonaine?", "Timantti", "Kvartsi", "Korundi", "Topaasi", "Kymmenen kympistä Mohsin asteikolla."],
+["Kuinka nopeasti valo suunnilleen kulkee?", "300 000 km sekunnissa", "30 000 km sekunnissa", "3 000 000 km sekunnissa", "150 000 km sekunnissa", "Tarkkaan ottaen 299 792 km/s tyhjiössä."],
+["Mikä veriryhmä on yleisluovuttaja?", "O negatiivinen", "AB positiivinen", "A positiivinen", "B negatiivinen", "AB positiivinen on puolestaan yleisvastaanottaja."],
+["Mitä DNA tarkoittaa?", "Deoksiribonukleiinihappoa", "Dinukleiinihappoa", "Deoksiriboosinitraattia", "Diribonukleiinihappoa", "Sen kaksoiskierrerakenne kuvattiin vuonna 1953."],
+["Minkä alkuaineen järjestysluku on 1?", "Vety", "Helium", "Hiili", "Happi", "Maailmankaikkeuden yleisin alkuaine."],
+["Mikä on aurinkokunnan suurin planeetta?", "Jupiter", "Saturnus", "Neptunus", "Uranus", "Massiivisempi kuin kaikki muut yhteensä."],
+["Kuka muotoili kolme liikelakia?", "Isaac Newton", "Galileo Galilei", "Johannes Kepler", "Christiaan Huygens", "Julkaistiin Principiassa vuonna 1687."],
+["Mikä solun osa tuottaa suurimman osan sen energiasta?", "Mitokondrio", "Tuma", "Ribosomi", "Golgin laite", "Sillä on oma DNA, joka periytyy äidiltä."],
+["Missä lämpötilassa vesi kiehuu merenpinnan tasolla?", "100 celsiusasteessa", "90 asteessa", "110 asteessa", "80 asteessa", "Vuorella se kiehuu viileämpänä."],
+["Minkä vitamiinin iho valmistaa auringonvalossa?", "D-vitamiinin", "C-vitamiinin", "B12-vitamiinin", "A-vitamiinin", "Siksi pohjoinen talvi on ongelma."],
+["Mitä sienten tutkimus on nimeltään?", "Mykologia", "Botaniikka", "Entomologia", "Virologia", "Entomologia tutkii hyönteisiä."],
+["Mikä alkeishiukkanen on negatiivisesti varautunut?", "Elektroni", "Protoni", "Neutroni", "Positroni", "Protonit ovat positiivisia, neutronit varauksettomia."],
+["Kauanko auringonvalolta kestää saapua Maahan?", "Noin 8 minuuttia", "Noin 8 sekuntia", "Noin 80 minuuttia", "Noin 8 tuntia", "Näet Auringon siis aina sellaisena kuin se oli 8 minuuttia sitten."],
+["Mikä kaasu on Maan ilmakehässä yleisin?", "Typpi", "Happi", "Hiilidioksidi", "Argon", "Noin 78 prosenttia siitä."],
+["Kuka keksi penisilliinin?", "Alexander Fleming", "Louis Pasteur", "Joseph Lister", "Robert Koch", "Vahingossa, saastuneesta maljasta vuonna 1928."],
+["Kuka maalasi Mona Lisan?", "Leonardo da Vinci", "Michelangelo", "Rafael", "Sandro Botticelli", "Hän työsti sitä vuosia eikä koskaan luovuttanut sitä tilaajalle."],
+["Kuka kirjoitti Romeon ja Julian?", "William Shakespeare", "Christopher Marlowe", "Geoffrey Chaucer", "Ben Jonson", "Kirjoitettu noin vuonna 1595."],
+["Missä museossa Mona Lisa on?", "Louvressa", "Pradossa", "Uffizissa", "Rijksmuseumissa", "Panssarilasin takana Pariisissa."],
+["Kuka maalasi Tähtikirkkaan yön?", "Vincent van Gogh", "Claude Monet", "Paul Cézanne", "Paul Gauguin", "Maalattu mielisairaalan ikkunasta vuonna 1889."],
+["Kuka sävelsi yhdeksännen sinfonian ja sen Oodin ilolle?", "Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johannes Brahms", "Franz Schubert", "Hän oli siinä vaiheessa lähes täysin kuuro."],
+["Kuka kirjoitti romaanin 1984?", "George Orwell", "Aldous Huxley", "Ray Bradbury", "H. G. Wells", "Julkaistiin vuonna 1949."],
+["Kuka suomalaissäveltäjä kirjoitti Finlandian?", "Jean Sibelius", "Kaija Saariaho", "Einojuhani Rautavaara", "Leevi Madetoja", "Sävelletty 1899 vastalauseeksi Venäjän sensuurille."],
+["Kuka veisti Firenzen Daavid-patsaan?", "Michelangelo", "Donatello", "Gian Lorenzo Bernini", "Auguste Rodin", "Veistetty yhdestä marmorilohkareesta, jonka muut olivat hylänneet."],
+["Kalevala on minkä maan kansalliseepos?", "Suomen", "Viron", "Islannin", "Norjan", "Elias Lönnrotin kokoama kansanrunoudesta."],
+["Kuka kirjoitti Ylpeyden ja ennakkoluulon?", "Jane Austen", "Charlotte Brontë", "George Eliot", "Elizabeth Gaskell", "Julkaistiin nimettömänä vuonna 1813."],
+["Kuka taidemaalari leikkasi osan omasta korvastaan?", "Vincent van Gogh", "Paul Gauguin", "Edvard Munch", "Henri de Toulouse-Lautrec", "Riidan jälkeen Gauguinin kanssa Arlesissa."],
+["Kuka ohjasi elokuvat Tappajahai ja E.T.?", "Steven Spielberg", "George Lucas", "Martin Scorsese", "Francis Ford Coppola", "Tappajahaita kutsutaan usein ensimmäiseksi kesähitiksi."],
+["Mikä maalaus tunnetaan sulavista kelloistaan?", "Muistin pysyvyys", "Guernica", "Huuto", "Lumpeet", "Salvador Dalí, 1931."],
+["Kuka kirjoitti Taru sormusten herrasta?", "J. R. R. Tolkien", "C. S. Lewis", "Philip Pullman", "Ursula K. Le Guin", "Hän oli muinaisenglannin professori Oxfordissa."],
+["Kuka norjalainen maalasi Huudon?", "Edvard Munch", "Gustav Vigeland", "Johan Christian Dahl", "Christian Krohg", "Siitä on olemassa useita versioita."],
+["Kuka maalasi Sikstuksen kappelin katon?", "Michelangelo", "Rafael", "Leonardo da Vinci", "Tizian", "Neljä vuotta, enimmäkseen seisaaltaan."],
+["Kuka loi muumit?", "Tove Jansson", "Astrid Lindgren", "Selma Lagerlöf", "Hans Christian Andersen", "Suomalainen kirjailija, joka kirjoitti ruotsiksi."],
+["Kuka kirjoitti Don Quijoten?", "Miguel de Cervantes", "Lope de Vega", "Luis de Góngora", "Pedro Calderón", "Sitä kutsutaan usein ensimmäiseksi moderniksi romaaniksi."],
+["Kuka hollantilainen maalasi Yövartion?", "Rembrandt", "Johannes Vermeer", "Frans Hals", "Jan Steen", "Se on Amsterdamin Rijksmuseumissa."],
+["Kuka sävelsi Pähkinänsärkijän?", "Pjotr Tšaikovski", "Igor Stravinski", "Sergei Prokofjev", "Nikolai Rimski-Korsakov", "Ensiesitys vuonna 1892."],
+["Kuinka monta pelaajaa jalkapallojoukkueella on kentällä?", "Yksitoista", "Kymmenen", "Kaksitoista", "Yhdeksän", "Maalivahti mukaan lukien."],
+["Kuinka usein kesäolympialaiset järjestetään?", "Joka neljäs vuosi", "Joka toinen vuosi", "Joka kolmas vuosi", "Joka viides vuosi", "Väliä kutsutaan olympiadiksi."],
+["Missä lajissa tehdään donkkaus?", "Koripallossa", "Lentopallossa", "Käsipallossa", "Tenniksessä", "Siitä saa saman kaksi pistettä kuin mistä tahansa lähiheitosta."],
+["Kuinka monta rengasta olympialipussa on?", "Viisi", "Neljä", "Kuusi", "Seitsemän", "Yksi kutakin asuttua maanosaa kohti, siten kuin ne silloin laskettiin."],
+["Mikä maa on voittanut eniten jalkapallon MM-kultaa?", "Brasilia", "Saksa", "Italia", "Argentiina", "Viisi, ja ainoa maa joka on pelannut jokaisessa turnauksessa."],
+["Mikä on nollan nimi tenniksessä?", "Love", "Nil", "Duck", "Blank", "Mahdollisesti ranskan sanasta l'œuf, muna."],
+["Kuinka pitkä maraton on?", "42,195 kilometriä", "40 kilometriä", "45 kilometriä", "38 kilometriä", "Omituinen matka vakiintui Lontoon kisoissa 1908."],
+["Kuinka monta pelaajaa jäällä on puolellaan jääkiekossa?", "Kuusi", "Viisi", "Seitsemän", "Neljä", "Viisi kenttäpelaajaa ja maalivahti."],
+["Mistä maasta judo on kotoisin?", "Japanista", "Kiinasta", "Koreasta", "Brasiliasta", "Jigoro Kanon perustama vuonna 1882."],
+["Tour de France on minkä lajin kilpailu?", "Pyöräilyn", "Juoksun", "Moottoriurheilun", "Soudun", "Kolme viikkoa ja noin 3 500 kilometriä."],
+["Montako pistettä yritys on rugby unionissa?", "Viisi", "Kolme", "Neljä", "Kuusi", "Plus kaksi lisää onnistuneesta korotuksesta."],
+["Kuka suomalainen voitti formula ykkösten maailmanmestaruuden 1982?", "Keke Rosberg", "Mika Häkkinen", "Kimi Räikkönen", "Heikki Kovalainen", "Hän voitti kaudella vain yhden osakilpailun ja silti mestaruuden."],
+["Mikä on golfissa yksi lyönti alle parin?", "Birdie", "Eagle", "Bogey", "Albatrossi", "Eagle on kaksi alle."],
+["Missä lajissa käytetään sulkapalloa eli höyhenpalloa?", "Sulkapallossa", "Squashissa", "Pöytätenniksessä", "Pelotassa", "Pallo voi lähteä mailasta yli 400 km/h."],
+["Kuinka monta ruutua shakkilaudalla on?", "64", "81", "100", "49", "Kahdeksan kertaa kahdeksan."],
+["Mitä maata Usain Bolt edustaa?", "Jamaikaa", "Trinidad ja Tobagoa", "Yhdysvaltoja", "Barbadosta", "Hän pitää hallussaan 100 ja 200 metrin maailmanennätyksiä."],
+["Montako kolmen iskun sarjaa eli strikeä tekee ulosajon baseballissa?", "Kolme", "Kaksi", "Neljä", "Viisi", "Neljä palloa taas oikeuttaa vapaapesään."],
+["Kuka suomalainen juoksija voitti yhdeksän olympiakultaa 1920-luvulla?", "Paavo Nurmi", "Hannes Kolehmainen", "Ville Ritola", "Lasse Virén", "Häntä kutsuttiin Lentäväksi suomalaiseksi."],
+["Montako reikää täydellä golfkierroksella pelataan?", "Kahdeksantoista", "Yhdeksän", "Kaksitoista", "Kaksikymmentäneljä", "Par on yleensä 70–72."],
+["Minkä lajin kuuluisin ottelusarja on Ashes?", "Krikettin", "Rugbyn", "Jääkiekon", "Soudun", "Englanti vastaan Australia vuodesta 1882."],
+["Montako päivää karkausvuodessa on?", "366", "365", "364", "367", "Helmikuuhun tulee lisäpäivä suunnilleen joka neljäs vuosi."],
+["Montako kirjainta englannin aakkosissa on?", "26", "24", "25", "27", "Suomessa niitä on muutama enemmän."],
+["Mikä on Japanin valuutta?", "Jeni", "Won", "Juan", "Baht", "Won on korealainen, juan kiinalainen."],
+["Montako minuuttia vuorokaudessa on?", "1 440", "1 240", "1 640", "1 200", "Kuusikymmentä kertaa kaksikymmentäneljä."],
+["Mikä mauste on painoonsa nähden kallein?", "Sahrami", "Vanilja", "Kardemumma", "Kaneli", "Se poimitaan käsin, kolme luottia kukkaa kohti."],
+["Mitä WWW tarkoittaa?", "World Wide Web", "World Web Wire", "Wide World Web", "Web World Wide", "Tim Berners-Leen ehdotus vuodelta 1989."],
+["Mikä on suurin elävä eläin?", "Sinivalas", "Afrikannorsu", "Kirahvi", "Kaskelotti", "Jopa kolmekymmentä metriä pitkä."],
+["Montako kieltä tavallisessa kitarassa on?", "Kuusi", "Neljä", "Viisi", "Seitsemän", "Bassossa niitä on neljä."],
+["Mikä on guacamolen pääraaka-aine?", "Avokado", "Kesäkurpitsa", "Herne", "Härkäpapu", "Nimi tulee nahuatlin kielen avokadokastikkeesta."],
+["Mitä planeettaa kutsutaan punaiseksi planeetaksi?", "Marsia", "Venusta", "Jupiteria", "Merkuriusta", "Maaperän rautaoksidi eli ruoste."],
+["Montako väriä sateenkaaressa perinteisesti luetellaan?", "Seitsemän", "Kuusi", "Viisi", "Kahdeksan", "Newton päätyi seitsemään, jotta se vastaisi sävelasteikkoa."],
+["Mikä on varisparven englanninkielinen nimitys?", "A murder", "A parliament", "A pack", "A gaggle", "A parliament tarkoittaa pöllöparvea."],
+["Missä maassa juodaan eniten kahvia henkeä kohti?", "Suomessa", "Italiassa", "Brasiliassa", "Ruotsissa", "Keskimäärin noin neljä kupillista päivässä."],
+["Montako astetta ympyrässä on?", "360", "180", "270", "400", "Luku on peräisin babylonialaisesta tähtitieteestä."],
+["Montako pientä ruutua Rubikin kuution yhdellä sivulla on?", "Yhdeksän", "Neljä", "Kuusitoista", "Kuusi", "Kolme kertaa kolme, kullakin kuudella sivulla."],
+["Millä kielellä on eniten äidinkielisiä puhujia?", "Mandariinikiinalla", "Englannilla", "Espanjalla", "Hindillä", "Englanti voittaa, jos toisen kielen puhujat lasketaan mukaan."],
+["Minä kuukautena Suomessa vietetään juhannusta?", "Kesäkuussa", "Heinäkuussa", "Toukokuussa", "Elokuussa", "Kesäpäivänseisausta lähinnä olevana viikonloppuna."],
+["Mikä on ihmiskehon suurin elin?", "Iho", "Maksa", "Keuhkot", "Suolisto", "Sitä on noin kaksi neliömetriä."],
+["Montako sivua kuusikulmiossa on?", "Kuusi", "Viisi", "Seitsemän", "Kahdeksan", "Kuten hunajakennossa."],
+["Mikä metalli on huoneenlämmössä nestemäistä?", "Elohopea", "Lyijy", "Tina", "Sinkki", "Siksi sitä käytettiin lämpömittareissa."],
+];
+const TRIVIA_SV=[
+["Vilket år föll Berlinmuren?", "1989", "1987", "1991", "1985", "Den öppnades natten till den 9 november 1989."],
+["Vem gick först på månen?", "Neil Armstrong", "Buzz Aldrin", "Jurij Gagarin", "Michael Collins", "Apollo 11, den 20 juli 1969. Aldrin kom strax efter."],
+["Vilket rike grundade Djingis khan?", "Mongolväldet", "Osmanska riket", "Persiska riket", "Romerska riket", "Som störst historiens största sammanhängande landrike."],
+["Vilket år sjönk Titanic?", "1912", "1905", "1918", "1923", "Fyra dygn in på jungfruresan, efter att ha träffat ett isberg."],
+["Vilket krig avslutades med Versaillesfreden?", "Första världskriget", "Andra världskriget", "Krimkriget", "Fransk-tyska kriget", "Undertecknad 1919, fem år efter krigsutbrottet."],
+["Vem var Roms förste kejsare?", "Augustus", "Julius Caesar", "Nero", "Caligula", "Caesar var aldrig kejsare; titeln togs av hans adoptivson."],
+["I vilket land började den industriella revolutionen?", "Storbritannien", "Frankrike", "Tyskland", "USA", "Textilier och ånga, från ungefär 1760-talet."],
+["Vilket år började franska revolutionen?", "1789", "1776", "1799", "1812", "Bastiljen stormades den 14 juli 1789."],
+["Vilket år förklarade sig Finland självständigt?", "1917", "1905", "1920", "1939", "Den 6 december 1917, från det ryska kejsardömet."],
+["Vilka två länder utkämpade vinterkriget?", "Finland och Sovjetunionen", "Finland och Sverige", "Norge och Tyskland", "Polen och Sovjetunionen", "105 dagar, från november 1939 till mars 1940."],
+["Vilket år slutade andra världskriget?", "1945", "1944", "1946", "1943", "Tyskland kapitulerade i maj, Japan i september."],
+["Vem skrev Kommunistiska manifestet tillsammans med Friedrich Engels?", "Karl Marx", "Vladimir Lenin", "Georg Hegel", "Michail Bakunin", "Utgivet 1848, några veckor före revolutionerna i Europa."],
+["Under vilket århundrade brann Londons stora brand?", "1600-talet", "1400-talet", "1700-talet", "1500-talet", "År 1666. Den började i ett bageri på Pudding Lane."],
+["Vilken civilisation byggde Machu Picchu?", "Inkariket", "Mayafolket", "Aztekerna", "Olmekerna", "Byggt omkring 1450 i de peruanska Anderna."],
+["Rosettastenen var nyckeln till vilken skrift?", "Egyptiska hieroglyfer", "Kilskrift", "Linear B", "Runor", "Samma förordning står på stenen med tre skrifter, varav en är grekiska."],
+["Vem ledde Indiens icke-våldsamma frihetsrörelse?", "Mohandas Gandhi", "Jawaharlal Nehru", "Subhas Chandra Bose", "B. R. Ambedkar", "Självständigheten kom 1947."],
+["Vilken stad delades av en mur mellan 1961 och 1989?", "Berlin", "Wien", "Prag", "Budapest", "Tjugoåtta år, nästan på dagen."],
+["Vad skadade Apollo 13 på väg till månen?", "En syretank exploderade", "En brand på startplattan", "Ett motorfel vid start", "Styrdatorn gick sönder", "Alla tre astronauter kom hem levande."],
+["Vilken drottning regerade över Storbritannien i 70 år?", "Elisabet II", "Viktoria", "Anna", "Maria I", "Viktoria nådde 63 år, vilket dittills var rekord."],
+["England utkämpade hundraårskriget mot vilket land?", "Frankrike", "Spanien", "Skottland", "Nederländerna", "Kriget varade egentligen 116 år, med avbrott."],
+["Vilket är världens största hav?", "Stilla havet", "Atlanten", "Indiska oceanen", "Norra ishavet", "Det täcker ungefär en tredjedel av jordens yta."],
+["Vad heter Australiens huvudstad?", "Canberra", "Sydney", "Melbourne", "Perth", "Valdes som kompromiss mellan Sydney och Melbourne."],
+["Mount Everest ligger på gränsen mellan Nepal och vilket land?", "Kina", "Indien", "Bhutan", "Pakistan", "Med andra ord Tibet."],
+["Vilken är världens största varma öken?", "Sahara", "Gobi", "Kalahari", "Arabiska öknen", "Ungefär lika stor som USA."],
+["Vilket är världens minsta land?", "Vatikanstaten", "Monaco", "San Marino", "Liechtenstein", "Ungefär en halv kvadratkilometer."],
+["Vilken amerikansk delstat är störst till ytan?", "Alaska", "Texas", "Kalifornien", "Montana", "Mer än dubbelt så stor som Texas."],
+["I vilket land ligger större delen av Amazonas regnskog?", "Brasilien", "Peru", "Colombia", "Venezuela", "Ungefär 60 procent av den."],
+["Vilken stad ligger vid Bosporen?", "Istanbul", "Aten", "Odesa", "Baku", "En fot i Europa, en i Asien."],
+["Hur många tidszoner sträcker sig Ryssland över?", "Elva", "Sju", "Nio", "Tretton", "Från Kaliningrad till Kamtjatka."],
+["Ankara är huvudstad i vilket land?", "Turkiet", "Georgien", "Kazakstan", "Azerbajdzjan", "Det ersatte Istanbul som huvudstad 1923."],
+["Vilken bergskedja är den traditionella gränsen mellan Europa och Asien?", "Uralbergen", "Alperna", "Kaukasus", "Karpaterna", "Den går från norr till söder genom Ryssland."],
+["Var ligger havens djupaste punkt?", "Marianergraven", "Tongagraven", "Javagraven", "Puerto Rico-graven", "Nästan elva kilometer ner."],
+["Vad heter Islands huvudstad?", "Reykjavik", "Oslo", "Torshamn", "Nuuk", "Den nordligaste huvudstaden i en självständig stat."],
+["Nairobi är huvudstad i vilket land?", "Kenya", "Tanzania", "Uganda", "Etiopien", "Staden växte fram ur en järnvägsdepå."],
+["Stora barriärrevet ligger utanför vilket lands kust?", "Australien", "Indonesien", "Filippinerna", "Fiji", "Över 2 300 kilometer långt."],
+["Vilken är världens största ö?", "Grönland", "Nya Guinea", "Borneo", "Madagaskar", "Australien räknas som kontinent, inte som ö."],
+["Bajkalsjön, världens djupaste sjö, ligger i vilket land?", "Ryssland", "Mongoliet", "Kazakstan", "Kina", "Den rymmer ungefär en femtedel av världens ofrusna sötvatten."],
+["Vilket sund skiljer Spanien från Marocko?", "Gibraltar sund", "Bosporen", "Hormuzsundet", "Malackasundet", "Fjorton kilometer som smalast."],
+["Vilket land har flest sjöar?", "Kanada", "Finland", "Ryssland", "Sverige", "Enligt de flesta sätt att räkna fler än resten av världen tillsammans."],
+["Vilket hav ligger mellan Finland och Sverige?", "Östersjön", "Nordsjön", "Barents hav", "Norska havet", "Dess norra arm är Bottniska viken."],
+["Vad är den kemiska beteckningen för guld?", "Au", "Ag", "Go", "Gd", "Från latinets aurum. Ag är silver."],
+["Hur många ben har en vuxen människa?", "206", "186", "226", "246", "Ett spädbarn har omkring 270; en del växer ihop."],
+["Vilken planet ligger närmast solen?", "Merkurius", "Venus", "Mars", "Jorden", "Venus är ändå hetare, tack vare sin atmosfär."],
+["Vilken gas tar växterna upp vid fotosyntesen?", "Koldioxid", "Syre", "Kväve", "Väte", "Syret är en biprodukt som de avger."],
+["Vem utvecklade den allmänna relativitetsteorin?", "Albert Einstein", "Isaac Newton", "Niels Bohr", "Max Planck", "Publicerad 1915."],
+["Vilket är det hårdaste naturliga ämnet?", "Diamant", "Kvarts", "Korund", "Topas", "Tio av tio på Mohs skala."],
+["Ungefär hur fort färdas ljuset?", "300 000 km per sekund", "30 000 km per sekund", "3 000 000 km per sekund", "150 000 km per sekund", "Närmare bestämt 299 792 km/s i vakuum."],
+["Vilken blodgrupp är universalgivare?", "0 negativ", "AB positiv", "A positiv", "B negativ", "AB positiv är i stället universalmottagare."],
+["Vad står DNA för?", "Deoxiribonukleinsyra", "Dinukleinsyra", "Deoxiribosnitrat", "Diribonukleinsyra", "Dess dubbelspiral beskrevs 1953."],
+["Vilket grundämne har atomnummer 1?", "Väte", "Helium", "Kol", "Syre", "Universums vanligaste grundämne."],
+["Vilken är solsystemets största planet?", "Jupiter", "Saturnus", "Neptunus", "Uranus", "Tyngre än alla de andra tillsammans."],
+["Vem formulerade de tre rörelselagarna?", "Isaac Newton", "Galileo Galilei", "Johannes Kepler", "Christiaan Huygens", "Publicerade i Principia 1687."],
+["Vilken del av cellen producerar det mesta av dess energi?", "Mitokondrien", "Cellkärnan", "Ribosomen", "Golgiapparaten", "Den har eget DNA, ärvt från modern."],
+["Vid vilken temperatur kokar vatten vid havsnivå?", "100 grader Celsius", "90 grader", "110 grader", "80 grader", "På ett berg kokar det vid lägre temperatur."],
+["Vilket vitamin bildar huden i solljus?", "D-vitamin", "C-vitamin", "B12-vitamin", "A-vitamin", "Därför är den nordliga vintern ett problem."],
+["Vad kallas läran om svampar?", "Mykologi", "Botanik", "Entomologi", "Virologi", "Entomologi handlar om insekter."],
+["Vilken elementarpartikel har negativ laddning?", "Elektronen", "Protonen", "Neutronen", "Positronen", "Protoner är positiva, neutroner neutrala."],
+["Hur lång tid tar solljuset till jorden?", "Ungefär 8 minuter", "Ungefär 8 sekunder", "Ungefär 80 minuter", "Ungefär 8 timmar", "Du ser alltså alltid solen som den var för 8 minuter sedan."],
+["Vilken gas är vanligast i jordens atmosfär?", "Kväve", "Syre", "Koldioxid", "Argon", "Ungefär 78 procent av den."],
+["Vem upptäckte penicillinet?", "Alexander Fleming", "Louis Pasteur", "Joseph Lister", "Robert Koch", "Av en slump, från en förorenad petriskål 1928."],
+["Vem målade Mona Lisa?", "Leonardo da Vinci", "Michelangelo", "Rafael", "Sandro Botticelli", "Han arbetade på den i åratal och lämnade aldrig ifrån sig den."],
+["Vem skrev Romeo och Julia?", "William Shakespeare", "Christopher Marlowe", "Geoffrey Chaucer", "Ben Jonson", "Skriven omkring 1595."],
+["På vilket museum hänger Mona Lisa?", "Louvren", "Prado", "Uffizierna", "Rijksmuseum", "Bakom pansarglas i Paris."],
+["Vem målade Stjärnnatt?", "Vincent van Gogh", "Claude Monet", "Paul Cézanne", "Paul Gauguin", "Målad från fönstret på ett sinnessjukhus 1889."],
+["Vem komponerade nionde symfonin med Hymn till glädjen?", "Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johannes Brahms", "Franz Schubert", "Han var då nästan helt döv."],
+["Vem skrev romanen 1984?", "George Orwell", "Aldous Huxley", "Ray Bradbury", "H. G. Wells", "Utgiven 1949."],
+["Vilken finländsk tonsättare skrev Finlandia?", "Jean Sibelius", "Kaija Saariaho", "Einojuhani Rautavaara", "Leevi Madetoja", "Skriven 1899 som protest mot den ryska censuren."],
+["Vem högg Davidstatyn i Florens?", "Michelangelo", "Donatello", "Gian Lorenzo Bernini", "Auguste Rodin", "Huggen ur ett enda marmorblock som andra hade gett upp."],
+["Kalevala är nationalepos i vilket land?", "Finland", "Estland", "Island", "Norge", "Sammanställt av Elias Lönnrot ur folkdiktning."],
+["Vem skrev Stolthet och fördom?", "Jane Austen", "Charlotte Brontë", "George Eliot", "Elizabeth Gaskell", "Utgiven anonymt 1813."],
+["Vilken målare skar av en del av sitt eget öra?", "Vincent van Gogh", "Paul Gauguin", "Edvard Munch", "Henri de Toulouse-Lautrec", "Efter ett gräl med Gauguin i Arles."],
+["Vem regisserade Hajen och E.T.?", "Steven Spielberg", "George Lucas", "Martin Scorsese", "Francis Ford Coppola", "Hajen kallas ofta den första sommarsuccén."],
+["Vilken målning är känd för sina smältande klockor?", "Minnets envishet", "Guernica", "Skriet", "Näckrosor", "Salvador Dalí, 1931."],
+["Vem skrev Sagan om ringen?", "J. R. R. Tolkien", "C. S. Lewis", "Philip Pullman", "Ursula K. Le Guin", "Han var professor i fornengelska i Oxford."],
+["Vilken norrman målade Skriet?", "Edvard Munch", "Gustav Vigeland", "Johan Christian Dahl", "Christian Krohg", "Det finns flera versioner av den."],
+["Vem målade taket i Sixtinska kapellet?", "Michelangelo", "Rafael", "Leonardo da Vinci", "Tizian", "Fyra år, mestadels stående."],
+["Vem skapade mumintrollen?", "Tove Jansson", "Astrid Lindgren", "Selma Lagerlöf", "Hans Christian Andersen", "En finländsk författare som skrev på svenska."],
+["Vem skrev Don Quijote?", "Miguel de Cervantes", "Lope de Vega", "Luis de Góngora", "Pedro Calderón", "Den kallas ofta den första moderna romanen."],
+["Vilken nederländare målade Nattvakten?", "Rembrandt", "Johannes Vermeer", "Frans Hals", "Jan Steen", "Den hänger på Rijksmuseum i Amsterdam."],
+["Vem komponerade Nötknäpparen?", "Pjotr Tjajkovskij", "Igor Stravinskij", "Sergej Prokofjev", "Nikolaj Rimskij-Korsakov", "Uruppförd 1892."],
+["Hur många spelare har ett fotbollslag på planen?", "Elva", "Tio", "Tolv", "Nio", "Målvakten inräknad."],
+["Hur ofta hålls sommar-OS?", "Vart fjärde år", "Vartannat år", "Vart tredje år", "Vart femte år", "Mellanrummet kallas en olympiad."],
+["I vilken sport gör man en dunk?", "Basket", "Volleyboll", "Handboll", "Tennis", "Den ger samma två poäng som vilket närkast som helst."],
+["Hur många ringar finns på den olympiska flaggan?", "Fem", "Fyra", "Sex", "Sju", "En för varje bebodd världsdel, som man räknade dem då."],
+["Vilket land har vunnit flest VM i fotboll?", "Brasilien", "Tyskland", "Italien", "Argentina", "Fem, och det enda land som spelat i varje turnering."],
+["Vad kallas noll i tennis?", "Love", "Nil", "Duck", "Blank", "Möjligen från franskans l'œuf, ett ägg."],
+["Hur långt är ett maratonlopp?", "42,195 kilometer", "40 kilometer", "45 kilometer", "38 kilometer", "Den udda sträckan fastställdes vid OS i London 1908."],
+["Hur många spelare per lag är på isen i ishockey?", "Sex", "Fem", "Sju", "Fyra", "Fem utespelare och en målvakt."],
+["Från vilket land kommer judo?", "Japan", "Kina", "Korea", "Brasilien", "Grundad av Jigoro Kano 1882."],
+["Tour de France är en tävling i vilken sport?", "Cykling", "Löpning", "Motorsport", "Rodd", "Tre veckor och omkring 3 500 kilometer."],
+["Hur många poäng ger ett försök i rugby union?", "Fem", "Tre", "Fyra", "Sex", "Plus två till för en lyckad konvertering."],
+["Vilken finländare vann formel 1-VM 1982?", "Keke Rosberg", "Mika Häkkinen", "Kimi Räikkönen", "Heikki Kovalainen", "Han vann bara ett lopp den säsongen och tog ändå titeln."],
+["Vad kallas ett slag under par i golf?", "Birdie", "Eagle", "Bogey", "Albatross", "En eagle är två under."],
+["I vilken sport används en fjäderboll?", "Badminton", "Squash", "Bordtennis", "Pelota", "Bollen kan lämna racketen i över 400 km/h."],
+["Hur många rutor finns på ett schackbräde?", "64", "81", "100", "49", "Åtta gånger åtta."],
+["Vilket land tävlar Usain Bolt för?", "Jamaica", "Trinidad och Tobago", "USA", "Barbados", "Han har världsrekorden på 100 och 200 meter."],
+["Hur många strikes blir en out i baseboll?", "Tre", "Två", "Fyra", "Fem", "Fyra bollar ger däremot en frigång."],
+["Vilken finländsk löpare vann nio OS-guld på 1920-talet?", "Paavo Nurmi", "Hannes Kolehmainen", "Ville Ritola", "Lasse Virén", "Han kallades den flygande finländaren."],
+["Hur många hål spelas på en full golfrunda?", "Arton", "Nio", "Tolv", "Tjugofyra", "Par är vanligtvis 70 till 72."],
+["I vilken sport är Ashes den mest berömda matchserien?", "Cricket", "Rugby", "Ishockey", "Rodd", "England mot Australien sedan 1882."],
+["Hur många dagar har ett skottår?", "366", "365", "364", "367", "En extra dag i februari, ungefär vart fjärde år."],
+["Hur många bokstäver har det engelska alfabetet?", "26", "24", "25", "27", "Svenskan har några fler."],
+["Vad heter Japans valuta?", "Yen", "Won", "Yuan", "Baht", "Won är koreansk, yuan kinesisk."],
+["Hur många minuter går det på ett dygn?", "1 440", "1 240", "1 640", "1 200", "Sextio gånger tjugofyra."],
+["Vilken krydda är dyrast per vikt?", "Saffran", "Vanilj", "Kardemumma", "Kanel", "Den plockas för hand, tre strängar per blomma."],
+["Vad står WWW för?", "World Wide Web", "World Web Wire", "Wide World Web", "Web World Wide", "Föreslaget av Tim Berners-Lee 1989."],
+["Vilket är det största nu levande djuret?", "Blåvalen", "Afrikanska elefanten", "Giraffen", "Kaskeloten", "Upp till trettio meter lång."],
+["Hur många strängar har en vanlig gitarr?", "Sex", "Fyra", "Fem", "Sju", "En bas har fyra."],
+["Vad är huvudingrediensen i guacamole?", "Avokado", "Zucchini", "Ärta", "Bondböna", "Namnet kommer från nahuatl och betyder avokadosås."],
+["Vilken planet kallas den röda planeten?", "Mars", "Venus", "Jupiter", "Merkurius", "Järnoxid i jorden, med andra ord rost."],
+["Hur många färger brukar man räkna i en regnbåge?", "Sju", "Sex", "Fem", "Åtta", "Newton stannade vid sju för att matcha tonskalan."],
+["Vad kallas en flock kråkor på engelska?", "A murder", "A parliament", "A pack", "A gaggle", "A parliament är ugglor."],
+["I vilket land dricker man mest kaffe per person?", "Finland", "Italien", "Brasilien", "Sverige", "I snitt omkring fyra koppar om dagen."],
+["Hur många grader har en cirkel?", "360", "180", "270", "400", "Ett tal som ärvts från babylonisk astronomi."],
+["Hur många små rutor finns på en sida av Rubiks kub?", "Nio", "Fyra", "Sexton", "Sex", "Tre gånger tre, på var och en av sex sidor."],
+["Vilket språk har flest modersmålstalare?", "Mandarin", "Engelska", "Spanska", "Hindi", "Engelskan vinner om man räknar andraspråkstalare."],
+["I vilken månad firas midsommar i Finland?", "Juni", "Juli", "Maj", "Augusti", "Helgen närmast sommarsolståndet."],
+["Vilket är människokroppens största organ?", "Huden", "Levern", "Lungorna", "Tarmen", "Omkring två kvadratmeter av den."],
+["Hur många sidor har en hexagon?", "Sex", "Fem", "Sju", "Åtta", "Som en cell i en bikaka."],
+["Vilken metall är flytande i rumstemperatur?", "Kvicksilver", "Bly", "Tenn", "Zink", "Därför användes den i termometrar."],
+];
+const CATNAME={fi:{"History": "Historia", "Geography": "Maantieto", "Science": "Luonnontiede", "Arts & culture": "Taide ja kulttuuri", "Sport": "Urheilu", "Everyday": "Yleistieto"},sv:{"History": "Historia", "Geography": "Geografi", "Science": "Naturvetenskap", "Arts & culture": "Konst och kultur", "Sport": "Sport", "Everyday": "Allmänbildning"}};
+
+S.lang='fi';                       // the quiz speaks Finnish unless told otherwise
+try{const l=localStorage.getItem('thechair.lang');if(l)S.lang=l}catch(e){}
+// one bank, in whichever language the room agreed on
+function langBank(){
+  if(S.lang==='en')return TRIVIA;
+  const t=S.lang==='sv'?TRIVIA_SV:TRIVIA_FI, names=CATNAME[S.lang]||{};
+  return TRIVIA.map((q,i)=>[names[q[0]]||q[0]].concat(t[i]));
+}
+// a topic is chosen by its English name and shown in the local one
+function catKeys(){return Object.keys(CATNAME.fi)}
+function catShown(key){
+  return S.lang==='en'?key:((CATNAME[S.lang]||{})[key]||key);
+}
 const isTrivia=()=>S.game==='trivia';
 // an option is an act in Name the Artist and a plain string in the Quiz
 const optLabel=o=>isTrivia()?o:o[0];
@@ -3252,7 +3542,8 @@ function setupLine(){
   const g=S.game==='trivia'?'Quiz':S.game==='artist'?'Name the Artist':'The Chair';
   const bits=[g];
   if(S.game==='trivia'){
-    bits.push(S.cats&&S.cats.length?S.cats.join(', '):'All six topics');
+    bits.push(S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English');
+    bits.push(S.cats&&S.cats.length?S.cats.map(catShown).join(', '):'All six topics');
     bits.push((S.len||10)+' questions');
   }else{
     bits.push(S.era?S.era+'s onward':'Any year');
@@ -3661,8 +3952,11 @@ function dressRules(){
     ? 'Nobody has to agree with the host. Pick the topics you want and how long the night runs.'
     : 'Nobody has to agree with the host. Argue about the years, settle on a genre, then go.'}catch(e){}
   // the topics belong to the quiz, the way era and genre belong to the records
-  ['cats','cats-label','cats-note'].forEach(id=>{const e=$(id);if(e)e.hidden=!triv});
-  if(triv)try{drawCats()}catch(e){}
+  ['cats','cats-label','cats-note','lang','lang-label'].forEach(id=>{const e=$(id);if(e)e.hidden=!triv});
+  if(triv)try{
+    segPick('lang','g',S.lang);
+    drawCats();
+  }catch(e){}
   const ts=$('teamsize'),lab=ts&&ts.previousElementSibling;
   if(ts)ts.hidden=quiz;
   if(lab&&lab.classList.contains('field-label'))lab.hidden=quiz;
