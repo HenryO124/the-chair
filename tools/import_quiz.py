@@ -136,10 +136,18 @@ def check_against_page(en, fi, sv):
 
 # ---------------------------------------------------------------- the output
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    # --write takes a filename, and that filename is not one of the inputs.
+    # Counting it as one made a two-language batch look like a three-language
+    # one and sent the tool looking for a file it had been asked to create.
+    argv = sys.argv[1:]
     write = None
-    if "--write" in sys.argv:
-        write = sys.argv[sys.argv.index("--write") + 1]
+    skip = set()
+    if "--write" in argv:
+        i = argv.index("--write")
+        if i + 1 < len(argv):
+            write = argv[i + 1]
+            skip.add(i + 1)
+    args = [a for n, a in enumerate(argv) if not a.startswith("--") and n not in skip]
     if len(args) == 2:
         # Finnish only, by the owner's decision for now. The Swedish bank has to
         # hold the same number of rows as the other two or the page deals a round

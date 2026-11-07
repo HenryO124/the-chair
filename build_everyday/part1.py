@@ -94,7 +94,7 @@ ROWS = [
  "20", "10", "12", "24",
  "Twenty was the old shopkeeper's bundle: a puntti of matchboxes counted twenty as well.",
  "Kuinka monta kananmunaa on tiussa?",
- "20", "10", "12", "24",
+ "20 munaa", "10 munaa", "12 munaa", "24 munaa",
  "Kaksikymmentä oli vanhan kauppiaan nippu: puntti tulitikkurasioita oli myös kaksikymmentä."),
 
 ("What did a Finnish kiihtelys of forty consist of?",
@@ -143,14 +143,14 @@ ROWS = [
  "20", "10", "100", "400",
  "Twenty leiviskä made a kippunta of about 170 kilograms, so the whole system ran in twenties rather than tens.",
  "Kuinka monta naulaa oli yhdessä leiviskässä?",
- "20", "10", "100", "400",
+ "20 naulaa", "10 naulaa", "100 naulaa", "400 naulaa",
  "Kaksikymmentä leiviskää teki kippunnan eli noin 170 kiloa, joten järjestelmä laski kahdenkymmenen eikä kymmenen askelin."),
 
 ("In which year did the metric system become compulsory in Finland?",
  "1892", "1862", "1917", "1947",
  "The law passed in 1886 and the system was merely optional from 1887 — the old units were given six years to die.",
  "Minä vuonna metrijärjestelmä tuli Suomessa pakolliseksi?",
- "1892", "1862", "1917", "1947",
+ "Vuonna 1892", "Vuonna 1862", "Vuonna 1917", "Vuonna 1947",
  "Laki säädettiin 1886 ja järjestelmä oli 1887 alkaen vapaaehtoinen — vanhoille mitoille annettiin kuusi vuotta."),
 
 ("How long is a kaapelinmitta, a unit still used at sea?",
@@ -171,7 +171,7 @@ ROWS = [
  "500", "50", "100", "144",
  "The old counts sat in several bases at once: a tusina was twelve, a krossi 144 — a dozen dozen.",
  "Kuinka monta paperiarkkia on riisissä?",
- "500", "50", "100", "144",
+ "500 arkkia", "50 arkkia", "100 arkkia", "144 arkkia",
  "Vanhat luvut istuivat monessa kannassa: tusina oli 12 ja krossi 144 eli tusinan tusina."),
 
 ("A motti is a unit of firewood. How much is it?",
@@ -207,14 +207,14 @@ ROWS = [
  "39", "7", "49", "50",
  "Forty days counting Easter itself, which is why it is always a Thursday however the date of Easter moves.",
  "Kuinka monta päivää pääsiäissunnuntain jälkeen on helatorstai?",
- "39", "7", "49", "50",
+ "39 päivää", "7 päivää", "49 päivää", "50 päivää",
  "Neljäkymmentä päivää pääsiäinen mukaan luettuna — siksi se on aina torstai, miten pääsiäinen liikkuukin."),
 
 ("How many days after Easter Sunday does Helluntaipäivä, Pentecost, fall?",
  "49", "39", "40", "60",
  "Seven weeks exactly, which is why the Greek name counts to the fiftieth day with Easter included.",
  "Kuinka monta päivää pääsiäissunnuntain jälkeen on helluntaipäivä?",
- "49", "39", "40", "60",
+ "49 päivää", "39 päivää", "40 päivää", "60 päivää",
  "Tasan seitsemän viikkoa — kreikkalainen nimi laskee viidenteenkymmenenteen päivään pääsiäinen mukaan luettuna."),
 
 ("Why does Finnish Midsummer Day move from year to year?",
