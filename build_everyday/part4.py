@@ -610,7 +610,7 @@ ROWS = [
  "5 mm", "2.5 mm", "7.5 mm", "10 mm",
  "Protective footwear steps by 7.5 mm instead, because a work boot does not need to fit as closely.",
  "Mikä on Mondopoint-numeroiden askel tavallisissa jalkineissa?",
- "5 mm", "2,5 mm", "7,5 mm", "10 mm",
+ "5 millimetriä", "2,5 millimetriä", "7,5 millimetriä", "10 millimetriä",
  "Suojajalkineissa askel on 7,5 mm, koska työsaappaan ei tarvitse istua yhtä tarkasti."),
 
 ("A child's British shoe size zero is how long?",

@@ -7,7 +7,40 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import part1, part2, part3, part4  # noqa: E402
 
-ROWS = part1.ROWS + part2.ROWS + part3.ROWS + part4.ROWS
+# Written, then cut on the owner's rule: a question earns its place only if the
+# reveal makes somebody say "I didn't know that". These were correct and sourced
+# but hard-and-forgettable, or the same shape asked once too often.
+CUT = {
+    # knots: obscure without a payoff in the answer
+    "Which bowline is tied for wet conditions where other knots slip or jam?",
+    "Which friction hitch is the tree climber's own?",
+    "Which knot joins the two ends of a length of climbing webbing?",
+    "Which hitch is used for heavy towing and for making fast to a bollard?",
+    # cheeses: the which-country shape, asked past the point of interest
+    "Mahón-Menorca is the protected cheese of which country?",
+    "Cabrales and Picón Bejes-Tresviso are blue cheeses of which country?",
+    "Bovški sir, Mohant, Nanoški sir and Tolminc are the protected cheeses of which country?",
+    "Telemea de Ibănești and Telemea de Sibiu are the protected cheeses of which country?",
+    "Džiugas and Liliputas are protected cheeses of which country?",
+    "Olomoucké tvarůžky is a protected cheese of which country?",
+    # currencies: name-the-currency with nothing behind it
+    "What is the currency of Laos?",
+    "What is the currency of Myanmar?",
+    "What is the currency of Georgia?",
+    "What is the currency of Albania?",
+    "What is the currency of Paraguay?",
+    # a bare synonym, and a coffee nobody will ever meet
+    "The gudgeon pin in an engine is also called what?",
+    "What is a caffè tobio?",
+}
+
+ALL = part1.ROWS + part2.ROWS + part3.ROWS + part4.ROWS
+ROWS = [r for r in ALL if r[0] not in CUT]
+missed = CUT - set(r[0] for r in ALL)
+if missed:
+    print("warning: cut list did not match %d row(s): %s" % (len(missed), missed))
+print("%d written, %d cut, %d kept" % (len(ALL), len(ALL) - len(ROWS), len(ROWS)))
+
 CAT = "Everyday"
 MAXQ = 110
 

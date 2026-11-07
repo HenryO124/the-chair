@@ -622,15 +622,6 @@
  ],
  [
   "Everyday",
-  "Mitä muuta nimeä moottorin männäntapista käytetään?",
-  "Rannetappi",
-  "Kiertokangentappi",
-  "Olkatappi",
-  "Karatappi",
-  "Se on pieni tappi, jonka ympäri kiertokanki kääntyy männän sisällä — siksi se on saanut ranteen nimen."
- ],
- [
-  "Everyday",
   "Millä nimellä auton kardaaniakseli paremmin tunnetaan?",
   "Vetoakseli",
   "Ulostuloakseli",
@@ -829,15 +820,6 @@
  ],
  [
   "Everyday",
-  "Mikä paalusolmun muunnos tehdään märkiin oloihin, joissa muut solmut luistavat tai juuttuvat?",
-  "Vesipaalusolmu",
-  "Hollantilainen paalusolmu",
-  "Eskimopaalusolmu",
-  "Kaksoispaalusolmu",
-  "Turvonnut ja liukas köysi ei käyttäydy lainkaan kuin kuiva, joten märän sään versio lisää yhden kierroksen."
- ],
- [
-  "Everyday",
   "Mikä solmu tehdään kuorman kiristämiseksi peräkärryyn?",
   "Taljasolmu",
   "Tukkisolmu",
@@ -892,39 +874,12 @@
  ],
  [
   "Everyday",
-  "Mikä kitkasolmu on puunkiipeilijän oma?",
-  "Blaken solmu",
-  "Munter-solmu",
-  "Taljasolmu",
-  "Jalussolmu",
-  "Se solmitaan itse kiipeilyköyteen ilman ylimääräistä narua, ja siksi arboristit valitsivat sen."
- ],
- [
-  "Everyday",
-  "Mikä solmu liittää kiipeilynauhan kaksi päätä?",
-  "Nauhasolmu eli vesisolmu",
-  "Flaamilainen jatkos",
-  "Tynnyrisolmu",
-  "Naulasolmu",
-  "Litteä nauha ei pidä pyöreälle köydelle tarkoitettua solmua, joten se saa solmun, joka seuraa nauhaa takaisin itseensä."
- ],
- [
-  "Everyday",
   "Mihin hätämastosolmu solmitaan?",
   "Hätämaston pystyttämiseen, kun oikea on menetetty",
   "Puomin sitomiseen",
   "Pollariin kiinnittämiseen",
   "Toisen veneen hinaamiseen",
   "Se tekee yhdestä solmusta kolme tai neljä silmukkaa kerralla, yhden kullekin hätämaston harukselle."
- ],
- [
-  "Everyday",
-  "Mikä kiinnityssolmu tehdään raskaaseen hinaukseen ja pollariin kiinnittämiseen?",
-  "Proomumiehen solmu",
-  "Jalussolmu",
-  "Kiviankkurisolmu",
-  "Puomisolmu",
-  "Se kestää suunnattoman kuorman ja irtoaa silti kuormitettuna — juuri se hinausköydeltä vaaditaan."
  ],
  [
   "Everyday",
@@ -1087,15 +1042,6 @@
   "Suodatinkahvia neljällä annoksella",
   "Espresso ilman vettä",
   "Kaksi annosta tekee black eyen, joten sarja kulkee red, black, dead — tummempi nimi vahvemmalle kahville."
- ],
- [
-  "Everyday",
-  "Mikä on caffè tobio?",
-  "Yhtä paljon suodatinkahvia ja espressoa",
-  "Yhtä paljon espressoa ja maitoa",
-  "Yhtä paljon espressoa ja kuumaa vettä",
-  "Espresso kakaolla",
-  "Café zorro on se, joka laimentaa doppion kuumalla vedellä puoliksi — nimet menevät helposti sekaisin."
  ],
  [
   "Everyday",
@@ -1270,24 +1216,6 @@
  ],
  [
   "Everyday",
-  "Minkä maan suojattuja juustoja ovat džiugas ja liliputas?",
-  "Liettuan",
-  "Latvian",
-  "Viron",
-  "Puolan",
-  "Liettua on ainoa Baltian maa, jonka juustoja on eurooppalaisella listalla; kahdella muulla ei ole yhtään."
- ],
- [
-  "Everyday",
-  "Minkä maan suojattu juusto on olomoucké tvarůžky?",
-  "Tšekin",
-  "Slovakian",
-  "Puolan",
-  "Itävallan",
-  "Maan kaksi sinihomejuustoa ovat molemmat nimeltään Niva, ja kaikki kolme nimeä tulevat Böömistä ja Määristä."
- ],
- [
-  "Everyday",
   "Mistä maasta tulevat tiroler bergkäse ja gailtaler almkäse?",
   "Itävallasta",
   "Saksasta",
@@ -1339,42 +1267,6 @@
   "Brasiliasta",
   "Italiasta",
   "Jokainen portugalilainen merkintä alkaa sanalla queijo eli juusto, joten lista lukeutuu kuin lause."
- ],
- [
-  "Everyday",
-  "Minkä maan suojattu juusto on mahón-menorca?",
-  "Espanjan",
-  "Italian",
-  "Ranskan",
-  "Maltan",
-  "Se on nimetty Menorcan Mahónin sataman mukaan, joten se on Baleaarien eikä mantereen juusto."
- ],
- [
-  "Everyday",
-  "Minkä maan sinihomejuustoja ovat cabrales ja picón Bejes-Tresviso?",
-  "Espanjan",
-  "Ranskan",
-  "Portugalin",
-  "Italian",
-  "Espanjan siniset tulevat Picos de Europasta, samoista kalkkikiviluolista vuoren kahdelta puolelta."
- ],
- [
-  "Everyday",
-  "Minkä maan suojattuja juustoja ovat telemea de Ibănești ja telemea de Sibiu?",
-  "Romanian",
-  "Bulgarian",
-  "Serbian",
-  "Moldovan",
-  "Sama juusto, kaksi kylää, kaksi rekisteröintiä — lista suojaa paikan yhtä lailla kuin ohjeen."
- ],
- [
-  "Everyday",
-  "Minkä maan suojattuja juustoja ovat bovški sir, mohant, nanoški sir ja tolminc?",
-  "Slovenian",
-  "Kroatian",
-  "Itävallan",
-  "Italian",
-  "Kroatialla ei ole listalla yhtään, joten Slovenia on Serbian ohella entisen Jugoslavian ainoa juustomaa siellä."
  ],
  [
   "Everyday",
@@ -1666,24 +1558,6 @@
  ],
  [
   "Everyday",
-  "Mikä on Albanian valuutta?",
-  "Lek",
-  "Leu",
-  "Lev",
-  "Denaari",
-  "Sen sadasosa on qintar, samasta juuresta kuin vanha sentneri."
- ],
- [
-  "Everyday",
-  "Mikä on Georgian valuutta?",
-  "Lari",
-  "Dram",
-  "Manat",
-  "Som",
-  "Armeniassa on dram ja Azerbaidžanissa manat, joten kolmella Kaukasian valtiolla ei ole yhteistä valuuttaa."
- ],
- [
-  "Everyday",
   "Mikä näistä on Kazakstanin valuutta?",
   "Tenge",
   "Som",
@@ -1699,24 +1573,6 @@
   "Kambodžan riel",
   "Myanmarin kyat",
   "Neljä naapuria, neljä valuuttaa ja neljä eri nimeä pikkurahalle: kip, riel, kyat ja baht."
- ],
- [
-  "Everyday",
-  "Mikä on Laosin valuutta?",
-  "Kip",
-  "Riel",
-  "Kyat",
-  "Dong",
-  "Sen osayksikkö on att, nimi jota ei esiinny yhdessäkään muussa maailman valuutassa."
- ],
- [
-  "Everyday",
-  "Mikä on Myanmarin valuutta?",
-  "Kyat",
-  "Kip",
-  "Riel",
-  "Taka",
-  "Se jakautuu pyaihin, kun naapurissa Bangladeshin taka jakautuu poishoihin."
  ],
  [
   "Everyday",
@@ -1789,15 +1645,6 @@
   "Costa Rican colón",
   "Panaman balboa",
   "Colón ja balboa on nimetty sen sijaan eurooppalaisten mukaan: Kolumbuksen ja Balboan."
- ],
- [
-  "Everyday",
-  "Mikä on Paraguayn valuutta?",
-  "Guaraní",
-  "Boliviano",
-  "Peso",
-  "Real",
-  "Se on nimetty kielen mukaan, joka on espanjan ohella Paraguayn toinen virallinen kieli."
  ],
  [
   "Everyday",
@@ -2360,10 +2207,10 @@
  [
   "Everyday",
   "Mikä on Mondopoint-numeroiden askel tavallisissa jalkineissa?",
-  "5 mm",
-  "2,5 mm",
-  "7,5 mm",
-  "10 mm",
+  "5 millimetriä",
+  "2,5 millimetriä",
+  "7,5 millimetriä",
+  "10 millimetriä",
   "Suojajalkineissa askel on 7,5 mm, koska työsaappaan ei tarvitse istua yhtä tarkasti."
  ],
  [

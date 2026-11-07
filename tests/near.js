@@ -49,8 +49,15 @@ setTimeout(()=>{
     show('s-quiz');quizStart();`);
   if(ev('Q.deck.length')!==5)probs.push('the deck is '+ev('Q.deck.length'));
   if(!ev('Q.current'))probs.push('no question came up');
-  if(d.querySelectorAll('#q-options button').length)
+  // No answer may be pickable: the whole game is that nobody is given the
+  // number. The box the person at the television types into is not an answer,
+  // so this asks for option buttons by name rather than for buttons at all.
+  if(d.querySelectorAll('#q-options button[data-opt]').length)
     probs.push('this game gave the room options to pick from');
+  const stray=[...d.querySelectorAll('#q-options button')]
+    .map(b=>b.id).filter(id=>id!=='near-hostgo');
+  if(stray.length)
+    probs.push('unexpected button(s) on the Closest Wins screen: '+stray.join(', '));
   if(!/qasking/.test($('q-screen').innerHTML))probs.push('the question is not on the screen');
 
   // the answer must not be on the screen before the reveal
