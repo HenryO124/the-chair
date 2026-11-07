@@ -96,6 +96,39 @@ const server=http.createServer((req,res)=>{
       probs.push(game+': a question with nothing to show still reserves a picture frame');
   }
 
+  // ---- Closest Wins: the box the person at the screen types into ----------
+  // This one has no answers to press, so the loop above skips it. It shipped
+  // with the box squeezed to 23 pixels by a flex rule further up the tree,
+  // and no jsdom suite could ever have seen that, because jsdom has no layout.
+  {
+    const r=await p.evaluate(async()=>{
+      S.game='near';S.lang='fi';S.len=15;
+      S.players=[{id:'a',name:'Henkka',icon:0,score:0}];
+      show('s-quiz');nearStart();
+      await new Promise(f=>setTimeout(f,350));
+      const i=document.getElementById('near-host'),b=document.getElementById('near-hostgo');
+      if(!i||!b)return {missing:true};
+      const ir=i.getBoundingClientRect(),br=b.getBoundingClientRect();
+      const over=!(ir.right<=br.left+1||br.right<=ir.left+1)&&
+                 !(ir.bottom<=br.top+1||br.bottom<=ir.top+1);
+      const howto=document.querySelector('#q-options .nearhow');
+      return {w:Math.round(ir.width),h:Math.round(ir.height),
+              bw:Math.round(br.width),over:over,
+              onScreen:ir.left>=0&&ir.right<=innerWidth+1&&ir.top>=0&&ir.bottom<=innerHeight+1,
+              phoneLine:!!howto};
+    });
+    if(r.missing)probs.push('near: the person at the television has nothing to type into');
+    else{
+      // wide enough to read a four-digit year in, which is the whole point
+      if(r.w<120)probs.push('near: the box is '+r.w+'px wide — nobody can type a number in that');
+      if(r.h<28)probs.push('near: the box is '+r.h+'px tall');
+      if(r.over)probs.push('near: the Lock button sits on top of the box');
+      if(!r.onScreen)probs.push('near: the box is off the screen');
+      // and nobody is told to use a phone they have not got
+      if(r.phoneLine)probs.push('near: the screen tells a room with no phones in it to use their phones');
+    }
+  }
+
   await b.close();
   server.close();
   console.log(probs.length?'FAIL:':'ok - every game: the answers are on the screen and nothing covers them');

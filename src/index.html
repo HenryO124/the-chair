@@ -1997,12 +1997,13 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 .nearhost label{font-family:var(--mono);font-size:clamp(11px,.95vw,16px);
   letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .nearhostrow{display:flex;gap:8px;align-items:center}
-.nearhostrow input{width:clamp(140px,16vw,260px);text-align:center;
+.nearhostrow input{flex:0 0 clamp(150px,18vw,280px);min-width:150px;
+  width:clamp(150px,18vw,280px);text-align:center;
   font-family:var(--disp);font-size:clamp(20px,2.2vw,38px);padding:.18em .3em;
   color:var(--bone);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);
   border-radius:10px}
 .nearhostrow input.bad{border-color:#FF4A62}
-.nearhostrow .btn{font-size:clamp(14px,1.2vw,22px);padding:.5em 1em}
+.nearhostrow .btn{flex:0 0 auto;font-size:clamp(14px,1.2vw,22px);padding:.5em 1em}
 .nearhow{grid-column:1/-1;text-align:center;color:#C9AEB6;font-family:var(--disp);
   font-size:clamp(17px,1.9vw,32px);padding:clamp(12px,2.4vh,30px) 0 0}
 .nearwait{grid-column:1/-1;text-align:center;color:var(--muted);
@@ -5566,7 +5567,8 @@ function drawNear(){
     // the television to answer with, so a host playing alone could not play.
     const here=S.players.filter(p=>!p.pid&&!(p.id in (Q.guesses||{})));
     const mine=here[0];
-    $('q-options').innerHTML='<div class="nearhow">'+esc(T('near_howto'))+'</div>'
+    const onPhones=S.players.some(p=>p.pid);
+    $('q-options').innerHTML=(onPhones?'<div class="nearhow">'+esc(T('near_howto'))+'</div>':'')
       +(mine?'<div class="nearhost"><label for="near-host">'
         +esc(T('near_here',{who:shownName(mine)}))+'</label>'
         +'<div class="nearhostrow"><input id="near-host" type="text" inputmode="decimal" '
