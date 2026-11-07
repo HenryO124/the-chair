@@ -4378,7 +4378,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 19:24';
+const BUILD='07.11. 19:50';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4564,10 +4564,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111924',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111924',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111950',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111950',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111924',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111950',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it

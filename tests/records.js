@@ -117,8 +117,39 @@ const BY_TERM={};
   const tally=await p.evaluate(()=>document.getElementById('tally').textContent);
   console.log('  '+tally);
 
+  // ---- the bug that cost a whole pass: a refusal is not an empty shelf ----
+  // Apple rate-limits. The first version of this page wrote every 403 down as
+  // "this record does not exist" and declared 118 acts silent, Bowie and
+  // Aretha among them. So: refuse the first two requests for a record and
+  // make sure it still ends up in front of a person.
+  const c2=await b.newContext({viewport:{width:390,height:844}});
+  const p2=await c2.newPage();
+  p2.on('pageerror',e=>probs.push('rate-limit page JS error: '+String(e).slice(0,130)));
+  let refusals=0;
+  await p2.route('**itunes.apple.com/**',route=>{
+    const u=new URL(route.request().url());
+    const term=u.searchParams.get('term')||'';
+    const rec=BY_TERM[term];
+    if(refusals<2){refusals++;return route.fulfill({status:403,contentType:'text/plain',body:'no'})}
+    route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({results:rec?[{
+      artistName:rec.artist,trackName:rec.track,
+      previewUrl:'http://127.0.0.1:1/silence.m4a',artworkUrl100:''}]:[]})});
+  });
+  await p2.goto(base);
+  await p2.waitForTimeout(7000);
+  const st2=await p2.evaluate(()=>({act:document.getElementById('act').textContent,
+                                    skipped:skipped.length,
+                                    live:!document.getElementById('yes').disabled}));
+  console.log('  after '+refusals+' refusals: card shows "'+st2.act+'", '
+              +st2.skipped+' written off, buttons '+(st2.live?'live':'dead'));
+  if(st2.skipped>0)
+    probs.push('a refused lookup was written down as a record with nothing to hear');
+  if(!st2.live)
+    probs.push('the page never recovered from the refusals — the card is still dead');
+
   await b.close();srv.close();
   if(probs.length){console.log('FAIL:');probs.forEach(x=>console.log('  x '+x));process.exit(1)}
-  console.log('ok - the record page loads the catalogue, takes decisions, remembers them, and hands back pasteable keys');
+  console.log('ok - the record page loads the catalogue, takes decisions, remembers them,');
+  console.log('     survives Apple refusing, and hands back pasteable keys');
   process.exit(0);
 })().catch(e=>{console.log('FAIL:');console.log('  x '+String(e).slice(0,400));process.exit(1)});

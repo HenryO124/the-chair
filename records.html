@@ -44,6 +44,8 @@ footer button{padding:20px 10px;border-radius:14px;border:1px solid var(--line);
 footer button:active{transform:translateY(1px)}
 footer button:disabled{opacity:.35}
 .keys{grid-column:1/-1;text-align:center;font-size:12px;color:var(--muted)}
+.linky{background:none;border:0;color:var(--red);font:inherit;text-decoration:underline;
+  cursor:pointer;padding:0}
 
 #done{display:none;flex:1 1 auto;flex-direction:column;justify-content:center;gap:14px;padding:20px 0}
 #done h2{margin:0;font-size:24px}
@@ -74,6 +76,7 @@ textarea{width:100%;height:30vh;background:#1a1016;color:var(--ink);border:1px s
     <div class="wave"><i id="wave"></i></div>
   </div>
   <p class="hint" id="hint"></p>
+  <p class="hint" id="rate"></p>
 </main>
 
 <div id="done">
@@ -81,6 +84,7 @@ textarea{width:100%;height:30vh;background:#1a1016;color:var(--ink);border:1px s
   <p id="tally"></p>
   <div class="row">
     <button id="copy">Kopioi tulos</button>
+    <button id="back">Jatka levyjä</button>
     <button id="again">Aloita alusta</button>
   </div>
   <textarea id="out" readonly></textarea>
@@ -90,7 +94,8 @@ textarea{width:100%;height:30vh;background:#1a1016;color:var(--ink);border:1px s
 <footer>
   <button id="no" disabled>Hylkää</button>
   <button id="yes" disabled>Ota</button>
-  <div class="keys">Näppäimistöllä: ← hylkää · → ota · välilyönti soittaa</div>
+  <div class="keys">Näppäimistöllä: ← hylkää · → ota · välilyönti soittaa
+    · <button id="bail" class="linky">lopeta ja kopioi tulos</button></div>
 </footer>
 
 <script>
@@ -166,7 +171,7 @@ function jsonp(url){
     s.src=url+'&callback='+cb;document.head.appendChild(s);
   });
 }
-function ask(term,limit){
+function ask1(term,limit){
   var url=ITUNES+'?term='+encodeURIComponent(term)+'&media=music&entity=song&limit='+limit;
   var ac=null;try{ac=new AbortController()}catch(e){}
   var t=setTimeout(function(){try{ac&&ac.abort()}catch(e){}},TRY);
@@ -175,22 +180,66 @@ function ask(term,limit){
     .then(function(j){clearTimeout(t);return (j&&j.results)||[]})
     .catch(function(){clearTimeout(t);return jsonp(url)});
 }
+
+/* ---- one at a time, and slower when Apple says no --------------------------
+   The first version of this page fired three lookups at once with no pause.
+   Apple started refusing, and a refusal was written down as "this record does
+   not exist" — a hundred and eighteen acts, Bowie and Aretha among them,
+   declared silent by a rate limiter. So: one request at a time through a
+   single chain, a gap that grows when a request is refused and shrinks when
+   one succeeds, three tries each, and a refusal that survives all three is
+   thrown rather than returned. The difference between "nothing there" and
+   "could not ask" is the whole point.                                      */
+var GAP=300, refused=0;
+var nap=function(ms){return new Promise(function(r){setTimeout(r,ms)})};
+var chain=Promise.resolve();
+function serial(task){
+  var p=chain.then(function(){return nap(GAP)}).then(task);
+  chain=p.then(function(){},function(){});     // the queue survives a failure
+  return p;
+}
+function ask(term,limit,tries){
+  if(tries===undefined)tries=3;
+  return serial(function(){return ask1(term,limit)}).then(
+    function(rows){GAP=Math.max(250,GAP-60);return rows},
+    function(err){
+      refused++;
+      GAP=Math.min(5000,Math.round(GAP*1.9)+250);
+      note();
+      if(tries>1)return ask(term,limit,tries-1);
+      throw err;
+    });
+}
+function note(){
+  var h=$('rate');if(!h)return;
+  h.textContent=refused?('Apple hidastaa — odotetaan '+Math.round(GAP)+' ms, '
+    +refused+' uusintaa'):'';
+}
+/* Returns a hit, or null when Apple answered and had nothing. Throws when
+   Apple would not answer at all — and the caller must not call that a miss. */
 function look(a){
   var artist=a[0],track=a[5];
   return ask(artist+' '+track,8).then(function(rows){
     var hit=bestHit(artist,track,rows);
     if(hit)return hit;
     return ask(artist,25).then(function(r2){return bestHit(artist,track,r2)});
-  }).catch(function(){return null});
+  });
 }
 
 /* -------------------------------------------------------------- the records */
 var $=function(id){return document.getElementById(id)};
 var CAT=[],at=0,decided={},skipped=[],cur=null,audio=null;
 
+/* The decisions a person made are theirs and are kept for good. The list of
+   records "with nothing to hear" is this page's own work, and the first
+   version of it was wrong, so a stored list from before the rate limiting was
+   fixed is thrown away and those records are asked about again. */
+var PASS=2;
 try{var st=JSON.parse(localStorage.getItem(SAVE)||'{}');
-    decided=st.decided||{};skipped=st.skipped||[]}catch(e){}
-function save(){try{localStorage.setItem(SAVE,JSON.stringify({decided:decided,skipped:skipped}))}catch(e){}}
+    decided=st.decided||{};
+    skipped=(st.pass===PASS)?(st.skipped||[]):[]}catch(e){}
+function save(){try{localStorage.setItem(SAVE,
+  JSON.stringify({pass:PASS,decided:decided,skipped:skipped}))}catch(e){}}
 var keyOf=function(a){return a[0]+' | '+a[5]};
 
 /* banks.js is the host's file and holds the catalogue. It is a plain script,
@@ -209,19 +258,24 @@ function loadCatalogue(){
   });
 }
 
-/* The next two are fetched while this one is playing, which is the whole
-   reason a hundred records can be gone through in a few minutes. */
-var AHEAD={};
+/* The next one is fetched while this one is playing, which is what lets a
+   hundred records go past in a few minutes. Two ahead, not three: they all
+   queue behind one another now, and a long queue only means the card you are
+   looking at waits for records you have not reached. A lookup that failed is
+   not kept — keeping it would cache Apple's refusal as an answer. */
+var AHEAD={},TRIES={};
 function warm(i){
-  for(var n=i;n<Math.min(i+3,CAT.length);n++){
+  for(var n=i;n<Math.min(i+2,CAT.length);n++){
     var k=keyOf(CAT[n]);
-    if(k in AHEAD||decided[k])continue;
-    AHEAD[k]=look(CAT[n]);
+    if((k in AHEAD)||(k in decided))continue;
+    hitFor(CAT[n]);
   }
 }
 function hitFor(a){
   var k=keyOf(a);
-  if(!(k in AHEAD))AHEAD[k]=look(a);
+  if(!(k in AHEAD)){
+    AHEAD[k]=look(a).catch(function(e){delete AHEAD[k];throw e});
+  }
   return AHEAD[k];
 }
 
@@ -270,6 +324,22 @@ function show(){
     else $('hint').className='hint warn';
     $('yes').disabled=false;$('no').disabled=false;
     play(hit.url);
+  },function(){
+    // Apple would not answer. That is not an empty shelf, so the record keeps
+    // its place and the card waits rather than writing it off. Four whole
+    // attempts — a dozen requests — and only then is it written down as
+    // unreachable, so the page can never wedge on one record.
+    if(mine!==cur)return;
+    var k=keyOf(mine);
+    TRIES[k]=(TRIES[k]||0)+1;
+    if(TRIES[k]>=4){
+      if(skipped.indexOf(k)<0)skipped.push(k);
+      save();at++;return show();
+    }
+    $('hint').className='hint warn';
+    $('hint').textContent='Apple ei vastaa — odotetaan ja yritetään uudestaan ('
+      +TRIES[k]+'/4)';
+    setTimeout(function(){if(mine===cur)show()},Math.min(8000,GAP*2+1500));
   });
 }
 
@@ -296,15 +366,18 @@ function decide(ok){
   save();stop();at++;show();
 }
 
-function finish(){
+function finish(early){
   stop();
   $('card').style.display='none';
   document.querySelector('footer').style.display='none';
   $('done').style.display='flex';
   var keys=Object.keys(decided);
   var took=keys.filter(function(k){return decided[k]===1});
+  var left=CAT.length-keys.length-skipped.length;
+  $('done').querySelector('h2').textContent=early?'Kesken, ja se riittää':'Valmis';
   $('tally').textContent=took.length+' otettu, '+(keys.length-took.length)
-    +' hylätty, '+skipped.length+' ei löytynyt lainkaan.';
+    +' hylätty, '+skipped.length+' ei löytynyt lainkaan.'
+    +(left>0?' '+left+' vielä käymättä — voit jatkaa myöhemmin, päätökset ovat tallessa.':'');
   var o={};took.forEach(function(k){o[k]=1});
   $('out').value=JSON.stringify(o,null,0);
   $('skipped').textContent=skipped.length
@@ -331,6 +404,12 @@ $('copy').onclick=function(){
   if(!ok&&navigator.clipboard)navigator.clipboard.writeText($('out').value);
   $('copy').textContent='Kopioitu';
   setTimeout(function(){$('copy').textContent='Kopioi tulos'},1500);
+};
+$('bail').onclick=function(){finish(true)};
+$('back').onclick=function(){
+  $('done').style.display='none';$('card').style.display='flex';
+  document.querySelector('footer').style.display='grid';
+  show();
 };
 $('again').onclick=function(){
   if(!confirm('Nollataanko kaikki päätökset?'))return;
