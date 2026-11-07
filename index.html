@@ -2091,6 +2091,12 @@ body:has(#s-home.on) .btn:hover,body:has(#s-setup.on) .btn:hover{
   body:has(#s-home.on)::before,body:has(#s-setup.on)::before{animation:none}
   #s-setup .gamecard{transition:none}
 }
+
+/* a game the party is too small for: visible, so the host can see it exists,
+   but plainly not available */
+#s-setup .gamecard.toofew{opacity:.42;cursor:default}
+#s-setup .gamecard.toofew:hover{transform:none;border-color:var(--line);box-shadow:none}
+#s-setup .gamecard.toofew .gtag{color:var(--muted)}
 </style>
 </head>
 <body class="screen-home">
@@ -3479,6 +3485,10 @@ function firstGame(){
 }
 function pickGame(name){
   if(!GAMEBLURB[name]||LEARNING||SHELVED[name])return;   // the unbuilt ones stay unpickable
+  if(tooFew(name)){                       // say why, rather than doing nothing
+    try{$('bar-hint').textContent=T('need_players_why',{n:MINPLAYERS[name]})}catch(e){}
+    return;
+  }
   S.game=name;
   document.querySelectorAll('.gamecard').forEach(c=>c.classList.toggle('sel',c.dataset.game===name));
   try{$('bar-hint').textContent=(SOLO?SOLOBLURB:GAMEBLURB)[name]}catch(e){}
@@ -3557,6 +3567,32 @@ $('rb-vis')&&($('rb-vis').onclick=toggleVis);
    stranger is not a game, so this one cannot be played in a public room: the
    choice is taken away rather than left there to be made by mistake. */
 const PRIVATEONLY={finger:1};
+/* Two people cannot play a game about the room: there is only one other
+   person to point at, and whoever you point at, you both score. Three is the
+   floor. The card stays visible but goes grey, so a host can see the game
+   exists and see why it is not available yet. */
+const MINPLAYERS={finger:3};
+const tooFew=name=>{
+  const need=MINPLAYERS[name]||0;
+  return (need&&(S.players||[]).length<need)?need:0;
+};
+function dressMinPlayers(){
+  try{
+    document.querySelectorAll('#s-setup .gamecard').forEach(c=>{
+      const need=tooFew(c.dataset.game);
+      c.classList.toggle('toofew',!!need);
+      const tag=c.querySelector('.gtag');
+      if(tag){
+        if(need){
+          if(tag.__was===undefined)tag.__was=tag.textContent;
+          tag.textContent=T('need_players',{n:need});
+        }else if(tag.__was!==undefined){
+          tag.textContent=tag.__was;tag.__was=undefined;
+        }
+      }
+    });
+  }catch(e){}
+}
 function privacyFor(name){
   const shut=!!PRIVATEONLY[name];
   if(shut&&S.public){
@@ -3967,6 +4003,7 @@ function checkAllSkipped(){
   closeWindow();                     // nobody wanted them, so the audition is over
 }
 function drawSeats(){
+  try{dressMinPlayers()}catch(e){}
   const cols=S.players.length<=3?S.players.length:Math.ceil(S.players.length/2);
   $('chairs-grid').style.setProperty('--n',cols);   // 4->2+2, 5->3+2, 6->3+3
   $('chairs-grid').innerHTML=S.players.map((p,i)=>{
@@ -4258,7 +4295,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 15:34';
+const BUILD='07.11. 15:56';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4444,10 +4481,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111534',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111534',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111556',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111556',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111534',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111556',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -5356,9 +5393,26 @@ function nameScore(want,got){
   if(!a||!b)return 0;
   if(a===b)return 2;
   const ta=a.split(' '),tb=b.split(' ');
-  if(ta.every(w=>tb.indexOf(w)>=0)||tb.every(w=>ta.indexOf(w)>=0))return 2;
-  const hit=ta.filter(w=>tb.indexOf(w)>=0).length;
-  return hit/Math.max(ta.length,tb.length)>=0.6?1:0;
+  /* "The Beatles" and "Beatles" are the same act; an article is not a word. */
+  const noise={the:1,los:1,las:1,le:1,la:1,die:1,der:1};
+  const strip=t=>{const o=t.filter(w=>!noise[w]);return o.length?o:t};
+  const sa=strip(ta),sb=strip(tb);
+  if(sa.join(' ')===sb.join(' '))return 2;
+  /* A one-word act name sits inside a great many other act names: Prince in
+     Prince Royce, Cher in Cher Lloyd, Europe in Europe 2000, Ghost in Ghost
+     Hounds. 55 of the acts in this collection have one-word names, so taking
+     that containment as a perfect match plays the wrong record under the
+     right name — and the room has no way of knowing. A longer name only
+     counts when the extra part is a collaborator rather than a different act. */
+  const joins={'&':1,and:1,feat:1,'feat.':1,featuring:1,with:1,x:1,vs:1,'vs.':1,presents:1};
+  const inside=(small,big)=>{
+    if(small.length>=big.length)return false;
+    for(let i=0;i<small.length;i++)if(small[i]!==big[i])return false;  // a prefix
+    return !!joins[big[small.length]];             // and then a collaborator
+  };
+  if(inside(sa,sb)||inside(sb,sa))return 2;
+  const hit=sa.filter(w=>sb.indexOf(w)>=0).length;
+  return hit/Math.max(sa.length,sb.length)>=0.6?1:0;
 }
 const art600=u=>String(u||'').replace(/\/\d+x\d+bb\.(jpg|jpeg|png)$/i,'/600x600bb.$1');
 const nap=ms=>new Promise(r=>setTimeout(r,ms));
@@ -6060,6 +6114,7 @@ function doorbell(){
 }
 let rbSeen=null;                 // who was already here last time we drew
 function drawRoomBar(){
+  try{dressMinPlayers()}catch(e){}
   const bar=$('roombar');if(!bar)return;
   try{$('rb-code').textContent=PARTY.code||'····'}catch(e){}
   if(PARTY.code)drawQRInto('rb-qr','rbqr');
@@ -7008,7 +7063,7 @@ function dressUI(){
    order of the pieces is not the same in the three languages. */
 const WORDS={
  fi:{
-  whose_turn:'{who} on vuorossa', reveal:'Paljasta', next_q:'Seuraava kysymys', next_r:'Seuraava levy',
+  need_players:'TARVITSEE {n} PELAAJAA', need_players_why:'Tämä peli tarvitsee vähintään {n} pelaajaa — kutsu lisää väkeä ensin.', whose_turn:'{who} on vuorossa', reveal:'Paljasta', next_q:'Seuraava kysymys', next_r:'Seuraava levy',
   see_winner:'Katso voittaja', see_standings:'Katso tilanne',
   hold:'Pidä tauko', end_game:'Lopeta peli', end_round:'Lopeta kierros',
   bank:'Pankita {n}', leave:'Poistu pelistä', leave_party:'Poistu bileistä',
@@ -7052,7 +7107,7 @@ const WORDS={
   meta_tf:'totta vai tarua', meta_s10:'kuinka pitkälle uskallat'
  },
  sv:{
-  whose_turn:'{who} har tur', reveal:'Avslöja', next_q:'Nästa fråga', next_r:'Nästa skiva',
+  need_players:'BEHÖVER {n} SPELARE', need_players_why:'Det här spelet behöver minst {n} spelare — bjud in fler först.', whose_turn:'{who} har tur', reveal:'Avslöja', next_q:'Nästa fråga', next_r:'Nästa skiva',
   see_winner:'Se vinnaren', see_standings:'Se ställningen',
   hold:'Pausa', end_game:'Avsluta spelet', end_round:'Avsluta rundan',
   bank:'Säkra {n}', leave:'Lämna spelet', leave_party:'Lämna festen',
@@ -7097,7 +7152,7 @@ const WORDS={
  }
 };
 const EN={
-  whose_turn:'{who}\u2019s turn', reveal:'Reveal', next_q:'Next question', next_r:'Next record',
+  need_players:'NEEDS {n} PLAYERS', need_players_why:'This game needs at least {n} players — get more people in first.', whose_turn:'{who}\u2019s turn', reveal:'Reveal', next_q:'Next question', next_r:'Next record',
   see_winner:'See the winner', see_standings:'See the standings',
   hold:'Hold', end_game:'End the game', end_round:'End the round',
   bank:'Bank {n}', leave:'Leave the game', leave_party:'Leave the party',
