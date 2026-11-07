@@ -894,6 +894,14 @@ body:not(.screen-home) .mechip{display:none}
 .ptag.live{color:#6FA8FF;border-color:#3C5A8A}
 .prow .btn{width:auto;margin:0;padding:9px 18px;font-size:13px}
 .pempty{color:var(--muted);font-size:13.5px;padding:14px 2px;line-height:1.6}
+/* with nothing open it is one quiet line, not the biggest box on the page */
+.hpanel.quiet{padding-bottom:14px}
+.hpanel.quiet .hpfilter{display:none}
+.hpanel.quiet #pub-sub{display:none}
+.hpanel.quiet .pempty{padding:4px 2px 0;font-size:13px}
+.pstart{background:none;border:0;padding:0;margin-left:4px;cursor:pointer;color:var(--gold);
+  font:inherit;text-decoration:underline;text-underline-offset:3px}
+.pstart:hover{color:var(--bone)}
 .homefoot{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 10px}
 @media (max-width:820px){.homefoot{grid-template-columns:1fr}.prow{flex-wrap:wrap}}
 
@@ -1938,7 +1946,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
           <button type="button" data-f="live">In progress</button>
         </div>
       </div>
-      <p class="pool thin" id="pub-sub">Open games you can join right now. Yours is listed here only if you make the room public.</p>
+      <p class="pool thin" id="pub-sub">Parties anyone can join, right now. Yours appears here the moment you set the room to public &mdash; otherwise only the code gets people in.</p>
         <div id="pub-list"></div>
       </div>
 
@@ -2154,7 +2162,15 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 
     <div class="lobbycode" style="margin-top:4px">
     <div class="eyebrow">How we play</div>
+
 <p class="sub" id="rules-sub">Nobody has to agree with the host. Argue about the years, settle on a genre, then go.</p>
+<div class="field-label">Who can join</div>
+    <div class="seg wrap" id="vis">
+      <button type="button" data-v="private" class="sel">Private &mdash; code only</button>
+      <button type="button" data-v="public">Public &mdash; list it for everyone</button>
+    </div>
+    <p class="pool thin" id="vis-note" style="margin:-6px 0 14px"></p>
+
 <div class="field-label">Start the season in</div>
     <div class="seg wrap" id="eras">
       <button data-e="1">Any year</button>
@@ -3752,7 +3768,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 10:08';
+const BUILD='07.11. 10:12';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -3825,10 +3841,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111008',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111008',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111012',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111012',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111008',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111012',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4624,10 +4640,15 @@ function drawRooms(){
     .filter(r=>DIR.game==='all'||r.g===DIR.game)
     .filter(r=>DIR.phase==='all'||(DIR.phase==='live'?r.s==='live':r.s!=='live'))
     .sort((x,y)=>(y.t||0)-(x.t||0));
+  const panel=box.closest('.hpanel');
+  if(panel)panel.classList.toggle('quiet',!all.length);
   if(!all.length){
     box.innerHTML='<p class="pempty">'+(DIR.client
-      ? 'Nothing open right now. Create a party and switch the room to <b>Public</b> — it appears here for everyone else.'
-      : 'Looking for open rooms…')+'</p>';
+      ? 'No public parties open right now. '
+        +'<button type="button" class="pstart" id="pub-start">Open one yourself</button>'
+      : 'Looking for open parties\u2026')+'</p>';
+    const st=$('pub-start');
+    if(st)st.onclick=()=>{S.public=true;try{drawVis()}catch(e){}openModes('create')};
     return;
   }
   box.innerHTML=all.map(r=>{
