@@ -41,22 +41,27 @@ setTimeout(()=>{
   w.eval('s10Take(S.players[1],'+right()+')');     // not their turn
   if(w.eval('Q.pot[1]'))probs.push('a player took one out of turn');
 
-  // three right in a row: 10 + 20 + 30, and it stays your turn while you are right
+  // Play goes round the table: one pick each, then the next player, right or
+  // wrong. The pot still builds across a player's own turns — 10, then 20,
+  // then 30 — so stopping keeps costing something.
   for(let k=0;k<3;k++){
+    w.eval('s10SetTurn(0)');
     w.eval('s10Take(S.players[0],'+right()+')');
-    if(w.eval('Q.turn')!==0)probs.push('a right pick handed the turn away');
+    if(w.eval('Q.turn')===0)probs.push('a right pick kept the turn; play has to go round');
   }
   if(w.eval('Q.pot[0]')!==60)probs.push('the pot is '+w.eval('Q.pot[0]')+', expected 60');
   if(score()!==0)probs.push('an unbanked pot was already scored');
   // the other player takes a wrong one and is out with nothing
   w.eval('s10SetTurn(1)');
   w.eval('s10Take(S.players[1],'+right()+')');
+  w.eval('s10SetTurn(1)');
   w.eval('s10Take(S.players[1],'+wrong()+')');
   if(w.eval('Q.turn')!==0)probs.push('a wrong pick did not pass the turn on');
   if(w.eval("Q.state[1]")!=='out')probs.push('a wrong pick did not end that round: '+w.eval('Q.state[1]'));
   if(w.eval('Q.pot[1]')!==0)probs.push('a wrong pick kept the pot');
   if(w.eval('S.players[1].score')!==0)probs.push('a wrong pick still scored');
   // banking keeps it
+  w.eval('s10SetTurn(0)');
   w.eval('s10Stand(S.players[0])');
   if(score()!==60)probs.push('banking did not pay: '+score());
   if(!w.eval('Q.revealed'))probs.push('the round did not end when nobody was left in');
@@ -88,7 +93,12 @@ setTimeout(()=>{
              {t:'f1',ok:false,by:null},{t:'f2',ok:false,by:null}];
     Q.state={0:'in',1:'in'};Q.pot={0:0,1:0};Q.picks={0:0,1:0};
     s10SetTurn(0);
-    s10Take(S.players[0],0);s10Take(S.players[0],1);`);
+    // play goes round the table now, so each pick is made by whoever has the
+    // turn rather than by the same player twice
+    [0,1].forEach(function(i){
+      var who=S.players.find(function(p){return p.id===Q.turn});
+      if(who)s10Take(who,i);
+    });`);
   if(w.eval('Q.cands.some(function(c){return c.by===null&&c.ok})'))
     probs.push('the test did not actually take every true candidate');
   if(w.eval('Q.revealed'))

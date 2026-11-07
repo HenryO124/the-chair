@@ -1992,6 +1992,8 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 /* Closest Wins is the only game whose answers are not on the screen, so the
    room needs telling where to put them. Bigger and brighter than the counter
    under it: it is an instruction, not a status. */
+.s10stand{margin-left:clamp(8px,1vw,16px);font-size:clamp(13px,1.1vw,20px);
+  padding:.45em 1.1em;vertical-align:middle}
 /* A silent phone that looks broken is worse than a silent phone that says
    why. One of these two is always there when a record is playing. */
 .padonscreen{display:flex;align-items:center;justify-content:center;text-align:center;
@@ -5653,8 +5655,12 @@ function s10Take(p,i){
   if(c.ok){
     Q.picks[p.id]=(Q.picks[p.id]||0)+1;
     Q.pot[p.id]=(Q.pot[p.id]||0)+10*Q.picks[p.id];
-    // still your turn: take another, or stop while it is worth something
-    if(s10RoundOver())s10Reveal(); else {drawQuiz();publishStage()}
+    /* One pick each, then the next player — the owner's rule, and the right
+       one for this room. The board game keeps your turn while you keep being
+       right, which at a table of twelve means one person clears the board and
+       eleven watch. Going round means everybody plays, and the pot still
+       builds across your own turns, so standing still costs you something. */
+    if(s10RoundOver())s10Reveal(); else {s10Advance();drawQuiz();publishStage()}
     return;
   }
   Q.pot[p.id]=0;Q.state[p.id]='out';
@@ -6228,9 +6234,19 @@ function drawS10(){
     const rl=$('s10-rules');
     if(rl){
       const who=s10TurnName();
+      // A right answer keeps your turn: take another, or stop while the pot is
+      // worth something. A phone has a button for stopping; the television had
+      // none, so whoever sat at it could take and take and never hand over —
+      // the turn simply stopped moving. Same hole as Closest Wins had.
+      const here=S.players.find(p=>!p.pid&&p.id===Q.turn&&Q.state&&Q.state[p.id]==='in');
+      const pot=here?(Q.pot&&Q.pot[here.id])||0:0;
+      const stand=(!Q.revealed&&here)
+        ? '<button type="button" class="btn s10stand" id="s10-stand">'
+          +esc(pot?T('s10_stand_pot',{n:pot}):T('s10_stand'))+'</button>'
+        : '';
       const body=(Q.revealed&&Q.current[2])
         ? '<span class="said">'+esc(Q.current[2])+'</span>'
-        : (who?'<span class="turnchip">'+esc(T('whose_turn',{who:who}))+'</span>':'');
+        : (who?'<span class="turnchip">'+esc(T('whose_turn',{who:who}))+'</span>'+stand:'');
       rl.innerHTML=body;
       rl.hidden=!body;
     }
@@ -6296,6 +6312,11 @@ $('q-options')&&($('q-options').addEventListener('focusin',e=>{
 }));
 $('q-options')&&($('q-options').addEventListener('keydown',e=>{
   if(e.target&&e.target.id==='near-host'&&e.key==='Enter'){e.preventDefault();lockHostNear()}
+}));
+$('s10-rules')&&($('s10-rules').addEventListener('click',e=>{
+  if(!e.target.closest||!e.target.closest('#s10-stand'))return;
+  const here=S.players.find(p=>!p.pid&&p.id===Q.turn&&Q.state&&Q.state[p.id]==='in');
+  if(here)s10Stand(here);
 }));
 $('q-options')&&($('q-options').addEventListener('click',e=>{
   if(e.target&&e.target.closest('#near-hostgo')){lockHostNear();return}
@@ -7622,7 +7643,7 @@ var WORDS={
   s10_banked:'Pankitit {n}. Turvassa.',
   s10_their_turn:'{who} on vuorossa', s10_their_turn_pot:'{who} on vuorossa · sinun pottisi {n}',
   s10_my_turn:'Sinun vuorosi — valitse yksi josta olet varma',
-  s10_my_turn_pot:'Sinun vuorosi · potti {n} · seuraava +{m} · yksi väärä vie kaiken',
+  s10_my_turn_pot:'Sinun vuorosi · potti {n} · osuma +{m} · yksi väärä vie kaiken',
   door_tell:'Kerro kuka olet niin saat tuolin.',
   door_full:'Kaikki tuolit ovat varattuja. Isäntä näkee sinut ja päästää sisään kun paikka vapautuu.',
   door_full_ahead:'Kaikki tuolit ovat varattuja. Isäntä näkee sinut — {n} edelläsi.',
@@ -7638,6 +7659,7 @@ var WORDS={
   near_here:'{who}, näppäile tähän:',
   sound_tap:'Kosketa kuullaksesi',
   sound_on_tv:'\ud83d\udd0a Levy soi televisiossa',
+  s10_stand:'Jään tähän', s10_stand_pot:'Jään tähän (+{n})',
   modes_learn:"Miten näitä pelataan",
   modes_solo:"Pikastartti, yksin",
   modes_create:"Luo peli",
@@ -7935,6 +7957,7 @@ var WORDS={
   near_here:'{who}, skriv här:',
   sound_tap:'Tryck för att höra',
   sound_on_tv:'\ud83d\udd0a Skivan spelas på tv:n',
+  s10_stand:'Jag stannar', s10_stand_pot:'Jag stannar (+{n})',
   modes_learn:"Så spelas de",
   modes_solo:"Snabbstart, på egen hand",
   modes_create:"Skapa ett spel",
@@ -8233,6 +8256,7 @@ var EN={
   near_here:'{who}, type yours here:',
   sound_tap:'Tap to hear it',
   sound_on_tv:'\ud83d\udd0a The record is playing on the television',
+  s10_stand:'I stop here', s10_stand_pot:'I stop here (+{n})',
   modes_learn:"How they play",
   modes_solo:"Quick start, on your own",
   modes_create:"Create a game",
