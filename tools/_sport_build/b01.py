@@ -116,9 +116,9 @@ q(["Which city was the first to host both a Summer and a Winter Olympics?", "Bei
 
 # ---------------------------------------------------------- Winter Olympic hosts
 q(["Which Swiss resort hosted the Winter Olympics of 1928 and again of 1948?", "St. Moritz", "Davos", "Zermatt", "Interlaken",
-   "A thaw in 1928 wiped out the 50 km race and the bobsleigh, and the skeleton run there gave the sport its name."],
+   "Skeleton sledding grew up on the town's Cresta Run, a track still built from scratch out of snow every winter."],
   ["Mikä sveitsiläinen lomakohde järjesti talviolympialaiset 1928 ja uudelleen 1948?", "St. Moritz", "Davos", "Zermatt", "Interlaken",
-   "Suojasää pilasi 1928 viidenkymmenen kilometrin hiihdon ja rattikelkkailun, ja paikan luistelurata antoi skeletonille nimensä."])
+   "Skeleton syntyi kylän Cresta Run -radalla, joka rakennetaan yhä joka talvi tyhjästä pelkästä lumesta."])
 
 q(["Which American town hosted the Winter Olympics of 1932 and again of 1980?", "Lake Placid", "Aspen", "Denver", "Squaw Valley",
    "A village of a few thousand people has staged two Winter Games, more than New York or Chicago have managed."],
@@ -277,7 +277,7 @@ q(["Which country won the football World Cup of 1990 in Italy?", "West Germany",
    "Se oli viimeinen tällä nimellä voitettu mestaruus: maa yhdistyi kolme kuukautta finaalin jälkeen."])
 
 q(["Which country won the 1994 World Cup final, the first settled on penalties?", "Brazil", "Italy", "Sweden", "Bulgaria",
-   "Roberto Baggio sent the last penalty over the bar, and the match had finished 0-0 in 120 degrees of Pasadena heat."],
+   "Roberto Baggio sent the last penalty over the bar, and the match had finished 0-0 in blazing Pasadena heat."],
   ["Mikä maa voitti vuoden 1994 MM-finaalin, ensimmäisen rangaistuspotkuihin ratkenneen?", "Brasilia", "Italia", "Ruotsi", "Bulgaria",
    "Roberto Baggio ampui viimeisen laukauksen yli, ja ottelu oli päättynyt 0-0 Pasadenan hellekuumuudessa."])
 
@@ -358,9 +358,9 @@ q(["Which Englishman won the Formula One title in 1976 by one point?", "James Hu
    "Niki Lauda, joka oli palanut samana vuonna Nürburgringillä, keskeytti viimeisen kilpailun sateessa Japanissa."])
 
 q(["Which Brazilian won Formula One titles in 1981, 1983 and 1987?", "Nelson Piquet", "Ayrton Senna", "Emerson Fittipaldi", "Rubens Barrichello",
-   "He is the only man to have won three titles without ever winning two in a row."],
+   "He won two of his titles with Brabham and one with Williams, and his son Nelsinho later raced in Formula One too."],
   ["Kuka brasilialainen voitti formula ykkösten mestaruuden 1981, 1983 ja 1987?", "Nelson Piquet", "Ayrton Senna", "Emerson Fittipaldi", "Rubens Barrichello",
-   "Hän on ainoa kolmen mestaruuden mies, joka ei koskaan voittanut kahta peräkkäin."])
+   "Kaksi mestaruutta tuli Brabhamilla ja yksi Williamsilla, ja hänen poikansa Nelsinho ajoi myöhemmin myös formula ykkösissä."])
 
 q(["Which Frenchman won four Formula One titles between 1985 and 1993?", "Alain Prost", "Jacques Laffite", "Rene Arnoux", "Didier Pironi",
    "He was nicknamed the Professor for winning on tyre wear and arithmetic rather than lap records."],
@@ -378,9 +378,9 @@ q(["Which Canadian won the Formula One title in 1997?", "Jacques Villeneuve", "D
    "Hänen kilpakumppaninsa pyyhittiin pistetaulukosta, kun tämä ajoi häneen kauden viimeisessä kilpailussa."])
 
 q(["Which driver won seven Formula One titles, five of them in a row from 2000?", "Michael Schumacher", "Lewis Hamilton", "Sebastian Vettel", "Alain Prost",
-   "Those five straight titles are still the longest run, and he won eleven of the eighteen races in 2002 alone."],
+   "Those five straight titles are still the longest run, and he won eleven of the seventeen races in 2002 alone."],
   ["Kuka kuljettaja voitti seitsemän formula ykkösten mestaruutta, viisi niistä putkeen vuodesta 2000?", "Michael Schumacher", "Lewis Hamilton", "Sebastian Vettel", "Alain Prost",
-   "Viisi perättäistä mestaruutta on yhä pisin putki, ja hän voitti pelkästään 2002 yksitoista kahdeksastatoista kilpailusta."])
+   "Viisi perättäistä mestaruutta on yhä pisin putki, ja hän voitti pelkästään 2002 yksitoista seitsemästätoista kilpailusta."])
 
 q(["Which Spaniard won Formula One titles in 2005 and 2006?", "Fernando Alonso", "Carlos Sainz", "Pedro de la Rosa", "Jaime Alguersuari",
    "At 24 he was the youngest champion to that date, and he has started more Grands Prix than anyone."],
@@ -393,9 +393,9 @@ q(["Which German won four Formula One titles in a row from 2010 to 2013?", "Seba
    "Hän antoi jokaiselle autolleen tytön nimen ja jutteli korille ennen lähtöä."])
 
 q(["Which German won the Formula One title in 2016 and retired five days later?", "Nico Rosberg", "Sebastian Vettel", "Michael Schumacher", "Timo Glock",
-   "His father Keke had won the same championship 34 years earlier, the first father and son both to do it."],
+   "His father Keke had won the same title 34 years earlier; they are the second father and son pair to manage it, after the Hills."],
   ["Kuka saksalainen voitti formula ykkösten mestaruuden 2016 ja lopetti viisi päivää myöhemmin?", "Nico Rosberg", "Sebastian Vettel", "Michael Schumacher", "Timo Glock",
-   "Hänen isänsä Keke oli voittanut saman mestaruuden 34 vuotta aiemmin, ensimmäisenä isä-poika-parina."])
+   "Hänen isänsä Keke oli voittanut saman tittelin 34 vuotta aiemmin; he ovat Hillien jälkeen toinen isä-poika-mestaripari."])
 
 q(["Which constructor won the drivers' title in 1998, 1999 and 2008?", "McLaren", "Ferrari", "Williams", "Benetton",
    "The team's cars were painted silver for those years but had been orange and then red and white before."],

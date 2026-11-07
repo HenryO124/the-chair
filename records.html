@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Levyt — ota tai hylkää</title>
+<style>
+:root{--bg:#120a0d;--ink:#F3EBE6;--muted:#9c8a8a;--red:#E03E52;--good:#49C27B;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:radial-gradient(120% 90% at 50% 0%,#241016 0%,var(--bg) 60%);color:var(--ink);
+  font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  display:flex;flex-direction:column;min-height:100svh;padding:0 16px;
+  -webkit-text-size-adjust:100%}
+header{display:flex;align-items:center;gap:12px;padding:14px 0 10px;flex:0 0 auto}
+header b{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.bar{flex:1 1 auto;height:6px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--red);width:0;transition:width .25s}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px;white-space:nowrap}
+
+main{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:14px;padding:10px 0 4px;min-height:0}
+.art{width:min(42vh,240px);aspect-ratio:1;border-radius:14px;background:#2a161c;
+  box-shadow:0 10px 40px rgba(0,0,0,.5);object-fit:cover}
+.act{font-size:clamp(24px,6vw,40px);font-weight:700;line-height:1.1;margin:0}
+.trk{font-size:clamp(15px,3.6vw,20px);color:var(--muted);margin:0}
+.meta{font-size:13px;color:var(--muted);letter-spacing:.06em}
+.hint{font-size:13px;color:var(--muted);min-height:1.3em}
+.warn{color:#E7B36A}
+
+.sound{display:flex;align-items:center;gap:10px;justify-content:center}
+.sound button{background:none;border:1px solid var(--line);color:var(--ink);
+  width:46px;height:46px;border-radius:99px;font-size:17px;cursor:pointer}
+.wave{width:min(70vw,300px);height:6px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.wave i{display:block;height:100%;background:var(--muted);width:0}
+
+footer{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  padding:14px 0 calc(16px + env(safe-area-inset-bottom))}
+footer button{padding:20px 10px;border-radius:14px;border:1px solid var(--line);
+  font-size:19px;font-weight:700;cursor:pointer;background:#1d1116;color:var(--ink);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+#no{border-color:rgba(224,62,82,.45);color:#FFB3BC}
+#yes{border-color:rgba(73,194,123,.5);color:#A8EBC4}
+footer button:active{transform:translateY(1px)}
+footer button:disabled{opacity:.35}
+.keys{grid-column:1/-1;text-align:center;font-size:12px;color:var(--muted)}
+
+#done{display:none;flex:1 1 auto;flex-direction:column;justify-content:center;gap:14px;padding:20px 0}
+#done h2{margin:0;font-size:24px}
+#done p{margin:0;color:var(--muted)}
+textarea{width:100%;height:30vh;background:#1a1016;color:var(--ink);border:1px solid var(--line);
+  border-radius:10px;padding:10px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row button{flex:1 1 140px;padding:14px;border-radius:12px;border:1px solid var(--line);
+  background:#1d1116;color:var(--ink);font-size:15px;cursor:pointer}
+.skipped{font-size:13px;color:var(--muted);max-height:22vh;overflow:auto;text-align:left}
+</style>
+</head>
+<body>
+
+<header>
+  <b>Levyt</b>
+  <div class="bar"><i id="pbar"></i></div>
+  <span class="count" id="pnum">…</span>
+</header>
+
+<main id="card">
+  <img class="art" id="art" alt="">
+  <h1 class="act" id="act">Ladataan…</h1>
+  <p class="trk" id="trk"></p>
+  <p class="meta" id="meta"></p>
+  <div class="sound">
+    <button id="play" title="Soita / tauko">▶</button>
+    <div class="wave"><i id="wave"></i></div>
+  </div>
+  <p class="hint" id="hint"></p>
+</main>
+
+<div id="done">
+  <h2>Valmis</h2>
+  <p id="tally"></p>
+  <div class="row">
+    <button id="copy">Kopioi tulos</button>
+    <button id="again">Aloita alusta</button>
+  </div>
+  <textarea id="out" readonly></textarea>
+  <div class="skipped" id="skipped"></div>
+</div>
+
+<footer>
+  <button id="no" disabled>Hylkää</button>
+  <button id="yes" disabled>Ota</button>
+  <div class="keys">Näppäimistöllä: ← hylkää · → ota · välilyönti soittaa</div>
+</footer>
+
+<script>
+/* ---------------------------------------------------------------------------
+   One record, one decision.
+   The game plays an act's FIRST single and asks the room who it is. A record
+   can only be dealt if that single can actually be heard, so this page looks
+   each one up, plays the thirty seconds the room would hear, and takes a yes
+   or a no. Nothing is ranked, nothing is judged here: a record with nothing to
+   hear is not a decision, so it is counted and skipped rather than shown.
+
+   The matching below is copied verbatim out of the game. If it says a record
+   plays, the game will play that same record.
+--------------------------------------------------------------------------- */
+var SAVE='thechair.records.v1';
+var ITUNES='https://itunes.apple.com/search';
+var TRY=9000;
+
+function fold(s){
+  return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[‘’ʼ´`]/g,"'")
+    .replace(/[øØ]/g,'o').replace(/[æÆ]/g,'ae')
+    .replace(/ß/g,'ss').replace(/[łŁ]/g,'l')
+    .replace(/[ðÞþ]/g,'th')
+    .toLowerCase().replace(/&/g,' and ')
+    .replace(/[^a-z0-9']+/g,' ').trim();
+}
+function nameScore(want,got){
+  var a=fold(want),b=fold(got);
+  if(!a||!b)return 0;
+  if(a===b)return 2;
+  var ta=a.split(' '),tb=b.split(' ');
+  var noise={the:1,los:1,las:1,le:1,la:1,die:1,der:1};
+  var strip=function(t){var o=t.filter(function(w){return !noise[w]});return o.length?o:t};
+  var sa=strip(ta),sb=strip(tb);
+  if(sa.join(' ')===sb.join(' '))return 2;
+  if(sa.join('')===sb.join(''))return 2;
+  var joins={'&':1,and:1,feat:1,'feat.':1,featuring:1,with:1,x:1,vs:1,'vs.':1,presents:1};
+  var inside=function(small,big){
+    if(small.length>=big.length)return false;
+    for(var i=0;i<small.length;i++)if(small[i]!==big[i])return false;
+    return !!joins[big[small.length]];
+  };
+  if(inside(sa,sb)||inside(sb,sa))return 2;
+  var hit=sa.filter(function(w){return sb.indexOf(w)>=0}).length;
+  return hit/Math.max(sa.length,sb.length)>=0.6?1:0;
+}
+var art600=function(u){return String(u||'').replace(/\/\d+x\d+bb\.(jpg|jpeg|png)$/i,'/600x600bb.$1')};
+function bestHit(artist,track,rows){
+  var best=null,score=0;
+  (rows||[]).forEach(function(r){
+    if(!r||!r.previewUrl)return;
+    var as=nameScore(artist,r.artistName);if(!as)return;
+    var ts=nameScore(track,r.trackName);if(!ts)return;
+    var s=as*10+ts;
+    if(s>score){score=s;best=r}
+  });
+  if(!best)return null;
+  return {url:String(best.previewUrl),art:art600(best.artworkUrl100||''),
+          artist:String(best.artistName||''),track:String(best.trackName||'')};
+}
+/* Apple answers a cross-origin read from most browsers and a callback= script
+   from the rest. Both are tried, in that order, exactly as the game does. */
+var jn=0;
+function jsonp(url){
+  return new Promise(function(res,rej){
+    var cb='rec'+(++jn),s=document.createElement('script'),over=false;
+    var t=setTimeout(function(){if(!over){over=true;done();rej(new Error('timeout'))}},TRY);
+    function done(){clearTimeout(t);try{delete window[cb]}catch(e){window[cb]=undefined}
+      if(s.parentNode)s.parentNode.removeChild(s)}
+    window[cb]=function(j){if(over)return;over=true;done();res((j&&j.results)||[])};
+    s.onerror=function(){if(over)return;over=true;done();rej(new Error('blocked'))};
+    s.src=url+'&callback='+cb;document.head.appendChild(s);
+  });
+}
+function ask(term,limit){
+  var url=ITUNES+'?term='+encodeURIComponent(term)+'&media=music&entity=song&limit='+limit;
+  var ac=null;try{ac=new AbortController()}catch(e){}
+  var t=setTimeout(function(){try{ac&&ac.abort()}catch(e){}},TRY);
+  return fetch(url,ac?{signal:ac.signal}:undefined)
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
+    .then(function(j){clearTimeout(t);return (j&&j.results)||[]})
+    .catch(function(){clearTimeout(t);return jsonp(url)});
+}
+function look(a){
+  var artist=a[0],track=a[5];
+  return ask(artist+' '+track,8).then(function(rows){
+    var hit=bestHit(artist,track,rows);
+    if(hit)return hit;
+    return ask(artist,25).then(function(r2){return bestHit(artist,track,r2)});
+  }).catch(function(){return null});
+}
+
+/* -------------------------------------------------------------- the records */
+var $=function(id){return document.getElementById(id)};
+var CAT=[],at=0,decided={},skipped=[],cur=null,audio=null;
+
+try{var st=JSON.parse(localStorage.getItem(SAVE)||'{}');
+    decided=st.decided||{};skipped=st.skipped||[]}catch(e){}
+function save(){try{localStorage.setItem(SAVE,JSON.stringify({decided:decided,skipped:skipped}))}catch(e){}}
+var keyOf=function(a){return a[0]+' | '+a[5]};
+
+/* banks.js is the host's file and holds the catalogue. It is a plain script,
+   so it is loaded as one and CATALOG read off the window afterwards. */
+function loadCatalogue(){
+  return new Promise(function(res,rej){
+    var s=document.createElement('script');
+    s.src='banks.js?v='+Date.now();
+    s.onload=function(){
+      var c=window.CATALOG;
+      if(!c||!c.length)return rej(new Error('banks.js loaded but holds no catalogue'));
+      res(c.filter(function(a){return a&&a[0]&&a[5]}));
+    };
+    s.onerror=function(){rej(new Error('banks.js could not be loaded from this folder'))};
+    document.head.appendChild(s);
+  });
+}
+
+/* The next two are fetched while this one is playing, which is the whole
+   reason a hundred records can be gone through in a few minutes. */
+var AHEAD={};
+function warm(i){
+  for(var n=i;n<Math.min(i+3,CAT.length);n++){
+    var k=keyOf(CAT[n]);
+    if(k in AHEAD||decided[k])continue;
+    AHEAD[k]=look(CAT[n]);
+  }
+}
+function hitFor(a){
+  var k=keyOf(a);
+  if(!(k in AHEAD))AHEAD[k]=look(a);
+  return AHEAD[k];
+}
+
+function progress(){
+  var done=Object.keys(decided).length+skipped.length;
+  $('pbar').style.width=(100*done/Math.max(1,CAT.length))+'%';
+  $('pnum').textContent=done+' / '+CAT.length;
+}
+
+function stop(){
+  if(audio){try{audio.pause()}catch(e){}}
+  $('wave').style.width='0';
+  $('play').textContent='▶';
+}
+
+function show(){
+  // walk past everything already settled. A rejection is stored as 0, so this
+  // asks whether the key is there at all: testing the value showed every
+  // rejected record again on the next visit.
+  while(at<CAT.length&&(keyOf(CAT[at]) in decided))at++;
+  if(at>=CAT.length)return finish();
+  var mine=CAT[at];          // captured: the global moves on, this one must not
+  cur=mine;
+  warm(at);
+  stop();
+  $('yes').disabled=true;$('no').disabled=true;
+  $('act').textContent=cur[0];
+  $('trk').textContent='“'+cur[5]+'”';
+  $('meta').textContent=(cur[6]||'')+' · '+(cur[4]||'');
+  $('art').removeAttribute('src');
+  $('hint').textContent='Haetaan…';$('hint').className='hint';
+  progress();
+
+  hitFor(mine).then(function(hit){
+    // a lookup that lands after the card has moved on belongs to nobody
+    if(mine!==cur)return;
+    if(!hit){
+      // nothing to hear is not a decision: count it and move on
+      if(skipped.indexOf(keyOf(mine))<0)skipped.push(keyOf(mine));
+      save();at++;return show();
+    }
+    if(hit.art)$('art').src=hit.art;
+    $('hint').textContent=(fold(hit.artist)===fold(mine[0])&&fold(hit.track)===fold(mine[5]))
+      ? '' : 'Apple antoi: '+hit.artist+' — '+hit.track;
+    if(!$('hint').textContent)$('hint').textContent='';
+    else $('hint').className='hint warn';
+    $('yes').disabled=false;$('no').disabled=false;
+    play(hit.url);
+  });
+}
+
+function play(url){
+  if(!audio){
+    audio=new Audio();
+    audio.preload='auto';
+    try{audio.setAttribute('playsinline','')}catch(e){}
+    audio.addEventListener('timeupdate',function(){
+      var d=audio.duration||30;
+      $('wave').style.width=(100*(audio.currentTime||0)/d)+'%';
+    });
+    audio.addEventListener('ended',function(){$('play').textContent='▶'});
+  }
+  audio.src=url;
+  var p=audio.play();
+  if(p&&p.catch)p.catch(function(){$('play').textContent='▶'});
+  $('play').textContent='❚❚';
+}
+
+function decide(ok){
+  if(!cur||$('yes').disabled)return;
+  decided[keyOf(cur)]=ok?1:0;
+  save();stop();at++;show();
+}
+
+function finish(){
+  stop();
+  $('card').style.display='none';
+  document.querySelector('footer').style.display='none';
+  $('done').style.display='flex';
+  var keys=Object.keys(decided);
+  var took=keys.filter(function(k){return decided[k]===1});
+  $('tally').textContent=took.length+' otettu, '+(keys.length-took.length)
+    +' hylätty, '+skipped.length+' ei löytynyt lainkaan.';
+  var o={};took.forEach(function(k){o[k]=1});
+  $('out').value=JSON.stringify(o,null,0);
+  $('skipped').textContent=skipped.length
+    ? 'Ei löytynyt: '+skipped.join(' · ') : '';
+  progress();
+}
+
+/* ------------------------------------------------------------------ wiring */
+$('yes').onclick=function(){decide(true)};
+$('no').onclick=function(){decide(false)};
+$('play').onclick=function(){
+  if(!audio)return;
+  if(audio.paused){var p=audio.play();if(p&&p.catch)p.catch(function(){});$('play').textContent='❚❚'}
+  else{audio.pause();$('play').textContent='▶'}
+};
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight')decide(true);
+  else if(e.key==='ArrowLeft')decide(false);
+  else if(e.key===' '){e.preventDefault();$('play').click()}
+});
+$('copy').onclick=function(){
+  $('out').select();
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  if(!ok&&navigator.clipboard)navigator.clipboard.writeText($('out').value);
+  $('copy').textContent='Kopioitu';
+  setTimeout(function(){$('copy').textContent='Kopioi tulos'},1500);
+};
+$('again').onclick=function(){
+  if(!confirm('Nollataanko kaikki päätökset?'))return;
+  decided={};skipped=[];at=0;save();
+  $('done').style.display='none';$('card').style.display='flex';
+  document.querySelector('footer').style.display='grid';
+  show();
+};
+
+loadCatalogue().then(function(c){
+  CAT=c;progress();show();
+},function(e){
+  $('act').textContent='Levyjä ei saatu';
+  $('trk').textContent=String(e.message||e);
+  $('hint').textContent='Tämän sivun pitää olla samassa kansiossa kuin banks.js.';
+});
+</script>
+</body>
+</html>
