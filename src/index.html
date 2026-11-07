@@ -3665,7 +3665,7 @@ function startSolo(){
   try{partyEnd()}catch(e){}
   const keep=S.players[0]&&S.players[0].photo;
   S.players=[mkPlayer('',0,0,'',keep)];
-  S.games=0;S.banked=false;
+  S.games=0;S.banked=false;S.seen={};
   S.players.forEach(p=>{p.team=[];p.blockUsed=false;p.passed=false;p.score=0;p.night=0});
   try{drawPlayers();validate()}catch(e){}
   try{updatePool();dressRules()}catch(e){}
@@ -4803,7 +4803,7 @@ function openLobby(goTo){
   // a new game always starts empty: tap a friend to hold a chair for tonight
   FRIENDS.forEach(f=>{f.on=false});saveFriends();drawFriends();
   clearVotes();S.cats=[];
-  S.games=0;S.banked=false;S.players.forEach(p=>{p.night=0});   // a new party, a new evening
+  S.games=0;S.banked=false;S.seen={};S.players.forEach(p=>{p.night=0});   // a new party, a new evening
   PARTY.role='host';PARTY.code=newCode();PARTY.key=newRoomKey();PARTY.seen={};
   try{if(MYNAME)claimMySeat('')}catch(e){}   // the host is whoever this device is
   $('lobby-code').textContent=PARTY.code;
@@ -4936,7 +4936,36 @@ const isAsking=()=>isTrivia()||isPicture()||isTF();   // the games with one writ
                                                       // (Smart Ten has ten, and runs its own way)
 // an option is an act in Name the Artist and a plain string in the Quiz
 const optLabel=o=>isAsking()?o:o[0];
+/* Every bank puts the row's own id last — the quiz its row number, the others
+   'p3', 's17', 'n42' — so one memory serves all of them. */
+const rowId=r=>(r&&r.length)?String(r[r.length-1]):'';
+function seenSet(){
+  if(!S.seen)S.seen={};
+  const k=S.game||'x';                    // each game remembers its own
+  if(!S.seen[k])S.seen[k]={};
+  return S.seen[k];
+}
+/* The deck for one game: everything nobody has seen tonight, and only when
+   those run out does it go back to the beginning. */
 function evenDeck(bank,want){
+  const seen=seenSet();
+  const fresh=bank.filter(r=>!seen[rowId(r)]);
+  let out;
+  if(fresh.length>=want){
+    out=dealEvenly(fresh,want);
+  }else{
+    // the bank is spent: take what is left unseen, fill from the rest, and
+    // start the memory again so the next game is clean rather than stuck
+    out=dealEvenly(fresh,fresh.length);
+    const used=bank.filter(r=>seen[rowId(r)]);
+    dealEvenly(used,want-out.length).forEach(r=>out.push(r));
+    Object.keys(seen).forEach(k=>{delete seen[k]});
+    out=shuffle(out);
+  }
+  out.forEach(r=>{const id=rowId(r);if(id)seen[id]=1});
+  return out;
+}
+function dealEvenly(bank,want){
   // one from each topic in turn, so a thin topic gets as many as a fat one
   const by={},order=[];
   bank.forEach(q=>{const k=q[0];if(!by[k]){by[k]=[];order.push(k)}by[k].push(q)});
@@ -5885,20 +5914,19 @@ function drawS10(){
   $('q-count').textContent='Question '+Q.round+' of '+Q.deck.length;
   $('q-ask').className='ask';
   $('q-ask').textContent=Q.current[1];
-  // 6. the frame behind the question was empty; the rules go there, so a room
-  // that has never played this can follow it without anyone explaining.
+  // The rules used to sit here. A room that has played once knows them, and
+  // four lines of instructions above the answers is clutter rather than help.
+  // What stays is the only thing nobody can work out for themselves: whose
+  // turn it is, and afterwards the line that settles the argument.
   try{
     const rl=$('s10-rules');
     if(rl){
-      rl.hidden=false;
       const who=s10TurnName();
-      rl.innerHTML=(Q.revealed&&Q.current[2])
+      const body=(Q.revealed&&Q.current[2])
         ? '<span class="said">'+esc(Q.current[2])+'</span>'
-        : (who?'<span class="turnchip">'+esc(who)+'\u2019s turn</span>':'')
-          +'<span>Take one you believe is <b>true</b></span>'
-          +'<span>Right? <b>take another</b> or stop</span>'
-          +'<span class="bad">One wrong and the <b>pot is gone</b></span>'
-          +'<span>Stop <b>whenever you like</b></span>';
+        : (who?'<span class="turnchip">'+esc(T('whose_turn',{who:who}))+'</span>':'');
+      rl.innerHTML=body;
+      rl.hidden=!body;
     }
   }catch(e){}
   const nameOf=id=>{const p=S.players.find(x=>x.id===id);return p?shownName(p):''};
@@ -7173,7 +7201,7 @@ function dressUI(){
    order of the pieces is not the same in the three languages. */
 const WORDS={
  fi:{
-  reveal:'Paljasta', next_q:'Seuraava kysymys', next_r:'Seuraava levy',
+  whose_turn:'{who} on vuorossa', reveal:'Paljasta', next_q:'Seuraava kysymys', next_r:'Seuraava levy',
   see_winner:'Katso voittaja', see_standings:'Katso tilanne',
   hold:'Pidä tauko', end_game:'Lopeta peli', end_round:'Lopeta kierros',
   bank:'Pankita {n}', leave:'Poistu pelistä', leave_party:'Poistu bileistä',
@@ -7217,7 +7245,7 @@ const WORDS={
   meta_tf:'totta vai tarua', meta_s10:'kuinka pitkälle uskallat'
  },
  sv:{
-  reveal:'Avslöja', next_q:'Nästa fråga', next_r:'Nästa skiva',
+  whose_turn:'{who} har tur', reveal:'Avslöja', next_q:'Nästa fråga', next_r:'Nästa skiva',
   see_winner:'Se vinnaren', see_standings:'Se ställningen',
   hold:'Pausa', end_game:'Avsluta spelet', end_round:'Avsluta rundan',
   bank:'Säkra {n}', leave:'Lämna spelet', leave_party:'Lämna festen',
@@ -7262,7 +7290,7 @@ const WORDS={
  }
 };
 const EN={
-  reveal:'Reveal', next_q:'Next question', next_r:'Next record',
+  whose_turn:'{who}\u2019s turn', reveal:'Reveal', next_q:'Next question', next_r:'Next record',
   see_winner:'See the winner', see_standings:'See the standings',
   hold:'Hold', end_game:'End the game', end_round:'End the round',
   bank:'Bank {n}', leave:'Leave the game', leave_party:'Leave the party',
