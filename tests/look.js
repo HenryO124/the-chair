@@ -54,11 +54,17 @@ setTimeout(()=>{
     Q.pot={a:3,b:0,c:0,d:0};Q.picks={a:1,b:1,c:2,d:0};
     Q.revealed=false;drawQuiz();`);
   // 6
-  if($('s10-rules').hidden)probs.push('the rules are not on screen');
+  // The rules used to live in this strip. They were taken out: a room that has
+  // played once knows them, and four lines of instructions above the answers
+  // is clutter. What must still be there is whose turn it is — nobody can work
+  // that out by looking.
+  w.eval("s10SetTurn('c');drawQuiz();");
+  if($('s10-rules').hidden)probs.push('nothing tells the room whose turn it is');
   else{
     const t=$('s10-rules').textContent;
-    ['true','pot','gone','Stop'].forEach(word=>{
-      if(t.indexOf(word)<0)probs.push('the rules never say "'+word+'"');
+    if(t.indexOf('Jussi')<0)probs.push('the turn line does not name the player: '+t);
+    ['pot is gone','Take one you believe','whenever you like'].forEach(word=>{
+      if(t.indexOf(word)>=0)probs.push('the rules are back on screen: "'+word+'"');
     });
   }
   if(!/#s-quiz:has\(#s10-rules:not\(\[hidden\]\)\) \.videowall\{display:none/.test(css))
