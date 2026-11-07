@@ -1992,6 +1992,15 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 /* Closest Wins is the only game whose answers are not on the screen, so the
    room needs telling where to put them. Bigger and brighter than the counter
    under it: it is an instruction, not a status. */
+/* A silent phone that looks broken is worse than a silent phone that says
+   why. One of these two is always there when a record is playing. */
+.padonscreen{display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:18px 14px;border-radius:12px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:15px}
+.tapsound{position:absolute;inset:0;z-index:3;width:100%;border:0;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:rgba(224,62,82,.92);color:#fff;font:700 19px/1.2 inherit;
+  -webkit-tap-highlight-color:transparent;animation:soundpulse 1.8s ease-in-out infinite}
 /* the scoreboard a phone shows once the number is out */
 #pad-quiz.padnear{display:flex;flex-direction:column;gap:5px;padding:4px 0}
 .pnrow{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:baseline;
@@ -7183,8 +7192,18 @@ $('join-sound')&&($('join-sound').addEventListener('click',e=>{
 const PREVOK=/^https:\/\/[a-z0-9.-]+\.(apple\.com|mzstatic\.com)\/[^\s"<>]+$/i;
 function drawPadScreen(st){
   const box=$('pad-screen');if(!box)return;
-  // in a shared room the phone is a button; the record belongs to the big screen
-  if(st&&st.remote===false)st={phase:'',vid:'',prev:''};
+  // In a shared room the phone is a button and the record belongs to the big
+  // screen. That is the right default — one song in the room beats twelve
+  // phones echoing it half a second apart — but a silent phone with nothing on
+  // it looks broken, so it says which it is instead of leaving a person to
+  // guess. The host's switch is "Missä kaikki ovat".
+  if(st&&st.remote===false){
+    const live=st.phase==='live'&&(st.vid||st.prev||st.game==='artist');
+    box.hidden=!live;
+    const k='onscreen|'+(live?'1':'0');
+    if(padVid!==k){padVid=k;box.innerHTML=live?'<div class="padonscreen">'+esc(T('sound_on_tv'))+'</div>':''}
+    return;
+  }
   const prev=(st&&st.phase==='live'&&st.prev&&PREVOK.test(String(st.prev)))?String(st.prev):'';
   const want=(st&&st.phase==='live'&&!prev&&st.vid)?String(st.vid):'';
   const hide=!!(st&&st.hide);
@@ -7198,9 +7217,10 @@ function drawPadScreen(st){
     box.hidden=false;
     box.innerHTML='<div class="eq on">'+'<i></i>'.repeat(10)+'</div>'
       +(hide?'<div class="padcurtain">'+esc(T('curtain_closed'))+'</div>':'')
-      +'<button class="soundbtn'+(loud?'':' wants')+'" id="pad-sound">'
-      +(loud?'\ud83d\udd0a '+esc(T('sound_on'))
-            :'\ud83d\udd0a '+esc(T('sound_tap')))+'</button>';
+      +(loud?'':'<button type="button" class="tapsound" id="pad-sound">'
+        +'\ud83d\udd0a '+esc(T('sound_tap'))+'</button>')
+      +(loud?'<button class="soundbtn" id="pad-sound2">\ud83d\udd0a '
+        +esc(T('sound_on'))+'</button>':'');
     recPlay(prev,!loud);
     return;
   }
@@ -7212,13 +7232,14 @@ function drawPadScreen(st){
     +' allow="autoplay; encrypted-media; fullscreen"'
     +' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
     +(hide?'<div class="padcurtain">'+esc(T('curtain_closed'))+'</div>':'')
-    +'<button class="soundbtn'+(loud?'':' wants')+'" id="pad-sound">'
-    +(loud?'\ud83d\udd0a '+esc(T('sound_on'))
-          :'\ud83d\udd0a '+esc(T('sound_tap')))+'</button>';
+    +(loud?'':'<button type="button" class="tapsound" id="pad-sound">'
+      +'\ud83d\udd0a '+esc(T('sound_tap'))+'</button>')
+    +(loud?'<button class="soundbtn" id="pad-sound2">\ud83d\udd0a '
+      +esc(T('sound_on'))+'</button>':'');
 }
 /* one tap decides it for the rest of the night */
 document.addEventListener('click',e=>{
-  if(!e.target.closest||!e.target.closest('#pad-sound'))return;
+  if(!e.target.closest||!e.target.closest('#pad-sound,#pad-sound2'))return;
   // the first tap is always "let me hear it", whatever the stored setting says
   setPadSound(!(padSound&&padHeard));
 });
@@ -7616,6 +7637,7 @@ var WORDS={
   near_howto:'Näppäile luku puhelimeesi ja lukitse se',
   near_here:'{who}, näppäile tähän:',
   sound_tap:'Kosketa kuullaksesi',
+  sound_on_tv:'\ud83d\udd0a Levy soi televisiossa',
   modes_learn:"Miten näitä pelataan",
   modes_solo:"Pikastartti, yksin",
   modes_create:"Luo peli",
@@ -7912,6 +7934,7 @@ var WORDS={
   near_howto:'Skriv talet på din telefon och lås in det',
   near_here:'{who}, skriv här:',
   sound_tap:'Tryck för att höra',
+  sound_on_tv:'\ud83d\udd0a Skivan spelas på tv:n',
   modes_learn:"Så spelas de",
   modes_solo:"Snabbstart, på egen hand",
   modes_create:"Skapa ett spel",
@@ -8209,6 +8232,7 @@ var EN={
   near_howto:'Type your number on your phone and lock it in',
   near_here:'{who}, type yours here:',
   sound_tap:'Tap to hear it',
+  sound_on_tv:'\ud83d\udd0a The record is playing on the television',
   modes_learn:"How they play",
   modes_solo:"Quick start, on your own",
   modes_create:"Create a game",

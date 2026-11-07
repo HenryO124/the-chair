@@ -27,11 +27,17 @@ const srv=http.createServer((q,r)=>{
   try{await p.click('#intro-skip',{timeout:500})}catch(e){}
 
   const paint=async()=>p.evaluate(()=>{
+    // the pad lives inside the join screen; show it so the player has a size
+    try{show('s-chair')}catch(e){}
+    const cp=document.getElementById('chair-pad');if(cp)cp.hidden=false;
+    const jf=document.getElementById('join-form');if(jf)jf.hidden=true;
     padVid='';
     drawPadScreen({phase:'live',game:'artist',vid:'dQw4w9WgXcQ',round:1,players:[],remote:true});
-    const f=document.querySelector('#pad-screen iframe'),s=document.getElementById('pad-sound');
-    return {src:f?f.getAttribute('src'):'', label:s?s.textContent.trim():'',
-            wants:s?s.className.indexOf('wants')>=0:false};
+    const f=document.querySelector('#pad-screen iframe');
+    const tap=document.querySelector('#pad-screen .tapsound');
+    const on=document.getElementById('pad-sound2');
+    return {src:f?f.getAttribute('src'):'', label:(tap||on||{textContent:''}).textContent.trim(),
+            wants:!!tap};
   });
 
   // ---- first record on a phone that has never tapped ----
@@ -41,6 +47,11 @@ const srv=http.createServer((q,r)=>{
     probs.push('the first record is handed to the phone unmuted — the browser will refuse it outright');
   if(!/mute=1/.test(r.src))probs.push('the embed does not say whether it is muted: '+r.src.slice(0,90));
   if(!r.wants)probs.push('nothing on the phone invites the tap that would turn the sound on');
+  // the invitation has to be the size of a thumb, not a footnote
+  const big=await p.evaluate(()=>{const t=document.querySelector('#pad-screen .tapsound');
+    if(!t)return null;const b=t.getBoundingClientRect();return {w:Math.round(b.width),h:Math.round(b.height)}});
+  if(big&&(big.w<180||big.h<44))
+    probs.push('the invitation is only '+big.w+'x'+big.h+' — nobody will find it');
   console.log('  before any tap: '+(/mute=1/.test(r.src)?'muted':'LOUD')+', button says "'+r.label+'"');
 
   // ---- one tap, and it plays with sound ----
@@ -65,6 +76,19 @@ const srv=http.createServer((q,r)=>{
   });
   if(!/mute=0/.test(again))probs.push('the phone forgot it had been given permission: '+again.slice(0,90));
   else console.log('  a later page on the same phone: sound on, no second tap needed');
+
+  // ---- in a shared room the phone must say why it is silent ----------------
+  const room=await p.evaluate(()=>{
+    padVid='';
+    drawPadScreen({phase:'live',game:'artist',vid:'dQw4w9WgXcQ',round:3,players:[],remote:false});
+    const box=document.getElementById('pad-screen');
+    return {iframe:!!box.querySelector('iframe'),
+            says:(box.textContent||'').trim(),hidden:box.hidden};
+  });
+  if(room.iframe)probs.push('the phone plays the record even though the room shares one screen');
+  if(room.hidden||!room.says)
+    probs.push('the phone goes blank in a shared room and looks broken instead of saying why');
+  else console.log('  in a shared room the phone says: "'+room.says+'"');
 
   await b.close();srv.close();
   if(probs.length){console.log('FAIL:');probs.forEach(x=>console.log('  x '+x));process.exit(1)}
