@@ -63,7 +63,9 @@ setTimeout(()=>{
     if(at()!=='s-setup')probs.push('Create a party went to '+at());
     if(!$('rb-vis'))probs.push('no public/private switch on menu 2');
     else{click($('rb-vis'));
-      if(!/Public/.test($('rb-vis').textContent))probs.push('the switch does not say Public: '+$('rb-vis').textContent);
+  const pubWant=w.eval("T('room_public')");
+  if($('rb-vis').textContent.trim()!==pubWant.trim())
+    probs.push('the switch says "'+$('rb-vis').textContent.trim()+'", expected "'+pubWant+'"');
       if(!w.eval('S.public'))probs.push('the room did not go public');}
     console.log(probs.length?'FAIL:':'ok - front page, filters, open rooms, join, name, menu 2');
     probs.forEach(p=>console.log('  x '+p));

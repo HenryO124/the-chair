@@ -51,8 +51,14 @@ const tick=(ms=80)=>new Promise(r=>setTimeout(r,ms));
   // a visible way back to menu 1
   const back=h$('modes-back');
   if(!back||back.offsetParent===null&&!back.className.includes('backlink'))probs.push('no way back to the main menu');
-  if(!/Main menu/i.test(back.textContent))probs.push('the back button does not say where it goes');
-  if(!/party/i.test(h$('rb-next').textContent))probs.push("the forward button still says: "+h$('rb-next').textContent);
+  // the interface is in the language the questions are in, so ask the page
+  // what these buttons should say rather than assuming English
+  const backWant=hw.eval("(UITEXT[S.lang]&&UITEXT[S.lang]['\u2190 Main menu'])||'\u2190 Main menu'");
+  if(back.textContent.trim()!==backWant.trim())
+    probs.push('the back button says "'+back.textContent.trim()+'", expected "'+backWant+'"');
+  const fwdWant=hw.eval("(UITEXT[S.lang]&&UITEXT[S.lang][\"Let's party \u2192\"])||\"Let's party \u2192\"");
+  if(h$('rb-next').textContent.trim()!==fwdWant.trim())
+    probs.push('the forward button says "'+h$('rb-next').textContent.trim()+'", expected "'+fwdWant+'"');
 
   // the QR in the bar, and the big one over everything
   if(!h$('rb-qr'))probs.push('NO QR BUTTON ON MENU 2');

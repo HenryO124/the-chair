@@ -2884,6 +2884,8 @@ function wipeLocal(){
   try{location.hash='';location.reload()}catch(e){}
 }
 try{if(/^#reset$/i.test(location.hash||''))wipeLocal()}catch(e){}
+// the page is written in English and dressed once the saved language is known
+try{document.addEventListener('DOMContentLoaded',()=>{try{dressUI()}catch(e){}})}catch(e){}
 try{history.replaceState({chair:1},'')}catch(e){}
 window.addEventListener('popstate',()=>{
   // keep one entry in reserve, so Back never leaves the page while a game is on
@@ -2905,6 +2907,7 @@ function show(id){
   try{document.querySelectorAll('.tn').forEach(t=>t.classList.toggle('sel',t.id==='nav-home'?id==='s-home':false))}catch(e){}
   if(screenNow()!==id)try{history.pushState({chair:1,s:id},'')}catch(e){}
   document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));window.scrollTo(0,0);
+  try{dressUI()}catch(e){}        // a screen may have just cloned a template in
   if(id==='s-listen')fitScreen();
   if(id==='s-go')try{drawGo()}catch(e){}
   if(id==='s-final')try{drawFinalRoom()}catch(e){}
@@ -3268,7 +3271,7 @@ function drawCats(){
 }
 segHandler('lang','g',v=>{
   S.lang=v;
-  try{dressButtons()}catch(e){}
+  try{dressUI()}catch(e){}
   try{localStorage.setItem('thechair.lang',v)}catch(e){}
   drawCats();
   if(PARTY.role==='host')publishStage();
@@ -3409,7 +3412,7 @@ function openModes(mode){
   LEARNING=(mode==='learn'); SOLO=(mode==='solo');
   document.body.classList.toggle('learning',LEARNING);
   document.body.classList.toggle('solo',SOLO);
-  $('modes-eyebrow').textContent=LEARNING?'How they play':SOLO?'Quick start, on your own':'Create a game';
+  $('modes-eyebrow').textContent=LEARNING?T('modes_learn'):SOLO?T('modes_solo'):T('modes_create');
   const go=$('create-room');
   if(go)go.textContent='Start on this screen';
   const lab=document.querySelector('#startbar .sbt');
@@ -3494,7 +3497,7 @@ function drawVis(){
     ? 'Listed on this page for anyone to join — and that means anyone.'
     : 'Only people with the code or the QR get in.';
   const b=$('rb-vis');
-  if(b){b.classList.toggle('open',!!S.public);b.lastChild.textContent=S.public?'Public room':'Private room'}
+  if(b){b.classList.toggle('open',!!S.public);b.lastChild.textContent=T(S.public?'room_public':'room_private')}
 }
 $('vis')&&($('vis').addEventListener('click',e=>{
   const b=e.target.closest('button[data-v]');if(!b||b.disabled)return;
@@ -3531,8 +3534,7 @@ function drawSettings(){
   document.querySelectorAll('#set-music button').forEach(b=>
     b.classList.toggle('sel',(b.dataset.m==='on')===!!musicOn));
   const nt=$('set-lang-note');
-  if(nt)nt.textContent='The quiz and Picture Guess are asked in '+(LANGNAME[S.lang]||'English')
-    +'. The room follows this screen.';
+  if(nt)nt.textContent=T('lang_note',{lang:LANGNAME[S.lang]||'English'});
   try{$('set-name').value=MYNAME}catch(e){}
   try{$('set-ver').textContent='Version '+BUILD}catch(e){}
 }
@@ -3546,6 +3548,7 @@ $('set-lang')&&($('set-lang').onclick=e=>{
   S.lang=b.dataset.g;
   try{localStorage.setItem('thechair.lang',S.lang)}catch(e2){}
   try{segPick('lang','g',S.lang)}catch(e2){}      // the lobby's own picker agrees
+  try{dressUI()}catch(e2){}
   try{S.cats=[];clearVotes();drawCats()}catch(e2){}
   if(PARTY.role==='host')try{publishStage()}catch(e2){}
   drawSettings();
@@ -4173,7 +4176,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 14:08';
+const BUILD='07.11. 14:23';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4359,10 +4362,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111408',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111408',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111423',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111423',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111408',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111423',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -5922,7 +5925,7 @@ function drawRoomBar(){
   const fresh=[];
   const was=rbSeen||{};
   const now={};joined.forEach(p=>{if(p.pid)now[p.pid]=1});
-  $('rb-joined').innerHTML='<span class="rblab ok">Joined ('+joined.length+'/'+MAX_CHAIRS+')</span>'
+  $('rb-joined').innerHTML='<span class="rblab ok">'+esc(T('joined',{n:joined.length,of:MAX_CHAIRS}))+'</span>'
     +joined.map((p,i)=>{
       const isnew=!first&&p.pid&&!was[p.pid];     // this one walked in just now
       if(isnew)fresh.push(shownName(p));
@@ -6786,6 +6789,72 @@ $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
   sendAct('answer',myPick);
 }));
 
+/* ---- the interface, in the language the questions are in -----------
+   Looked up by the English rather than by a key written into the markup:
+   the page keeps its English, a string with no translation simply stays
+   English, and the structure of the document is never touched.       */
+var UITEXT={fi:{"A party game platform with several game modes. Play with friends and family, each on their own phone.":"Bilepelialusta jossa on useita pelimuotoja. Pelaa ystävien ja perheen kanssa, jokainen omalla puhelimellaan.","Party game":"Bilepeli","Home": "Etusivu", "Game modes": "Pelit", "Settings": "Asetukset", "How to play": "Ohjeet", "Player 1": "Pelaaja 1", "Break": "Tauko", "Something on this page stopped working.": "Jokin tällä sivulla lakkasi toimimasta.", "Clear what this page saved and reload": "Tyhjennä sivun tallentamat tiedot ja lataa uudelleen", "Somebody else is talking to this room.": "Joku muu puhuu tähän huoneeseen.", "A message arrived on your room's channel that did not come from this\n        screen. Close the room and open a new one; the new code will be\n        different.": "Huoneesi kanavalle tuli viesti jota ei lähetetty tältä ruudulta. Sulje huone ja avaa uusi; uusi koodi on eri.", "Paused": "Tauolla", "Take your time.": "Ei kiirettä.", "Nothing is running. Get a beer, argue about whether Roxette really sold that many, go to the toilet. The game is exactly where you left it.": "Mikään ei ole käynnissä. Hae olut, riitele siitä myikö Roxette oikeasti niin paljon, käy vessassa. Peli odottaa juuri siinä mihin se jäi.", "Back to it": "Takaisin peliin", "Back to the menu": "Takaisin valikkoon", "Going back to the menu abandons the game in progress.": "Valikkoon palaaminen hylkää kesken olevan pelin.", "Your next game starts here": "Seuraava peli alkaa tästä", "Multiplayer party quiz game": "Moninpelattava bilevisa", "+ Create a party": "+ Luo bileet", "Join with code": "Liity koodilla", "Filter by game": "Rajaa pelin mukaan", "All games": "Kaikki pelit", "Live public parties": "Avoimet bileet nyt", "All": "Kaikki", "Waiting": "Odottaa", "In progress": "Käynnissä", "Parties anyone can join, right now. Yours appears here the moment you set the room to public — otherwise only the code gets people in.": "Bileet joihin kuka tahansa voi liittyä juuri nyt. Omasi näkyy täällä heti kun asetat huoneen julkiseksi — muuten sisään pääsee vain koodilla.", "Quick start (solo)": "Pikastartti (yksin)", "Practise the games at your own pace.": "Harjoittele pelejä omaan tahtiin.", "Learn the games": "Tutustu peleihin", "Game modes, rules and tips.": "Pelimuodot, säännöt ja vinkit.", "← Main menu": "← Päävalikko", "Game Modes": "Pelit", "The original": "Alkuperäinen", "One record at a time, from before anyone had heard of them. Hit your chair the moment you want them — the first to turn gets them.": "Yksi levy kerrallaan ajalta jolloin kukaan ei vielä tuntenut heitä. Lyö tuoliasi sillä hetkellä kun haluat heidät — ensimmäisenä kääntyvä saa heidät.", "2–8 coaches": "2–8 valmentajaa", "Curtains closed": "Verhot kiinni", "The record plays behind a closed curtain. Four names on your phone, one of them right. The curtain lifts once everyone has answered.": "Levy soi suljetun verhon takana. Puhelimessa neljä nimeä, yksi niistä oikea. Verho nousee kun kaikki ovat vastanneet.", "2–8 players": "2–8 pelaajaa", "General knowledge quiz": "Yleistietovisa", "Questions from a wide range of categories — history, geography, science, arts & culture, sport and more. Four answers, one of them right.": "Kysymyksiä laajalta alalta — historia, maantiede, luonnontiede, taide ja kulttuuri, urheilu ja muuta. Neljä vastausta, yksi niistä oikea.", "How far do you dare": "Kuinka pitkälle uskallat", "One question, ten candidates, and only some of them are true. Take one you are sure of and take another — each is worth more than the last. One wrong pick and the whole pot goes.": "Yksi kysymys, kymmenen vaihtoehtoa, ja vain osa niistä on totta. Ota yksi josta olet varma ja ota toinen — jokainen on edellistä arvokkaampi. Yksi väärä ja koko potti menee.", "Keep your run": "Pidä putkesi", "One statement at a time, half of them true. Everyone answers at once — and the longer your run of right answers, the more each one is worth.": "Yksi väite kerrallaan, puolet niistä totta. Kaikki vastaavat yhtä aikaa — ja mitä pidempi oikeiden putki, sitä arvokkaampi jokainen on.", "No options at all": "Ei vaihtoehtoja lainkaan", "The answer is a number — a year, a height, a count — and nobody is given anything to choose from. Everybody types a guess, the closest takes it, and exactly right takes double.": "Vastaus on luku — vuosi, korkeus, lukumäärä — eikä kukaan saa mitään mistä valita. Jokainen näppäilee arvauksen, lähin voittaa, ja täsmälleen oikea tuplasti.", "The room is the answer": "Huone on vastaus", "A question about the people in the room — and the people in the room are the four answers. Nothing here is true or false: you score by pointing at whoever everybody else pointed at.": "Kysymys huoneessa olevista ihmisistä — ja he itse ovat vastausvaihtoehdot. Mikään tässä ei ole totta tai tarua: pisteen saa osoittamalla sitä, jota muutkin osoittivat.", "3–8 players": "3–8 pelaajaa", "Picture guess": "Tunnista kuva", "Identify what is in the picture — a city, a famous painting, a landmark, a historical figure, or something else. Four answers, one of them right.": "Tunnista mitä kuvassa on — kaupunki, kuuluisa maalaus, maamerkki, historiallinen henkilö tai jotain muuta. Neljä vastausta, yksi oikea.", "Room": "Huone", "Private room": "Yksityinen huone", "Max": "Enint.", "Copy the invitation": "Kopioi kutsu", "Let's party →": "Juhlitaan →", "Start a game": "Aloita peli", "+ Create room": "+ Luo huone", "Invite the room": "Kutsu porukka", "Their phones are the chairs.": "Puhelimet ovat tuolit.", "Keep this screen on the television. Everyone else opens the same page on their phone, taps": "Pidä tämä ruutu televisiossa. Muut avaavat saman sivun puhelimellaan, painavat", "and types it in. Their chair appears here as they arrive.": "ja näppäilevät sen. Tuoli ilmestyy tähän kun he saapuvat.", "Room code": "Huonekoodi", "The code appears once the room is open.": "Koodi ilmestyy kun huone on auki.", "Opening the room…": "Avataan huonetta…", "Chairs": "Tuolit", "How we play": "Miten pelataan", "Who can join": "Kuka voi liittyä", "Private — code only": "Yksityinen — vain koodilla", "Public — list it for everyone": "Julkinen — näytä kaikille", "Start the season in": "Aloita kaudesta", "Any year": "Mikä tahansa vuosi", "Random": "Arvo", "Genre": "Tyylilaji", "Any": "Mikä tahansa", "Rock & metal": "Rock ja metalli", "Dance & electronic": "Tanssi ja elektroninen", "Soul, R&B & hip-hop": "Soul, R&B ja hiphop", "Country & Latin": "Country ja latino", "How many auditions tonight": "Montako koelaulua tänään", "Until teams fill": "Kunnes joukkueet täyttyvät", "Language of the questions": "Kysymysten kieli", "Where is everyone": "Missä kaikki ovat", "All in this room": "Kaikki samassa huoneessa", "Some are somewhere else": "Osa on muualla", "Singers per team": "Laulajia joukkueessa", "No clock. The video runs until somebody turns or everybody skips.": "Ei kelloa. Video pyörii kunnes joku kääntyy tai kaikki ohittavat.", "Playing without a phone?": "Pelaako joku ilman puhelinta?", "Everyone at this screen": "Kaikki tämän ruudun ääressä", "Add another player on this screen": "Lisää pelaaja tälle ruudulle", "Everyone else joins from their own phone in the next step.": "Muut liittyvät omalla puhelimellaan seuraavassa vaiheessa.", "Friends": "Kaverit", "Save": "Tallenna", "Forget everyone": "Unohda kaikki", "Start the game →": "Aloita peli →", "Back": "Takaisin", "Anyone without a phone still plays: every chair can be tapped on this screen too.": "Ilman puhelinta oleva pelaa silti: jokaista tuolia voi painaa myös tältä ruudulta.", "1 Invite": "1 Kutsu", "2 How we play": "2 Miten pelataan", "3 Go": "3 Aloita", "Decide it together.": "Päättäkää yhdessä.", "Next — who is here": "Seuraavaksi — ketkä ovat paikalla", "1 The party room": "1 Bilehuone", "2 Go": "2 Aloita", "Ready": "Valmista", "Everyone in their chair?": "Ovatko kaikki tuoleissaan?", "GO": "ALOITA", "Take a chair": "Ota tuoli", "What's the code?": "Mikä on koodi?", "It is on the big screen, six letters.": "Se on isolla ruudulla, kuusi kirjainta.", "Your name": "Nimesi", "Sound on this device": "Ääni tässä laitteessa", "On — I'm not by the TV": "Päällä — en ole television luona", "Off — I'm in the room": "Pois — olen samassa huoneessa", "Several phones playing the same record in one room echo badly. Somewhere else, you need the sound.": "Useampi puhelin soittamassa samaa levyä samassa huoneessa kaikuu pahasti. Muualla taas tarvitset äänen.", "Your face": "Kasvosi", "USE A PHOTO": "KÄYTÄ KUVAA", "REMOVE": "POISTA", "Take my chair": "Otan tuolin", "Which topics do you want?": "Mitkä aiheet haluatte?", "Hold it — not yet": "Maltahan — ei vielä", "Lock it in": "Lukitse", "Bank": "Pankita", "SIGN THEM": "OTA HEIDÄT", "SKIP": "OHITA", "HOLD IT — NOT YET": "MALTAHAN — EI VIELÄ", "Hold": "Pidä tauko", "End the game": "Lopeta peli", "✓ Right": "✓ Oikein", "✗ Wrong": "✗ Väärin", "Remove": "Poista", "Next game — same party →": "Seuraava peli — samat bileet →", "Blind audition": "Sokkokuuntelu", "nobody knows who this is": "kukaan ei tiedä kuka tämä on", "million records, worldwide": "miljoonaa levyä maailmanlaajuisesti", "Needle up": "Neula ylös", "Hold it": "Maltahan", "A newer version is out.": "Uudempi versio on julkaistu.", "Reload": "Lataa uudelleen", "This device": "Tämä laite", "Menu music": "Valikkomusiikki", "On": "Päällä", "Off": "Pois", "Done": "Valmis", "Every phone is a chair": "Jokainen puhelin on tuoli", "Skip": "Ohita", "Join the party": "Liity bileisiin", "Close": "Sulje", "Your name on this device": "Nimesi tässä laitteessa", "Join": "Liity", "Copy the code": "Kopioi koodi", "Public rooms are listed on the front page": "Julkiset huoneet näkyvät etusivulla", "Fewer": "Vähemmän", "More": "Enemmän", "Show the code and QR big": "Näytä koodi ja QR isona", "Name": "Nimi", "Name on your chair": "Nimi tuoliisi", "Your guess": "Arvauksesi", "No video for this act? Paste a YouTube link": "Eikö tälle esittäjälle ole videota? Liitä YouTube-linkki"},
+sv:{"A party game platform with several game modes. Play with friends and family, each on their own phone.":"En festspelsplattform med flera spellägen. Spela med vänner och familj, var och en i sin egen mobil.","Party game":"Festspel","Home": "Hem", "Game modes": "Spel", "Settings": "Inställningar", "How to play": "Så spelar man", "Player 1": "Spelare 1", "Break": "Paus", "Something on this page stopped working.": "Något på den här sidan slutade fungera.", "Clear what this page saved and reload": "Rensa vad sidan sparat och ladda om", "Somebody else is talking to this room.": "Någon annan talar till det här rummet.", "A message arrived on your room's channel that did not come from this\n        screen. Close the room and open a new one; the new code will be\n        different.": "Ett meddelande kom in på rummets kanal som inte skickades från den här skärmen. Stäng rummet och öppna ett nytt; den nya koden blir en annan.", "Paused": "Pausat", "Take your time.": "Ta er tid.", "Nothing is running. Get a beer, argue about whether Roxette really sold that many, go to the toilet. The game is exactly where you left it.": "Ingenting är igång. Hämta en öl, bråka om huruvida Roxette verkligen sålde så mycket, gå på toaletten. Spelet står precis där ni lämnade det.", "Back to it": "Tillbaka till spelet", "Back to the menu": "Tillbaka till menyn", "Going back to the menu abandons the game in progress.": "Att gå till menyn överger spelet som pågår.", "Your next game starts here": "Nästa spel börjar här", "Multiplayer party quiz game": "Partyquiz för flera spelare", "+ Create a party": "+ Skapa fest", "Join with code": "Gå med via kod", "Filter by game": "Filtrera på spel", "All games": "Alla spel", "Live public parties": "Öppna fester just nu", "All": "Alla", "Waiting": "Väntar", "In progress": "Pågår", "Parties anyone can join, right now. Yours appears here the moment you set the room to public — otherwise only the code gets people in.": "Fester vem som helst kan gå med i, just nu. Din syns här så fort du gör rummet offentligt — annars kommer man in bara med koden.", "Quick start (solo)": "Snabbstart (ensam)", "Practise the games at your own pace.": "Öva på spelen i din egen takt.", "Learn the games": "Lär känna spelen", "Game modes, rules and tips.": "Spellägen, regler och tips.", "← Main menu": "← Huvudmeny", "Game Modes": "Spel", "The original": "Originalet", "One record at a time, from before anyone had heard of them. Hit your chair the moment you want them — the first to turn gets them.": "En skiva i taget, från tiden innan någon hört talas om dem. Slå i din stol i samma stund du vill ha dem — den som vänder sig först får dem.", "2–8 coaches": "2–8 coacher", "Curtains closed": "Ridån för", "The record plays behind a closed curtain. Four names on your phone, one of them right. The curtain lifts once everyone has answered.": "Skivan spelas bakom en stängd ridå. Fyra namn i mobilen, ett av dem rätt. Ridån går upp när alla svarat.", "2–8 players": "2–8 spelare", "General knowledge quiz": "Allmänbildningsquiz", "Questions from a wide range of categories — history, geography, science, arts & culture, sport and more. Four answers, one of them right.": "Frågor från vitt skilda områden — historia, geografi, naturvetenskap, konst och kultur, sport och mer. Fyra svar, ett av dem rätt.", "How far do you dare": "Hur långt vågar du", "One question, ten candidates, and only some of them are true. Take one you are sure of and take another — each is worth more than the last. One wrong pick and the whole pot goes.": "En fråga, tio alternativ, och bara några av dem är sanna. Ta ett du är säker på och ta ett till — varje är värt mer än det förra. Ett fel och hela potten går.", "Keep your run": "Håll din svit", "One statement at a time, half of them true. Everyone answers at once — and the longer your run of right answers, the more each one is worth.": "Ett påstående i taget, hälften av dem sanna. Alla svarar samtidigt — och ju längre svit av rätta svar, desto mer är varje värt.", "No options at all": "Inga alternativ alls", "The answer is a number — a year, a height, a count — and nobody is given anything to choose from. Everybody types a guess, the closest takes it, and exactly right takes double.": "Svaret är ett tal — ett år, en höjd, ett antal — och ingen får något att välja mellan. Alla skriver en gissning, närmast tar hem det och exakt rätt ger dubbelt.", "The room is the answer": "Rummet är svaret", "A question about the people in the room — and the people in the room are the four answers. Nothing here is true or false: you score by pointing at whoever everybody else pointed at.": "En fråga om människorna i rummet — och de är själva svarsalternativen. Inget här är sant eller falskt: du får poäng genom att peka på den alla andra pekade på.", "3–8 players": "3–8 spelare", "Picture guess": "Gissa bilden", "Identify what is in the picture — a city, a famous painting, a landmark, a historical figure, or something else. Four answers, one of them right.": "Känn igen vad som är på bilden — en stad, en känd målning, ett landmärke, en historisk person eller något annat. Fyra svar, ett rätt.", "Room": "Rum", "Private room": "Privat rum", "Copy the invitation": "Kopiera inbjudan", "Let's party →": "Nu festar vi →", "Start a game": "Starta ett spel", "+ Create room": "+ Skapa rum", "Invite the room": "Bjud in rummet", "Their phones are the chairs.": "Mobilerna är stolarna.", "Keep this screen on the television. Everyone else opens the same page on their phone, taps": "Ha den här skärmen på tv:n. De andra öppnar samma sida i mobilen, trycker", "and types it in. Their chair appears here as they arrive.": "och skriver in den. Stolen dyker upp här när de kommer.", "Room code": "Rumskod", "The code appears once the room is open.": "Koden visas när rummet är öppet.", "Opening the room…": "Öppnar rummet…", "Chairs": "Stolar", "How we play": "Så spelar vi", "Who can join": "Vem får vara med", "Private — code only": "Privat — bara med kod", "Public — list it for everyone": "Offentligt — visa för alla", "Start the season in": "Börja säsongen", "Any year": "Vilket år som helst", "Random": "Slumpa", "Any": "Vilken som helst", "Rock & metal": "Rock och metal", "Dance & electronic": "Dans och elektroniskt", "Soul, R&B & hip-hop": "Soul, R&B och hiphop", "Country & Latin": "Country och latin", "How many auditions tonight": "Hur många auditions i kväll", "Until teams fill": "Tills lagen är fulla", "Language of the questions": "Frågornas språk", "Where is everyone": "Var är alla", "All in this room": "Alla i samma rum", "Some are somewhere else": "Några är någon annanstans", "Singers per team": "Sångare per lag", "No clock. The video runs until somebody turns or everybody skips.": "Ingen klocka. Videon rullar tills någon vänder sig eller alla hoppar över.", "Playing without a phone?": "Spelar någon utan mobil?", "Everyone at this screen": "Alla vid den här skärmen", "Add another player on this screen": "Lägg till en spelare på den här skärmen", "Everyone else joins from their own phone in the next step.": "De andra ansluter med sin egen mobil i nästa steg.", "Friends": "Vänner", "Save": "Spara", "Forget everyone": "Glöm alla", "Start the game →": "Starta spelet →", "Back": "Tillbaka", "Anyone without a phone still plays: every chair can be tapped on this screen too.": "Den som saknar mobil spelar ändå: varje stol går att trycka på även här.", "1 Invite": "1 Bjud in", "2 How we play": "2 Så spelar vi", "3 Go": "3 Kör", "Decide it together.": "Bestäm tillsammans.", "Next — who is here": "Härnäst — vilka är här", "1 The party room": "1 Festrummet", "2 Go": "2 Kör", "Ready": "Klart", "Everyone in their chair?": "Sitter alla i sina stolar?", "GO": "KÖR", "Take a chair": "Ta en stol", "What's the code?": "Vad är koden?", "It is on the big screen, six letters.": "Den står på storbildsskärmen, sex bokstäver.", "Your name": "Ditt namn", "Sound on this device": "Ljud på den här enheten", "On — I'm not by the TV": "På — jag är inte vid tv:n", "Off — I'm in the room": "Av — jag är i samma rum", "Several phones playing the same record in one room echo badly. Somewhere else, you need the sound.": "Flera mobiler som spelar samma skiva i ett rum ekar illa. Någon annanstans behöver du ljudet.", "Your face": "Ditt ansikte", "USE A PHOTO": "ANVÄND ETT FOTO", "REMOVE": "TA BORT", "Take my chair": "Jag tar en stol", "Which topics do you want?": "Vilka ämnen vill ni ha?", "Hold it — not yet": "Vänta lite — inte än", "Lock it in": "Lås in", "Bank": "Säkra", "SIGN THEM": "TA DEM", "SKIP": "HOPPA ÖVER", "HOLD IT — NOT YET": "VÄNTA LITE — INTE ÄN", "Hold": "Pausa", "End the game": "Avsluta spelet", "✓ Right": "✓ Rätt", "✗ Wrong": "✗ Fel", "Remove": "Ta bort", "Next game — same party →": "Nästa spel — samma fest →", "nobody knows who this is": "ingen vet vem det här är", "million records, worldwide": "miljoner skivor, världen över", "Needle up": "Nålen upp", "Hold it": "Vänta lite", "A newer version is out.": "En nyare version finns.", "Reload": "Ladda om", "This device": "Den här enheten", "Menu music": "Menymusik", "On": "På", "Off": "Av", "Done": "Klar", "Every phone is a chair": "Varje mobil är en stol", "Skip": "Hoppa över", "Join the party": "Gå med i festen", "Close": "Stäng", "Your name on this device": "Ditt namn på den här enheten", "Join": "Gå med", "Copy the code": "Kopiera koden", "Public rooms are listed on the front page": "Offentliga rum listas på startsidan", "Fewer": "Färre", "More": "Fler", "Show the code and QR big": "Visa koden och QR stort", "Name": "Namn", "Name on your chair": "Namn på din stol", "Your guess": "Din gissning", "No video for this act? Paste a YouTube link": "Ingen video för den här artisten? Klistra in en YouTube-länk"}};
+/* The walk that dresses the page. It never touches an element the code writes
+   into itself — those go through T() — and it keeps each node's English on the
+   node, so switching back is exact rather than a reverse lookup. */
+const UISKIP={SCRIPT:1,STYLE:1,SVG:1,PATH:1,CIRCLE:1,RECT:1,DEFS:1,G:1,USE:1,
+  LINE:1,ELLIPSE:1,POLYGON:1,STOP:1,LINEARGRADIENT:1,RADIALGRADIENT:1,TEXTPATH:1};
+/* ids the code writes text into: it owns them, and dressUI would fight it */
+const UIOWNED={};
+function uiOwn(id){UIOWNED[id]=1}
+['q-ask','q-count','q-curtain','q-next','q-hold','q-quit','meta','pad-round','pad-state',
+ 'pad-run','pad-leave','pad-bank','pad-ver','pad-near','pad-nearlock','champ','champ-sub',
+ 'final-eyebrow','final-room','final-board','bar-hint','rules-sub','rules-note','pool',
+ 'cats-note','lang-label','cats-label','where-note','vis-note','set-lang-note','set-ver',
+ 'lobby-sub','lobby-link','lobby-status','join-status','start-hint','friends-note',
+ 'nophone-sub','knockbar-t','broke-what','jo-link','jo-code','rb-code','lobby-code',
+ 'turnline','gosum','round-tag','round-tag-m','s10-rules','q-options','q-scores',
+ 'lobby-list','go-list','players','knocks','pub-list','pub-sub','join-chips',
+ 'pad-quiz','pad-seats','pad-setup','pad-next','pad-warn','friends-list','me-name'
+].forEach(uiOwn);
+function uiOwned(el){
+  for(let e=el;e&&e.nodeType===1;e=e.parentElement)if(e.id&&UIOWNED[e.id])return true;
+  return false;
+}
+function dressUI(){
+  const tbl=UITEXT[S.lang]||null;
+  const walk=el=>{
+    for(const c of el.childNodes){
+      if(c.nodeType===3){
+        if(c.__en===undefined){
+          const t=c.textContent, k=t.trim();
+          if(!k||/^[\s\d.,:\/·—–+()&→←−✓✗-]*$/.test(k))continue;
+          if(uiOwned(el))continue;
+          c.__en=t;c.__k=k;
+        }
+        const w=tbl&&tbl[c.__k];
+        const want=w?c.__en.replace(c.__k,w):c.__en;
+        if(c.textContent!==want)c.textContent=want;
+      }else if(c.nodeType===1&&!UISKIP[c.tagName.toUpperCase()]){
+        walk(c);
+      }
+    }
+  };
+  try{walk(document.body)}catch(e){}
+  // the few attributes a person can read
+  try{
+    document.querySelectorAll('[placeholder],[aria-label],[title]').forEach(e=>{
+      if(uiOwned(e))return;
+      ['placeholder','aria-label','title'].forEach(a=>{
+        const key='__ui_'+a;
+        if(e[key]===undefined){
+          const v=e.getAttribute(a);
+          if(!v||!v.trim())return;
+          e[key]=v;
+        }
+        const w=tbl&&tbl[e[key]];
+        e.setAttribute(a,w||e[key]);
+      });
+    });
+  }catch(e){}
+  try{dressButtons()}catch(e){}
+}
 /* ---- the words, in the language the questions are in -----------------
    English is the source and the fallback: a key with no translation simply
    reads in English rather than disappearing. Holes are named, because the
@@ -6823,6 +6892,13 @@ const WORDS={
   meta_artist:'nimeä esittäjä', meta_trivia:'yleistieto', meta_picture:'tunnista kuva',
   near_type:'Kirjoita luku', near_lock:'Lukitse', near_mine:'Arvauksesi: {n}',
   near_answer:'Oikea vastaus:', near_exact:'täsmälleen', near_waiting:'{n}/{of} on arvannut',
+  modes_learn:"Miten näitä pelataan",
+  modes_solo:"Pikastartti, yksin",
+  modes_create:"Luo peli",
+  room_public:"Julkinen huone",
+  room_private:"Yksityinen huone",
+  joined:"Liittynyt ({n}/{of})",
+  lang_note:'Kysymykset kysytään kielellä {lang}. Huone seuraa tätä ruutua.',
   meta_near:'lähin voittaa',
   finger_pick:'Valitse joku', finger_said:'Valintasi on tehty — odotetaan muita…', finger_done:'Näin huone äänesti',
   meta_finger:'osoita sormella',
@@ -6860,6 +6936,13 @@ const WORDS={
   meta_artist:'namnge artisten', meta_trivia:'allmänbildning', meta_picture:'gissa bilden',
   near_type:'Skriv ett tal', near_lock:'Lås in', near_mine:'Din gissning: {n}',
   near_answer:'Rätt svar:', near_exact:'exakt', near_waiting:'{n}/{of} har gissat',
+  modes_learn:"Så spelas de",
+  modes_solo:"Snabbstart, på egen hand",
+  modes_create:"Skapa ett spel",
+  room_public:"Offentligt rum",
+  room_private:"Privat rum",
+  joined:"Anslutna ({n}/{of})",
+  lang_note:'Frågorna ställs på {lang}. Rummet följer den här skärmen.',
   meta_near:'närmast vinner',
   finger_pick:'Välj någon', finger_said:'Ditt val är gjort — väntar på de andra…', finger_done:'Så röstade rummet',
   meta_finger:'peka finger',
@@ -6898,6 +6981,13 @@ const EN={
   meta_artist:'name the artist', meta_trivia:'general knowledge', meta_picture:'guess the picture',
   near_type:'Type a number', near_lock:'Lock it in', near_mine:'Your guess: {n}',
   near_answer:'The answer is', near_exact:'exactly', near_waiting:'{n} of {of} have guessed',
+  modes_learn:"How they play",
+  modes_solo:"Quick start, on your own",
+  modes_create:"Create a game",
+  room_public:"Public room",
+  room_private:"Private room",
+  joined:"Joined ({n}/{of})",
+  lang_note:'The quiz and Picture Guess are asked in {lang}. The room follows this screen.',
   meta_near:'closest wins',
   finger_pick:'Point at somebody', finger_said:'Pointed — waiting for the others…', finger_done:'This is how the room voted',
   meta_finger:'point the finger',
