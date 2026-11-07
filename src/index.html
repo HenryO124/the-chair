@@ -1798,6 +1798,23 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 @keyframes kpulse{0%,100%{opacity:1}50%{opacity:.35}}
 @media (prefers-reduced-motion: reduce){.knockbar .kdot{animation:none}}
 
+/* 28. Playing without a phone is a real thing — the host answers for whoever
+   is sitting at the television — but it was an open box taking half the page
+   while you waited for phones to arrive. One line, until it is wanted. */
+.nophone{padding-top:clamp(12px,1.6vh,18px)!important;padding-bottom:clamp(12px,1.6vh,18px)!important}
+#nophone>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:10px;
+  flex-wrap:wrap}
+#nophone>summary::-webkit-details-marker{display:none}
+#nophone>summary::after{content:'\203A';margin-left:auto;color:var(--muted);
+  font-size:20px;line-height:1;transition:transform .2s ease}
+#nophone[open]>summary::after{transform:rotate(90deg)}
+#nophone>summary:hover .npttl{color:var(--bone)}
+.npttl{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:#FF8097}
+.npsub{font-family:var(--disp);font-size:13.5px;color:var(--muted)}
+#nophone[open]>summary{margin-bottom:14px}
+@media (prefers-reduced-motion: reduce){#nophone>summary::after{transition:none}}
+
 /* the bar that says a newer build is out */
 .newver{border-color:rgba(255,70,100,.35);box-shadow:var(--glowsoft)}
 /* ---- a question with no picture should not sit in an empty frame ------
@@ -2329,8 +2346,11 @@ body:has(#s-chair.on) .striproundwrap{display:none}
         <p class="pool thin" id="rules-note">No clock. The video runs until somebody turns or everybody skips.</p>
   </div>
 
-  <div class="lobbycode" style="margin-top:4px">
-<div class="field-label">Who is at this screen</div>
+  <div class="lobbycode nophone" style="margin-top:4px">
+  <details id="nophone">
+    <summary><span class="npttl">Playing without a phone?</span>
+      <span class="npsub" id="nophone-sub"></span></summary>
+    <div class="field-label">Everyone at this screen</div>
     <div id="players"></div>
     <input type="file" id="row-file" accept="image/*" style="display:none">
     <button class="btn ghost" id="add">Add another player on this screen</button>
@@ -2344,6 +2364,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
       <button type="button" id="friend-clear">Forget everyone</button>
     </div>
     <p class="pool thin" id="friends-note"></p>
+  </details>
     </div>
 
     <button class="btn" id="to-rules">Start the game &rarr;</button>
@@ -2983,6 +3004,18 @@ let rowPhoto=-1;
 function drawPlayers(){
   const box=$('players');if(!box)return;box.innerHTML='';
   const local=S.players.filter(p=>!p.pid&&!p.reserved);
+  // 28. the one line says what is inside, and the panel opens itself the
+  // moment somebody really is playing from the television
+  try{
+    const named=local.filter(p=>(p.name||'').trim());
+    const sub=$('nophone-sub'),det=$('nophone');
+    if(sub)sub.textContent=named.length>1
+      ? named.length+' at this screen \u00b7 '+named.map(p=>p.name.trim()).join(', ')
+      : named.length===1
+      ? named[0].name.trim()+' is playing from this screen'
+      : 'Add anyone whose phone is flat \u2014 you answer for them here';
+    if(det&&named.length>1&&!det.dataset.touched)det.open=true;
+  }catch(e){}
   S.players.forEach((p,i)=>{
     if(p.pid||p.reserved)return;         // that chair belongs to a phone
     const row=document.createElement('div');row.className='player-row';
@@ -3066,6 +3099,9 @@ $('row-file')&&($('row-file').addEventListener('change',e=>{
     if(i===0){try{localStorage.setItem('thechair.myface',url)}catch(err){}}
     drawPlayers();
   }).catch(()=>{$('start-hint').textContent='That picture would not open. Try another one.'});
+}));
+$('nophone')&&($('nophone').addEventListener('toggle',()=>{
+  try{$('nophone').dataset.touched='1'}catch(e){}
 }));
 $('add').onclick=()=>{
   if(S.players.length>=6)return;
@@ -4584,6 +4620,7 @@ function quizNext(){
     $('q-curtain').classList.add('open');          // a question hides nothing
     $('q-next').textContent='Reveal';
     showQuizQuestion();
+    warmNextPicture();                             // the one after this, fetched while this one is read
     drawQuiz();publishStage();
     return;
   }
@@ -4604,6 +4641,24 @@ function quizNext(){
   drawQuiz();publishStage();
 }
 const askSize=t=>{const n=(t||'').length;return n>110?' xlong':n>62?' long':''};
+/* 23. a picture question used to start downloading only when it came up, so the
+   room watched an empty frame fill in. The next one is fetched while this one
+   is still being read, and the browser serves it from cache when it arrives.
+   Nothing waits on this and a failure is not worth mentioning. */
+const WARMED={};
+function warmNextPicture(){
+  try{
+    const nxt=Q.deck&&Q.deck[Q.round];             // Q.round already points past the current
+    if(!nxt)return;
+    const id=String(nxt[7]);
+    const p=QIMG[id];
+    if(!p||!p.u||WARMED[id])return;
+    WARMED[id]=1;
+    const im=new Image();
+    im.decoding='async';
+    im.src=p.u;
+  }catch(e){}
+}
 function showQuizQuestion(){
   const box=$('q-screen');if(!box)return;
   const pic=QIMG[String(Q.qid)];
@@ -5544,10 +5599,19 @@ function quizState(phase){
       :isAsking()?{name:Q.current[2],track:'',year:''}
       :{name:Q.current[0],track:trackOf(Q.current),year:yearOf(Q.current)},
     options:Q.options.map(optLabel),
-    seats:S.players.map(p=>({id:p.id,pid:p.pid||'',name:p.name,icon:p.icon,photo:p.photo||'',
-      said:(p.id in Q.answers),pick:Q.revealed?(p.id in Q.answers?Q.answers[p.id]:-1):-1,run:p.run||0,
-      score:p.score||0,team:[],passed:false,full:false,blockUsed:false,total:p.score||0,
-      reserved:false})),
+    // 22. this goes out on every answer and every reveal, to every phone in the
+    // room, and it is what a phone joining late downloads. Two thirds of it was
+    // the Chair game's own fields carrying their defaults: a quiz seat has no
+    // team, nothing to block and nobody to pass.
+    seats:S.players.map(p=>{
+      const sv={id:p.id,name:p.name,icon:p.icon,score:p.score||0};
+      if(p.pid)sv.pid=p.pid;
+      if(p.photo)sv.photo=p.photo;
+      if(p.id in Q.answers)sv.said=1;
+      if(Q.revealed&&(p.id in Q.answers))sv.pick=Q.answers[p.id];
+      if(isTF()&&p.run)sv.run=p.run;
+      return sv;
+    }),
     // 15. a phone at a full door could not tell waiting from being ignored
     knocks:Object.keys(KNOCKS),full:S.players.length>=MAX_CHAIRS};
 }
@@ -5770,8 +5834,8 @@ function padSeatHTML(sv,st,mine){
         +'<div class="armr"></div><div class="arml"></div><div class="pad"></div></div>'
     +'</div><div class="stem"></div><div class="foot"></div></div>'
     +'<div class="nm">'+esc(sv.name)+(mine?' <b class="youtag">YOU</b>':'')+'</div>'
-    +'<div class="slots">'+'\u25cf'.repeat(sv.team.length)
-      +'\u25cb'.repeat(Math.max(0,st.teamSize-sv.team.length))+'</div>'
+    +'<div class="slots">'+'\u25cf'.repeat((sv.team||[]).length)
+      +'\u25cb'.repeat(Math.max(0,(st.teamSize||0)-(sv.team||[]).length))+'</div>'
     +'<div class="ptag"'+(tag?'':' hidden')+'>'+(tag||'')+'</div>'
     +'</div>';
 }
@@ -5796,8 +5860,9 @@ function drawPadSeats(st,me){
     const t=el.querySelector('.ptag');
     if(t){t.textContent=tag;t.hidden=!tag}
     const sl=el.querySelector('.slots');
-    if(sl)sl.textContent='\u25cf'.repeat(sv.team.length)
-      +'\u25cb'.repeat(Math.max(0,st.teamSize-sv.team.length));
+    const tm=(sv.team||[]).length;                 // a quiz seat carries no team
+    if(sl)sl.textContent='\u25cf'.repeat(tm)
+      +'\u25cb'.repeat(Math.max(0,(st.teamSize||0)-tm));
   });
 }
 
