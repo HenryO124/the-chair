@@ -4661,7 +4661,7 @@ function s10Reveal(){
     if(Q.state[p.id]==='in'){p.score=(p.score||0)+(Q.pot[p.id]||0);Q.state[p.id]='banked'}
   });
   drawQuiz();
-  startNextCount(6);         // the room reads the explanation, then it moves on
+  startNextCount(NEXT_IN);   // the room reads the explanation, then it moves on
 }
 function quizNext(){
   stopNextCount();
@@ -5037,8 +5037,13 @@ function quizReveal(){
     :isAsking()?'Next question':'Next record';
   if(isAsking())showQuizQuestion();
   drawQuiz();
-  startNextCount(isAsking()?9:10);
+  startNextCount(NEXT_IN);
 }
+/* How long the room gets with an answer before the next question. Henry asked
+   for five; it was nine in one place, ten in another and six in a third, and
+   it drifted back because three call sites each carried their own number.
+   One constant now, so there is nothing left to disagree with. */
+const NEXT_IN=5;
 /* the clock to the next question, counted down where everyone can see it */
 function startNextCount(secs){
   stopNextCount();

@@ -16,6 +16,10 @@ setTimeout(()=>{
   if(!/\d/.test($('q-next').textContent))probs.push('the button shows no clock: '+$('q-next').textContent);
   if($('q-hold').hidden)probs.push('there is no way to hold it');
   if(!w.eval('Q.nextIn'))probs.push('the clock did not start');
+  // Henry asked for five seconds; three call sites used to carry three
+  // different numbers and it drifted back to nine twice
+  if(w.eval('NEXT_IN')!==5)probs.push('the countdown is '+w.eval('NEXT_IN')+' seconds, not 5');
+  if(w.eval('Q.nextIn')!==5)probs.push('the clock started at '+w.eval('Q.nextIn')+', not 5');
   if(!w.eval('stageState().nextIn'))probs.push('the phones were not told');
   const r1=w.eval('Q.round');
   click($('q-hold'));

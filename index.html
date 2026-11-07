@@ -3971,7 +3971,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 12:17';
+const BUILD='07.11. 12:21';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4044,10 +4044,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111217',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111217',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111221',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111221',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111217',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111221',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4472,7 +4472,7 @@ function s10Reveal(){
     if(Q.state[p.id]==='in'){p.score=(p.score||0)+(Q.pot[p.id]||0);Q.state[p.id]='banked'}
   });
   drawQuiz();
-  startNextCount(6);         // the room reads the explanation, then it moves on
+  startNextCount(NEXT_IN);   // the room reads the explanation, then it moves on
 }
 function quizNext(){
   stopNextCount();
@@ -4848,8 +4848,13 @@ function quizReveal(){
     :isAsking()?'Next question':'Next record';
   if(isAsking())showQuizQuestion();
   drawQuiz();
-  startNextCount(isAsking()?9:10);
+  startNextCount(NEXT_IN);
 }
+/* How long the room gets with an answer before the next question. Henry asked
+   for five; it was nine in one place, ten in another and six in a third, and
+   it drifted back because three call sites each carried their own number.
+   One constant now, so there is nothing left to disagree with. */
+const NEXT_IN=5;
 /* the clock to the next question, counted down where everyone can see it */
 function startNextCount(secs){
   stopNextCount();
