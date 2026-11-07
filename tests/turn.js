@@ -23,10 +23,15 @@ setTimeout(()=>{
   ev('s10Take(S.players[1],'+right()+')');
   if(ev('Q.pot[1]'))probs.push('B took one on A’s turn');
 
-  // A is right, so it is still A's turn
+  // Play goes round the table: one pick each, right or wrong. The board game
+  // keeps your turn while you keep being right, which at a table of twelve
+  // means one player clears the board and the rest watch.
   ev('s10Take(S.players[0],'+right()+')');
-  if(ev('Q.turn')!==0)probs.push('being right handed the turn away');
-  // A stops; the turn goes to B
+  if(ev('Q.turn')===0)probs.push('being right kept the turn; play has to go round');
+  if(ev('Q.turn')!==1)probs.push('the turn did not go to the next player: '+ev('Q.turn'));
+  if(ev('Q.pot[0]')!==10)probs.push('a right pick paid '+ev('Q.pot[0]')+' into the pot, expected 10');
+  // back round to A, who stops and keeps it; the turn goes on to B
+  ev('s10SetTurn(0)');
   ev('s10Stand(S.players[0])');
   if(ev('Q.turn')!==1)probs.push('stopping did not pass the turn: '+ev('Q.turn'));
   if(ev('S.players[0].score')!==10)probs.push('stopping did not pay: '+ev('S.players[0].score'));
@@ -55,7 +60,7 @@ setTimeout(()=>{
   if(st.turn!==2)probs.push('the phones were not told whose turn it is: '+st.turn);
   if(st.turnName!=='C')probs.push('the phones were not told the name: '+st.turnName);
 
-  console.log(probs.length?'FAIL:':'ok - the turn: round the table, keep going while right, stop when you like');
+  console.log(probs.length?'FAIL:':'ok - the turn: one pick each, round the table, stop when you like');
   probs.forEach(p=>console.log('  x '+p));
   process.exit(probs.length?1:0);
 },1100);
