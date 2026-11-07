@@ -787,7 +787,7 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
 .gosum b{color:var(--bone);font-weight:700}
 
 /* ---- the front door: hero on the left, the games on the right ---- */
-.home{display:grid;grid-template-columns:minmax(240px,0.9fr) 2fr;gap:clamp(20px,4vw,56px);
+.home{display:grid;grid-template-columns:minmax(min(240px,100%),0.9fr) minmax(0,2fr);gap:clamp(20px,4vw,56px);
   align-items:start;margin:clamp(8px,2vh,26px) 0 0}
 .hero-title{font-family:var(--disp);font-weight:800;line-height:.95;margin:2px 0 14px;
   font-size:clamp(34px,4.3vw,58px);white-space:nowrap}
@@ -1021,7 +1021,7 @@ body.learning .gamecard.sel{border-color:var(--line);background:var(--panel)}
 body.learning .gamecard .garrow{display:none}
 
 /* the shelf of games */
-.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:0 0 18px}
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:14px;margin:0 0 18px}
 .gamecard{display:flex;align-items:flex-start;gap:14px;text-align:left;
   background:var(--panel);border:1px solid var(--line);border-radius:16px;
   padding:clamp(14px,1.7vw,20px);cursor:pointer;color:inherit;font:inherit;
@@ -1090,7 +1090,7 @@ body.learning .gamecard .garrow{display:none}
 .musicbtn:hover{border-color:var(--gold);color:var(--gold)}
 .musicbtn.playing{color:var(--gold);border-color:var(--gold)}
 @media (max-width:760px){
-  .home{grid-template-columns:1fr}
+  .home{grid-template-columns:minmax(0,1fr)}
   .spot{max-width:190px}
   .hnav{display:none!important}
 }
@@ -1716,6 +1716,90 @@ body:has(#s-chair.on) .striproundwrap{display:none}
   #s-lobby .bigcode{font-size:clamp(70px,5.6vw,112px)}
   #s-lobby #to-rules{font-size:23px;padding:21px}
 }
+/* ---- the lobby leads with whatever the host needs now ----------------
+   The screen always opened on a room code the size of a door, a QR block
+   and an invitation URL — including on the second game of the evening,
+   directly after a screen that has just said nobody needs inviting again.
+
+   `#s-lobby[data-party]` is set the moment there is somebody in a chair
+   besides the host, or a game has already been played tonight. Then the
+   invitation folds into one line along the top and the chairs and the
+   settings take the screen. Nothing is removed: "Show the code and QR big"
+   opens the same overlay the game menu uses, because somebody always
+   arrives late.                                                          */
+#s-lobby .lobbyagain{display:none}
+#s-lobby[data-again] .lobbyagain{display:block}
+#s-lobby[data-again] > h2:not(.lobbyagain){display:none}
+#s-lobby[data-party] > .eyebrow,
+#s-lobby[data-party] #lobby-sub{display:none}
+#s-lobby .codepeek{display:none}
+
+#s-lobby[data-party] .lobbygrid{grid-template-columns:minmax(0,1fr);gap:12px;margin:2px 0 14px}
+#s-lobby[data-party] .lobbygrid > .lobbycode{
+  display:flex;align-items:center;flex-wrap:wrap;
+  gap:clamp(8px,1.1vw,16px);
+  padding:clamp(7px,.9vh,11px) clamp(12px,1.4vw,18px)}
+#s-lobby[data-party] .lobbygrid > .lobbycode > *{grid-column:auto;grid-row:auto}
+#s-lobby[data-party] #lobby-qr,
+#s-lobby[data-party] #lobby-link{display:none}
+#s-lobby[data-party] .lobbygrid > .lobbycode > .field-label{margin:0}
+#s-lobby[data-party] .bigcode{font-size:clamp(20px,1.7vw,30px);letter-spacing:.14em;
+  margin:0;text-align:left;text-shadow:none}
+#s-lobby[data-party] #copy-link,
+#s-lobby[data-party] .codepeek{display:inline-block;width:auto;margin:0;
+  padding:7px 15px;font-size:13px;border-radius:20px}
+#s-lobby[data-party] #lobby-status{margin:0;font-size:11px}
+
+/* with the invitation out of the way the chairs and the settings can sit
+   beside each other instead of under a screenful of QR code */
+@media (min-width:1100px){
+  #s-lobby[data-party].on > .lobbygrid{grid-column:auto;align-self:stretch;
+    grid-template-rows:auto minmax(0,1fr)}
+  #s-lobby[data-party].on > .lobbygrid > .lobbycode{grid-column:1/-1}
+}
+
+/* ---- playing without a phone is one line, not a fifth of the screen ----
+   It is a rare case served by a whole bordered panel. The panel only
+   appears once somebody opens it.                                        */
+#s-lobby .lobbycode.nophone{background:none;border:0;box-shadow:none;
+  padding:0!important;margin-top:2px}
+#s-lobby .lobbycode.nophone:has(#nophone[open]){
+  background:rgba(26,8,14,.62);border:1px solid rgba(255,70,100,.22);
+  padding:clamp(12px,1.6vw,18px)!important}
+#s-lobby #nophone > summary{padding:8px 14px;border-radius:12px;
+  border:1px dashed rgba(255,70,100,.3);background:rgba(26,8,14,.45)}
+#s-lobby #nophone[open] > summary{border:0;background:none;padding:0}
+@media (min-width:1100px){
+  #s-lobby[data-party].on > .lobbycode.nophone{grid-column:1/-1}
+}
+
+/* Back and Main menu are chips, not two full-width bands across a
+   television: as grid items they were stretching the whole row. */
+#s-lobby.on > #lobby-back,#s-lobby.on > .backlink{justify-self:start}
+
+/* nothing in the menu grid may force a track wider than its share */
+.home > *{min-width:0}
+
+/* ---- the scoreboard was landing on top of Reveal ---------------------
+   On the one-page quiz layout the picture wall is `flex:1 1 auto` with a
+   `min-height:48vh` floor under it, and the question, the answers and the
+   player chips are every one of them `flex:0 0 auto`. On a screen shorter
+   than about a thousand pixels — a laptop, or a television the browser is
+   not filling — the five of them want more height than the stage has, the
+   floor stops the picture handing any of it back, and the chips spill out
+   of the bottom of the stage and are painted across the Reveal button.
+   Reproduced at 1366x768 and at 1920x900, where the chips cover the top
+   30 to 45 pixels of it.
+
+   The picture gives way instead: on a short screen it is the one thing
+   there that is only decoration, and it is still `flex:1 1 auto`, so on a
+   screen with room it fills exactly as much as it did before.           */
+@media (min-width:860px) and (min-height:620px){
+  #s-quiz .videowall{min-height:0}
+}
+/* and if anything ever does overlap it again, Reveal is the thing on top */
+#s-quiz .btn-row{position:relative;z-index:4}
+
 /* ---- GO, the break and the final standings ---------------------------
    Three short screens that were stretched across the whole width of a
    television, which put a two-metre GO button under a two-metre list.
@@ -2029,7 +2113,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 /* on a laptop the hero column is the thing standing between seven games and
    one screenful, and on this screen it is only decoration */
 @media (max-width:1700px){
-  #s-setup .home{grid-template-columns:1fr}
+  #s-setup .home{grid-template-columns:minmax(0,1fr)}
   #s-setup .home-hero{display:none}
 }
 
@@ -2505,6 +2589,7 @@ body:has(#s-home.on) .btn:hover,body:has(#s-setup.on) .btn:hover{
     
     <div class="eyebrow">Invite the room</div>
     <h2>Their phones are the chairs.</h2>
+    <h2 class="lobbyagain">Your next game starts here</h2>
     <p class="sub" id="lobby-sub">Keep this screen on the television. Everyone else opens the same page on their phone, taps <em style="font-style:normal;color:var(--bone)">Join with code</em> and types it in. Their chair appears here as they arrive.</p>
 
     <div class="lobbygrid">
@@ -2514,6 +2599,7 @@ body:has(#s-home.on) .btn:hover,body:has(#s-setup.on) .btn:hover{
         <div class="qrbox empty" id="lobby-qr">The code appears once the room is open.</div>
         <p class="pool thin" id="lobby-link"></p>
         <button class="btn ghost" id="copy-link">Copy the invitation</button>
+        <button type="button" class="btn ghost codepeek" id="lobby-peek">Show the code and QR big</button>
         <p class="conn" id="lobby-status">Opening the room…</p>
       </div>
       <div class="lobbyseats">
@@ -3093,8 +3179,10 @@ function fitScreen(){
   // on a phone the stage grows with its contents, so only the width can limit the picture
   const narrow=window.innerWidth<=880;
   if(!narrow&&!h)return;
-  // a video wants its 16:9 box; a picture should use the stage it is given
-  if(screenNow()==='s-quiz'&&isAsking()&&!narrow){sw.style.width='';sw.style.height='';return}
+  // a video wants its 16:9 box; everything else — a picture, a written
+  // question, a number to guess, a room to point at — should use the
+  // whole stage it is given
+  if(screenNow()==='s-quiz'&&!playsRecords()&&!narrow){sw.style.width='';sw.style.height='';return}
   const width=narrow?w:Math.min(w,h*16/9);
   sw.style.width=Math.round(width)+'px';
   sw.style.height=Math.round(width*9/16)+'px';
@@ -3539,6 +3627,7 @@ function openJoin(){
 function closeJoin(){const o=$('joinover');if(o)o.hidden=true}
 $('pad-bank')&&($('pad-bank').onclick=()=>{$('pad-bank').hidden=true;sendAct('bank')});
 $('rb-qr')&&($('rb-qr').onclick=openJoin);
+$('lobby-peek')&&($('lobby-peek').onclick=openJoin);
 $('jo-close')&&($('jo-close').onclick=closeJoin);
 $('jo-copy')&&($('jo-copy').onclick=()=>{try{$('copy-link').click()}catch(e){}});
 $('joinover')&&($('joinover').onclick=e=>{if(e.target===$('joinover'))closeJoin()});
@@ -4276,7 +4365,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 16:25';
+const BUILD='07.11. 16:43';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4462,10 +4551,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111625',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111625',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111643',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111643',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111625',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111643',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4756,7 +4845,9 @@ function tfBank(){
 }
 const isTrivia=()=>S.game==='trivia';
 const isPicture=()=>S.game==='picture';
-const isAsking=()=>isTrivia()||isPicture()||isTF();   // the games with one written question
+/* isAsking() is gone: fitScreen() was its only caller, and the question it
+   asked was the wrong one — a 16:9 box belongs to a video, not to a
+   written question. It asks playsRecords() instead. */
                                                       // (Smart Ten has ten, and runs its own way)
 // an option is an act in Name the Artist and a plain string in the Quiz
 const optLabel=o=>playsRecords()?o[0]:o;
@@ -5914,11 +6005,25 @@ function drawLobbyList(){
         +'<button class="send drop" data-free="'+S.players.indexOf(p)+'">×</button>'
         +'</div>').join('');
   box.innerHTML=h;
+  try{lobbyMode()}catch(e){}
   drawRoomBar();
 }
 /* the same room, said in one line along the bottom of the game menu */
+/* Two lobbies wearing one screen. Before anybody has arrived the code
+   and the QR are the whole point of the page. Once there is somebody in
+   a chair besides the host, or a game has already been played tonight,
+   the invitation is a line along the top and the chairs and the settings
+   are the page. Everything else about it is stylesheet. */
+function lobbyMode(){
+  const s=document.getElementById('s-lobby');if(!s)return;
+  const seated=(S.players||[]).length>1;
+  const again=(S.games||0)>0;
+  if(seated||again)s.setAttribute('data-party','1');else s.removeAttribute('data-party');
+  if(again)s.setAttribute('data-again','1');else s.removeAttribute('data-again');
+}
 function toLobby(){
   try{updatePool();dressRules()}catch(e){}
+  try{lobbyMode()}catch(e){}
   show('s-lobby');
 }
 /* one QR generator, three places that show it */

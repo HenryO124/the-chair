@@ -7,7 +7,7 @@ ROOT=$(pwd); export CHAIR_ROOT=$ROOT
 
 node -e 'require("jsdom")' 2>/dev/null || { echo "installing jsdom…"; npm install --silent jsdom >/dev/null 2>&1; }
 
-ALL="qrflow home2 settings tf s10 count dress route cap2 again bank leak tap2 shelf fold pub look host name night turn reach seal words finger onescreen near uilang again2 lobby artist gamelists gametables"
+ALL="qrflow home2 settings tf s10 count dress route cap2 again bank leak tap2 shelf fold pub look host name night turn reach seal words finger onescreen near uilang again2 lobby artist gamelists gametables grid lobby3 sofa2"
 LIST="${*:-$ALL}"
 pass=0; fail=0; failed=""
 for t in $LIST; do
