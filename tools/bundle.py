@@ -67,6 +67,9 @@ MARKED = [
                          '/* ---- end point the finger ---- */'),
     ('closest wins', '/* ---- closest wins: generated, do not edit by hand ---- */',
                      '/* ---- end closest wins ---- */'),
+    # its keys are "artist | track", so this is an answer key: host only
+    ('playable',     '/* ---- playable: generated, do not edit by hand ---- */',
+                     '/* ---- end playable ---- */'),
 ]
 
 # every global the chunk is allowed to define; the page declares each as an
@@ -85,6 +88,7 @@ PLACEHOLDERS = [
     ('S10BANK',    '[]'),
     ('FINGERS',    '[]'),
     ('NEAR',       '[]'),
+    ('PLAYS',      '{}'),
 ]
 NAMES = [n for n, _ in PLACEHOLDERS]
 

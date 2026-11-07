@@ -4158,6 +4158,16 @@ function ytId(url){
   return m?m[1]:'';
 }
 const videoKey=a=>a[0]+' | '+a[5];
+/* A record reaches the stage if there is a saved video for it, or if it has
+   been checked and found on iTunes. The second list is how new records get in
+   at all: tools/check-records.html is run in a browser that can reach iTunes --
+   this one cannot -- and whatever it finds goes in here. An empty PLAYS means
+   the collection behaves exactly as it did before. */
+/* ---- playable: generated, do not edit by hand ---- */
+var PLAYS={};
+/* ---- end playable ---- */
+const playable=a=>!!PLAYS[videoKey(a)];
+const canPlay=a=>!!videoFor(a)||playable(a);
 function rememberVideo(url){
   const id=ytId(url);
   if(!id)return false;
@@ -5261,7 +5271,7 @@ function quizStart(){
     Q.of=Math.min(S.len||10,bank.length);
     Q.deck=evenDeck(bank,Q.of);
   }else{
-    const p=pool().filter(a=>videoFor(a));        // no video, no question
+    const p=pool().filter(canPlay);        // a video, or a preview somebody has heard
     Q.of=Math.min(S.len||10,p.length);
     Q.deck=shuffle(p).slice(0,Q.of);
   }

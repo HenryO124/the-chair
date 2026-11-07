@@ -2969,7 +2969,7 @@ body:has(#s-home.on) .btn:hover,body:has(#s-setup.on) .btn:hover{
 <!-- lib-qr.js is fetched by chunkLoad() when wanted -->
 <script>
 /* ---- the deferred data, declared empty until banks.js lands ---- */
-var CATALOG=[], SEEDVIDEOS={}, TRIVIA=[], TRIVIA_FI=[], TRIVIA_SV=[], QIMG={}, PICTURES=[], PICASK={en:{}}, PICCAT={en:{}}, TFBANK=[], S10BANK=[], FINGERS=[], NEAR=[];
+var CATALOG=[], SEEDVIDEOS={}, TRIVIA=[], TRIVIA_FI=[], TRIVIA_SV=[], QIMG={}, PICTURES=[], PICASK={en:{}}, PICCAT={en:{}}, TFBANK=[], S10BANK=[], FINGERS=[], NEAR=[], PLAYS={};
 
 
 const SHELVED={chair:1};         // built, not ready: no card, no filter chip
@@ -3946,6 +3946,14 @@ function ytId(url){
   return m?m[1]:'';
 }
 const videoKey=a=>a[0]+' | '+a[5];
+/* A record reaches the stage if there is a saved video for it, or if it has
+   been checked and found on iTunes. The second list is how new records get in
+   at all: tools/check-records.html is run in a browser that can reach iTunes --
+   this one cannot -- and whatever it finds goes in here. An empty PLAYS means
+   the collection behaves exactly as it did before. */
+
+const playable=a=>!!PLAYS[videoKey(a)];
+const canPlay=a=>!!videoFor(a)||playable(a);
 function rememberVideo(url){
   const id=ytId(url);
   if(!id)return false;
@@ -4365,7 +4373,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 18:48';
+const BUILD='07.11. 18:57';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4551,10 +4559,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111848',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111848',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111857',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111857',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111848',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111857',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4940,7 +4948,7 @@ function quizStart(){
     Q.of=Math.min(S.len||10,bank.length);
     Q.deck=evenDeck(bank,Q.of);
   }else{
-    const p=pool().filter(a=>videoFor(a));        // no video, no question
+    const p=pool().filter(canPlay);        // a video, or a preview somebody has heard
     Q.of=Math.min(S.len||10,p.length);
     Q.deck=shuffle(p).slice(0,Q.of);
   }
