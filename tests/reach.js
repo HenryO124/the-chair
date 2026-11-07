@@ -34,10 +34,13 @@ const server=http.createServer((req,res)=>{
   for(let i=0;i<40&&!(await p.evaluate(()=>haveBanks()));i++)await p.waitForTimeout(250);
   if(!(await p.evaluate(()=>haveBanks())))probs.push('the question bank never arrived');
 
-  for(const game of ['trivia','picture','tf','s10','artist']){
+  for(const game of ['trivia','picture','tf','s10','artist','finger']){
     const r=await p.evaluate(async(g)=>{
       S.game=g;S.lang='fi';
-      S.players=[{id:0,name:'Henkka',score:0,night:0}];
+      S.players=[{id:0,name:'Henkka',score:0,night:0},
+                 {id:1,name:'Mia',icon:1,pid:'p2',score:0,night:0},
+                 {id:2,name:'Jussi',icon:2,pid:'p3',score:0,night:0},
+                 {id:3,name:'Anna',icon:3,pid:'p4',score:0,night:0}];
       Q.on=false;Q.revealed=false;Q.round=0;Q.deck=[];Q.current=null;Q.cands=null;
       show('s-quiz');quizStart();
       await new Promise(r=>setTimeout(r,900));
@@ -73,7 +76,9 @@ const server=http.createServer((req,res)=>{
         nextOnScreen:next.bottom<=innerHeight+1&&next.top>=0};
     },game);
 
-    const want={trivia:4,picture:4,tf:2,s10:10,artist:4}[game];
+    // Point the Finger's answers are the people in the room, so it has as many
+    // buttons as there are players
+    const want={trivia:4,picture:4,tf:2,s10:10,artist:4,finger:4}[game];
     if(r.count!==want)probs.push(game+': '+r.count+' answers on screen, expected '+want);
     if(r.hidden.length)probs.push(game+': answers nobody can press — '+r.hidden.join(', '));
     if(!r.nextOnScreen)probs.push(game+': the Reveal button is off the screen');
@@ -85,6 +90,8 @@ const server=http.createServer((req,res)=>{
       probs.push('picture: the stage collapsed to '+r.wallH+'px, so the picture has nowhere to go');
     if(r.hasPic&&r.wallH<200)
       probs.push(game+': this one has a picture and the frame collapsed to '+r.wallH+'px');
+    if(game==='finger'&&r.wallH>60)
+      probs.push('Point the Finger reserved a picture frame it has nothing to put in');
     if((game==='trivia'||game==='tf')&&!r.hasPic&&!r.centred)
       probs.push(game+': a question with nothing to show still reserves a picture frame');
   }

@@ -63,6 +63,8 @@ MARKED = [
     # the block still carries the game's old internal name
     ('the short list', '/* ---- smart ten: generated, do not edit by hand ---- */',
                        '/* ---- end smart ten ---- */'),
+    ('point the finger', '/* ---- point the finger: generated, do not edit by hand ---- */',
+                         '/* ---- end point the finger ---- */'),
 ]
 
 # every global the chunk is allowed to define; the page declares each as an
@@ -79,6 +81,7 @@ PLACEHOLDERS = [
     ('PICCAT',     '{en:{}}'),
     ('TFBANK',     '[]'),
     ('S10BANK',    '[]'),
+    ('FINGERS',    '[]'),
 ]
 NAMES = [n for n, _ in PLACEHOLDERS]
 

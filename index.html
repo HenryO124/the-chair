@@ -1859,6 +1859,20 @@ body:has(#s-chair.on) .striproundwrap{display:none}
   body.screen-home #s-home .hero2-art .armchair{max-height:46vh;height:auto}
 }
 
+/* ---- Point the Finger ------------------------------------------------
+   The answers are the people in the room, so they are wider than four words
+   and the vote count is the result. Nobody is dimmed to nothing: seeing that
+   you got one vote is half the fun. */
+#q-options.finger .qbtn{justify-content:space-between}
+#q-options.finger .qbtn.wrong{opacity:.72;border-color:rgba(255,70,100,.18)}
+#q-options.finger .qbtn .fvotes{font-family:var(--mono);font-weight:700;
+  font-size:clamp(17px,1.7vw,32px);color:#FFD37A;margin-left:14px}
+#q-options.finger .qbtn.right .fvotes{color:#EAFFF1}
+#q-options.finger .qbtn.mine{box-shadow:inset 0 0 0 2px var(--bone)}
+#pad-quiz.qgrid.finger{grid-template-columns:1fr 1fr;gap:8px}
+#pad-quiz.qgrid.finger .qbtn{min-height:60px;font-size:16px;justify-content:space-between}
+#pad-quiz.qgrid.finger .qbtn .fvotes{font-family:var(--mono);color:#FFD37A;margin-left:8px}
+
 /* the bar that says a newer build is out */
 .newver{border-color:rgba(255,70,100,.35);box-shadow:var(--glowsoft)}
 /* ---- a question with no picture should not sit in an empty frame ------
@@ -2102,6 +2116,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
       <button type="button" data-g="trivia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>Quiz</button>
       <button type="button" data-g="picture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>Picture Guess</button>
       <button type="button" data-g="s10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="4" width="7" height="7" rx="1.6"/><rect x="13.5" y="4" width="7" height="7" rx="1.6"/><rect x="3.5" y="13" width="7" height="7" rx="1.6"/><rect x="13.5" y="13" width="7" height="7" rx="1.6"/></svg>The Short List</button>
+      <button type="button" data-g="finger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 11V5.6a1.6 1.6 0 0 1 3.2 0V11"/><path d="M12.7 11V9.4a1.5 1.5 0 0 1 3 0V11"/><path d="M15.7 11.2v-.8a1.5 1.5 0 0 1 3 0V15a5.5 5.5 0 0 1-5.5 5.5h-1.5a5 5 0 0 1-4.2-2.3L5 14.4a1.5 1.5 0 0 1 2.4-1.8l2.1 2.2"/></svg>Point the Finger</button>
       <button type="button" data-g="tf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 8.5h7M7 8.5V17"/><path d="M14 17V8.5h5.5M14 13h4.6"/></svg>True or False</button>
       <button type="button" data-g="artist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>Name the Artist</button>
     </div>
@@ -2235,6 +2250,22 @@ body:has(#s-chair.on) .striproundwrap{display:none}
               <span class="gmeta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
                 2&ndash;8 players <span class="dot">&middot;</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                10&ndash;15 min
+              </span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="gamecard" data-game="finger">
+            <span class="gicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9.5 11V5.6a1.6 1.6 0 0 1 3.2 0V11"/><path d="M12.7 11V9.4a1.5 1.5 0 0 1 3 0V11"/><path d="M15.7 11.2v-.8a1.5 1.5 0 0 1 3 0V15a5.5 5.5 0 0 1-5.5 5.5h-1.5a5 5 0 0 1-4.2-2.3L5 14.4a1.5 1.5 0 0 1 2.4-1.8l2.1 2.2"/></svg></span>
+            <span class="gbody">
+              <span class="gtag">The room is the answer</span>
+              <span class="gname">Point the Finger</span>
+              <span class="gdesc">A question about the people in the room &mdash; and the people in the room are the four answers. Nothing here is true or false: you score by pointing at whoever everybody else pointed at.</span>
+              <span class="gmeta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
+                3&ndash;8 players <span class="dot">&middot;</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
                 10&ndash;15 min
               </span>
@@ -2685,7 +2716,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 <!-- lib-qr.js is fetched by chunkLoad() when wanted -->
 <script>
 /* ---- the deferred data, declared empty until banks.js lands ---- */
-var CATALOG=[], SEEDVIDEOS={}, TRIVIA=[], TRIVIA_FI=[], TRIVIA_SV=[], QIMG={}, PICTURES=[], PICASK={en:{}}, PICCAT={en:{}}, TFBANK=[], S10BANK=[];
+var CATALOG=[], SEEDVIDEOS={}, TRIVIA=[], TRIVIA_FI=[], TRIVIA_SV=[], QIMG={}, PICTURES=[], PICASK={en:{}}, PICCAT={en:{}}, TFBANK=[], S10BANK=[], FINGERS=[];
 
 
 const SHELVED={chair:1};         // built, not ready: no card, no filter chip
@@ -3237,12 +3268,14 @@ const GAMEBLURB={chair:'Open a room, pass the code around, and everyone takes a 
   trivia:'Open a room and pass the code around. Four answers land on every phone, question after question.',
   picture:'Open a room and pass the code around. A picture goes up here, four answers on every phone.',
   tf:'Open a room and pass the code around. One statement at a time, and every phone says true or false.',
+  finger:'Open a room and pass the code around. A question about the people in it, and every phone points at somebody.',
   s10:'Open a room and pass the code around. Ten candidates on every phone, and only some of them are true.'};
 const SOLOBLURB={chair:'One screen, one coach, and a pile of records. No room, nobody to wait for.',
   artist:'Four names on this screen, record after record, scored as you go.',
   trivia:'A hundred and twenty questions across six categories. Play as many as you like.',
   picture:'Cities, landmarks, paintings and the odd animal. Name what you are looking at.',
   tf:'Statements, half of them true. Say which is which, and keep your run alive.',
+  finger:'A question about the room, and the room is the answer. You score by agreeing with everybody else.',
   s10:'Ten candidates, some true. Take one, take another, and stop before you are wrong.'};
 let LEARNING=false, SOLO=false;
 function firstGame(){
@@ -4010,7 +4043,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 13:07';
+const BUILD='07.11. 13:20';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4196,10 +4229,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111307',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111307',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111320',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111320',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111307',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111320',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4464,6 +4497,7 @@ function catShown(key){
 
 
 
+
 const isS10=()=>S.game==='s10';
 function s10Bank(){
   const L=S.lang==='fi'?2:S.lang==='sv'?3:1;        // question column
@@ -4473,6 +4507,7 @@ function s10Bank(){
 }
 const TFWORDS={en:['True','False'],fi:['Totta','Tarua'],sv:['Sant','Falskt']};
 const isTF=()=>S.game==='tf';
+const isFinger=()=>S.game==='finger';
 function tfBank(){
   const L=S.lang==='fi'?1:S.lang==='sv'?2:0;      // statement column offset
   const W=TFWORDS[S.lang]||TFWORDS.en;
@@ -4503,6 +4538,8 @@ function evenDeck(bank,want){
   return shuffle(out);                    // dealt evenly, then asked in any order
 }
 function quizStart(){
+  try{dressButtons()}catch(e){}        // Hold and End the game, in the right language
+  if(isFinger())return fingerStart();
   if(isS10()){
     const bank=s10CatBank();
     if(!bank.length){                 // the bank is not in: wait, never deal nothing
@@ -4529,6 +4566,119 @@ function quizStart(){
   Q.round=0;Q.on=true;
   S.players.forEach(pl=>{pl.score=0;pl.run=0});
   quizNext();
+}
+
+/* ==================================================================
+   POINT THE FINGER — a prompt, the people in the room, and whatever
+   the room thinks. Nothing here is true or false: you score by
+   agreeing with everybody else.
+   ================================================================== */
+function fingerBank(){
+  const L=S.lang==='fi'?2:S.lang==='sv'?3:1;
+  return FINGERS.map((r,i)=>[r[0],r[L]||r[1],'f'+i]);
+}
+function fingerStart(){
+  const bank=fingerBank();
+  if(!bank.length){
+    try{lobbyStatus('The prompts are still loading — one moment.','')}catch(e){}
+    needBanks();
+    try{banksReady().then(()=>{if(screenNow()==='s-quiz')quizStart()}).catch(()=>{})}catch(e){}
+    return;
+  }
+  Q.of=Math.min(S.len||10,bank.length);
+  Q.deck=shuffle(bank).slice(0,Q.of);
+  Q.round=0;Q.on=true;
+  S.players.forEach(pl=>{pl.score=0;pl.run=0});
+  fingerNext();
+}
+function fingerNext(){
+  if(Q.round>=Q.deck.length){quizFinish();return}
+  stopNextCount();
+  Q.current=Q.deck[Q.round++];
+  Q.votes={};Q.revealed=false;Q.tally=null;
+  try{$('q-curtain').classList.add('open');$('q-curtain').textContent=''}catch(e){}
+  drawQuiz();publishStage();
+}
+/* one vote each, and changing your mind before the reveal is allowed —
+   half the game is watching somebody change their mind */
+function fingerVote(p,targetId){
+  if(!isFinger()||Q.revealed)return;
+  if(!S.players.some(x=>x.id===targetId))return;
+  Q.votes[p.id]=targetId;
+  if(S.players.every(x=>x.id in Q.votes))fingerReveal();
+  else{drawQuiz();publishStage()}
+}
+function fingerTally(){
+  const t={};
+  S.players.forEach(p=>{t[p.id]=0});
+  Object.keys(Q.votes||{}).forEach(v=>{const id=Q.votes[v];if(id in t)t[id]++});
+  return t;
+}
+function fingerReveal(){
+  if(Q.revealed)return;
+  Q.revealed=true;
+  const t=fingerTally();
+  Q.tally=t;
+  const top=Math.max.apply(null,[0].concat(S.players.map(p=>t[p.id]||0)));
+  // nobody voted at all: nothing to agree with, so nothing is scored
+  const won=top>0?S.players.filter(p=>(t[p.id]||0)===top).map(p=>p.id):[];
+  S.players.forEach(p=>{
+    const v=Q.votes[p.id];
+    if(v!==undefined&&won.indexOf(v)>=0)p.score=(p.score||0)+10;
+  });
+  drawQuiz();publishStage();
+  startNextCount(NEXT_IN);
+}
+function drawFinger(){
+  if(!Q.current)return;
+  try{$('q-stage').classList.add('centred')}catch(e){}
+  try{$('s10-rules').hidden=true}catch(e){}
+  $('q-count').textContent=T('q_of',{i:Q.round,n:Q.deck.length});
+  $('q-ask').className='ask';
+  $('q-ask').textContent=Q.current[1];
+  const t=Q.revealed?(Q.tally||fingerTally()):null;
+  const top=t?Math.max.apply(null,[0].concat(S.players.map(p=>t[p.id]||0))):0;
+  $('q-options').className='qgrid finger';
+  $('q-options').innerHTML=S.players.map(p=>{
+    const votes=t?(t[p.id]||0):0;
+    const won=!!t&&top>0&&votes===top;
+    return '<button class="qbtn fing'+(won?' right':(t?' wrong':''))+'" data-opt="'+p.id+'"'
+      +(Q.revealed?' disabled':'')+'>'
+      +'<span class="t">'+esc(shownName(p))+'</span>'
+      +(t?'<span class="fvotes">'+votes+'</span>':'')+'</button>';
+  }).join('');
+  $('q-scores').innerHTML=S.players.map(p=>{
+    const said=(p.id in (Q.votes||{}));
+    return '<span class="qsc'+(said?' done':'')+'">'
+      +'<span class="av">'+backArt(p,'qav')+'</span>'+esc(shownName(p))
+      +' <b>'+(p.score||0)+'</b>'+(said&&!Q.revealed?' ✓':'')+'</span>';
+  }).join('');
+  const nx=$('q-next');
+  if(nx){
+    nx.classList.toggle('calm',!Q.revealed);
+    nx.textContent=Q.revealed
+      ?(Q.round>=Q.deck.length?T('see_winner'):T('next_q'))
+      :T('reveal');
+  }
+}
+function fingerState(phase){
+  const t=Q.revealed?(Q.tally||fingerTally()):null;
+  const top=t?Math.max.apply(null,[0].concat(S.players.map(p=>t[p.id]||0))):0;
+  return {v:1,b:BUILD,game:'finger',phase:phase||'live',
+    round:Q.round,of:Q.deck.length,revealed:!!Q.revealed,
+    ask:Q.current?Q.current[1]:'',cat:'',note:'',
+    vote:ballotState(),setup:setupLine(),remote:!!S.remote,vid:'',pic:'',
+    options:[],correct:-1,nextIn:Q.nextIn||0,
+    knocks:Object.keys(KNOCKS),full:S.players.length>=MAX_CHAIRS,
+    seats:S.players.map(p=>{
+      const sv={id:p.id,name:shownName(p),icon:p.icon,score:p.score||0};
+      if(p.pid)sv.pid=p.pid;
+      if(p.photo)sv.photo=p.photo;
+      if(p.id in (Q.votes||{}))sv.said=1;
+      if(t){sv.votes=t[p.id]||0;if(top>0&&t[p.id]===top)sv.won=1}
+      return sv;
+    }),
+    mine:null};
 }
 function s10Next(){
   try{$('q-screen').innerHTML='';$('q-curtain').textContent='';
@@ -4628,6 +4778,7 @@ function s10Reveal(){
 }
 function quizNext(){
   stopNextCount();
+  if(isFinger())return fingerNext();
   if(isS10())return s10Next();
   if(Q.round>=Q.deck.length){quizFinish();return}
   clearTimeout(Q.timer);
@@ -5031,7 +5182,7 @@ function drawNextCount(){
   if(!b)return;
   const last=Q.round>=Q.deck.length;
   const word=last?T('see_winner')
-    :(isAsking()||isS10())?T('next_q'):T('next_r');
+    :(isAsking()||isS10()||isFinger())?T('next_q'):T('next_r');
   b.textContent=Q.nextIn?word+'  '+Q.nextIn:word;
 }
 /* ---- one party, several games, one evening ---------------------------
@@ -5087,6 +5238,7 @@ function quizFinish(){
   show('s-final');publishStage();   // the screen moves first, so the phones hear 'over'
 }
 function drawQuiz(){
+  if(isFinger())return drawFinger();
   if(isS10())return drawS10();
   if(!Q.current)return;
   try{$('q-next').classList.remove('calm');$('s10-rules').hidden=true}catch(e){}
@@ -5184,6 +5336,12 @@ $('q-options')&&($('q-options').addEventListener('click',e=>{
     if(me)s10Take(me,+b.dataset.opt);
     return;
   }
+  if(isFinger()){
+    const b=e.target.closest('button[data-opt]');if(!b||b.disabled)return;
+    const me=S.players.find(p=>!p.pid&&!(p.id in (Q.votes||{})));
+    if(me)fingerVote(me,+b.dataset.opt);
+    return;
+  }
   const b=e.target.closest('button[data-opt]');if(!b)return;
   // on the big screen the host answers for whoever is sitting there
   const here=S.players.filter(p=>!p.pid);
@@ -5192,6 +5350,12 @@ $('q-options')&&($('q-options').addEventListener('click',e=>{
 }));
 $('q-next')&&($('q-next').onclick=()=>{
   stopNextCount();
+  if(isFinger()){
+    if(!Q.revealed)fingerReveal();
+    else if(Q.round>=Q.deck.length)quizFinish();
+    else fingerNext();
+    return;
+  }
   if(!Q.revealed)quizReveal();
   else if(Q.round>=Q.deck.length)quizFinish();
   else quizNext();
@@ -5348,13 +5512,14 @@ function dirStart(){
   DIR.timer=setInterval(()=>{drawRooms()},10000);
 }
 const GAMELABEL={chair:'The Chair',artist:'Name the Artist',trivia:'Quiz',picture:'Picture Guess',
-  tf:'True or False',s10:'The Short List'};
+  tf:'True or False',s10:'The Short List',finger:'Point the Finger'};
 const GAMEICON={
   chair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4.6h10v7H7z"/><path d="M5.5 11.6h13v3.2h-13z"/><path d="M7 14.8V20M17 14.8V20"/></svg>',
   artist:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>',
   trivia:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>',
   picture:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>',
   tf:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 8.5h7M7 8.5V17"/><path d="M14 17V8.5h5.5M14 13h4.6"/></svg>',
+  finger:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 11V5.6a1.6 1.6 0 0 1 3.2 0V11"/><path d="M12.7 11V9.4a1.5 1.5 0 0 1 3 0V11"/><path d="M15.7 11.2v-.8a1.5 1.5 0 0 1 3 0V15a5.5 5.5 0 0 1-5.5 5.5h-1.5a5 5 0 0 1-4.2-2.3L5 14.4a1.5 1.5 0 0 1 2.4-1.8l2.1 2.2"/></svg>',
   s10:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="4" width="7" height="7" rx="1.6"/><rect x="13.5" y="4" width="7" height="7" rx="1.6"/><rect x="3.5" y="13" width="7" height="7" rx="1.6"/><rect x="13.5" y="13" width="7" height="7" rx="1.6"/></svg>'};
 function drawRooms(){
   const box=$('pub-list');if(!box)return;
@@ -5623,6 +5788,10 @@ function hostAct(m){
     quizAnswer(p,+m.target);
     return;
   }
+  if(m.type==='finger'){                   // Point the Finger: one of the room
+    fingerVote(p,+m.target);
+    return;
+  }
   if(m.type==='pick'){                     // Smart 10: one of the ten
     s10Take(p,+m.target);
     return;
@@ -5761,6 +5930,7 @@ function s10State(phase){
       reserved:!!p.reserved&&!p.pid}))};
 }
 function stageState(){
+  if(isFinger())return fingerState(inPrep()?'lobby':'live');
   const a=S.current;
   const revealed=!!a&&!turnsOpen&&(!!winner||walked);
   const phase=inPrep()?'lobby'
@@ -6075,6 +6245,40 @@ function finalLine(st,me){
 }
 
 /* --- the phone, when the game is Name the Artist --- */
+/* The phone in Point the Finger: the room itself, as buttons. */
+function drawPadFinger(st,me){
+  const box=$('pad-quiz');if(!box)return;
+  try{$('pad-seats').hidden=true;$('pad-pic').hidden=true}catch(e){}
+  try{const bb=$('pad-bankbar');if(bb)bb.hidden=true}catch(e){}
+  if(!me){box.hidden=true;box.innerHTML='';box.dataset.key='';return}
+  box.hidden=false;
+  const seats=st.seats||[];
+  const key='f|'+st.round+'|'+seats.map(sv=>sv.id+':'+sv.name).join('\u0001');
+  if(box.dataset.key!==key){
+    box.dataset.key=key;
+    box.className='qgrid finger';
+    box.innerHTML=seats.map(sv=>
+      '<button class="qbtn" data-finger="'+sv.id+'"><span class="t">'+esc(sv.name)+'</span>'
+      +'<span class="fvotes" hidden></span></button>').join('');
+  }
+  const mineId=padFinger;
+  [...box.querySelectorAll('button[data-finger]')].forEach(b=>{
+    const id=+b.dataset.finger;
+    const sv=seats.find(x=>x.id===id)||{};
+    b.className='qbtn'+(st.revealed?(sv.won?' right':' wrong'):(mineId===id?' mine':''));
+    b.disabled=!!st.revealed;
+    const v=b.querySelector('.fvotes');
+    if(v){v.hidden=!st.revealed;v.textContent=sv.votes||0}
+  });
+  const rl=$('pad-run');
+  if(rl){
+    rl.hidden=false;
+    const said=mineId!==null&&mineId!==undefined;
+    rl.textContent=st.revealed?T('finger_done')
+      :said?T('finger_said')
+      :T('finger_pick');
+  }
+}
 function drawPadS10(st,me){
   const box=$('pad-quiz');if(!box)return;
   try{$('pad-seats').hidden=true;$('pad-pic').hidden=true}catch(e){}
@@ -6113,6 +6317,7 @@ function drawPadS10(st,me){
 }
 /* The host sends the number of seconds once; the phone runs the clock itself,
    so a countdown costs one message instead of one a second. */
+let padFinger=null;      // who this phone pointed at, until the next prompt
 let padCount=null;
 function padNextCount(st){
   const el=$('pad-next');if(!el)return;
@@ -6178,6 +6383,7 @@ function drawPadQuiz(st,me){
     const pp2=$('pad-pic');if(pp2){pp2.hidden=true;pp2.dataset.u=''}
     return;
   }
+  if(st.game==='finger')return drawPadFinger(st,me);
   if(st.game==='s10')return drawPadS10(st,me);
   box.className='qgrid'+((st.options||[]).length===2?' two':'');
   // the television already shows who is in: on a phone that strip only pushes
@@ -6215,6 +6421,10 @@ $('pv-grid')&&($('pv-grid').addEventListener('click',e=>{
 let myPick=-1;                     // the host hides every pick until the reveal,
                                    // so the phone has to remember its owner's own
 $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
+  const f=e.target.closest('button[data-finger]');
+  if(f&&!f.disabled){padFinger=+f.dataset.finger;sendAct('finger',padFinger);
+    try{drawPad()}catch(e2){}
+    return;}
   const pk=e.target.closest('button[data-pick]');
   if(pk&&!pk.disabled){pk.disabled=true;sendAct('pick',+pk.dataset.pick);return}
   const b=e.target.closest('button[data-ans]');if(!b||b.disabled)return;
@@ -6259,6 +6469,8 @@ const WORDS={
   door_told:'Isännälle on kerrottu että olet täällä. Hän voi päästää sinut sisään tauolla.',
   closed:'Isäntä sulki huoneen. Bileet ovat ohi — kiitos kun tulit.',
   meta_artist:'nimeä esittäjä', meta_trivia:'yleistieto', meta_picture:'tunnista kuva',
+  finger_pick:'Valitse joku', finger_said:'Valintasi on tehty — odotetaan muita…', finger_done:'Näin huone äänesti',
+  meta_finger:'osoita sormella',
   meta_tf:'totta vai tarua', meta_s10:'kuinka pitkälle uskallat'
  },
  sv:{
@@ -6291,6 +6503,8 @@ const WORDS={
   door_told:'Värden har fått veta att du är här och kan släppa in dig vid nästa paus.',
   closed:'Värden har stängt rummet. Festen är slut — tack för att du kom.',
   meta_artist:'namnge artisten', meta_trivia:'allmänbildning', meta_picture:'gissa bilden',
+  finger_pick:'Välj någon', finger_said:'Ditt val är gjort — väntar på de andra…', finger_done:'Så röstade rummet',
+  meta_finger:'peka finger',
   meta_tf:'sant eller falskt', meta_s10:'hur långt vågar du'
  }
 };
@@ -6324,6 +6538,8 @@ const EN={
   door_told:'The host has been told you are here. They can let you in at the next break.',
   closed:'The host has closed the room. The party is over — thanks for coming.',
   meta_artist:'name the artist', meta_trivia:'general knowledge', meta_picture:'guess the picture',
+  finger_pick:'Point at somebody', finger_said:'Pointed — waiting for the others…', finger_done:'This is how the room voted',
+  meta_finger:'point the finger',
   meta_tf:'true or false', meta_s10:'how far do you dare'
 };
 /* T('q_of',{i:3,n:15}) — the sentence in the language in use, holes filled */
@@ -6341,7 +6557,8 @@ function dressButtons(){
   set('pad-leave','leave');
 }
 const METALABEL={chair:'blind signings',artist:'name the artist',trivia:'general knowledge',
-  picture:'picture guess',tf:'true or false',s10:'the short list'};
+  picture:'picture guess',tf:'true or false',s10:'the short list',
+  finger:'point the finger'};
 let padLastNext='';
 /* 15. what a phone at the door is actually waiting for. Two different places
    used to answer this question, and both of them only said "asking". */
@@ -6354,8 +6571,13 @@ function doorLine(st){
   if(st&&st.phase==='lobby')return T('door_asking');
   return T('door_told');
 }
+let padFingerRound=-1;
 function drawPad(){
   const st=PARTY.stage,me=mySeat();
+  // a new prompt: forget which way this phone pointed last time
+  if(st&&st.game==='finger'&&st.round!==padFingerRound){
+    padFingerRound=st.round;padFinger=null;
+  }
   if(me)try{joinStatus('','')}catch(e){}    // seated: the join chatter is over
   try{if(st&&st.game)$('meta').textContent=T('meta_'+st.game)||METALABEL[st.game]||''}catch(e){}
   // two different versions in one room is the one bug a phone can fix itself
@@ -6389,7 +6611,8 @@ function drawPad(){
     sp.hidden=!show;
     if(show)sp.innerHTML='<b>Tonight</b><br>'+esc(st.setup);
   }
-  if(st.game==='artist'||st.game==='trivia'||st.game==='picture'||st.game==='tf'||st.game==='s10'){
+  if(st.game==='artist'||st.game==='trivia'||st.game==='picture'||st.game==='tf'
+     ||st.game==='s10'||st.game==='finger'){
     // the record plays on the phone as well, behind a curtain until the reveal,
     // so somebody who could not make it in person can still hear it
     drawPadScreen({phase:(st.remote&&(st.prev||st.vid))?'live':'',
@@ -6521,9 +6744,10 @@ $('lobby-back')&&($('lobby-back').onclick=()=>show('s-setup'));
 $('to-rules')&&($('to-rules').onclick=()=>{try{$('lobby-start').click()}catch(e){}});
 function dressRules(){
   try{dressWhere()}catch(e){}
+  const finger=S.game==='finger';                 // no topics, no right answer
   const triv=S.game==='trivia'||S.game==='tf'||S.game==='s10';   // written questions
   const pic=S.game==='picture';
-  const quiz=S.game==='artist'||triv||pic;   // none of them build teams
+  const quiz=S.game==='artist'||triv||pic||finger;   // none of them build teams
   // the era and genre filters belong to the record collection, not to trivia
   [['eras'],['genres']].forEach(id=>{
     const box=$(id[0]),lab=box&&box.previousElementSibling;
@@ -6538,6 +6762,7 @@ function dressRules(){
     : 'Nobody has to agree with the host. Argue about the years, settle on a genre, then go.'}catch(e){}
   // the topics belong to the quiz, the way era and genre belong to the records
   ['cats','cats-label','cats-note'].forEach(id=>{const e=$(id);if(e)e.hidden=!(triv||pic)});
+  ['lang','lang-label'].forEach(id=>{const e=$(id);if(e&&finger)e.hidden=false});
   ['lang','lang-label'].forEach(id=>{const e=$(id);if(e)e.hidden=!(triv||pic)});
   try{$('cats-label').textContent=S.game==='picture'?'Picture topics':'Topics'}catch(e){}
   if(triv||pic)try{
@@ -6549,6 +6774,7 @@ function dressRules(){
   if(lab&&lab.classList.contains('field-label'))lab.hidden=quiz;
   const ln=$('length'),lnlab=ln&&ln.previousElementSibling;
   if(lnlab)lnlab.textContent=pic?'How many pictures tonight'
+    :finger?'How many questions tonight'
     :S.game==='tf'?'How many statements tonight'
     :triv?'How many questions tonight'
     :quiz?'How many records tonight':'How many auditions tonight';
