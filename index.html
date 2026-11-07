@@ -317,6 +317,13 @@ input:focus{outline:none;border-color:var(--gold)}
 @keyframes bounce{0%,100%{transform:scaleY(.15)}50%{transform:scaleY(1)}}
 .playing .eq{display:flex}
 .playing .vw-idle{display:none}
+/* a record with no video behind it: the sleeve and a moving equaliser, so the
+   stage is not a black rectangle while an iTunes preview plays */
+.eq.on{display:flex}
+.sleeve{position:absolute;inset:0;z-index:1;background:#070406 center/cover no-repeat;
+  opacity:0;transition:opacity .45s ease}
+.sleeve.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.sleeve{transition:none}}
 @media (prefers-reduced-motion:reduce){.eq i{animation:none;transform:scaleY(.5)}}
 .clock{position:absolute;z-index:3;right:clamp(8px,1vw,14px);top:clamp(8px,1vw,14px);
   width:clamp(46px,5vw,70px);height:clamp(46px,5vw,70px)}
@@ -833,6 +840,10 @@ body:not(.screen-home) .mechip{display:none}
 #home-code{width:5.6em;background:var(--ink);border:1px solid var(--line);border-radius:9px;color:var(--gold);
   font-family:var(--mono);font-weight:700;font-size:18px;letter-spacing:.22em;text-align:center;padding:8px 6px;
   text-transform:uppercase}
+/* 20. the placeholder inherited the gold of a real code, so an empty box
+   looked like one with ABCD already in it. */
+#home-code::placeholder,#join-code::placeholder{color:rgba(240,231,216,.26);font-weight:400;
+  letter-spacing:.3em;opacity:1}
 .jp-go{width:40px;height:40px;border-radius:10px;border:0;background:var(--red);color:#fff;cursor:pointer;
   font-size:19px;line-height:1}
 .jp-go:hover{background:#D8463D}
@@ -1794,11 +1805,20 @@ body:has(#s-chair.on) .striproundwrap{display:none}
    picture; without one it is a large black rectangle with words floating
    in the middle of it, so it loses its border and its reserved height.  */
 #s-quiz .videowall:not(:has(.qpic)) .vw-screen{border:0;box-shadow:none;background:none}
+/* 29. it used to be given a fixed band whatever the question's length, so a
+   short question sat alone in 300px of black. It now hugs its own text. */
 #s-quiz .videowall:not(:has(.qpic)){flex:0 0 auto !important;
-  height:clamp(150px,28vh,320px) !important;min-height:0 !important;
-  margin-bottom:clamp(8px,1.6vh,22px)}
-#s-quiz .videowall:not(:has(.qpic)) .screenwrap{height:100%;width:100%;max-width:none;
+  height:auto !important;min-height:0 !important;
+  margin-bottom:clamp(8px,1.8vh,26px)}
+#s-quiz .videowall:not(:has(.qpic)) .screenwrap{height:auto;width:100%;max-width:none;
   aspect-ratio:auto;display:block;margin:0}
+#s-quiz .videowall:not(:has(.qpic)) .vw-screen{height:auto;position:static}
+#s-quiz .videowall:not(:has(.qpic)) .qasking,
+#s-quiz .videowall:not(:has(.qpic)) .qanswer{position:static;inset:auto}
+#s-quiz .videowall:not(:has(.qpic)) .curtain{display:none}
+/* with no picture the stage no longer fills the screen, so centre what there
+   is rather than hanging it from the top with a hole underneath */
+#s-quiz #q-stage.centred{justify-content:center}
 #s-quiz .videowall:not(:has(.qpic)) .qasking{font-size:clamp(22px,3vw,54px);
   padding:clamp(8px,1.6vh,24px) 3vw;max-width:min(1200px,94%);margin:0 auto;overflow:hidden}
 #s-quiz .videowall:not(:has(.qpic)) .qasking.long{font-size:clamp(20px,2.4vw,44px)}
@@ -2594,6 +2614,26 @@ var CATALOG=[], SEEDVIDEOS={}, TRIVIA=[], TRIVIA_FI=[], TRIVIA_SV=[], QIMG={}, P
 
 
 const SHELVED={chair:1};         // built, not ready: no card, no filter chip
+
+/* ---- where the record comes from -----------------------------------
+   It used to be a YouTube embed, which means an advertisement can open a
+   round. There is no honest way to strip that: the advertisement is what
+   pays for the embed being allowed at all. So the sound now comes from
+   the iTunes Search API, which hands out a 30-second preview of most
+   released tracks, free, without a key and without advertisements, for
+   exactly this kind of listening.
+
+     'preview'  an iTunes preview when there is one, the old YouTube
+                embed for the act when there is not
+     'youtube'  the old behaviour, iTunes never asked
+
+   Flip this one word back if the previews disappoint.                */
+const MUSIC_SOURCE='preview';
+/* The iTunes search is read cross-origin. If that browser or that network
+   refuses the request outright, the same search is tried once more through
+   the callback= form the API has always supported, which loads as a script
+   instead. Set this to false to allow only the plain cross-origin read. */
+const MUSIC_JSONP=true;
 const S={players:[],deck:[],round:0,teamSize:3,game:'trivia',len:15,era:0,genre:'Random',clip:0,turn:0,bids:[],current:null};
 const trackOf=a=>a[5];
 const yearOf=a=>a[6];
@@ -2986,12 +3026,13 @@ function drawCats(){
       return '<button type="button" data-c="'+esc(k)+'"'+(S.cats.indexOf(k)>=0?' class="sel"':'')+'>'
         +esc(ballotLabel(k))+(n?' <b class="votes">'+n+'</b>':'')+'</button>';
     }).join('');
-  const n=catBank().length;
   const note=$('cats-note');
   const total=ballot().length;
   const voters=Object.keys(VOTES).length;
+  // 21. the pile keeps growing, so a count here is out of date the week it is
+  // read — and before the bank has loaded it says nothing at all. What matters
+  // is which topics are in and what language they are in.
   if(note)note.textContent=(S.cats.length?S.cats.length+' of '+total+' topics':'All '+total+' topics')
-    +' \u00b7 '+n+(S.game==='picture'?' picture':' question')+(n===1?'':'s')+' to draw from'
     +(S.game==='trivia'?' \u00b7 '+(S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English'):'')
     +(voters?' \u00b7 '+voters+' voted from their phone'+(voters===1?'':'s'):'');
   try{updateStartState()}catch(e){}
@@ -3874,7 +3915,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 10:37';
+const BUILD='07.11. 10:49';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -3947,10 +3988,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111037',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111037',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111049',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111049',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111037',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111049',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4370,13 +4411,16 @@ function quizNext(){
   $('q-curtain').classList.remove('open');
   $('q-curtain').textContent='Curtain closed';
   $('q-next').textContent='Reveal';
-  showQuizVideo(videoFor(Q.current));
+  try{$('q-stage').classList.remove('centred')}catch(e){}   // a record fills the frame
+  playRecord(Q.current);            // an iTunes preview if there is one, the embed if not
+  warmNextRecord();                 // and the one after it is fetched while this one plays
   drawQuiz();publishStage();
 }
 const askSize=t=>{const n=(t||'').length;return n>110?' xlong':n>62?' long':''};
 function showQuizQuestion(){
   const box=$('q-screen');if(!box)return;
   const pic=QIMG[String(Q.qid)];
+  try{$('q-stage').classList.toggle('centred',!pic)}catch(e){}
   // the url goes in through the style property, not through the markup:
   // a quoted URL inside an attribute closes the attribute and loses the picture
   const bare=isPicture();            // the picture is the question; leave it alone
@@ -4403,6 +4447,246 @@ function showQuizQuestion(){
     im.src=pic.u;
   }
 }
+/* ============ the record, as a 30-second iTunes preview ==============
+   Looked up in this browser at the moment it is needed, never written into
+   the page: the catalogue is long and a preview link goes stale by itself.
+   Every step here is best-effort. A miss, a refusal, a blocked domain or a
+   slow network all end in the same place — the YouTube embed this act
+   already had — so a round never stops for want of a song.
+   ===================================================================== */
+const ITUNES='https://itunes.apple.com/search';
+const PREVIEW_TRY=4000;      // one request may hang this long
+const PREVIEW_WAIT=5000;     // the whole lookup may hold a round open this long
+const PREVIEW={};            // videoKey(act) -> hit | null   (null = asked, nothing there)
+const PREVIEW_ASK={};        // videoKey(act) -> the lookup already in flight
+const RECSRC={};             // videoKey(act) -> 'prev' | 'yt' : what the host actually played
+/* A browser that will not reach Apple at all will not reach it on the next
+   record either. Without this, every round of a blocked party would sit in
+   silence waiting for the same refusal. Three in a row and the night goes
+   back to YouTube; one success anywhere resets the count. */
+const PREVIEW_GIVEUP=3;
+let previewFails=0;
+const previewOff=()=>MUSIC_SOURCE!=='preview'||previewFails>=PREVIEW_GIVEUP;
+
+/* The catalogue is written in plain ASCII and Apple's is not: 'Maneskin' has
+   to find 'Måneskin' and 'Rosalia' has to find 'Rosalía'. Both sides are
+   folded down to bare letters before anything is compared. */
+function fold(s){
+  return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'')   // the accents themselves
+    .replace(/[\u2018\u2019\u02bc\u00b4`]/g,"'")                         // every kind of apostrophe
+    .replace(/[\u00f8\u00d8]/g,'o').replace(/[\u00e6\u00c6]/g,'ae')      // the ones NFD leaves alone
+    .replace(/\u00df/g,'ss').replace(/[\u0142\u0141]/g,'l')
+    .replace(/[\u00f0\u00de\u00fe]/g,'th')
+    .toLowerCase().replace(/&/g,' and ')
+    .replace(/[^a-z0-9']+/g,' ').trim();
+}
+/* How well two names agree: 2 the same, 1 close enough, 0 not the same thing.
+   Whole words only. 'Cher' must not match 'Cherry Glazerr', while
+   'Macklemore' has to match 'Macklemore & Ryan Lewis', and the catalogue's
+   own near-misses ('Smoke on the Water') have to survive a word being off. */
+function nameScore(want,got){
+  const a=fold(want),b=fold(got);
+  if(!a||!b)return 0;
+  if(a===b)return 2;
+  const ta=a.split(' '),tb=b.split(' ');
+  if(ta.every(w=>tb.indexOf(w)>=0)||tb.every(w=>ta.indexOf(w)>=0))return 2;
+  const hit=ta.filter(w=>tb.indexOf(w)>=0).length;
+  return hit/Math.max(ta.length,tb.length)>=0.6?1:0;
+}
+const art600=u=>String(u||'').replace(/\/\d+x\d+bb\.(jpg|jpeg|png)$/i,'/600x600bb.$1');
+const nap=ms=>new Promise(r=>setTimeout(r,ms));
+
+/* The best row in a reply, or nothing. The artist is checked, never taken on
+   trust: 'Closing Time' is Semisonic's and also Tom Waits's, and a tribute
+   act will happily sell you a cover of anything. The track has to agree too,
+   because the reveal names the track from our own catalogue and must not lie. */
+function bestHit(artist,track,rows){
+  let best=null,score=0;
+  (rows||[]).forEach(r=>{
+    if(!r||!r.previewUrl)return;
+    const as=nameScore(artist,r.artistName);if(!as)return;
+    const ts=nameScore(track,r.trackName);if(!ts)return;
+    const s=as*10+ts;
+    if(s>score){score=s;best=r}
+  });
+  if(!best)return null;
+  return {url:String(best.previewUrl),art:art600(best.artworkUrl100||''),
+          artist:String(best.artistName||''),track:String(best.trackName||'')};
+}
+function itunesCors(url){
+  if(typeof fetch!=='function')return Promise.reject(new Error('no fetch'));
+  let ac=null;
+  try{ac=new AbortController()}catch(e){ac=null}
+  const t=setTimeout(()=>{try{ac&&ac.abort()}catch(e){}},PREVIEW_TRY);
+  return fetch(url,ac?{signal:ac.signal}:undefined)
+    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
+    .then(j=>{clearTimeout(t);return (j&&j.results)||[]},
+          e=>{clearTimeout(t);throw e});
+}
+let itunesN=0;
+/* the callback= form, for a browser or a network that will not do the
+   cross-origin read. Apple's reply is handed to a one-shot global. */
+function itunesJsonp(url){
+  return new Promise((res,rej)=>{
+    const cb='theChairITunes'+(++itunesN);
+    const s=document.createElement('script');
+    let over=false;
+    const t=setTimeout(()=>{if(!over){over=true;done();rej(new Error('timed out'))}},PREVIEW_TRY);
+    function done(){
+      clearTimeout(t);
+      try{delete window[cb]}catch(e){window[cb]=undefined}
+      if(s.parentNode)s.parentNode.removeChild(s);
+    }
+    window[cb]=j=>{if(over)return;over=true;done();res((j&&j.results)||[])};
+    s.onerror=()=>{if(over)return;over=true;done();rej(new Error('blocked'))};
+    s.src=url+'&callback='+cb;
+    document.head.appendChild(s);
+  });
+}
+function itunesAsk(term,limit){
+  const url=ITUNES+'?term='+encodeURIComponent(term)
+    +'&media=music&entity=song&limit='+limit;
+  return itunesCors(url).catch(e=>MUSIC_JSONP?itunesJsonp(url):Promise.reject(e));
+}
+/* Two searches at most. The first is the obvious one. The second asks for the
+   act alone and sifts its records here, which is what saves an act whose name
+   we spell without its accents, or a title we remember slightly wrong. */
+function lookupPreview(a){
+  const artist=a[0],track=trackOf(a);
+  return itunesAsk(artist+' '+track,8).then(rows=>{
+    const hit=bestHit(artist,track,rows);
+    if(hit)return hit;
+    return itunesAsk(artist,25).then(rows2=>bestHit(artist,track,rows2));
+  });
+}
+/* one lookup per act for the whole night, whoever asks for it */
+function previewFor(a){
+  const k=videoKey(a);
+  if(k in PREVIEW)return Promise.resolve(PREVIEW[k]);
+  if(!PREVIEW_ASK[k]){
+    PREVIEW_ASK[k]=lookupPreview(a).then(
+      hit=>{previewFails=0;PREVIEW[k]=hit||null;delete PREVIEW_ASK[k];return PREVIEW[k]},
+      // a refusal is not remembered as a miss: the network may be back by the
+      // next act. It is counted, though, so a blocked night stops asking.
+      ()=>{delete PREVIEW_ASK[k];
+        if(++previewFails===PREVIEW_GIVEUP)try{console.info(
+          'The Chair: iTunes previews cannot be reached from this browser, '
+          +'so the records come from YouTube for the rest of the night.')}catch(e){}
+        return null});
+  }
+  return PREVIEW_ASK[k];
+}
+/* the host knows which record is next, so it is fetched during this one */
+function warmPreview(a){
+  if(previewOff()||!a)return;
+  try{previewFor(a).catch(()=>{})}catch(e){}
+}
+function warmNextRecord(){
+  warmPreview(Q.deck&&Q.deck[Q.round]);        // Q.round already points past the current one
+}
+
+/* ---- one audio element for the whole night ----
+   A browser makes no noise until somebody has tapped the page, and the
+   records advance on their own clock. So the first tap of the night plays
+   silence through this one element, and every later round reuses the same
+   element, which the browser now trusts. This serves the television and a
+   joined phone alike: a page is only ever one of the two. */
+const RECSILENCE='data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=';
+let RECEL=null,recOpen=false;
+function recEl(){
+  if(!RECEL){
+    RECEL=new Audio();
+    RECEL.preload='auto';
+    try{RECEL.setAttribute('playsinline','')}catch(e){}
+  }
+  return RECEL;
+}
+function recUnlock(){
+  if(recOpen)return;
+  try{
+    const el=recEl();
+    el.src=RECSILENCE;
+    const p=el.play();
+    if(p&&p.then)p.then(()=>{recOpen=true;try{el.pause()}catch(e){}},()=>{});
+    else recOpen=true;
+  }catch(e){}
+}
+document.addEventListener('pointerdown',recUnlock,true);
+document.addEventListener('keydown',recUnlock,true);
+function recPlay(url,muted){
+  try{
+    const el=recEl();
+    el.muted=!!muted;
+    // a new source starts itself at nought; an unchanged one is left where it
+    // is, because the curtain lifting redraws the screen mid-clip
+    if(el.src!==url)el.src=url;
+    const p=el.play();
+    if(p&&p.catch)p.catch(()=>{});   // still waiting for a tap; the sound button is the tap
+  }catch(e){}
+}
+function recStop(){
+  if(!RECEL)return;
+  try{RECEL.pause()}catch(e){}
+}
+
+/* ---- what the television does with a record ---- */
+let recRound=0;                  // so a lookup that lands late cannot talk over the next record
+function recWaiting(){
+  const box=$('q-screen');if(!box)return;
+  box.innerHTML='<div class="eq on">'+'<i></i>'.repeat(12)+'</div>';
+}
+function showPreview(hit){
+  const box=$('q-screen');if(!box)return;
+  box.innerHTML='<div class="eq on">'+'<i></i>'.repeat(12)+'</div>'
+    +'<div class="sleeve" id="q-sleeve"></div>';
+  // the sleeve is the reveal: the cover fades in behind the curtain and is
+  // there when it lifts. The url goes in through the style property, because
+  // a quoted url inside an attribute closes the attribute.
+  const sl=$('q-sleeve');
+  if(sl&&hit.art){
+    const im=new Image();
+    im.onload=()=>{sl.style.backgroundImage='url("'+hit.art.replace(/"/g,'%22')+'")';
+                   sl.classList.add('on')};
+    im.src=hit.art;
+  }
+  recPlay(hit.url,false);
+}
+/* the one entry point: play this act, however the sound has to be found */
+function playRecord(a){
+  const mine=++recRound;
+  recStop();
+  if(!a)return;
+  const k=videoKey(a);
+  if(previewOff()){RECSRC[k]='yt';showQuizVideo(videoFor(a));return}
+  const known=(k in PREVIEW)?PREVIEW[k]:undefined;
+  if(known){RECSRC[k]='prev';showPreview(known);return}            // warmed: the needle drops at once
+  if(known===null){RECSRC[k]='yt';showQuizVideo(videoFor(a));return}
+  recWaiting();
+  const fall=()=>{if(mine!==recRound)return;
+    RECSRC[k]='yt';showQuizVideo(videoFor(a));
+    try{publishStage()}catch(e){}};
+  Promise.race([previewFor(a),nap(PREVIEW_WAIT).then(()=>null)]).then(hit=>{
+    if(mine!==recRound)return;                                     // the round moved on
+    if(hit){RECSRC[k]='prev';showPreview(hit);try{publishStage()}catch(e){}}
+    else fall();
+  },fall);
+}
+/* What a joined phone is told. The embed is named only once this record is
+   known to have no preview, so an advertisement never gets a head start on a
+   phone and then has to be cut off mid-round. */
+function recEmbedFor(a){
+  if(!a)return '';
+  if(previewOff())return videoFor(a);
+  return RECSRC[videoKey(a)]==='yt'?videoFor(a):'';
+}
+function recPreviewUrl(a){
+  if(!a||previewOff())return '';
+  const k=videoKey(a);
+  if(RECSRC[k]!=='prev')return '';
+  const h=PREVIEW[k];
+  return h?h.url:'';
+}
+
 function showQuizVideo(id){
   const box=$('q-screen');if(!box)return;
   if(!SERVED||!/^[\w-]{11}$/.test(id||'')){
@@ -4479,7 +4763,8 @@ function drawNextCount(){
 function quizFinish(){
   Q.on=false;stopNextCount();
   try{$('final-eyebrow').textContent=isPicture()?'Sharpest eye':isTF()?'Best nose for a lie'
-    :isS10()?'Coolest nerve':isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
+    :isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
+  recStop();                       // the game is over, so the record stops with it
   const box=$('q-screen');if(box)box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
   const best=[...S.players].sort((a,b)=>(b.score||0)-(a.score||0));
   const top=best[0]?(best[0].score||0):0;
@@ -4534,6 +4819,7 @@ function drawQuiz(){
 }
 function drawS10(){
   if(!Q.current)return;
+  try{$('q-stage').classList.add('centred')}catch(e){}
   $('q-count').textContent='Question '+Q.round+' of '+Q.deck.length;
   $('q-ask').className='ask';
   $('q-ask').textContent=Q.current[1];
@@ -5055,7 +5341,10 @@ function quizState(phase){
     
     setup:setupLine(),
     remote:!!S.remote,
-    vid:isAsking()||!Q.current||!S.remote?'':videoFor(Q.current),
+    // the embed is only offered once the host knows this record has no preview,
+    // so an advertisement never gets a head start on a phone
+    vid:isAsking()||!S.remote?'':recEmbedFor(Q.current),
+    prev:isAsking()||!S.remote?'':recPreviewUrl(Q.current),
     ask:isAsking()&&Q.current?Q.current[1]:'',
     nextIn:Q.nextIn||0,
     // the television keeps the big one; a phone gets a fifth of the bytes
@@ -5185,6 +5474,7 @@ function roomClosed(){
   try{$('pad-pic').hidden=true}catch(e){}
   try{$('pad-vote').hidden=true;$('pad-setup').hidden=true;$('pad-seats').hidden=true}catch(e){}
   try{$('pad-screen').hidden=true}catch(e){}
+  try{padVid='';recStop()}catch(e){}   // and the record stops with the room
   ['pad-sign','pad-skip','pad-hold','pad-blocks','pad-team','pad-teamhead']
     .forEach(id=>{const e=$(id);if(e)e.hidden=true});
   try{$('pad-round').textContent='Room '+PARTY.code}catch(e){}
@@ -5335,21 +5625,41 @@ function setPadSound(on){
   if(box)[...box.querySelectorAll('button')].forEach(b=>
     b.classList.toggle('sel',(b.dataset.s==='1')===padSound));
   padVid='';                         // bring the player back with the new setting
+  // a preview is one audio element that is already going: unmute it where it is,
+  // and this very tap is the gesture the browser was waiting for
+  try{if(RECEL){RECEL.muted=!padSound;if(padSound){const p=RECEL.play();if(p&&p.catch)p.catch(()=>{})}}}catch(e){}
   if(PARTY.stage)drawPadScreen(PARTY.stage);
 }
 $('join-sound')&&($('join-sound').addEventListener('click',e=>{
   const b=e.target.closest('button[data-s]');if(!b)return;
   setPadSound(b.dataset.s==='1');
 }));
+/* An iTunes preview url, as it may be trusted off the wire. The host sends it,
+   and the host is whoever opened the room, so it is checked the same way the
+   video id has always been checked rather than dropped into the page. */
+const PREVOK=/^https:\/\/[a-z0-9.-]+\.(apple\.com|mzstatic\.com)\/[^\s"<>]+$/i;
 function drawPadScreen(st){
   const box=$('pad-screen');if(!box)return;
   // in a shared room the phone is a button; the record belongs to the big screen
-  if(st&&st.remote===false)st={phase:'',vid:''};
-  const want=(st&&st.phase==='live'&&st.vid)?String(st.vid):'';
+  if(st&&st.remote===false)st={phase:'',vid:'',prev:''};
+  const prev=(st&&st.phase==='live'&&st.prev&&PREVOK.test(String(st.prev)))?String(st.prev):'';
+  const want=(st&&st.phase==='live'&&!prev&&st.vid)?String(st.vid):'';
   const hide=!!(st&&st.hide);
-  const key=want+'|'+(padSound?'1':'0')+'|'+(hide?'c':'o');
+  const key=prev+'|'+want+'|'+(padSound?'1':'0')+'|'+(hide?'c':'o');
   if(key===padVid)return;
   padVid=key;
+  if(prev){
+    // a plain audio clip: no player to embed, so the phone draws its own
+    // equaliser and keeps the curtain until the host reveals
+    box.hidden=false;
+    box.innerHTML='<div class="eq on">'+'<i></i>'.repeat(10)+'</div>'
+      +(hide?'<div class="padcurtain">Curtain closed</div>':'')
+      +'<button class="soundbtn" id="pad-sound">'
+      +(padSound?'\ud83d\udd0a SOUND ON':'\ud83d\udd07 MUTED \u2014 TAP FOR SOUND')+'</button>';
+    recPlay(prev,!padSound);
+    return;
+  }
+  recStop();                      // whatever was playing is not this record
   if(!want||!/^[\w-]{11}$/.test(want)){box.hidden=true;box.innerHTML='';return}
   box.hidden=false;
   box.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+want
@@ -5611,7 +5921,8 @@ function drawPad(){
   if(st.game==='artist'||st.game==='trivia'||st.game==='picture'||st.game==='tf'||st.game==='s10'){
     // the record plays on the phone as well, behind a curtain until the reveal,
     // so somebody who could not make it in person can still hear it
-    drawPadScreen({phase:(st.remote&&st.vid)?'live':'',vid:st.vid||'',hide:!st.revealed});
+    drawPadScreen({phase:(st.remote&&(st.prev||st.vid))?'live':'',
+                   vid:st.vid||'',prev:st.prev||'',hide:!st.revealed});
     drawPadSeats(st,me);drawPadQuiz(st,me);
     return;
   }
