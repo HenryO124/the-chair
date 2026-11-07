@@ -33,9 +33,17 @@ if [ "$V" != "$B" ]; then
 fi
 
 # 3. is it green?
+#    NOT `run.sh | tail`: a pipeline reports the LAST command's status, so the
+#    suite could fail and tail would still say 0. That exact mistake let a
+#    broken build ship once already.
 if [ -z "$SKIP_TESTS" ]; then
-  if ! bash tests/run.sh | tail -1; then
+  set +e
+  TESTOUT=$(bash tests/run.sh 2>&1); TESTRC=$?
+  set -e
+  printf '%s\n' "$TESTOUT" | tail -1
+  if [ $TESTRC -ne 0 ]; then
     echo "REFUSING TO DEPLOY: the suite is not green"
+    printf '%s\n' "$TESTOUT" | grep -E '^\s+(x|✗)' | head -20
     exit 1
   fi
 else

@@ -17,12 +17,17 @@ setTimeout(()=>{
   const bank=w.eval('catBank().length');
   if(bank<8)probs.push('the set bank is thin: '+bank);
   // every set: ten candidates, three to six true, all with text
-  const bad=w.eval("(function(){var b=s10Bank(),bad=[];for(var i=0;i<b.length;i++){var c=b[i][3];"
+  const bad=w.eval("(function(){var b=s10Bank(),bad=[],thin=0;for(var i=0;i<b.length;i++){var c=b[i][3];"
    +"var t=c.filter(function(x){return x.ok}).length;"
    +"if(c.length!==10)bad.push(i+':'+c.length+' candidates');"
-   +"if(t<3||t>6)bad.push(i+':'+t+' true');"
+   // Henry's rule is that the number of true candidates varies between 4 and 9,
+   // so that nobody can count. Exactly one inherited set is a legitimate 3 —
+   // Finland has three land borders and the world does not bend for a rule —
+   // so one is tolerated and a second would be a drift worth knowing about.
+   +"if(t<3||t>9)bad.push(i+':'+t+' true');"
+   +"if(t<4)thin++;"
    +"if(c.some(function(x){return !x.t}))bad.push(i+':empty candidate');"
-   +"if(!b[i][1])bad.push(i+':no question');}return bad.join(', ')})()");
+   +"if(!b[i][1])bad.push(i+':no question');}if(thin>1)bad.push(thin+' sets have fewer than 4 true');return bad.join(', ')})()");
   if(bad)probs.push(bad);
   w.eval('quizStart()');
   if(!w.eval('Q.cands&&Q.cands.length===10'))probs.push('the round did not deal ten candidates');
