@@ -3753,7 +3753,7 @@ function startSolo(){
   try{partyEnd()}catch(e){}
   const keep=S.players[0]&&S.players[0].photo;
   S.players=[mkPlayer('',0,0,'',keep)];
-  S.games=0;S.banked=false;S.seen={};
+  S.games=0;S.banked=false;
   S.players.forEach(p=>{p.team=[];p.blockUsed=false;p.passed=false;p.score=0;p.night=0});
   try{drawPlayers();validate()}catch(e){}
   try{updatePool();dressRules()}catch(e){}
@@ -4909,7 +4909,7 @@ function openLobby(goTo){
   // a new game always starts empty: tap a friend to hold a chair for tonight
   FRIENDS.forEach(f=>{f.on=false});saveFriends();drawFriends();
   clearVotes();S.cats=[];
-  S.games=0;S.banked=false;S.seen={};S.players.forEach(p=>{p.night=0});   // a new party, a new evening
+  S.games=0;S.banked=false;S.players.forEach(p=>{p.night=0});   // a new party, a new evening
   PARTY.role='host';PARTY.code=newCode();PARTY.key=newRoomKey();PARTY.seen={};
   try{if(MYNAME)claimMySeat('')}catch(e){}   // the host is whoever this device is
   $('lobby-code').textContent=PARTY.code;
@@ -5048,12 +5048,30 @@ const optLabel=o=>playsRecords()?o[0]:o;
 /* Every bank puts the row's own id last — the quiz its row number, the others
    'p3', 's17', 'n42' — so one memory serves all of them. */
 const rowId=r=>(r&&r.length)?String(r[r.length-1]):'';
-function seenSet(){
-  if(!S.seen)S.seen={};
-  const k=S.game||'x';                    // each game remembers its own
-  if(!S.seen[k])S.seen[k]={};
-  return S.seen[k];
+/* The same people come back on Monday. A memory that lasts one evening sends
+   them the questions they were asked on Saturday, which is the thing this was
+   written to stop. So it lives on the screen that hosts the party, not in the
+   party, and a new room continues where the last one left off.
+   It is capped: when a game's memory reaches the cap the oldest half goes, so
+   a screen that has hosted a hundred evenings still starts a round quickly. */
+const SEEN_CAP=4000;
+let SEEN={};
+try{SEEN=JSON.parse(localStorage.getItem('thechair.seen')||'{}')||{}}catch(e){SEEN={}}
+if(!SEEN||typeof SEEN!=='object'||Array.isArray(SEEN))SEEN={};
+function saveSeen(){
+  try{localStorage.setItem('thechair.seen',JSON.stringify(SEEN))}catch(e){}
 }
+function seenSet(){
+  const k=S.game||'x';                    // each game remembers its own
+  if(!SEEN[k]||typeof SEEN[k]!=='object')SEEN[k]={};
+  const set=SEEN[k];
+  const keys=Object.keys(set);
+  if(keys.length>SEEN_CAP)keys.slice(0,Math.floor(keys.length/2)).forEach(x=>{delete set[x]});
+  S.seen=SEEN;                            // the tests and the old code read S.seen
+  return set;
+}
+/* Everything this screen has ever asked, forgotten on purpose. */
+function forgetSeen(){SEEN={};S.seen=SEEN;saveSeen()}
 /* The deck for one game: everything nobody has seen tonight, and only when
    those run out does it go back to the beginning. */
 function evenDeck(bank,want){
@@ -5072,6 +5090,7 @@ function evenDeck(bank,want){
     out=shuffle(out);
   }
   out.forEach(r=>{const id=rowId(r);if(id)seen[id]=1});
+  saveSeen();
   return out;
 }
 function dealEvenly(bank,want){
