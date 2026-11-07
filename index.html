@@ -1021,8 +1021,7 @@ body.learning .gamecard.sel{border-color:var(--line);background:var(--panel)}
 body.learning .gamecard .garrow{display:none}
 
 /* the shelf of games */
-.shelf{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 18px}
-@media (max-width:1040px){.shelf{grid-template-columns:1fr}}
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:0 0 18px}
 .gamecard{display:flex;align-items:flex-start;gap:14px;text-align:left;
   background:var(--panel);border:1px solid var(--line);border-radius:16px;
   padding:clamp(14px,1.7vw,20px);cursor:pointer;color:inherit;font:inherit;
@@ -1942,7 +1941,9 @@ body:has(#s-chair.on) .striproundwrap{display:none}
   margin-bottom:clamp(8px,1.8vh,26px)}
 #s-quiz #q-stage.centred .videowall .screenwrap{height:auto;width:100%;max-width:none;
   aspect-ratio:auto;display:block;margin:0}
-#s-quiz #q-stage.centred .videowall .vw-screen{height:auto;position:static}
+#s-quiz #q-stage.centred .videowall .vw-screen{height:auto;position:static;
+  aspect-ratio:auto}   /* without this the empty 16:9 frame still reserves half the
+                          window on a laptop and pushes the question off the top */
 #s-quiz #q-stage.centred .videowall .qasking,
 #s-quiz #q-stage.centred .videowall .qanswer{position:static;inset:auto}
 #s-quiz #q-stage.centred .videowall .curtain{display:none}
@@ -2009,6 +2010,41 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 .padstick .btn{width:min(420px,100%);margin:0}
 @media (min-width:900px){.padstick{position:static;background:none;margin:14px 0 0;padding:0}}
 /*@STUDIO-END*/
+
+/* ---- the whole game list on one screen, while there are still few games ----
+   Nothing is taken off a card; every measurement comes down a notch and the
+   cards lay out three across when the screen is wide enough. Scoped to the
+   game menu, so the front page keeps its full-size type. */
+#s-setup .backlink{margin:0 0 9px;padding:5px 12px}
+#s-setup .eyebrow{margin-bottom:2px}
+#s-setup .modes-title{font-size:clamp(25px,2.3vw,38px)!important;margin:0 0 11px}
+#s-setup .shelf{gap:clamp(9px,.8vw,14px);margin-bottom:0}
+#s-setup .gamecard{padding:clamp(11px,1.05vw,16px);gap:clamp(10px,.85vw,14px);border-radius:14px}
+#s-setup .gamecard .gicon{width:clamp(36px,2.3vw,44px);height:clamp(36px,2.3vw,44px);border-radius:11px}
+#s-setup .gamecard .gtag{font-size:9.5px;letter-spacing:.14em}
+#s-setup .gamecard .gname{font-size:clamp(16.5px,1.3vw,22px);margin:3px 0 5px}
+#s-setup .gamecard .gdesc{font-size:clamp(12.5px,.76vw,14.5px);line-height:1.4}
+#s-setup .gamecard .gmeta{margin-top:7px;padding-top:7px;font-size:clamp(9.5px,.58vw,11px);gap:6px}
+#s-setup .gamecard .garrow{font-size:17px}
+/* on a laptop the hero column is the thing standing between seven games and
+   one screenful, and on this screen it is only decoration */
+@media (max-width:1560px){
+  #s-setup .home{grid-template-columns:1fr}
+  #s-setup .home-hero{display:none}
+}
+
+/* ---- a short window still has to hold a whole round ----
+   On a laptop the trimmings give way before the question and the answers do,
+   because a question that has scrolled off the top is a question nobody can
+   answer. */
+@media (max-height:640px){
+  #s-quiz #q-stage.centred .videowall{margin-bottom:6px!important}
+  #s-quiz #s10-rules{padding:4px 10px;font-size:10.5px;margin:0 0 5px}
+  #s-quiz #q-scores{margin-top:5px}
+  #s-quiz .qhead{margin-bottom:5px}
+  #s-quiz #q-options{gap:5px}
+  #s-quiz .btn-row,#s-quiz #btn-row{margin-top:6px}
+}
 </style>
 </head>
 <body class="screen-home">
@@ -4176,7 +4212,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 14:23';
+const BUILD='07.11. 14:45';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4362,10 +4398,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111423',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111423',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111445',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111445',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111423',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111445',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4631,6 +4667,7 @@ function catShown(key){
 }
 /* Pictures live in their own tables so they can be refreshed without touching
    the questions. A question with no picture simply shows its words. */
+
 
 
 
