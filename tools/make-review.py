@@ -45,15 +45,36 @@ def url_of(r):
 # few pictures of any one subject: forty photographs of Sibelius is one answer,
 # not forty, and the next person in the list is worth more than his eleventh
 # portrait.
+# What a person can actually overturn. A photograph rejected for its shape or
+# a few missing pixels may still be a fine round; a funeral, a grave or a
+# statue is not a photograph of the person at all, however the machine phrased
+# it, and putting those first wasted the first minute of the owner's time.
+NEVER = ('funeral', 'grave', 'cemetery', 'memorial', 'monument', 'statue',
+         'plaque', 'stamp', 'banknote', 'coin', 'bust', 'painting of',
+         'congress', 'conference', 'parade', 'crowd')
+def hopeless_subject(r):
+    hay = (str(r.get('why') or r.get('reason') or '') + ' ' + str(r.get('file') or '')).lower()
+    return any(w in hay for w in NEVER)
+
 def value(r):
     why = str(r.get('why') or r.get('reason') or '').lower()
-    if 'more than one person' in why:        return 0   # guessed from a file name
-    if 'carries writing' in why or 'depiction' in why: return 1
-    if 'not landscape' in why:               return 2   # a television can letterbox
-    if 'too small' in why:                   return 3
-    return 4
+    if 'not landscape' in why:   return 0   # a television can letterbox a portrait
+    if 'too small' in why:       return 1   # borderline, and the owner can see it
+    if 'more than one person' in why: return 2
+    return 3
 
-PER_SUBJECT = 99        # the owner says he can get through a thousand; let him
+# One picture is one question, so one picture per subject is all there is to
+# decide. Sixty-four people, sixty-four calls.
+PER_SUBJECT = 1
+# A television cannot use a picture that is not there. Whatever the reason
+# given, if the long side is under 800 pixels the answer is no and there is
+# nothing to ask.
+import re as _re
+def big_enough(r):
+    m = _re.search(r'(\d{2,5})\s*[x\u00d7]\s*(\d{2,5})', str(r.get('why') or ''))
+    if not m: return True
+    return max(int(m.group(1)), int(m.group(2))) >= 800
+ask = [r for r in ask if not hopeless_subject(r) and big_enough(r)]
 ask.sort(key=value)
 seen_subject = {}
 kept = []
