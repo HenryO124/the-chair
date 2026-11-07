@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Levyt — ota tai hylkää</title>
+<title>Levyt v3 — ota tai hylkää</title>
 <style>
 :root{--bg:#120a0d;--ink:#F3EBE6;--muted:#9c8a8a;--red:#E03E52;--good:#49C27B;--line:rgba(255,255,255,.12)}
 *{box-sizing:border-box}
@@ -17,6 +17,7 @@ header b{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(
 .bar{flex:1 1 auto;height:6px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
 .bar i{display:block;height:100%;background:var(--red);width:0;transition:width .25s}
 .count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px;white-space:nowrap}
+#ver{color:var(--good);border:1px solid rgba(73,194,123,.4);border-radius:99px;padding:1px 8px;font-size:12px}
 
 main{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;gap:14px;padding:10px 0 4px;min-height:0}
@@ -64,6 +65,7 @@ textarea{width:100%;height:30vh;background:#1a1016;color:var(--ink);border:1px s
   <b>Levyt</b>
   <div class="bar"><i id="pbar"></i></div>
   <span class="count" id="pnum">…</span>
+  <span class="count" id="ver">v3</span>
 </header>
 
 <main id="card">
