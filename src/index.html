@@ -6315,6 +6315,7 @@ $('q-options')&&($('q-options').addEventListener('keydown',e=>{
 }));
 $('s10-rules')&&($('s10-rules').addEventListener('click',e=>{
   if(!e.target.closest||!e.target.closest('#s10-stand'))return;
+  if(!isS10())return;                 // the button outlives the game that drew it
   const here=S.players.find(p=>!p.pid&&p.id===Q.turn&&Q.state&&Q.state[p.id]==='in');
   if(here)s10Stand(here);
 }));
