@@ -19,7 +19,13 @@ setTimeout(()=>{
     if(!hidden('eras'))probs.push(g+': the record years are still on screen');
     if(!hidden('genres'))probs.push(g+': the genre picker is still on screen');
     if(!hidden('teamsize'))probs.push(g+': the team size is still on screen');
-    if(hidden('cats'))probs.push(g+': no topics');
+    // Whether a game has topics is one question — ballot().length — and
+    // writing the answer out by hand is how three test files came to insist
+    // that Picture Guess still had them after it stopped.
+    const wantTopics=w.eval('ballot().length>0');
+    if(hidden('cats')!==!wantTopics)
+      probs.push(g+': the topics box is '+(hidden('cats')?'hidden':'shown')
+        +' but the ballot has '+w.eval('ballot().length')+' topics');
     if(hidden('lang'))probs.push(g+': no language picker');
     const lab=$('length').previousElementSibling.textContent.toLowerCase();
     if(lab.indexOf(word)<0)probs.push(g+': the length says "'+lab+'", expected '+word);
