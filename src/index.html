@@ -1992,6 +1992,17 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 /* Closest Wins is the only game whose answers are not on the screen, so the
    room needs telling where to put them. Bigger and brighter than the counter
    under it: it is an instruction, not a status. */
+/* the scoreboard a phone shows once the number is out */
+#pad-quiz.padnear{display:flex;flex-direction:column;gap:5px;padding:4px 0}
+.pnrow{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:baseline;
+  padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08)}
+.pnrow .pnn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pnrow .png{font-family:var(--mono);font-weight:700}
+.pnrow .pnd{font-family:var(--mono);font-size:.85em;opacity:.7;min-width:4.5em;text-align:right}
+.pnrow.win{border-color:rgba(73,194,123,.55);background:rgba(73,194,123,.12)}
+.pnrow.win .png{color:#8FE3B0}
+.pnrow.me{box-shadow:inset 0 0 0 2px rgba(255,255,255,.3)}
 .soundbtn.wants{background:var(--red,#E03E52);color:#fff;border-color:transparent;
   font-weight:700;animation:soundpulse 1.6s ease-in-out infinite}
 @keyframes soundpulse{0%,100%{opacity:1}50%{opacity:.62}}
@@ -7276,12 +7287,32 @@ function drawPadNear(st,me){
   const rl=$('pad-run');
   if(rl){
     rl.hidden=false;
-    const mine=(me&&me.guess!==undefined)?me.guess:padNear;
     rl.textContent=st.revealed
       ? T('near_answer')+' '+fmtNum(st.right)
       : locked ? T('near_mine',{n:fmtNum(padNear)})
       : T('near_type');
   }
+  // Everybody's guess, on everybody's phone. The television has always shown
+  // this and the phone has always had the numbers to draw it — it simply never
+  // did, so the person holding it saw their own guess and nothing else, which
+  // is the half of this game that is worth watching.
+  if(!st.revealed)return;
+  const right=Number(st.right);
+  const rows=(st.seats||[])
+    .filter(p=>p.guess!==undefined&&p.guess!==null)
+    .map(p=>({p:p,g:Number(p.guess),d:Math.abs(Number(p.guess)-right)}))
+    .sort((x,y)=>x.d-y.d);
+  if(!rows.length)return;
+  const best=rows[0].d;
+  box.hidden=false;
+  box.className='padnear';
+  box.dataset.key='near'+st.round;
+  box.innerHTML=rows.map(o=>
+    '<div class="pnrow'+(o.d===best?' win':'')+(o.p.id===me.id?' me':'')+'">'
+    +'<span class="pnn">'+esc(o.p.name||'')+'</span>'
+    +'<span class="png">'+esc(fmtNum(o.g))+'</span>'
+    +'<span class="pnd">'+(o.d===0?esc(T('near_exact')):'\u00b1'+esc(fmtNum(o.d)))+'</span>'
+    +'</div>').join('');
 }
 function drawPadFinger(st,me){
   const box=$('pad-quiz');if(!box)return;
