@@ -1358,7 +1358,8 @@ input:focus,.ytin:focus,.codein:focus{border-color:#FF5C72;
 /* on anything with room, the whole screen is one page: the picture takes
    whatever the question, the answers and the scoreboard have not used */
 @media (min-width:860px) and (min-height:620px){
-  #s-quiz.on{display:flex;flex-direction:column;height:calc(100vh - 92px)}
+  #s-quiz.on{display:flex;flex-direction:column;justify-content:center;
+    height:calc(100vh - 92px)}
   #s-quiz .stageset.big{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
   #s-quiz .videowall{flex:1 1 auto;height:auto;min-height:0}
   #s-quiz .screenwrap{height:100%;width:auto;max-width:100%;max-height:100%}
@@ -1740,10 +1741,15 @@ body:has(#s-chair.on) .striproundwrap{display:none}
    picture; without one it is a large black rectangle with words floating
    in the middle of it, so it loses its border and its reserved height.  */
 #s-quiz .videowall:not(:has(.qpic)) .vw-screen{border:0;box-shadow:none;background:none}
-#s-quiz .videowall:not(:has(.qpic)){flex:0 1 auto;
-  height:clamp(150px,30vh,340px);min-height:0;margin-bottom:clamp(6px,1vh,16px)}
+#s-quiz .videowall:not(:has(.qpic)){flex:0 0 auto !important;
+  height:clamp(150px,28vh,320px) !important;min-height:0 !important;
+  margin-bottom:clamp(8px,1.6vh,22px)}
+#s-quiz .videowall:not(:has(.qpic)) .screenwrap{height:100%;width:100%;max-width:none;
+  aspect-ratio:auto;display:block;margin:0}
 #s-quiz .videowall:not(:has(.qpic)) .qasking{font-size:clamp(22px,3vw,54px);
-  padding:clamp(10px,2.4vh,34px) 2vw;max-width:34ch;margin:0 auto}
+  padding:clamp(8px,1.6vh,24px) 3vw;max-width:min(1200px,94%);margin:0 auto;overflow:hidden}
+#s-quiz .videowall:not(:has(.qpic)) .qasking.long{font-size:clamp(20px,2.4vw,44px)}
+#s-quiz .videowall:not(:has(.qpic)) .qasking.xlong{font-size:clamp(18px,2vw,36px)}
 /* ---- Smart Ten: ten candidates, and whoever took one ------------------ */
 #q-options .qbtn.s10{min-height:clamp(44px,6.2vh,74px);font-size:clamp(14px,1.3vw,25px);
   justify-content:space-between}
@@ -2018,8 +2024,8 @@ body:has(#s-chair.on) .striproundwrap{display:none}
               <rect x="3.5" y="13" width="7" height="7" rx="1.6"/><rect x="13.5" y="13" width="7" height="7" rx="1.6"/>
               <path d="M5.6 7.4l1.3 1.3 2.1-2.4"/></svg></span>
             <span class="gbody">
-              <span class="gtag">Press your luck</span>
-              <span class="gname">Smart Ten</span>
+              <span class="gtag">How far do you dare</span>
+              <span class="gname">The Short List</span>
               <span class="gdesc">One question, ten candidates, and only some of them are true. Take one you are sure of and take another &mdash; each is worth more than the last. One wrong pick and the whole pot goes.</span>
               <span class="gmeta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
@@ -3874,7 +3880,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 08:46';
+const BUILD='07.11. 08:56';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -6342,6 +6348,7 @@ function quizNext(){
   showQuizVideo(videoFor(Q.current));
   drawQuiz();publishStage();
 }
+const askSize=t=>{const n=(t||'').length;return n>110?' xlong':n>62?' long':''};
 function showQuizQuestion(){
   const box=$('q-screen');if(!box)return;
   const pic=QIMG[String(Q.qid)];
@@ -6356,7 +6363,7 @@ function showQuizQuestion(){
       ? '<div class="qanswer"><div class="qa-right">'+esc(Q.current[2])+'</div>'
         +(Q.current[6]?'<div class="qa-note">'+esc(Q.current[6])+'</div>':'')+'</div>'
       : bare ? ''
-      : '<div class="qasking">'+esc(Q.current[1])+'</div>')
+      : '<div class="qasking'+askSize(Q.current[1])+'">'+esc(Q.current[1])+'</div>')
     +credit;
   // fade it in once the browser has it, so a slow picture never flashes half-drawn
   const el=box.querySelector('.qpic'), bg=box.querySelector('.qpicbg');
@@ -6691,7 +6698,7 @@ function dirStart(){
   DIR.timer=setInterval(()=>{drawRooms()},10000);
 }
 const GAMELABEL={chair:'The Chair',artist:'Name the Artist',trivia:'Quiz',picture:'Picture Guess',
-  tf:'True or False',s10:'Smart Ten'};
+  tf:'True or False',s10:'The Short List'};
 const GAMEICON={
   chair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4.6h10v7H7z"/><path d="M5.5 11.6h13v3.2h-13z"/><path d="M7 14.8V20M17 14.8V20"/></svg>',
   artist:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>',
@@ -7462,7 +7469,7 @@ $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
   sendAct('answer',myPick);
 }));
 const METALABEL={chair:'blind signings',artist:'name the artist',trivia:'general knowledge',
-  picture:'picture guess',tf:'true or false',s10:'smart ten'};
+  picture:'picture guess',tf:'true or false',s10:'the short list'};
 let padLastNext='';
 function drawPad(){
   const st=PARTY.stage,me=mySeat();
