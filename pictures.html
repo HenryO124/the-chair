@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kuvat v1 — ota tai hylkää</title>
+<style>
+:root{--bg:#120a0d;--ink:#F3EBE6;--muted:#9c8a8a;--red:#E03E52;--good:#49C27B;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:radial-gradient(120% 90% at 50% 0%,#241016 0%,var(--bg) 60%);color:var(--ink);
+  font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  display:flex;flex-direction:column;min-height:100svh;padding:0 16px;-webkit-text-size-adjust:100%}
+header{display:flex;align-items:center;gap:12px;padding:14px 0 10px;flex:0 0 auto}
+header b{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.bar{flex:1 1 auto;height:6px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--red);width:0;transition:width .25s}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px;white-space:nowrap}
+#ver{color:var(--good);border:1px solid rgba(73,194,123,.4);border-radius:99px;padding:1px 8px;font-size:12px}
+
+main{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:12px;padding:6px 0;min-height:0}
+/* The picture is the decision, so it gets the room. Contained, not cropped:
+   a sculpture cropped to its middle is a different question. */
+.shot{width:100%;flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;
+  background:#1a0f14;border-radius:14px;overflow:hidden;position:relative}
+.shot img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.shot .load{position:absolute;color:var(--muted);font-size:14px}
+.ask{font-size:clamp(15px,3.4vw,19px);color:var(--muted);margin:0}
+.ans{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0}
+.ans span{border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:clamp(13px,3vw,16px)}
+.ans .ok{border-color:rgba(73,194,123,.55);color:#A8EBC4;font-weight:700}
+.credit{font-size:11px;color:var(--muted);opacity:.75;max-width:min(92vw,760px);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.credit a{color:inherit}
+
+footer{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  padding:12px 0 calc(14px + env(safe-area-inset-bottom))}
+footer button{padding:18px 10px;border-radius:14px;border:1px solid var(--line);
+  font-size:19px;font-weight:700;cursor:pointer;background:#1d1116;color:var(--ink);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+#no{border-color:rgba(224,62,82,.45);color:#FFB3BC}
+#yes{border-color:rgba(73,194,123,.5);color:#A8EBC4}
+footer button:active{transform:translateY(1px)}
+.keys{grid-column:1/-1;text-align:center;font-size:12px;color:var(--muted)}
+.linky{background:none;border:0;color:var(--red);font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+
+#done{display:none;flex:1 1 auto;flex-direction:column;justify-content:center;gap:14px;padding:20px 0}
+#done h2{margin:0;font-size:24px}
+#done p{margin:0;color:var(--muted)}
+textarea{width:100%;height:28vh;background:#1a1016;color:var(--ink);border:1px solid var(--line);
+  border-radius:10px;padding:10px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row button{flex:1 1 140px;padding:14px;border-radius:12px;border:1px solid var(--line);
+  background:#1d1116;color:var(--ink);font-size:15px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<header>
+  <b>Kuvat</b>
+  <div class="bar"><i id="pbar"></i></div>
+  <span class="count" id="pnum">…</span>
+  <span class="count" id="ver">v1</span>
+</header>
+
+<main id="card">
+  <div class="shot"><span class="load" id="load">Ladataan kuvaa…</span><img id="shot" alt=""></div>
+  <p class="ask" id="ask"></p>
+  <p class="ans" id="ans"></p>
+  <p class="credit" id="credit"></p>
+</main>
+
+<div id="done">
+  <h2 id="dtitle">Valmis</h2>
+  <p id="tally"></p>
+  <div class="row">
+    <button id="copy">Kopioi tulos</button>
+    <button id="back">Jatka kuvia</button>
+    <button id="again">Aloita alusta</button>
+  </div>
+  <textarea id="out" readonly></textarea>
+</div>
+
+<footer>
+  <button id="no">Hylkää</button>
+  <button id="yes">Ota</button>
+  <div class="keys">← hylkää · → ota · <button id="bail" class="linky">lopeta ja kopioi tulos</button></div>
+</footer>
+
+<script>
+/* ---------------------------------------------------------------------------
+   One picture, one decision.
+
+   Thirty candidates arrived for Picture Guess. The pictures live on Wikimedia
+   Commons, which this machine cannot reach — so nothing here is judged by a
+   machine, and nothing is ranked. Each picture is shown at the size a person
+   can actually look at, with the question the television would ask and the
+   answer underneath, and the only thing asked is: does this work on a
+   television in a living room?
+
+   Two were taken out before anyone had to look at them: a swab of earwax, and
+   a depiction of the Prophet Muhammad.
+
+   A picture that will not load is not a decision either: it is marked as
+   unreachable and skipped, and listed at the end.
+--------------------------------------------------------------------------- */
+var SAVE='thechair.pictures.v1';
+var $=function(id){return document.getElementById(id)};
+var CAND=[],at=0,decided={},dead=[],cur=null;
+
+try{var st=JSON.parse(localStorage.getItem(SAVE)||'{}');
+    decided=st.decided||{};dead=st.dead||[]}catch(e){}
+function save(){try{localStorage.setItem(SAVE,JSON.stringify({decided:decided,dead:dead}))}catch(e){}}
+
+var ASK={Instrument:'Mikä soitin tämä on?',Object:'Mikä esine tämä on?',
+         Sculpture:'Mikä veistos tämä on?',Artwork:'Mikä teos tämä on?'};
+
+function progress(){
+  var n=Object.keys(decided).length+dead.length;
+  $('pbar').style.width=(100*n/Math.max(1,CAND.length))+'%';
+  $('pnum').textContent=n+' / '+CAND.length;
+}
+
+function show(){
+  while(at<CAND.length&&(CAND[at].id in decided))at++;
+  if(at>=CAND.length)return finish(false);
+  var mine=CAND[at];cur=mine;
+  $('ask').textContent=ASK[mine.cat]||mine.catFi;
+  // the correct one is marked: this is not a quiz, it is a check that the
+  // picture and the answer belong together
+  $('ans').innerHTML='<span class="ok">'+esc(mine.a)+'</span>'
+    +mine.w.map(function(x){return '<span>'+esc(x)+'</span>'}).join('');
+  $('credit').innerHTML=mine.page
+    ? '<a href="'+esc(mine.page)+'" target="_blank" rel="noopener">'+esc(mine.c||'Wikimedia Commons')+'</a>'
+    : esc(mine.c||'');
+  $('load').textContent='Ladataan kuvaa…';
+  $('load').style.display='';
+  var img=$('shot');
+  img.removeAttribute('src');
+  img.onload=function(){if(cur===mine)$('load').style.display='none'};
+  img.onerror=function(){
+    if(cur!==mine)return;
+    // nothing to look at is nothing to decide
+    if(dead.indexOf(mine.id)<0)dead.push(mine.id);
+    save();at++;show();
+  };
+  img.src=mine.u;
+  // a picture that never answers at all is as dead as one that errors
+  setTimeout(function(){
+    if(cur===mine&&!img.complete){img.onerror&&img.onerror()}
+  },15000);
+  progress();
+}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+function decide(ok){
+  if(!cur)return;
+  decided[cur.id]=ok?1:0;
+  save();at++;show();
+}
+
+function finish(early){
+  $('card').style.display='none';
+  document.querySelector('footer').style.display='none';
+  $('done').style.display='flex';
+  var keys=Object.keys(decided),took=keys.filter(function(k){return decided[k]===1});
+  var left=CAND.length-keys.length-dead.length;
+  $('dtitle').textContent=early?'Kesken, ja se riittää':'Valmis';
+  $('tally').textContent=took.length+' otettu, '+(keys.length-took.length)+' hylätty'
+    +(dead.length?', '+dead.length+' kuvaa ei latautunut':'')
+    +(left>0?'. '+left+' vielä käymättä — päätökset ovat tallessa.':'.');
+  $('out').value=JSON.stringify({take:took,dead:dead});
+  progress();
+}
+
+$('yes').onclick=function(){decide(true)};
+$('no').onclick=function(){decide(false)};
+$('bail').onclick=function(){finish(true)};
+$('back').onclick=function(){
+  $('done').style.display='none';$('card').style.display='flex';
+  document.querySelector('footer').style.display='grid';show();
+};
+$('again').onclick=function(){
+  if(!confirm('Nollataanko kaikki päätökset?'))return;
+  decided={};dead=[];at=0;save();$('back').click();
+};
+$('copy').onclick=function(){
+  $('out').select();
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  if(!ok&&navigator.clipboard)navigator.clipboard.writeText($('out').value);
+  $('copy').textContent='Kopioitu';
+  setTimeout(function(){$('copy').textContent='Kopioi tulos'},1500);
+};
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight')decide(true);
+  else if(e.key==='ArrowLeft')decide(false);
+});
+
+fetch('pic_candidates.json?v='+Date.now()).then(function(r){
+  if(!r.ok)throw new Error('HTTP '+r.status);return r.json();
+}).then(function(d){
+  CAND=d;progress();show();
+},function(e){
+  $('load').textContent='Ehdokkaita ei saatu: '+(e.message||e);
+});
+</script>
+</body>
+</html>
