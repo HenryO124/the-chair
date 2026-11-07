@@ -1,0 +1,40 @@
+{
+  "batch": "batch_odd_en.json / batch_odd_fi.json",
+  "seam": "Oddities with a cause: a strange fact plus a one-sentence reason. Nordic and Finnish material weighted heavily.",
+  "note": "Swedish slots hold the Finnish string: recorded debt, not a translation. A Wikipedia mirror at cavac.at appeared in several search result lists and was deliberately never fetched.",
+  "sources": [
+    {"page": "Market (island)", "url": "https://en.wikipedia.org/wiki/M%C3%A4rket", "used_for": "Geography: lighthouse on the wrong side, the 1985 S-shaped border, drilled border markers, land uplift"},
+    {"page": "List of enclaves and exclaves", "url": "https://en.wikipedia.org/wiki/List_of_enclaves_and_exclaves", "used_for": "Geography: Madha/Nahwa, Trevino, Dahagram-Angarpota, Bremen, Grimacco/Drenchia, Fujiyoshida, Adygea, Fahr Abbey, Peanut Hole, Ormidhia, Sandefjord, Ulaanbaatar, Quitasueno, Ellis Island"},
+    {"page": "Whisky War", "url": "https://en.wikipedia.org/wiki/Whisky_War", "used_for": "Geography and History: Hans Island, the 2022 division, the first Canada-Denmark land border"},
+    {"page": "Aland", "url": "https://en.wikipedia.org/wiki/%C3%85land", "used_for": "Geography and Everyday: demilitarisation, conscription exemption, .ax, VAT exemption and the ferries, right of domicile, 1919 petition"},
+    {"page": "Post-glacial rebound", "url": "https://en.wikipedia.org/wiki/Post-glacial_rebound", "used_for": "Geography: 7 km2 a year, Pielisjoki, Malaren, Gulf of Bothnia uplift rate, Tornio and Pori harbours, ownership of new land"},
+    {"page": "Yle: Norwegians want to give Finland a mountain", "url": "https://yle.fi/a/3-8542327", "used_for": "Geography: Halti, Finland's highest point is not a summit"},
+    {"page": "Svalbard Treaty", "url": "https://en.wikipedia.org/wiki/Svalbard_Treaty", "used_for": "History: visa-free archipelago, no monopolies, taxes spent only locally, Russian settlements, Kingdom of Hejaz, 1925 renaming"},
+    {"page": "List of shortest-reigning monarchs", "url": "https://en.wikipedia.org/wiki/List_of_shortest-reigning_monarchs", "used_for": "History: Louis XIX, Luis Filipe, Jane, Edward V, Michael II, Pedro IV, Hongxian"},
+    {"page": "Monarchy of Finland", "url": "https://en.wikipedia.org/wiki/Monarchy_of_Finland", "used_for": "History: the 1918 election of Frederick Charles of Hesse, the 1742 Turku proposal, Charles IX's title"},
+    {"page": "Swedish calendar", "url": "https://en.wikipedia.org/wiki/Swedish_calendar", "used_for": "History: 30 February 1712, the 367-day year, the 1753 switch, Finland's Easter of 1845"},
+    {"page": "Three Hundred and Thirty Five Years' War", "url": "https://en.wikipedia.org/wiki/Three_Hundred_and_Thirty_Five_Years%27_War", "used_for": "History: the bloodless war with the Isles of Scilly, peace in 1986"},
+    {"page": "Dagen H", "url": "https://en.wikipedia.org/wiki/Dagen_H", "used_for": "History and Everyday: the 1955 referendum, the switch of 3 September 1967, trams, buses, headlamps, accident figures"},
+    {"page": "List of examples of Stigler's law", "url": "https://en.wikipedia.org/wiki/List_of_examples_of_Stigler%27s_law", "used_for": "Science: around thirty things named after the wrong person, including the Liebig condenser and Gadolin, and Reutersvard's triangle"},
+    {"page": "List of chemical element name etymologies", "url": "https://en.wikipedia.org/wiki/List_of_chemical_element_name_etymologies", "used_for": "Science: thorium, hafnium, and the symbols Na, K and W"},
+    {"page": "Nobel Prize controversies", "url": "https://en.wikipedia.org/wiki/Nobel_Prize_controversies", "used_for": "Science and History: no mathematics prize, the three-person limit, Domagk, Pasternak, Sartre, Ossietzky"},
+    {"page": "List of discoveries influenced by chance circumstances", "url": "https://en.wikipedia.org/wiki/List_of_discoveries_influenced_by_chance_circumstances", "used_for": "Science: Nobel's cut finger, Pasteur's aged culture and windowsill, Newton and the plague closure. Thin page: most rows carry no explanation."},
+    {"page": "List of incomplete novels finished by other authors", "url": "https://en.wikipedia.org/wiki/List_of_incomplete_novels_finished_by_other_authors", "used_for": "Arts & culture: eleven works finished by somebody else"},
+    {"page": "List of pen names", "url": "https://en.wikipedia.org/wiki/List_of_pen_names", "used_for": "Arts & culture: Finnish and Nordic pen names plus the famous international ones"},
+    {"page": "Finlandia", "url": "https://en.wikipedia.org/wiki/Finlandia", "used_for": "Arts & culture: the disguised titles under Russian censorship, the Press Celebrations of 1899, Koskenniemi's words, Biafra"},
+    {"page": "List of countries that have the same national anthem", "url": "https://en.wikipedia.org/wiki/List_of_countries_that_have_the_same_national_anthem", "used_for": "Arts & culture: Finland and Estonia, Liechtenstein, Greece and Cyprus"},
+    {"page": "List of books banned by governments", "url": "https://en.wikipedia.org/wiki/List_of_books_banned_by_governments", "used_for": "Arts & culture: bans with a traceable reason and the ways round them"},
+    {"page": "List of Olympic Games scandals, controversies and incidents", "url": "https://en.wikipedia.org/wiki/List_of_Olympic_Games_scandals,_controversies_and_incidents", "used_for": "Sport: the whole category, pre-2000 incidents only, with the Finnish and Nordic cases"},
+    {"page": "List of non-standard dates", "url": "https://en.wikipedia.org/wiki/List_of_non-standard_dates", "used_for": "Everyday: May 35, July 36, 0 January, the doubled 24 February, 32 December 1980, the spreadsheet leap-year bug"},
+    {"page": "Obsolete Finnish units of measurement", "url": "https://en.wikipedia.org/wiki/Obsolete_Finnish_units_of_measurement", "used_for": "Everyday: markka as a weight, paivamatka, jumpru, luoti, kerpo, puntti, motti, riisi, virsta"},
+    {"page": "Finnish sauna", "url": "https://en.wikipedia.org/wiki/Finnish_sauna", "used_for": "Everyday: smoke sauna, loyly, UNESCO 2020, the chlorine rule, the Pyhasalmi mine sauna, Parliament House, peacekeepers"},
+    {"page": "Track gauge in Europe", "url": "https://en.wikipedia.org/wiki/Track_gauge_in_Europe", "used_for": "Everyday: Finland's 1524 mm, Russia's 1520 mm and why wheels still fit, the Iberian gauge"}
+  ],
+  "rejected_pages": [
+    {"page": "List of common misconceptions", "why": "has become an index of other lists; no entries on the page itself"},
+    {"page": "List of misnomers", "why": "no clean Wikipedia list reachable; search returned only listicles"},
+    {"page": "List of discoveries influenced by chance circumstances", "why": "kept, but only four of its 33 rows carry an explanation worth telling"},
+    {"page": "Monkey tail", "why": "does not in fact list the @ sign's names in other languages"},
+    {"page": "List of countries that have the same national anthem", "why": "kept, but gives no reasons at all; the reasons here come from the Finlandia and Maamme material"}
+  ]
+}

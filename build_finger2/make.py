@@ -49,7 +49,7 @@ mine_fi = [toks(r[2]) for r in rows]
 ex_en = [toks(r[1]) for r in have]
 ex_fi = [toks(r[2]) for r in have]
 
-TH = 0.42
+TH = 0.34
 for i, r in enumerate(rows):
     for j, h in enumerate(have):
         s = max(jac(mine_en[i], ex_en[j]), jac(mine_fi[i], ex_fi[j]))
