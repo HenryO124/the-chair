@@ -11,8 +11,9 @@ ALL="qrflow home2 settings tf s10 count dress route cap2 again bank leak tap2 sh
 LIST="${*:-$ALL}"
 pass=0; fail=0; failed=""
 for t in $LIST; do
-  out=$(timeout 300 node "tests/$t.js" 2>&1 | grep -v 'Not implemented')
-  if [ $? -eq 0 ]; then
+  out=$(timeout 300 node "tests/$t.js" 2>&1); rc=$?
+  out=$(printf '%s\n' "$out" | grep -v 'Not implemented')
+  if [ $rc -eq 0 ]; then
     pass=$((pass+1)); echo "  ✓ $t"
   else
     fail=$((fail+1)); failed="$failed $t"

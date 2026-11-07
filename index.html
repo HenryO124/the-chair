@@ -1907,6 +1907,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
       <button type="button" data-g="chair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4.6h10v7H7z"/><path d="M5.5 11.6h13v3.2h-13z"/><path d="M7 14.8V20M17 14.8V20"/></svg>The Chair</button>
       <button type="button" data-g="trivia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>Quiz</button>
       <button type="button" data-g="picture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>Picture Guess</button>
+      <button type="button" data-g="s10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="4" width="7" height="7" rx="1.6"/><rect x="13.5" y="4" width="7" height="7" rx="1.6"/><rect x="3.5" y="13" width="7" height="7" rx="1.6"/><rect x="13.5" y="13" width="7" height="7" rx="1.6"/></svg>The Short List</button>
       <button type="button" data-g="tf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 8.5h7M7 8.5V17"/><path d="M14 17V8.5h5.5M14 13h4.6"/></svg>True or False</button>
       <button type="button" data-g="artist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>Name the Artist</button>
     </div>
@@ -2201,7 +2202,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 <div class="field-label">Who is at this screen</div>
     <div id="players"></div>
     <input type="file" id="row-file" accept="image/*" style="display:none">
-    <button class="btn ghost" id="add">Add another coach on this screen</button>
+    <button class="btn ghost" id="add">Add another player on this screen</button>
     <p class="pool thin" id="start-hint"></p>
     <p class="pool thin">Everyone else joins from their own phone in the next step.</p>
         <div class="field-label">Friends</div>
@@ -2876,12 +2877,14 @@ function validate(){
 function updateStartState(){
   let empty=false;
   try{
-    empty=isAsking()
+    empty=(isAsking()||isS10())
       ? catBank().length===0                  // a quiz with no questions is not a game
       : S.genre!=='Random'&&!!S.era&&pool().length===0;
   }
   catch(e){return}      // the form draws before the catalogue is in place
   try{$('lobby-start').disabled=empty}catch(e){}
+  // the visible button forwards to the hidden one: if that is dead, say so
+  try{$('to-rules').disabled=empty}catch(e){}
 }
 S.players=[{name:'',icon:0}];
 try{const f=localStorage.getItem('thechair.myface');if(f)S.players[0].photo=f}catch(e){}
@@ -2926,7 +2929,7 @@ $('cats')&&($('cats').onclick=e=>{
    means everybody is happy with everything. --------------------------- */
 const VOTES={};                    // pid -> [topic key, ...]
 function ballot(){
-  if(S.game==='trivia')return catKeys();
+  if(S.game==='trivia'||S.game==='tf'||S.game==='s10')return catKeys();
   if(S.game==='picture')return ['City','Landmark','Painting','Nature'];
   return [];
 }
@@ -3866,7 +3869,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 08:33';
+const BUILD='07.11. 08:42';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -3890,7 +3893,7 @@ function mkPlayer(name,icon,id,pid,photo){
   return {name:name,icon:(icon===undefined||icon===null?-1:icon),team:[],
           blockUsed:false,passed:false,id:id,pid:pid||'',photo:photo||''};
 }
-const shownName=p=>((p&&p.name||'').trim())||('Coach '+(((p&&p.id)|0)+1));
+const shownName=p=>((p&&p.name||'').trim())||('Player '+(((p&&p.id)|0)+1));
 function nextPlayerId(){return S.players.reduce((n,p)=>Math.max(n,p.id+1),0)}
 function myPid(){
   let v='';
@@ -6241,6 +6244,8 @@ function quizStart(){
   quizNext();
 }
 function s10Next(){
+  try{$('q-screen').innerHTML='';$('q-curtain').textContent='';
+    $('q-curtain').classList.add('open');$('q-hold').hidden=true}catch(e){}
   Q.round++;
   Q.current=Q.deck[Q.round-1];
   Q.revealed=false;
@@ -6253,6 +6258,9 @@ function s10Next(){
    one you took. Wrong: the round is over for you and the pot goes with it. */
 function s10Take(p,i){
   if(!isS10()||Q.revealed)return;
+  if(Q.state&&!(p.id in Q.state)){      // walked in mid-round: deal them in
+    Q.state[p.id]='in';Q.pot[p.id]=0;Q.picks[p.id]=0;
+  }
   const c=Q.cands&&Q.cands[i];
   if(!c||c.by!==null)return;
   if(Q.state[p.id]!=='in')return;
@@ -6278,11 +6286,15 @@ function s10RoundOver(){
 }
 function s10Reveal(){
   Q.revealed=true;
+  // the line that settles the argument belongs on the screen, not in the data
+  try{$('q-screen').innerHTML='<div class="qanswer"><div class="qa-note">'
+    +esc(Q.current[2]||'')+'</div></div>'}catch(e){}
   // anyone still standing when the round ends keeps what they had
   S.players.forEach(p=>{
     if(Q.state[p.id]==='in'){p.score=(p.score||0)+(Q.pot[p.id]||0);Q.state[p.id]='banked'}
   });
-  drawQuiz();publishStage();
+  drawQuiz();
+  startNextCount(6);         // the room reads the explanation, then it moves on
 }
 function quizNext(){
   stopNextCount();
@@ -6426,7 +6438,7 @@ function drawNextCount(){
 function quizFinish(){
   Q.on=false;stopNextCount();
   try{$('final-eyebrow').textContent=isPicture()?'Sharpest eye':isTF()?'Best nose for a lie'
-    :isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
+    :isS10()?'Coolest nerve':isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
   const box=$('q-screen');if(box)box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
   const best=[...S.players].sort((a,b)=>(b.score||0)-(a.score||0));
   const top=best[0]?(best[0].score||0):0;
@@ -6434,14 +6446,16 @@ function quizFinish(){
   $('champ').textContent=won.length>1?'A tie':shownName(won[0]||{});
   // out of what was actually played, not what was planned: the host may end it early
   // finished rounds only: the one still on screen when the host stops does not count
-  const played=Math.max(Q.revealed?Q.round:Q.round-1,0), outOf=played*15;
-  const word=isPicture()?'picture':isTrivia()?'question':'record';
+  const played=Math.max(Q.revealed?Q.round:Q.round-1,0);
+  const outOf=(isPicture()||isTrivia())?played*15:0;   // only where every question pays the same
+  const word=isPicture()?'picture':isTF()?'statement'
+    :(isTrivia()||isS10())?'question':'record';
   const names=won.map(shownName);
   const tied=names.length<=2?names.join(' and ')
     :names.slice(0,-1).join(', ')+' and '+names[names.length-1];
   $('champ-sub').textContent=(won.length>1
     ? tied+' all finished on '+top+' points'
-    : top+' points out of '+outOf)
+    : outOf?top+' points out of '+outOf:top+' points')
     +' · '+played+' '+word+(played===1?'':'s')+' played.';
   $('final-board').innerHTML='<div class="board">'+best.map((p,i)=>
     '<div class="brow'+(i===0&&top>0?' lead':'')+'"><span class="bn">'+(i+1)+'. '+esc(shownName(p))+'</span>'
@@ -6475,7 +6489,10 @@ function drawQuiz(){
 }
 function drawS10(){
   if(!Q.current)return;
-  $('q-count').textContent='Question '+Q.round+' of '+Q.deck.length;
+  const tot=(Q.cands||[]).filter(c=>c.ok).length;
+  const left=(Q.cands||[]).filter(c=>c.ok&&c.by===null).length;
+  $('q-count').textContent='Question '+Q.round+' of '+Q.deck.length
+    +' \u00b7 '+tot+' of these 10 are true'+(Q.revealed?'':' \u00b7 '+left+' still out there');
   $('q-ask').textContent=Q.current[1];
   const nameOf=id=>{const p=S.players.find(x=>x.id===id);return p?shownName(p):''};
   $('q-options').innerHTML=(Q.cands||[]).map((c,i)=>{
@@ -7000,7 +7017,8 @@ function s10State(phase){
     ask:Q.current?Q.current[1]:'',cat:Q.current?Q.current[0]:'',
     note:(Q.revealed&&Q.current)?Q.current[2]:'',
     vote:ballotState(),setup:setupLine(),remote:!!S.remote,vid:'',pic:'',
-    cands:(Q.cands||[]).map(c=>[c.t,c.by===null?0:(c.ok?1:2)]),
+    // 3: nobody took it and it was true, so the phone paints it green as well
+    cands:(Q.cands||[]).map(c=>[c.t,c.by!==null?(c.ok?1:2):(Q.revealed&&c.ok?3:0)]),
     options:[],correct:-1,
     seats:S.players.map(p=>({
       id:p.id,pid:p.pid||'',name:shownName(p),icon:p.icon,photo:p.photo||'',
@@ -7017,7 +7035,7 @@ function stageState(){
   const phase=inPrep()?'lobby'
     :screenNow()==='s-final'?'over'
     :turnsOpen?'live':revealed?'locked':'between';
-  if((S.game==='artist'||isAsking())&&!inPrep())
+  if((S.game==='artist'||isAsking()||isS10())&&!inPrep())
     return quizState(phase);
   return {vote:ballotState(),setup:setupLine(),remote:!!S.remote,v:1,b:BUILD,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
     blockTarget:(blockTarget===null?null:blockTarget),
@@ -7307,15 +7325,16 @@ function drawPadS10(st,me){
   const btns=box.querySelectorAll('button[data-pick]');
   (st.cands||[]).forEach((c,i)=>{
     const b=btns[i];if(!b)return;
-    b.className='qbtn'+(c[1]===1?' right':c[1]===2?' missed':(st.revealed?' wrong':''));
+    b.className='qbtn'+(c[1]===1||c[1]===3?' right':c[1]===2?' missed':(st.revealed?' wrong':''));
     b.disabled=!!(c[1]||st.revealed||mine!=='in');
   });
   const rl=$('pad-run');
   if(rl){
     rl.hidden=false;
-    rl.textContent=mine==='out'?'Out of this round \u2014 the pot is gone'
-      :mine==='banked'?'Banked '+pot+' \u2014 well out of it'
-      :pot?'Pot '+pot+' \u00b7 the next one is worth '+(10*(picks+1)):'Pick one you are sure of';
+    rl.textContent=mine==='out'?'Wrong \u2014 the pot is gone. Back next question.'
+      :mine==='banked'?'Banked '+pot+'. Safe.'
+      :pot?'Pot '+pot+' \u00b7 next one +'+(10*(picks+1))+' \u00b7 a wrong one takes it all'
+      :'Pick one you are sure of';
   }
   const bank=$('pad-bank');
   if(bank){
@@ -7381,7 +7400,10 @@ function drawPadQuiz(st,me){
       $('pad-seats').hidden=true;$('pad-leave').textContent='Leave the party';}catch(e){}
     return;
   }
-  if(!me){                      // still typing a name: nothing here is yours yet
+  if(!me){                      // at the door: say so rather than show a dead question
+    try{$('pad-state').textContent=PARTY.code
+      ? 'The host knows you are here. They can let you in at the next break.'
+      : 'Tell them who you are to take a chair.'}catch(e){}
     box.hidden=true;box.innerHTML='';box.dataset.key='';
     const pp2=$('pad-pic');if(pp2){pp2.hidden=true;pp2.dataset.u=''}
     return;
@@ -7595,7 +7617,7 @@ $('lobby-back')&&($('lobby-back').onclick=()=>show('s-setup'));
 $('to-rules')&&($('to-rules').onclick=()=>{try{$('lobby-start').click()}catch(e){}});
 function dressRules(){
   try{dressWhere()}catch(e){}
-  const triv=S.game==='trivia';
+  const triv=S.game==='trivia'||S.game==='tf'||S.game==='s10';   // written questions
   const pic=S.game==='picture';
   const quiz=S.game==='artist'||triv||pic;   // none of them build teams
   // the era and genre filters belong to the record collection, not to trivia
@@ -7612,10 +7634,10 @@ function dressRules(){
     : 'Nobody has to agree with the host. Argue about the years, settle on a genre, then go.'}catch(e){}
   // the topics belong to the quiz, the way era and genre belong to the records
   ['cats','cats-label','cats-note'].forEach(id=>{const e=$(id);if(e)e.hidden=!(triv||pic)});
-  ['lang','lang-label'].forEach(id=>{const e=$(id);if(e)e.hidden=!triv});
+  ['lang','lang-label'].forEach(id=>{const e=$(id);if(e)e.hidden=!(triv||pic)});
   try{$('cats-label').textContent=S.game==='picture'?'Picture topics':'Topics'}catch(e){}
   if(triv||pic)try{
-    if(triv)segPick('lang','g',S.lang);
+    segPick('lang','g',S.lang);
     drawCats();
   }catch(e){}
   const ts=$('teamsize'),lab=ts&&ts.previousElementSibling;
@@ -7623,6 +7645,7 @@ function dressRules(){
   if(lab&&lab.classList.contains('field-label'))lab.hidden=quiz;
   const ln=$('length'),lnlab=ln&&ln.previousElementSibling;
   if(lnlab)lnlab.textContent=pic?'How many pictures tonight'
+    :S.game==='tf'?'How many statements tonight'
     :triv?'How many questions tonight'
     :quiz?'How many records tonight':'How many auditions tonight';
   const until=ln&&[...ln.querySelectorAll('button')].find(b=>b.dataset.l==='0');
@@ -7654,8 +7677,8 @@ $('lobby-start')&&($('lobby-start').onclick=()=>{
   }
   S.players.filter(p=>p.pid).forEach(p=>addFriend(p.name));   // worth remembering
   drawFriends();
-  if(S.game==='artist'||isAsking()){
-    try{$('meta').textContent=S.game==='trivia'?'quiz':S.game==='picture'?'picture guess':'name the artist'}catch(e){}
+  if(S.game==='artist'||isAsking()||isS10()){
+    try{$('meta').textContent=METALABEL[S.game]||''}catch(e){}
     show('s-quiz');fitScreen();quizStart();
   }
   else beginSeason();

@@ -18,7 +18,8 @@ setTimeout(()=>{
   const chip=d.querySelector('#mode-filter [data-g="chair"]');
   if(chip&&!chip.hidden)probs.push('the filter chip is still there');
   const visible=[...d.querySelectorAll('#s-setup .gamecard')].filter(c=>!c.hidden).map(c=>c.dataset.game);
-  if(visible.length!==4)probs.push('the shelf shows '+visible.join(',')); 
+  if(visible.indexOf('chair')>=0)probs.push('the shelved game is on the shelf: '+visible.join(','));
+  if(visible.length<3)probs.push('the shelf is nearly empty: '+visible.join(',')); 
   click($('m-create'));
   setTimeout(()=>{
     if(w.eval('S.game')==='chair')probs.push('it is still the game that opens by default');

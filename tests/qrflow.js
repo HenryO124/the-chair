@@ -86,9 +86,8 @@ const tick=(ms=80)=>new Promise(r=>setTimeout(r,ms));
   if(!hw.eval('S.players.filter(function(p){return p.pid}).length'))
     probs.push('the phone never got a chair [role='+pw.eval('JSON.stringify(PARTY.role)')
       +' code='+pw.eval('JSON.stringify(PARTY.code)')+' st='+pd.getElementById('join-status').textContent+']');
-  click(hw,h$('to-rules'));await tick(80);
-  if(at()!=='s-go')probs.push('ready went to '+at());
-  click(hw,h$('lobby-start'));await tick(700);
+  click(hw,h$('to-rules'));await tick(700);
+  if(at()!=='s-quiz')probs.push('Start the game went to '+at());
   const pic=pw.eval('(PARTY.stage||{}).pic||""');
   if(!pic)probs.push('THE HOST NEVER SENT THE PICTURE [hostpic='+hw.eval('JSON.stringify(stageState().pic)')
     +' phonephase='+hw.eval('JSON.stringify(S.game)')+'/'+pw.eval('JSON.stringify((PARTY.stage||{}).phase)')
