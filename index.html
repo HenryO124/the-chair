@@ -4258,7 +4258,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 15:27';
+const BUILD='07.11. 15:34';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4444,10 +4444,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111527',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111527',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111534',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111534',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111527',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111534',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -7347,40 +7347,47 @@ $('lobby-back')&&($('lobby-back').onclick=()=>show('s-setup'));
 $('to-rules')&&($('to-rules').onclick=()=>{try{$('lobby-start').click()}catch(e){}});
 function dressRules(){
   try{dressWhere()}catch(e){}
+  // This list used to name the games that ask questions, so every new game had
+  // to remember to join it — and twice it did not, which is how Closest Wins
+  // came to offer a choice of decade and musical genre. Name the two games
+  // that play records instead: that list is closed and will not grow.
+  const records=playsRecords();                   // artist and chair, and no others
   const finger=S.game==='finger';                 // no topics, no right answer
-  const triv=S.game==='trivia'||S.game==='tf'||S.game==='s10';   // written questions
   const pic=S.game==='picture';
-  const quiz=S.game==='artist'||triv||pic||finger;   // none of them build teams
-  // the era and genre filters belong to the record collection, not to trivia
+  const triv=!records&&!pic&&!finger;             // written questions with topics
+  const topics=!records&&!finger;                 // picture has topics too
+  const quiz=S.game!=='chair';                    // only the chair builds teams
+  // the era and genre filters belong to the record collection
   [['eras'],['genres']].forEach(id=>{
     const box=$(id[0]),lab=box&&box.previousElementSibling;
-    if(box)box.hidden=triv||pic;
-    if(lab&&lab.classList.contains('field-label'))lab.hidden=triv||pic;
+    if(box)box.hidden=!records;
+    if(lab&&lab.classList.contains('field-label'))lab.hidden=!records;
   });
-  try{$('pool').hidden=triv||pic}catch(e){}
+  try{$('pool').hidden=!records}catch(e){}
   try{$('rules-sub').textContent=pic
     ? 'Nobody has to agree with the host. Settle on how many pictures and where everyone is sitting.'
     : triv
     ? 'Nobody has to agree with the host. Pick the topics you want and how long the night runs.'
     : 'Nobody has to agree with the host. Argue about the years, settle on a genre, then go.'}catch(e){}
   // the topics belong to the quiz, the way era and genre belong to the records
-  ['cats','cats-label','cats-note'].forEach(id=>{const e=$(id);if(e)e.hidden=!(triv||pic)});
-  ['lang','lang-label'].forEach(id=>{const e=$(id);if(e&&finger)e.hidden=false});
-  ['lang','lang-label'].forEach(id=>{const e=$(id);if(e)e.hidden=!(triv||pic)});
+  ['cats','cats-label','cats-note'].forEach(id=>{const e=$(id);if(e)e.hidden=!topics});
+  // every game but the records asks its question in a language, Point the
+  // Finger included — its prompts are written too
+  ['lang','lang-label'].forEach(id=>{const e=$(id);if(e)e.hidden=records});
   try{$('cats-label').textContent=S.game==='picture'?'Picture topics':'Topics'}catch(e){}
-  if(triv||pic)try{
+  if(!records)try{
     segPick('lang','g',S.lang);
-    drawCats();
+    if(topics)drawCats();
   }catch(e){}
   const ts=$('teamsize'),lab=ts&&ts.previousElementSibling;
   if(ts)ts.hidden=quiz;
   if(lab&&lab.classList.contains('field-label'))lab.hidden=quiz;
   const ln=$('length'),lnlab=ln&&ln.previousElementSibling;
   if(lnlab)lnlab.textContent=pic?'How many pictures tonight'
-    :finger?'How many questions tonight'
     :S.game==='tf'?'How many statements tonight'
-    :triv?'How many questions tonight'
-    :quiz?'How many records tonight':'How many auditions tonight';
+    :S.game==='artist'?'How many records tonight'
+    :records?'How many auditions tonight'
+    :'How many questions tonight';
   const until=ln&&[...ln.querySelectorAll('button')].find(b=>b.dataset.l==='0');
   if(until)until.hidden=quiz;                 // a quiz has no teams to fill
   if(quiz&&!S.len){S.len=10;segPick('length','l','10')}
