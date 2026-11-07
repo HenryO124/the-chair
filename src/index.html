@@ -1358,8 +1358,9 @@ input:focus,.ytin:focus,.codein:focus{border-color:#FF5C72;
 /* on anything with room, the whole screen is one page: the picture takes
    whatever the question, the answers and the scoreboard have not used */
 @media (min-width:860px) and (min-height:620px){
-  #s-quiz.on{display:flex;flex-direction:column;justify-content:center;
-    height:calc(100vh - 92px)}
+  #s-quiz.on{display:flex;flex-direction:column;justify-content:safe center;
+    height:calc(100vh - 92px);overflow:hidden}
+  #s-quiz .qgrid.ten .qbtn{min-height:0;padding:clamp(6px,1vh,14px) clamp(12px,1.2vw,22px)}
   #s-quiz .stageset.big{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
   #s-quiz .videowall{flex:1 1 auto;height:auto;min-height:48vh}
   #s-quiz .screenwrap{aspect-ratio:auto;height:100%;width:100%;max-width:none;
@@ -1754,9 +1755,9 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 #s-quiz .videowall:not(:has(.qpic)) .qasking.long{font-size:clamp(20px,2.4vw,44px)}
 #s-quiz .videowall:not(:has(.qpic)) .qasking.xlong{font-size:clamp(18px,2vw,36px)}
 /* ---- Smart Ten: ten candidates, and whoever took one ------------------ */
-#q-options .qbtn.s10{min-height:clamp(44px,6.2vh,74px);font-size:clamp(14px,1.3vw,25px);
-  justify-content:space-between}
-#q-options .qbtn.s10 .tookby{font-family:var(--mono);font-size:clamp(9px,.7vw,13px);
+#q-options .qbtn.s10{min-height:clamp(38px,5.4vh,66px);font-size:clamp(15px,1.5vw,30px);
+  justify-content:space-between;padding:clamp(6px,1vh,14px) clamp(12px,1.2vw,22px)}
+#q-options .qbtn.s10 .tookby{font-family:var(--mono);font-size:clamp(12px,.95vw,18px);
   letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-left:10px;white-space:nowrap}
 #q-options .qbtn.s10.missed{opacity:1}
 .qsc .pot{font-style:normal;color:#8FF0B8;font-family:var(--mono);font-size:.85em}
@@ -1765,6 +1766,13 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 #pad-bank{width:auto;margin:14px auto 0;display:block;padding:14px 30px;border-radius:14px;
   font-size:17px}
 #pad-bank[hidden]{display:none!important}
+/* ---- a phone's decision belongs where the thumb already is ------------- */
+.padstick{position:sticky;bottom:0;z-index:5;margin:14px -4vw 0;padding:12px 4vw 14px;
+  background:linear-gradient(to top,var(--ink) 62%,rgba(11,5,7,0));
+  display:flex;justify-content:center}
+.padstick[hidden]{display:none!important}
+.padstick .btn{width:min(420px,100%);margin:0}
+@media (min-width:900px){.padstick{position:static;background:none;margin:14px 0 0;padding:0}}
 /*@STUDIO-END*/
 </style>
 </head>
@@ -2278,7 +2286,9 @@ body:has(#s-chair.on) .striproundwrap{display:none}
         <button type="button" class="photobtn" id="face-clear" hidden>REMOVE</button>
         <input type="file" id="face-file" accept="image/*" style="display:none">
       </div>
-      <button class="btn" id="join-go">Take my chair</button>
+      <div class="padstick" id="join-gobar">
+        <button class="btn" id="join-go">Take my chair</button>
+      </div>
       <button class="btn ghost" id="join-back">Back</button>
       <p class="conn" id="join-status"></p>
     </div>
@@ -2298,7 +2308,12 @@ body:has(#s-chair.on) .striproundwrap{display:none}
       <div class="qgrid" id="pad-quiz" hidden></div>
       <p class="padrun" id="pad-run" hidden></p>
       <p class="padnext" id="pad-next" hidden></p>
-      <button type="button" class="btn" id="pad-bank" hidden>Bank</button>
+      <div class="padstick" id="pad-waitbar" hidden>
+        <button type="button" class="btn ghost" id="pad-wait">Hold it &mdash; not yet</button>
+      </div>
+      <div class="padstick" id="pad-bankbar" hidden>
+        <button type="button" class="btn" id="pad-bank">Bank</button>
+      </div>
       <button class="bigsign" id="pad-sign" disabled>SIGN THEM</button>
       <button class="bigskip" id="pad-skip" disabled>SKIP</button>
       <button class="bigskip" id="pad-hold" hidden>HOLD IT — NOT YET</button>
@@ -6250,7 +6265,7 @@ function s10Next(){
   Q.round++;
   Q.current=Q.deck[Q.round-1];
   Q.revealed=false;
-  Q.cands=Q.current[3].map(c=>({t:c.t,ok:c.ok,by:null}));
+  Q.cands=shuffle(Q.current[3].map(c=>({t:c.t,ok:c.ok,by:null})));
   Q.pot={};Q.picks={};Q.state={};
   S.players.forEach(p=>{Q.state[p.id]='in';Q.pot[p.id]=0;Q.picks[p.id]=0});
   drawQuiz();publishStage();
@@ -6434,7 +6449,8 @@ function drawNextCount(){
   if(h)h.hidden=!Q.nextIn;
   if(!b)return;
   const last=Q.round>=Q.deck.length;
-  const word=last?'See the winner':isAsking()?'Next question':'Next record';
+  const word=last?'See the winner'
+    :(isAsking()||isS10())?'Next question':'Next record';
   b.textContent=Q.nextIn?word+'  '+Q.nextIn:word;
 }
 function quizFinish(){
@@ -6476,6 +6492,7 @@ function drawQuiz(){
     : Q.revealed ? Q.current[0]+' — '+trackOf(Q.current)+', '+yearOf(Q.current)
     : 'Who is this?';
   if(Q.revealed)$('q-curtain').textContent='';
+  $('q-options').className='qgrid';
   $('q-options').innerHTML=Q.options.map((a,i)=>{
     const cls=Q.revealed?(i===Q.correct?' right':' wrong'):'';
     return '<button class="qbtn'+cls+'" data-opt="'+i+'"'+(Q.revealed?' disabled':'')+'>'
@@ -6491,12 +6508,10 @@ function drawQuiz(){
 }
 function drawS10(){
   if(!Q.current)return;
-  const tot=(Q.cands||[]).filter(c=>c.ok).length;
-  const left=(Q.cands||[]).filter(c=>c.ok&&c.by===null).length;
-  $('q-count').textContent='Question '+Q.round+' of '+Q.deck.length
-    +' \u00b7 '+tot+' of these 10 are true'+(Q.revealed?'':' \u00b7 '+left+' still out there');
+  $('q-count').textContent='Question '+Q.round+' of '+Q.deck.length;
   $('q-ask').textContent=Q.current[1];
   const nameOf=id=>{const p=S.players.find(x=>x.id===id);return p?shownName(p):''};
+  $('q-options').className='qgrid ten';
   $('q-options').innerHTML=(Q.cands||[]).map((c,i)=>{
     const taken=c.by!==null;
     const cls=taken?(c.ok?' right':' missed'):(Q.revealed&&c.ok?' right':Q.revealed?' wrong':'');
@@ -6927,7 +6942,13 @@ function hostAct(m){
     takeVote(p,String(m.topic||''));
     return;
   }
-  if(m.type==='hold'){                     // anyone may stop the clock between acts
+  if(m.type==='hold'){                     // anyone may stop the clock between rounds
+    if(Q.nextIn>0){                        // a quiz waiting to move on
+      stopNextCount();drawNextCount();
+      try{$('turnline').textContent=p.name+' asked for a moment.'}catch(e){}
+      publishStage();
+      return;
+    }
     if(autoLeft>0){
       stopAutoNext();
       $('turnline').textContent=p.name+' held it. Press Next audition when you are ready.';
@@ -7338,9 +7359,9 @@ function drawPadS10(st,me){
       :pot?'Pot '+pot+' \u00b7 next one +'+(10*(picks+1))+' \u00b7 a wrong one takes it all'
       :'Pick one you are sure of';
   }
-  const bank=$('pad-bank');
+  const bank=$('pad-bank'),bar=$('pad-bankbar');
   if(bank){
-    bank.hidden=!(mine==='in'&&pot>0&&!st.revealed);
+    if(bar)bar.hidden=!(mine==='in'&&pot>0&&!st.revealed);
     bank.textContent='Bank '+pot;
   }
 }
@@ -7366,6 +7387,8 @@ function drawPadQuiz(st,me){
   const chairBits=['pad-sign','pad-skip','pad-blocks','pad-hold','pad-team','pad-teamhead','pad-myteam'];
   chairBits.forEach(id=>{const e=$(id);if(e)e.hidden=true});
   box.hidden=false;
+  // anyone may stop the clock: the host is not the only one still reading
+  try{const wb=$('pad-waitbar');if(wb)wb.hidden=!(st&&st.nextIn>0)}catch(e){}
   const nk=st?(st.round+'|'+(st.nextIn||0)+'|'+(st.revealed?1:0)):'';
   if(padLastNext!==nk){padLastNext=nk;try{padNextCount(st||{})}catch(e){}}
   // the picture is the question in Picture Guess, and half the fun in the quiz
@@ -7739,6 +7762,11 @@ if($('pad-sign')){
 }
 $('pad-skip')&&($('pad-skip').onclick=()=>{$('pad-skip').disabled=true;sendAct('skip')});
 $('pad-hold')&&($('pad-hold').onclick=()=>{$('pad-hold').hidden=true;sendAct('hold')});
+$('pad-wait')&&($('pad-wait').onclick=()=>{
+  const b=$('pad-waitbar');if(b)b.hidden=true;
+  const n=$('pad-next');if(n){n.hidden=false;n.textContent='Asked the room to wait'}
+  sendAct('hold');
+});
 $('pad-blocks')&&($('pad-blocks').addEventListener('click',e=>{
   const b=e.target.closest('button[data-block]');if(!b||b.disabled)return;
   [...$('pad-blocks').querySelectorAll('button')].forEach(x=>x.disabled=true);
