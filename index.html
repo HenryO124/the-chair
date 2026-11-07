@@ -1361,8 +1361,11 @@ input:focus,.ytin:focus,.codein:focus{border-color:#FF5C72;
   #s-quiz.on{display:flex;flex-direction:column;justify-content:center;
     height:calc(100vh - 92px)}
   #s-quiz .stageset.big{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
-  #s-quiz .videowall{flex:1 1 auto;height:auto;min-height:0}
-  #s-quiz .screenwrap{height:100%;width:auto;max-width:100%;max-height:100%}
+  #s-quiz .videowall{flex:1 1 auto;height:auto;min-height:48vh}
+  #s-quiz .screenwrap{aspect-ratio:auto;height:100%;width:100%;max-width:none;
+    max-height:100%;display:flex;margin:0}
+  #s-quiz .vw-screen{aspect-ratio:auto;flex:1 1 auto;height:100%;width:100%}
+  #s-quiz .qgrid .qbtn{min-height:0;padding:clamp(10px,1.5vh,20px) clamp(14px,1.4vw,26px)}
   #s-quiz .qhead,#s-quiz .qgrid,#s-quiz .qscores,#s-quiz .btn-row{flex:0 0 auto}
 }
 #s-quiz .vw-screen{border-radius:clamp(10px,1vw,18px);
@@ -2791,6 +2794,8 @@ function fitScreen(){
   // on a phone the stage grows with its contents, so only the width can limit the picture
   const narrow=window.innerWidth<=880;
   if(!narrow&&!h)return;
+  // a video wants its 16:9 box; a picture should use the stage it is given
+  if(screenNow()==='s-quiz'&&isAsking()&&!narrow){sw.style.width='';sw.style.height='';return}
   const width=narrow?w:Math.min(w,h*16/9);
   sw.style.width=Math.round(width)+'px';
   sw.style.height=Math.round(width*9/16)+'px';
@@ -3880,7 +3885,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 08:56';
+const BUILD='07.11. 08:58';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
