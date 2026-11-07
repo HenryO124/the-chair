@@ -3199,14 +3199,16 @@ function validate(){
 function updateStartState(){
   let empty=false;
   try{
-    empty=(isAsking()||isS10())
-      ? catBank().length===0                  // a quiz with no questions is not a game
-      : S.genre!=='Random'&&!!S.era&&pool().length===0;
+    // only the two record games are gated on the record pool; everything
+    // else is gated on its own question bank, including a game added later
+    empty=playsRecords()
+      ? S.genre!=='Random'&&!!S.era&&pool().length===0
+      : catBank().length===0;                 // a quiz with no questions is not a game
   }
   catch(e){return}      // the form draws before the catalogue is in place
   try{
     const b=$('lobby-start');
-    const waiting=empty&&isAsking()&&!haveBanks();
+    const waiting=empty&&!playsRecords()&&!haveBanks();
     b.disabled=empty;
     if(waiting){
       if(!b.dataset.said)b.dataset.said=b.textContent;
@@ -3265,9 +3267,12 @@ $('cats')&&($('cats').onclick=e=>{
    means everybody is happy with everything. --------------------------- */
 const VOTES={};                    // pid -> [topic key, ...]
 function ballot(){
-  if(S.game==='trivia'||S.game==='tf'||S.game==='s10')return catKeys();
-  if(S.game==='picture')return ['City','Landmark','Painting','Nature','Bird','Butterfly','Mushroom','Tree','Flower','Animal'];
-  return [];
+  // The records are chosen by decade and genre, and Point the Finger asks
+  // about the room, so neither of those has topics. Naming those two instead
+  // of the ones that do means a new game gets the six topics by default.
+  if(playsRecords()||isFinger())return [];
+  if(isPicture())return ['City','Landmark','Painting','Nature','Bird','Butterfly','Mushroom','Tree','Flower','Animal'];
+  return catKeys();
 }
 function ballotLabel(key){
   if(S.game==='picture')return (PICCAT[S.lang]||PICCAT.en)[key]||key;
@@ -3318,6 +3323,8 @@ function s10CatBank(){
 }
 function catBank(){
   if(isS10())return s10CatBank();
+  if(isNear())return nearCatBank();
+  if(isFinger())return fingerBank();      // its prompts have no topics to filter by
   if(isTF()){
     const all=tfBank();
     if(!S.cats.length)return all;
@@ -4269,7 +4276,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 16:18';
+const BUILD='07.11. 16:25';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4455,10 +4462,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111618',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111618',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111625',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111625',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111618',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111625',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4752,7 +4759,7 @@ const isPicture=()=>S.game==='picture';
 const isAsking=()=>isTrivia()||isPicture()||isTF();   // the games with one written question
                                                       // (Smart Ten has ten, and runs its own way)
 // an option is an act in Name the Artist and a plain string in the Quiz
-const optLabel=o=>isAsking()?o:o[0];
+const optLabel=o=>playsRecords()?o[0]:o;
 /* Every bank puts the row's own id last — the quiz its row number, the others
    'p3', 's17', 'n42' — so one memory serves all of them. */
 const rowId=r=>(r&&r.length)?String(r[r.length-1]):'';
@@ -4818,7 +4825,7 @@ function quizStart(){
     S.players.forEach(pl=>{pl.score=0;pl.run=0});
     quizNext();return;
   }
-  if(isAsking()){
+  if(!playsRecords()){
     const bank=catBank();
     Q.of=Math.min(S.len||10,bank.length);
     Q.deck=evenDeck(bank,Q.of);
@@ -5241,7 +5248,7 @@ function quizNext(){
   clearTimeout(Q.timer);
   Q.current=Q.deck[Q.round++];
   Q.answers={};Q.order=[];Q.revealed=false;
-  if(isAsking()){
+  if(!playsRecords()){
     Q.qid=Q.current[7];                            // its row in the bank, picture and all
     if(isTF()){
       // the two answers keep the same places all evening, so nobody misreads
@@ -5624,7 +5631,7 @@ function quizReveal(){
   $('q-curtain').classList.add('open');
   $('q-next').textContent=Q.round>=Q.deck.length?T('see_winner')
     :playsRecords()?T('next_r'):T('next_q');
-  if(isAsking())showQuizQuestion();
+  if(!playsRecords())showQuizQuestion();
   drawQuiz();
   startNextCount(NEXT_IN);
 }
@@ -5684,8 +5691,10 @@ function nightBoard(){
 function quizFinish(){
   Q.on=false;stopNextCount();
   bankTheGame();
-  try{$('final-eyebrow').textContent=T(isPicture()?'final_eye':isTF()?'final_nose'
-    :isTrivia()?'final_wits':'final_ear')}catch(e){}
+  // 'final_ear' belongs to the two games that play a record and was the
+  // default, so Smart Ten, Point the Finger and Closest Wins all claimed it
+  try{$('final-eyebrow').textContent=T(playsRecords()?'final_ear'
+    :isPicture()?'final_eye':isTF()?'final_nose':'final_wits')}catch(e){}
   recStop();                       // the game is over, so the record stops with it
   const box=$('q-screen');if(box)box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
   const best=[...S.players].sort((a,b)=>(b.score||0)-(a.score||0));
@@ -5699,10 +5708,12 @@ function quizFinish(){
   // the noun is inflected in the word tables and dropped into the sentence:
   // English puts an s on the end, the other two change the whole word
   const one=(played===1);
-  const word=isPicture()?T(one?'word_picture':'word_pictures')
+  // the record was the default here, so every game added since said
+  // "3 records played"; name the two that really play one
+  const word=playsRecords()?T(one?'word_record':'word_records')
+    :isPicture()?T(one?'word_picture':'word_pictures')
     :isTF()?T(one?'word_statement':'word_statements')
-    :(isTrivia()||isS10())?T(one?'word_question':'word_questions')
-    :T(one?'word_record':'word_records');
+    :T(one?'word_question':'word_questions');
   const names=won.map(shownName);
   const tied=names.length<=2?names.join(' '+T('join_and')+' ')
     :names.slice(0,-1).join(', ')+' '+T('join_and')+' '+names[names.length-1];
@@ -5723,12 +5734,12 @@ function drawQuiz(){
   if(isS10())return drawS10();
   if(!Q.current)return;
   try{$('q-next').classList.remove('calm');$('s10-rules').hidden=true}catch(e){}
-  $('q-count').textContent=T(isAsking()?'q_of':'r_of',{i:Q.round,n:Q.deck.length});
+  $('q-count').textContent=T(playsRecords()?'r_of':'q_of',{i:Q.round,n:Q.deck.length});
   // a trivia question's heading is only its category; say so to the stylesheet
-  $('q-ask').className='ask'+((isAsking()&&!isPicture())?' cat':'');
+  $('q-ask').className='ask'+((!playsRecords()&&!isPicture())?' cat':'');
   $('q-ask').textContent=isPicture()&&!Q.revealed
     ? Q.current[0]+' \u2014 '+Q.current[1]
-    : isAsking()
+    : !playsRecords()
     ? Q.current[0]
     : Q.revealed ? Q.current[0]+' — '+trackOf(Q.current)+', '+yearOf(Q.current)
     : T('who_is_this');
@@ -6359,18 +6370,18 @@ function quizState(phase){
     remote:!!S.remote,
     // the embed is only offered once the host knows this record has no preview,
     // so an advertisement never gets a head start on a phone
-    vid:isAsking()||!S.remote?'':recEmbedFor(Q.current),
-    prev:isAsking()||!S.remote?'':recPreviewUrl(Q.current),
-    ask:isAsking()&&Q.current?Q.current[1]:'',
+    vid:!playsRecords()||!S.remote?'':recEmbedFor(Q.current),
+    prev:!playsRecords()||!S.remote?'':recPreviewUrl(Q.current),
+    ask:!playsRecords()&&Q.current?Q.current[1]:'',
     nextIn:Q.nextIn||0,
     // the television keeps the big one; a phone gets a fifth of the bytes
     pic:(function(){try{
-      if(!isAsking())return '';                    // only a written question carries a picture
+      if(playsRecords())return '';                 // only a written question carries a picture
       const p=QIMG[String(Q.qid)];
       return p?String(p.u).replace(/([?&])width=\d+/,'$1width=500'):''}catch(e){return ''}})(),
-    cat:isAsking()&&Q.current?Q.current[0]:'',
+    cat:!playsRecords()&&Q.current?Q.current[0]:'',
     act:!Q.revealed||!Q.current?null
-      :isAsking()?{name:Q.current[2],track:'',year:''}
+      :!playsRecords()?{name:Q.current[2],track:'',year:''}
       :{name:Q.current[0],track:trackOf(Q.current),year:yearOf(Q.current)},
     options:Q.options.map(optLabel),
     // 22. this goes out on every answer and every reveal, to every phone in the
@@ -6408,19 +6419,19 @@ function setupLine(){
     let n=6;try{n=ballot().length||6}catch(e){}
     return T('setup_all_topics',{n:n});
   };
-  if(S.game==='s10'){
-    bits.push(T('in_lang'));bits.push(topics());bits.push(T('setup_questions',{n:(S.len||8)}));
-  }else if(S.game==='tf'){
-    bits.push(T('in_lang'));bits.push(topics());bits.push(T('setup_statements',{n:(S.len||10)}));
-  }else if(S.game==='picture'){
-    bits.push(T('in_lang'));bits.push(topics());bits.push(T('setup_pictures',{n:(S.len||10)}));
-  }else if(S.game==='trivia'){
-    bits.push(T('in_lang'));bits.push(topics());bits.push(T('setup_questions',{n:(S.len||10)}));
-  }else{
+  // This named the four games that ask questions, so the record branch was
+  // the default and Point the Finger and Closest Wins both told the room
+  // "Any year \u00b7 Any genre \u00b7 10 auditions". Name the records instead.
+  if(playsRecords()){
     bits.push(S.era?T('setup_era',{y:S.era}):T('any_year'));
     bits.push(S.genre&&S.genre!=='Random'?T('genre_'+S.genre):T('any_genre'));
     bits.push(S.len?T(S.game==='artist'?'setup_records':'setup_auditions',{n:S.len}):T('until_full'));
     if(S.game==='chair')bits.push(T('per_team',{n:S.teamSize}));
+  }else{
+    bits.push(T('in_lang'));
+    if(!isFinger())bits.push(topics());        // its questions are about the room
+    bits.push(T(isPicture()?'setup_pictures':isTF()?'setup_statements':'setup_questions',
+      {n:(S.len||(isS10()?8:10))}));
   }
   bits.push(T(S.remote?'all_own_screen':'all_one_room'));
   return bits.join(' \u00b7 ');
@@ -6452,7 +6463,7 @@ function stageState(){
   const phase=inPrep()?'lobby'
     :screenNow()==='s-final'?'over'
     :turnsOpen?'live':revealed?'locked':'between';
-  if((S.game==='artist'||isAsking()||isS10()||isFinger()||isNear())&&!inPrep())
+  if(S.game!=='chair'&&!inPrep())
     return quizState(phase);
   return {vote:ballotState(),setup:setupLine(),remote:!!S.remote,v:1,b:BUILD,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
     blockTarget:(blockTarget===null?null:blockTarget),
@@ -8072,8 +8083,10 @@ function drawPad(){
     sp.hidden=!show;
     if(show)sp.innerHTML='<b>Tonight</b><br>'+esc(st.setup);
   }
-  if(st.game==='artist'||st.game==='trivia'||st.game==='picture'||st.game==='tf'
-     ||st.game==='s10'||st.game==='finger'){
+  // Closest Wins was left out of this list, so its phones fell through to the
+  // chair game's team sheet and never saw a box to type a guess into. Only the
+  // chair game has a team sheet, and that list will not grow.
+  if(st.game&&st.game!=='chair'){
     // the record plays on the phone as well, behind a curtain until the reveal,
     // so somebody who could not make it in person can still hear it
     drawPadScreen({phase:(st.remote&&(st.prev||st.vid))?'live':'',
@@ -8274,7 +8287,7 @@ $('lobby-start')&&($('lobby-start').onclick=()=>{
   // every game reads something out of the chunk: the quizzes their bank, the
   // other two the record catalogue. Hold the screen until it is here.
   const go=()=>{
-    if(S.game==='artist'||isAsking()||isS10()||isFinger()||isNear()){
+    if(S.game!=='chair'){
       try{$('meta').textContent=METALABEL[S.game]||''}catch(e){}
       show('s-quiz');fitScreen();quizStart();
     }
