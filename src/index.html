@@ -1397,6 +1397,25 @@ input:focus,.ytin:focus,.codein:focus{border-color:#FF5C72;
   border-radius:20px;padding:6px 16px;box-shadow:var(--glowsoft)}
 #s-quiz .qhead .ask{font-size:clamp(19px,2.4vw,44px);line-height:1.12;
   max-width:min(100%,40ch);text-shadow:0 0 36px rgba(228,24,46,.4)}
+/* 4. a bare category is a label, not the headline. The question is on the
+   screen behind it and has to be the biggest thing in the room. */
+#s-quiz .qhead .ask.cat{font-family:var(--mono);font-weight:600;
+  font-size:clamp(11px,.9vw,18px);letter-spacing:.2em;text-transform:uppercase;
+  color:#FFD37A;text-shadow:none;border:1px solid rgba(216,163,63,.3);
+  background:rgba(40,28,10,.5);border-radius:20px;padding:6px 16px}
+
+/* 1. the explanation after the answer: one or two sentences the whole room
+   reads at once, so it follows the answer up in size instead of staying print. */
+#s-quiz .qa-note{font-size:clamp(16px,1.75vw,30px);line-height:1.5;max-width:30ch}
+#s-quiz .qcredit{font-size:clamp(9px,.62vw,13px)}
+
+/* 2. the score is the thing people lean in for; it was the smallest text on
+   the screen. 3. and the name beside a taken answer with it. */
+#s-quiz .qsc{font-size:clamp(14px,1.05vw,22px);padding:8px 14px}
+#s-quiz .qsc b{color:#FFD37A;font-size:clamp(16px,1.35vw,28px)}
+#s-quiz .qsc .av{width:clamp(24px,1.9vw,38px);height:clamp(24px,1.9vw,38px)}
+#s-quiz .qsc .pot{font-size:.8em}
+#q-options .qbtn.s10 .tookby{font-size:clamp(13px,1.15vw,24px)}
 
 /* four answers, each a lit panel with its letter in a ring */
 #s-quiz .qgrid{gap:clamp(10px,1.1vw,20px);margin-top:0}
@@ -1443,6 +1462,13 @@ input:focus,.ytin:focus,.codein:focus{border-color:#FF5C72;
   border:1px solid #FF5C72;
   box-shadow:0 0 36px rgba(228,24,46,.55),inset 0 1px 0 rgba(255,255,255,.25)}
 #q-next:hover{background:linear-gradient(180deg,#FF2A44,#B91126)}
+/* 5. without this it inherits the full-width button and shoves End the game
+   onto a second line every time the countdown starts. */
+#q-hold{flex:0 0 auto;width:auto;margin:0;background:rgba(40,12,22,.6);
+  box-shadow:none;border:1px solid rgba(255,70,100,.4);color:#FFC2BC;
+  font-size:clamp(13px,.95vw,18px);padding:clamp(10px,1.3vh,16px) clamp(18px,1.8vw,30px);
+  border-radius:20px}
+#q-hold:hover{background:rgba(60,18,32,.8);border-color:#FF5C72;color:#FFF3EF}
 #q-quit{flex:0 0 auto;width:auto;margin:0;background:none;box-shadow:none;
   border:1px solid rgba(255,70,100,.18);color:#8D757C;font-weight:600;
   font-size:clamp(12px,.82vw,15px);padding:9px 20px;border-radius:20px}
@@ -1767,8 +1793,43 @@ body:has(#s-chair.on) .striproundwrap{display:none}
   justify-content:space-between;padding:clamp(6px,1vh,14px) clamp(12px,1.2vw,22px)}
 #q-options .qbtn.s10 .tookby{font-family:var(--mono);font-size:clamp(12px,.95vw,18px);
   letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-left:10px;white-space:nowrap}
-#q-options .qbtn.s10.missed{opacity:1}
-.qsc .pot{font-style:normal;color:#8FF0B8;font-family:var(--mono);font-size:.85em}
+/* 8. a wrong pick was a faint tint. It is the whole drama of the round and
+   has to be unmistakable from the sofa. */
+#q-options .qbtn.s10.missed{opacity:1;border-color:#FF4A62;border-width:2px;
+  background:linear-gradient(180deg,rgba(228,24,46,.55),rgba(120,10,24,.6));
+  color:#FFE4E0;box-shadow:0 0 34px rgba(228,24,46,.5)}
+#q-options .qbtn.s10.missed .tookby{opacity:1;color:#FFD7D2}
+#q-options .qbtn.s10.missed .t::after{content:' \2717';color:#FFB4AC;font-weight:800}
+#q-options .qbtn.s10.right .t::after{content:' \2713';color:#BFF3D2;font-weight:800}
+
+/* 7. the pot is not money in the bank, it is money on the table */
+.qsc .pot{font-style:normal;color:#FFC46B;font-family:var(--mono);font-size:.8em;
+  letter-spacing:.06em;padding:2px 8px;border-radius:12px;
+  border:1px solid rgba(255,180,90,.45);background:rgba(90,52,8,.5)}
+#s-quiz .qsc.atrisk{border-color:rgba(255,180,90,.6);background:rgba(60,36,8,.45)}
+
+/* 6. the rules in one strip under the question. The Short List has no record
+   to hide, so the curtain comes down and the ten candidates get the room. */
+#s-quiz:has(#s10-rules:not([hidden])) .videowall{display:none}
+.s10strip{display:flex;gap:clamp(8px,1.3vw,24px);flex-wrap:wrap;justify-content:center;
+  margin:0 0 clamp(10px,1.8vh,22px)}
+.s10strip[hidden]{display:none!important}
+.s10strip span{font-family:var(--mono);font-size:clamp(11px,.95vw,19px);
+  letter-spacing:.08em;text-transform:uppercase;color:#C9AEB6;
+  border:1px solid rgba(255,70,100,.26);background:rgba(30,10,18,.6);
+  border-radius:20px;padding:7px 15px}
+.s10strip span b{color:#FFD37A;font-weight:700}
+.s10strip span.bad{border-color:rgba(255,120,110,.4)}
+.s10strip span.bad b{color:#FF9A95}
+.s10strip span.said{font-family:var(--disp);text-transform:none;letter-spacing:0;
+  font-size:clamp(14px,1.4vw,26px);color:#E8DCCB;border-color:rgba(255,209,92,.4);
+  background:rgba(60,42,10,.4);max-width:70ch}
+
+/* 9. while the round runs, the exit is not the brightest thing on screen */
+#q-next.calm{background:rgba(40,12,22,.7);border:1px solid rgba(255,70,100,.4);
+  color:#E8C9CF;box-shadow:none;min-width:clamp(160px,14vw,260px);
+  font-size:clamp(14px,1.05vw,20px)}
+#q-next.calm:hover{background:rgba(60,18,32,.85);border-color:#FF5C72;color:#FFF3EF}
 #pad-quiz.qgrid.ten{grid-template-columns:1fr 1fr;gap:8px}
 #pad-quiz.qgrid.ten .qbtn{min-height:54px;font-size:15px;padding:10px 12px;text-align:left}
 #pad-bank{width:auto;margin:14px auto 0;display:block;padding:14px 30px;border-radius:14px;
@@ -2358,6 +2419,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
         <div class="ask" id="q-ask">Who is this?</div>
         <div class="cnt" id="q-count"></div>
       </div>
+      <div class="s10strip" id="s10-rules" hidden></div>
       <div class="qgrid" id="q-options"></div>
       <div class="qscores" id="q-scores"></div>
     </div>
@@ -4587,7 +4649,10 @@ function quizFinish(){
 function drawQuiz(){
   if(isS10())return drawS10();
   if(!Q.current)return;
+  try{$('q-next').classList.remove('calm');$('s10-rules').hidden=true}catch(e){}
   $('q-count').textContent=(isAsking()?'Question ':'Record ')+Q.round+' of '+Q.deck.length;
+  // a trivia question's heading is only its category; say so to the stylesheet
+  $('q-ask').className='ask'+((isAsking()&&!isPicture())?' cat':'');
   $('q-ask').textContent=isPicture()&&!Q.revealed
     ? Q.current[0]+' \u2014 '+Q.current[1]
     : isAsking()
@@ -4612,7 +4677,22 @@ function drawQuiz(){
 function drawS10(){
   if(!Q.current)return;
   $('q-count').textContent='Question '+Q.round+' of '+Q.deck.length;
+  $('q-ask').className='ask';
   $('q-ask').textContent=Q.current[1];
+  // 6. the frame behind the question was empty; the rules go there, so a room
+  // that has never played this can follow it without anyone explaining.
+  try{
+    const rl=$('s10-rules');
+    if(rl){
+      rl.hidden=false;
+      rl.innerHTML=(Q.revealed&&Q.current[2])
+        ? '<span class="said">'+esc(Q.current[2])+'</span>'
+        : '<span>Take one you believe is <b>true</b></span>'
+          +'<span>Each one adds to your <b>pot</b></span>'
+          +'<span class="bad">One wrong and the <b>pot is gone</b></span>'
+          +'<span>Bank it <b>whenever you like</b></span>';
+    }
+  }catch(e){}
   const nameOf=id=>{const p=S.players.find(x=>x.id===id);return p?shownName(p):''};
   $('q-options').className='qgrid ten';
   $('q-options').innerHTML=(Q.cands||[]).map((c,i)=>{
@@ -4632,16 +4712,23 @@ function drawS10(){
   $('q-scores').innerHTML=S.players.map(p=>{
     const st=Q.state?Q.state[p.id]:'in';
     const pot=Q.pot?(Q.pot[p.id]||0):0;
-    return '<span class="qsc'+(st==='out'?' waiting':' done')+(st==='banked'?' ok':'')+'">'
+    // 10. a player who has not touched the round is simply still in it. Only
+    // someone who has actually banked gets the green tick.
+    const cls=st==='out'?' waiting':st==='banked'?' done ok':pot?' done atrisk':'';
+    return '<span class="qsc'+cls+'">'
       +'<span class="av">'+backArt(p,'qav')+'</span>'+esc(shownName(p))
       +' <b>'+(p.score||0)+'</b>'
-      +(st==='in'&&pot?' <i class="pot">+'+pot+'</i>':'')
+      +(st==='in'&&pot?' <i class="pot">+'+pot+' at risk</i>':'')
       +(st==='out'?' \u2717':st==='banked'?' \u2713':'')+'</span>';
   }).join('');
   const nx=$('q-next');
-  if(nx)nx.textContent=Q.revealed
-    ?(Q.round>=Q.deck.length?'See the standings':'Next question')
-    :'End the round';
+  if(nx){
+    nx.textContent=Q.revealed
+      ?(Q.round>=Q.deck.length?'See the standings':'Next question')
+      :'End the round';
+    // 9. mid-round the loud red button was the way out of the round
+    nx.classList.toggle('calm',!Q.revealed);
+  }
 }
 $('q-options')&&($('q-options').addEventListener('click',e=>{
   if(isS10()){
