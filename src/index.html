@@ -2111,7 +2111,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 
   <!-- LOBBY: the chairs arrive on their own phones -->
   <section class="screen" id="s-lobby">
-    <div class="steps"><span class="step on">1 The party room</span><span class="step">2 Go</span></div>
+    
     <div class="eyebrow">Invite the room</div>
     <h2>Their phones are the chairs.</h2>
     <p class="sub" id="lobby-sub">Keep this screen on the television. Everyone else opens the same page on their phone, taps <em style="font-style:normal;color:var(--bone)">Join with code</em> and types it in. Their chair appears here as they arrive.</p>
@@ -2211,7 +2211,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
     <p class="pool thin" id="friends-note"></p>
     </div>
 
-    <button class="btn" id="to-rules">Everyone in &mdash; ready to go &rarr;</button>
+    <button class="btn" id="to-rules">Start the game &rarr;</button>
     <button class="btn ghost" id="lobby-back">Back</button>
     <button type="button" class="backlink" id="lobby-home" style="margin-left:10px">&larr; Main menu</button>
     <p class="note">Anyone without a phone still plays: every chair can be tapped on this screen too.</p>
@@ -6920,11 +6920,16 @@ function ballotState(){
 }
 // everyone on a phone should see what is being chosen, so they can argue about it
 function setupLine(){
-  const g=S.game==='trivia'?'Quiz':S.game==='picture'?'Picture Guess'
-    :S.game==='artist'?'Name the Artist':'The Chair';
+  const g=GAMELABEL[S.game]||'The Chair';
   const bits=[g];
-  if(S.game==='picture'){
-    bits.push((S.len||10)+' pictures');
+  const lang=()=>S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English';
+  const topics=(n)=>S.cats&&S.cats.length?S.cats.map(catShown).join(', '):'All '+n+' topics';
+  if(S.game==='s10'){
+    bits.push(lang());bits.push(topics('six'));bits.push((S.len||8)+' questions');
+  }else if(S.game==='tf'){
+    bits.push(lang());bits.push(topics('six'));bits.push((S.len||10)+' statements');
+  }else if(S.game==='picture'){
+    bits.push(lang());bits.push(topics('four'));bits.push((S.len||10)+' pictures');
   }else if(S.game==='trivia'){
     bits.push(S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English');
     bits.push(S.cats&&S.cats.length?S.cats.map(catShown).join(', '):'All six topics');
@@ -7514,7 +7519,9 @@ function followInvitation(){
 $('m-code')&&($('m-code').onclick=openChairScreen);
 // Back means back a screen. Shutting the room down is "← Main menu", which says so.
 $('lobby-back')&&($('lobby-back').onclick=()=>show('s-setup'));
-$('to-rules')&&($('to-rules').onclick=()=>{drawGo();show('s-go')});
+// the party page starts the game itself: the old GO screen asked nothing a
+// host could not already see on it
+$('to-rules')&&($('to-rules').onclick=()=>{try{$('lobby-start').click()}catch(e){}});
 function dressRules(){
   try{dressWhere()}catch(e){}
   const triv=S.game==='trivia';
