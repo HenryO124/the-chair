@@ -3374,17 +3374,16 @@ function ballot(){
   // The records are chosen by decade and genre, and Point the Finger asks
   // about the room, so neither of those has topics. Naming those two instead
   // of the ones that do means a new game gets the six topics by default.
-  if(playsRecords()||isFinger())return [];
-  // Picture Guess used to carry this list by hand, and the hand got it wrong:
-  // "Kuuluisa henkilö" sat in the table with no rounds behind it, and a room
-  // that chose it got a deck of nothing. The ballot is now whatever the
-  // pictures themselves hold, in the table's own order, so a category cannot
-  // be offered until it has rounds and cannot be forgotten once it does.
-  if(isPicture()){
-    const have={};
-    PICTURES.forEach(r=>{have[r[0]]=(have[r[0]]||0)+1});
-    return Object.keys((PICCAT.en||{})).filter(k=>have[k]>0);
-  }
+  // Picture Guess has no topics either. It used to, as a hand-kept list of
+  // fourteen, and the list was wrong: "Kuuluisa henkilö" sat in the table
+  // with no pictures behind it, so a room that chose it got a deck of
+  // nothing. The categories never earned their keep — a picture round is
+  // better for mixing a mushroom with a cathedral than for serving fifteen
+  // mushrooms — and without them the whole class of fault goes away: no
+  // empty topic, no topic to wire up when new pictures arrive. The category
+  // still decides what the television asks ("Mikä sieni tämä on?"), which is
+  // per-picture wording, not a filter.
+  if(playsRecords()||isFinger()||isPicture())return [];
   return catKeys();
 }
 function ballotLabel(key){
@@ -3444,12 +3443,8 @@ function catBank(){
     const want=S.cats.map(catShown);
     return all.filter(r=>want.indexOf(r[0])>=0);
   }
-  if(isPicture()){
-    const all=pictureBank();
-    if(!S.cats.length)return all;
-    const want=S.cats.map(k=>(PICCAT[S.lang]||PICCAT.en)[k]||k);
-    return all.filter(r=>want.indexOf(r[0])>=0);
-  }
+  // every picture, always: this game has no topics to narrow it down to
+  if(isPicture())return pictureBank();
   const bank=langBank();
   if(!S.cats.length)return bank;
   // topics are stored by their English key, whatever language they are shown in
@@ -4398,7 +4393,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 20:28';
+const BUILD='07.11. 20:36';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4584,10 +4579,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07112028',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07112028',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07112036',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07112036',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07112028',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07112036',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -8449,7 +8444,10 @@ function dressRules(){
   const finger=S.game==='finger';                 // no topics, no right answer
   const pic=S.game==='picture';
   const triv=!records&&!pic&&!finger;             // written questions with topics
-  const topics=!records&&!finger;                 // picture has topics too
+  // One source for this: whether there are topics is whether the ballot has
+  // any. Writing the games out by hand here is how the screen came to offer
+  // an empty topics box the moment the picture game stopped having topics.
+  let topics=false;try{topics=ballot().length>0}catch(e){topics=!records&&!finger}
   const quiz=S.game!=='chair';                    // only the chair builds teams
   // the era and genre filters belong to the record collection
   [['eras'],['genres']].forEach(id=>{

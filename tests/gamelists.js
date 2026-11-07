@@ -31,7 +31,11 @@ setTimeout(()=>{
   // which is the list that keeps being forgotten.
   const RECORDS={artist:1,chair:1};
   const CHAIRGAME={chair:1};
-  const NOTOPICS={finger:1};            // its questions are about the room
+  // Point the Finger asks about the room, and Picture Guess deliberately has
+  // no topics: the hand-kept list of fourteen was wrong once already, and a
+  // picture round is better for mixing a mushroom with a cathedral than for
+  // serving fifteen mushrooms.
+  const NOTOPICS={finger:1,picture:1};
   games.forEach(g=>{if(!(g in RECORDS)&&ev('playsRecords.toString()').indexOf(J(g))>=0)
     probs.push(g+' plays records but this test did not expect it to')});
 

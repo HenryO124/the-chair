@@ -26,20 +26,23 @@ setTimeout(()=>{
       const n=ev("catBank().length");
       if(!n)probs.push(g+': the ballot offers "'+k+'" and nothing is behind it');
     }
-    if(g==='picture'&&!keys.length)probs.push('picture: the ballot is empty');
+    // Picture Guess, Name the Artist and Point the Finger have no topics at
+    // all. For the picture game that is deliberate: the hand-kept list of
+    // fourteen was wrong, and a round is better for mixing a mushroom with a
+    // cathedral than for serving fifteen mushrooms.
+    if(g==='picture'&&keys.length)
+      probs.push('picture: the ballot offers topics again — this game has none');
   }
 
-  // ---- a category in the table with no rounds may not reach the ballot ----
+  // ---- with no topics, every picture is always in play ----
   ev("S.game='picture';S.cats=[]");
-  const offered=JSON.parse(ev("JSON.stringify(ballot())"));
-  const counts=JSON.parse(ev("JSON.stringify(PICTURES.reduce((m,r)=>((m[r[0]]=(m[r[0]]||0)+1),m),{}))"));
-  const empty=Object.keys(JSON.parse(ev("JSON.stringify(PICCAT.en)"))).filter(k=>!counts[k]);
-  for(const k of empty)
-    if(offered.indexOf(k)>=0)probs.push('"'+k+'" has no pictures and is on the ballot anyway');
-  // and one that does have rounds must not be left off
-  for(const k of Object.keys(counts))
-    if(counts[k]>0&&offered.indexOf(k)<0&&(k in JSON.parse(ev("JSON.stringify(PICCAT.en)"))))
-      probs.push('"'+k+'" has '+counts[k]+' pictures and is missing from the ballot');
+  const all=ev("catBank().length");
+  const rows=ev("PICTURES.length");
+  if(all!==rows)probs.push('the picture game deals '+all+' of '+rows+' pictures');
+  else console.log('  every one of the '+rows+' pictures is in play, with no topic to exclude it');
+  // a category the table has never heard of must still ask something sane
+  const ask=ev("(PICASK[S.lang]||PICASK.en)['*']||''");
+  if(!ask)probs.push('a picture in an unknown category would be asked nothing at all');
 
   // ---- an impossible setting must not wedge the game ----
   // a saved setting from an older build can still name a topic with nothing in it
@@ -49,7 +52,7 @@ setTimeout(()=>{
   if(deck<1)probs.push('a topic with nothing in it dealt a deck of '+deck+' and the screen is stuck');
   else console.log('  an impossible topic falls back to the whole bank: '+deck+' rounds');
 
-  console.log('  ballot offers '+offered.length+' picture topics, every one with rounds behind it');
+
   if(probs.length){console.log('FAIL:');probs.forEach(p=>console.log('  x '+p));process.exit(1)}
   console.log('ok - no topic is offered that cannot be played, and no setting deals nothing');
   process.exit(0);

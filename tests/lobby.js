@@ -18,7 +18,9 @@ setTimeout(()=>{
   const games=JSON.parse(ev('JSON.stringify(Object.keys(GAMELABEL))'));
   if(games.length<7)probs.push('only '+games.length+' games to check');
   const RECORDS={artist:1,chair:1};        // the only two that play a record
-  const NOTOPICS={finger:1};               // its questions are about the room
+  // Point the Finger asks about the room; Picture Guess deliberately has no
+  // topics at all, so its settings screen must not offer an empty box.
+  const NOTOPICS={finger:1,picture:1};
   games.forEach(g=>{
     ev("S.lang='fi';S.game="+JSON.stringify(g)+";PARTY.role='host';PARTY.code='TESTAA';"+
        "S.players=[{id:0,name:'Henkka',icon:0,score:0}];dressRules();");
