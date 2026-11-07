@@ -3129,6 +3129,7 @@ function drawCats(){
 }
 segHandler('lang','g',v=>{
   S.lang=v;
+  try{dressButtons()}catch(e){}
   try{localStorage.setItem('thechair.lang',v)}catch(e){}
   drawCats();
   if(PARTY.role==='host')publishStage();
@@ -4009,7 +4010,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 12:48';
+const BUILD='07.11. 12:55';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4195,10 +4196,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111248',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111248',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111255',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111255',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111248',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111255',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4644,7 +4645,7 @@ function quizNext(){
       Q.correct=Q.options.indexOf(Q.current[2]);
     }
     $('q-curtain').classList.add('open');          // a question hides nothing
-    $('q-next').textContent='Reveal';
+    $('q-next').textContent=T('reveal');
     showQuizQuestion();
     warmNextPicture();                             // the one after this, fetched while this one is read
     drawQuiz();publishStage();
@@ -4660,7 +4661,7 @@ function quizNext(){
   Q.correct=Q.options.indexOf(Q.current);
   $('q-curtain').classList.remove('open');
   $('q-curtain').textContent='Curtain closed';
-  $('q-next').textContent='Reveal';
+  $('q-next').textContent=T('reveal');
   try{$('q-stage').classList.remove('centred')}catch(e){}   // a record fills the frame
   playRecord(Q.current);            // an iTunes preview if there is one, the embed if not
   warmNextRecord();                 // and the one after it is fetched while this one plays
@@ -4995,8 +4996,8 @@ function quizReveal(){
     if(right)p.score=(p.score||0)+10+(p.id===firstRight?5:0);
   });
   $('q-curtain').classList.add('open');
-  $('q-next').textContent=Q.round>=Q.deck.length?'See the winner'
-    :isAsking()?'Next question':'Next record';
+  $('q-next').textContent=Q.round>=Q.deck.length?T('see_winner')
+    :isAsking()?T('next_q'):T('next_r');
   if(isAsking())showQuizQuestion();
   drawQuiz();
   startNextCount(NEXT_IN);
@@ -5029,8 +5030,8 @@ function drawNextCount(){
   if(h)h.hidden=!Q.nextIn;
   if(!b)return;
   const last=Q.round>=Q.deck.length;
-  const word=last?'See the winner'
-    :(isAsking()||isS10())?'Next question':'Next record';
+  const word=last?T('see_winner')
+    :(isAsking()||isS10())?T('next_q'):T('next_r');
   b.textContent=Q.nextIn?word+'  '+Q.nextIn:word;
 }
 /* ---- one party, several games, one evening ---------------------------
@@ -5169,8 +5170,8 @@ function drawS10(){
   const nx=$('q-next');
   if(nx){
     nx.textContent=Q.revealed
-      ?(Q.round>=Q.deck.length?'See the standings':'Next question')
-      :'End the round';
+      ?(Q.round>=Q.deck.length?T('see_standings'):T('next_q'))
+      :T('end_round');
     // 9. mid-round the loud red button was the way out of the round
     nx.classList.toggle('calm',!Q.revealed);
   }
@@ -5821,11 +5822,11 @@ function roomClosed(){
   try{padVid='';recStop()}catch(e){}   // and the record stops with the room
   ['pad-sign','pad-skip','pad-hold','pad-blocks','pad-team','pad-teamhead']
     .forEach(id=>{const e=$(id);if(e)e.hidden=true});
-  try{$('pad-round').textContent='Room '+PARTY.code}catch(e){}
+  try{$('pad-round').textContent=T('room',{code:PARTY.code})}catch(e){}
   try{$('pad-state').textContent='The host has closed the room. The party is over \u2014 '
     +'or they are opening a new one, in which case you will need the new code.';
     $('pad-state').className='mystate'}catch(e){}
-  try{$('pad-leave').textContent='Back to the start'}catch(e){}
+  try{$('pad-leave').textContent=T('back_start')}catch(e){}
 }
 function openChairScreen(){
   padIcon=0;drawAvatarPicker();
@@ -6097,18 +6098,17 @@ function drawPadS10(st,me){
   const rl=$('pad-run');
   if(rl){
     rl.hidden=false;
-    rl.textContent=mine==='out'?'Wrong \u2014 the pot is gone. Back next question.'
-      :mine==='banked'?'Banked '+pot+'. Safe.'
-      :!myTurn?((st.turnName||'Somebody')+'\u2019s turn'
-        +(pot?' \u00b7 your pot '+pot:''))
-      :pot?'Your turn \u00b7 pot '+pot+' \u00b7 next one +'+(10*(picks+1))
-        +' \u00b7 a wrong one takes it all'
-      :'Your turn \u2014 pick one you are sure of';
+    const who=st.turnName||'';
+    rl.textContent=mine==='out'?T('s10_out')
+      :mine==='banked'?T('s10_banked',{n:pot})
+      :!myTurn?T(pot?'s10_their_turn_pot':'s10_their_turn',{who:who,n:pot})
+      :pot?T('s10_my_turn_pot',{n:pot,m:10*(picks+1)})
+      :T('s10_my_turn');
   }
   const bank=$('pad-bank'),bar=$('pad-bankbar');
   if(bank){
     if(bar)bar.hidden=!(mine==='in'&&pot>0&&!st.revealed);
-    bank.textContent='Bank '+pot;
+    bank.textContent=T('bank',{n:pot});
   }
 }
 /* The host sends the number of seconds once; the phone runs the clock itself,
@@ -6151,13 +6151,14 @@ function drawPadQuiz(st,me){
   const mine=(me&&me.pick>=0)?me.pick:(said?myPick:-1);
   if(!said)myPick=-1;              // a new question, a clean slate
   const got=st.revealed&&mine===st.correct;
-  $('pad-round').textContent=st.phase==='over'?'That is the game'
-    :(st.cat?st.cat+' \u00b7 ':'')+(st.ask?'Question ':'Record ')+st.round+' of '+st.of;
+  $('pad-round').textContent=st.phase==='over'?T('game_over')
+    :T(st.cat?(st.ask?'cat_q_of':'cat_r_of'):(st.ask?'q_of':'r_of'),
+       {cat:st.cat||'',i:st.round,n:st.of});
   const stEl=$('pad-state');
   stEl.textContent=st.phase==='over'?finalLine(st,me)
-    :st.phase==='lobby'?'You are in. Watch the big screen.'
-    :st.revealed&&st.act?(got?'Right — '+st.act.name:'It was '+st.act.name)
-    :said?'Locked in. Waiting for the others…'
+    :st.phase==='lobby'?T('in_watch')
+    :st.revealed&&st.act?T(got?'right_was':'it_was',{a:st.act.name})
+    :said?T('locked')
     :st.ask?st.ask
     :'Who is this?';
   // green when you had it, red when you did not: readable at arm's length
@@ -6168,7 +6169,7 @@ function drawPadQuiz(st,me){
     box.innerHTML=finalBoard(st,me);
     try{$('pad-round').textContent='';$('pad-state').textContent='';
       $('pad-state').className='mystate';
-      $('pad-seats').hidden=true;$('pad-leave').textContent='Leave the party';}catch(e){}
+      $('pad-seats').hidden=true;$('pad-leave').textContent=T('leave_party');}catch(e){}
     return;
   }
   if(!me){                      // at the door: say so rather than show a dead question
@@ -6186,7 +6187,7 @@ function drawPadQuiz(st,me){
   if(rl){
     const run=(me&&me.run)||0;
     rl.hidden=!(st.game==='tf'&&run>0);
-    if(!rl.hidden)rl.textContent=run+' in a row \u00b7 next one is worth '+(10*Math.min(run+1,5));
+    if(!rl.hidden)rl.textContent=T('run_row',{n:run,m:10*Math.min(run+1,5)});
   }
   const opts=st.options||[];
   // the same four buttons stay in the page for the whole question: replacing
@@ -6222,28 +6223,141 @@ $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
   b.classList.add('mine');
   sendAct('answer',myPick);
 }));
+
+/* ---- the words, in the language the questions are in -----------------
+   English is the source and the fallback: a key with no translation simply
+   reads in English rather than disappearing. Holes are named, because the
+   order of the pieces is not the same in the three languages. */
+const WORDS={
+ fi:{
+  reveal:'Paljasta', next_q:'Seuraava kysymys', next_r:'Seuraava levy',
+  see_winner:'Katso voittaja', see_standings:'Katso tilanne',
+  hold:'Pidä tauko', end_game:'Lopeta peli', end_round:'Lopeta kierros',
+  bank:'Pankita {n}', leave:'Poistu pelistä', leave_party:'Poistu bileistä',
+  back_start:'Takaisin alkuun',
+  room:'Huone {code}', room_wait:'Huone {code} · odotetaan aloitusta',
+  q_of:'Kysymys {i}/{n}', r_of:'Levy {i}/{n}', cat_q_of:'{cat} · kysymys {i}/{n}',
+  cat_r_of:'{cat} · levy {i}/{n}',
+  game_over:'Peli päättyi',
+  in_watch:'Olet mukana. Katso isoa ruutua.',
+  in_chairs:'Olet mukana. {n} tuolia varattu — odotetaan isäntää.',
+  locked:'Valinta tehty. Odotetaan muita…',
+  right_was:'Oikein — {a}', it_was:'Oikea vastaus: {a}',
+  next_in:'Seuraava kysymys {n} s',
+  run_row:'{n} putkeen · seuraava on {m} pisteen arvoinen',
+  s10_out:'Väärin — potti meni. Takaisin ensi kysymyksessä.',
+  s10_banked:'Pankitit {n}. Turvassa.',
+  s10_their_turn:'{who} on vuorossa', s10_their_turn_pot:'{who} on vuorossa · sinun pottisi {n}',
+  s10_my_turn:'Sinun vuorosi — valitse yksi josta olet varma',
+  s10_my_turn_pot:'Sinun vuorosi · potti {n} · seuraava +{m} · yksi väärä vie kaiken',
+  door_tell:'Kerro kuka olet niin saat tuolin.',
+  door_full:'Kaikki tuolit ovat varattuja. Isäntä näkee sinut ja päästää sisään kun paikka vapautuu.',
+  door_full_ahead:'Kaikki tuolit ovat varattuja. Isäntä näkee sinut — {n} edelläsi.',
+  door_seen:'Isäntä näkee sinut ovella. Odota hetki.',
+  door_seen_break:'Isäntä näkee sinut ovella ja päästää sisään seuraavalla tauolla.',
+  door_asking:'Pyydetään tuolia…',
+  door_told:'Isännälle on kerrottu että olet täällä. Hän voi päästää sinut sisään tauolla.',
+  closed:'Isäntä sulki huoneen. Bileet ovat ohi — kiitos kun tulit.',
+  meta_artist:'nimeä esittäjä', meta_trivia:'yleistieto', meta_picture:'tunnista kuva',
+  meta_tf:'totta vai tarua', meta_s10:'kuinka pitkälle uskallat'
+ },
+ sv:{
+  reveal:'Avslöja', next_q:'Nästa fråga', next_r:'Nästa skiva',
+  see_winner:'Se vinnaren', see_standings:'Se ställningen',
+  hold:'Pausa', end_game:'Avsluta spelet', end_round:'Avsluta rundan',
+  bank:'Säkra {n}', leave:'Lämna spelet', leave_party:'Lämna festen',
+  back_start:'Tillbaka till början',
+  room:'Rum {code}', room_wait:'Rum {code} · väntar på start',
+  q_of:'Fråga {i}/{n}', r_of:'Skiva {i}/{n}', cat_q_of:'{cat} · fråga {i}/{n}',
+  cat_r_of:'{cat} · skiva {i}/{n}',
+  game_over:'Spelet är slut',
+  in_watch:'Du är med. Titta på storbildsskärmen.',
+  in_chairs:'Du är med. {n} stolar tagna — väntar på värden.',
+  locked:'Svaret är låst. Väntar på de andra…',
+  right_was:'Rätt — {a}', it_was:'Rätt svar: {a}',
+  next_in:'Nästa fråga om {n} s',
+  run_row:'{n} i rad · nästa är värd {m} poäng',
+  s10_out:'Fel — potten är borta. Tillbaka nästa fråga.',
+  s10_banked:'Du säkrade {n}. Tryggt.',
+  s10_their_turn:'{who} har turen', s10_their_turn_pot:'{who} har turen · din pott {n}',
+  s10_my_turn:'Din tur — välj en du är säker på',
+  s10_my_turn_pot:'Din tur · pott {n} · nästa +{m} · en fel tar allt',
+  door_tell:'Säg vem du är så får du en stol.',
+  door_full:'Alla stolar är tagna. Värden ser dig och släpper in dig när en blir ledig.',
+  door_full_ahead:'Alla stolar är tagna. Värden ser dig — {n} före dig.',
+  door_seen:'Värden ser dig vid dörren. Vänta lite.',
+  door_seen_break:'Värden ser dig vid dörren och släpper in dig vid nästa paus.',
+  door_asking:'Ber om en stol…',
+  door_told:'Värden har fått veta att du är här och kan släppa in dig vid nästa paus.',
+  closed:'Värden har stängt rummet. Festen är slut — tack för att du kom.',
+  meta_artist:'namnge artisten', meta_trivia:'allmänbildning', meta_picture:'gissa bilden',
+  meta_tf:'sant eller falskt', meta_s10:'hur långt vågar du'
+ }
+};
+const EN={
+  reveal:'Reveal', next_q:'Next question', next_r:'Next record',
+  see_winner:'See the winner', see_standings:'See the standings',
+  hold:'Hold', end_game:'End the game', end_round:'End the round',
+  bank:'Bank {n}', leave:'Leave the game', leave_party:'Leave the party',
+  back_start:'Back to the start',
+  room:'Room {code}', room_wait:'Room {code} · waiting to start',
+  q_of:'Question {i} of {n}', r_of:'Record {i} of {n}',
+  cat_q_of:'{cat} · question {i} of {n}', cat_r_of:'{cat} · record {i} of {n}',
+  game_over:'That is the game',
+  in_watch:'You are in. Watch the big screen.',
+  in_chairs:'You are in. {n} chairs so far — waiting for the host to start.',
+  locked:'Locked in. Waiting for the others…',
+  right_was:'Right — {a}', it_was:'It was {a}',
+  next_in:'Next question in {n}',
+  run_row:'{n} in a row · next one is worth {m}',
+  s10_out:'Wrong — the pot is gone. Back next question.',
+  s10_banked:'Banked {n}. Safe.',
+  s10_their_turn:'{who}’s turn', s10_their_turn_pot:'{who}’s turn · your pot {n}',
+  s10_my_turn:'Your turn — pick one you are sure of',
+  s10_my_turn_pot:'Your turn · pot {n} · next one +{m} · a wrong one takes it all',
+  door_tell:'Tell them who you are to take a chair.',
+  door_full:'Every chair is taken. The host can see you waiting and will let you in when one frees up.',
+  door_full_ahead:'Every chair is taken. The host can see you waiting — {n} ahead of you.',
+  door_seen:'The host can see you at the door. Hold on.',
+  door_seen_break:'The host can see you at the door and can let you in at the next break.',
+  door_asking:'Asking for a chair…',
+  door_told:'The host has been told you are here. They can let you in at the next break.',
+  closed:'The host has closed the room. The party is over — thanks for coming.',
+  meta_artist:'name the artist', meta_trivia:'general knowledge', meta_picture:'guess the picture',
+  meta_tf:'true or false', meta_s10:'how far do you dare'
+};
+/* T('q_of',{i:3,n:15}) — the sentence in the language in use, holes filled */
+function T(key,vals){
+  const tbl=WORDS[S.lang]||null;
+  let t=(tbl&&tbl[key])||EN[key]||'';
+  if(vals)for(const k in vals)t=t.split('{'+k+'}').join(vals[k]);
+  return t;
+}
+/* the handful of buttons that live in the markup rather than in a sentence */
+function dressButtons(){
+  const set=(id,key)=>{try{const e=$(id);if(e)e.textContent=T(key)}catch(e){}};
+  set('q-hold','hold');
+  set('q-quit','end_game');
+  set('pad-leave','leave');
+}
 const METALABEL={chair:'blind signings',artist:'name the artist',trivia:'general knowledge',
   picture:'picture guess',tf:'true or false',s10:'the short list'};
 let padLastNext='';
 /* 15. what a phone at the door is actually waiting for. Two different places
    used to answer this question, and both of them only said "asking". */
 function doorLine(st){
-  if(!PARTY.code)return 'Tell them who you are to take a chair.';
+  if(!PARTY.code)return T('door_tell');
   const q=(st&&st.knocks)||[];
   const at=q.indexOf(PARTY.pid);
-  if(at>=0&&st&&st.full)
-    return 'Every chair is taken. The host can see you waiting'
-      +(at>0?' \u2014 '+at+' ahead of you.':' and will let you in when one frees up.');
-  if(at>=0)return st&&st.phase==='lobby'
-    ? 'The host can see you at the door. Hold on.'
-    : 'The host can see you at the door and can let you in at the next break.';
-  if(st&&st.phase==='lobby')return 'Asking for a chair\u2026';
-  return 'The host has been told you are here. They can let you in at the next break.';
+  if(at>=0&&st&&st.full)return at>0?T('door_full_ahead',{n:at}):T('door_full');
+  if(at>=0)return T(st&&st.phase==='lobby'?'door_seen':'door_seen_break');
+  if(st&&st.phase==='lobby')return T('door_asking');
+  return T('door_told');
 }
 function drawPad(){
   const st=PARTY.stage,me=mySeat();
   if(me)try{joinStatus('','')}catch(e){}    // seated: the join chatter is over
-  try{if(st&&st.game)$('meta').textContent=METALABEL[st.game]||''}catch(e){}
+  try{if(st&&st.game)$('meta').textContent=T('meta_'+st.game)||METALABEL[st.game]||''}catch(e){}
   // two different versions in one room is the one bug a phone can fix itself
   try{
     const wn=$('pad-warn');
@@ -6287,7 +6401,7 @@ function drawPad(){
   const pq=$('pad-pic');if(pq){pq.hidden=true;pq.dataset.u=''}
   ['pad-sign','pad-skip','pad-team','pad-teamhead','pad-myteam'].forEach(id=>{const e=$(id);if(e)e.hidden=false});
   if(!me){
-    $('pad-round').textContent='Room '+PARTY.code;
+    $('pad-round').textContent=T('room',{code:PARTY.code});
     $('pad-state').textContent=doorLine(st);
     drawPadSeats(st,null);
     sign.disabled=true;skip.disabled=true;$('pad-blocks').innerHTML='';
@@ -6299,13 +6413,12 @@ function drawPad(){
   const out=me.full||me.passed||blocked;
   const iWon=st.winner===me.id;
 
-  $('pad-round').textContent=st.phase==='lobby'?'Room '+PARTY.code+' · waiting to start'
+  $('pad-round').textContent=st.phase==='lobby'?T('room_wait',{code:PARTY.code})
     :'Audition '+st.round+' of '+st.of;
 
   if(st.phase==='lobby'){
     const n=st.seats.length;
-    $('pad-state').textContent='You are in. '+n+(n===1?' chair':' chairs')
-      +' so far \u2014 waiting for the host to start.';
+    $('pad-state').textContent=T('in_chairs',{n:n});
   }
   else if(live&&blocked)$('pad-state').textContent='Blocked this round. Hands off.';
   else if(live&&me.full)$('pad-state').textContent='Your team is full. You are out of the running.';

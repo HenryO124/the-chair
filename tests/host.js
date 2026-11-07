@@ -81,10 +81,11 @@ setTimeout(()=>{
       round:0,of:10,options:[],revealed:false};
     show('s-chair');drawPad();`);
   const said=$('pad-state').textContent;
-  if(/Asking for a chair/.test(said)||!said)
-    probs.push('a phone at a full door is still just "asking for a chair": '+said);
-  if(!/chair is taken|full/i.test(said))
-    probs.push('the phone is not told the room is full: '+said);
+  if(said===w.eval("T('door_asking')")||!said)
+    probs.push('a phone at a full door is still just asking for a chair: '+said);
+  const wantFull=w.eval("T('door_full')");
+  if(said!==wantFull)
+    probs.push('the phone is not told the room is full: "'+said+'", expected "'+wantFull+'"');
 
   console.log(probs.length?'FAIL:':'ok - the host: knocks seen, Back safe, empty row dropped, phone told');
   probs.forEach(p=>console.log('  x '+p));

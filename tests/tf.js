@@ -52,7 +52,12 @@ setTimeout(()=>{
   if(btns.length!==2)probs.push('the phone shows '+btns.length+' answers, expected 2');
   if(!$('pad-quiz').className.includes('two'))probs.push('the two answers are not laid out big');
   if($('pad-run').hidden)probs.push('the phone does not show the run');
-  if(!/2 in a row/.test($('pad-run').textContent))probs.push('the run line is wrong: '+$('pad-run').textContent);
+  // the phone speaks the language the questions are in, so ask the page what
+  // that sentence should say rather than assuming English
+  const wantRun=w.eval("T('run_row',{n:2,m:30})");
+  if($('pad-run').textContent!==wantRun)
+    probs.push('the run line is "'+$('pad-run').textContent+'", expected "'+wantRun+'"');
+  if(!/2/.test($('pad-run').textContent))probs.push('the run line does not say how long the run is');
   console.log(probs.length?'FAIL:':'ok - True or False plays, the run pays, the quiz is untouched');
   probs.forEach(p=>console.log('  x '+p));
   process.exit(probs.length?1:0);
