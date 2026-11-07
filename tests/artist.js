@@ -21,6 +21,10 @@ setTimeout(()=>{
   [['The Beatles','Beatles'],['Beatles','The Beatles'],['ABBA','ABBA'],
    ['Beyonce','Beyoncé'],['Simon & Garfunkel','Simon and Garfunkel'],
    ['Macklemore','Macklemore & Ryan Lewis'],['Gloria Estefan','Gloria Estefan & Miami Sound Machine'],
+   // iTunes writes these without the dots; the owner's own check turned up
+   // Run-D.M.C. as "missing" when the record is plainly there
+   ['Run-D.M.C.','RUN DMC'],['Run-D.M.C.','Run-DMC'],['Salt-N-Pepa','Salt N Pepa'],
+   ['AC/DC','AC DC'],['R.E.M.','REM'],
   ].forEach(([a,b])=>{
     if(score(a,b)!==2)probs.push('"'+a+'" no longer matches "'+b+'" (scored '+score(a,b)+')');
   });

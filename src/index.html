@@ -5819,6 +5819,11 @@ function nameScore(want,got){
   const strip=t=>{const o=t.filter(w=>!noise[w]);return o.length?o:t};
   const sa=strip(ta),sb=strip(tb);
   if(sa.join(' ')===sb.join(' '))return 2;
+  /* Run-D.M.C. folds to "run d m c" and iTunes writes "RUN DMC" -> "run dmc".
+     Same act, no words in common. So compare them with the gaps closed up too;
+     that is only a match when the letters are identical in order, which no two
+     different acts are. */
+  if(sa.join('')===sb.join(''))return 2;
   /* A one-word act name sits inside a great many other act names: Prince in
      Prince Royce, Cher in Cher Lloyd, Europe in Europe 2000, Ghost in Ghost
      Hounds. 55 of the acts in this collection have one-word names, so taking

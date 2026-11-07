@@ -52,24 +52,40 @@ function fold(s){
     .toLowerCase().replace(/&/g,' and ')
     .replace(/[^a-z0-9']+/g,' ').trim();
 }
-const JOIN={'&':1,and:1,feat:1,'feat.':1,featuring:1,with:1,x:1,vs:1,'vs.':1,presents:1};
-const NOISE={the:1,los:1,las:1,le:1,la:1,die:1,der:1};
-/* the same rule the game uses: a one-word act name sits inside many others,
-   so Prince must not match Prince Royce */
-function same(want,got){
+/* The game's own matching, copied whole. Keeping a second copy in step by
+   hand is how a checker starts disagreeing with the thing it checks. */
+function nameScore(want,got){
   const a=fold(want),b=fold(got);
-  if(!a||!b)return false;
-  if(a===b)return true;
-  const strip=t=>{const o=t.filter(w=>!NOISE[w]);return o.length?o:t};
-  const sa=strip(a.split(' ')),sb=strip(b.split(' '));
-  if(sa.join(' ')===sb.join(' '))return true;
-  const inside=(s,l)=>{
-    if(s.length>=l.length)return false;
-    for(let i=0;i<s.length;i++)if(s[i]!==l[i])return false;
-    return !!JOIN[l[s.length]];
+  if(!a||!b)return 0;
+  if(a===b)return 2;
+  const ta=a.split(' '),tb=b.split(' ');
+  /* "The Beatles" and "Beatles" are the same act; an article is not a word. */
+  const noise={the:1,los:1,las:1,le:1,la:1,die:1,der:1};
+  const strip=t=>{const o=t.filter(w=>!noise[w]);return o.length?o:t};
+  const sa=strip(ta),sb=strip(tb);
+  if(sa.join(' ')===sb.join(' '))return 2;
+  /* Run-D.M.C. folds to "run d m c" and iTunes writes "RUN DMC" -> "run dmc".
+     Same act, no words in common. So compare them with the gaps closed up too;
+     that is only a match when the letters are identical in order, which no two
+     different acts are. */
+  if(sa.join('')===sb.join(''))return 2;
+  /* A one-word act name sits inside a great many other act names: Prince in
+     Prince Royce, Cher in Cher Lloyd, Europe in Europe 2000, Ghost in Ghost
+     Hounds. 55 of the acts in this collection have one-word names, so taking
+     that containment as a perfect match plays the wrong record under the
+     right name — and the room has no way of knowing. A longer name only
+     counts when the extra part is a collaborator rather than a different act. */
+  const joins={'&':1,and:1,feat:1,'feat.':1,featuring:1,with:1,x:1,vs:1,'vs.':1,presents:1};
+  const inside=(small,big)=>{
+    if(small.length>=big.length)return false;
+    for(let i=0;i<small.length;i++)if(small[i]!==big[i])return false;  // a prefix
+    return !!joins[big[small.length]];             // and then a collaborator
   };
-  return inside(sa,sb)||inside(sb,sa);
+  if(inside(sa,sb)||inside(sb,sa))return 2;
+  const hit=sa.filter(w=>sb.indexOf(w)>=0).length;
+  return hit/Math.max(sa.length,sb.length)>=0.6?1:0;
 }
+const same=(a,b)=>nameScore(a,b)===2;
 const FAKE=/karaoke|tribute|in the style of|made popular by|instrumental version|cover version/i;
 const nap=ms=>new Promise(r=>setTimeout(r,ms));
 
