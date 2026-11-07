@@ -1,12 +1,12 @@
 {
  "CATALOG": 154,
- "PICTURES": 80,
+ "PICTURES": 160,
  "QIMG": 268,
  "S10BANK": 118,
  "TFBANK": 172,
  "TRIVIA": 801,
  "TRIVIA_FI": 801,
  "TRIVIA_SV": 801,
- "page_bytes": 1187811,
- "tests": 26
+ "page_bytes": 1223229,
+ "tests": 27
 }

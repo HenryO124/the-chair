@@ -65,6 +65,8 @@ MARKED = [
                        '/* ---- end smart ten ---- */'),
     ('point the finger', '/* ---- point the finger: generated, do not edit by hand ---- */',
                          '/* ---- end point the finger ---- */'),
+    ('closest wins', '/* ---- closest wins: generated, do not edit by hand ---- */',
+                     '/* ---- end closest wins ---- */'),
 ]
 
 # every global the chunk is allowed to define; the page declares each as an
@@ -82,6 +84,7 @@ PLACEHOLDERS = [
     ('TFBANK',     '[]'),
     ('S10BANK',    '[]'),
     ('FINGERS',    '[]'),
+    ('NEAR',       '[]'),
 ]
 NAMES = [n for n, _ in PLACEHOLDERS]
 
@@ -93,16 +96,22 @@ def undeclare(text):
         text = re.sub(r'(?m)^(?:var|const|let)\s+(' + n + r')\s*=', r'\1=', text)
     return text
 
+missing = []
 for label, head, foot in MARKED:
     i = s.find(head)
     if i < 0:
-        die('marker missing: ' + head)
+        # a bank that has not been written yet is not a broken build: the page
+        # declares the name empty and the game waits for its content
+        missing.append(label)
+        continue
     j = s.find(foot, i)
     if j < 0:
         die('closing marker missing: ' + foot)
     j += len(foot)
     chunks.append('/* ---- ' + label + ' ---- */\n' + undeclare(s[i:j]).strip())
     s = s[:i] + s[j:]
+if missing:
+    print('  (no content yet: ' + ', '.join(missing) + ')')
 
 def stmt_end(text, start):
     """Offset just past the `;` that ends the statement beginning at start.
