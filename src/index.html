@@ -3586,7 +3586,16 @@ function ballot(){
   // about the room, so neither of those has topics. Naming those two instead
   // of the ones that do means a new game gets the six topics by default.
   if(playsRecords()||isFinger())return [];
-  if(isPicture())return ['City','Landmark','Painting','Nature','Bird','Butterfly','Mushroom','Tree','Flower','Animal','Food','Country','Vehicle','Finland'];
+  // Picture Guess used to carry this list by hand, and the hand got it wrong:
+  // "Kuuluisa henkilö" sat in the table with no rounds behind it, and a room
+  // that chose it got a deck of nothing. The ballot is now whatever the
+  // pictures themselves hold, in the table's own order, so a category cannot
+  // be offered until it has rounds and cannot be forgotten once it does.
+  if(isPicture()){
+    const have={};
+    PICTURES.forEach(r=>{have[r[0]]=(have[r[0]]||0)+1});
+    return Object.keys((PICCAT.en||{})).filter(k=>have[k]>0);
+  }
   return catKeys();
 }
 function ballotLabel(key){
@@ -5283,7 +5292,17 @@ function quizStart(){
     quizNext();return;
   }
   if(!playsRecords()){
-    const bank=catBank();
+    let bank=catBank();
+    // A room that narrows the topics down to nothing gets a deck of nothing
+    // and a screen that will not move. Better the whole bank than a dead end
+    // in front of twelve people: the chosen topics are dropped and the game
+    // plays. This cannot happen through the ballot any more, but it can still
+    // happen through a saved setting from an older build.
+    if(!bank.length&&S.cats.length){
+      S.cats=[];
+      try{drawCats()}catch(e){}
+      bank=catBank();
+    }
     Q.of=Math.min(S.len||10,bank.length);
     Q.deck=evenDeck(bank,Q.of);
   }else{
