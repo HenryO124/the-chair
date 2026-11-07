@@ -1772,6 +1772,21 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 .infopanel>.ip-idle,.infopanel>.ip-body,.rail,.roundcard{
   border-color:rgba(255,70,100,.18)}
 
+/* 11. somebody at the door was only ever visible on the break screen, so a
+   knock during a quiz went unseen for the rest of the night. */
+.knockbar{position:fixed;top:clamp(56px,7vh,78px);right:clamp(10px,1.6vw,26px);z-index:70;
+  display:flex;align-items:center;gap:10px;cursor:pointer;
+  border:1px solid rgba(255,209,92,.55);background:rgba(50,32,6,.92);
+  color:#FFD37A;border-radius:22px;padding:9px 16px;
+  font-family:var(--mono);font-size:clamp(11px,.85vw,16px);letter-spacing:.1em;
+  text-transform:uppercase;box-shadow:0 0 30px rgba(216,163,63,.3)}
+.knockbar[hidden]{display:none!important}
+.knockbar:hover{border-color:#FFD37A;color:#FFF3EF}
+.knockbar .kdot{width:9px;height:9px;border-radius:50%;background:#FFD37A;
+  box-shadow:0 0 12px #FFD37A;animation:kpulse 1.6s ease-in-out infinite}
+@keyframes kpulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){.knockbar .kdot{animation:none}}
+
 /* the bar that says a newer build is out */
 .newver{border-color:rgba(255,70,100,.35);box-shadow:var(--glowsoft)}
 /* ---- a question with no picture should not sit in an empty frame ------
@@ -1878,6 +1893,8 @@ body:has(#s-chair.on) .striproundwrap{display:none}
       </button>
       <div class="meta" id="meta">blind signings</div>
       <button class="brk" id="break" style="display:none">Break</button>
+      <button type="button" class="knockbar" id="knockbar" hidden>
+        <span class="kdot"></span><span id="knockbar-t"></span></button>
     </div>
   </div>
 
@@ -2595,13 +2612,22 @@ const BACKVIA={                       // screen -> the button that already knows
 const BACKTO={'s-lobby':'s-setup','s-break':'resume'};
 function goBack(){
   const here=screenNow();
+  // 12. the room is already open on the game menu. A stray swipe used to run
+  // the Main menu button, which shuts the room and throws every phone out.
+  if(here==='s-setup'&&PARTY.role==='host'&&PARTY.code){
+    try{toLobby()}catch(e){show('s-lobby')}
+    return true;
+  }
   // playing alone there is no invite page to go back to
   if(SOLO&&(here==='s-rules'||here==='s-lobby')){show('s-setup');return true}
   const via=BACKVIA[here];
   if(via){const b=$(via);if(b&&!b.disabled){b.click();return true}}
   const to=BACKTO[here];
-  if(to){const b=$(to);if(b&&!b.disabled){b.click();return true}
-         if(document.getElementById(to)){show(to);return true}}
+  // a screen id is not a button: clicking the <section> did nothing at all,
+  // which is why Back was dead on the lobby
+  if(to){const b=$(to);
+         if(b&&b.tagName==='BUTTON'&&!b.disabled){b.click();return true}
+         if(b){show(to);return true}}
   return false;                       // already at the front door
 }
 try{history.replaceState({chair:1},'')}catch(e){}
@@ -3189,6 +3215,8 @@ function setMax(v){
   MAX_CHAIRS=Math.max(2,Math.min(8,v));
   drawMax();
   try{drawRoomBar()}catch(e){}
+  // 14. a knock stuck on "room full" while the host made room for them
+  try{drawKnocks()}catch(e){}
   if(PARTY.role==='host')try{dirPing(true);publishStage()}catch(e){}
 }
 $('mp-down')&&($('mp-down').onclick=()=>setMax(MAX_CHAIRS-1));
@@ -3233,15 +3261,36 @@ $('set-music')&&($('set-music').onclick=e=>{
   drawSettings();
 });
 $('set-name')&&($('set-name').addEventListener('change',()=>{
-  MYNAME=cleanName($('set-name').value);
-  try{localStorage.setItem('thechair.myname',MYNAME)}catch(e){}
-  try{if($('join-name'))$('join-name').value=MYNAME}catch(e){}
-  drawMe();
+  setMyName($('set-name').value,MYNAME);
 }));
 /* the name this device plays under: "Player 1" until somebody says otherwise */
 let MYNAME='';
 try{MYNAME=localStorage.getItem('thechair.myname')||''}catch(e){}
 function drawMe(){const el=$('me-name');if(el)el.textContent=MYNAME||'Player 1'}
+/* The name on the chip is this device's name, and the host sits on this
+   device. Without this the host typed "Henkka" into Settings and the room
+   still announced Player 1. */
+function setMyName(v,was){
+  MYNAME=cleanName(v);
+  try{localStorage.setItem('thechair.myname',MYNAME)}catch(e){}
+  try{if($('join-name'))$('join-name').value=MYNAME}catch(e){}
+  try{claimMySeat(was)}catch(e){}
+  drawMe();
+}
+function claimMySeat(was){
+  if(PARTY.role==='chair')return;              // a phone names itself when it joins
+  const mine=S.players.find(p=>!p.pid&&!p.reserved);
+  if(!mine)return;
+  const now=(mine.name||'').trim();
+  if(now&&now!==(was||'').trim())return;       // the host typed something else into the row
+  mine.name=MYNAME;
+  try{drawPlayers()}catch(e){}
+  try{drawLobbyList()}catch(e){}
+  try{drawRoomBar()}catch(e){}
+  try{drawGo()}catch(e){}
+  try{validate()}catch(e){}
+  if(PARTY.role==='host')try{publishStage();dirPing(true)}catch(e){}
+}
 drawMe();
 try{if(MYNAME&&$('join-name')&&!$('join-name').value)$('join-name').value=MYNAME}catch(e){}
 $('me-chip')&&($('me-chip').onclick=()=>{
@@ -3249,12 +3298,7 @@ $('me-chip')&&($('me-chip').onclick=()=>{
   const inp=document.createElement('input');
   inp.type='text';inp.maxLength=14;inp.value=MYNAME;inp.placeholder='Player 1';
   slot.textContent='';slot.appendChild(inp);inp.focus();
-  const done=()=>{
-    MYNAME=cleanName(inp.value);
-    try{localStorage.setItem('thechair.myname',MYNAME)}catch(e){}
-    try{if($('join-name'))$('join-name').value=MYNAME}catch(e){}
-    drawMe();
-  };
+  const done=()=>{setMyName(inp.value,MYNAME)};
   inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();inp.blur()}});
   inp.addEventListener('blur',done);
   inp.addEventListener('click',e=>e.stopPropagation());
@@ -3830,7 +3874,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 10:24';
+const BUILD='07.11. 10:37';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -3903,10 +3947,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111024',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111024',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111037',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111037',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111024',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111037',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4108,6 +4152,7 @@ function openLobby(goTo){
   FRIENDS.forEach(f=>{f.on=false});saveFriends();drawFriends();
   clearVotes();S.cats=[];
   PARTY.role='host';PARTY.code=newCode();PARTY.seen={};
+  try{if(MYNAME)claimMySeat('')}catch(e){}   // the host is whoever this device is
   $('lobby-code').textContent=PARTY.code;
   $('lobby-link').textContent=joinLink();
   drawLobbyQR();drawLobbyList();drawRoomBar();
@@ -4901,7 +4946,22 @@ function hostJoin(m){
 }
 /* who knocked while the game was running */
 const KNOCKS={};
+/* 11. the same news, on whatever screen the host is looking at */
+function drawKnockBar(){
+  const bar=$('knockbar');if(!bar)return;
+  const names=Object.keys(KNOCKS).map(k=>KNOCKS[k].name||'Somebody');
+  const here=screenNow();
+  const hide=!names.length||PARTY.role!=='host'
+    ||here==='s-break'||here==='s-home'||here==='s-setup'||here==='s-chair';
+  bar.hidden=hide;
+  if(hide)return;
+  $('knockbar-t').textContent=names.length===1
+    ? names[0]+' is at the door'
+    : names.length+' are at the door';
+}
+$('knockbar')&&($('knockbar').onclick=()=>{try{$('break').click()}catch(e){}});
 function drawKnocks(){
+  drawKnockBar();
   const box=$('knocks');if(!box)return;
   const list=Object.keys(KNOCKS).map(k=>KNOCKS[k]);
   box.hidden=!list.length;
@@ -5011,7 +5071,9 @@ function quizState(phase){
     seats:S.players.map(p=>({id:p.id,pid:p.pid||'',name:p.name,icon:p.icon,photo:p.photo||'',
       said:(p.id in Q.answers),pick:Q.revealed?(p.id in Q.answers?Q.answers[p.id]:-1):-1,run:p.run||0,
       score:p.score||0,team:[],passed:false,full:false,blockUsed:false,total:p.score||0,
-      reserved:false}))};
+      reserved:false})),
+    // 15. a phone at a full door could not tell waiting from being ignored
+    knocks:Object.keys(KNOCKS),full:S.players.length>=MAX_CHAIRS};
 }
 // the ballot, as the phones need to draw it
 function ballotState(){
@@ -5443,9 +5505,7 @@ function drawPadQuiz(st,me){
     return;
   }
   if(!me){                      // at the door: say so rather than show a dead question
-    try{$('pad-state').textContent=PARTY.code
-      ? 'The host knows you are here. They can let you in at the next break.'
-      : 'Tell them who you are to take a chair.'}catch(e){}
+    try{$('pad-state').textContent=doorLine(st)}catch(e){}
     box.hidden=true;box.innerHTML='';box.dataset.key='';
     const pp2=$('pad-pic');if(pp2){pp2.hidden=true;pp2.dataset.u=''}
     return;
@@ -5498,6 +5558,21 @@ $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
 const METALABEL={chair:'blind signings',artist:'name the artist',trivia:'general knowledge',
   picture:'picture guess',tf:'true or false',s10:'the short list'};
 let padLastNext='';
+/* 15. what a phone at the door is actually waiting for. Two different places
+   used to answer this question, and both of them only said "asking". */
+function doorLine(st){
+  if(!PARTY.code)return 'Tell them who you are to take a chair.';
+  const q=(st&&st.knocks)||[];
+  const at=q.indexOf(PARTY.pid);
+  if(at>=0&&st&&st.full)
+    return 'Every chair is taken. The host can see you waiting'
+      +(at>0?' \u2014 '+at+' ahead of you.':' and will let you in when one frees up.');
+  if(at>=0)return st&&st.phase==='lobby'
+    ? 'The host can see you at the door. Hold on.'
+    : 'The host can see you at the door and can let you in at the next break.';
+  if(st&&st.phase==='lobby')return 'Asking for a chair\u2026';
+  return 'The host has been told you are here. They can let you in at the next break.';
+}
 function drawPad(){
   const st=PARTY.stage,me=mySeat();
   if(me)try{joinStatus('','')}catch(e){}    // seated: the join chatter is over
@@ -5545,9 +5620,7 @@ function drawPad(){
   ['pad-sign','pad-skip','pad-team','pad-teamhead','pad-myteam'].forEach(id=>{const e=$(id);if(e)e.hidden=false});
   if(!me){
     $('pad-round').textContent='Room '+PARTY.code;
-    $('pad-state').textContent=st.phase==='lobby'
-      ?'Asking for a chair…'
-      :'The host has been told you are here. They can let you in at the next break.';
+    $('pad-state').textContent=doorLine(st);
     drawPadSeats(st,null);
     sign.disabled=true;skip.disabled=true;$('pad-blocks').innerHTML='';
     $('pad-team').innerHTML='';
@@ -5712,6 +5785,10 @@ $('back-rules')&&($('back-rules').onclick=()=>toLobby());
 
 $('lobby-start')&&($('lobby-start').onclick=()=>{
   S.players=S.players.filter(p=>!(p.reserved&&!p.pid));   // they never turned up
+  // 16. a nameless row with no phone behind it is nobody. Left in, it never
+  // answers, and the question waits for it forever.
+  if(S.players.some(p=>p.pid||(p.name||'').trim()))
+    S.players=S.players.filter(p=>p.pid||(p.name||'').trim());
   S.players.forEach((p,i)=>{p.id=i});
   if(S.players.length<1){
     lobbyStatus('Nobody has taken a chair yet \u2014 scan the code, or go back and type a name.','bad');
