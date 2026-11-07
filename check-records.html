@@ -154,6 +154,27 @@ $('go').onclick=async()=>{
     await nap(220);                          // iTunes rate-limits; this keeps it happy
   }
 
+  // iTunes throttles, and a throttled record is not a missing one. Go back for
+  // the ones it would not answer, slowly, rather than making you run the whole
+  // list again.
+  if(unsure.length){
+    $('count').textContent='Kysytään uudelleen '+unsure.length+' levyä, hitaammin…';
+    const again=unsure.splice(0,unsure.length);
+    let i=0;
+    for(const [artist,track] of again){
+      await nap(1400);
+      const rows=await ask(artist+' '+track,6);
+      i++;
+      if(rows===null){unsure.push([artist,track]);continue}
+      let h=hit(artist,track,rows);
+      if(!h)h=hit(artist,track,await ask(artist,6));
+      if(h)okN++; else dead.push([artist,track,'']);
+      $('count').textContent='Toinen kierros '+i+' / '+again.length
+        +'   —   löytyi '+okN+',  ei löytynyt '+dead.length
+        +(unsure.length?',  yhä vastaamatta '+unsure.length:'');
+    }
+  }
+
   let html='<div class="box"><h2>Tulos</h2>'
     +'<div class="row"><b class="ok">Soi</b><span>'+okN+' levyä '+cat.length+'stä</span></div>'
     +'<div class="row"><b class="bad">Ei löydy</b><span>'+dead.length+'</span></div>'

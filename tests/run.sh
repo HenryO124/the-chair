@@ -7,9 +7,9 @@ ROOT=$(pwd); export CHAIR_ROOT=$ROOT
 
 node -e 'require("jsdom")' 2>/dev/null || { echo "installing jsdom…"; npm install --silent jsdom >/dev/null 2>&1; }
 
-ALL="qrflow home2 settings tf s10 count dress route cap2 again bank leak tap2 shelf fold pub look host name night turn reach seal words finger onescreen near uilang again2 lobby artist gamelists gametables grid lobby3 sofa2 monday"
+ALL="qrflow home2 settings tf s10 count dress route cap2 again bank leak tap2 shelf fold pub look host name night turn reach seal words finger onescreen near uilang again2 lobby artist gamelists gametables grid lobby3 sofa2 monday room"
 # The suites that drive a real browser. Everything else is jsdom and quick.
-BROWSER="fold reach onescreen grid sofa2"
+BROWSER="fold reach onescreen grid sofa2 room"
 # bash tests/run.sh --fast  -> jsdom only, for while you are working
 if [ "$1" = "--fast" ]; then
   shift
