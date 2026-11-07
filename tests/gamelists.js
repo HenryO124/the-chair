@@ -186,10 +186,21 @@ setTimeout(()=>{
   // 2000s dance has no records in the catalogue. A room that played Name the
   // Artist and then picked another game used to find Start dead, because the
   // other game was still being asked whether the record pool was empty.
-  const DEADPOOL={era:2000,genre:'Dance'};
-  if(ev(`poolFor(${DEADPOOL.era},${J(DEADPOOL.genre)}).length`)!==0)
-    probs.push('this test needs an empty record pool and '+DEADPOOL.era+' '+DEADPOOL.genre
-      +' is no longer one — pick another');
+  // Find an empty era-and-genre combination rather than naming one: the
+  // catalogue grows, and the pair that was empty this morning has records in
+  // it tonight. The test is about the Start button, not about which corner of
+  // the collection happens to be bare.
+  let DEADPOOL=null;
+  outer:
+  for(const era of JSON.parse(ev('JSON.stringify(ERAS)')).concat([2010,2020])){
+    for(const genre of JSON.parse(ev('JSON.stringify(Object.keys(FAMILIES))'))){
+      if(ev(`poolFor(${era},${J(genre)}).length`)===0){DEADPOOL={era,genre};break outer}
+    }
+  }
+  if(!DEADPOOL)
+    probs.push('every era and genre now has records — this test needs an empty one, '
+      +'so give it a genre the catalogue does not cover');
+  DEADPOOL=DEADPOOL||{era:2000,genre:'Dance'};
   games.filter(g=>!RECORDS[g]).forEach(g=>{
     ev(`S.game=${J(g)};S.lang='en';S.cats=[];S.len=5;
       S.era=${DEADPOOL.era};S.genre=${J(DEADPOOL.genre)};
