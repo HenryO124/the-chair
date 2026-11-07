@@ -516,6 +516,9 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   gap:10px;text-align:center}
 .qgrid.two .qbtn .key{display:none}
 .qgrid.two .qbtn .t{font-weight:800}
+.padnext{margin:10px 0 0;text-align:center;font-family:var(--mono);font-size:12.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.padnext[hidden]{display:none!important}
 .padrun{margin:12px 0 0;text-align:center;font-family:var(--mono);font-size:12px;
   letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .padrun[hidden]{display:none!important}
@@ -2284,6 +2287,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
       <div class="padpic" id="pad-pic" hidden></div>
       <div class="qgrid" id="pad-quiz" hidden></div>
       <p class="padrun" id="pad-run" hidden></p>
+      <p class="padnext" id="pad-next" hidden></p>
       <button type="button" class="btn" id="pad-bank" hidden>Bank</button>
       <button class="bigsign" id="pad-sign" disabled>SIGN THEM</button>
       <button class="bigskip" id="pad-skip" disabled>SKIP</button>
@@ -2318,6 +2322,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
     </div>
     <div class="btn-row" style="margin-top:12px">
       <button class="btn gold" id="q-next">Reveal</button>
+      <button class="btn ghost" id="q-hold" hidden>Hold</button>
       <button class="btn ghost" id="q-quit">End the game</button>
     </div>
   </section>
@@ -6262,6 +6267,7 @@ function s10Reveal(){
   drawQuiz();publishStage();
 }
 function quizNext(){
+  stopNextCount();
   if(isS10())return s10Next();
   if(Q.round>=Q.deck.length){quizFinish();return}
   clearTimeout(Q.timer);
@@ -6370,13 +6376,37 @@ function quizReveal(){
   $('q-next').textContent=Q.round>=Q.deck.length?'See the winner'
     :isAsking()?'Next question':'Next record';
   if(isAsking())showQuizQuestion();
-  drawQuiz();publishStage();
+  drawQuiz();
+  startNextCount(isAsking()?9:10);
+}
+/* the clock to the next question, counted down where everyone can see it */
+function startNextCount(secs){
+  stopNextCount();
+  if(Q.round>=Q.deck.length){publishStage();return}   // the last one waits for a press
+  Q.nextIn=secs;
+  publishStage();                       // once: the phones run their own clock
+  drawNextCount();
+  Q.tick=setInterval(()=>{
+    Q.nextIn--;
+    if(Q.nextIn<=0){stopNextCount();if(Q.revealed&&Q.on)quizNext();return}
+    drawNextCount();
+  },1000);
+}
+function stopNextCount(){
+  if(Q.tick){clearInterval(Q.tick);Q.tick=null}
   clearTimeout(Q.timer);
-  // long enough to read the answer out loud, and the video to be worth watching
-  Q.timer=setTimeout(()=>{if(Q.revealed&&Q.on)quizNext()},isAsking()?9000:10000);
+  Q.nextIn=0;
+}
+function drawNextCount(){
+  const b=$('q-next'),h=$('q-hold');
+  if(h)h.hidden=!Q.nextIn;
+  if(!b)return;
+  const last=Q.round>=Q.deck.length;
+  const word=last?'See the winner':isAsking()?'Next question':'Next record';
+  b.textContent=Q.nextIn?word+'  '+Q.nextIn:word;
 }
 function quizFinish(){
-  Q.on=false;clearTimeout(Q.timer);
+  Q.on=false;stopNextCount();
   try{$('final-eyebrow').textContent=isPicture()?'Sharpest eye':isTF()?'Best nose for a lie'
     :isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
   const box=$('q-screen');if(box)box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
@@ -6472,11 +6502,13 @@ $('q-options')&&($('q-options').addEventListener('click',e=>{
   if(me)quizAnswer(me,+b.dataset.opt);
 }));
 $('q-next')&&($('q-next').onclick=()=>{
+  stopNextCount();
   if(!Q.revealed)quizReveal();
   else if(Q.round>=Q.deck.length)quizFinish();
   else quizNext();
 });
-$('q-quit')&&($('q-quit').onclick=()=>{Q.on=false;clearTimeout(Q.timer);quizFinish()});
+$('q-hold')&&($('q-hold').onclick=()=>{stopNextCount();drawNextCount();publishStage()});
+$('q-quit')&&($('q-quit').onclick=()=>{Q.on=false;stopNextCount();quizFinish()});
 
 /* --- the last look before the first record --- */
 function drawGo(){
@@ -6895,6 +6927,7 @@ function quizState(phase){
     remote:!!S.remote,
     vid:isAsking()||!Q.current||!S.remote?'':videoFor(Q.current),
     ask:isAsking()&&Q.current?Q.current[1]:'',
+    nextIn:Q.nextIn||0,
     // the television keeps the big one; a phone gets a fifth of the bytes
     pic:(function(){try{
       if(!isAsking())return '';                    // only a written question carries a picture
@@ -7272,11 +7305,30 @@ function drawPadS10(st,me){
     bank.textContent='Bank '+pot;
   }
 }
+/* The host sends the number of seconds once; the phone runs the clock itself,
+   so a countdown costs one message instead of one a second. */
+let padCount=null;
+function padNextCount(st){
+  const el=$('pad-next');if(!el)return;
+  if(padCount){clearInterval(padCount);padCount=null}
+  let left=+st.nextIn||0;
+  const draw=()=>{
+    el.hidden=!(left>0);
+    if(left>0)el.textContent='Next question in '+left;
+  };
+  draw();
+  if(left>0)padCount=setInterval(()=>{
+    left--;draw();
+    if(left<=0){clearInterval(padCount);padCount=null}
+  },1000);
+}
 function drawPadQuiz(st,me){
   const box=$('pad-quiz');if(!box)return;
   const chairBits=['pad-sign','pad-skip','pad-blocks','pad-hold','pad-team','pad-teamhead','pad-myteam'];
   chairBits.forEach(id=>{const e=$(id);if(e)e.hidden=true});
   box.hidden=false;
+  const nk=st?(st.round+'|'+(st.nextIn||0)+'|'+(st.revealed?1:0)):'';
+  if(padLastNext!==nk){padLastNext=nk;try{padNextCount(st||{})}catch(e){}}
   // the picture is the question in Picture Guess, and half the fun in the quiz
   const pp=$('pad-pic');
   if(pp){
@@ -7363,6 +7415,7 @@ $('pad-quiz')&&($('pad-quiz').addEventListener('click',e=>{
 }));
 const METALABEL={chair:'blind signings',artist:'name the artist',trivia:'general knowledge',
   picture:'picture guess',tf:'true or false',s10:'smart ten'};
+let padLastNext='';
 function drawPad(){
   const st=PARTY.stage,me=mySeat();
   if(me)try{joinStatus('','')}catch(e){}    // seated: the join chatter is over
