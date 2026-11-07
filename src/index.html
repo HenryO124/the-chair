@@ -2028,7 +2028,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 #s-setup .gamecard .garrow{font-size:17px}
 /* on a laptop the hero column is the thing standing between seven games and
    one screenful, and on this screen it is only decoration */
-@media (max-width:1560px){
+@media (max-width:1700px){
   #s-setup .home{grid-template-columns:1fr}
   #s-setup .home-hero{display:none}
 }
@@ -2060,6 +2060,36 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 @media (prefers-reduced-motion:reduce){
   #s-quiz .qbtn.right,#s-quiz .nearans,#s-quiz .nearrow.win,
   #s-quiz .qanswer .qa-right{animation:none}
+}
+
+/* ---- the studio: the two menu screens are lit rather than merely dark ----
+   Scoped to the menus with .on, so a round is never touched. The sweeping
+   key light is slow and faint on purpose; a player stares at this screen
+   while deciding what to play, and anything faster becomes a nuisance. */
+body:has(#s-home.on),body:has(#s-setup.on){
+  background:radial-gradient(ellipse 70% 70% at 75% -15%,rgba(116,26,40,.24),transparent 75%),
+             radial-gradient(ellipse 40% 70% at 0% 50%,rgba(103,23,37,.12),transparent 75%),#0d080b}
+body:has(#s-home.on)::before,body:has(#s-setup.on)::before{content:"";position:fixed;inset:0;
+  pointer-events:none;z-index:0;
+  background:linear-gradient(112deg,transparent 20%,rgba(255,220,155,.025) 43%,transparent 62%);
+  animation:studioLight 16s ease-in-out infinite alternate}
+@keyframes studioLight{from{opacity:.25;transform:translateX(-4%)}to{opacity:1;transform:translateX(5%)}}
+body:has(#s-home.on) .wrap,body:has(#s-setup.on) .wrap{position:relative;z-index:1}
+body:has(#s-home.on) .masthead,body:has(#s-setup.on) .masthead{border-bottom-color:rgba(215,160,90,.22)}
+body:has(#s-home.on) .logo,body:has(#s-setup.on) .logo{text-shadow:0 2px 22px rgba(198,44,62,.15)}
+body:has(#s-home.on) .btn,body:has(#s-setup.on) .btn{box-shadow:0 7px 25px rgba(110,10,29,.18)}
+body:has(#s-home.on) .btn:hover,body:has(#s-setup.on) .btn:hover{
+  transform:translateY(-2px);box-shadow:0 12px 32px rgba(190,40,60,.22)}
+/* the zip aimed these at .modecard, which does not exist here */
+#s-setup .gamecard{transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+  background-image:linear-gradient(145deg,rgba(255,230,190,.035),transparent 60%)}
+#s-setup .gamecard:hover:not(.soon){transform:translateY(-4px);
+  border-color:rgba(222,166,91,.65);
+  box-shadow:0 16px 36px rgba(0,0,0,.32),0 0 0 1px rgba(222,166,91,.12)}
+#s-setup .gamecard:focus-visible{outline:2px solid #e3b876;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){
+  body:has(#s-home.on)::before,body:has(#s-setup.on)::before{animation:none}
+  #s-setup .gamecard{transition:none}
 }
 </style>
 </head>
