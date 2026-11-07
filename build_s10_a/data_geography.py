@@ -305,7 +305,7 @@ GEOGRAPHY = [
   ("Gaborone", "Gaborone", 1),
   ("Bamako", "Bamako", 1),
   ("Kampala", "Kampala", 1),
-  ("Zanzibar", "Zanzibar", 0),
+  ("Johannesburg", "Johannesburg", 0),
   ("Timbuktu", "Timbuktu", 0),
   ("Durban", "Durban", 0),
   ("Benghazi", "Bengasi", 0),
