@@ -1847,16 +1847,20 @@ body:has(#s-chair.on) .striproundwrap{display:none}
    simply short. The screen now claims the height it has and spreads what is
    on it, so the armchair sits in the middle of the room and the panels sit
    along the bottom. Below a television it goes back to flowing normally. */
+/* .on, every time: `display:flex` here beats the rule that hides a screen,
+   and body.screen-home is still set on menu 2 — so without it the front page
+   stayed on the screen underneath menu 2 and the party looked like a dead
+   button. A layout rule must never be the thing that decides what is visible. */
 @media (min-width:1100px) and (min-height:760px){
-  body.screen-home #s-home{min-height:calc(100vh - 150px);
+  body.screen-home #s-home.on{min-height:calc(100vh - 150px);
     display:flex;flex-direction:column;gap:clamp(18px,2.6vh,40px)}
-  body.screen-home #s-home .hero2{flex:1 1 auto;display:flex;flex-direction:column;
+  body.screen-home #s-home.on .hero2{flex:1 1 auto;display:flex;flex-direction:column;
     justify-content:center}
-  body.screen-home #s-home .hero2-mid{width:100%}
-  body.screen-home #s-home .modefilter,
-  body.screen-home #s-home .hpanel,
-  body.screen-home #s-home .homefoot{flex:0 0 auto;margin-top:0}
-  body.screen-home #s-home .hero2-art .armchair{max-height:46vh;height:auto}
+  body.screen-home #s-home.on .hero2-mid{width:100%}
+  body.screen-home #s-home.on .modefilter,
+  body.screen-home #s-home.on .hpanel,
+  body.screen-home #s-home.on .homefoot{flex:0 0 auto;margin-top:0}
+  body.screen-home #s-home.on .hero2-art .armchair{max-height:46vh;height:auto}
 }
 
 /* ---- Point the Finger ------------------------------------------------
@@ -1872,6 +1876,22 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 #pad-quiz.qgrid.finger{grid-template-columns:1fr 1fr;gap:8px}
 #pad-quiz.qgrid.finger .qbtn{min-height:60px;font-size:16px;justify-content:space-between}
 #pad-quiz.qgrid.finger .qbtn .fvotes{font-family:var(--mono);color:#FFD37A;margin-left:8px}
+
+.seg button.locked{opacity:.4;cursor:not-allowed}
+.seg button.locked:hover{color:var(--muted);border-color:var(--line)}
+
+.broke{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:150;
+  max-width:min(620px,92vw);background:#3A0A12;border:1px solid #FF5C72;
+  border-radius:14px;padding:12px 18px;color:#FFE4E0;
+  font-family:var(--disp);font-size:13.5px;line-height:1.5;
+  box-shadow:0 14px 40px rgba(0,0,0,.6)}
+.broke[hidden]{display:none!important}
+.broke b{display:block;color:#fff}
+.broke #broke-what{display:block;font-family:var(--mono);font-size:11.5px;
+  color:#FFB4AC;margin:4px 0 8px;word-break:break-word}
+.broke button{border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.25);
+  color:#fff;border-radius:18px;padding:7px 14px;cursor:pointer;font:inherit}
+.broke button:hover{background:rgba(0,0,0,.45)}
 
 /* the bar that says a newer build is out */
 .newver{border-color:rgba(255,70,100,.35);box-shadow:var(--glowsoft)}
@@ -1994,6 +2014,11 @@ body:has(#s-chair.on) .striproundwrap{display:none}
       <button class="brk" id="break" style="display:none">Break</button>
       <button type="button" class="knockbar" id="knockbar" hidden>
         <span class="kdot"></span><span id="knockbar-t"></span></button>
+      <div class="broke" id="broke" hidden>
+        <b>Something on this page stopped working.</b>
+        <span id="broke-what"></span>
+        <button type="button" id="broke-wipe">Clear what this page saved and reload</button>
+      </div>
       <div class="intruder" id="intruder" hidden>
         <b>Somebody else is talking to this room.</b>
         A message arrived on your room's channel that did not come from this
@@ -2796,6 +2821,32 @@ function goBack(){
          if(b){show(to);return true}}
   return false;                       // already at the front door
 }
+/* ---- when something throws, say so ----------------------------------
+   A single exception in a click handler leaves a button that simply does
+   nothing, and nothing on the screen says why. That cost an hour of guessing
+   at somebody else's browser. Now the page says what broke, and offers the
+   one thing that fixes a page poisoned by its own saved state. */
+function sayBroken(msg){
+  try{
+    const b=document.getElementById('broke');if(!b)return;
+    document.getElementById('broke-what').textContent=String(msg||'').slice(0,200);
+    b.hidden=false;
+  }catch(e){}
+}
+window.addEventListener('error',e=>{sayBroken(e&&e.message)});
+window.addEventListener('unhandledrejection',e=>{
+  try{sayBroken((e.reason&&e.reason.message)||e.reason)}catch(x){}
+});
+/* Everything this page has ever saved on this device, thrown away. The only
+   cure for a bad value that breaks the page every time it loads. */
+function wipeLocal(){
+  try{
+    ['lang','music','myname','myface','friends','videos','videostatus','pid','padsound']
+      .forEach(k=>{try{localStorage.removeItem('thechair.'+k)}catch(e){}});
+  }catch(e){}
+  try{location.hash='';location.reload()}catch(e){}
+}
+try{if(/^#reset$/i.test(location.hash||''))wipeLocal()}catch(e){}
 try{history.replaceState({chair:1},'')}catch(e){}
 window.addEventListener('popstate',()=>{
   // keep one entry in reserve, so Back never leaves the page while a game is on
@@ -3313,6 +3364,7 @@ function pickGame(name){
   // hand them the ballot for this game's topics
   S.cats=[];try{clearVotes();drawCats()}catch(e){}
   try{$('meta').textContent=METALABEL[name]||''}catch(e){}
+  try{privacyFor(name)}catch(e){}
   if(PARTY.role==='host')publishStage();
 }
 // menu 2, dressed for whichever door you came through
@@ -3379,18 +3431,37 @@ $('rb-copy')&&($('rb-copy').onclick=()=>{
 $('m-create')&&($('m-create').onclick=()=>openModes('create'));
 $('rb-vis')&&($('rb-vis').onclick=toggleVis);
 /* the party is set up before it is opened */
+/* Point the Finger asks the room about the room. Strangers voting on a
+   stranger is not a game, so this one cannot be played in a public room: the
+   choice is taken away rather than left there to be made by mistake. */
+const PRIVATEONLY={finger:1};
+function privacyFor(name){
+  const shut=!!PRIVATEONLY[name];
+  if(shut&&S.public){
+    S.public=false;
+    if(PARTY.role==='host')try{dirClear()}catch(e){}
+  }
+  try{
+    const b=document.querySelector('#vis [data-v="public"]');
+    if(b){b.disabled=shut;b.classList.toggle('locked',shut)}
+  }catch(e){}
+  try{drawVis()}catch(e){}
+}
 function drawVis(){
   document.querySelectorAll('#vis button').forEach(b=>
     b.classList.toggle('sel',(b.dataset.v==='public')===!!S.public));
   const nt=$('vis-note');
-  if(nt)nt.textContent=S.public
+  if(nt)nt.textContent=PRIVATEONLY[S.game]
+    ? 'This one asks the room about the room, so it is played with people you know. It cannot be made public.'
+    : S.public
     ? 'Listed on this page for anyone to join — and that means anyone.'
     : 'Only people with the code or the QR get in.';
   const b=$('rb-vis');
   if(b){b.classList.toggle('open',!!S.public);b.lastChild.textContent=S.public?'Public room':'Private room'}
 }
 $('vis')&&($('vis').addEventListener('click',e=>{
-  const b=e.target.closest('button[data-v]');if(!b)return;
+  const b=e.target.closest('button[data-v]');if(!b||b.disabled)return;
+  if(b.dataset.v==='public'&&PRIVATEONLY[S.game])return;
   S.public=(b.dataset.v==='public');
   drawVis();
   if(PARTY.role==='host'){if(S.public)dirPing(true); else dirClear()}
@@ -4065,7 +4136,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 13:32';
+const BUILD='07.11. 13:41';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4251,10 +4322,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111332',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111332',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111341',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111341',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111332',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111341',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -5931,6 +6002,7 @@ function drawKnockBar(){
     : names.length+' are at the door';
 }
 $('knockbar')&&($('knockbar').onclick=()=>{try{$('break').click()}catch(e){}});
+$('broke-wipe')&&($('broke-wipe').onclick=wipeLocal);
 function drawKnocks(){
   drawKnockBar();
   const box=$('knocks');if(!box)return;
