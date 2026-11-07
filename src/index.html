@@ -1048,7 +1048,15 @@ body.learning .gamecard .garrow{display:none}
   border:1px solid var(--line);font-family:var(--mono);font-weight:400;font-size:8.5px;line-height:1.4;
   letter-spacing:.12em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
 
-/* the bar along the bottom: this is where a night actually begins */
+/* the bar along the bottom: this is where a night actually begins.
+   On a television the page runs past 1080px and "Let's party" ended up under
+   the fold, so the host had to find a mouse at the one moment they should
+   not have to. It sticks to the bottom of the screen instead. */
+#s-setup .startbar{position:sticky;bottom:0;z-index:20;
+  margin-bottom:0;backdrop-filter:blur(8px);
+  background:linear-gradient(180deg,rgba(26,8,14,.92),rgba(16,5,9,.97));
+  box-shadow:0 -14px 34px rgba(0,0,0,.55)}
+#s-setup{padding-bottom:4px}
 .startbar[hidden]{display:none}
 .startbar{display:flex;align-items:center;gap:clamp(10px,1.6vw,18px);flex-wrap:wrap;
   border:1px solid var(--line);border-radius:16px;background:var(--panel);
@@ -1933,7 +1941,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
           <path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/>
           <path d="M3 3l18 18" stroke-width="2.2"/></svg>
       </button>
-      <div class="meta" id="meta">blind signings</div>
+      <div class="meta" id="meta"></div>
       <button class="brk" id="break" style="display:none">Break</button>
       <button type="button" class="knockbar" id="knockbar" hidden>
         <span class="kdot"></span><span id="knockbar-t"></span></button>
@@ -5358,7 +5366,14 @@ function dirStop(){
 function dirStart(){
   DIR.stopped=false;
   if(DIR.timer)return;
+  DIR.since=Date.now();DIR.gaveUp=false;
   dirConnect();drawRooms();
+  // without this the panel says "Looking for open parties" for the rest of
+  // the evening when the broker cannot be reached at all
+  setTimeout(()=>{
+    if(DIR.stopped||DIR.client)return;
+    DIR.gaveUp=true;try{drawRooms()}catch(e){}
+  },12000);
   DIR.timer=setInterval(()=>{drawRooms()},10000);
 }
 const GAMELABEL={chair:'The Chair',artist:'Name the Artist',trivia:'Quiz',picture:'Picture Guess',
@@ -5388,6 +5403,9 @@ function drawRooms(){
     box.innerHTML='<p class="pempty">'+(DIR.client
       ? 'No public parties open right now. '
         +'<button type="button" class="pstart" id="pub-start">Open one yourself</button>'
+      : DIR.gaveUp
+      ? 'Could not reach the room list. Your own party will still work \u2014 '
+        +'<button type="button" class="pstart" id="pub-start">open one</button>'
       : 'Looking for open parties\u2026')+'</p>';
     const st=$('pub-start');
     if(st)st.onclick=()=>{S.public=true;try{drawVis()}catch(e){}openModes('create')};
