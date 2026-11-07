@@ -1832,26 +1832,29 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 /* ---- a question with no picture should not sit in an empty frame ------
    Most quiz questions have no image behind them. The stage frame is for a
    picture; without one it is a large black rectangle with words floating
-   in the middle of it, so it loses its border and its reserved height.  */
-#s-quiz .videowall:not(:has(.qpic)) .vw-screen{border:0;box-shadow:none;background:none}
+   in the middle of it, so it loses its border and its reserved height.
+   This hangs off the class the code sets, not off "there is no .qpic":
+   Name the Artist has no .qpic either, and collapsing its frame to nothing
+   left the video with nowhere to go but on top of answers A and B.      */
+#s-quiz #q-stage.centred .videowall .vw-screen{border:0;box-shadow:none;background:none}
 /* 29. it used to be given a fixed band whatever the question's length, so a
    short question sat alone in 300px of black. It now hugs its own text. */
-#s-quiz .videowall:not(:has(.qpic)){flex:0 0 auto !important;
+#s-quiz #q-stage.centred .videowall{flex:0 0 auto !important;
   height:auto !important;min-height:0 !important;
   margin-bottom:clamp(8px,1.8vh,26px)}
-#s-quiz .videowall:not(:has(.qpic)) .screenwrap{height:auto;width:100%;max-width:none;
+#s-quiz #q-stage.centred .videowall .screenwrap{height:auto;width:100%;max-width:none;
   aspect-ratio:auto;display:block;margin:0}
-#s-quiz .videowall:not(:has(.qpic)) .vw-screen{height:auto;position:static}
-#s-quiz .videowall:not(:has(.qpic)) .qasking,
-#s-quiz .videowall:not(:has(.qpic)) .qanswer{position:static;inset:auto}
-#s-quiz .videowall:not(:has(.qpic)) .curtain{display:none}
+#s-quiz #q-stage.centred .videowall .vw-screen{height:auto;position:static}
+#s-quiz #q-stage.centred .videowall .qasking,
+#s-quiz #q-stage.centred .videowall .qanswer{position:static;inset:auto}
+#s-quiz #q-stage.centred .videowall .curtain{display:none}
 /* with no picture the stage no longer fills the screen, so centre what there
    is rather than hanging it from the top with a hole underneath */
 #s-quiz #q-stage.centred{justify-content:center}
-#s-quiz .videowall:not(:has(.qpic)) .qasking{font-size:clamp(22px,3vw,54px);
+#s-quiz #q-stage.centred .videowall .qasking{font-size:clamp(22px,3vw,54px);
   padding:clamp(8px,1.6vh,24px) 3vw;max-width:min(1200px,94%);margin:0 auto;overflow:hidden}
-#s-quiz .videowall:not(:has(.qpic)) .qasking.long{font-size:clamp(20px,2.4vw,44px)}
-#s-quiz .videowall:not(:has(.qpic)) .qasking.xlong{font-size:clamp(18px,2vw,36px)}
+#s-quiz #q-stage.centred .videowall .qasking.long{font-size:clamp(20px,2.4vw,44px)}
+#s-quiz #q-stage.centred .videowall .qasking.xlong{font-size:clamp(18px,2vw,36px)}
 /* ---- Smart Ten: ten candidates, and whoever took one ------------------ */
 #q-options .qbtn.s10{min-height:clamp(38px,5.4vh,66px);font-size:clamp(15px,1.5vw,30px);
   justify-content:space-between;padding:clamp(6px,1vh,14px) clamp(12px,1.2vw,22px)}
@@ -3968,7 +3971,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 12:08';
+const BUILD='07.11. 12:17';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4041,10 +4044,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111208',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111208',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111217',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111217',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111208',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111217',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
