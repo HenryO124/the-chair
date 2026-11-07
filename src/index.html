@@ -1830,6 +1830,17 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 .nightboard .field-label{text-align:center;margin-bottom:10px}
 .nightboard .brow .bv{color:#8FE3B0}
 
+/* Said once and left there. It means a message arrived on the room's own
+   channel signed with something other than this room's secret, which is not
+   something that happens by accident. */
+.intruder{position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:140;
+  max-width:min(620px,92vw);background:#5A0E18;border:1px solid #FF5C72;
+  border-radius:14px;padding:12px 18px;color:#FFE4E0;
+  font-family:var(--disp);font-size:14px;line-height:1.5;
+  box-shadow:0 14px 40px rgba(0,0,0,.6)}
+.intruder[hidden]{display:none!important}
+.intruder b{display:block;margin-bottom:3px;color:#fff}
+
 /* the bar that says a newer build is out */
 .newver{border-color:rgba(255,70,100,.35);box-shadow:var(--glowsoft)}
 /* ---- a question with no picture should not sit in an empty frame ------
@@ -1951,6 +1962,12 @@ body:has(#s-chair.on) .striproundwrap{display:none}
       <button class="brk" id="break" style="display:none">Break</button>
       <button type="button" class="knockbar" id="knockbar" hidden>
         <span class="kdot"></span><span id="knockbar-t"></span></button>
+      <div class="intruder" id="intruder" hidden>
+        <b>Somebody else is talking to this room.</b>
+        A message arrived on your room's channel that did not come from this
+        screen. Close the room and open a new one; the new code will be
+        different.
+      </div>
     </div>
   </div>
 
@@ -2051,8 +2068,8 @@ body:has(#s-chair.on) .striproundwrap{display:none}
                 <circle cx="8.6" cy="8.4" r="3.1"/><path d="M2.6 19.2c0-3.3 2.7-5 6-5s6 1.7 6 5"/>
                 <path d="M16 5.9a3 3 0 0 1 0 5.2"/><path d="M17.9 14.6c2 .7 3.1 2.2 3.1 4.6"/></svg>
               Join with code</button>
-            <input type="text" id="home-code" maxlength="4" autocomplete="off" spellcheck="false"
-                   autocapitalize="characters" placeholder="ABCD" aria-label="Room code">
+            <input type="text" id="home-code" maxlength="6" autocomplete="off" spellcheck="false"
+                   autocapitalize="characters" placeholder="ABCDEF" aria-label="Room code">
             <button type="button" class="jp-go" id="home-go" aria-label="Join">&rarr;</button>
           </div>
         </div>
@@ -2418,9 +2435,9 @@ body:has(#s-chair.on) .striproundwrap{display:none}
     <div id="chair-join">
       <div class="eyebrow">Take a chair</div>
       <h2>What's the code?</h2>
-      <p class="sub">It is on the big screen, four letters.</p>
-      <input type="text" id="join-code" class="codein" maxlength="4" autocomplete="off"
-             autocapitalize="characters" spellcheck="false" placeholder="ABCD" aria-label="Room code">
+      <p class="sub">It is on the big screen, six letters.</p>
+      <input type="text" id="join-code" class="codein" maxlength="6" autocomplete="off"
+             autocapitalize="characters" spellcheck="false" placeholder="ABCDEF" aria-label="Room code">
       <div class="namechips" id="join-chips" hidden></div>
       <div class="field-label">Your name</div>
       <input type="text" id="join-name" class="ytin" maxlength="14" autocomplete="off"
@@ -2897,7 +2914,7 @@ let musicOn=true;
 try{const m=localStorage.getItem('thechair.music');if(m!==null)musicOn=(m==='1')}catch(e){}
 // somebody who followed an invitation came to join, not to listen: without this
 // their phone quietly downloads 593 KB of music it will never play
-try{if(/^#[A-Za-z]{4}$/.test(location.hash||''))musicOn=false}catch(e){}
+try{if(/^#[A-Za-z]{4,8}(-[a-z0-9]+)?$/.test(location.hash||''))musicOn=false}catch(e){}
 function musicShouldPlay(){
   const id=screenNow();
   if(!musicOn)return false;
@@ -3553,7 +3570,7 @@ $('me-chip')&&($('me-chip').onclick=()=>{
 $('nav-modes')&&($('nav-modes').onclick=()=>openModes('learn'));
 $('nav-learn')&&($('nav-learn').onclick=()=>openModes('learn'));
 function joinWithCode(code){
-  const c=String(code||'').toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);
+  const c=String(code||'').toUpperCase().replace(/[^A-Z]/g,'').slice(0,CODE_LEN);
   openChairScreen();
   if(c){$('join-code').value=c;try{$('join-name').focus()}catch(e){}}
 }
@@ -4133,14 +4150,127 @@ const BROKERS=['wss://broker.emqx.io:8084/mqtt',
                'wss://test.mosquitto.org:8081/mqtt'];
 const CODE_LETTERS='ABCDEFGHJKLMNPQRSTUVWXYZ';   // no I, no O: they read as 1 and 0
 let MAX_CHAIRS=8;          // the host sets the size of the room
-const PARTY={role:'solo',code:'',client:null,pid:'',seq:0,seen:{},stage:null,
+const PARTY={role:'solo',code:'',key:'',client:null,pid:'',seq:0,seen:{},stage:null,
              joinTimer:null,pubTimer:null,formPlayers:null};
 
+/* ---- SHA-256 and HMAC-SHA256, synchronous, no dependency.
+   Web Crypto would do this too, but only asynchronously, and a stage message
+   has to be signed and checked in the middle of code that is not async. This
+   is the standard algorithm, checked against Node's own crypto below. */
+var SHAK=[
+0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+
+function shaBytes(bytes){                 // array of 0..255 -> array of 32 bytes
+  var H=[0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+  var l=bytes.length, bitLenHi=Math.floor(l/536870912), bitLenLo=(l*8)>>>0;
+  var m=bytes.slice();
+  m.push(0x80);
+  while(m.length%64!==56)m.push(0);
+  m.push((bitLenHi>>>24)&255,(bitLenHi>>>16)&255,(bitLenHi>>>8)&255,bitLenHi&255);
+  m.push((bitLenLo>>>24)&255,(bitLenLo>>>16)&255,(bitLenLo>>>8)&255,bitLenLo&255);
+  var w=new Array(64);
+  for(var i=0;i<m.length;i+=64){
+    for(var t=0;t<16;t++)
+      w[t]=((m[i+t*4]<<24)|(m[i+t*4+1]<<16)|(m[i+t*4+2]<<8)|m[i+t*4+3])>>>0;
+    for(t=16;t<64;t++){
+      var x=w[t-15], y=w[t-2];
+      var s0=(((x>>>7)|(x<<25))^((x>>>18)|(x<<14))^(x>>>3))>>>0;
+      var s1=(((y>>>17)|(y<<15))^((y>>>19)|(y<<13))^(y>>>10))>>>0;
+      w[t]=(w[t-16]+s0+w[t-7]+s1)>>>0;
+    }
+    var a=H[0],b=H[1],c=H[2],d=H[3],e=H[4],f=H[5],g=H[6],h=H[7];
+    for(t=0;t<64;t++){
+      var S1=(((e>>>6)|(e<<26))^((e>>>11)|(e<<21))^((e>>>25)|(e<<7)))>>>0;
+      var ch=((e&f)^((~e)&g))>>>0;
+      var t1=(h+S1+ch+SHAK[t]+w[t])>>>0;
+      var S0=(((a>>>2)|(a<<30))^((a>>>13)|(a<<19))^((a>>>22)|(a<<10)))>>>0;
+      var mj=((a&b)^(a&c)^(b&c))>>>0;
+      var t2=(S0+mj)>>>0;
+      h=g;g=f;f=e;e=(d+t1)>>>0;d=c;c=b;b=a;a=(t1+t2)>>>0;
+    }
+    H[0]=(H[0]+a)>>>0;H[1]=(H[1]+b)>>>0;H[2]=(H[2]+c)>>>0;H[3]=(H[3]+d)>>>0;
+    H[4]=(H[4]+e)>>>0;H[5]=(H[5]+f)>>>0;H[6]=(H[6]+g)>>>0;H[7]=(H[7]+h)>>>0;
+  }
+  var out=[];
+  for(i=0;i<8;i++)out.push((H[i]>>>24)&255,(H[i]>>>16)&255,(H[i]>>>8)&255,H[i]&255);
+  return out;
+}
+function utf8Bytes(str){
+  var s=unescape(encodeURIComponent(String(str))), b=[];
+  for(var i=0;i<s.length;i++)b.push(s.charCodeAt(i)&255);
+  return b;
+}
+function hex(bytes){
+  var s='';
+  for(var i=0;i<bytes.length;i++)s+=(bytes[i]<16?'0':'')+bytes[i].toString(16);
+  return s;
+}
+function hmacHex(key,msg){
+  var k=utf8Bytes(key);
+  if(k.length>64)k=shaBytes(k);
+  while(k.length<64)k.push(0);
+  var ip=[],op=[];
+  for(var i=0;i<64;i++){ip.push(k[i]^0x36);op.push(k[i]^0x5c)}
+  return hex(shaBytes(op.concat(shaBytes(ip.concat(utf8Bytes(msg))))));
+}
+/* ---- who is allowed to speak for this room ---------------------------
+   The host mints a secret when the room opens. It rides in the QR code and
+   the invitation link and goes nowhere near the broker, so only the people
+   actually invited into the room have it. Every message carries a short tag
+   derived from the secret and the message itself; change one character of
+   either and the tag no longer matches.
+
+   A phone that typed the four letters off the television has no secret and
+   cannot check anything. It still plays — it is simply trusting the code the
+   way it always did. Set SIGNING to false to turn the whole thing off. */
+const SIGNING=true;
+const TAGLEN=16;                       // 64 bits of a SHA-256 HMAC
+function newRoomKey(){
+  if(!SIGNING)return '';
+  return Math.random().toString(36).slice(2,12)+Math.random().toString(36).slice(2,12);
+}
+function seal(body){
+  if(!PARTY.key||!body)return body;
+  return hmacHex(PARTY.key,body).slice(0,TAGLEN)+'|'+body;
+}
+/* the body of a message we are willing to act on, or null */
+function unseal(raw){
+  const s=String(raw==null?'':raw);
+  if(!s)return s;                                  // an empty payload clears a topic
+  const bar=s.indexOf('|');
+  const looksSealed=bar===TAGLEN&&/^[0-9a-f]+$/.test(s.slice(0,TAGLEN));
+  if(!PARTY.key)return looksSealed?s.slice(bar+1):s;   // nothing to check against
+  if(!looksSealed)return s;        // unsigned: a phone that typed the code in
+  const body=s.slice(bar+1);
+  return hmacHex(PARTY.key,body).slice(0,TAGLEN)===s.slice(0,TAGLEN)?body:null;
+}
+/* the one case worth shouting about: somebody else publishing to our room */
+function foreignStage(raw){
+  if(!PARTY.key)return false;
+  const s=String(raw==null?'':raw);
+  if(!s)return false;
+  const bar=s.indexOf('|');
+  if(bar!==TAGLEN)return true;                     // unsigned, on a signed room
+  return hmacHex(PARTY.key,s.slice(bar+1)).slice(0,TAGLEN)!==s.slice(0,TAGLEN);
+}
 const topicFor=(code,leaf)=>'thechair/v1/'+String(code).toLowerCase()+'/'+leaf;
 const partyLink=()=>location.origin+location.pathname;
 // the build goes in the link: a cached page cannot answer a URL it has never seen
-const joinLink=()=>partyLink()+'?v='+encodeURIComponent(BUILD).replace(/%20/g,'')+'#'+PARTY.code;
-function newCode(){let s='';for(let i=0;i<4;i++)s+=CODE_LETTERS[Math.floor(Math.random()*CODE_LETTERS.length)];return s}
+// the secret rides in the hash, which browsers do not send to any server
+const joinLink=()=>partyLink()+'?v='+encodeURIComponent(BUILD).replace(/%20/g,'')
+  +'#'+PARTY.code+(PARTY.key?'-'+PARTY.key:'');
+/* six characters, not four: 191 million rooms instead of 331 thousand, which
+   is the difference between a room a script can stumble into and one it
+   cannot. Still short enough to read off a television and type. */
+const CODE_LEN=6;
+function newCode(){let s='';for(let i=0;i<CODE_LEN;i++)s+=CODE_LETTERS[Math.floor(Math.random()*CODE_LETTERS.length)];return s}
 function cleanName(s){return String(s==null?'':s).replace(/[\u0000-\u001F\u007F]/g,'').trim().slice(0,14)}
 function screenNow(){const s=document.querySelector('.screen.on');return s?s.id:''}
 const PREP=['s-setup','s-lobby','s-rules','s-go'];
@@ -4403,7 +4533,7 @@ function openLobby(goTo){
   FRIENDS.forEach(f=>{f.on=false});saveFriends();drawFriends();
   clearVotes();S.cats=[];
   S.games=0;S.banked=false;S.players.forEach(p=>{p.night=0});   // a new party, a new evening
-  PARTY.role='host';PARTY.code=newCode();PARTY.seen={};
+  PARTY.role='host';PARTY.code=newCode();PARTY.key=newRoomKey();PARTY.seen={};
   try{if(MYNAME)claimMySeat('')}catch(e){}   // the host is whoever this device is
   $('lobby-code').textContent=PARTY.code;
   $('lobby-link').textContent=joinLink();
@@ -4411,7 +4541,7 @@ function openLobby(goTo){
   show(goTo||'s-lobby');
   partyConnect(c=>{
     c.subscribe([topicFor(PARTY.code,'join'),topicFor(PARTY.code,'act'),
-                 topicFor(PARTY.code,'face/+')],{qos:0});
+                 topicFor(PARTY.code,'face/+'),topicFor(PARTY.code,'stage')],{qos:0});
     c.on('message',onHostMessage);
     lobbyStatus('Room open — waiting for phones','good');
     publishStage();
@@ -5525,13 +5655,35 @@ function takeFace(pid,url){
 }
 
 function onHostMessage(t,payload){
+  // our own room, spoken for by somebody else
+  if(t===topicFor(PARTY.code,'stage')){
+    if(foreignStage(payload.toString()))roomIntruder();
+    return;
+  }
   const face=facePid(t);
-  if(face!==null){takeFace(face,payload.toString());return}
+  if(face!==null){
+    const f=unseal(payload.toString());
+    if(f!==null)takeFace(face,f);
+    return;
+  }
+  const body=unseal(payload.toString());
+  if(body===null)return;                 // signed with the wrong secret
   let m=null;
-  try{m=JSON.parse(payload.toString())}catch(e){return}
+  try{m=JSON.parse(body)}catch(e){return}
   if(!m||typeof m!=='object')return;
   if(t===topicFor(PARTY.code,'join'))hostJoin(m);
   else if(t===topicFor(PARTY.code,'act'))hostAct(m);
+}
+/* Said once, plainly, and left on the screen: the host is the only one who
+   can decide what to do about it. */
+let intruderSaid=false;
+function roomIntruder(){
+  if(intruderSaid)return;
+  intruderSaid=true;
+  try{
+    const b=$('intruder');
+    if(b)b.hidden=false;
+  }catch(e){}
 }
 function hostJoin(m){
   const pid=String(m.pid||'');
@@ -5803,7 +5955,7 @@ function sendStage(){
   if(PARTY.role!=='host'||!PARTY.client)return;
   lastPub=Date.now();
   try{dirPing()}catch(e){}
-  try{PARTY.client.publish(topicFor(PARTY.code,'stage'),JSON.stringify(stageState()),
+  try{PARTY.client.publish(topicFor(PARTY.code,'stage'),seal(JSON.stringify(stageState())),
     {retain:true,qos:0})}catch(e){}
 }
 function publishStage(){
@@ -5853,9 +6005,10 @@ function openChairScreen(){
   show('s-chair');
 }
 function chairJoin(){
-  const code=($('join-code').value||'').toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);
+  const code=($('join-code').value||'').toUpperCase().replace(/[^A-Z]/g,'').slice(0,CODE_LEN);
   const name=cleanName($('join-name').value);
-  if(code.length!==4){joinStatus('The code is four letters.','bad');return}
+  // older rooms were four letters; a room is found by whatever it calls itself
+  if(code.length<4){joinStatus('The code is six letters.','bad');return}
   if(PARTY.client&&!name){joinStatus('Type your name first.','bad');return}
   PARTY.role='chair';PARTY.code=code;PARTY.pid=myPid();PARTY.seq=Date.now();
   // the button is not disabled yet: the library may still be arriving, and a
@@ -5869,11 +6022,18 @@ function chairJoin(){
     c.subscribe([topicFor(code,'stage'),topicFor(code,'face/+')],{qos:0});
     c.on('message',(t,payload)=>{
       const face=facePid(t);
-      if(face!==null){takeFace(face,payload.toString());return}
-      const body=payload.toString();
-      if(t===topicFor(PARTY.code,'stage')&&!body.trim()){   // the host closed the room
+      if(face!==null){
+        const f=unseal(payload.toString());
+        if(f!==null)takeFace(face,f);
+        return;
+      }
+      const raw=payload.toString();
+      if(t===topicFor(PARTY.code,'stage')&&!raw.trim()){   // the host closed the room
         roomClosed();return;
       }
+      // signed with something other than this room's secret: not the host
+      const body=unseal(raw);
+      if(body===null)return;
       let m=null;try{m=JSON.parse(body)}catch(e){return}
       if(!m||typeof m!=='object'||!Array.isArray(m.seats))return;
       PARTY.stage=m;
@@ -5901,8 +6061,8 @@ function chairJoin(){
 function sendJoin(name,claim){
   if(!PARTY.client)return;
   try{PARTY.client.publish(topicFor(PARTY.code,'join'),
-    JSON.stringify({pid:PARTY.pid,name:name||'',icon:padIcon,
-      claim:(claim===undefined?null:claim)}),{qos:0})}catch(e){}
+    seal(JSON.stringify({pid:PARTY.pid,name:name||'',icon:padIcon,
+      claim:(claim===undefined?null:claim)})),{qos:0})}catch(e){}
 }
 /* the host is holding chairs under names: offer them instead of typing */
 function drawJoinChips(st){
@@ -5926,7 +6086,7 @@ function sendAct(type,target,extra){
   const msg={pid:PARTY.pid,seq:PARTY.seq,type:type,
     target:(target===undefined?null:target),round:st.round};
   if(extra)for(const k in extra)msg[k]=extra[k];   // a vote carries its topic
-  try{PARTY.client.publish(topicFor(PARTY.code,'act'),JSON.stringify(msg),{qos:0})}catch(e){}
+  try{PARTY.client.publish(topicFor(PARTY.code,'act'),seal(JSON.stringify(msg)),{qos:0})}catch(e){}
 }
 
 /* --- the row of chairs as a joined device sees it: yours lit, the rest dim,
@@ -6365,7 +6525,7 @@ function drawMyFace(){
 }
 function publishFace(){
   if(!PARTY.client||!PARTY.code||!PARTY.pid)return;
-  try{PARTY.client.publish(topicFor(PARTY.code,'face/'+PARTY.pid),myFace||'',
+  try{PARTY.client.publish(topicFor(PARTY.code,'face/'+PARTY.pid),seal(myFace||''),
     {retain:true,qos:0})}catch(e){}
 }
 $('face-pick')&&($('face-pick').onclick=()=>$('face-file').click());
@@ -6391,13 +6551,21 @@ setTimeout(followInvitation,0);
 
 
 /* an invitation link ends in #CODE: open that room and skip every other choice */
+/* An invitation is #CODE, or #CODE-SECRET when the host signs the room. The
+   secret is the whole point of the QR: it never travels over the broker, so a
+   phone that scanned it can tell the host's messages from anyone else's. */
 function followInvitation(){
-  let h='';
-  try{h=(location.hash||'').replace('#','').toUpperCase().replace(/[^A-Z]/g,'')}catch(e){}
-  if(h.length!==4)return false;
+  let raw='';
+  try{raw=(location.hash||'').replace(/^#/,'')}catch(e){}
+  if(!raw)return false;
+  const cut=raw.indexOf('-');
+  const code=(cut<0?raw:raw.slice(0,cut)).toUpperCase().replace(/[^A-Z]/g,'');
+  const key=cut<0?'':raw.slice(cut+1).toLowerCase().replace(/[^a-z0-9]/g,'');
+  if(code.length<4||code.length>8)return false;
+  PARTY.key=key;                     // before connecting: the first stage is checked too
   openChairScreen();
-  $('join-code').value=h;
-  joinStatus('Opening room '+h+'\u2026','');
+  $('join-code').value=code;
+  joinStatus('Opening room '+code+'\u2026','');
   chairJoin();                       // connect now; the name comes next
   return true;
 }
@@ -6524,7 +6692,7 @@ $('join-chips')&&($('join-chips').addEventListener('click',e=>{
 }));
 $('join-back')&&($('join-back').onclick=()=>{partyEnd();show('s-home')});
 $('join-code')&&($('join-code').addEventListener('input',e=>{
-  e.target.value=e.target.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);
+  e.target.value=e.target.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,CODE_LEN);
 }));
 // The race is decided on pointerdown, not click: a touch click waits for the
 // browser to rule out a scroll or a double tap, and that wait is not the same
@@ -6600,7 +6768,7 @@ try{drawVis();drawMax()}catch(e){}
   const box=$('intro');if(!box)return;
   let seen=false;
   try{seen=sessionStorage.getItem('thechair.intro')==='1'}catch(e){}
-  const joining=/^#[A-Za-z]{4}$/.test(location.hash||'');
+  const joining=/^#[A-Za-z]{4,8}(-[a-z0-9]+)?$/.test(location.hash||'');
   let timer=null;
   function end(){
     if(box.hidden)return;
