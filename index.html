@@ -533,7 +533,10 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   border:1px solid var(--line);background:#15110e center/contain no-repeat}
 .padpic[hidden]{display:none!important}
 /* when the host screen is a version behind, the page says so itself */
-.newver{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:130;display:flex;
+/* It used to sit bottom-centre, which is exactly where Reveal is during a
+   quiz and where the room bar is on the game menu. A notice must never land
+   on the button the host is reaching for, so it lives at the top. */
+.newver{position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:130;display:flex;
   align-items:center;gap:12px;background:var(--gold);color:#241a08;border-radius:24px;
   padding:10px 12px 10px 18px;font-family:var(--disp);font-weight:700;font-size:14px;
   box-shadow:0 10px 30px rgba(0,0,0,.5)}
@@ -3971,7 +3974,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 12:21';
+const BUILD='07.11. 12:26';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4044,10 +4047,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111221',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111221',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111226',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111226',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111221',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111226',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it

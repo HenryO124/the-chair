@@ -54,11 +54,20 @@ const server=http.createServer((req,res)=>{
       const stage=document.getElementById('q-stage');
       const wall=document.querySelector('#s-quiz .videowall');
       const next=document.getElementById('q-next').getBoundingClientRect();
+      // the "a newer build is out" notice must not land on Reveal
+      let banner=null;
+      const nv=document.querySelector('.newver');
+      if(nv){
+        const was=nv.hidden; nv.hidden=false;
+        const a=nv.getBoundingClientRect();
+        banner=!(a.right<next.left||a.left>next.right||a.bottom<next.top||a.top>next.bottom);
+        nv.hidden=was;
+      }
       // two in three quiz questions have no picture, but some do, and then the
       // frame is right to be there. Ask the data, not the DOM: a picture that
       // fails to load still means this question was meant to have one.
       const hasPic=!!(typeof QIMG!=='undefined'&&QIMG[String(Q.qid)]);
-      return {count:btns.length,hidden:hidden,hasPic:hasPic,
+      return {count:btns.length,hidden:hidden,hasPic:hasPic,bannerOnReveal:banner,
         wallH:wall?Math.round(wall.getBoundingClientRect().height):-1,
         centred:stage.className.includes('centred'),
         nextOnScreen:next.bottom<=innerHeight+1&&next.top>=0};
@@ -68,6 +77,7 @@ const server=http.createServer((req,res)=>{
     if(r.count!==want)probs.push(game+': '+r.count+' answers on screen, expected '+want);
     if(r.hidden.length)probs.push(game+': answers nobody can press — '+r.hidden.join(', '));
     if(!r.nextOnScreen)probs.push(game+': the Reveal button is off the screen');
+    if(r.bannerOnReveal)probs.push(game+': the new-build notice sits on top of Reveal');
     // a record and a picture need their frame; a written question must not keep one
     if(game==='artist'&&r.wallH<200)
       probs.push('artist: the stage collapsed to '+r.wallH+'px, so the video has nowhere to go');

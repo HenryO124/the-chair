@@ -533,7 +533,10 @@ input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px
   border:1px solid var(--line);background:#15110e center/contain no-repeat}
 .padpic[hidden]{display:none!important}
 /* when the host screen is a version behind, the page says so itself */
-.newver{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:130;display:flex;
+/* It used to sit bottom-centre, which is exactly where Reveal is during a
+   quiz and where the room bar is on the game menu. A notice must never land
+   on the button the host is reaching for, so it lives at the top. */
+.newver{position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:130;display:flex;
   align-items:center;gap:12px;background:var(--gold);color:#241a08;border-radius:24px;
   padding:10px 12px 10px 18px;font-family:var(--disp);font-weight:700;font-size:14px;
   box-shadow:0 10px 30px rgba(0,0,0,.5)}
