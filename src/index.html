@@ -840,7 +840,7 @@ body:not(.screen-home) .mechip{display:none}
   font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 .jp-lab svg{width:16px;height:16px}
 .jp-lab:hover{color:var(--bone)}
-#home-code{width:5.6em;background:var(--ink);border:1px solid var(--line);border-radius:9px;color:var(--gold);
+#home-code{width:7.4em;background:var(--ink);border:1px solid var(--line);border-radius:9px;color:var(--gold);
   font-family:var(--mono);font-weight:700;font-size:18px;letter-spacing:.22em;text-align:center;padding:8px 6px;
   text-transform:uppercase}
 /* 20. the placeholder inherited the gold of a real code, so an empty box
@@ -1840,6 +1840,24 @@ body:has(#s-chair.on) .striproundwrap{display:none}
   box-shadow:0 14px 40px rgba(0,0,0,.6)}
 .intruder[hidden]{display:none!important}
 .intruder b{display:block;margin-bottom:3px;color:#fff}
+
+/* ---- the front page on a television --------------------------------
+   Everything fitted in the top two thirds and the rest of the screen was
+   black, which reads as a page that failed to load rather than one that is
+   simply short. The screen now claims the height it has and spreads what is
+   on it, so the armchair sits in the middle of the room and the panels sit
+   along the bottom. Below a television it goes back to flowing normally. */
+@media (min-width:1100px) and (min-height:760px){
+  body.screen-home #s-home{min-height:calc(100vh - 150px);
+    display:flex;flex-direction:column;gap:clamp(18px,2.6vh,40px)}
+  body.screen-home #s-home .hero2{flex:1 1 auto;display:flex;flex-direction:column;
+    justify-content:center}
+  body.screen-home #s-home .hero2-mid{width:100%}
+  body.screen-home #s-home .modefilter,
+  body.screen-home #s-home .hpanel,
+  body.screen-home #s-home .homefoot{flex:0 0 auto;margin-top:0}
+  body.screen-home #s-home .hero2-art .armchair{max-height:46vh;height:auto}
+}
 
 /* the bar that says a newer build is out */
 .newver{border-color:rgba(255,70,100,.35);box-shadow:var(--glowsoft)}
