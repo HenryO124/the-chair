@@ -17,6 +17,7 @@ existing bank, in all three languages at once, and it never deletes anything:
 a near miss is reported for a person to settle.
 
     python3 tools/import_quiz.py batch_en.txt batch_fi.txt batch_sv.txt
+    python3 tools/import_quiz.py batch_en.txt batch_fi.txt       # fi only, sv = fi
     python3 tools/import_quiz.py ... --write out.json     # once it is clean
 """
 import json, re, sys, unicodedata, os
@@ -139,9 +140,20 @@ def main():
     write = None
     if "--write" in sys.argv:
         write = sys.argv[sys.argv.index("--write") + 1]
-    if len(args) != 3:
+    if len(args) == 2:
+        # Finnish only, by the owner's decision for now. The Swedish bank has to
+        # hold the same number of rows as the other two or the page deals a round
+        # it cannot label, so it gets the Finnish text. That is a debt, not a
+        # translation, and it is printed as one every single run.
+        en, fi = [json.load(open(p, encoding="utf-8")) for p in args]
+        sv = [list(r) for r in fi]
+        print("note  two files given: the Swedish bank gets the Finnish text for")
+        print("      these %d rows. They are playable in fi and en, and read as" % len(fi))
+        print("      Finnish on a Swedish television until someone translates them.")
+    elif len(args) == 3:
+        en, fi, sv = [json.load(open(p, encoding="utf-8")) for p in args]
+    else:
         print(__doc__); sys.exit(2)
-    en, fi, sv = [json.load(open(p, encoding="utf-8")) for p in args]
 
     bad = check_batch(en, fi, sv)
     if bad:

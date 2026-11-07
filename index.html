@@ -1989,6 +1989,11 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 .nearbox .btn{width:auto;margin:0;flex:0 0 auto;padding:13px 20px}
 .nearbox.locked input{color:#8FE3B0;border-color:rgba(73,194,123,.5)}
 @media (min-width:900px){.nearbox{position:static;background:none;margin:14px 0 0;padding:0}}
+/* Closest Wins is the only game whose answers are not on the screen, so the
+   room needs telling where to put them. Bigger and brighter than the counter
+   under it: it is an instruction, not a status. */
+.nearhow{grid-column:1/-1;text-align:center;color:#C9AEB6;font-family:var(--disp);
+  font-size:clamp(17px,1.9vw,32px);padding:clamp(12px,2.4vh,30px) 0 0}
 .nearwait{grid-column:1/-1;text-align:center;color:var(--muted);
   font-family:var(--mono);font-size:clamp(12px,1.1vw,20px);letter-spacing:.14em;
   text-transform:uppercase;padding:clamp(14px,3vh,40px) 0}
@@ -4373,7 +4378,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 18:57';
+const BUILD='07.11. 19:24';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4559,10 +4564,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111857',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111857',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111924',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111924',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111857',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111924',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -5205,7 +5210,10 @@ function drawNear(){
   $('q-options').className='qgrid near';
   if(!Q.revealed){
     const said=Object.keys(Q.guesses||{}).length;
-    $('q-options').innerHTML='<div class="nearwait">'
+    // This is the only game whose answers are not on the television, so the
+    // room is looking at a question with nothing under it. Say where to answer.
+    $('q-options').innerHTML='<div class="nearhow">'+esc(T('near_howto'))+'</div>'
+      +'<div class="nearwait">'
       +esc(T('near_waiting',{n:said,of:S.players.length}))+'</div>';
   }else{
     const order=nearOrder();
@@ -5496,6 +5504,11 @@ function nameScore(want,got){
   const strip=t=>{const o=t.filter(w=>!noise[w]);return o.length?o:t};
   const sa=strip(ta),sb=strip(tb);
   if(sa.join(' ')===sb.join(' '))return 2;
+  /* Run-D.M.C. folds to "run d m c" and iTunes writes "RUN DMC" -> "run dmc".
+     Same act, no words in common. So compare them with the gaps closed up too;
+     that is only a match when the letters are identical in order, which no two
+     different acts are. */
+  if(sa.join('')===sb.join(''))return 2;
   /* A one-word act name sits inside a great many other act names: Prince in
      Prince Royce, Cher in Cher Lloyd, Europe in Europe 2000, Ghost in Ghost
      Hounds. 55 of the acts in this collection have one-word names, so taking
@@ -7230,6 +7243,7 @@ var WORDS={
   meta_artist:'nimeä esittäjä', meta_trivia:'yleistieto', meta_picture:'tunnista kuva',
   near_type:'Kirjoita luku', near_lock:'Lukitse', near_mine:'Arvauksesi: {n}',
   near_answer:'Oikea vastaus:', near_exact:'täsmälleen', near_waiting:'{n}/{of} on arvannut',
+  near_howto:'Näppäile luku puhelimeesi ja lukitse se',
   modes_learn:"Miten näitä pelataan",
   modes_solo:"Pikastartti, yksin",
   modes_create:"Luo peli",
@@ -7523,6 +7537,7 @@ var WORDS={
   meta_artist:'namnge artisten', meta_trivia:'allmänbildning', meta_picture:'gissa bilden',
   near_type:'Skriv ett tal', near_lock:'Lås in', near_mine:'Din gissning: {n}',
   near_answer:'Rätt svar:', near_exact:'exakt', near_waiting:'{n}/{of} har gissat',
+  near_howto:'Skriv talet på din telefon och lås in det',
   modes_learn:"Så spelas de",
   modes_solo:"Snabbstart, på egen hand",
   modes_create:"Skapa ett spel",
@@ -7817,6 +7832,7 @@ var EN={
   meta_artist:'name the artist', meta_trivia:'general knowledge', meta_picture:'guess the picture',
   near_type:'Type a number', near_lock:'Lock it in', near_mine:'Your guess: {n}',
   near_answer:'The answer is', near_exact:'exactly', near_waiting:'{n} of {of} have guessed',
+  near_howto:'Type your number on your phone and lock it in',
   modes_learn:"How they play",
   modes_solo:"Quick start, on your own",
   modes_create:"Create a game",
