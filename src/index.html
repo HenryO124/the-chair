@@ -2116,6 +2116,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
       <button type="button" data-g="trivia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8.4"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><circle cx="12" cy="16.9" r=".9" fill="currentColor" stroke="none"/></svg>Quiz</button>
       <button type="button" data-g="picture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>Picture Guess</button>
       <button type="button" data-g="s10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="4" width="7" height="7" rx="1.6"/><rect x="13.5" y="4" width="7" height="7" rx="1.6"/><rect x="3.5" y="13" width="7" height="7" rx="1.6"/><rect x="13.5" y="13" width="7" height="7" rx="1.6"/></svg>The Short List</button>
+      <button type="button" data-g="near"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17h18"/><path d="M7 17v-3M12 17v-7M17 17v-5"/><circle cx="12" cy="6.4" r="2.1"/></svg>Closest Wins</button>
       <button type="button" data-g="finger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 11V5.6a1.6 1.6 0 0 1 3.2 0V11"/><path d="M12.7 11V9.4a1.5 1.5 0 0 1 3 0V11"/><path d="M15.7 11.2v-.8a1.5 1.5 0 0 1 3 0V15a5.5 5.5 0 0 1-5.5 5.5h-1.5a5 5 0 0 1-4.2-2.3L5 14.4a1.5 1.5 0 0 1 2.4-1.8l2.1 2.2"/></svg>Point the Finger</button>
       <button type="button" data-g="tf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 8.5h7M7 8.5V17"/><path d="M14 17V8.5h5.5M14 13h4.6"/></svg>True or False</button>
       <button type="button" data-g="artist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>Name the Artist</button>
@@ -2247,6 +2248,22 @@ body:has(#s-chair.on) .striproundwrap{display:none}
               <span class="gtag">Keep your run</span>
               <span class="gname">True or False</span>
               <span class="gdesc">One statement at a time, half of them true. Everyone answers at once &mdash; and the longer your run of right answers, the more each one is worth.</span>
+              <span class="gmeta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
+                2&ndash;8 players <span class="dot">&middot;</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+                10&ndash;15 min
+              </span>
+            </span>
+            <span class="garrow">&rarr;</span>
+          </button>
+
+          <button type="button" class="gamecard" data-game="near">
+            <span class="gicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17h18"/><path d="M7 17v-3M12 17v-7M17 17v-5"/><circle cx="12" cy="6.4" r="2.1"/></svg></span>
+            <span class="gbody">
+              <span class="gtag">No options at all</span>
+              <span class="gname">Closest Wins</span>
+              <span class="gdesc">The answer is a number &mdash; a year, a height, a count &mdash; and nobody is given anything to choose from. Everybody types a guess, the closest takes it, and exactly right takes double.</span>
               <span class="gmeta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>
                 2&ndash;8 players <span class="dot">&middot;</span>
@@ -2869,7 +2886,7 @@ const CATALOG=[
 ["The Killers","Mr. Brightside",2004,28,"Rock","Mr. Brightside",2003],
 ].filter(a=>a[3]>0);
 
-const SHELVED={chair:1};         // built, not ready: no card, no filter chip
+const SHELVED={chair:1,near:1};   // Closest Wins: the phone side is not finished         // built, not ready: no card, no filter chip
 
 /* ---- where the record comes from -----------------------------------
    It used to be a YouTube embed, which means an advertisement can open a
@@ -2895,7 +2912,10 @@ const trackOf=a=>a[5];
 const yearOf=a=>a[6];
 const $=id=>document.getElementById(id);
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* A missing string used to take the whole page down: esc(undefined) threw,
+   the click handler died with it, and the button simply stopped working. A
+   gap on the screen is a better failure than a dead button. */
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=n=>n.toLocaleString('en-US');
 /* ---- the browser's own Back button ----------------------------------
    One page means no history, so Back used to walk straight out of the party.
@@ -3419,6 +3439,7 @@ const GAMEBLURB={chair:'Open a room, pass the code around, and everyone takes a 
   picture:'Open a room and pass the code around. A picture goes up here, four answers on every phone.',
   tf:'Open a room and pass the code around. One statement at a time, and every phone says true or false.',
   finger:'Open a room and pass the code around. A question about the people in it, and every phone points at somebody.',
+  near:'Open a room and pass the code around. The answer is a number and nobody gets options — everybody types a guess.',
   s10:'Open a room and pass the code around. Ten candidates on every phone, and only some of them are true.'};
 const SOLOBLURB={chair:'One screen, one coach, and a pile of records. No room, nobody to wait for.',
   artist:'Four names on this screen, record after record, scored as you go.',
@@ -3426,6 +3447,7 @@ const SOLOBLURB={chair:'One screen, one coach, and a pile of records. No room, n
   picture:'Cities, landmarks, paintings and the odd animal. Name what you are looking at.',
   tf:'Statements, half of them true. Say which is which, and keep your run alive.',
   finger:'A question about the room, and the room is the answer. You score by agreeing with everybody else.',
+  near:'The answer is a number. No options, no quarter chance — type a guess, and the closest takes it.',
   s10:'Ten candidates, some true. Take one, take another, and stop before you are wrong.'};
 let LEARNING=false, SOLO=false;
 function firstGame(){
@@ -4488,6 +4510,10 @@ function photoToSquare(file,px){
 let FRIENDS=[];
 try{FRIENDS=JSON.parse(localStorage.getItem('thechair.friends')||'[]')}catch(e){FRIENDS=[]}
 if(!Array.isArray(FRIENDS))FRIENDS=[];
+// written by this page, but a half-written or older entry would otherwise
+// poison every screen that draws the list, for good
+FRIENDS=FRIENDS.filter(f=>f&&typeof f==='object'&&typeof f.name==='string'&&f.name.trim())
+  .map(f=>({name:String(f.name).slice(0,14),on:!!f.on}));
 function saveFriends(){try{localStorage.setItem('thechair.friends',JSON.stringify(FRIENDS))}catch(e){}}
 function addFriend(name,invite){
   name=cleanName(name);if(!name)return null;
@@ -4699,6 +4725,7 @@ function s10Bank(){
 const TFWORDS={en:['True','False'],fi:['Totta','Tarua'],sv:['Sant','Falskt']};
 const isTF=()=>S.game==='tf';
 const isFinger=()=>S.game==='finger';
+const isNear=()=>S.game==='near';
 function tfBank(){
   const L=S.lang==='fi'?1:S.lang==='sv'?2:0;      // statement column offset
   const W=TFWORDS[S.lang]||TFWORDS.en;
@@ -4730,6 +4757,7 @@ function evenDeck(bank,want){
 }
 function quizStart(){
   try{dressButtons()}catch(e){}        // Hold and End the game, in the right language
+  if(isNear())return nearStart();
   if(isFinger())return fingerStart();
   if(isS10()){
     const bank=s10CatBank();
@@ -4871,6 +4899,153 @@ function fingerState(phase){
     }),
     mine:null};
 }
+
+/* ==================================================================
+   CLOSEST WINS — the answer is a number and nobody is given options.
+   Closest takes it; exactly right takes double.
+   ================================================================== */
+/* a plain number, however the bank wrote it: 1,440 and 1 440 are both 1440 */
+function asNumber(t){
+  const c=String(t==null?'':t).replace(/[\s, ]/g,'');
+  if(!/^-?[0-9]+(\.[0-9]+)?$/.test(c))return null;
+  const v=parseFloat(c);
+  return isFinite(v)?v:null;
+}
+function nearBank(){
+  return langBank().reduce((out,r)=>{
+    const v=asNumber(r[2]);
+    if(v!==null)out.push([r[0],r[1],v,r[6]||'',r[7]]);
+    return out;
+  },[]);
+}
+function nearCatBank(){
+  const all=nearBank();
+  if(!S.cats.length)return all;
+  const want=S.cats.map(catShown);
+  return all.filter(r=>want.indexOf(r[0])>=0);
+}
+function nearStart(){
+  const bank=nearCatBank();
+  if(!bank.length){
+    try{lobbyStatus('The questions are still loading — one moment.','')}catch(e){}
+    needBanks();
+    try{banksReady().then(()=>{if(screenNow()==='s-quiz')quizStart()}).catch(()=>{})}catch(e){}
+    return;
+  }
+  Q.of=Math.min(S.len||10,bank.length);
+  Q.deck=evenDeck(bank,Q.of);
+  Q.round=0;Q.on=true;
+  S.players.forEach(pl=>{pl.score=0;pl.run=0});
+  nearNext();
+}
+function nearNext(){
+  if(Q.round>=Q.deck.length){quizFinish();return}
+  stopNextCount();
+  Q.current=Q.deck[Q.round++];
+  Q.guesses={};Q.revealed=false;Q.qid='';
+  try{$('q-curtain').classList.add('open');$('q-curtain').textContent=''}catch(e){}
+  drawQuiz();publishStage();
+}
+function nearGuess(p,v){
+  if(!isNear()||Q.revealed)return;
+  const num=asNumber(v);
+  if(num===null)return;
+  Q.guesses[p.id]=num;
+  if(S.players.every(x=>x.id in Q.guesses))nearReveal();
+  else{drawQuiz();publishStage()}
+}
+/* everyone sorted by how close they came, nearest first */
+function nearOrder(){
+  const right=Q.current?Q.current[2]:0;
+  return S.players
+    .filter(p=>p.id in (Q.guesses||{}))
+    .map(p=>({p:p,g:Q.guesses[p.id],d:Math.abs(Q.guesses[p.id]-right)}))
+    .sort((a,b)=>a.d-b.d||a.p.id-b.p.id);
+}
+function nearReveal(){
+  if(Q.revealed)return;
+  Q.revealed=true;
+  const order=nearOrder();
+  if(order.length){
+    const best=order[0].d;
+    // everybody equally close shares it, and exactly right is worth double
+    order.filter(o=>o.d===best).forEach(o=>{
+      o.p.score=(o.p.score||0)+(best===0?20:10);
+    });
+  }
+  drawQuiz();publishStage();
+  startNextCount(NEXT_IN);
+}
+function drawNear(){
+  if(!Q.current)return;
+  try{$('q-stage').classList.add('centred')}catch(e){}
+  try{$('s10-rules').hidden=true}catch(e){}
+  $('q-count').textContent=T('q_of',{i:Q.round,n:Q.deck.length});
+  $('q-ask').className='ask cat';
+  $('q-ask').textContent=Q.current[0];
+  try{
+    const sc=$('q-screen');
+    if(sc)sc.innerHTML='<div class="qasking'+askSize(Q.current[1])+'">'+esc(Q.current[1])+'</div>';
+  }catch(e){}
+  const right=Q.current[2];
+  $('q-options').className='qgrid near';
+  if(!Q.revealed){
+    const said=Object.keys(Q.guesses||{}).length;
+    $('q-options').innerHTML='<div class="nearwait">'
+      +esc(T('near_waiting',{n:said,of:S.players.length}))+'</div>';
+  }else{
+    const order=nearOrder();
+    const best=order.length?order[0].d:-1;
+    $('q-options').innerHTML='<div class="nearans">'+esc(T('near_answer'))
+      +' <b>'+esc(fmtNum(right))+'</b></div>'
+      +'<div class="nearlist">'+order.map(o=>
+        '<div class="nearrow'+(o.d===best?' win':'')+'">'
+        +'<span class="nn">'+esc(shownName(o.p))+'</span>'
+        +'<span class="ng">'+esc(fmtNum(o.g))+'</span>'
+        +'<span class="nd">'+(o.d===0?esc(T('near_exact')):'±'+esc(fmtNum(o.d)))+'</span>'
+        +'</div>').join('')+'</div>'
+      +(Q.current[3]?'<p class="nearnote">'+esc(Q.current[3])+'</p>':'');
+  }
+  $('q-scores').innerHTML=S.players.map(p=>{
+    const said=(p.id in (Q.guesses||{}));
+    return '<span class="qsc'+(said?' done':'')+'">'
+      +'<span class="av">'+backArt(p,'qav')+'</span>'+esc(shownName(p))
+      +' <b>'+(p.score||0)+'</b>'+(said&&!Q.revealed?' ✓':'')+'</span>';
+  }).join('');
+  const nx=$('q-next');
+  if(nx){
+    nx.classList.toggle('calm',!Q.revealed);
+    nx.textContent=Q.revealed
+      ?(Q.round>=Q.deck.length?T('see_winner'):T('next_q'))
+      :T('reveal');
+  }
+}
+/* 1440 reads as 1 440 on a television and nobody has to count the digits */
+function fmtNum(v){
+  if(typeof v!=='number'||!isFinite(v))return String(v);
+  const neg=v<0;v=Math.abs(v);
+  const whole=Math.floor(v), rest=v-whole;
+  let t=String(whole).replace(/\B(?=(\d{3})+(?!\d))/g,' ');
+  if(rest>0)t+=String(+rest.toFixed(3)).slice(1);
+  return (neg?'−':'')+t;
+}
+function nearState(phase){
+  return {v:1,b:BUILD,game:'near',phase:phase||'live',
+    round:Q.round,of:Q.deck.length,revealed:!!Q.revealed,
+    ask:Q.current?Q.current[1]:'',cat:Q.current?Q.current[0]:'',
+    note:(Q.revealed&&Q.current)?Q.current[3]:'',
+    right:Q.revealed&&Q.current?Q.current[2]:null,
+    vote:ballotState(),setup:setupLine(),remote:!!S.remote,vid:'',pic:'',
+    options:[],correct:-1,nextIn:Q.nextIn||0,
+    knocks:Object.keys(KNOCKS),full:S.players.length>=MAX_CHAIRS,
+    seats:S.players.map(p=>{
+      const sv={id:p.id,name:shownName(p),icon:p.icon,score:p.score||0};
+      if(p.pid)sv.pid=p.pid;
+      if(p.photo)sv.photo=p.photo;
+      if(p.id in (Q.guesses||{})){sv.said=1;if(Q.revealed)sv.guess=Q.guesses[p.id]}
+      return sv;
+    })};
+}
 function s10Next(){
   try{$('q-screen').innerHTML='';$('q-curtain').textContent='';
     $('q-curtain').classList.add('open');$('q-hold').hidden=true}catch(e){}
@@ -4969,6 +5144,7 @@ function s10Reveal(){
 }
 function quizNext(){
   stopNextCount();
+  if(isNear())return nearNext();
   if(isFinger())return fingerNext();
   if(isS10())return s10Next();
   if(Q.round>=Q.deck.length){quizFinish();return}
@@ -5429,6 +5605,7 @@ function quizFinish(){
   show('s-final');publishStage();   // the screen moves first, so the phones hear 'over'
 }
 function drawQuiz(){
+  if(isNear())return drawNear();
   if(isFinger())return drawFinger();
   if(isS10())return drawS10();
   if(!Q.current)return;
@@ -5541,6 +5718,12 @@ $('q-options')&&($('q-options').addEventListener('click',e=>{
 }));
 $('q-next')&&($('q-next').onclick=()=>{
   stopNextCount();
+  if(isNear()){
+    if(!Q.revealed)nearReveal();
+    else if(Q.round>=Q.deck.length)quizFinish();
+    else nearNext();
+    return;
+  }
   if(isFinger()){
     if(!Q.revealed)fingerReveal();
     else if(Q.round>=Q.deck.length)quizFinish();
@@ -5703,7 +5886,8 @@ function dirStart(){
   DIR.timer=setInterval(()=>{drawRooms()},10000);
 }
 const GAMELABEL={chair:'The Chair',artist:'Name the Artist',trivia:'Quiz',picture:'Picture Guess',
-  tf:'True or False',s10:'The Short List',finger:'Point the Finger'};
+  tf:'True or False',s10:'The Short List',finger:'Point the Finger',
+  near:'Closest Wins'};
 const GAMEICON={
   chair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4.6h10v7H7z"/><path d="M5.5 11.6h13v3.2h-13z"/><path d="M7 14.8V20M17 14.8V20"/></svg>',
   artist:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="16.5" cy="16" r="2.6"/></svg>',
@@ -5711,6 +5895,7 @@ const GAMEICON={
   picture:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="14" rx="2.2"/><circle cx="8.6" cy="10" r="1.5"/><path d="M4.2 17 9 12.6l3.7 3 3-2.4 4.1 3.4"/></svg>',
   tf:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 8.5h7M7 8.5V17"/><path d="M14 17V8.5h5.5M14 13h4.6"/></svg>',
   finger:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 11V5.6a1.6 1.6 0 0 1 3.2 0V11"/><path d="M12.7 11V9.4a1.5 1.5 0 0 1 3 0V11"/><path d="M15.7 11.2v-.8a1.5 1.5 0 0 1 3 0V15a5.5 5.5 0 0 1-5.5 5.5h-1.5a5 5 0 0 1-4.2-2.3L5 14.4a1.5 1.5 0 0 1 2.4-1.8l2.1 2.2"/></svg>',
+  near:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17h18"/><path d="M7 17v-3M12 17v-7M17 17v-5"/><circle cx="12" cy="6.4" r="2.1"/></svg>',
   s10:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="4" width="7" height="7" rx="1.6"/><rect x="13.5" y="4" width="7" height="7" rx="1.6"/><rect x="3.5" y="13" width="7" height="7" rx="1.6"/><rect x="13.5" y="13" width="7" height="7" rx="1.6"/></svg>'};
 function drawRooms(){
   const box=$('pub-list');if(!box)return;
@@ -5979,6 +6164,10 @@ function hostAct(m){
     quizAnswer(p,+m.target);
     return;
   }
+  if(m.type==='near'){                     // Closest Wins: a number, typed
+    nearGuess(p,m.target);
+    return;
+  }
   if(m.type==='finger'){                   // Point the Finger: one of the room
     fingerVote(p,+m.target);
     return;
@@ -6121,13 +6310,14 @@ function s10State(phase){
       reserved:!!p.reserved&&!p.pid}))};
 }
 function stageState(){
+  if(isNear())return nearState(inPrep()?'lobby':'live');
   if(isFinger())return fingerState(inPrep()?'lobby':'live');
   const a=S.current;
   const revealed=!!a&&!turnsOpen&&(!!winner||walked);
   const phase=inPrep()?'lobby'
     :screenNow()==='s-final'?'over'
     :turnsOpen?'live':revealed?'locked':'between';
-  if((S.game==='artist'||isAsking()||isS10())&&!inPrep())
+  if((S.game==='artist'||isAsking()||isS10()||isFinger()||isNear())&&!inPrep())
     return quizState(phase);
   return {vote:ballotState(),setup:setupLine(),remote:!!S.remote,v:1,b:BUILD,game:'chair',phase:phase,round:S.round,of:S.deck.length,teamSize:S.teamSize,
     blockTarget:(blockTarget===null?null:blockTarget),
@@ -6660,6 +6850,9 @@ const WORDS={
   door_told:'Isännälle on kerrottu että olet täällä. Hän voi päästää sinut sisään tauolla.',
   closed:'Isäntä sulki huoneen. Bileet ovat ohi — kiitos kun tulit.',
   meta_artist:'nimeä esittäjä', meta_trivia:'yleistieto', meta_picture:'tunnista kuva',
+  near_type:'Kirjoita luku', near_lock:'Lukitse', near_mine:'Arvauksesi: {n}',
+  near_answer:'Oikea vastaus:', near_exact:'täsmälleen', near_waiting:'{n}/{of} on arvannut',
+  meta_near:'lähin voittaa',
   finger_pick:'Valitse joku', finger_said:'Valintasi on tehty — odotetaan muita…', finger_done:'Näin huone äänesti',
   meta_finger:'osoita sormella',
   meta_tf:'totta vai tarua', meta_s10:'kuinka pitkälle uskallat'
@@ -6694,6 +6887,9 @@ const WORDS={
   door_told:'Värden har fått veta att du är här och kan släppa in dig vid nästa paus.',
   closed:'Värden har stängt rummet. Festen är slut — tack för att du kom.',
   meta_artist:'namnge artisten', meta_trivia:'allmänbildning', meta_picture:'gissa bilden',
+  near_type:'Skriv ett tal', near_lock:'Lås in', near_mine:'Din gissning: {n}',
+  near_answer:'Rätt svar:', near_exact:'exakt', near_waiting:'{n}/{of} har gissat',
+  meta_near:'närmast vinner',
   finger_pick:'Välj någon', finger_said:'Ditt val är gjort — väntar på de andra…', finger_done:'Så röstade rummet',
   meta_finger:'peka finger',
   meta_tf:'sant eller falskt', meta_s10:'hur långt vågar du'
@@ -6729,6 +6925,9 @@ const EN={
   door_told:'The host has been told you are here. They can let you in at the next break.',
   closed:'The host has closed the room. The party is over — thanks for coming.',
   meta_artist:'name the artist', meta_trivia:'general knowledge', meta_picture:'guess the picture',
+  near_type:'Type a number', near_lock:'Lock it in', near_mine:'Your guess: {n}',
+  near_answer:'The answer is', near_exact:'exactly', near_waiting:'{n} of {of} have guessed',
+  meta_near:'closest wins',
   finger_pick:'Point at somebody', finger_said:'Pointed — waiting for the others…', finger_done:'This is how the room voted',
   meta_finger:'point the finger',
   meta_tf:'true or false', meta_s10:'how far do you dare'
@@ -6749,7 +6948,7 @@ function dressButtons(){
 }
 const METALABEL={chair:'blind signings',artist:'name the artist',trivia:'general knowledge',
   picture:'picture guess',tf:'true or false',s10:'the short list',
-  finger:'point the finger'};
+  finger:'point the finger',near:'closest wins'};
 let padLastNext='';
 /* 15. what a phone at the door is actually waiting for. Two different places
    used to answer this question, and both of them only said "asking". */
@@ -7005,7 +7204,7 @@ $('lobby-start')&&($('lobby-start').onclick=()=>{
   // every game reads something out of the chunk: the quizzes their bank, the
   // other two the record catalogue. Hold the screen until it is here.
   const go=()=>{
-    if(S.game==='artist'||isAsking()||isS10()){
+    if(S.game==='artist'||isAsking()||isS10()||isFinger()||isNear()){
       try{$('meta').textContent=METALABEL[S.game]||''}catch(e){}
       show('s-quiz');fitScreen();quizStart();
     }
