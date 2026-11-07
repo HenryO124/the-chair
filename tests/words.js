@@ -80,6 +80,20 @@ setTimeout(()=>{
   if(!/question 3 of 15/.test(back))
     probs.push('the English round line is not the English one: '+back);
 
+  // ---- the next button calls the thing in front of you by its own name ----
+  // Three times in one day a new game was left out of a hand-kept list of
+  // game ids. Ask the page for its games rather than keeping a list here.
+  const games=JSON.parse(w.eval('JSON.stringify(Object.keys(GAMELABEL))'));
+  if(games.length<6)probs.push('only '+games.length+' games to check');
+  games.forEach(g=>{
+    w.eval("S.lang='fi';S.game="+JSON.stringify(g)+
+           ";Q.deck=[1,2,3];Q.round=1;Q.nextIn=0;drawNextCount();");
+    const said=$('q-next').textContent.trim();
+    const record=(g==='artist'||g==='chair');
+    const want=w.eval("T("+JSON.stringify(record?'next_r':'next_q')+")");
+    if(said!==want)probs.push(g+': the next button says "'+said+'", expected "'+want+'"');
+  });
+
   console.log(probs.length?'FAIL:':'ok - the phone speaks the language the questions are in');
   probs.forEach(p=>console.log('  x '+p));
   process.exit(probs.length?1:0);

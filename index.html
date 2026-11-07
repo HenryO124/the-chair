@@ -2045,6 +2045,22 @@ body:has(#s-chair.on) .striproundwrap{display:none}
   #s-quiz #q-options{gap:5px}
   #s-quiz .btn-row,#s-quiz #btn-row{margin-top:6px}
 }
+
+/* ---- the reveal is the moment of the round, so let it land ----
+   Decorative only. The answer arrives rather than appearing, and a player who
+   has asked their phone or laptop for less motion gets none of it. */
+@keyframes answerLands{
+  from{opacity:0;transform:translateY(14px) scale(.94);filter:blur(7px)}
+  to{opacity:1;transform:none;filter:none}}
+#s-quiz .qbtn.right{animation:answerLands .5s cubic-bezier(.16,1,.3,1) both;
+  box-shadow:0 0 26px rgba(91,228,154,.28)}
+#s-quiz .nearans{animation:answerLands .55s cubic-bezier(.16,1,.3,1) both}
+#s-quiz .nearrow.win{animation:answerLands .5s .12s cubic-bezier(.16,1,.3,1) both}
+#s-quiz .qanswer .qa-right{animation:answerLands .6s cubic-bezier(.16,1,.3,1) both}
+@media (prefers-reduced-motion:reduce){
+  #s-quiz .qbtn.right,#s-quiz .nearans,#s-quiz .nearrow.win,
+  #s-quiz .qanswer .qa-right{animation:none}
+}
 </style>
 </head>
 <body class="screen-home">
@@ -4212,7 +4228,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 14:45';
+const BUILD='07.11. 14:54';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4398,10 +4414,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111445',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111445',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111454',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111454',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111445',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111454',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4683,6 +4699,9 @@ const TFWORDS={en:['True','False'],fi:['Totta','Tarua'],sv:['Sant','Falskt']};
 const isTF=()=>S.game==='tf';
 const isFinger=()=>S.game==='finger';
 const isNear=()=>S.game==='near';
+/* Two games put on a record; everything else asks a question. Naming the
+   short, closed list means a new game never has to remember to join it. */
+const playsRecords=()=>S.game==='artist'||S.game==='chair';
 function tfBank(){
   const L=S.lang==='fi'?1:S.lang==='sv'?2:0;      // statement column offset
   const W=TFWORDS[S.lang]||TFWORDS.en;
@@ -4793,6 +4812,7 @@ function fingerTally(){
 function fingerReveal(){
   if(Q.revealed)return;
   Q.revealed=true;
+  try{sting('reveal')}catch(e){}
   const t=fingerTally();
   Q.tally=t;
   const top=Math.max.apply(null,[0].concat(S.players.map(p=>t[p.id]||0)));
@@ -4861,6 +4881,35 @@ function fingerState(phase){
    CLOSEST WINS — the answer is a number and nobody is given options.
    Closest takes it; exactly right takes double.
    ================================================================== */
+/* A short synthesised chime for the moment the answer lands. No audio file,
+   no network, nothing to autoplay. Every path is wrapped: if the browser
+   refuses audio the game simply carries on in silence. Only the screen
+   everyone is looking at makes a sound — a room of eight phones chiming at
+   once would be a punishment, not a flourish. */
+let stingCtx=null;
+function sting(kind){
+  try{
+    if(PARTY.role!=='host')return;
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    const A=window.AudioContext||window.webkitAudioContext;
+    if(!A)return;
+    if(!stingCtx)stingCtx=new A();
+    if(stingCtx.state==='suspended')stingCtx.resume().catch(()=>{});
+    const now=stingCtx.currentTime;
+    const notes=kind==='turn'?[392,523.25,783.99]:[261.63,329.63,392,523.25];
+    notes.forEach((hz,i)=>{
+      const start=now+i*(kind==='turn'?.095:.105), dur=kind==='turn'?.32:.40;
+      const osc=stingCtx.createOscillator(), gain=stingCtx.createGain();
+      osc.type=kind==='turn'?'triangle':'sine';
+      osc.frequency.setValueAtTime(hz,start);
+      gain.gain.setValueAtTime(.0001,start);
+      gain.gain.exponentialRampToValueAtTime(.05,start+.025);
+      gain.gain.exponentialRampToValueAtTime(.0001,start+dur);
+      osc.connect(gain);gain.connect(stingCtx.destination);
+      osc.start(start);osc.stop(start+dur+.02);
+    });
+  }catch(e){}
+}
 /* A plain number, however it was written. The bank writes 1,440; a phone in
    Helsinki types 3,5 and means three and a half, because Finnish and Swedish
    both use the comma as the decimal mark. Reading that as 35 would be a wrong
@@ -4935,6 +4984,7 @@ function nearOrder(){
 function nearReveal(){
   if(Q.revealed)return;
   Q.revealed=true;
+  try{sting('reveal')}catch(e){}
   const order=nearOrder();
   if(order.length){
     const best=order[0].d;
@@ -5102,6 +5152,7 @@ function s10RoundOver(){
 }
 function s10Reveal(){
   Q.revealed=true;
+  try{sting('reveal')}catch(e){}
   // the line that settles the argument belongs on the screen, not in the data
   try{$('q-screen').innerHTML='<div class="qanswer"><div class="qa-note">'
     +esc(Q.current[2]||'')+'</div></div>'}catch(e){}
@@ -5466,6 +5517,7 @@ function quizReveal(){
   if(isS10())return s10Reveal();
   if(Q.revealed)return;
   Q.revealed=true;
+  try{sting('reveal')}catch(e){}
   // ten points for the right name, five more for being first to it
   const firstRight=Q.order.find(id=>Q.answers[id]===Q.correct);
   S.players.forEach(p=>{
@@ -5485,7 +5537,7 @@ function quizReveal(){
   });
   $('q-curtain').classList.add('open');
   $('q-next').textContent=Q.round>=Q.deck.length?T('see_winner')
-    :isAsking()?T('next_q'):T('next_r');
+    :playsRecords()?T('next_r'):T('next_q');
   if(isAsking())showQuizQuestion();
   drawQuiz();
   startNextCount(NEXT_IN);
@@ -5519,7 +5571,7 @@ function drawNextCount(){
   if(!b)return;
   const last=Q.round>=Q.deck.length;
   const word=last?T('see_winner')
-    :(isAsking()||isS10()||isFinger())?T('next_q'):T('next_r');
+    :playsRecords()?T('next_r'):T('next_q');
   b.textContent=Q.nextIn?word+'  '+Q.nextIn:word;
 }
 /* ---- one party, several games, one evening ---------------------------
