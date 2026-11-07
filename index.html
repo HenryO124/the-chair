@@ -3951,7 +3951,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 11:01';
+const BUILD='07.11. 11:12';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4024,10 +4024,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111101',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111101',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111112',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111112',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111101',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111112',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4397,8 +4397,12 @@ function s10Stand(p){
 }
 function s10RoundOver(){
   if(!Q.cands)return false;
-  const left=Q.cands.some(c=>c.by===null&&c.ok);     // nothing true left to take
-  return !left||!S.players.some(p=>Q.state[p.id]==='in');
+  /* The round used to end the moment the last true candidate was taken. That
+     paid out everybody still standing and, worse, told the room there was
+     nothing left — which is the one thing they are supposed to be guessing.
+     The round is over when nobody is still deciding: every player has either
+     banked what they had or gone out reaching for one more. */
+  return !S.players.some(p=>Q.state[p.id]==='in');
 }
 function s10Reveal(){
   Q.revealed=true;

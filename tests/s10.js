@@ -43,6 +43,7 @@ setTimeout(()=>{
   w.eval('s10Stand(S.players[0])');
   if(score()!==60)probs.push('banking did not pay: '+score());
   if(!w.eval('Q.revealed'))probs.push('the round did not end when nobody was left in');
+
   // a taken candidate cannot be taken again
   const before=w.eval('JSON.stringify(Q.cands.map(function(c){return c.by}))');
   w.eval('s10Take(S.players[0],0)');
@@ -62,6 +63,28 @@ setTimeout(()=>{
   if(w.eval('Q.revealed'))probs.push('the next round opened already revealed');
   if(w.eval("Q.state[0]")!=='in')probs.push('a player did not come back in for the next round');
   if(w.eval('Q.cands.some(function(c){return c.by!==null})'))probs.push('the new round kept old claims');
+  // taking the last true one must NOT end the round: a player still in has to
+  // decide to stop, and the room must not be told the truths have run out
+  w.eval(`Q.revealed=false;
+    S.players=[{id:0,name:'A',score:0},{id:1,name:'B',score:0}];
+    Q.cands=[{t:'t1',ok:true,by:null},{t:'t2',ok:true,by:null},
+             {t:'f1',ok:false,by:null},{t:'f2',ok:false,by:null}];
+    Q.state={0:'in',1:'in'};Q.pot={0:0,1:0};Q.picks={0:0,1:0};
+    s10Take(S.players[0],0);s10Take(S.players[0],1);`);
+  if(w.eval('Q.cands.some(function(c){return c.by===null&&c.ok})'))
+    probs.push('the test did not actually take every true candidate');
+  if(w.eval('Q.revealed'))
+    probs.push('THE ROUND ENDED ITSELF once the last true one was taken, so nobody had to decide to stop');
+  if(w.eval("Q.state[0]")!=='in')
+    probs.push('the player who took them all was cashed out without banking');
+  if(w.eval('S.players[0].score'))
+    probs.push('the pot was paid out before anyone banked: '+w.eval('S.players[0].score'));
+  // and it ends as soon as the last one standing banks
+  w.eval('s10Stand(S.players[0]);s10Stand(S.players[1]);');
+  if(!w.eval('Q.revealed'))probs.push('the round did not end after everyone banked');
+  if(!w.eval('S.players[0].score'))probs.push('banking paid nothing');
+  w.eval('Q.revealed=false;');
+
   console.log(probs.length?'FAIL:':'ok - Smart Ten: ten candidates, a pot that grows, banked or lost');
   probs.forEach(p=>console.log('  x '+p));
   process.exit(probs.length?1:0);
