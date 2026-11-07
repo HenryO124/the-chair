@@ -487,7 +487,7 @@
  ],
  [
   "Everyday",
-  "Minkä leikkopinnan rasvakuorinen päällys brasilialainen picanha on?",
+  "Minkä ruhonosan rasvakuorinen päällys brasilialainen picanha on?",
   "Kulmapaistin",
   "Niskan",
   "Kyljyksen",
@@ -514,7 +514,7 @@
  ],
  [
   "Everyday",
-  "Minkä leikkopinnan T-bone-pihvi sisältää strip-osan lisäksi?",
+  "Minkä ruhonosan T-bone-pihvi sisältää strip-osan lisäksi?",
   "Sisäfileen",
   "Rinnan",
   "Niskan",
@@ -523,7 +523,7 @@
  ],
  [
   "Everyday",
-  "Moneenko pääleikkopintaan naudan ruho jaetaan?",
+  "Moneenko pääruhonosaan naudan ruho jaetaan?",
   "Seitsemään",
   "Neljään",
   "Viiteen",
@@ -532,16 +532,16 @@
  ],
  [
   "Everyday",
-  "Mikä näistä on sian pääleikkopinta?",
+  "Mikä näistä on sian pääruhonosa?",
   "Boston butt",
   "Rinta",
   "Niska",
   "Paisti",
-  "Sian pääleikkopinnat ovat kinkku, selkä, Boston butt, lapa ja kylki kyljysluineen — naudan sanat eivät sovi."
+  "Sian pääruhonosat ovat kinkku, selkä, Boston butt, lapa ja kylki kyljysluineen — naudan sanat eivät sovi."
  ],
  [
   "Everyday",
-  "Minkä eläimen pääleikkopinta on hotel rack?",
+  "Minkä eläimen pääruhonosa on hotel rack?",
   "Vasikan",
   "Lampaan",
   "Sian",
@@ -550,12 +550,12 @@
  ],
  [
   "Everyday",
-  "Selkäsilava on Euroopassa sian pääleikkopinta. Mitä se on Pohjois-Amerikassa?",
+  "Selkäsilava on Euroopassa sian pääruhonosa. Mitä se on Pohjois-Amerikassa?",
   "Makkaran ja laardin raaka-ainetta",
   "Paistipala",
   "Pekonia",
   "Pelkkää kuorta",
-  "Saman eläimen sama pala on toisella mantereella nimetty leikkopinta ja toisella jäännös."
+  "Saman eläimen sama pala on toisella mantereella nimetty ruhonosa ja toisella jäännös."
  ],
  [
   "Everyday",
@@ -568,7 +568,7 @@
  ],
  [
   "Everyday",
-  "Mikä naudan leikkopinta on vähärasvainen, melko sitkeä ja tuskin marmoroitunut?",
+  "Mikä naudan ruhonosa on vähärasvainen, melko sitkeä ja tuskin marmoroitunut?",
   "Paisti",
   "Kyljys",
   "Lyhyt selkä",
@@ -1207,12 +1207,12 @@
  ],
  [
   "Everyday",
-  "Minkä maan ainoa suojattu juusto on svecia?",
-  "Ruotsin",
-  "Norjan",
-  "Suomen",
-  "Tanskan",
-  "Suomella ei ole eurooppalaisella listalla yhtään, joten sillä ei ole suomalaisia eikä norjalaisia juustoja."
+  "Ruotsilla on eurooppalaisella suojalistalla täsmälleen yksi juusto. Mikä?",
+  "Svecia",
+  "Västerbottensost",
+  "Herrgårdsost",
+  "Prästost",
+  "Tanska rekisteröi neljä, Suomi ja Norja eivät yhtäkään — Pohjoismaat eivät juuri vaivautuneet."
  ],
  [
   "Everyday",
@@ -1684,12 +1684,12 @@
  ],
  [
   "Everyday",
-  "Mitkä kaksi maata jakavat maatunnuksen +7?",
-  "Venäjä ja Kazakstan",
-  "Venäjä ja Valko-Venäjä",
-  "Venäjä ja Ukraina",
-  "Venäjä ja Mongolia",
-  "Vyöhyke 7 oli Neuvostoliiton, eikä Kazakstan ole yksinkertaisesti koskaan siirtynyt pois siitä."
+  "Venäjä jakaa maatunnuksensa +7 yhden toisen valtion kanssa. Minkä?",
+  "Kazakstanin",
+  "Valko-Venäjän",
+  "Ukrainan",
+  "Mongolian",
+  "Vyöhyke 7 oli koko Neuvostoliiton, eikä Kazakstan ole koskaan siirtynyt pois siitä."
  ],
  [
   "Everyday",
@@ -1846,24 +1846,6 @@
  ],
  [
   "Everyday",
-  "Mistä vuodesta Suomessa on ollut maksuton päivähoito kaikille?",
-  "Vuodesta 1990",
-  "Vuodesta 1973",
-  "Vuodesta 1980",
-  "Vuodesta 2000",
-  "Oikeus tuli ennen esiopetusvuotta, joten nuorimmat lapset palveltiin ensin vuosikymmenen etumatkalla."
- ],
- [
-  "Everyday",
-  "Kuinka kauan ammattikorkeakoulun perustutkinto kestää Suomessa?",
-  "Kolme ja puoli – neljä ja puoli vuotta",
-  "Kaksi–kolme vuotta",
-  "Kolme–neljä vuotta",
-  "Viisi vuotta",
-  "Se kestää vähän kauemmin kuin yliopiston alempi tutkinto, koska siihen on rakennettu työharjoittelu."
- ],
- [
-  "Everyday",
   "Mitä suomalaiselta vaaditaan, ennen kuin hän voi aloittaa ylemmän ammattikorkeakoulututkinnon?",
   "Kaksi vuotta työkokemusta",
   "Erillinen valintakoe",
@@ -1891,12 +1873,12 @@
  ],
  [
   "Everyday",
-  "Suomen moottoriteillä ajetaan kesällä 120 km/h. Mitä talvella tapahtuu?",
-  "Rajoitus laskee 100 kilometriin tunnissa",
-  "Rajoitus laskee 80 kilometriin tunnissa",
-  "Rajoitus pysyy 120:ssä",
-  "Rajoitus laskee 110 kilometriin tunnissa",
-  "Kaupunkien lähellä moottoritiet ovat 100 ympäri vuoden, joten vuodenaikojen vaihtelu näkyy vain maaseudulla."
+  "Mikä on Suomen teillä korkein käytössä oleva nopeusrajoitus?",
+  "120 kilometriä tunnissa",
+  "100 kilometriä tunnissa",
+  "110 kilometriä tunnissa",
+  "130 kilometriä tunnissa",
+  "Vain maaseudun moottoritiet pääsevät siihen, ja vain kesällä: kaupunkien lähellä olevat pidetään alempana ympäri vuoden."
  ],
  [
   "Everyday",
@@ -2377,7 +2359,7 @@
  ],
  [
   "Everyday",
-  "Mitä Q.E.D. tarkoittaa?",
+  "Minkä latinankielisen ilmauksen lyhenne Q.E.D. on?",
   "Quod erat demonstrandum",
   "Quod est demonstratio",
   "Quae erat definitio",
@@ -2395,7 +2377,7 @@
  ],
  [
   "Everyday",
-  "Mitä a.m. tarkoittaa?",
+  "Mitkä kaksi latinan sanaa kellon a.m. lyhentää?",
   "Ante meridiem",
   "Ante mediam",
   "Ad meridiem",
@@ -2431,7 +2413,7 @@
  ],
  [
   "Everyday",
-  "Mitä fl. tarkoittaa vuosiluvun edessä?",
+  "Maalari on luetteloitu merkinnällä fl. 1450. Mitä meille kerrotaan?",
   "Vuosia, joina henkilö tiedetään toimineeksi",
   "Syntymävuotta",
   "Kuolinvuotta",
@@ -2485,7 +2467,7 @@
  ],
  [
   "Everyday",
-  "Mitä M.O. tarkoittaa?",
+  "Minkä latinankielisen ilmauksen etsivän käyttämä M.O. lyhentää?",
   "Modus operandi",
   "Modus ordinis",
   "Motus operis",

@@ -53,7 +53,7 @@ q(["Which Finn won the Olympic javelin gold in 1932 and broke the world record t
 
 q(["Which Finn won the 1928 Olympic decathlon, having trained alone on his own farm with no coach?", "Paavo Yrjola", "Akilles Jarvinen", "Volmari Iso-Hollo", "Matti Jarvinen",
    "He set a world record in winning it and went on competing between the harvests at Hauho for another eight years."],
-  ["Kuka suomalainen voitti kymmenottelun olympiakullan 1928 harjoiteltuaan yksin omalla maatilallaan ilman valmentajaa?", "Paavo Yrjölä", "Akilles Järvinen", "Volmari Iso-Hollo", "Matti Järvinen",
+  ["Kuka suomalainen voitti kymmenottelun olympiakullan 1928 harjoiteltuaan yksin tilallaan ilman valmentajaa?", "Paavo Yrjölä", "Akilles Järvinen", "Volmari Iso-Hollo", "Matti Järvinen",
    "Hän teki voittaessaan maailmanennätyksen ja jatkoi kilpailemista Hauhon peltotöiden lomassa vielä kahdeksan vuotta."])
 
 q(["In the 1932 Olympic steeplechase final the lap counter lost count. How far did the runners go?", "3460 metres", "3000 metres", "2800 metres", "3200 metres",
@@ -121,7 +121,7 @@ q(["Antti Hyvarinen won Finland's first Olympic ski jumping gold in 1956. With w
   ["Antti Hyvärinen voitti Suomen ensimmäisen mäkihypyn olympiakullan 1956. Millä?", "Matalammalla, kädet taakse -tyylillä", "Pidemmillä suksilla", "Uudella siteellä", "V-tyylillä",
    "Norjalaiset pitivät tyyliä rumana ja epäurheilijamaisena, ja tallikaveri Aulis Kallakorpi otti sillä hopeaa samana päivänä."])
 
-q(["Marja-Liisa Hamalainen won three cross-country golds at Sarajevo in 1984. What was Finland's fourth gold there?", "The large hill ski jump", "The men's relay", "The biathlon", "Speed skating",
+q(["Marja-Liisa Hamalainen won three cross-country golds at Sarajevo in 1984. What was Finland's fourth?", "The large hill ski jump", "The men's relay", "The biathlon", "Speed skating",
    "Matti Nykanen won it, and Finland came away from those Games with thirteen medals in all."],
   ["Marja-Liisa Hämäläinen voitti kolme hiihtokultaa Sarajevossa 1984. Mikä oli Suomen neljäs kulta siellä?", "Suurmäen mäkihyppy", "Miesten viesti", "Ampumahiihto", "Pikaluistelu",
    "Matti Nykänen voitti sen, ja Suomi toi noista kisoista kaikkiaan kolmetoista mitalia."])
@@ -147,9 +147,9 @@ q(["Mika Myllyla won the Olympic cross-country gold of 1998 over which distance?
    "Kolme vuotta myöhemmin hän oli yksi kuudesta Lahden MM-kisojen dopingkäryyn joutuneesta suomalaisesta, eikä Suomen hiihto palannut entiseen arvoonsa."])
 
 # ------------------------------------------------- Ice hockey world champions
-q(["In which country did Finland win its first ice hockey world championship, in 1995?", "Sweden", "Finland", "Austria", "Czech Republic",
-   "Taking it in the neighbour's own capital made the homecoming in Helsinki bigger than the final; the market square filled with a hundred thousand people."],
-  ["Missä maassa Suomi voitti ensimmäisen jääkiekon maailmanmestaruutensa vuonna 1995?", "Ruotsissa", "Suomessa", "Itävallassa", "Tšekissä",
+q(["Finland's first ice hockey world title, in 1995, was won in which city?", "Stockholm", "Prague", "Vienna", "Helsinki",
+   "Taking it in the neighbour's own capital made the homecoming bigger than the final; a hundred thousand people filled the market square in Helsinki."],
+  ["Suomen ensimmäinen jääkiekon maailmanmestaruus 1995 voitettiin missä kaupungissa?", "Tukholmassa", "Prahassa", "Wienissä", "Helsingissä",
    "Mestaruus naapurin omassa pääkaupungissa teki kotiinpaluusta suuremman kuin finaalista; Kauppatori täyttyi sadastatuhannesta ihmisestä."])
 
 q(["By how many goals did Finland beat Sweden in the 2011 ice hockey world championship final?", "Five", "One", "Two", "Three",
@@ -157,24 +157,19 @@ q(["By how many goals did Finland beat Sweden in the 2011 ice hockey world champ
   ["Kuinka monen maalin erolla Suomi kaatoi Ruotsin vuoden 2011 jääkiekon MM-finaalissa?", "Viiden", "Yhden", "Kahden", "Kolmen",
    "Finaali päättyi 6-1, raskaimpaan tappioon MM-finaalissa vuosikymmeniin, ja turnaus pelattiin Slovakiassa."])
 
-q(["Finland won the 2022 ice hockey world championship at home. In which city was the final played?", "Tampere", "Helsinki", "Turku", "Oulu",
-   "It was settled in overtime against Canada, in an arena that had opened only months before."],
-  ["Suomi voitti vuoden 2022 jääkiekon MM-kullan kotonaan. Missä kaupungissa finaali pelattiin?", "Tampereella", "Helsingissä", "Turussa", "Oulussa",
-   "Se ratkesi jatkoajalla Kanadaa vastaan hallissa, joka oli avattu vain kuukausia aiemmin."])
-
 q(["Finland won the 2019 ice hockey world championship with almost no NHL players. Whom did it beat in the final?", "Canada", "Sweden", "Russia", "Czech Republic",
    "The squad was built out of Liiga players and young professionals, and it won 3-1 in Bratislava against a team of stars."],
   ["Suomi voitti vuoden 2019 jääkiekon maailmanmestaruuden lähes ilman NHL-pelaajia. Kenet se kaatoi finaalissa?", "Kanadan", "Ruotsin", "Venäjän", "Tšekin",
    "Joukkue koottiin Liiga-pelaajista ja nuorista ammattilaisista, ja se voitti 3-1 Bratislavassa tähtijoukkuetta vastaan."])
 
-q(["Finland first reached an ice hockey world championship final in 1992. Who beat it there?", "Sweden", "Canada", "Russia", "Czechoslovakia",
-   "The final in Prague went 5-2 against Finland, and the first gold came only three years afterwards."],
-  ["Suomi pääsi ensimmäisen kerran jääkiekon MM-finaaliin vuonna 1992. Kuka kaatoi sen siellä?", "Ruotsi", "Kanada", "Venäjä", "Tšekkoslovakia",
-   "Finaali Prahassa päättyi 5-2 Suomen tappioon, ja ensimmäinen kulta tuli vasta kolme vuotta myöhemmin."])
+q(["In which year did Finland reach an ice hockey world championship final for the first time?", "1992", "1988", "1995", "1998",
+   "It lost that final 5-2 to Sweden in Prague, and the first gold came only three years afterwards."],
+  ["Minä vuonna Suomi pääsi ensimmäisen kerran jääkiekon MM-finaaliin?", "Vuonna 1992", "Vuonna 1988", "Vuonna 1995", "Vuonna 1998",
+   "Se hävisi finaalin 5-2 Ruotsille Prahassa, ja ensimmäinen kulta tuli vasta kolme vuotta myöhemmin."])
 
-q(["Which Finnish city staged an ice hockey world championship for the first time, in 1965?", "Tampere", "Helsinki", "Turku", "Lahti",
+q(["Finland staged an ice hockey world championship for the first time in 1965. Where?", "Tampere", "Helsinki", "Turku", "Lahti",
    "The Soviet Union won it there, one of nine world titles it took in a row between 1963 and 1971."],
-  ["Mikä suomalainen kaupunki järjesti jääkiekon MM-kilpailut ensimmäisen kerran, vuonna 1965?", "Tampere", "Helsinki", "Turku", "Lahti",
+  ["Suomi järjesti jääkiekon MM-kilpailut ensimmäisen kerran 1965. Missä?", "Tampere", "Helsinki", "Turku", "Lahti",
    "Neuvostoliitto voitti siellä yhden niistä yhdeksästä perättäisestä mestaruudesta, jotka se otti 1963-1971."])
 
 q(["Which country won nine ice hockey world championships in a row?", "Soviet Union", "Canada", "Sweden", "Czechoslovakia",
@@ -228,11 +223,6 @@ q(["By how many points did Kimi Raikkonen win the Formula One world championship
   ["Kuinka monen pisteen erolla Kimi Räikkönen voitti formula ykkösten maailmanmestaruuden 2007?", "Yhden pisteen", "Seitsemän pisteen", "Kahdentoista pisteen", "Kahdenkymmenenkahden pisteen",
    "Hän oli ollut seitsemäntoista pistettä takana kaksi kilpailua ennen loppua, ja mestaruus ratkesi kauden viimeisellä puolituntisella."])
 
-q(["Which Finn has driven more Formula One races than any other Finn?", "Kimi Raikkonen", "Valtteri Bottas", "Mika Hakkinen", "Keke Rosberg",
-   "349 starts across two separate spells, with two years away driving rally cars in between them."],
-  ["Kuka suomalainen on ajanut enemmän formula ykkösten kilpailuja kuin yksikään toinen suomalainen?", "Kimi Räikkönen", "Valtteri Bottas", "Mika Häkkinen", "Keke Rosberg",
-   "349 lähtöä kahdessa eri jaksossa, ja välissä kaksi vuotta rallikuskina."])
-
 q(["Heikki Kovalainen won exactly one Formula One race. Which one?", "Hungary 2008", "Monaco 2009", "Brazil 2007", "Italy 2010",
    "He inherited it when the leader's engine blew with three laps left; he was McLaren's second driver that season."],
   ["Heikki Kovalainen voitti täsmälleen yhden formula ykkösten kilpailun. Minkä?", "Unkarin 2008", "Monacon 2009", "Brasilian 2007", "Italian 2010",
@@ -243,12 +233,6 @@ q(["Nico Rosberg, son of a Finnish world champion, raced under which flag?", "Ge
   ["Minkä maan lipun alla ajoi Nico Rosberg, suomalaisen maailmanmestarin poika?", "Saksan", "Suomen", "Monacon", "Ruotsin",
    "Hän syntyi Wiesbadenissa ja kasvoi Monacossa ja valitsi saksalaisen äitinsä maan isänsä maan sijasta."])
 
-q(["Three Finns have won the Formula One world championship. Which of these has not?", "Valtteri Bottas", "Keke Rosberg", "Mika Hakkinen", "Kimi Raikkonen",
-   "He was runner-up twice as team-mate to a seven-time champion, with ten Grand Prix wins and twenty poles to show for it."],
-  ["Kolme suomalaista on voittanut formula ykkösten maailmanmestaruuden. Kuka näistä ei ole?", "Valtteri Bottas", "Keke Rosberg", "Mika Häkkinen", "Kimi Räikkönen",
-   "Hän oli kahdesti toinen seitsenkertaisen mestarin tallikaverina, ja saldona on kymmenen osakilpailuvoittoa ja kaksikymmentä paalupaikkaa."])
-
-# ------------------------------------------------- Tour de France before 2020
 q(["The first Tour de France, in 1903, was made up of how many stages?", "Six", "Twelve", "Twenty-one", "Three",
    "Maurice Garin rode the 2,428 kilometres in just over 94 hours, and the race had been invented to sell newspapers."],
   ["Kuinka monta etappia ensimmäisessä Tour de Francessa vuonna 1903 oli?", "Kuusi", "Kaksitoista", "Kaksikymmentäyksi", "Kolme",
@@ -296,7 +280,7 @@ q(["What cut short the decisive mountain stage of the 2019 Tour de France?", "A 
 
 q(["Bradley Wiggins was the first British winner of the Tour de France. What did he win ten days later?", "Olympic time trial gold", "The Vuelta", "A world title", "The Giro",
    "The 2012 Tour finished on 22 July and the London Olympic time trial was on 1 August, which he won on home roads."],
-  ["Bradley Wiggins oli ensimmäinen brittiläinen Tour de Francen voittaja. Minkä hän voitti kymmenen päivää myöhemmin?", "Olympialaisten aika-ajon kullan", "Vueltan", "Maailmanmestaruuden", "Giron",
+  ["Bradley Wiggins oli ensimmäinen brittiläinen Tourin voittaja. Minkä hän voitti kymmenen päivää myöhemmin?", "Olympialaisten aika-ajon kullan", "Vueltan", "Maailmanmestaruuden", "Giron",
    "Vuoden 2012 Tour päättyi 22. heinäkuuta ja Lontoon olympia-aika-ajo oli 1. elokuuta; sen hän voitti kotiteillä."])
 
 q(["The 2006 Tour de France winner lost the title to a failed test. Who was given it instead?", "Oscar Pereiro", "Carlos Sastre", "Alberto Contador", "Andy Schleck",

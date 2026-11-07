@@ -126,9 +126,9 @@ q(["Bobsleigh was dropped from one Winter Olympics for lack of entries. Which Ga
   ["Rattikelkkailu jätettiin yksistä talviolympialaisista pois osallistujien puutteessa. Mistä kisoista?", "Squaw Valley 1960", "Oslo 1952", "Cortina 1956", "Innsbruck 1964",
    "Vain yhdeksän maata ilmoittautui, joten järjestäjät kieltäytyivät rakentamasta rataa lainkaan."])
 
-q(["Which Winter Olympics were the last to be held in the same year as the Summer Games?", "Albertville 1992", "Calgary 1988", "Lillehammer 1994", "Sarajevo 1984",
+q(["After which Games did the Winter Olympics stop sharing a year with the Summer ones?", "Albertville 1992", "Calgary 1988", "Lillehammer 1994", "Sarajevo 1984",
    "The next Winter Games came after only two years, to put the two Olympics on alternating even years."],
-  ["Mitkä talviolympialaiset olivat viimeiset, jotka pidettiin samana vuonna kesäkisojen kanssa?", "Albertville 1992", "Calgary 1988", "Lillehammer 1994", "Sarajevo 1984",
+  ["Minkä kisojen jälkeen talviolympialaiset lakkasivat osumasta samaan vuoteen kesäkisojen kanssa?", "Albertville 1992", "Calgary 1988", "Lillehammer 1994", "Sarajevo 1984",
    "Seuraavat talvikisat tulivat vain kahden vuoden päästä, jotta kisat saatiin vuorottelemaan parillisina vuosina."])
 
 q(["Which sport was added to the Winter Olympics at Nagano in 1998?", "Snowboarding", "Freestyle skiing", "Short track", "Curling",
@@ -152,9 +152,9 @@ q(["At which Winter Olympics did North and South Korea put out a joint women's i
    "Maat marssivat myös yhdessä sisään yhdistymislipun alla, ja yhteisjoukkue hävisi kaikki viisi otteluaan."])
 
 # ------------------------------------------------------------------ World Cup
-q(["Which champion refused to defend its football World Cup title in 1934?", "Uruguay", "Italy", "Argentina", "Brazil",
+q(["The 1930 champions refused to come back and defend the trophy in 1934. Who were they?", "Uruguay", "Italy", "Argentina", "Brazil",
    "It was still angry that most European teams had not bothered to sail to Montevideo four years earlier."],
-  ["Mikä mestari kieltäytyi puolustamasta jalkapallon maailmanmestaruuttaan vuonna 1934?", "Uruguay", "Italia", "Argentiina", "Brasilia",
+  ["Vuoden 1930 mestarit kieltäytyivät tulemasta puolustamaan pokaalia 1934. Ketkä he olivat?", "Uruguay", "Italia", "Argentiina", "Brasilia",
    "Maa oli yhä katkera siitä, etteivät useimmat eurooppalaiset joukkueet olleet vaivautuneet Montevideoon neljä vuotta aiemmin."])
 
 q(["Which was the first country to win two football World Cups in a row?", "Italy", "Brazil", "Uruguay", "West Germany",
@@ -169,7 +169,7 @@ q(["The 1950 football World Cup had no final match. How was the winner decided?"
 
 q(["Which team was unbeaten for four years, beat its opponents 8-3 in the group, and still lost the 1954 final?", "Hungary", "Austria", "Brazil", "Uruguay",
    "West Germany won the final 3-2 in the rain in Bern, and Hungary never won a World Cup at all."],
-  ["Mikä joukkue oli ollut neljä vuotta häviötön, voitti vastustajansa alkulohkossa 8-3 ja hävisi silti 1954 finaalin?", "Unkari", "Itävalta", "Brasilia", "Uruguay",
+  ["Mikä joukkue oli ollut neljä vuotta häviötön, voitti vastustajansa 8-3 ja hävisi silti 1954 finaalin?", "Unkari", "Itävalta", "Brasilia", "Uruguay",
    "Länsi-Saksa voitti finaalin 3-2 sateessa Bernissä, eikä Unkari voittanut koskaan maailmanmestaruutta."])
 
 q(["How old was Pele when he scored twice in the World Cup final of 1958?", "Seventeen", "Nineteen", "Twenty-one", "Sixteen",
@@ -295,7 +295,7 @@ q(["Ayrton Senna took 65 pole positions. In how many Grand Prix starts?", "161",
 
 q(["Michael Schumacher was struck out of the 1997 standings for driving into a rival. Who became champion?", "Jacques Villeneuve", "Damon Hill", "Mika Hakkinen", "David Coulthard",
    "The collision at Jerez put them both off the track, but Schumacher's car stopped and his rival's carried on to finish third."],
-  ["Michael Schumacher pyyhittiin vuoden 1997 pistetaulukosta kilpakumppanin päälle ajamisesta. Kuka tuli mestariksi?", "Jacques Villeneuve", "Damon Hill", "Mika Häkkinen", "David Coulthard",
+  ["Schumacher pyyhittiin vuoden 1997 pistetaulukosta kilpakumppanin päälle ajamisesta. Kuka tuli mestariksi?", "Jacques Villeneuve", "Damon Hill", "Mika Häkkinen", "David Coulthard",
    "Kolari Jerezissä vei kummatkin ulos radalta, mutta Schumacherin auto jäi siihen ja kilpakumppanin jatkoi kolmanneksi."])
 
 q(["Which driver won five Formula One world titles in a row?", "Michael Schumacher", "Lewis Hamilton", "Sebastian Vettel", "Juan Manuel Fangio",

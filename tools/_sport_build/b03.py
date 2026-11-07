@@ -67,11 +67,6 @@ q(["The women's shot put world record of 22.63 m dates from which decade?", "The
   ["Miltä vuosikymmeneltä naisten kuulantyönnön maailmanennätys 22,63 m on?", "1980-luvulta", "1960-luvulta", "2000-luvulta", "2010-luvulta",
    "Natalja Lisovskaja työnsi sen 1987, eikä yksikään nainen ole sen jälkeen päässyt metrin päähän."])
 
-q(["In 1993 Chinese runners broke several distance world records at one meeting. Whose 3000 m mark still stands?", "Wang Junxia", "Qu Yunxia", "Liu Dong", "Zhang Linli",
-   "The records came in a single week in Beijing, and the coach behind them was later accused by his own athletes of systematic doping."],
-  ["Vuonna 1993 kiinalaiset juoksijat rikkoivat useita kestävyysennätyksiä samoissa kilpailuissa. Kenen 3000 metrin tulos on yhä voimassa?", "Wang Junxian", "Qu Yunxian", "Liu Dongin", "Zhang Linlin",
-   "Ennätykset syntyivät yhden viikon aikana Pekingissä, ja niiden takana ollutta valmentajaa syyttivät myöhemmin hänen omat urheilijansa järjestelmällisestä dopingista."])
-
 q(["Jackie Joyner-Kersee's heptathlon world record has stood since which year?", "1988", "1996", "2004", "1980",
    "She scored 7291 points at the Seoul Olympics, and nobody since has come within 200 points of it."],
   ["Miltä vuodelta Jackie Joyner-Kerseen seitsenottelun maailmanennätys on?", "Vuodelta 1988", "Vuodelta 1996", "Vuodelta 2004", "Vuodelta 1980",
@@ -123,16 +118,6 @@ q(["Which boxing division did the WBC invent in 2020, between cruiserweight and 
    "Its ceiling is 224 pounds, the WBA calls it super cruiserweight, and hardly anyone fights in it."],
   ["Minkä nyrkkeilyluokan WBC keksi vuonna 2020 cruiser- ja raskaansarjan väliin?", "Bridgersarja", "Superraskas sarja", "Megasarja", "Priimasarja",
    "Sen yläraja on 224 paunaa, WBA kutsuu sitä supercruisersarjaksi, eikä siinä nyrkkeile juuri kukaan."])
-
-q(["Where does the welterweight limit fall?", "147 pounds", "160 pounds", "135 pounds", "175 pounds",
-   "66.7 kilos, between super lightweight at 140 and super welterweight at 154, and it has been the busiest division in boxing history."],
-  ["Mihin välisarjan painoraja asettuu?", "147 paunaan", "160 paunaan", "135 paunaan", "175 paunaan",
-   "Eli 66,7 kiloon, kevyen välisarjan 140 ja supervälisarjan 154 paunan väliin, ja se on ollut nyrkkeilyhistorian vilkkain luokka."])
-
-q(["What is the upper weight limit of the heavyweight division?", "There is none", "100 kilos", "110 kilos", "120 kilos",
-   "Every other division has a ceiling; heavyweight is simply everything above the one below it, which is why the champions keep getting bigger."],
-  ["Mikä on raskaansarjan ylempi painoraja?", "Sellaista ei ole", "100 kiloa", "110 kiloa", "120 kiloa",
-   "Jokaisella muulla luokalla on katto; raskas sarja on vain kaikki alemman luokan yläpuolella, minkä vuoksi mestarit vain kasvavat."])
 
 q(["In how many of boxing's original eight divisions did Manny Pacquiao win world titles?", "Four", "Two", "Six", "Eight",
    "Flyweight, featherweight, lightweight and welterweight, a span of 35 pounds, which is about sixteen kilos of the same man."],
@@ -192,7 +177,7 @@ q(["Which of these was an Olympic athletics event before 1913?", "The standing l
 
 q(["Which team sport was in the Olympics only in 1936, played eleven a side on a full-sized field?", "Field handball", "Field hockey", "Water polo", "Korfball",
    "Germany won it at home in front of a huge crowd; the indoor seven-a-side version replaced it when handball returned in 1972."],
-  ["Mikä joukkuelaji oli olympialaisissa vain vuonna 1936, pelattuna yksitoista vastaan yksitoista täysimittaisella kentällä?", "Kenttäkäsipallo", "Maahockey", "Vesipallo", "Korfball",
+  ["Mikä joukkuelaji oli olympialaisissa vain 1936, pelattuna yksitoista vastaan yksitoista isolla kentällä?", "Kenttäkäsipallo", "Maahockey", "Vesipallo", "Korfball",
    "Saksa voitti sen kotonaan suuren yleisön edessä; sisätilojen seitsemän pelaajan versio korvasi sen, kun käsipallo palasi 1972."])
 
 q(["Which sport was an Olympic event five times, the last in 1936, and is played on horseback?", "Polo", "Vaulting", "Horse long jump", "Tent pegging",

@@ -1207,12 +1207,12 @@
  ],
  [
   "Everyday",
-  "Svecia is the only protected cheese of which country?",
-  "Sweden",
-  "Norway",
-  "Finland",
-  "Denmark",
-  "Finland has none at all on the European list, so neither Finnish nor Norwegian cheese appears on it."
+  "Sweden has exactly one cheese on the European protected list. Which one?",
+  "Svecia",
+  "Västerbottensost",
+  "Herrgårdsost",
+  "Prästost",
+  "Denmark registered four, Finland and Norway not one between them — the Nordic countries barely bothered."
  ],
  [
   "Everyday",
@@ -1684,12 +1684,12 @@
  ],
  [
   "Everyday",
-  "Which two countries share the dialling code +7?",
-  "Russia and Kazakhstan",
-  "Russia and Belarus",
-  "Russia and Ukraine",
-  "Russia and Mongolia",
-  "Zone 7 was the Soviet Union's, and Kazakhstan has simply never moved out of it."
+  "Russia shares its dialling code +7 with one other state. Which?",
+  "Kazakhstan",
+  "Belarus",
+  "Ukraine",
+  "Mongolia",
+  "Zone 7 was the whole Soviet Union's, and Kazakhstan has simply never moved out of it."
  ],
  [
   "Everyday",
@@ -1846,24 +1846,6 @@
  ],
  [
   "Everyday",
-  "Since when has Finland had free universal daycare?",
-  "1990",
-  "1973",
-  "1980",
-  "2000",
-  "The right came before the preschool year did, so the youngest children were served first by a decade."
- ],
- [
-  "Everyday",
-  "How long does a bachelor's degree take at a Finnish university of applied sciences?",
-  "Three and a half to four and a half years",
-  "Two to three years",
-  "Three to four years",
-  "Five years",
-  "It runs slightly longer than a university bachelor's because a work placement is built into it."
- ],
- [
-  "Everyday",
   "A Finnish bachelor may enter a master's at a university of applied sciences only after what?",
   "Two years of work experience",
   "A separate entrance exam",
@@ -1891,12 +1873,12 @@
  ],
  [
   "Everyday",
-  "Finnish motorways run at 120 km/h in summer. What happens in winter?",
-  "They drop to 100 km/h",
-  "They drop to 80 km/h",
-  "They stay at 120 km/h",
-  "They drop to 110 km/h",
-  "Motorways near towns are kept at 100 all year round, so the seasonal change only shows out in the country."
+  "What is the highest speed limit posted on any Finnish road?",
+  "120 km/h",
+  "100 km/h",
+  "110 km/h",
+  "130 km/h",
+  "Only rural motorways reach it, and only in summer: the ones near towns are held lower the whole year round."
  ],
  [
   "Everyday",
@@ -2377,12 +2359,12 @@
  ],
  [
   "Everyday",
-  "What does Q.E.D. stand for?",
+  "Q.E.D. is short for which Latin phrase?",
   "Quod erat demonstrandum",
   "Quod est demonstratio",
   "Quae erat definitio",
   "Quod ergo dictum",
-  "Which was to be demonstrated: it does not mean proved but rather that the thing promised at the start has arrived."
+  "Which was to be demonstrated: it claims not that a thing is proved but that the promise made at the start is kept."
  ],
  [
   "Everyday",
@@ -2395,12 +2377,12 @@
  ],
  [
   "Everyday",
-  "What does a.m. stand for?",
+  "The a.m. on a clock abbreviates which two Latin words?",
   "Ante meridiem",
   "Ante mediam",
   "Ad meridiem",
   "Ante matutinum",
-  "Meridiem is noon, so noon itself is neither a.m. nor p.m. and twelve o'clock is strictly speaking unlabelled."
+  "Meridiem is noon, so noon itself is neither a.m. nor p.m. — twelve o'clock is strictly speaking unlabelled."
  ],
  [
   "Everyday",
@@ -2431,12 +2413,12 @@
  ],
  [
   "Everyday",
-  "What does fl. before a date mean?",
-  "The years the person is known to have been active",
-  "The year they were born",
-  "The year they died",
-  "The year they came to the throne",
-  "Floruit means flourished, and it is used when nobody knows when the person was born or when they died."
+  "A painter dated fl. 1450 in a catalogue — what are we being told?",
+  "The years he was known to be working",
+  "The year he was born",
+  "The year he died",
+  "The year he was made a master",
+  "Floruit means flourished, and the abbreviation is used precisely when nobody knows the birth or the death."
  ],
  [
   "Everyday",
@@ -2485,11 +2467,11 @@
  ],
  [
   "Everyday",
-  "What does M.O. stand for?",
+  "M.O., as used by a detective, abbreviates which Latin phrase?",
   "Modus operandi",
   "Modus ordinis",
   "Motus operis",
   "Mos operandi",
-  "A way of working: the phrase came out of Latin grammar into police work and then into everyday speech."
+  "A way of working: the phrase travelled out of Latin grammar into police work and then into everyday speech."
  ]
 ]

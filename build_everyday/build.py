@@ -32,6 +32,9 @@ CUT = {
     # a bare synonym, and a coffee nobody will ever meet
     "The gudgeon pin in an engine is also called what?",
     "What is a caffè tobio?",
+    # a bare date and a degree length: nothing behind either reveal
+    "Since when has Finland had free universal daycare?",
+    "How long does a bachelor's degree take at a Finnish university of applied sciences?",
 }
 
 ALL = part1.ROWS + part2.ROWS + part3.ROWS + part4.ROWS

@@ -208,12 +208,12 @@ ROWS = [
  "Tanskan", "Alankomaiden", "Saksan", "Ruotsin",
  "Niitä on neljä, kun Ruotsi sai koko eurooppalaiselle listalle vain yhden juuston."),
 
-("Svecia is the only protected cheese of which country?",
- "Sweden", "Norway", "Finland", "Denmark",
- "Finland has none at all on the European list, so neither Finnish nor Norwegian cheese appears on it.",
- "Minkä maan ainoa suojattu juusto on svecia?",
- "Ruotsin", "Norjan", "Suomen", "Tanskan",
- "Suomella ei ole eurooppalaisella listalla yhtään, joten sillä ei ole suomalaisia eikä norjalaisia juustoja."),
+("Sweden has exactly one cheese on the European protected list. Which one?",
+ "Svecia", "Västerbottensost", "Herrgårdsost", "Prästost",
+ "Denmark registered four, Finland and Norway not one between them — the Nordic countries barely bothered.",
+ "Ruotsilla on eurooppalaisella suojalistalla täsmälleen yksi juusto. Mikä?",
+ "Svecia", "Västerbottensost", "Herrgårdsost", "Prästost",
+ "Tanska rekisteröi neljä, Suomi ja Norja eivät yhtäkään — Pohjoismaat eivät juuri vaivautuneet."),
 
 ("Džiugas and Liliputas are protected cheeses of which country?",
  "Lithuania", "Latvia", "Estonia", "Poland",
