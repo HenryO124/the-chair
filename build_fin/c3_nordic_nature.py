@@ -7,7 +7,7 @@ ROWS = [
  "In which centuries were the Sagas of Icelanders written down?",
  "The 13th and 14th", "The 9th and 10th", "The 16th and 17th", "The 11th and 12th",
  "They were set down in the 13th and 14th centuries about events three hundred years older.",
- "Milla vuosisadoilla islantilaissaagat kirjoitettiin muistiin?",
+ "Millä vuosisadoilla islantilaissaagat kirjoitettiin muistiin?",
  "1200- ja 1300-luvuilla", "800- ja 900-luvuilla", "1500- ja 1600-luvuilla", "1000- ja 1100-luvuilla",
  "Ne kirjattiin 1200- ja 1300-luvuilla tapahtumista, jotka olivat kolmesataa vuotta vanhempia."],
 
@@ -41,7 +41,7 @@ ROWS = [
  "1963", "1945", "1972", "1981",
  "The claim came in May 1963, before anyone knew whether there was oil to claim.",
  "Minä vuonna Norja julisti, että sen rannikolta löytyvä öljy kuuluu Norjalle?",
- "1963", "1945", "1972", "1981",
+ "Vuonna 1963", "Vuonna 1945", "Vuonna 1972", "Vuonna 1981",
  "Julistus annettiin toukokuussa 1963, ennen kuin kukaan tiesi, oliko öljyä olemassa."],
 
 ["Geography",
@@ -65,7 +65,7 @@ ROWS = [
  "1990", "1972", "1963", "2001",
  "The fund began in 1990 and is part of the Government Pension Fund of Norway.",
  "Minä vuonna Norja perusti öljyrahastonsa, joka säästää öljyrahaa tulevaisuuteen?",
- "1990", "1972", "1963", "2001",
+ "Vuonna 1990", "Vuonna 1972", "Vuonna 1963", "Vuonna 2001",
  "Rahasto aloitti 1990 ja on osa Norjan valtion eläkerahastoa."],
 
 # ---------------------------------------------------------------- Swedish inventors
@@ -107,7 +107,7 @@ ROWS = [
  "Wingqvist's multi-row self-aligning radial ball bearing is from 1907.",
  "Kuka ruotsalainen keksi itsesäätyvän kuulalaakerin 1907 ja perusti SKF:n?",
  "Sven Wingqvist", "Gustaf de Laval", "Erik Wallenberg", "John Ericsson",
- "Wingqvistin moniriviinen itsesäätyvä kuulalaakeri on vuodelta 1907."],
+ "Wingqvistin monirivinen itsesäätyvä kuulalaakeri on vuodelta 1907."],
 
 ["Science",
  "Which Swedish invention of 1951 was the forerunner of the milk carton?",
@@ -147,7 +147,7 @@ ROWS = [
  "2020", "2014", "2008", "2023",
  "The inscription was made on 17 December 2020; Estonia's smoke saunas went on in 2014.",
  "Minä vuonna suomalainen saunakulttuuri lisättiin Unescon aineettoman perinnön luetteloon?",
- "2020", "2014", "2008", "2023",
+ "Vuonna 2020", "Vuonna 2014", "Vuonna 2008", "Vuonna 2023",
  "Merkintä tehtiin 17. joulukuuta 2020; Viron savusaunat pääsivät listalle 2014."],
 
 ["Everyday",
@@ -162,7 +162,7 @@ ROWS = [
  "The birch whisk is called vihta in which part of Finland?",
  "The west", "The east", "Lapland", "The Åland islands",
  "It is vihta in western Finland and vasta in the east, and the border is old.",
- "Mitä saunavihtaa kutsutaan vihdaksi missä osassa Suomea?",
+ "Missä osassa Suomea saunavihtaa sanotaan vihdaksi?",
  "Lännessä", "Idässä", "Lapissa", "Ahvenanmaalla",
  "Se on vihta Länsi-Suomessa ja vasta idässä, ja raja on vanha."],
 
@@ -198,14 +198,6 @@ ROWS = [
  "Missä Suomen maakunnassa sijaitsevat kaikki maan kymmenen korkeinta tunturia?",
  "Lapissa", "Kainuussa", "Pohjois-Karjalassa", "Pohjois-Pohjanmaalla",
  "Jokainen yli 1 100 metrin huippu Suomessa on Lapin käsivarressa."],
-
-["Geography",
- "Roughly how high is Finland's highest point?",
- "About 1,300 metres", "About 800 metres", "About 1,900 metres", "About 2,400 metres",
- "Halti reaches about 1,324 to 1,328 m on the Finnish side; the Norwegian summit is higher still.",
- "Kuinka korkealla on Suomen korkein kohta?",
- "Noin 1 300 metrissä", "Noin 800 metrissä", "Noin 1 900 metrissä", "Noin 2 400 metrissä",
- "Halti nousee Suomen puolella noin 1 324-1 328 metriin; Norjan huippu on vielä korkeampi."],
 
 # ---------------------------------------------------------------- Russification
 ["History",
@@ -276,7 +268,7 @@ ROWS = [
  "What did the Russian law of 1912 open to Russians in Finland?",
  "All government and civil service posts", "All university places", "The right to own forest", "The Finnish officer corps",
  "The Law of Equality let Russians take any Finnish office, however senior.",
- "Minkä vuoden 1912 venäläinen laki avasi venäläisille Suomessa?",
+ "Mitä vuoden 1912 venäläinen laki avasi venäläisille Suomessa?",
  "Kaikki valtion ja virkamiehistön paikat", "Kaikki yliopistopaikat", "Oikeuden omistaa metsää", "Suomen upseeriston",
  "Yhdenvertaisuuslaki antoi venäläisten ottaa minkä tahansa suomalaisen viran, miten korkean tahansa."],
 ]

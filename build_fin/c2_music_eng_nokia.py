@@ -9,7 +9,7 @@ ROWS = [
  "The festival ends with the crowning of a tango king and queen.",
  "Missä suomalaisessa kaupungissa Tangomarkkinat on pidetty vuosittain vuodesta 1985?",
  "Seinäjoella", "Kaustisella", "Savonlinnassa", "Kuopiossa",
- "Tapahtuma päättyy tangokuninkaan ja -kuningattaren kronaukseen."],
+ "Tapahtuma päättyy tangokuninkaan ja -kuningattaren kruunaukseen."],
 
 ["Arts & culture",
  "Which instrument took the bandoneon's place when the tango became Finnish?",
@@ -32,7 +32,7 @@ ROWS = [
  "1913", "1895", "1928", "1945",
  "Travelling musicians brought it in 1913; Finns began writing their own tangos in the 1930s.",
  "Minä vuonna tango saapui ensi kerran Suomeen?",
- "1913", "1895", "1928", "1945",
+ "Vuonna 1913", "Vuonna 1895", "Vuonna 1928", "Vuonna 1945",
  "Kiertävät muusikot toivat sen 1913, ja suomalaiset alkoivat tehdä omia tangoja 1930-luvulla."],
 
 ["Arts & culture",
@@ -95,10 +95,10 @@ ROWS = [
 ["Arts & culture",
  "Which Finnish composer wrote string quartets in the 18th century, long before Sibelius?",
  "Erik Tulindberg", "Fredrik Pacius", "Bernhard Crusell", "Oskar Merikanto",
- "Tulindberg, a civil servant in Oulu, is the earliest Finnish composer of art music.",
+ "Tulindberg is the earliest named Finnish composer of art music.",
  "Kuka suomalainen sävelsi jousikvartettoja 1700-luvulla, kauan ennen Sibeliusta?",
  "Erik Tulindberg", "Fredrik Pacius", "Bernhard Crusell", "Oskar Merikanto",
- "Oulun virkamies Tulindberg on varhaisin suomalainen taidemusiikin säveltäjä."],
+ "Tulindberg on varhaisin nimeltä tunnettu suomalainen taidemusiikin säveltäjä."],
 
 ["Arts & culture",
  "Which bowed Finnish folk instrument was brought back to life in the folk revival?",
@@ -109,10 +109,10 @@ ROWS = [
  "Jouhikko on jousella soitettava lyyra jouhikielin, ja sitä on soitettu taas 1970-luvulta."],
 
 ["Arts & culture",
- "In which village has Finland's largest folk music festival been held since 1968?",
+ "Which Finnish village has held a folk music festival every year since 1968?",
  "Kaustinen", "Kuhmo", "Sonkajärvi", "Sysmä",
  "Kaustinen was the home of the pelimanni revival and of Konsta Jylhä's band.",
- "Missä kylässä Suomen suurin kansanmusiikkijuhla on pidetty vuodesta 1968?",
+ "Minkä suomalaisen kylän kansanmusiikkijuhlat ovat olleet joka vuosi vuodesta 1968?",
  "Kaustisella", "Kuhmossa", "Sonkajärvellä", "Sysmässä",
  "Kaustinen oli pelimannimusiikin uuden tulon koti ja Konsta Jylhän yhtyeen kotipaikka."],
 
@@ -161,17 +161,17 @@ ROWS = [
  "Before coming to Finland, Engel was town architect of which city?",
  "Tallinn", "Riga", "Stockholm", "Gdansk",
  "He held the post in Tallinn from 1809 and moved on to Turku in 1814.",
- "Ennen Suomeen tuloaan Engel oli minkä kaupungin kaupunginarkkitehti?",
+ "Minkä kaupungin kaupunginarkkitehti Engel oli ennen Suomeen tuloaan?",
  "Tallinnan", "Riian", "Tukholman", "Danzigin",
  "Hän hoiti virkaa Tallinnassa vuodesta 1809 ja siirtyi Turkuun 1814."],
 
 ["Arts & culture",
  "What was Helsinki City Hall, finished by Engel in 1833, originally built as?",
  "A hotel", "A theatre", "A bank", "A military hospital",
- "Engel's building opened as the Seurahuone hotel before the city took it over.",
+ "Engel's building opened as a hotel before the city took it over for itself.",
  "Mikä Engelin vuonna 1833 valmistunut Helsingin kaupungintalo oli alun perin?",
  "Hotelli", "Teatteri", "Pankki", "Sotilassairaala",
- "Engelin rakennus avattiin Seurahuone-hotellina ennen kuin kaupunki otti sen käyttöönsä."],
+ "Engelin rakennus avattiin hotellina ennen kuin kaupunki otti sen käyttöönsä."],
 
 ["Arts & culture",
  "Which Finnish city did Engel replan after the great fire of 1827?",
@@ -211,7 +211,7 @@ ROWS = [
  "1967", "1932", "1949", "1979",
  "The three companies had long worked together before the formal merger of 1967.",
  "Minä vuonna kumitehdas, kaapelitehdas ja paperitehdas yhdistyivät Nokia-yhtiöksi?",
- "1967", "1932", "1949", "1979",
+ "Vuonna 1967", "Vuonna 1932", "Vuonna 1949", "Vuonna 1979",
  "Kolme yhtiötä olivat tehneet yhteistyötä kauan ennen virallista fuusiota 1967."],
 
 ["Science",
@@ -219,7 +219,7 @@ ROWS = [
  "About 10 kilograms", "About 2 kilograms", "About 800 grams", "About 25 kilograms",
  "The Senator weighed 9.8 kg and lived in the boot of the car, not in a pocket.",
  "Paljonko painoi Mobira Senator, Nokian ensimmäinen autopuhelin vuodelta 1982?",
- "Noin 10 kilo", "Noin 2 kiloa", "Noin 800 grammaa", "Noin 25 kiloa",
+ "Noin 10 kiloa", "Noin 2 kiloa", "Noin 800 grammaa", "Noin 25 kiloa",
  "Senator painoi 9,8 kiloa ja asui auton takakontissa, ei taskussa."],
 
 ["Science",
@@ -260,7 +260,7 @@ ROWS = [
  "15", "6", "11", "21",
  "Fifteen are counted; the prolative survives only in frozen words such as postitse.",
  "Montako sijamuotoa suomessa yleensä lasketaan?",
- "15", "6", "11", "21",
+ "15 sijamuotoa", "6 sijamuotoa", "11 sijamuotoa", "21 sijamuotoa",
  "Viisitoista lasketaan; prolatiivi säilyy vain jähmettyneissä sanoissa kuten postitse."],
 
 ["Everyday",
@@ -317,7 +317,7 @@ ROWS = [
  "1660", "1536", "1721", "1849",
  "The change came under Frederik III, who had been elected on terms in 1648.",
  "Minä vuonna Tanskan kruunu muuttui perinnölliseksi ja itsevaltaiseksi?",
- "1660", "1536", "1721", "1849",
+ "Vuonna 1660", "Vuonna 1536", "Vuonna 1721", "Vuonna 1849",
  "Muutos tapahtui Fredrik III:n aikana, joka oli valittu ehdoin 1648."],
 
 ["History",

@@ -1,0 +1,203 @@
+{
+ "batch": ["batch_fin_en.json", "batch_fin_fi.json"],
+ "scope": "Finnish and Nordic subjects only. 271 rows. Swedish slots hold the Finnish string: recorded debt, not a translation.",
+ "pages": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Jussi_Award_for_Best_Film",
+   "used_for": ["the Jussi for Best Film: 1986 first award, the 1987-1991 gap, Pölönen's and Kaurismäki's wins, Ambush 1999, the 2008 rule change"],
+   "note": "The page's own table marks 1994 N/A while the prose describes only a five-year gap; questions were written from the prose."
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Cinema_of_Finland",
+   "used_for": ["The Moonshiners 1907, Sylvi, Erkki Karu, The Village Shoemakers, Say It in Finnish 1931, Juha 1956 in colour, Toivo Särkkä, The Boys 1962, Here Beneath the North Star 1968"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Albert_Edelfelt",
+   "used_for": ["Porvoo, the Pasteur portrait, the Legion of Honour, Boys Playing Upon the Shore, the Ensign Stål illustrations, Haikko, The Burnt Village"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Golden_Age_of_Finnish_Art",
+   "used_for": ["the 1880-1910 dates, The Fighting Capercaillies, Under the Yoke, The Mower Men, Havis Amanda, Wivi Lönn, R. W. Ekman, Adolf von Becker, Maria Wiik"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finnish_famine_of_1866%E2%80%931868",
+   "used_for": ["270,000 dead, Snellman and the loan, the Rothschild bank, the Riihimäki-Saint Petersburg railway, the September 1867 frosts"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finnish_literature",
+   "used_for": ["the 1642 Finnish Bible, the Finnish Literature Society 1831, Suomen kansan vanhat runot in 33 volumes, Minna Canth, Eino Leino and Dante, Hurskas kurjuus, Linnankoski"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finnish_tango",
+   "used_for": ["Tangomarkkinat at Seinäjoki since 1985, the accordion for the bandoneon, the minor key, 1913, Olavi Virta, Toivo Kärki"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Music_of_Finland",
+   "used_for": ["Pacius's 1852 opera, Kajanus and the Helsinki Philharmonic, Wegelius and the Sibelius Academy, Aino Ackté, Madetoja's Pohjalaisia, Tulindberg, the jouhikko, Kaustinen, Dingo and Yö, Eläkeläiset, Amoc, Värttinä"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Carl_Ludvig_Engel",
+   "used_for": ["Berlin birth, Tallinn post, the City Hall as a hotel, the Turku replanning, Ehrenström"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/History_of_Nokia",
+   "used_for": ["Idestam and Tammerkoski 1865, the 1967 merger, the Mobira Senator's weight, the Cityman and Gorbachev, Holkeri's GSM call, the 1011's model number, the 2014 sale"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finnish_noun_cases",
+   "used_for": ["fifteen cases, the translative, abessive, comitative, prolative and exessive"],
+   "note": "Gives English case names only; the Finnish names were supplied from standard usage."
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Denmark",
+   "used_for": ["Christian IV's long reign, the 1660 change, ten Christians, Cnut, Margaret I, Gorm the Old"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Sagas_of_Icelanders",
+   "used_for": ["the 13th and 14th centuries, calfskin, Snorri and Egil's Saga, Gísla saga in two versions"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/History_of_the_petroleum_industry_in_Norway",
+   "used_for": ["the 1963 claim, the 1958 survey letter, the Christmas Eve 1969 discovery, the 1990 oil fund"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_Swedish_inventors",
+   "used_for": ["Pasch, Bohlin, J. P. Johansson, Elmqvist, Wingqvist, Wallenberg and Tetra Pak, de Laval, Alwall"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finnish_sauna",
+   "used_for": ["löyly's first meaning, the 2020 UNESCO inscription, the smoke sauna, vihta and vasta, the sauna's other uses, 80-90 degrees"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_mountains_in_Finland",
+   "used_for": ["Ridnitšohkka as the highest summit wholly in Finland, all ten highest fells in Lapland"],
+   "note": "The page's table gives Halti 1,328 m while its prose gives 1,365 m for the Norwegian summit; the questions avoid the exact figure."
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Russification_of_Finland",
+   "used_for": ["the February Manifesto, the 523,000-name petition, Pro Finlandia, the Language Manifesto, the stamps, the sabre senate, the military millions, the John Grafton, the 1912 Law of Equality"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_works_by_Eero_Saarinen",
+   "used_for": ["the TWA Flight Center, Dulles, the Tulip chair, the Oslo and London embassies, his death in 1961"]
+  },
+  {
+   "url": "https://www.alvaraalto.fi/en/alvar-aalto-foundation/alvar-aalto-and-unesco-world-heritage/",
+   "used_for": ["thirteen sites in the Aalto Works series, five of them in Helsinki, the Church of the Three Crosses at Imatra, Sunila at Kotka"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Fiskars",
+   "used_for": ["1649 and Queen Christina's charter, the orange scissors of 1967 and the staff vote, Royal Copenhagen in 2013"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Linux_kernel",
+   "used_for": ["the University of Helsinki, the Minix newsgroup, the FUNET server, Tux"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_World_Rally_Championship_Drivers%27_champions",
+   "used_for": ["Alén 1978, Mäkinen's four in a row, Kankkunen's three makes, Mikkola's Quattro, Rovanperä 2022-23"],
+   "note": "The page carries a current-season row; only settled seasons were used."
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Lasse_Vir%C3%A9n",
+   "used_for": ["the police trade, Myrskylä, fifth in the 1976 marathon, his years in parliament"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finnish_national_symbols",
+   "used_for": ["the lily of the valley, the birch, the perch, granite, the seven-spot ladybird, rye bread"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finnish_cuisine",
+   "used_for": ["mustamakkara and Tampere, rönttönen's protected status, Thursday pea soup, the runebergintorttu, vispipuuro, leipäjuusto, sultsina"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/S%C3%A1mi_people",
+   "used_for": ["eleven Sami languages, Inari Sami inside Finland only, 6 February and the 1917 Trondheim congress, the 1986 flag and its sun and moon, herding open to non-Sami in Finland"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Pes%C3%A4pallo",
+   "used_for": ["Kaisaniemi 1920, the upward pitch, the pentagonal field, the kunnari, the joker, Superpesis, the 1952 demonstration, the 1985 death and helmets, Itä-Länsi"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_volcanoes_in_Iceland",
+   "used_for": ["Laki 1783-84, Eyjafjallajökull 2010, Öræfajökull as the highest, Eldfell on Heimaey, Eldgjá 934"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen",
+   "used_for": ["the 1985 Planica ski flying title, four World Cup titles, Oslo 1982 at eighteen, Yllätysten yö"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Juha_Mieto",
+   "used_for": ["the tenth-of-a-second rule change, five Olympic medals, his 2007 election"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Teemu_Sel%C3%A4nne",
+   "used_for": ["76 rookie goals, the 1988 Winnipeg draft, the 2007 Stanley Cup, the Finnish Flash, retirement at 43"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen",
+   "used_for": ["the Lotus debut, the 1995 Adelaide crash, twenty Grand Prix wins"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Geology_of_Finland",
+   "used_for": ["the Fennoscandian Shield, Archean rocks east and north, rapakivi in Åland and the south-east, 25 m of glacial erosion, the deglaciation dates, Ojamo 1530, Outokumpu 1910, Petsamo nickel"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_extreme_temperatures_in_Finland",
+   "used_for": ["37.2 degrees at Joensuu in 2010, minus 51.5 at Pokka in Kittilä in 1999"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Finland",
+   "used_for": ["Porvoo 1346, Rauma 1442, Oulu 1605, Tampere 1779, the six towns of 1960, Kangasala 2018, no legal difference since 1977"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finnish_euro_coins",
+   "used_for": ["the swans on the euro, the cloudberry on the two euro, the lion on the cents, the unused one and two cent coins, the M mint mark"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Christmas_in_Finland",
+   "used_for": ["joulupukki as Christmas goat, the tree's arrival in the mid-1800s, grave candles after the Winter War, the ham for the kekri lamb, pikkujoulu, Gustav III and the lost Christmas days"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Archipelago_Sea",
+   "used_for": ["257 islands over a square kilometre, the Mariehamn-Uusikaupunki-Hanko triangle, 4-10 mm of uplift a year, free road ferries"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Royal_Academy_of_Turku",
+   "used_for": ["1640 and Queen Christina, Per Brahe's proposal, the 1276 cathedral school, the move to Helsinki in 1828, the Imperial Alexander University"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Timeline_of_the_Finnish_War",
+   "used_for": ["the Kymi crossing of February 1808, Cronstedt at Sveaborg, Siikajoki, Oravais, the Convention of Olkijoki"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Alko",
+   "used_for": ["prohibition 1919-1932, the first shops in 1932, the viinakortti and the Bratt system, the ban on window displays"],
+   "note": "The page's 2024 retail strength limit is live policy and was not used."
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Ingemar_Stenmark",
+   "used_for": ["86 World Cup wins, slalom and giant slalom only, the 1984 ban, the two Lake Placid golds"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Bj%C3%B8rn_D%C3%A6hlie",
+   "used_for": ["eight Olympic golds, twelve medals and Bjørndalen passing him in 2014, six overall World Cups"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Svalbard",
+   "used_for": ["the 1920 treaty and its ban on military installations, Barentsburg, Barentsz in 1596, Ny-Ålesund, the seed vault at minus 18, no VAT, polar bear rules, UNIS, the Old Norse name"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Geography_of_Norway",
+   "used_for": ["320,249 islands and islets, 83,281 km of shoreline, 32 per cent above the tree line, the three land borders, Austfonna as Europe's largest glacier"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Gulf_of_Bothnia",
+   "used_for": ["five months of ice, the Kvarken sill at 25 m, 80 cm of uplift a century and 90-120 m still to come, the falling salinity, botn as Old Norse for a bay"]
+  },
+  {
+   "url": "https://itameri.fi/en/nature-and-how-it-changes/the-baltic-sea-in-numbers/",
+   "used_for": ["the Landsort Deep at 459 m, 54 m mean depth, the 1.6 million km2 catchment, 90 million people in fourteen countries, the Gulf of Finland at 123 m, the Sea of Åland at 301 m"]
+  }
+ ]
+}
