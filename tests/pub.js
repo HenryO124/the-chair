@@ -12,6 +12,11 @@ const w=dom.window,d=w.document,$=id=>d.getElementById(id);
 w.addEventListener('error',e=>probs.push('JS error: '+e.message));
 const click=el=>{if(el&&!el.disabled)el.dispatchEvent(new w.MouseEvent('click',{bubbles:true}))};
 setTimeout(()=>{
+// This suite was written against the English page and checks wording. The
+// interface now speaks Finnish by default, so it asks for English first;
+// the Finnish and Swedish wording is covered by words.js and uilang.js.
+  try{w.eval("S.lang='en';typeof dressUI==='function'&&dressUI()")}catch(e){}
+
   // --- the choice exists where the room waits, and it starts private ---
   if(!$('vis'))probs.push('no public/private choice on the waiting page');
   if(w.eval('!!S.public'))probs.push('a new room is public by default');

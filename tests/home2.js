@@ -14,6 +14,11 @@ w.addEventListener('error',e=>probs.push('JS error: '+e.message));
 const click=el=>{if(el&&!el.disabled)el.dispatchEvent(new w.MouseEvent('click',{bubbles:true}))};
 const at=()=>[...d.querySelectorAll('.screen')].filter(s=>s.classList.contains('on')).map(s=>s.id).join('+');
 setTimeout(()=>{
+// This suite was written against the English page and checks wording. The
+// interface now speaks Finnish by default, so it asks for English first;
+// the Finnish and Swedish wording is covered by words.js and uilang.js.
+  try{w.eval("S.lang='en';typeof dressUI==='function'&&dressUI()")}catch(e){}
+
   if(at()!=='s-home')probs.push('the front page is not the first thing you see: '+at());
   ['m-create','m-code','m-solo','m-learn','home-code','home-go','pub-list','mode-filter','pub-filter','me-chip']
     .forEach(id=>{if(!$(id))probs.push('#'+id+' is missing')});

@@ -68,10 +68,21 @@ def check_batch(en, fi, sv):
                            % (tag, name, len(str(r[1])), MAXQ))
         if len(e) == 7 and e[0] not in CATS:
             bad.append("%s: category %r is not one of %s" % (tag, e[0], ", ".join(CATS)))
-        if len(e) == 7 and len(f) == 7 and fold(e[1]) == fold(f[1]):
-            bad.append("%s: the Finnish question is the English one" % tag)
-        if len(e) == 7 and len(s) == 7 and fold(e[1]) == fold(s[1]):
-            bad.append("%s: the Swedish question is the English one" % tag)
+        # A translated question with English answers under it is the failure that
+        # looks like success: the batch reads as three languages and the room
+        # sees English on the television. Proper nouns are exempt — Vltava is
+        # Vltava in every language — so only prose is required to differ.
+        for name, r in (("Finnish", f), ("Swedish", s)):
+            if len(e) != 7 or len(r) != 7:
+                continue
+            if fold(e[1]) == fold(r[1]):
+                bad.append("%s: the %s question is the English one" % (tag, name))
+            if fold(e[6]) == fold(r[6]) and len(str(e[6]).split()) > 2:
+                bad.append("%s: the %s explanation is the English one: %r"
+                           % (tag, name, str(r[6])[:60]))
+            proper = sum(1 for x in r[2:6] if str(x)[:1].isupper())
+            if [fold(x) for x in e[2:6]] == [fold(x) for x in r[2:6]] and proper < 4:
+                bad.append("%s: the %s answers are the English ones" % (tag, name))
         if len(e) == 7:
             k = fold(e[1])
             if k in seen:
@@ -142,7 +153,13 @@ def main():
 
     hits = check_against_page(en, fi, sv)
     if hits:
-        print("\n%d question(s) look like something the bank already asks." % len(hits))
+        # One question can match the bank more than once, so count the questions
+        # and not the lines: the difference is what is actually importable, and
+        # reading it off the lines gets the subtraction wrong.
+        rows = sorted(set(h[0] for h in hits))
+        print("\n%d match(es) against the bank, behind %d of your %d questions."
+              % (len(hits), len(rows), len(en)))
+        print("Drop all of them and %d remain importable." % (len(en) - len(rows)))
         print("These are NOT thrown away — read them and decide:\n")
         for n, q, j, old, why in hits[:40]:
             print("  row %d  %s" % (n, q[:70]))

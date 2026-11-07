@@ -8,6 +8,11 @@ const dom=new JSDOM(fs.readFileSync(''+SRC+'','utf8'),
 const probs=[];const w=dom.window,d=w.document,$=id=>d.getElementById(id);
 w.addEventListener('error',e=>probs.push('JS error: '+e.message));
 setTimeout(()=>{
+// This suite was written against the English page and checks wording. The
+// interface now speaks Finnish by default, so it asks for English first;
+// the Finnish and Swedish wording is covered by words.js and uilang.js.
+  try{w.eval("S.lang='en';typeof dressUI==='function'&&dressUI()")}catch(e){}
+
   const hidden=id=>{const e=$(id);return !e||e.hidden};
   [['tf','statements'],['s10','questions'],['trivia','questions'],['picture','pictures']].forEach(([g,word])=>{
     w.eval("S.game='"+g+"';dressRules()");

@@ -16,6 +16,11 @@ const click=el=>{if(el&&!el.disabled&&el.dispatchEvent)el.dispatchEvent(new w.Mo
 const night=n=>w.eval("(S.players.find(function(p){return p.name==='"+n+"'})||{}).night");
 const score=n=>w.eval("(S.players.find(function(p){return p.name==='"+n+"'})||{}).score");
 setTimeout(()=>{
+// This suite was written against the English page and checks wording. The
+// interface now speaks Finnish by default, so it asks for English first;
+// the Finnish and Swedish wording is covered by words.js and uilang.js.
+  try{w.eval("S.lang='en';typeof dressUI==='function'&&dressUI()")}catch(e){}
+
   // a party of three opens, and nobody has an evening yet
   w.eval(`PARTY.role='host';PARTY.code='TEST';S.game='trivia';
     S.players=[{id:0,name:'Henkka',icon:0,score:0},

@@ -2555,7 +2555,7 @@ body:has(#s-home.on) .btn:hover,body:has(#s-setup.on) .btn:hover{
     </div>
     <p class="pool" id="pool"></p>
 
-    <div class="field-label">How many auditions tonight</div>
+    <div class="field-label" id="length-label">How many auditions tonight</div>
     <div class="seg wrap" id="length">
       <button data-l="10">10</button>
       <button data-l="15" class="sel">15</button>
@@ -3205,10 +3205,10 @@ function renderAuto(){
   const b=$('next'),h=$('auto-pause');
   if(!b)return;
   if(autoLeft>0){
-    b.textContent='Next audition in '+autoLeft;
+    b.textContent=T('next_audition_in',{n:autoLeft});
     if(h)h.hidden=false;
   }else{
-    b.textContent=seasonDone()?'Crown the coach':'Next audition';
+    b.textContent=T(seasonDone()?'crown':'next_audition');
     if(h)h.hidden=true;
   }
 }
@@ -3294,10 +3294,10 @@ function drawPlayers(){
     const named=local.filter(p=>(p.name||'').trim());
     const sub=$('nophone-sub'),det=$('nophone');
     if(sub)sub.textContent=named.length>1
-      ? named.length+' at this screen \u00b7 '+named.map(p=>p.name.trim()).join(', ')
+      ? T('nophone_many',{n:named.length,who:named.map(p=>p.name.trim()).join(', ')})
       : named.length===1
-      ? named[0].name.trim()+' is playing from this screen'
-      : 'Add anyone whose phone is flat \u2014 you answer for them here';
+      ? T('nophone_one',{who:named[0].name.trim()})
+      : T('nophone_none');
     if(det&&named.length>1&&!det.dataset.touched)det.open=true;
   }catch(e){}
   S.players.forEach((p,i)=>{
@@ -3306,9 +3306,9 @@ function drawPlayers(){
     // tap the picture to cycle through the faces, or past them for none
     const pick=document.createElement('button');
     pick.className='avpick';pick.type='button';
-    pick.setAttribute('aria-label','Change picture for coach '+(i+1));
+    pick.setAttribute('aria-label',T('aria_face_change',{n:(i+1)}));
     pick.innerHTML=p.photo?('<img class="facepic" alt="" src="'+p.photo+'">')
-      :p.icon>=0?avatarSVG(p.icon,'av'):'<span class="avnone">none</span>';
+      :p.icon>=0?avatarSVG(p.icon,'av'):'<span class="avnone">'+esc(T('av_none'))+'</span>';
     pick.onclick=()=>{
       if(p.photo){p.photo='';drawPlayers();return}      // a photo clears back to the drawings
       p.icon=(p.icon===undefined||p.icon===null)?0:p.icon+1;
@@ -3320,17 +3320,17 @@ function drawPlayers(){
     const cam=document.createElement('button');
     cam.className='photobtn'+(p.photo?' has':'');cam.type='button';
     cam.textContent='\ud83d\udcf7';
-    cam.title=p.photo?'Tap the picture to go back to the drawings':'Use a photo on this chair';
-    cam.setAttribute('aria-label','Use a photo for coach '+(i+1));
+    cam.title=T(p.photo?'photo_back':'photo_use');
+    cam.setAttribute('aria-label',T('aria_face_photo',{n:(i+1)}));
     cam.onclick=()=>{rowPhoto=i;$('row-file').click()};
     row.appendChild(cam);
     const inp=document.createElement('input');
-    inp.type='text';inp.value=p.name;inp.placeholder=i===0?'You \u2014 Coach 1':'Coach '+(i+1);inp.maxLength=14;
+    inp.type='text';inp.value=p.name;inp.placeholder=i===0?T('coach_you'):T('coach_n',{n:(i+1)});inp.maxLength=14;
     inp.oninput=e=>{S.players[i].name=e.target.value;validate();drawLobbyList();publishStage()};
     row.appendChild(inp);
     if(local.length>1){
       const x=document.createElement('button');
-      x.className='kill';x.textContent='\u00d7';x.setAttribute('aria-label','Remove coach');
+      x.className='kill';x.textContent='\u00d7';x.setAttribute('aria-label',T('aria_coach_remove'));
       x.onclick=()=>{S.players.splice(i,1);S.players.forEach((q,k)=>{q.id=k});
         drawPlayers();validate();drawLobbyList();publishStage()};
       row.appendChild(x);
@@ -3341,8 +3341,8 @@ function drawPlayers(){
 function validate(){
   // names are optional: an empty chair simply becomes Coach 1, Coach 2 and so on
   const blank=S.players.filter(p=>!p.name.trim()).length;
-  $('start-hint').textContent=blank?'Leave a name empty and that chair plays as Coach '
-    +(S.players.findIndex(p=>!p.name.trim())+1)+'.':'';
+  $('start-hint').textContent=blank
+    ?T('start_hint_blank',{n:(S.players.findIndex(p=>!p.name.trim())+1)}):'';
   updateStartState();
 }
 // the only thing that can stop a season now is a mix with nobody in it
@@ -3360,8 +3360,7 @@ function updateStartState(){
     b.disabled=empty;
     if(waiting){
       if(!b.dataset.said)b.dataset.said=b.textContent;
-      b.textContent=CHUNK.banks===null?'Questions did not load \u2014 tap to retry'
-                                      :'Loading the questions\u2026';
+      b.textContent=T(CHUNK.banks===null?'banks_retry':'banks_loading');
       if(CHUNK.banks===null)b.disabled=false;    // a retry has to be pressable
     } else if(b.dataset.said){
       b.textContent=b.dataset.said;delete b.dataset.said;
@@ -3382,7 +3381,7 @@ $('row-file')&&($('row-file').addEventListener('change',e=>{
     S.players[i].photo=url;
     if(i===0){try{localStorage.setItem('thechair.myface',url)}catch(err){}}
     drawPlayers();
-  }).catch(()=>{$('start-hint').textContent='That picture would not open. Try another one.'});
+  }).catch(()=>{$('start-hint').textContent=T('photo_bad')});
 }));
 $('nophone')&&($('nophone').addEventListener('toggle',()=>{
   try{$('nophone').dataset.touched='1'}catch(e){}
@@ -3489,7 +3488,7 @@ function catBank(){
 }
 function drawCats(){
   const box=$('cats');if(!box)return;
-  const all=S.lang==='fi'?'Kaikki':S.lang==='sv'?'Allt':'Everything';
+  const all=T('cats_every');
   box.innerHTML='<button type="button" data-c="*"'+(!S.cats.length?' class="sel"':'')+'>'+esc(all)+'</button>'
     +ballot().map(k=>{
       const n=voteCount(k);
@@ -3502,9 +3501,9 @@ function drawCats(){
   // 21. the pile keeps growing, so a count here is out of date the week it is
   // read — and before the bank has loaded it says nothing at all. What matters
   // is which topics are in and what language they are in.
-  if(note)note.textContent=(S.cats.length?S.cats.length+' of '+total+' topics':'All '+total+' topics')
-    +(S.game==='trivia'?' \u00b7 '+(S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English'):'')
-    +(voters?' \u00b7 '+voters+' voted from their phone'+(voters===1?'':'s'):'');
+  if(note)note.textContent=(S.cats.length?T('cats_some',{n:S.cats.length,of:total}):T('cats_all',{n:total}))
+    +(S.game==='trivia'?' \u00b7 '+T('in_lang'):'')
+    +(voters?' \u00b7 '+T(voters===1?'cats_voted_1':'cats_voted_n',{n:voters}):'');
   try{updateStartState()}catch(e){}
 }
 segHandler('lang','g',v=>{
@@ -3518,9 +3517,7 @@ segHandler('where','w',v=>{S.remote=(v==='away');dressWhere();
   if(PARTY.role==='host')publishStage()});   // nothing to tell if no room is open
 function dressWhere(){
   const n=$('where-note');if(!n)return;
-  n.textContent=S.remote
-    ? 'Every phone gets the record as well, with its own sound. Use headphones, or the room will echo.'
-    : 'Phones are buttons only. The record plays here, on the one screen everybody can see.';
+  n.textContent=T(S.remote?'where_away':'where_here');
 }
 segHandler('teamsize','t',v=>{S.teamSize=+v;updatePool()});
 segHandler('length','l',v=>{S.len=+v;updatePool()});
@@ -3566,27 +3563,25 @@ function updatePool(){
   updateStartState();
   if(!rndEra&&!rndGen&&n===0){
     el.className='pool thin';
-    el.textContent='Nobody started out in that corner \u2014 try another year or another genre.';
+    el.textContent=T('pool_empty');
     return;
   }
   if(rndEra||rndGen){
     el.className='pool';
-    el.textContent=(rndEra&&rndGen?'Era and genre':rndEra?'The era':'The genre')
-      +' gets drawn when you start. '+st+' seats, '+au+' auditions.';
+    el.textContent=T(rndEra&&rndGen?'pool_rnd_both':rndEra?'pool_rnd_era':'pool_rnd_genre',{s:st,a:au});
     return;
   }
   if(!S.len){
     el.className=au<st?'pool thin':'pool';
-    el.textContent='Runs until every team is full \u2014 up to '+au+' auditions for '+st+' seats.'
-      +(au<st?' The pool is too small, so some teams will finish short.':'');
+    el.textContent=T('pool_until',{a:au,s:st})+(au<st?T('pool_until_thin'):'');
     return;
   }
   if(au<st){
     el.className='pool thin';
-    el.textContent=au+' auditions for '+st+' seats \u2014 most teams will finish short. That is fine: you score what you signed.';
+    el.textContent=T('pool_thin',{a:au,s:st});
   }else{
     el.className='pool';
-    el.textContent=st+' seats \u00b7 '+au+' auditions \u00b7 '+n+' acts in the pool.';
+    el.textContent=T('pool_ok',{s:st,a:au,n:n});
   }
 }
 updatePool();
@@ -3612,22 +3607,10 @@ try{const h=$('tpl-hero');
   document.querySelectorAll('.home-hero').forEach(a=>a.appendChild(h.content.cloneNode(true)));
 }catch(e){}
 
-const GAMEBLURB={chair:'Open a room, pass the code around, and everyone takes a chair from their own phone.',
-  artist:'Open a room and pass the code around. Four names land on every phone, once per record.',
-  trivia:'Open a room and pass the code around. Four answers land on every phone, question after question.',
-  picture:'Open a room and pass the code around. A picture goes up here, four answers on every phone.',
-  tf:'Open a room and pass the code around. One statement at a time, and every phone says true or false.',
-  finger:'Open a room and pass the code around. A question about the people in it, and every phone points at somebody.',
-  near:'Open a room and pass the code around. The answer is a number and nobody gets options — everybody types a guess.',
-  s10:'Open a room and pass the code around. Ten candidates on every phone, and only some of them are true.'};
-const SOLOBLURB={chair:'One screen, one coach, and a pile of records. No room, nobody to wait for.',
-  artist:'Four names on this screen, record after record, scored as you go.',
-  trivia:'A hundred and twenty questions across six categories. Play as many as you like.',
-  picture:'Cities, landmarks, paintings and the odd animal. Name what you are looking at.',
-  tf:'Statements, half of them true. Say which is which, and keep your run alive.',
-  finger:'A question about the room, and the room is the answer. You score by agreeing with everybody else.',
-  near:'The answer is a number. No options, no quarter chance — type a guess, and the closest takes it.',
-  s10:'Ten candidates, some true. Take one, take another, and stop before you are wrong.'};
+/* which games are built; the blurbs themselves live in the word tables, as
+   blurb_<game> for a room full of phones and solo_<game> for one screen */
+const GAMEBLURB={chair:1,artist:1,trivia:1,picture:1,tf:1,finger:1,near:1,s10:1};
+function gameBlurb(name){return T((SOLO?'solo_':'blurb_')+name)}
 let LEARNING=false, SOLO=false;
 function firstGame(){
   const c=document.querySelector('#s-setup .gamecard:not([hidden])');
@@ -3641,7 +3624,7 @@ function pickGame(name){
   }
   S.game=name;
   document.querySelectorAll('.gamecard').forEach(c=>c.classList.toggle('sel',c.dataset.game===name));
-  try{$('bar-hint').textContent=(SOLO?SOLOBLURB:GAMEBLURB)[name]}catch(e){}
+  try{$('bar-hint').textContent=gameBlurb(name)}catch(e){}
   // the room is watching from their phones: tell them what was picked, and
   // hand them the ballot for this game's topics
   S.cats=[];try{clearVotes();drawCats()}catch(e){}
@@ -3656,9 +3639,9 @@ function openModes(mode){
   document.body.classList.toggle('solo',SOLO);
   $('modes-eyebrow').textContent=LEARNING?T('modes_learn'):SOLO?T('modes_solo'):T('modes_create');
   const go=$('create-room');
-  if(go)go.textContent='Start on this screen';
+  if(go)go.textContent=T('start_here');
   const lab=document.querySelector('#startbar .sbt');
-  if(lab)lab.textContent='Play on your own';
+  if(lab)lab.textContent=T('play_alone');
   if(!LEARNING)pickGame(GAMEBLURB[S.game]&&!SHELVED[S.game]?S.game:firstGame());
   // creating a game opens the room straight away, so the code is there to pass around
   if(mode==='create'){$('startbar').hidden=true;$('roombar').hidden=false;openLobby('s-setup');return}
@@ -3759,11 +3742,7 @@ function drawVis(){
   document.querySelectorAll('#vis button').forEach(b=>
     b.classList.toggle('sel',(b.dataset.v==='public')===!!S.public));
   const nt=$('vis-note');
-  if(nt)nt.textContent=PRIVATEONLY[S.game]
-    ? 'This one asks the room about the room, so it is played with people you know. It cannot be made public.'
-    : S.public
-    ? 'Listed on this page for anyone to join — and that means anyone.'
-    : 'Only people with the code or the QR get in.';
+  if(nt)nt.textContent=T(PRIVATEONLY[S.game]?'vis_shut':S.public?'vis_public':'vis_private');
   const b=$('rb-vis');
   if(b){b.classList.toggle('open',!!S.public);b.lastChild.textContent=T(S.public?'room_public':'room_private')}
 }
@@ -3833,7 +3812,7 @@ $('set-name')&&($('set-name').addEventListener('change',()=>{
 /* the name this device plays under: "Player 1" until somebody says otherwise */
 let MYNAME='';
 try{MYNAME=localStorage.getItem('thechair.myname')||''}catch(e){}
-function drawMe(){const el=$('me-name');if(el)el.textContent=MYNAME||'Player 1'}
+function drawMe(){const el=$('me-name');if(el)el.textContent=MYNAME||T('player_n',{n:1})}
 /* The name on the chip is this device's name, and the host sits on this
    device. Without this the host typed "Henkka" into Settings and the room
    still announced Player 1. */
@@ -3975,25 +3954,25 @@ function nextRound(){
   winner=null;walked=false;
   blockOwner=null;blockTarget=null;turnsOpen=false;
   S.players.forEach(p=>p.passed=false);        // everyone is back in the running
-  $('round-tag').innerHTML='<div class="rc-label">Audition</div>'
-    +'<div class="rc-num">'+S.round+'<span> of '+S.deck.length+'</span></div>'
+  $('round-tag').innerHTML='<div class="rc-label">'+esc(T('round_audition'))+'</div>'
+    +'<div class="rc-num">'+S.round+'<span> '+esc(T('round_of',{n:S.deck.length}))+'</span></div>'
     +(S.season?'<div class="rc-season">'+esc(S.season)+'</div>':'');
-  $('meta').textContent='blind audition';   // the year is part of the answer, so it waits
+  $('meta').textContent=T('meta_blind');   // the year is part of the answer, so it waits
   $('videowall').classList.remove('playing');clearVideo();videoShown=false;refreshVideoBox();
   $('vidctl').style.display='none';
-  $('drop').style.display='block';$('drop').textContent='Start the audition';
+  $('drop').style.display='block';$('drop').textContent=T('drop_start');
   $('stop').style.display='none';
   
   $('ip-body').style.display='none';$('ip-idle').style.display='block';
   $('next').style.display='none';
-  $('turnline').textContent='Nobody can turn until the record starts.';
+  $('turnline').textContent=T('turn_wait_start');
   resetClock();drawSeats();show('s-listen');
 }
 function resetClock(){
   clearInterval(timer);timer=null;
   $('clock').style.display='block';
   $('count').textContent=S.clip||'0';
-  $('count-cap').textContent=S.clip?'seconds':'ready';
+  $('count-cap').textContent=T(S.clip?'clock_seconds':'clock_ready');
   const rg=$('ring');rg.style.transition='none';rg.style.strokeDashoffset='0';
   $('clock').classList.remove('low');
 }
@@ -4059,7 +4038,7 @@ function stopVideo(only){
   curVid=id;
   $('vw-screen').innerHTML='<div class="eq" id="eq">'+'<i></i>'.repeat(12)+'</div>'
     +'<button class="vbig" data-play="'+id+'"><span class="vtri">▶</span>'
-    +'<span>Watch the video</span></button>';
+    +'<span>'+esc(T('watch_video'))+'</span></button>';
 }
 $('vw-screen').addEventListener('click',e=>{
   if(e.target.closest('[data-stop]')){stopVideo();return}
@@ -4071,14 +4050,13 @@ $('vw-screen').addEventListener('click',e=>{
 function clearVideo(){
   curVid='';
   $('vw-screen').innerHTML='<div class="eq" id="eq">'+'<i></i>'.repeat(12)+'</div>'
-    +'<div class="vw-idle" id="vw-idle">STAGE</div>';
+    +'<div class="vw-idle" id="vw-idle">'+esc(T('stage_sign'))+'</div>';
 }
 $('yt-url').oninput=e=>{
   const ok=rememberVideo(e.target.value);
   e.target.classList.toggle('ok',ok);
   $('ythint').textContent=e.target.value.trim()
-    ? (ok?'Saved — it plays with the audition, and is remembered for next time.'
-         :'That does not look like a YouTube link yet.')
+    ? T(ok?'vid_link_ok':'vid_link_bad')
     : '';
 };
 const SERVED=location.protocol==='http:'||location.protocol==='https:';
@@ -4092,11 +4070,8 @@ function refreshVideoBox(){
   const have=savedVideo(S.current);
   $('yt-url').value='';
   $('yt-url').classList.remove('ok');
-  $('ythint').textContent=!have
-    ? 'Optional: paste a link and the video plays with the audition.'
-    : statusOf(S.current)==='bad'
-      ? 'You flagged this video as wrong, so it stays off the stage. Paste a better link to replace it.'
-      : 'Video saved for this act — it plays as the audition starts.';
+  $('ythint').textContent=T(!have?'vid_paste_hint'
+    :statusOf(S.current)==='bad'?'vid_flagged':'vid_saved');
 }
 
 /* --- a verdict on each video, so checking them is a one-time job --- */
@@ -4125,9 +4100,7 @@ function drawVidCtl(){
   $('vidctl').style.display='flex';
   $('v-ok').className='vbtn ok'+(st==='ok'?' done':'');
   $('v-bad').className='vbtn bad'+(st==='bad'?' flagged':'');
-  $('vidlabel').textContent=st==='ok'?'Checked — right video'
-    :st==='bad'?'Flagged as wrong — fix it in the library'
-    :'Is this the right video?';
+  $('vidlabel').textContent=T(st==='ok'?'vid_ok':st==='bad'?'vid_bad':'vid_ask');
 }
 $('v-ok').onclick=()=>{setStatus(S.current,statusOf(S.current)==='ok'?'':'ok');drawVidCtl()};
 $('v-bad').onclick=()=>{setStatus(S.current,statusOf(S.current)==='bad'?'':'bad');drawVidCtl()};
@@ -4150,7 +4123,7 @@ const stillDeciding=()=>S.players.filter(p=>canTurn(p));
 function checkAllSkipped(){
   if(!turnsOpen||winner)return;
   if(stillDeciding().length)return;
-  $('turnline').textContent='Everyone skipped.';
+  $('turnline').textContent=T('turn_all_skipped');
   closeWindow();                     // nobody wanted them, so the audition is over
 }
 function drawSeats(){
@@ -4163,9 +4136,9 @@ function drawSeats(){
     const cls=(got?' turned':'')+(blockTarget===p.id?' blocked':'')
       +(full(p)?' done':'')+(live?' live':'')
       ;
-    const signLabel=got?'GOT THEM':full(p)?'TEAM FULL':blockTarget===p.id?'BLOCKED'
-      :p.passed?'SKIPPED':'SIGN THEM';
-    const skipLabel=p.passed?'SKIPPED':'SKIP';
+    const signLabel=esc(T(got?'seat_got':full(p)?'sign_full':blockTarget===p.id?'sign_blocked'
+      :p.passed?'skipped_caps':'sign_them'));
+    const skipLabel=esc(T(p.passed?'skipped_caps':'skip_caps'));
     const canSkip=turnsOpen&&!winner&&!p.passed&&!full(p);
     const canBlock=!p.blockUsed&&blockTarget===null&&turnsOpen&&!winner;
     return '<div class="chair'+cls+'" data-i="'+i+'" style="--i:'+i+'">'
@@ -4180,8 +4153,9 @@ function drawSeats(){
         +'</div>'
         +'<div class="stem"></div><div class="foot"></div>'
       +'</div>'
-      +(got?'<div class="gotit">FIRST</div>':'')
-      +(blockTarget===p.id?'<div class="blkmark">BLOCKED BY '+esc(byId(blockOwner).name.toUpperCase())+'</div>':'')
+      +(got?'<div class="gotit">'+esc(T('seat_first'))+'</div>':'')
+      +(blockTarget===p.id?'<div class="blkmark">'
+        +esc(T('blocked_by',{who:byId(blockOwner).name.toUpperCase()}))+'</div>':'')
       +'<div class="nm">'+esc(shownName(p))+'</div>'
       +'<div class="slots">'+'\u25cf'.repeat(p.team.length)
       +'\u25cb'.repeat(Math.max(0,S.teamSize-p.team.length))+'</div>'
@@ -4190,15 +4164,15 @@ function drawSeats(){
         :'<button class="skip'+(p.passed?' out':'')+'" data-skip="'+i+'"'
          +(canSkip?'':' disabled')+'>'+skipLabel+'</button>')
       +'<div class="blkrow">'+(p.blockUsed||blockTarget!==null||!turnsOpen||winner
-          ? (p.blockUsed?'<span class="blkspent">block spent</span>':'')
+          ? (p.blockUsed?'<span class="blkspent">'+esc(T('block_spent_low'))+'</span>':'')
           : (function(){
               const rivals=S.players.filter(q=>q.id!==p.id);
               const terse=rivals.length>2;        // keep the chair from growing a tower of buttons
               return rivals.map(q=>
                 '<button class="blk'+(terse?' terse':'')+'" data-by="'+p.id+'" data-at="'+q.id+'"'
-                +' title="Block '+esc(q.name)+'">'
+                +' title="'+esc(T('aria_block',{who:q.name}))+'">'
                 +(terse?'\u2298'+esc(q.name.slice(0,3).toUpperCase())
-                       :'BLOCK '+esc(q.name.toUpperCase()))+'</button>').join('');
+                       :esc(T('block_who',{who:q.name.toUpperCase()})))+'</button>').join('');
             })())
         +'</div>'
       +'</div>';
@@ -4225,9 +4199,9 @@ $('chairs-grid').onclick=e=>{
   if(!hit)return;
   const i=+hit.dataset.i,p=S.players[i];
   if(!turnsOpen||winner){
-    $('turnline').textContent=winner?winner.name+' already got there.':'Too late. The chairs are locked.';return}
-  if(full(p)){$('turnline').textContent=p.name+'\u2019s team is full.';return}
-  if(blockTarget===p.id){$('turnline').textContent=p.name+' is blocked this round.';return}
+    $('turnline').textContent=winner?T('turn_already',{who:winner.name}):T('turn_too_late');return}
+  if(full(p)){$('turnline').textContent=T('turn_full',{who:p.name});return}
+  if(blockTarget===p.id){$('turnline').textContent=T('turn_blocked',{who:p.name});return}
   claim(p);
 };
 
@@ -4238,7 +4212,7 @@ function playClip(){
   $('drop').style.display='none';$('stop').style.display='block';
   clipLeft=S.clip?S.clip:0;
   $('count').textContent=clipLeft;
-  $('count-cap').textContent=S.clip?'seconds left to turn':'playing';
+  $('count-cap').textContent=T(S.clip?'clock_left':'clock_playing');
   if(S.clip){
     const rg=$('ring');
     rg.style.transition='none';rg.style.strokeDashoffset='0';
@@ -4250,7 +4224,7 @@ function playClip(){
   $('videowall').classList.add('playing');
   const vid=videoFor(S.current);
   if(vid){videoShown=true;showVideo(vid)}   // the video runs with the audition
-  $('turnline').textContent='First chair to turn gets them \u2014 or skip.';
+  $('turnline').textContent=T('turn_first');
   drawSeats();fitScreen();runClock();
 }
 function runClock(){
@@ -4274,11 +4248,11 @@ function closeWindow(){
   rg.style.transition='none';rg.style.strokeDashoffset='131.95';
   $('clock').classList.remove('low');
   $('clock').style.display='none';            // nothing cryptic left on screen
-  $('count-cap').textContent='chairs locked';
+  $('count-cap').textContent=T('clock_locked');
   $('stop').style.display='none';
   $('videowall').classList.remove('playing');
   stopVideo();                       // time is up, so the music stops too
-  $('turnline').textContent=winner?'':'Nobody turned. They walk.';
+  $('turnline').textContent=winner?'':T('turn_nobody');
   drawSeats();
   doReveal();                      // the answer appears beside the screen, no extra click
 }
@@ -4294,7 +4268,7 @@ function holdClip(){
   const rg=$('ring');
   rg.style.strokeDashoffset=getComputedStyle(rg).strokeDashoffset;
   rg.style.transition='none';
-  $('count-cap').textContent='on hold';
+  $('count-cap').textContent=T('clock_on_hold');
   return true;
 }
 function resumeClip(){
@@ -4303,7 +4277,7 @@ function resumeClip(){
     rg.style.transition='stroke-dashoffset '+Math.max(clipLeft,1)+'s linear';
     rg.style.strokeDashoffset='131.95';
   })}
-  $('count-cap').textContent=S.clip?'seconds left to turn':'playing';
+  $('count-cap').textContent=T(S.clip?'clock_left':'clock_playing');
   $('stop').style.display='block';runClock();
 }
 $('break').onclick=()=>{
@@ -4359,7 +4333,7 @@ function doReveal(){
   $('ip-body').style.display='block';
   const done=seasonDone();
   $('next').style.display='block';
-  $('next').textContent=done?'Crown the coach':'Next audition';
+  $('next').textContent=T(done?'crown':'next_audition');
   countUp(n);
   if(!done)startAutoNext();
 }
@@ -4583,7 +4557,7 @@ function mkPlayer(name,icon,id,pid,photo){
   return {name:name,icon:(icon===undefined||icon===null?-1:icon),team:[],
           blockUsed:false,passed:false,id:id,pid:pid||'',photo:photo||''};
 }
-const shownName=p=>((p&&p.name||'').trim())||('Player '+(((p&&p.id)|0)+1));
+const shownName=p=>((p&&p.name||'').trim())||T('player_n',{n:(((p&&p.id)|0)+1)});
 function nextPlayerId(){return S.players.reduce((n,p)=>Math.max(n,p.id+1),0)}
 function myPid(){
   let v='';
@@ -4783,13 +4757,12 @@ function drawFriends(){
     '<span class="friend'+(f.on?' on':'')+'" data-f="'+i+'" role="button" tabindex="0">'
     +'<span class="tick">'+(f.on?'✓':'·')+'</span>'
     +esc(f.name)
-    +'<button class="drop" data-drop="'+i+'" aria-label="Forget '+esc(f.name)+'">×</button>'
+    +'<button class="drop" data-drop="'+i+'" aria-label="'+esc(T('aria_forget',{name:f.name}))+'">×</button>'
     +'</span>').join('');
   const n=FRIENDS.filter(f=>f.on).length;
   $('friends-note').textContent=FRIENDS.length
-    ? (n?n+' invited — their chairs are held in the lobby until they join.'
-        :'Tap a name to invite them tonight.')
-    : 'Save the people you play with. Their chair waits for them, and they join by tapping their own name.';
+    ? (n?T(n===1?'friends_invited_1':'friends_invited',{n:n}):T('friends_tap'))
+    : T('friends_none');
 }
 $('friend-add')&&($('friend-add').onclick=()=>{
   const f=addFriend($('friend-name').value,true);     // typed now, so invited now
@@ -4822,7 +4795,7 @@ function inviteText(name){
 function sendInvite(seat){
   const txt=inviteText(seat.name);
   try{navigator.clipboard.writeText(txt).then(
-    ()=>lobbyStatus('Invitation for '+seat.name+' copied','good'),
+    ()=>lobbyStatus(T('invite_copied',{who:seat.name}),'good'),
     ()=>lobbyStatus(txt,''));
   }catch(e){lobbyStatus(txt,'')}
 }
@@ -4851,7 +4824,7 @@ function openLobby(goTo){
     c.subscribe([topicFor(PARTY.code,'join'),topicFor(PARTY.code,'act'),
                  topicFor(PARTY.code,'face/+'),topicFor(PARTY.code,'stage')],{qos:0});
     c.on('message',onHostMessage);
-    lobbyStatus('Room open — waiting for phones','good');
+    lobbyStatus(T('room_open_wait'),'good');
     publishStage();
     try{dirPing(true)}catch(e){}
     if(!DIR.pingTimer)DIR.pingTimer=setInterval(()=>{try{dirPing(true)}catch(e){}},45000);
@@ -5028,7 +5001,7 @@ function quizStart(){
   if(isS10()){
     const bank=s10CatBank();
     if(!bank.length){                 // the bank is not in: wait, never deal nothing
-      try{lobbyStatus('The questions are still loading \u2014 one moment.','')}catch(e){}
+      try{lobbyStatus(T('still_loading_q'),'')}catch(e){}
       needBanks();
       try{banksReady().then(()=>{if(screenNow()==='s-quiz')quizStart()}).catch(()=>{})}catch(e){}
       return;
@@ -5065,7 +5038,7 @@ function fingerBank(){
 function fingerStart(){
   const bank=fingerBank();
   if(!bank.length){
-    try{lobbyStatus('The prompts are still loading — one moment.','')}catch(e){}
+    try{lobbyStatus(T('still_loading_p'),'')}catch(e){}
     needBanks();
     try{banksReady().then(()=>{if(screenNow()==='s-quiz')quizStart()}).catch(()=>{})}catch(e){}
     return;
@@ -5236,7 +5209,7 @@ function nearCatBank(){
 function nearStart(){
   const bank=nearCatBank();
   if(!bank.length){
-    try{lobbyStatus('The questions are still loading — one moment.','')}catch(e){}
+    try{lobbyStatus(T('still_loading_q'),'')}catch(e){}
     needBanks();
     try{banksReady().then(()=>{if(screenNow()==='s-quiz')quizStart()}).catch(()=>{})}catch(e){}
     return;
@@ -5489,7 +5462,7 @@ function quizNext(){
   Q.options=shuffle([Q.current].concat(wrong));
   Q.correct=Q.options.indexOf(Q.current);
   $('q-curtain').classList.remove('open');
-  $('q-curtain').textContent='Curtain closed';
+  $('q-curtain').textContent=T('curtain_closed');
   $('q-next').textContent=T('reveal');
   try{$('q-stage').classList.remove('centred')}catch(e){}   // a record fills the frame
   playRecord(Q.current);            // an iTunes preview if there is one, the embed if not
@@ -5895,42 +5868,47 @@ function nightBoard(){
   if(!(S.games>1))return '';       // one game is its own evening
   const best=[...S.players].sort((a,b)=>(b.night||0)-(a.night||0));
   const top=best[0]?(best[0].night||0):0;
-  return '<div class="nightboard"><div class="field-label">Tonight &middot; '
-    +S.games+' games</div><div class="board">'
+  return '<div class="nightboard"><div class="field-label">'
+    +esc(T('night_head',{n:S.games}))+'</div><div class="board">'
     +best.map((p,i)=>'<div class="brow'+(i===0&&top>0?' lead':'')+'">'
       +'<span class="bn">'+(i+1)+'. '+esc(shownName(p))+'</span>'
-      +'<span class="bv">'+(p.night||0)+' pts</span></div>').join('')
+      +'<span class="bv">'+(p.night||0)+' '+esc(T('pts'))+'</span></div>').join('')
     +'</div></div>';
 }
 function quizFinish(){
   Q.on=false;stopNextCount();
   bankTheGame();
-  try{$('final-eyebrow').textContent=isPicture()?'Sharpest eye':isTF()?'Best nose for a lie'
-    :isTrivia()?'Quickest wits':'Sharpest ear'}catch(e){}
+  try{$('final-eyebrow').textContent=T(isPicture()?'final_eye':isTF()?'final_nose'
+    :isTrivia()?'final_wits':'final_ear')}catch(e){}
   recStop();                       // the game is over, so the record stops with it
   const box=$('q-screen');if(box)box.innerHTML='<div class="eq">'+'<i></i>'.repeat(12)+'</div>';
   const best=[...S.players].sort((a,b)=>(b.score||0)-(a.score||0));
   const top=best[0]?(best[0].score||0):0;
   const won=best.filter(p=>(p.score||0)===top);
-  $('champ').textContent=won.length>1?'A tie':shownName(won[0]||{});
+  $('champ').textContent=won.length>1?T('champ_tie'):shownName(won[0]||{});
   // out of what was actually played, not what was planned: the host may end it early
   // finished rounds only: the one still on screen when the host stops does not count
   const played=Math.max(Q.revealed?Q.round:Q.round-1,0);
   const outOf=(isPicture()||isTrivia())?played*15:0;   // only where every question pays the same
-  const word=isPicture()?'picture':isTF()?'statement'
-    :(isTrivia()||isS10())?'question':'record';
+  // the noun is inflected in the word tables and dropped into the sentence:
+  // English puts an s on the end, the other two change the whole word
+  const one=(played===1);
+  const word=isPicture()?T(one?'word_picture':'word_pictures')
+    :isTF()?T(one?'word_statement':'word_statements')
+    :(isTrivia()||isS10())?T(one?'word_question':'word_questions')
+    :T(one?'word_record':'word_records');
   const names=won.map(shownName);
-  const tied=names.length<=2?names.join(' and ')
-    :names.slice(0,-1).join(', ')+' and '+names[names.length-1];
+  const tied=names.length<=2?names.join(' '+T('join_and')+' ')
+    :names.slice(0,-1).join(', ')+' '+T('join_and')+' '+names[names.length-1];
   $('champ-sub').textContent=(won.length>1
-    ? tied+' all finished on '+top+' points'
-    : outOf?top+' points out of '+outOf:top+' points')
-    +' · '+played+' '+word+(played===1?'':'s')+' played.';
+    ? T('final_tied',{who:tied,n:top})
+    : outOf?T('final_out_of',{n:top,m:outOf}):T('final_points',{n:top}))
+    +' \u00b7 '+T('final_played',{n:played,what:word});
   $('final-board').innerHTML='<div class="board">'+best.map((p,i)=>
     '<div class="brow'+(i===0&&top>0?' lead':'')+'"><span class="bn">'+(i+1)+'. '+esc(shownName(p))+'</span>'
-    +'<span class="bv">'+(p.score||0)+' pts</span></div>').join('')+'</div>'
+    +'<span class="bv">'+(p.score||0)+' '+esc(T('pts'))+'</span></div>').join('')+'</div>'
     +nightBoard();
-  try{$('meta').textContent='game over'}catch(e){}
+  try{$('meta').textContent=T('meta_over')}catch(e){}
   show('s-final');publishStage();   // the screen moves first, so the phones hear 'over'
 }
 function drawQuiz(){
@@ -5939,7 +5917,7 @@ function drawQuiz(){
   if(isS10())return drawS10();
   if(!Q.current)return;
   try{$('q-next').classList.remove('calm');$('s10-rules').hidden=true}catch(e){}
-  $('q-count').textContent=(isAsking()?'Question ':'Record ')+Q.round+' of '+Q.deck.length;
+  $('q-count').textContent=T(isAsking()?'q_of':'r_of',{i:Q.round,n:Q.deck.length});
   // a trivia question's heading is only its category; say so to the stylesheet
   $('q-ask').className='ask'+((isAsking()&&!isPicture())?' cat':'');
   $('q-ask').textContent=isPicture()&&!Q.revealed
@@ -5947,7 +5925,7 @@ function drawQuiz(){
     : isAsking()
     ? Q.current[0]
     : Q.revealed ? Q.current[0]+' — '+trackOf(Q.current)+', '+yearOf(Q.current)
-    : 'Who is this?';
+    : T('who_is_this');
   if(Q.revealed)$('q-curtain').textContent='';
   $('q-options').className='qgrid';
   $('q-options').innerHTML=Q.options.map((a,i)=>{
@@ -5966,7 +5944,7 @@ function drawQuiz(){
 function drawS10(){
   if(!Q.current)return;
   try{$('q-stage').classList.add('centred')}catch(e){}
-  $('q-count').textContent='Question '+Q.round+' of '+Q.deck.length;
+  $('q-count').textContent=T('q_of',{i:Q.round,n:Q.deck.length});
   $('q-ask').className='ask';
   $('q-ask').textContent=Q.current[1];
   // The rules used to sit here. A room that has played once knows them, and
@@ -6012,7 +5990,7 @@ function drawS10(){
     return '<span class="qsc'+cls+'">'
       +'<span class="av">'+backArt(p,'qav')+'</span>'+esc(shownName(p))
       +' <b>'+(p.score||0)+'</b>'
-      +(st==='in'&&pot?' <i class="pot">+'+pot+' at risk</i>':'')
+      +(st==='in'&&pot?' <i class="pot">'+esc(T('at_risk',{n:pot}))+'</i>':'')
       +(st==='out'?' \u2717':st==='banked'?' \u2713':'')+'</span>';
   }).join('');
   const nx=$('q-next');
@@ -6075,20 +6053,24 @@ function drawGo(){
     return '<div class="gorow'+(present?'':' away')+'">'
       +'<div class="av">'+backArt(p,'gav')+'</div>'
       +'<div class="who">'+esc(shownName(p))+'</div>'
-      +'<div class="st'+(present?' here':'')+'">'+(present?'HERE':'NOT HERE YET')+'</div>'
+      +'<div class="st'+(present?' here':'')+'">'+esc(T(present?'go_here':'go_notyet'))+'</div>'
       +'</div>';
-  }).join('')||'<p class="lobbyempty">Nobody has a chair yet.</p>';
+  }).join('')||'<p class="lobbyempty">'+esc(T('go_empty'))+'</p>';
   const g=$('go-sum');
-  if(g)g.innerHTML='<b>'+here+'</b> '+(here===1?'chair':'chairs')+' ready'
-    +(away?', <b>'+away+'</b> still missing':'')
-    +' · <b>'+(S.genre==='Any'?'all genres':(GENRE_LABEL[S.genre]||S.genre))+'</b>'
-    +' from <b>'+(S.era||'any year')+'</b>'
-    +' · <b>'+(S.len||'enough')+'</b> auditions'
-    +' · <b>'+S.teamSize+'</b> per team';
+  if(g){
+    const rnd=(!S.genre||S.genre==='Any'||S.genre==='Random');
+    const gen='<b>'+esc(rnd?T('genre_all'):T('genre_'+S.genre))+'</b>';
+    g.innerHTML=[
+      T(here===1?'go_chairs_one':'go_chairs',{n:'<b>'+here+'</b>'})
+        +(away?T('go_missing',{n:'<b>'+away+'</b>'}):''),
+      S.era?T('go_genre_year',{genre:gen,year:'<b>'+S.era+'</b>'})
+           :T('go_genre_anyyear',{genre:gen}),
+      T('go_auditions',{n:'<b>'+(S.len||esc(T('go_enough')))+'</b>'}),
+      T('go_team',{n:'<b>'+S.teamSize+'</b>'})
+    ].join(' \u00b7 ');
+  }
   const n=$('go-note');
-  if(n)n.textContent=away
-    ? 'You can start without them — the chairs nobody took are simply left out.'
-    : 'Everyone is in. The first record is waiting.';
+  if(n)n.textContent=T(away?'go_note_missing':'go_note_ready');
 }
 
 function drawLobbyQR(){drawQRInto('lobby-qr')}
@@ -6097,21 +6079,21 @@ function drawLobbyList(){
   const taken=S.players.filter(p=>!p.reserved||p.pid);
   const held=S.players.filter(p=>p.reserved&&!p.pid);
   let h='';
-  if(!taken.length)h+='<p class="lobbyempty">Nobody has sat down yet. Scan the code, or send '
-      +esc(joinLink())+' — the link already carries the room.</p>';
+  if(!taken.length)h+='<p class="lobbyempty">'
+      +esc(T('lobby_empty',{link:joinLink()}))+'</p>';
   else h+=taken.map(p=>
       '<div class="joinrow">'
       +'<div class="av">'+backArt(p,'lav')+'</div>'
       +'<div class="who">'+esc(shownName(p))+'</div>'
-      +'<div class="tag'+(p.pid?' live':'')+'">'+(p.pid?'PHONE':'THIS SCREEN')+'</div>'
+      +'<div class="tag'+(p.pid?' live':'')+'">'+esc(T(p.pid?'tag_phone':'tag_screen'))+'</div>'
       +'</div>').join('');
   if(held.length)
-    h+='<div class="heldhead">Holding a chair for</div>'
+    h+='<div class="heldhead">'+esc(T('held_head'))+'</div>'
       +held.map(p=>
         '<div class="joinrow waiting">'
         +'<div class="av">'+backArt(p,'lav')+'</div>'
         +'<div class="who">'+esc(shownName(p))+'</div>'
-        +'<button class="send" data-invite="'+S.players.indexOf(p)+'">COPY INVITE</button>'
+        +'<button class="send" data-invite="'+S.players.indexOf(p)+'">'+esc(T('copy_invite'))+'</button>'
         +'<button class="send drop" data-free="'+S.players.indexOf(p)+'">×</button>'
         +'</div>').join('');
   box.innerHTML=h;
@@ -6128,7 +6110,7 @@ function drawQRInto(id,base){
   base=base||'qrbox';
   const link=joinLink();
   const giveUp=()=>{box.className=base+' empty';
-    box.textContent=base==='rbqr'?'QR':'Open '+link+' on the phone.'};
+    box.textContent=base==='rbqr'?'QR':T('qr_fallback',{link:link})};
   if(typeof qrcode==='undefined'){
     giveUp();                                  // the link, in words, meanwhile
     qrReady().then(()=>drawQRInto(id,base)).catch(()=>{});
@@ -6241,37 +6223,37 @@ function drawRooms(){
   if(panel)panel.classList.toggle('quiet',!all.length);
   if(!all.length){
     box.innerHTML='<p class="pempty">'+(DIR.client
-      ? 'No public parties open right now. '
-        +'<button type="button" class="pstart" id="pub-start">Open one yourself</button>'
+      ? esc(T('pub_none'))
+        +'<button type="button" class="pstart" id="pub-start">'+esc(T('pub_none_btn'))+'</button>'
       : DIR.gaveUp
-      ? 'Could not reach the room list. Your own party will still work \u2014 '
-        +'<button type="button" class="pstart" id="pub-start">open one</button>'
-      : 'Looking for open parties\u2026')+'</p>';
+      ? esc(T('pub_fail'))
+        +'<button type="button" class="pstart" id="pub-start">'+esc(T('pub_fail_btn'))+'</button>'
+      : esc(T('pub_looking')))+'</p>';
     const st=$('pub-start');
     if(st)st.onclick=()=>{S.public=true;try{drawVis()}catch(e){}openModes('create')};
     return;
   }
   box.innerHTML=all.map(r=>{
     const full=r.p>=r.m, live=r.s==='live';
-    const name=esc(r.n||'Someone');
+    const name=esc(r.n||T('pub_someone'));
     return '<div class="prow">'
       +'<div class="pthumb">'+(GAMEICON[r.g]||GAMEICON.chair)+'</div>'
-      +'<div class="pn"><b>'+name+'\u2019s party</b>'
-      +'<span><i class="phost"></i>Host: '+name+' &middot; room '+esc(r.c)+'</span></div>'
-      +'<div class="pg">'+(GAMEICON[r.g]||'')+esc(GAMELABEL[r.g]||'A game')+'</div>'
+      +'<div class="pn"><b>'+T('pub_party',{name:name})+'</b>'
+      +'<span><i class="phost"></i>'+T('pub_host',{name:name,code:esc(r.c)})+'</span></div>'
+      +'<div class="pg">'+(GAMEICON[r.g]||'')+esc(GAMELABEL[r.g]||T('pub_game'))+'</div>'
       +'<div class="pg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">'
       +'<circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/>'
       +'<path d="M16 5.5a3 3 0 0 1 0 5.6"/><path d="M18 14.3c2 .7 3 2.3 3 4.7"/></svg>'
-      +r.p+'/'+r.m+' players</div>'
-      +'<span class="ptag '+(live?'live':'wait')+'">'+(live?'In progress':'Waiting')+'</span>'
+      +esc(T('pub_players',{p:r.p,m:r.m}))+'</div>'
+      +'<span class="ptag '+(live?'live':'wait')+'">'+esc(T(live?'pub_live':'pub_wait'))+'</span>'
       +'<button type="button" class="btn'+((full&&!live)?' ghost':'')+'" data-join="'+esc(r.c)+'">'
       +(live
         ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">'
           +'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/>'
-          +'<circle cx="12" cy="12" r="2.8"/></svg>Ask to join'
+          +'<circle cx="12" cy="12" r="2.8"/></svg>'+esc(T('pub_ask'))
         : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">'
           +'<path d="M14 4.5h4.2c1 0 1.8.8 1.8 1.8v11.4c0 1-.8 1.8-1.8 1.8H14"/>'
-          +'<path d="M10 8.2 13.8 12 10 15.8M13.4 12H3.6"/></svg>'+(full?'Full':'Join'))
+          +'<path d="M10 8.2 13.8 12 10 15.8M13.4 12H3.6"/></svg>'+esc(T(full?'pub_full':'pub_join')))
       +'</button></div>';
   }).join('');
 }
@@ -6282,8 +6264,10 @@ function announceArrival(names){
   const el=$('rb-flash');
   if(el){
     el.textContent=names.length===1
-      ? names[0]+' joined'
-      : names.slice(0,2).join(' and ')+(names.length>2?' and '+(names.length-2)+' more':'')+' joined';
+      ? T('arrived_one',{who:names[0]})
+      : names.length>2
+      ? T('arrived_more',{a:names[0],b:names[1],n:(names.length-2)})
+      : T('arrived_two',{a:names[0],b:names[1]});
     el.hidden=false;
     el.style.animation='none';void el.offsetWidth;el.style.animation='';
     clearTimeout(rbFlashTimer);
@@ -6333,7 +6317,7 @@ function drawRoomBar(){
   const lab=$('rb-joined').querySelector('.rblab');
   if(lab&&fresh.length){lab.classList.remove('bump');void lab.offsetWidth;lab.classList.add('bump')}
   $('rb-pending').innerHTML=waiting.length
-    ? '<span class="rblab wait">Waiting ('+waiting.length+')</span>'
+    ? '<span class="rblab wait">'+esc(T('rb_waiting',{n:waiting.length}))+'</span>'
       +waiting.map(p=>'<span class="rbchip waiting">'+esc(shownName(p))+'</span>').join('')
     : '';
 }
@@ -6611,25 +6595,28 @@ function ballotState(){
 function setupLine(){
   const g=GAMELABEL[S.game]||'The Chair';
   const bits=[g];
-  const lang=()=>S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English';
-  const topics=(n)=>S.cats&&S.cats.length?S.cats.map(catShown).join(', '):'All '+n+' topics';
+  // the counts are holes in a sentence, not words glued onto a number: the
+  // three languages do not put them in the same place
+  const topics=()=>{
+    if(S.cats&&S.cats.length)return S.cats.map(catShown).join(', ');
+    let n=6;try{n=ballot().length||6}catch(e){}
+    return T('setup_all_topics',{n:n});
+  };
   if(S.game==='s10'){
-    bits.push(lang());bits.push(topics('six'));bits.push((S.len||8)+' questions');
+    bits.push(T('in_lang'));bits.push(topics());bits.push(T('setup_questions',{n:(S.len||8)}));
   }else if(S.game==='tf'){
-    bits.push(lang());bits.push(topics('six'));bits.push((S.len||10)+' statements');
+    bits.push(T('in_lang'));bits.push(topics());bits.push(T('setup_statements',{n:(S.len||10)}));
   }else if(S.game==='picture'){
-    bits.push(lang());bits.push(topics('four'));bits.push((S.len||10)+' pictures');
+    bits.push(T('in_lang'));bits.push(topics());bits.push(T('setup_pictures',{n:(S.len||10)}));
   }else if(S.game==='trivia'){
-    bits.push(S.lang==='fi'?'suomeksi':S.lang==='sv'?'p\u00e5 svenska':'in English');
-    bits.push(S.cats&&S.cats.length?S.cats.map(catShown).join(', '):'All six topics');
-    bits.push((S.len||10)+' questions');
+    bits.push(T('in_lang'));bits.push(topics());bits.push(T('setup_questions',{n:(S.len||10)}));
   }else{
-    bits.push(S.era?S.era+'s onward':'Any year');
-    bits.push(S.genre&&S.genre!=='Random'?S.genre:'Any genre');
-    bits.push(S.len?S.len+(S.game==='artist'?' records':' auditions'):'Until the teams fill');
-    if(S.game==='chair')bits.push(S.teamSize+' per team');
+    bits.push(S.era?T('setup_era',{y:S.era}):T('any_year'));
+    bits.push(S.genre&&S.genre!=='Random'?T('genre_'+S.genre):T('any_genre'));
+    bits.push(S.len?T(S.game==='artist'?'setup_records':'setup_auditions',{n:S.len}):T('until_full'));
+    if(S.game==='chair')bits.push(T('per_team',{n:S.teamSize}));
   }
-  bits.push(S.remote?'Everyone on their own screen':'All in one room');
+  bits.push(T(S.remote?'all_own_screen':'all_one_room'));
   return bits.join(' \u00b7 ');
 }
 function s10State(phase){
@@ -6716,8 +6703,7 @@ function roomClosed(){
   ['pad-sign','pad-skip','pad-hold','pad-blocks','pad-team','pad-teamhead']
     .forEach(id=>{const e=$(id);if(e)e.hidden=true});
   try{$('pad-round').textContent=T('room',{code:PARTY.code})}catch(e){}
-  try{$('pad-state').textContent='The host has closed the room. The party is over \u2014 '
-    +'or they are opening a new one, in which case you will need the new code.';
+  try{$('pad-state').textContent=T('room_closed_long');
     $('pad-state').className='mystate'}catch(e){}
   try{$('pad-leave').textContent=T('back_start')}catch(e){}
 }
@@ -6731,14 +6717,14 @@ function chairJoin(){
   const code=($('join-code').value||'').toUpperCase().replace(/[^A-Z]/g,'').slice(0,CODE_LEN);
   const name=cleanName($('join-name').value);
   // older rooms were four letters; a room is found by whatever it calls itself
-  if(code.length<4){joinStatus('The code is six letters.','bad');return}
-  if(PARTY.client&&!name){joinStatus('Type your name first.','bad');return}
+  if(code.length<4){joinStatus(T('code_six'),'bad');return}
+  if(PARTY.client&&!name){joinStatus(T('name_first'),'bad');return}
   PARTY.role='chair';PARTY.code=code;PARTY.pid=myPid();PARTY.seq=Date.now();
   // the button is not disabled yet: the library may still be arriving, and a
   // dead button during that second reads as a broken page
-  if(PARTY.dialing){joinStatus('Getting ready\u2026','');return}
+  if(PARTY.dialing){joinStatus(T('getting_ready'),'');return}
   PARTY.dialing=true;
-  if(!haveMqtt())joinStatus('Getting ready\u2026','');
+  if(!haveMqtt())joinStatus(T('getting_ready'),'');
   partyConnect(c=>{
     PARTY.dialing=false;
     $('join-go').disabled=false;
@@ -6764,7 +6750,7 @@ function chairJoin(){
         drawJoinChips(m);                        // a chair may be waiting under a name
         if(!cleanName($('join-name').value)){    // nobody has said who this is yet
           $('chair-join').hidden=false;$('chair-pad').hidden=true;
-          joinStatus('Room '+PARTY.code+' found \u2014 tell them who you are.','good');
+          joinStatus(T('room_found',{code:PARTY.code}),'good');
           return;
         }
       }
@@ -6778,7 +6764,7 @@ function chairJoin(){
       const n=cleanName($('join-name').value);
       if(!mySeat()&&n)sendJoin(n,PARTY.claim)
     },2500);
-    joinStatus('Connected — looking for room '+code,'good');
+    joinStatus(T('room_looking',{code:code}),'good');
   },msg=>{$('join-go').disabled=false;joinStatus(msg,'bad')},joinStatus);
 }
 function sendJoin(name,claim){
@@ -6900,9 +6886,10 @@ function drawPadScreen(st){
     // equaliser and keeps the curtain until the host reveals
     box.hidden=false;
     box.innerHTML='<div class="eq on">'+'<i></i>'.repeat(10)+'</div>'
-      +(hide?'<div class="padcurtain">Curtain closed</div>':'')
+      +(hide?'<div class="padcurtain">'+esc(T('curtain_closed'))+'</div>':'')
       +'<button class="soundbtn" id="pad-sound">'
-      +(padSound?'\ud83d\udd0a SOUND ON':'\ud83d\udd07 MUTED \u2014 TAP FOR SOUND')+'</button>';
+      +(padSound?'\ud83d\udd0a '+esc(T('sound_on'))
+                :'\ud83d\udd07 '+esc(T('sound_muted')))+'</button>';
     recPlay(prev,!padSound);
     return;
   }
@@ -6913,9 +6900,10 @@ function drawPadScreen(st){
     +'?autoplay=1&mute='+(padSound?'0':'1')+'&rel=0&playsinline=1&controls=1" title="The record"'
     +' allow="autoplay; encrypted-media; fullscreen"'
     +' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
-    +(hide?'<div class="padcurtain">Curtain closed</div>':'')
+    +(hide?'<div class="padcurtain">'+esc(T('curtain_closed'))+'</div>':'')
     +'<button class="soundbtn" id="pad-sound">'
-    +(padSound?'\ud83d\udd0a SOUND ON':'\ud83d\udd07 MUTED \u2014 TAP FOR SOUND')+'</button>';
+    +(padSound?'\ud83d\udd0a '+esc(T('sound_on'))
+              :'\ud83d\udd07 '+esc(T('sound_muted')))+'</button>';
 }
 /* one tap decides it for the rest of the night */
 document.addEventListener('click',e=>{
@@ -6928,8 +6916,7 @@ document.addEventListener('click',e=>{
 function drawFinalRoom(){
   const el=$('final-room');if(!el)return;
   el.textContent=(PARTY.role==='host'&&PARTY.code)
-    ? 'Room '+PARTY.code+' stays open. Nobody has to be invited again \u2014 keep your phones, '
-      +'pick another game and everyone is already in it.'
+    ? T('final_room_open',{code:PARTY.code})
     : '';
 }
 function finalBoard(st,me){
@@ -7075,7 +7062,7 @@ function padNextCount(st){
   let left=+st.nextIn||0;
   const draw=()=>{
     el.hidden=!(left>0);
-    if(left>0)el.textContent='Next question in '+left;
+    if(left>0)el.textContent=T('next_in',{n:left});
   };
   draw();
   if(left>0)padCount=setInterval(()=>{
@@ -7115,7 +7102,7 @@ function drawPadQuiz(st,me){
     :st.revealed&&st.act?T(got?'right_was':'it_was',{a:st.act.name})
     :said?T('locked')
     :st.ask?st.ask
-    :'Who is this?';
+    :T('who_is_this');
   // green when you had it, red when you did not: readable at arm's length
   stEl.classList.toggle('good',!!got);
   stEl.classList.toggle('bad',!!(st.revealed&&!got&&mine>=0));
@@ -7207,7 +7194,12 @@ function uiOwn(id){UIOWNED[id]=1}
  'nophone-sub','knockbar-t','broke-what','jo-link','jo-code','rb-code','lobby-code',
  'turnline','gosum','round-tag','round-tag-m','s10-rules','q-options','q-scores',
  'lobby-list','go-list','players','knocks','pub-list','pub-sub','join-chips',
- 'pad-quiz','pad-seats','pad-setup','pad-next','pad-warn','friends-list','me-name'
+ 'pad-quiz','pad-seats','pad-setup','pad-next','pad-warn','friends-list','me-name',
+ // written by the code as well, now that they speak the room's language
+ 'length-label','drop','next','count-cap','vidlabel','vw-idle','pv-head',
+ 'pad-teamhead','pad-sign','pad-skip','pad-hold','pad-wait','modes-eyebrow',
+ 'create-room','rb-vis','go-sum','go-note','rb-pending','rb-flash',
+ 'ythint','chairs-grid','vw-screen'
 ].forEach(uiOwn);
 function uiOwned(el){
   for(let e=el;e&&e.nodeType===1;e=e.parentElement)if(e.id&&UIOWNED[e.id])return true;
@@ -7250,12 +7242,13 @@ function dressUI(){
     });
   }catch(e){}
   try{dressButtons()}catch(e){}
+  try{dressOwned()}catch(e){}
 }
 /* ---- the words, in the language the questions are in -----------------
    English is the source and the fallback: a key with no translation simply
    reads in English rather than disappearing. Holes are named, because the
    order of the pieces is not the same in the three languages. */
-const WORDS={
+var WORDS={
  fi:{
   need_players:'TARVITSEE {n} PELAAJAA', need_players_why:'Tämä peli tarvitsee vähintään {n} pelaajaa — kutsu lisää väkeä ensin.', whose_turn:'{who} on vuorossa', reveal:'Paljasta', next_q:'Seuraava kysymys', next_r:'Seuraava levy',
   see_winner:'Katso voittaja', see_standings:'Katso tilanne',
@@ -7298,7 +7291,256 @@ const WORDS={
   meta_near:'lähin voittaa',
   finger_pick:'Valitse joku', finger_said:'Valintasi on tehty — odotetaan muita…', finger_done:'Näin huone äänesti',
   meta_finger:'osoita sormella',
-  meta_tf:'totta vai tarua', meta_s10:'kuinka pitkälle uskallat'
+  meta_tf:'totta vai tarua', meta_s10:'kuinka pitkälle uskallat',
+  /* ---- the lobby, the menus and everything the code writes ---- */
+  blurb_chair:'Avaa huone, jaa koodi porukalle, ja jokainen ottaa tuolin omasta puhelimestaan.',
+  blurb_artist:'Avaa huone ja jaa koodi porukalle. Joka puhelimeen tulee neljä nimeä, kerran levyä kohti.',
+  blurb_trivia:'Avaa huone ja jaa koodi porukalle. Joka puhelimeen tulee neljä vastausta, kysymys kysymyksen jälkeen.',
+  blurb_picture:'Avaa huone ja jaa koodi porukalle. Kuva tulee tähän ruutuun, neljä vastausta joka puhelimeen.',
+  blurb_tf:'Avaa huone ja jaa koodi porukalle. Yksi väite kerrallaan, ja joka puhelin sanoo totta vai tarua.',
+  blurb_finger:'Avaa huone ja jaa koodi porukalle. Kysymys huoneessa olijoista, ja joka puhelin osoittaa jotakuta.',
+  blurb_near:'Avaa huone ja jaa koodi porukalle. Vastaus on luku eikä kukaan saa vaihtoehtoja — jokainen näppäilee arvauksen.',
+  blurb_s10:'Avaa huone ja jaa koodi porukalle. Joka puhelimeen kymmenen vaihtoehtoa, ja vain osa niistä on totta.',
+  solo_chair:'Yksi ruutu, yksi valmentaja ja kasa levyjä. Ei huonetta, ei ketään odotettavaa.',
+  solo_artist:'Neljä nimeä tässä ruudussa, levy levyn jälkeen, pisteet kertyvät matkan varrella.',
+  solo_trivia:'Satakaksikymmentä kysymystä kuudesta aiheesta. Pelaa niin monta kuin haluat.',
+  solo_picture:'Kaupunkeja, maamerkkejä, maalauksia ja välillä eläin. Nimeä se mitä katsot.',
+  solo_tf:'Väitteitä, puolet niistä totta. Kerro kumpi on kumpi ja pidä putkesi elossa.',
+  solo_finger:'Kysymys huoneesta, ja huone on vastaus. Pisteet saat olemalla samaa mieltä muiden kanssa.',
+  solo_near:'Vastaus on luku. Ei vaihtoehtoja, ei neljäsosan mahdollisuutta — näppäile arvaus, ja lähin voittaa.',
+  solo_s10:'Kymmenen vaihtoehtoa, osa totta. Ota yksi, ota toinen, ja lopeta ennen kuin menee väärin.',
+  pub_sub:'Bileet joihin kuka tahansa voi liittyä juuri nyt. Omasi näkyy täällä heti kun asetat huoneen julkiseksi — muuten sisään pääsee vain koodilla.',
+  pub_looking:'Etsitään avoimia bileitä…',
+  pub_none:'Juuri nyt ei ole avoimia bileitä. ',
+  pub_none_btn:'Avaa omat',
+  pub_fail:'Huonelistaan ei saatu yhteyttä. Omat bileesi toimivat silti — ',
+  pub_fail_btn:'avaa omat',
+  pub_party:'{name}n bileet',
+  pub_host:'Isäntä: {name} · huone {code}',
+  pub_players:'{p}/{m} pelaajaa',
+  pub_game:'Peli',
+  pub_someone:'Joku',
+  pub_live:'Käynnissä',
+  pub_wait:'Odottaa',
+  pub_ask:'Pyydä mukaan',
+  pub_full:'Täynnä',
+  pub_join:'Liity',
+  in_lang:'suomeksi',
+  setup_all_topics:'Kaikki {n} aihetta',
+  setup_questions:'{n} kysymystä',
+  setup_statements:'{n} väitettä',
+  setup_pictures:'{n} kuvaa',
+  setup_records:'{n} levyä',
+  setup_auditions:'{n} koelaulua',
+  setup_era:'{y}-luvulta eteenpäin',
+  any_year:'Mikä tahansa vuosi',
+  any_genre:'Mikä tahansa tyylilaji',
+  until_full:'Kunnes joukkueet täyttyvät',
+  per_team:'{n} joukkueessa',
+  all_own_screen:'Jokainen omalla ruudullaan',
+  all_one_room:'Kaikki samassa huoneessa',
+  genre_Rock:'Rock ja metalli',
+  genre_Pop:'Pop',
+  genre_Dance:'Tanssi ja elektroninen',
+  genre_Soul:'Soul, R&B ja hiphop',
+  genre_Roots:'Country ja latino',
+  genre_Any:'Mikä tahansa tyylilaji',
+  genre_Random:'Arvotaan alussa',
+  genre_all:'kaikki tyylilajit',
+  vis_private:'Sisään pääsee vain koodilla tai QR-koodilla.',
+  vis_public:'Näkyy tällä sivulla kaikille, ja kuka tahansa voi liittyä — ihan kuka tahansa.',
+  vis_shut:'Tämä kysyy huoneelta huoneesta, joten sitä pelataan tuttujen kanssa. Sitä ei voi tehdä julkiseksi.',
+  rules_sub_pic:'Isännän kanssa ei tarvitse olla samaa mieltä. Sopikaa montako kuvaa ja missä kukin istuu.',
+  rules_sub_quiz:'Isännän kanssa ei tarvitse olla samaa mieltä. Valitkaa aiheet jotka haluatte ja kuinka pitkä ilta on.',
+  rules_sub_rec:'Isännän kanssa ei tarvitse olla samaa mieltä. Riidelkää vuosista, sopikaa tyylilajista, ja sitten menoksi.',
+  rules_note_pic:'Kaupunkeja, maamerkkejä, maalauksia ja luontoa sekaisin. Kaikki vastaavat, ja sitten vastaus tulee näkyviin.',
+  rules_note_quiz:'Kuusi aihetta sekaisin. Kaikki vastaavat, ja sitten vastaus tulee näkyviin.',
+  rules_note_rec:'Levy soi verhon takana. Kaikki vastaavat, ja sitten verho nousee.',
+  rules_note_chair:'Ei kelloa. Video pyörii kunnes joku kääntyy tai kaikki ohittavat.',
+  cats_label:'Aiheet',
+  cats_label_pic:'Kuva-aiheet',
+  lang_label:'Kysymysten kieli',
+  len_pictures:'Montako kuvaa tänään',
+  len_questions:'Montako kysymystä tänään',
+  len_statements:'Montako väitettä tänään',
+  len_records:'Montako levyä tänään',
+  len_auditions:'Montako koelaulua tänään',
+  cats_every:'Kaikki',
+  cats_some:'{n}/{of} aihetta',
+  cats_all:'Kaikki {n} aihetta',
+  cats_voted_1:'{n} äänesti puhelimellaan',
+  cats_voted_n:'{n} äänesti puhelimellaan',
+  where_away:'Joka puhelin saa levyn myös, omalla äänellään. Käyttäkää kuulokkeita, tai huone kaikuu.',
+  where_here:'Puhelimet ovat vain nappeja. Levy soi täällä, sillä yhdellä ruudulla jonka kaikki näkevät.',
+  pool_empty:'Kukaan ei aloittanut siitä nurkasta — kokeile toista vuotta tai toista tyylilajia.',
+  pool_rnd_both:'Aikakausi ja tyylilaji arvotaan kun aloitatte. {s} paikkaa, {a} koelaulua.',
+  pool_rnd_era:'Aikakausi arvotaan kun aloitatte. {s} paikkaa, {a} koelaulua.',
+  pool_rnd_genre:'Tyylilaji arvotaan kun aloitatte. {s} paikkaa, {a} koelaulua.',
+  pool_until:'Jatkuu kunnes joukkueet ovat täynnä — enintään {a} koelaulua {s} paikkaan.',
+  pool_until_thin:' Pakka on liian pieni, joten jotkut joukkueet jäävät vajaiksi.',
+  pool_thin:'{a} koelaulua {s} paikkaan — useimmat joukkueet jäävät vajaiksi. Ei se mitään: pisteet tulevat niistä jotka otit.',
+  pool_ok:'{s} paikkaa · {a} koelaulua · {n} esittäjää pakassa.',
+  nophone_many:'{n} tämän ruudun ääressä · {who}',
+  nophone_one:'{who} pelaa tältä ruudulta',
+  nophone_none:'Lisää ne joiden puhelin on tyhjä — vastaat heidän puolestaan täältä',
+  av_none:'ei kuvaa',
+  coach_you:'Sinä — valmentaja 1',
+  coach_n:'Valmentaja {n}',
+  aria_face_change:'Vaihda valmentajan {n} kuva',
+  aria_face_photo:'Käytä valokuvaa valmentajalle {n}',
+  aria_coach_remove:'Poista valmentaja',
+  photo_back:'Napauta kuvaa niin palaat piirroksiin',
+  photo_use:'Käytä valokuvaa tässä tuolissa',
+  photo_bad:'Tuo kuva ei auennut. Kokeile toista.',
+  start_hint_blank:'Jätä nimi tyhjäksi niin se tuoli pelaa nimellä valmentaja {n}.',
+  banks_retry:'Kysymykset eivät latautuneet — napauta ja yritä uudelleen',
+  banks_loading:'Ladataan kysymyksiä…',
+  friends_none:'Tallenna ne joiden kanssa pelaat. Tuoli odottaa heitä, ja he liittyvät napauttamalla omaa nimeään.',
+  friends_invited:'{n} kutsuttu — tuolit pidetään heille varattuina kunnes he liittyvät.',
+  friends_tap:'Napauta nimeä niin kutsut hänet tänään.',
+  aria_forget:'Unohda {name}',
+  go_empty:'Kenelläkään ei ole vielä tuolia.',
+  go_here:'PAIKALLA',
+  go_notyet:'EI VIELÄ PAIKALLA',
+  go_chairs_one:'{n} tuoli valmiina',
+  go_chairs:'{n} tuolia valmiina',
+  go_missing:', {n} vielä puuttuu',
+  go_genre_year:'{genre} vuodesta {year}',
+  go_genre_anyyear:'{genre} miltä tahansa vuodelta',
+  go_auditions:'{n} koelaulua',
+  go_enough:'riittävästi',
+  go_team:'{n} joukkueessa',
+  go_note_missing:'Voitte aloittaa ilman heitä — tuolit joita kukaan ei ottanut jäävät vain pois.',
+  go_note_ready:'Kaikki ovat mukana. Ensimmäinen levy odottaa.',
+  lobby_empty:'Kukaan ei ole vielä istunut. Skannatkaa koodi, tai lähetä {link} — linkissä on huone jo mukana.',
+  tag_phone:'PUHELIN',
+  tag_screen:'TÄMÄ RUUTU',
+  held_head:'Tuoli odottaa',
+  copy_invite:'KOPIOI KUTSU',
+  rb_waiting:'Odottaa ({n})',
+  arrived_one:'{who} liittyi',
+  arrived_two:'{a} ja {b} liittyivät',
+  arrived_more:'{a}, {b} ja {n} muuta liittyivät',
+  lobby_sub:'Pidä tämä ruutu televisiossa. Muut avaavat saman sivun puhelimellaan, painavat {what} ja näppäilevät sen. Tuoli ilmestyy tähän kun he saapuvat.',
+  join_with_code:'Liity koodilla',
+  opening:'Avataan huonetta…',
+  opening_room:'Avataan huonetta {code}…',
+  room_open_wait:'Huone on auki — odotetaan puhelimia',
+  still_loading_q:'Kysymykset latautuvat vielä — hetki vain.',
+  still_loading_p:'Kysymykset latautuvat vielä — hetki vain.',
+  lobby_nobody:'Kukaan ei ole vielä ottanut tuolia — skannatkaa koodi, tai palaa taaksepäin ja näppäile nimi.',
+  banks_bad:'Kysymykset eivät latautuneet. Tarkista yhteys ja yritä uudelleen.',
+  link_copied:'Linkki kopioitu',
+  invite_copied:'Kutsu {who}lle kopioitu',
+  code_six:'Koodi on kuusi kirjainta.',
+  name_first:'Näppäile ensin nimesi.',
+  getting_ready:'Valmistellaan…',
+  room_found:'Huone {code} löytyi — kerro kuka olet.',
+  room_looking:'Yhteys saatu — etsitään huonetta {code}',
+  photo_shrink:'Pienennetään kuvaa…',
+  photo_on_chair:'Kuvasi on tuolissasi.',
+  start_here:'Aloita tällä ruudulla',
+  play_alone:'Pelaa yksin',
+  qr_fallback:'Avaa {link} puhelimella.',
+  pad_waiting:'Odotetaan lavaa',
+  pad_notstarted:'Isäntä ei ole vielä aloittanut.',
+  my_team:'Joukkueesi',
+  my_team_m:'Joukkueesi · {n} milj.',
+  who_is_this:'Kuka tämä on?',
+  curtain_closed:'Verho kiinni',
+  pv_head:'Mitkä aiheet haluatte?',
+  bank_plain:'Pankita',
+  hold_not_yet:'Maltahan — ei vielä',
+  hold_not_yet_caps:'MALTAHAN — EI VIELÄ',
+  sign_them:'OTA HEIDÄT',
+  skip_caps:'OHITA',
+  skipped_caps:'OHITETTU',
+  sign_got:'SAIT HEIDÄT',
+  sign_blocked:'ESTETTY',
+  sign_full:'JOUKKUE TÄYNNÄ',
+  block_who:'ESTÄ {who}',
+  block_spent:'ESTO KÄYTETTY',
+  team_open:'vapaa',
+  your_guess:'Arvauksesi',
+  pad_asked_wait:'Huonetta pyydettiin odottamaan',
+  room_closed_long:'Isäntä sulki huoneen. Bileet ovat ohi — tai hän avaa uuden, ja silloin tarvitset uuden koodin.',
+  chair_round:'Koelaulu {i}/{n}',
+  chair_blocked:'Estetty tällä kierroksella. Kädet pois.',
+  chair_team_full:'Joukkueesi on täynnä. Olet ulkona kilpailusta.',
+  chair_skipped:'Ohitit tämän.',
+  chair_listen:'Kuuntele. Ensimmäisenä kääntyvä tuoli saa heidät.',
+  chair_signed:'Otit {who} — {m} milj. levyä.',
+  chair_went:'{who} — {m} milj. levyä.',
+  chair_next_in:'   Seuraava {n} s…',
+  chair_season_over:'Kausi on siinä. Katso isoa ruutua.',
+  chair_waiting_next:'Odotetaan seuraavaa koelaulua…',
+  stage_sign:'LAVA',
+  round_audition:'Koelaulu',
+  round_of:'/{n}',
+  meta_blind:'sokkokuuntelu',
+  turn_tap:'Napauta omaa tuoliasi kun levy soi.',
+  turn_wait_start:'Kukaan ei voi kääntyä ennen kuin levy alkaa.',
+  turn_first:'Ensimmäisenä kääntyvä tuoli saa heidät — tai ohita.',
+  turn_all_skipped:'Kaikki ohittivat.',
+  turn_nobody:'Kukaan ei kääntynyt. He kävelevät pois.',
+  turn_too_late:'Myöhäistä. Tuolit ovat lukossa.',
+  turn_already:'{who} ehti ensin.',
+  turn_full:'{who}n joukkue on täynnä.',
+  turn_blocked:'{who} on estetty tällä kierroksella.',
+  drop_start:'Aloita koelaulu',
+  next_audition:'Seuraava koelaulu',
+  next_audition_in:'Seuraava koelaulu {n} s',
+  crown:'Kruunaa valmentaja',
+  clock_ready:'valmis',
+  clock_seconds:'sekuntia',
+  clock_left:'sekuntia aikaa kääntyä',
+  clock_playing:'soi',
+  clock_locked:'tuolit lukossa',
+  vid_ok:'Tarkistettu — oikea video',
+  vid_bad:'Merkitty vääräksi — korjaa kirjastossa',
+  vid_ask:'Onko tämä oikea video?',
+  clock_on_hold:'tauolla',
+  sound_on:'ÄÄNI PÄÄLLÄ',
+  sound_muted:'MYKISTETTY — NAPAUTA ÄÄNET PÄÄLLE',
+  player_n:'Pelaaja {n}',
+  rb_vis_title:'Julkiset huoneet näkyvät etusivulla',
+  seat_got:'SAI HEIDÄT',
+  seat_first:'ENSIN',
+  blocked_by:'ESTÄJÄ {who}',
+  block_spent_low:'esto käytetty',
+  aria_block:'Estä {who}',
+  watch_video:'Katso video',
+  vid_paste_hint:'Valinnainen: liitä linkki niin video pyörii koelaulun aikana.',
+  vid_flagged:'Merkitsit tämän videon vääräksi, joten se pysyy pois lavalta. Liitä parempi linkki tilalle.',
+  vid_saved:'Video tallennettu tälle esittäjälle — se lähtee kun koelaulu alkaa.',
+  at_risk:'+{n} vaarassa',
+  final_coach:'Voittajavalmentaja',
+  final_eye:'Tarkin silmä',
+  final_nose:'Paras valheenhaistaja',
+  final_wits:'Nopein äly',
+  final_ear:'Tarkin korva',
+  champ_tie:'Tasapeli',
+  join_and:'ja',
+  final_tied:'{who} päätyivät kaikki {n} pisteeseen',
+  final_out_of:'{n} pistettä mahdollisista {m}',
+  final_points:'{n} pistettä',
+  final_played:'{n} {what} pelattu.',
+  word_picture:'kuva',
+  word_pictures:'kuvaa',
+  word_statement:'väite',
+  word_statements:'väitettä',
+  word_question:'kysymys',
+  word_questions:'kysymystä',
+  word_record:'levy',
+  word_records:'levyä',
+  pts:'p',
+  meta_over:'peli päättyi',
+  final_room_open:'Huone {code} pysyy auki. Ketään ei tarvitse kutsua uudelleen — pitäkää puhelimet, valitkaa toinen peli ja kaikki ovat jo mukana.',
+  night_head:'Tänä iltana · {n} peliä',
+  ver_mismatch:'Tässä puhelimessa on vanhempi versio kuin isolla ruudulla ({a} vs {b}). Lataa sivu uudelleen niin näet kuvat.',
+  friends_invited_1:'{n} kutsuttu — tuoli pidetään hänelle varattuna kunnes hän liittyy.',
+  vid_link_ok:'Tallennettu — se pyörii koelaulun aikana, ja muistetaan seuraavaa kertaa varten.',
+  vid_link_bad:'Tämä ei vielä näytä YouTube-linkiltä.'
  },
  sv:{
   need_players:'BEHÖVER {n} SPELARE', need_players_why:'Det här spelet behöver minst {n} spelare — bjud in fler först.', whose_turn:'{who} har tur', reveal:'Avslöja', next_q:'Nästa fråga', next_r:'Nästa skiva',
@@ -7342,10 +7584,259 @@ const WORDS={
   meta_near:'närmast vinner',
   finger_pick:'Välj någon', finger_said:'Ditt val är gjort — väntar på de andra…', finger_done:'Så röstade rummet',
   meta_finger:'peka finger',
-  meta_tf:'sant eller falskt', meta_s10:'hur långt vågar du'
+  meta_tf:'sant eller falskt', meta_s10:'hur långt vågar du',
+  /* ---- the lobby, the menus and everything the code writes ---- */
+  blurb_chair:'Öppna ett rum, skicka runt koden, och var och en tar en stol från sin egen mobil.',
+  blurb_artist:'Öppna ett rum och skicka runt koden. Fyra namn landar i varje mobil, en gång per skiva.',
+  blurb_trivia:'Öppna ett rum och skicka runt koden. Fyra svar landar i varje mobil, fråga efter fråga.',
+  blurb_picture:'Öppna ett rum och skicka runt koden. En bild kommer upp här, fyra svar i varje mobil.',
+  blurb_tf:'Öppna ett rum och skicka runt koden. Ett påstående i taget, och varje mobil säger sant eller falskt.',
+  blurb_finger:'Öppna ett rum och skicka runt koden. En fråga om dem som är i rummet, och varje mobil pekar på någon.',
+  blurb_near:'Öppna ett rum och skicka runt koden. Svaret är ett tal och ingen får alternativ — alla skriver en gissning.',
+  blurb_s10:'Öppna ett rum och skicka runt koden. Tio alternativ i varje mobil, och bara några av dem är sanna.',
+  solo_chair:'En skärm, en coach och en hög skivor. Inget rum, ingen att vänta på.',
+  solo_artist:'Fyra namn på den här skärmen, skiva efter skiva, poäng medan du spelar.',
+  solo_trivia:'Hundratjugo frågor ur sex ämnen. Spela så många du vill.',
+  solo_picture:'Städer, landmärken, målningar och ett och annat djur. Namnge det du ser.',
+  solo_tf:'Påståenden, hälften av dem sanna. Säg vilket som är vad och håll din svit vid liv.',
+  solo_finger:'En fråga om rummet, och rummet är svaret. Du får poäng genom att hålla med alla andra.',
+  solo_near:'Svaret är ett tal. Inga alternativ, ingen chans på en fjärdedel — skriv en gissning, och närmast tar hem det.',
+  solo_s10:'Tio alternativ, några sanna. Ta ett, ta ett till, och sluta innan det blir fel.',
+  pub_sub:'Fester vem som helst kan gå med i, just nu. Din syns här så fort du gör rummet offentligt — annars kommer man in bara med koden.',
+  pub_looking:'Letar efter öppna fester…',
+  pub_none:'Inga öppna fester just nu. ',
+  pub_none_btn:'Öppna egna',
+  pub_fail:'Rumslistan gick inte att nå. Din egen fest fungerar ändå — ',
+  pub_fail_btn:'öppna egna',
+  pub_party:'{name}s fest',
+  pub_host:'Värd: {name} · rum {code}',
+  pub_players:'{p}/{m} spelare',
+  pub_game:'Ett spel',
+  pub_someone:'Någon',
+  pub_live:'Pågår',
+  pub_wait:'Väntar',
+  pub_ask:'Be om att få vara med',
+  pub_full:'Fullt',
+  pub_join:'Gå med',
+  in_lang:'på svenska',
+  setup_all_topics:'Alla {n} ämnen',
+  setup_questions:'{n} frågor',
+  setup_statements:'{n} påståenden',
+  setup_pictures:'{n} bilder',
+  setup_records:'{n} skivor',
+  setup_auditions:'{n} provsjungningar',
+  setup_era:'från {y}-talet',
+  any_year:'Vilket år som helst',
+  any_genre:'Vilken genre som helst',
+  until_full:'Tills lagen är fulla',
+  per_team:'{n} per lag',
+  all_own_screen:'Var och en på sin egen skärm',
+  all_one_room:'Alla i samma rum',
+  genre_Rock:'Rock och metal',
+  genre_Pop:'Pop',
+  genre_Dance:'Dans och elektroniskt',
+  genre_Soul:'Soul, R&B och hiphop',
+  genre_Roots:'Country och latin',
+  genre_Any:'Vilken genre som helst',
+  genre_Random:'Slumpas vid start',
+  genre_all:'alla genrer',
+  vis_private:'Bara den som har koden eller QR-koden kommer in.',
+  vis_public:'Listas på den här sidan så att vem som helst kan gå med — och det betyder vem som helst.',
+  vis_shut:'Det här spelet frågar rummet om rummet, så det spelas med folk du känner. Det går inte att göra offentligt.',
+  rules_sub_pic:'Ingen behöver hålla med värden. Kom överens om hur många bilder och var alla sitter.',
+  rules_sub_quiz:'Ingen behöver hålla med värden. Välj de ämnen ni vill ha och hur länge kvällen håller på.',
+  rules_sub_rec:'Ingen behöver hålla med värden. Bråka om åren, kom överens om en genre, och kör.',
+  rules_note_pic:'Städer, landmärken, målningar och natur, blandat. Alla svarar, och sedan kommer svaret upp.',
+  rules_note_quiz:'Sex ämnen, blandat. Alla svarar, och sedan kommer svaret upp.',
+  rules_note_rec:'Skivan spelas bakom ridån. Alla svarar, och sedan går den upp.',
+  rules_note_chair:'Ingen klocka. Videon rullar tills någon vänder sig eller alla hoppar över.',
+  cats_label:'Ämnen',
+  cats_label_pic:'Bildämnen',
+  lang_label:'Frågornas språk',
+  len_pictures:'Hur många bilder i kväll',
+  len_questions:'Hur många frågor i kväll',
+  len_statements:'Hur många påståenden i kväll',
+  len_records:'Hur många skivor i kväll',
+  len_auditions:'Hur många provsjungningar i kväll',
+  cats_every:'Allt',
+  cats_some:'{n} av {of} ämnen',
+  cats_all:'Alla {n} ämnen',
+  cats_voted_1:'{n} har röstat från sin telefon',
+  cats_voted_n:'{n} har röstat från sina telefoner',
+  where_away:'Varje mobil får skivan också, med eget ljud. Använd hörlurar, annars ekar rummet.',
+  where_here:'Mobilerna är bara knappar. Skivan spelas här, på den enda skärmen alla ser.',
+  pool_empty:'Ingen startade i det hörnet — prova ett annat år eller en annan genre.',
+  pool_rnd_both:'Era och genre slumpas när ni börjar. {s} platser, {a} provsjungningar.',
+  pool_rnd_era:'Eran slumpas när ni börjar. {s} platser, {a} provsjungningar.',
+  pool_rnd_genre:'Genren slumpas när ni börjar. {s} platser, {a} provsjungningar.',
+  pool_until:'Fortsätter tills alla lag är fulla — upp till {a} provsjungningar för {s} platser.',
+  pool_until_thin:' Högen är för liten, så några lag blir inte fulla.',
+  pool_thin:'{a} provsjungningar för {s} platser — de flesta lag blir inte fulla. Det går bra: du får poäng för dem du tog.',
+  pool_ok:'{s} platser · {a} provsjungningar · {n} artister i högen.',
+  nophone_many:'{n} vid den här skärmen · {who}',
+  nophone_one:'{who} spelar från den här skärmen',
+  nophone_none:'Lägg till den vars mobil är slut — du svarar för dem härifrån',
+  av_none:'ingen',
+  coach_you:'Du — coach 1',
+  coach_n:'Coach nr {n}',
+  aria_face_change:'Byt bild för coach {n}',
+  aria_face_photo:'Använd ett foto för coach {n}',
+  aria_coach_remove:'Ta bort coach',
+  photo_back:'Tryck på bilden för att gå tillbaka till teckningarna',
+  photo_use:'Använd ett foto på den här stolen',
+  photo_bad:'Den bilden gick inte att öppna. Prova en annan.',
+  start_hint_blank:'Lämna ett namn tomt så spelar den stolen som coach {n}.',
+  banks_retry:'Frågorna laddades inte — tryck för att försöka igen',
+  banks_loading:'Laddar frågorna…',
+  friends_none:'Spara dem du spelar med. Stolen väntar på dem, och de ansluter genom att trycka på sitt eget namn.',
+  friends_invited:'{n} inbjudna — deras stolar hålls lediga tills de ansluter.',
+  friends_tap:'Tryck på ett namn för att bjuda in i kväll.',
+  aria_forget:'Glöm {name}',
+  go_empty:'Ingen har en stol än.',
+  go_here:'HÄR',
+  go_notyet:'INTE HÄR ÄN',
+  go_chairs_one:'{n} stol klar',
+  go_chairs:'{n} stolar klara',
+  go_missing:', {n} saknas fortfarande',
+  go_genre_year:'{genre} från {year}',
+  go_genre_anyyear:'{genre} från vilket år som helst',
+  go_auditions:'{n} provsjungningar',
+  go_enough:'tillräckligt',
+  go_team:'{n} per lag',
+  go_note_missing:'Ni kan börja utan dem — stolarna ingen tog lämnas helt enkelt utanför.',
+  go_note_ready:'Alla är med. Första skivan väntar.',
+  lobby_empty:'Ingen har satt sig än. Skanna koden, eller skicka {link} — länken bär rummet redan.',
+  tag_phone:'MOBIL',
+  tag_screen:'DEN HÄR SKÄRMEN',
+  held_head:'En stol väntar på',
+  copy_invite:'KOPIERA INBJUDAN',
+  rb_waiting:'Väntar ({n})',
+  arrived_one:'{who} kom med',
+  arrived_two:'{a} och {b} kom med',
+  arrived_more:'{a}, {b} och {n} fler kom med',
+  lobby_sub:'Ha den här skärmen på tv:n. De andra öppnar samma sida i mobilen, trycker {what} och skriver in den. Stolen dyker upp här när de kommer.',
+  join_with_code:'Gå med via kod',
+  opening:'Öppnar rummet…',
+  opening_room:'Öppnar rum {code}…',
+  room_open_wait:'Rummet är öppet — väntar på mobiler',
+  still_loading_q:'Frågorna laddas fortfarande — ett ögonblick.',
+  still_loading_p:'Uppgifterna laddas fortfarande — ett ögonblick.',
+  lobby_nobody:'Ingen har tagit en stol än — skanna koden, eller gå tillbaka och skriv ett namn.',
+  banks_bad:'Frågorna laddades inte. Kontrollera anslutningen och försök igen.',
+  link_copied:'Länken kopierad',
+  invite_copied:'Inbjudan till {who} kopierad',
+  code_six:'Koden är sex bokstäver.',
+  name_first:'Skriv ditt namn först.',
+  getting_ready:'Förbereder…',
+  room_found:'Rum {code} hittat — säg vem du är.',
+  room_looking:'Ansluten — letar efter rum {code}',
+  photo_shrink:'Krymper bilden…',
+  photo_on_chair:'Ditt foto sitter på din stol.',
+  start_here:'Starta på den här skärmen',
+  play_alone:'Spela ensam',
+  qr_fallback:'Öppna {link} i mobilen.',
+  pad_waiting:'Väntar på scenen',
+  pad_notstarted:'Värden har inte börjat än.',
+  my_team:'Ditt lag',
+  my_team_m:'Ditt lag · {n} milj.',
+  who_is_this:'Vem är det här?',
+  curtain_closed:'Ridån för',
+  pv_head:'Vilka ämnen vill ni ha?',
+  bank_plain:'Säkra',
+  hold_not_yet:'Vänta lite — inte än',
+  hold_not_yet_caps:'VÄNTA LITE — INTE ÄN',
+  sign_them:'TA DEM',
+  skip_caps:'HOPPA ÖVER',
+  skipped_caps:'HOPPADE ÖVER',
+  sign_got:'DU FICK DEM',
+  sign_blocked:'BLOCKERAD',
+  sign_full:'LAGET FULLT',
+  block_who:'BLOCKERA {who}',
+  block_spent:'BLOCKERING ANVÄND',
+  team_open:'ledig',
+  your_guess:'Din gissning',
+  pad_asked_wait:'Bad rummet vänta',
+  room_closed_long:'Värden har stängt rummet. Festen är slut — eller så öppnar hen ett nytt, och då behöver du den nya koden.',
+  chair_round:'Provsjungning {i}/{n}',
+  chair_blocked:'Blockerad den här rundan. Bort med händerna.',
+  chair_team_full:'Ditt lag är fullt. Du är ute ur leken.',
+  chair_skipped:'Du hoppade över den här.',
+  chair_listen:'Lyssna. Första stolen som vänder sig får dem.',
+  chair_signed:'Du tog {who} — {m} milj. skivor.',
+  chair_went:'{who} — {m} milj. skivor.',
+  chair_next_in:'   Nästa om {n} s…',
+  chair_season_over:'Så var säsongen slut. Titta på storbildsskärmen.',
+  chair_waiting_next:'Väntar på nästa provsjungning…',
+  stage_sign:'SCEN',
+  round_audition:'Provsjungning',
+  round_of:'av {n}',
+  meta_blind:'blindaudition',
+  turn_tap:'Tryck på din egen stol medan den spelas.',
+  turn_wait_start:'Ingen kan vända sig förrän skivan börjar.',
+  turn_first:'Första stolen som vänder sig får dem — eller hoppa över.',
+  turn_all_skipped:'Alla hoppade över.',
+  turn_nobody:'Ingen vände sig. De går.',
+  turn_too_late:'För sent. Stolarna är låsta.',
+  turn_already:'{who} var där först.',
+  turn_full:'{who}s lag är fullt.',
+  turn_blocked:'{who} är blockerad den här rundan.',
+  drop_start:'Starta provsjungningen',
+  next_audition:'Nästa provsjungning',
+  next_audition_in:'Nästa provsjungning om {n} s',
+  crown:'Kröna coachen',
+  clock_ready:'klar',
+  clock_seconds:'sekunder',
+  clock_left:'sekunder kvar att vända sig',
+  clock_playing:'spelas',
+  clock_locked:'stolarna låsta',
+  vid_ok:'Kontrollerad — rätt video',
+  vid_bad:'Markerad som fel — fixa den i biblioteket',
+  vid_ask:'Är det här rätt video?',
+  clock_on_hold:'pausad',
+  sound_on:'LJUD PÅ',
+  sound_muted:'LJUDLÖST — TRYCK FÖR LJUD',
+  player_n:'Spelare {n}',
+  rb_vis_title:'Offentliga rum listas på startsidan',
+  seat_got:'FICK DEM',
+  seat_first:'FÖRST',
+  blocked_by:'BLOCKERAD AV {who}',
+  block_spent_low:'blockeringen använd',
+  aria_block:'Blockera {who}',
+  watch_video:'Se videon',
+  vid_paste_hint:'Frivilligt: klistra in en länk så rullar videon med provsjungningen.',
+  vid_flagged:'Du markerade videon som fel, så den hålls borta från scenen. Klistra in en bättre länk i stället.',
+  vid_saved:'Videon är sparad för artisten — den startar när provsjungningen börjar.',
+  at_risk:'+{n} i fara',
+  final_coach:'Vinnande coachen',
+  final_eye:'Skarpaste ögat',
+  final_nose:'Bästa lögndetektorn',
+  final_wits:'Snabbaste skallen',
+  final_ear:'Skarpaste öra',
+  champ_tie:'Oavgjort',
+  join_and:'och',
+  final_tied:'{who} slutade alla på {n} poäng',
+  final_out_of:'{n} poäng av {m}',
+  final_points:'{n} poäng',
+  final_played:'{n} {what} spelade.',
+  word_picture:'bild',
+  word_pictures:'bilder',
+  word_statement:'påstående',
+  word_statements:'påståenden',
+  word_question:'fråga',
+  word_questions:'frågor',
+  word_record:'skiva',
+  word_records:'skivor',
+  pts:'p',
+  meta_over:'spelet är slut',
+  final_room_open:'Rum {code} står öppet. Ingen behöver bjudas in igen — behåll mobilerna, välj ett annat spel och alla är redan med.',
+  night_head:'I kväll · {n} spel',
+  ver_mismatch:'Den här mobilen har en äldre version än storbildsskärmen ({a} vs {b}). Ladda om sidan för att se bilderna.',
+  friends_invited_1:'{n} inbjuden — stolen hålls ledig tills hen ansluter.',
+  vid_link_ok:'Sparad — den rullar med provsjungningen och kommer ihåg till nästa gång.',
+  vid_link_bad:'Det ser inte ut som en YouTube-länk än.'
  }
 };
-const EN={
+var EN={
   need_players:'NEEDS {n} PLAYERS', need_players_why:'This game needs at least {n} players — get more people in first.', whose_turn:'{who}\u2019s turn', reveal:'Reveal', next_q:'Next question', next_r:'Next record',
   see_winner:'See the winner', see_standings:'See the standings',
   hold:'Hold', end_game:'End the game', end_round:'End the round',
@@ -7387,12 +7878,261 @@ const EN={
   meta_near:'closest wins',
   finger_pick:'Point at somebody', finger_said:'Pointed — waiting for the others…', finger_done:'This is how the room voted',
   meta_finger:'point the finger',
-  meta_tf:'true or false', meta_s10:'how far do you dare'
+  meta_tf:'true or false', meta_s10:'how far do you dare',
+  /* ---- the lobby, the menus and everything the code writes ---- */
+  blurb_chair:'Open a room, pass the code around, and everyone takes a chair from their own phone.',
+  blurb_artist:'Open a room and pass the code around. Four names land on every phone, once per record.',
+  blurb_trivia:'Open a room and pass the code around. Four answers land on every phone, question after question.',
+  blurb_picture:'Open a room and pass the code around. A picture goes up here, four answers on every phone.',
+  blurb_tf:'Open a room and pass the code around. One statement at a time, and every phone says true or false.',
+  blurb_finger:'Open a room and pass the code around. A question about the people in it, and every phone points at somebody.',
+  blurb_near:'Open a room and pass the code around. The answer is a number and nobody gets options — everybody types a guess.',
+  blurb_s10:'Open a room and pass the code around. Ten candidates on every phone, and only some of them are true.',
+  solo_chair:'One screen, one coach, and a pile of records. No room, nobody to wait for.',
+  solo_artist:'Four names on this screen, record after record, scored as you go.',
+  solo_trivia:'A hundred and twenty questions across six categories. Play as many as you like.',
+  solo_picture:'Cities, landmarks, paintings and the odd animal. Name what you are looking at.',
+  solo_tf:'Statements, half of them true. Say which is which, and keep your run alive.',
+  solo_finger:'A question about the room, and the room is the answer. You score by agreeing with everybody else.',
+  solo_near:'The answer is a number. No options, no quarter chance — type a guess, and the closest takes it.',
+  solo_s10:'Ten candidates, some true. Take one, take another, and stop before you are wrong.',
+  pub_sub:'Parties anyone can join, right now. Yours appears here the moment you set the room to public — otherwise only the code gets people in.',
+  pub_looking:'Looking for open parties…',
+  pub_none:'No public parties open right now. ',
+  pub_none_btn:'Open one yourself',
+  pub_fail:'Could not reach the room list. Your own party will still work — ',
+  pub_fail_btn:'open one',
+  pub_party:'{name}’s party',
+  pub_host:'Host: {name} · room {code}',
+  pub_players:'{p}/{m} players',
+  pub_game:'A game',
+  pub_someone:'Someone',
+  pub_live:'In progress',
+  pub_wait:'Waiting',
+  pub_ask:'Ask to join',
+  pub_full:'Full',
+  pub_join:'Join',
+  in_lang:'in English',
+  setup_all_topics:'All {n} topics',
+  setup_questions:'{n} questions',
+  setup_statements:'{n} statements',
+  setup_pictures:'{n} pictures',
+  setup_records:'{n} records',
+  setup_auditions:'{n} auditions',
+  setup_era:'{y}s onward',
+  any_year:'Any year',
+  any_genre:'Any genre',
+  until_full:'Until the teams fill',
+  per_team:'{n} per team',
+  all_own_screen:'Everyone on their own screen',
+  all_one_room:'All in one room',
+  genre_Rock:'Rock & metal',
+  genre_Pop:'Pop',
+  genre_Dance:'Dance & electronic',
+  genre_Soul:'Soul, R&B & hip-hop',
+  genre_Roots:'Country & Latin',
+  genre_Any:'Any genre',
+  genre_Random:'Drawn at the start',
+  genre_all:'all genres',
+  vis_private:'Only people with the code or the QR get in.',
+  vis_public:'Listed on this page for anyone to join — and that means anyone.',
+  vis_shut:'This one asks the room about the room, so it is played with people you know. It cannot be made public.',
+  rules_sub_pic:'Nobody has to agree with the host. Settle on how many pictures and where everyone is sitting.',
+  rules_sub_quiz:'Nobody has to agree with the host. Pick the topics you want and how long the night runs.',
+  rules_sub_rec:'Nobody has to agree with the host. Argue about the years, settle on a genre, then go.',
+  rules_note_pic:'Cities, landmarks, paintings and nature, mixed. Everyone answers, then the answer goes up.',
+  rules_note_quiz:'Six categories, mixed. Everyone answers, then the answer goes up.',
+  rules_note_rec:'The record plays behind the curtain. Everyone answers, then it opens.',
+  rules_note_chair:'No clock. The video runs until somebody turns or everybody skips.',
+  cats_label:'Topics',
+  cats_label_pic:'Picture topics',
+  lang_label:'Language of the questions',
+  len_pictures:'How many pictures tonight',
+  len_questions:'How many questions tonight',
+  len_statements:'How many statements tonight',
+  len_records:'How many records tonight',
+  len_auditions:'How many auditions tonight',
+  cats_every:'Everything',
+  cats_some:'{n} of {of} topics',
+  cats_all:'All {n} topics',
+  cats_voted_1:'{n} voted from their phone',
+  cats_voted_n:'{n} voted from their phones',
+  where_away:'Every phone gets the record as well, with its own sound. Use headphones, or the room will echo.',
+  where_here:'Phones are buttons only. The record plays here, on the one screen everybody can see.',
+  pool_empty:'Nobody started out in that corner — try another year or another genre.',
+  pool_rnd_both:'Era and genre gets drawn when you start. {s} seats, {a} auditions.',
+  pool_rnd_era:'The era gets drawn when you start. {s} seats, {a} auditions.',
+  pool_rnd_genre:'The genre gets drawn when you start. {s} seats, {a} auditions.',
+  pool_until:'Runs until every team is full — up to {a} auditions for {s} seats.',
+  pool_until_thin:' The pool is too small, so some teams will finish short.',
+  pool_thin:'{a} auditions for {s} seats — most teams will finish short. That is fine: you score what you signed.',
+  pool_ok:'{s} seats · {a} auditions · {n} acts in the pool.',
+  nophone_many:'{n} at this screen · {who}',
+  nophone_one:'{who} is playing from this screen',
+  nophone_none:'Add anyone whose phone is flat — you answer for them here',
+  av_none:'none',
+  coach_you:'You — Coach 1',
+  coach_n:'Coach {n}',
+  aria_face_change:'Change picture for coach {n}',
+  aria_face_photo:'Use a photo for coach {n}',
+  aria_coach_remove:'Remove coach',
+  photo_back:'Tap the picture to go back to the drawings',
+  photo_use:'Use a photo on this chair',
+  photo_bad:'That picture would not open. Try another one.',
+  start_hint_blank:'Leave a name empty and that chair plays as Coach {n}.',
+  banks_retry:'Questions did not load — tap to retry',
+  banks_loading:'Loading the questions…',
+  friends_none:'Save the people you play with. Their chair waits for them, and they join by tapping their own name.',
+  friends_invited:'{n} invited — their chairs are held in the lobby until they join.',
+  friends_tap:'Tap a name to invite them tonight.',
+  aria_forget:'Forget {name}',
+  go_empty:'Nobody has a chair yet.',
+  go_here:'HERE',
+  go_notyet:'NOT HERE YET',
+  go_chairs_one:'{n} chair ready',
+  go_chairs:'{n} chairs ready',
+  go_missing:', {n} still missing',
+  go_genre_year:'{genre} from {year}',
+  go_genre_anyyear:'{genre} from any year',
+  go_auditions:'{n} auditions',
+  go_enough:'enough',
+  go_team:'{n} per team',
+  go_note_missing:'You can start without them — the chairs nobody took are simply left out.',
+  go_note_ready:'Everyone is in. The first record is waiting.',
+  lobby_empty:'Nobody has sat down yet. Scan the code, or send {link} — the link already carries the room.',
+  tag_phone:'PHONE',
+  tag_screen:'THIS SCREEN',
+  held_head:'Holding a chair for',
+  copy_invite:'COPY INVITE',
+  rb_waiting:'Waiting ({n})',
+  arrived_one:'{who} joined',
+  arrived_two:'{a} and {b} joined',
+  arrived_more:'{a}, {b} and {n} more joined',
+  lobby_sub:'Keep this screen on the television. Everyone else opens the same page on their phone, taps {what} and types it in. Their chair appears here as they arrive.',
+  join_with_code:'Join with code',
+  opening:'Opening the room…',
+  opening_room:'Opening room {code}…',
+  room_open_wait:'Room open — waiting for phones',
+  still_loading_q:'The questions are still loading — one moment.',
+  still_loading_p:'The prompts are still loading — one moment.',
+  lobby_nobody:'Nobody has taken a chair yet — scan the code, or go back and type a name.',
+  banks_bad:'The questions did not load. Check the connection and try again.',
+  link_copied:'Link copied',
+  invite_copied:'Invitation for {who} copied',
+  code_six:'The code is six letters.',
+  name_first:'Type your name first.',
+  getting_ready:'Getting ready…',
+  room_found:'Room {code} found — tell them who you are.',
+  room_looking:'Connected — looking for room {code}',
+  photo_shrink:'Shrinking the picture…',
+  photo_on_chair:'Your photo is on your chair.',
+  start_here:'Start on this screen',
+  play_alone:'Play on your own',
+  qr_fallback:'Open {link} on the phone.',
+  pad_waiting:'Waiting for the stage',
+  pad_notstarted:'The host has not started yet.',
+  my_team:'Your team',
+  my_team_m:'Your team · {n}m',
+  who_is_this:'Who is this?',
+  curtain_closed:'Curtain closed',
+  pv_head:'Which topics do you want?',
+  bank_plain:'Bank',
+  hold_not_yet:'Hold it — not yet',
+  hold_not_yet_caps:'HOLD IT — NOT YET',
+  sign_them:'SIGN THEM',
+  skip_caps:'SKIP',
+  skipped_caps:'SKIPPED',
+  sign_got:'YOU GOT THEM',
+  sign_blocked:'BLOCKED',
+  sign_full:'TEAM FULL',
+  block_who:'BLOCK {who}',
+  block_spent:'BLOCK SPENT',
+  team_open:'open',
+  your_guess:'Your guess',
+  pad_asked_wait:'Asked the room to wait',
+  room_closed_long:'The host has closed the room. The party is over — or they are opening a new one, in which case you will need the new code.',
+  chair_round:'Audition {i} of {n}',
+  chair_blocked:'Blocked this round. Hands off.',
+  chair_team_full:'Your team is full. You are out of the running.',
+  chair_skipped:'You skipped this one.',
+  chair_listen:'Listen. First chair to turn gets them.',
+  chair_signed:'You signed {who} — {m}m records.',
+  chair_went:'{who} — {m}m records.',
+  chair_next_in:'   Next in {n}…',
+  chair_season_over:'That is the season. Look at the big screen.',
+  chair_waiting_next:'Waiting for the next audition…',
+  stage_sign:'STAGE',
+  round_audition:'Audition',
+  round_of:'of {n}',
+  meta_blind:'blind audition',
+  turn_tap:'Tap your own chair while it plays.',
+  turn_wait_start:'Nobody can turn until the record starts.',
+  turn_first:'First chair to turn gets them — or skip.',
+  turn_all_skipped:'Everyone skipped.',
+  turn_nobody:'Nobody turned. They walk.',
+  turn_too_late:'Too late. The chairs are locked.',
+  turn_already:'{who} already got there.',
+  turn_full:'{who}’s team is full.',
+  turn_blocked:'{who} is blocked this round.',
+  drop_start:'Start the audition',
+  next_audition:'Next audition',
+  next_audition_in:'Next audition in {n}',
+  crown:'Crown the coach',
+  clock_ready:'ready',
+  clock_seconds:'seconds',
+  clock_left:'seconds left to turn',
+  clock_playing:'playing',
+  clock_locked:'chairs locked',
+  vid_ok:'Checked — right video',
+  vid_bad:'Flagged as wrong — fix it in the library',
+  vid_ask:'Is this the right video?',
+  clock_on_hold:'on hold',
+  sound_on:'SOUND ON',
+  sound_muted:'MUTED — TAP FOR SOUND',
+  player_n:'Player {n}',
+  rb_vis_title:'Public rooms are listed on the front page',
+  seat_got:'GOT THEM',
+  seat_first:'FIRST',
+  blocked_by:'BLOCKED BY {who}',
+  block_spent_low:'block spent',
+  aria_block:'Block {who}',
+  watch_video:'Watch the video',
+  vid_paste_hint:'Optional: paste a link and the video plays with the audition.',
+  vid_flagged:'You flagged this video as wrong, so it stays off the stage. Paste a better link to replace it.',
+  vid_saved:'Video saved for this act — it plays as the audition starts.',
+  at_risk:'+{n} at risk',
+  final_coach:'Winning coach',
+  final_eye:'Sharpest eye',
+  final_nose:'Best nose for a lie',
+  final_wits:'Quickest wits',
+  final_ear:'Sharpest ear',
+  champ_tie:'A tie',
+  join_and:'and',
+  final_tied:'{who} all finished on {n} points',
+  final_out_of:'{n} points out of {m}',
+  final_points:'{n} points',
+  final_played:'{n} {what} played.',
+  word_picture:'picture',
+  word_pictures:'pictures',
+  word_statement:'statement',
+  word_statements:'statements',
+  word_question:'question',
+  word_questions:'questions',
+  word_record:'record',
+  word_records:'records',
+  pts:'pts',
+  meta_over:'game over',
+  final_room_open:'Room {code} stays open. Nobody has to be invited again — keep your phones, pick another game and everyone is already in it.',
+  night_head:'Tonight · {n} games',
+  ver_mismatch:'This phone is on an older version than the big screen ({a} vs {b}). Reload this page to see the pictures.',
+  friends_invited_1:'{n} invited — their chair is held until they join.',
+  vid_link_ok:'Saved — it plays with the audition, and is remembered for next time.',
+  vid_link_bad:'That does not look like a YouTube link yet.'
 };
 /* T('q_of',{i:3,n:15}) — the sentence in the language in use, holes filled */
 function T(key,vals){
-  const tbl=WORDS[S.lang]||null;
-  let t=(tbl&&tbl[key])||EN[key]||'';
+  const tbl=(typeof WORDS!=='undefined'&&WORDS&&WORDS[S.lang])||null;
+  let t=(tbl&&tbl[key])||(typeof EN!=='undefined'&&EN&&EN[key])||'';
   if(vals)for(const k in vals)t=t.split('{'+k+'}').join(vals[k]);
   return t;
 }
@@ -7402,6 +8142,70 @@ function dressButtons(){
   set('q-hold','hold');
   set('q-quit','end_game');
   set('pad-leave','leave');
+}
+/* 29. the strings the code owns did not follow the language picker. Two kinds
+   of them: the ones the markup carries as a default and nothing rewrites until
+   the game is running, and the ones a draw function writes — so the draw
+   functions get called again as well. A default is only written while nothing
+   is running, so a language change mid-round cannot wipe a live line. */
+let dressingOwned=false;
+function dressOwned(){
+  if(dressingOwned)return;                 // a draw must not call us back in
+  dressingOwned=true;
+  const set=(id,key,vals)=>{try{const e=$(id);if(e)e.textContent=T(key,vals)}catch(e){}};
+  const idle=()=>{try{return !Q.on&&!turnsOpen&&!PARTY.stage}catch(e){return true}};
+  try{
+    set('pv-head','pv_head');
+    set('pad-nearlock','near_lock');
+    set('pad-wait','hold_not_yet');
+    set('pad-hold','hold_not_yet_caps');
+    set('vw-idle','stage_sign');
+    set('pub-sub','pub_sub');
+    try{const e=$('rb-vis');if(e)e.setAttribute('title',T('rb_vis_title'))}catch(e){}
+    try{const e=$('pad-near');if(e)e.setAttribute('aria-label',T('your_guess'))}catch(e){}
+    try{const e=$('lobby-sub');if(e)e.innerHTML=esc(T('lobby_sub',{what:'\u0000'}))
+      .split('\u0000').join('<em style="font-style:normal;color:var(--bone)">'
+        +esc(T('join_with_code'))+'</em>')}catch(e){}
+    if(idle()){
+      set('pad-round','pad_waiting');
+      set('pad-state','pad_notstarted');
+      set('pad-teamhead','my_team');
+      set('pad-bank','bank_plain');
+      set('pad-sign','sign_them');
+      set('pad-skip','skip_caps');
+      set('q-ask','who_is_this');
+      set('q-curtain','curtain_closed');
+      set('turnline','turn_tap');
+      set('drop','drop_start');
+      set('next','next_audition');
+      set('count-cap','clock_seconds');
+      set('vidlabel','vid_ask');
+      set('final-eyebrow','final_coach');
+      try{const e=$('lobby-status');
+        if(e&&!e.className.replace('conn','').trim())e.textContent=T('opening')}catch(e){}
+      try{$('modes-eyebrow').textContent=LEARNING?T('modes_learn')
+        :SOLO?T('modes_solo'):T('modes_create')}catch(e){}
+      try{const e=$('create-room');if(e)e.textContent=T('start_here')}catch(e){}
+      try{const e=document.querySelector('#startbar .sbt');if(e)e.textContent=T('play_alone')}catch(e){}
+    }
+    // and the lines a draw function owns, so the picker reaches them too
+    try{drawVis()}catch(e){}
+    try{dressWhere()}catch(e){}
+    try{drawCats()}catch(e){}
+    try{updatePool()}catch(e){}
+    try{dressRules()}catch(e){}
+    try{drawPlayers()}catch(e){}
+    try{validate()}catch(e){}
+    try{drawFriends()}catch(e){}
+    try{drawLobbyList()}catch(e){}
+    try{drawGo()}catch(e){}
+    try{drawRooms()}catch(e){}
+    try{drawMe()}catch(e){}
+    try{drawSettings()}catch(e){}
+    try{drawFinalRoom()}catch(e){}
+    try{drawLobbyQR()}catch(e){}
+    try{if(GAMEBLURB[S.game])$('bar-hint').textContent=gameBlurb(S.game)}catch(e){}
+  }finally{dressingOwned=false}
 }
 const METALABEL={chair:'blind signings',artist:'name the artist',trivia:'general knowledge',
   picture:'picture guess',tf:'true or false',s10:'the short list',
@@ -7438,8 +8242,7 @@ function drawPad(){
     if(wn){
       const old=st&&st.b&&st.b!==BUILD;
       wn.hidden=!old;
-      if(old)wn.textContent='This phone is on an older version than the big screen ('
-        +BUILD+' vs '+st.b+'). Reload this page to see the pictures.';
+      if(old)wn.textContent=T('ver_mismatch',{a:BUILD,b:st.b});
     }
   }catch(e){}
   const sign=$('pad-sign'),skip=$('pad-skip');
@@ -7489,43 +8292,43 @@ function drawPad(){
   const iWon=st.winner===me.id;
 
   $('pad-round').textContent=st.phase==='lobby'?T('room_wait',{code:PARTY.code})
-    :'Audition '+st.round+' of '+st.of;
+    :T('chair_round',{i:st.round,n:st.of});
 
   if(st.phase==='lobby'){
     const n=st.seats.length;
     $('pad-state').textContent=T('in_chairs',{n:n});
   }
-  else if(live&&blocked)$('pad-state').textContent='Blocked this round. Hands off.';
-  else if(live&&me.full)$('pad-state').textContent='Your team is full. You are out of the running.';
-  else if(live&&me.passed)$('pad-state').textContent='You skipped this one.';
-  else if(live)$('pad-state').textContent='Listen. First chair to turn gets them.';
+  else if(live&&blocked)$('pad-state').textContent=T('chair_blocked');
+  else if(live&&me.full)$('pad-state').textContent=T('chair_team_full');
+  else if(live&&me.passed)$('pad-state').textContent=T('chair_skipped');
+  else if(live)$('pad-state').textContent=T('chair_listen');
   else if(st.phase==='locked'&&st.act)
-    $('pad-state').textContent=(iWon?'You signed ':'')+st.act.name+' — '+st.act.sold+'m records.'
-      +(st.next>0?'   Next in '+st.next+'…':'');
-  else if(st.phase==='over')$('pad-state').textContent='That is the season. Look at the big screen.';
-  else $('pad-state').textContent='Waiting for the next audition…';
+    $('pad-state').textContent=T(iWon?'chair_signed':'chair_went',{who:st.act.name,m:st.act.sold})
+      +(st.next>0?T('chair_next_in',{n:st.next}):'');
+  else if(st.phase==='over')$('pad-state').textContent=T('chair_season_over');
+  else $('pad-state').textContent=T('chair_waiting_next');
 
   drawPadScreen(st);
   drawPadSeats(st,me);
   sign.disabled=!live||out||st.winner!==null;
-  sign.textContent=iWon?'YOU GOT THEM':blocked?'BLOCKED':me.full?'TEAM FULL':'SIGN THEM';
+  sign.textContent=T(iWon?'sign_got':blocked?'sign_blocked':me.full?'sign_full':'sign_them');
   skip.hidden=!!me.full;                   // TEAM FULL on the big button says it already
   skip.disabled=!live||out||st.winner!==null;
-  skip.textContent=me.passed?'SKIPPED':'SKIP';
+  skip.textContent=T(me.passed?'skipped_caps':'skip_caps');
 
   const hold=$('pad-hold');
   if(hold)hold.hidden=!(st.next>0);
   const canBlock=live&&!me.blockUsed&&st.blockTarget===null&&st.winner===null&&!me.full;
   $('pad-blocks').innerHTML=st.seats.filter(s=>s.id!==me.id).map(s=>
-    '<button data-block="'+s.id+'"'+(canBlock?'':' disabled')+'>BLOCK '
-    +esc(String(s.name).toUpperCase())+'</button>').join('')
-    +(me.blockUsed?'<button disabled>BLOCK SPENT</button>':'');
+    '<button data-block="'+s.id+'"'+(canBlock?'':' disabled')+'>'
+    +esc(T('block_who',{who:String(s.name).toUpperCase()}))+'</button>').join('')
+    +(me.blockUsed?'<button disabled>'+esc(T('block_spent'))+'</button>':'');
 
-  $('pad-teamhead').textContent='Your team · '+me.total+'m';
+  $('pad-teamhead').textContent=T('my_team_m',{n:me.total});
   const slots=[];
   me.team.forEach(t=>slots.push('<div class="line"><span>'+esc(t.n)+'</span><span>'+t.m+'m</span></div>'));
   for(let i=me.team.length;i<st.teamSize;i++)
-    slots.push('<div class="line open"><span>open</span><span>—</span></div>');
+    slots.push('<div class="line open"><span>'+esc(T('team_open'))+'</span><span>—</span></div>');
   $('pad-team').innerHTML=slots.join('');
 }
 
@@ -7550,13 +8353,13 @@ $('face-file')&&($('face-file').addEventListener('change',e=>{
   const f=e.target.files&&e.target.files[0];
   e.target.value='';
   if(!f)return;
-  joinStatus('Shrinking the picture\u2026','');
+  joinStatus(T('photo_shrink'),'');
   photoToSquare(f,160).then(url=>{
     myFace=url;
     try{localStorage.setItem('thechair.myface',url)}catch(err){}
     drawMyFace();publishFace();
-    joinStatus('Your photo is on your chair.','good');
-  }).catch(err=>joinStatus('That picture would not open. Try another.','bad'));
+    joinStatus(T('photo_on_chair'),'good');
+  }).catch(err=>joinStatus(T('photo_bad'),'bad'));
 }));
 $('face-clear')&&($('face-clear').onclick=()=>{
   myFace='';
@@ -7582,7 +8385,7 @@ function followInvitation(){
   PARTY.key=key;                     // before connecting: the first stage is checked too
   openChairScreen();
   $('join-code').value=code;
-  joinStatus('Opening room '+code+'\u2026','');
+  joinStatus(T('opening_room',{code:code}),'');
   chairJoin();                       // connect now; the name comes next
   return true;
 }
@@ -7613,17 +8416,14 @@ function dressRules(){
     if(lab&&lab.classList.contains('field-label'))lab.hidden=!records;
   });
   try{$('pool').hidden=!records}catch(e){}
-  try{$('rules-sub').textContent=pic
-    ? 'Nobody has to agree with the host. Settle on how many pictures and where everyone is sitting.'
-    : triv
-    ? 'Nobody has to agree with the host. Pick the topics you want and how long the night runs.'
-    : 'Nobody has to agree with the host. Argue about the years, settle on a genre, then go.'}catch(e){}
+  try{$('rules-sub').textContent=T(pic?'rules_sub_pic':triv?'rules_sub_quiz':'rules_sub_rec')}catch(e){}
   // the topics belong to the quiz, the way era and genre belong to the records
   ['cats','cats-label','cats-note'].forEach(id=>{const e=$(id);if(e)e.hidden=!topics});
   // every game but the records asks its question in a language, Point the
   // Finger included — its prompts are written too
   ['lang','lang-label'].forEach(id=>{const e=$(id);if(e)e.hidden=records});
-  try{$('cats-label').textContent=S.game==='picture'?'Picture topics':'Topics'}catch(e){}
+  try{$('cats-label').textContent=T(S.game==='picture'?'cats_label_pic':'cats_label')}catch(e){}
+  try{$('lang-label').textContent=T('lang_label')}catch(e){}
   if(!records)try{
     segPick('lang','g',S.lang);
     if(topics)drawCats();
@@ -7632,22 +8432,17 @@ function dressRules(){
   if(ts)ts.hidden=quiz;
   if(lab&&lab.classList.contains('field-label'))lab.hidden=quiz;
   const ln=$('length'),lnlab=ln&&ln.previousElementSibling;
-  if(lnlab)lnlab.textContent=pic?'How many pictures tonight'
-    :S.game==='tf'?'How many statements tonight'
-    :S.game==='artist'?'How many records tonight'
-    :records?'How many auditions tonight'
-    :'How many questions tonight';
+  if(lnlab)lnlab.textContent=T(pic?'len_pictures'
+    :S.game==='tf'?'len_statements'
+    :S.game==='artist'?'len_records'
+    :records?'len_auditions'
+    :'len_questions');
   const until=ln&&[...ln.querySelectorAll('button')].find(b=>b.dataset.l==='0');
   if(until)until.hidden=quiz;                 // a quiz has no teams to fill
   if(quiz&&!S.len){S.len=10;segPick('length','l','10')}
   const note=$('rules-note');
-  if(note)note.textContent=pic
-    ? 'Cities, landmarks, paintings and nature, mixed. Everyone answers, then the answer goes up.'
-    : triv
-    ? 'Six categories, mixed. Everyone answers, then the answer goes up.'
-    : quiz
-    ? 'The record plays behind the curtain. Everyone answers, then it opens.'
-    : 'No clock. The video runs until somebody turns or everybody skips.';
+  if(note)note.textContent=T(pic?'rules_note_pic':triv?'rules_note_quiz'
+    :quiz?'rules_note_rec':'rules_note_chair');
 }
 function segPick(id,key,val){
   const box=$(id);if(!box)return;
@@ -7665,7 +8460,7 @@ $('lobby-start')&&($('lobby-start').onclick=()=>{
     S.players=S.players.filter(p=>p.pid||(p.name||'').trim());
   S.players.forEach((p,i)=>{p.id=i});
   if(S.players.length<1){
-    lobbyStatus('Nobody has taken a chair yet \u2014 scan the code, or go back and type a name.','bad');
+    lobbyStatus(T('lobby_nobody'),'bad');
     drawLobbyList();return;
   }
   S.players.filter(p=>p.pid).forEach(p=>addFriend(p.name));   // worth remembering
@@ -7681,10 +8476,10 @@ $('lobby-start')&&($('lobby-start').onclick=()=>{
     publishStage();
   };
   if(haveBanks()){go();return}
-  lobbyStatus('Loading the questions\u2026','');
+  lobbyStatus(T('banks_loading'),'');
   needBanks();
   banksReady().then(()=>{lobbyStatus('','');go()})
-    .catch(()=>lobbyStatus('The questions did not load. Check the connection and try again.','bad'));
+    .catch(()=>lobbyStatus(T('banks_bad'),'bad'));
 });
 $('lobby-list')&&($('lobby-list').addEventListener('click',e=>{
   const f=e.target.closest('button[data-free]');
@@ -7701,7 +8496,7 @@ $('lobby-list')&&($('lobby-list').addEventListener('click',e=>{
 $('copy-link')&&($('copy-link').onclick=()=>{
   const t='Join my game of The Chair: '+joinLink()+'  \u2014 room code '+PARTY.code;
   try{navigator.clipboard.writeText(t).then(
-    ()=>lobbyStatus('Link copied','good'),
+    ()=>lobbyStatus(T('link_copied'),'good'),
     ()=>lobbyStatus(t,''));
   }catch(e){lobbyStatus(t,'')}
 });
@@ -7741,7 +8536,7 @@ $('pad-skip')&&($('pad-skip').onclick=()=>{$('pad-skip').disabled=true;sendAct('
 $('pad-hold')&&($('pad-hold').onclick=()=>{$('pad-hold').hidden=true;sendAct('hold')});
 $('pad-wait')&&($('pad-wait').onclick=()=>{
   const b=$('pad-waitbar');if(b)b.hidden=true;
-  const n=$('pad-next');if(n){n.hidden=false;n.textContent='Asked the room to wait'}
+  const n=$('pad-next');if(n){n.hidden=false;n.textContent=T('pad_asked_wait')}
   sendAct('hold');
 });
 $('pad-blocks')&&($('pad-blocks').addEventListener('click',e=>{

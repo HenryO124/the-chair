@@ -11,6 +11,11 @@ const w=dom.window,d=w.document,$=id=>d.getElementById(id);
 w.addEventListener('error',e=>probs.push('JS error: '+e.message));
 const click=el=>{if(el&&!el.disabled)el.dispatchEvent(new w.MouseEvent('click',{bubbles:true}))};
 setTimeout(()=>{
+// This suite was written against the English page and checks wording. The
+// interface now speaks Finnish by default, so it asks for English first;
+// the Finnish and Swedish wording is covered by words.js and uilang.js.
+  try{w.eval("S.lang='en';typeof dressUI==='function'&&dressUI()")}catch(e){}
+
   w.eval("S.game='picture';S.lang='fi';S.cats=[];S.len=5;S.players=[mkPlayer('A',0,0,'p1')];quizStart()");
   w.eval('quizReveal()');
   if(!/\d/.test($('q-next').textContent))probs.push('the button shows no clock: '+$('q-next').textContent);
@@ -38,8 +43,18 @@ setTimeout(()=>{
   const st=JSON.parse(w.eval('JSON.stringify(stageState())'));
   w.eval("PARTY.role='chair';PARTY.pid='p1';PARTY.stage="+JSON.stringify(st)+";drawPad()");
   if($('pad-next').hidden)probs.push('the phone shows no countdown');
-  else if(!/Next question in \d/.test($('pad-next').textContent))
-    probs.push('the phone countdown reads: '+$('pad-next').textContent);
+  else{
+    // The phone follows the language the questions are in, not its own, so ask
+    // the page what this line should say rather than spelling it in English.
+    const said=$('pad-next').textContent.trim();
+    const n=(said.match(/\d+/)||[])[0];
+    if(!n)probs.push('the phone countdown shows no number: '+said);
+    else{
+      const want=w.eval('T("next_in",{n:'+n+'})');
+      if(said!==String(want).trim())
+        probs.push('the phone countdown reads "'+said+'", the page says it should read "'+want+'"');
+    }
+  }
   console.log(probs.length?'FAIL:':'ok - the clock to the next question is visible, and can be held');
   probs.forEach(p=>console.log('  x '+p));
   process.exit(probs.length?1:0);

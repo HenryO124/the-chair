@@ -25,7 +25,12 @@ function page(tag){const dom=new JSDOM(html,{runScripts:'dangerously',pretendToB
   url:'https://party.test/t/',beforeParse(w){w.open=()=>null;
     w.matchMedia=()=>({matches:false,addListener(){},removeListener(){}});w.mqtt=broker(w);
     Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async()=>{}}})}});
-  dom.window.addEventListener('error',e=>probs.push(tag+' JS error: '+e.message));return dom}
+  dom.window.addEventListener('error',e=>probs.push(tag+' JS error: '+e.message));
+  // This suite was written against the English page and checks wording. The
+  // interface now speaks Finnish by default, so it asks for English first;
+  // the Finnish and Swedish wording is covered by words.js and uilang.js.
+  try{dom.window.eval("S.lang='en'")}catch(e){}
+  return dom}
 const tick=(ms=90)=>new Promise(r=>setTimeout(r,ms));
 (async()=>{
   const H=page('host');const hw=H.window,hd=hw.document,h$=id=>hd.getElementById(id);
