@@ -57,7 +57,7 @@ setTimeout(()=>{
   if($('s10-rules').hidden)probs.push('the rules are not on screen');
   else{
     const t=$('s10-rules').textContent;
-    ['true','pot','gone','Bank'].forEach(word=>{
+    ['true','pot','gone','Stop'].forEach(word=>{
       if(t.indexOf(word)<0)probs.push('the rules never say "'+word+'"');
     });
   }

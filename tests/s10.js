@@ -34,13 +34,25 @@ setTimeout(()=>{
   const A=()=>w.eval('S.players[0]'), score=()=>w.eval('S.players[0].score');
   const right=()=>w.eval("(function(){for(var i=0;i<Q.cands.length;i++)if(Q.cands[i].ok&&Q.cands[i].by===null)return i;return -1})()");
   const wrong=()=>w.eval("(function(){for(var i=0;i<Q.cands.length;i++)if(!Q.cands[i].ok&&Q.cands[i].by===null)return i;return -1})()");
-  // three right in a row: 10 + 20 + 30
-  for(let k=0;k<3;k++)w.eval('s10Take(S.players[0],'+right()+')');
+  // play goes round the table: only whoever's turn it is may take
+  if(w.eval('Q.turn')===undefined||w.eval('Q.turn')===null)
+    probs.push('the round opened with nobody to play');
+  w.eval('s10SetTurn(0)');
+  w.eval('s10Take(S.players[1],'+right()+')');     // not their turn
+  if(w.eval('Q.pot[1]'))probs.push('a player took one out of turn');
+
+  // three right in a row: 10 + 20 + 30, and it stays your turn while you are right
+  for(let k=0;k<3;k++){
+    w.eval('s10Take(S.players[0],'+right()+')');
+    if(w.eval('Q.turn')!==0)probs.push('a right pick handed the turn away');
+  }
   if(w.eval('Q.pot[0]')!==60)probs.push('the pot is '+w.eval('Q.pot[0]')+', expected 60');
   if(score()!==0)probs.push('an unbanked pot was already scored');
   // the other player takes a wrong one and is out with nothing
+  w.eval('s10SetTurn(1)');
   w.eval('s10Take(S.players[1],'+right()+')');
   w.eval('s10Take(S.players[1],'+wrong()+')');
+  if(w.eval('Q.turn')!==0)probs.push('a wrong pick did not pass the turn on');
   if(w.eval("Q.state[1]")!=='out')probs.push('a wrong pick did not end that round: '+w.eval('Q.state[1]'));
   if(w.eval('Q.pot[1]')!==0)probs.push('a wrong pick kept the pot');
   if(w.eval('S.players[1].score')!==0)probs.push('a wrong pick still scored');
@@ -75,6 +87,7 @@ setTimeout(()=>{
     Q.cands=[{t:'t1',ok:true,by:null},{t:'t2',ok:true,by:null},
              {t:'f1',ok:false,by:null},{t:'f2',ok:false,by:null}];
     Q.state={0:'in',1:'in'};Q.pot={0:0,1:0};Q.picks={0:0,1:0};
+    s10SetTurn(0);
     s10Take(S.players[0],0);s10Take(S.players[0],1);`);
   if(w.eval('Q.cands.some(function(c){return c.by===null&&c.ok})'))
     probs.push('the test did not actually take every true candidate');

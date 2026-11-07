@@ -1877,6 +1877,7 @@ body:has(#s-chair.on) .striproundwrap{display:none}
 .s10strip span b{color:#FFD37A;font-weight:700}
 .s10strip span.bad{border-color:rgba(255,120,110,.4)}
 .s10strip span.bad b{color:#FF9A95}
+.s10strip span.turnchip{color:#0B0507;background:#FFD37A;border-color:#FFD37A;font-weight:700}
 .s10strip span.said{font-family:var(--disp);text-transform:none;letter-spacing:0;
   font-size:clamp(14px,1.4vw,26px);color:#E8DCCB;border-color:rgba(255,209,92,.4);
   background:rgba(60,42,10,.4);max-width:70ch}
@@ -3959,7 +3960,7 @@ $('restart').onclick=()=>{
    "I want them". Messages travel through a public MQTT broker, so
    nobody needs an account: the room code is the whole address.
    ================================================================== */
-const BUILD='07.11. 11:27';
+const BUILD='07.11. 11:34';
 try{$('buildtag').textContent='Version '+BUILD}catch(e){}
 try{$('pad-ver').textContent='Version '+BUILD}catch(e){}
 const BROKERS=['wss://broker.emqx.io:8084/mqtt',
@@ -4032,10 +4033,10 @@ const haveQr=()=>{try{return typeof qrcode!=='undefined'}catch(e){return false}}
 const haveBanks=()=>{try{
   return TRIVIA.length>0&&CATALOG.length>0&&TFBANK.length>0&&PICTURES.length>0;
 }catch(e){return false}};
-function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111127',haveMqtt)}
-function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111127',haveQr)}
+function mqttReady(){return chunkLoad('mqtt','lib-mqtt.js?v=07111134',haveMqtt)}
+function qrReady(){return chunkLoad('qr','lib-qr.js?v=07111134',haveQr)}
 function banksReady(){
-  return chunkLoad('banks','banks.js?v=07111127',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
+  return chunkLoad('banks','banks.js?v=07111134',haveBanks).then(()=>{try{afterBanks()}catch(e){}});
 }
 // the host opens a menu long before pressing go, so start the fetch there and
 // the wait is usually over before anybody could notice it
@@ -4375,7 +4376,40 @@ function s10Next(){
   Q.cands=shuffle(Q.current[3].map(c=>({t:c.t,ok:c.ok,by:null})));
   Q.pot={};Q.picks={};Q.state={};
   S.players.forEach(p=>{Q.state[p.id]='in';Q.pot[p.id]=0;Q.picks[p.id]=0});
+  // the table turns: whoever sat second last time starts this one
+  const ids=S.players.map(p=>p.id);
+  if(ids.length){
+    const prev=ids.indexOf(Q.first);
+    Q.first=ids[(prev+1+ids.length)%ids.length];
+    s10SetTurn(Q.first);
+  }else s10SetTurn(null);
   drawQuiz();publishStage();
+}
+/* ---- whose turn it is -------------------------------------------------
+   Smart 10's rule: play goes round the table. On your turn you take one you
+   believe is true; if you are right it is still your turn and you may take
+   another or stop; if you are wrong the pot goes and so does your turn. You
+   may stop whenever you like. The last player still in simply keeps going,
+   because there is nobody to pass to. */
+function s10Live(){return S.players.filter(p=>Q.state&&Q.state[p.id]==='in')}
+function s10SetTurn(id){
+  Q.turn=(id===undefined||id===null)?null:id;
+}
+function s10Advance(){
+  const order=S.players.map(p=>p.id);
+  const live=s10Live().map(p=>p.id);
+  if(!live.length){s10Reveal();return}
+  if(live.length===1){s10SetTurn(live[0]);return}   // nobody to pass to
+  const at=order.indexOf(Q.turn);
+  for(let k=1;k<=order.length;k++){
+    const id=order[(at+k+order.length)%order.length];
+    if(live.indexOf(id)>=0){s10SetTurn(id);return}
+  }
+  s10SetTurn(live[0]);
+}
+function s10TurnName(){
+  const p=S.players.find(x=>x.id===Q.turn);
+  return p?shownName(p):'';
 }
 /* one candidate, claimed by one player. Right: it is worth more than the last
    one you took. Wrong: the round is over for you and the pot goes with it. */
@@ -4383,24 +4417,30 @@ function s10Take(p,i){
   if(!isS10()||Q.revealed)return;
   if(Q.state&&!(p.id in Q.state)){      // walked in mid-round: deal them in
     Q.state[p.id]='in';Q.pot[p.id]=0;Q.picks[p.id]=0;
+    if(Q.turn===null||Q.turn===undefined)s10SetTurn(p.id);
   }
+  if(Q.state[p.id]!=='in')return;
+  if(p.id!==Q.turn)return;              // wait your turn
   const c=Q.cands&&Q.cands[i];
   if(!c||c.by!==null)return;
-  if(Q.state[p.id]!=='in')return;
   c.by=p.id;
   if(c.ok){
     Q.picks[p.id]=(Q.picks[p.id]||0)+1;
     Q.pot[p.id]=(Q.pot[p.id]||0)+10*Q.picks[p.id];
-  }else{
-    Q.pot[p.id]=0;Q.state[p.id]='out';
+    // still your turn: take another, or stop while it is worth something
+    if(s10RoundOver())s10Reveal(); else {drawQuiz();publishStage()}
+    return;
   }
-  if(s10RoundOver())s10Reveal(); else {drawQuiz();publishStage()}
+  Q.pot[p.id]=0;Q.state[p.id]='out';
+  if(s10RoundOver())s10Reveal(); else {s10Advance();drawQuiz();publishStage()}
 }
 function s10Stand(p){
   if(!isS10()||Q.revealed||Q.state[p.id]!=='in')return;
   p.score=(p.score||0)+(Q.pot[p.id]||0);
   Q.state[p.id]='banked';
-  if(s10RoundOver())s10Reveal(); else {drawQuiz();publishStage()}
+  const wasMine=(p.id===Q.turn);
+  if(s10RoundOver())s10Reveal();
+  else {if(wasMine)s10Advance();drawQuiz();publishStage()}
 }
 function s10RoundOver(){
   if(!Q.cands)return false;
@@ -4918,12 +4958,14 @@ function drawS10(){
     const rl=$('s10-rules');
     if(rl){
       rl.hidden=false;
+      const who=s10TurnName();
       rl.innerHTML=(Q.revealed&&Q.current[2])
         ? '<span class="said">'+esc(Q.current[2])+'</span>'
-        : '<span>Take one you believe is <b>true</b></span>'
-          +'<span>Each one adds to your <b>pot</b></span>'
+        : (who?'<span class="turnchip">'+esc(who)+'\u2019s turn</span>':'')
+          +'<span>Take one you believe is <b>true</b></span>'
+          +'<span>Right? <b>take another</b> or stop</span>'
           +'<span class="bad">One wrong and the <b>pot is gone</b></span>'
-          +'<span>Bank it <b>whenever you like</b></span>';
+          +'<span>Stop <b>whenever you like</b></span>';
     }
   }catch(e){}
   const nameOf=id=>{const p=S.players.find(x=>x.id===id);return p?shownName(p):''};
@@ -4937,10 +4979,13 @@ function drawS10(){
       +(taken?'<span class="tookby">'+esc(nameOf(c.by))+'</span>':'')+'</button>';
   }).join('');
   // the class has to carry the state, so build it properly rather than inline
+  // a phone's turn is not the host's to take
+  const onPhone=(()=>{const t=S.players.find(x=>x.id===Q.turn);return !!(t&&t.pid)})();
   [...$('q-options').querySelectorAll('button')].forEach((b,i)=>{
     const c=Q.cands[i];if(!c)return;
     b.className='qbtn s10'+(c.by!==null?(c.ok?' right':' missed')
       :(Q.revealed?(c.ok?' right':' wrong'):''));
+    if(c.by===null&&!Q.revealed)b.disabled=onPhone;
   });
   $('q-scores').innerHTML=S.players.map(p=>{
     const st=Q.state?Q.state[p.id]:'in';
@@ -4966,7 +5011,8 @@ function drawS10(){
 $('q-options')&&($('q-options').addEventListener('click',e=>{
   if(isS10()){
     const b=e.target.closest('button[data-opt]');if(!b||b.disabled)return;
-    const me=S.players.find(p=>!p.pid&&Q.state&&Q.state[p.id]==='in');
+    // the host taps for whoever sits at the television, on that player's turn
+    const me=S.players.find(p=>!p.pid&&p.id===Q.turn&&Q.state&&Q.state[p.id]==='in');
     if(me)s10Take(me,+b.dataset.opt);
     return;
   }
@@ -5503,6 +5549,7 @@ function s10State(phase){
     vote:ballotState(),setup:setupLine(),remote:!!S.remote,vid:'',pic:'',
     // 3: nobody took it and it was true, so the phone paints it green as well
     cands:(Q.cands||[]).map(c=>[c.t,c.by!==null?(c.ok?1:2):(Q.revealed&&c.ok?3:0)]),
+    turn:(Q.turn===undefined?null:Q.turn),turnName:s10TurnName(),
     options:[],correct:-1,
     seats:S.players.map(p=>({
       id:p.id,pid:p.pid||'',name:shownName(p),icon:p.icon,photo:p.photo||'',
@@ -5826,6 +5873,7 @@ function drawPadS10(st,me){
   if(!me){box.hidden=true;box.innerHTML='';box.dataset.key='';return}
   box.hidden=false;
   const mine=me.st||'in', pot=me.pot||0, picks=me.picks||0;
+  const myTurn=(st.turn!==null&&st.turn!==undefined&&st.turn===me.id);
   const key='s10|'+st.round+'|'+(st.cands||[]).map(c=>c[0]).join('\u0001');
   if(box.dataset.key!==key){
     box.dataset.key=key;
@@ -5837,15 +5885,18 @@ function drawPadS10(st,me){
   (st.cands||[]).forEach((c,i)=>{
     const b=btns[i];if(!b)return;
     b.className='qbtn'+(c[1]===1||c[1]===3?' right':c[1]===2?' missed':(st.revealed?' wrong':''));
-    b.disabled=!!(c[1]||st.revealed||mine!=='in');
+    b.disabled=!!(c[1]||st.revealed||mine!=='in'||!myTurn);
   });
   const rl=$('pad-run');
   if(rl){
     rl.hidden=false;
     rl.textContent=mine==='out'?'Wrong \u2014 the pot is gone. Back next question.'
       :mine==='banked'?'Banked '+pot+'. Safe.'
-      :pot?'Pot '+pot+' \u00b7 next one +'+(10*(picks+1))+' \u00b7 a wrong one takes it all'
-      :'Pick one you are sure of';
+      :!myTurn?((st.turnName||'Somebody')+'\u2019s turn'
+        +(pot?' \u00b7 your pot '+pot:''))
+      :pot?'Your turn \u00b7 pot '+pot+' \u00b7 next one +'+(10*(picks+1))
+        +' \u00b7 a wrong one takes it all'
+      :'Your turn \u2014 pick one you are sure of';
   }
   const bank=$('pad-bank'),bar=$('pad-bankbar');
   if(bank){
