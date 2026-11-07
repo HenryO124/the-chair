@@ -216,18 +216,18 @@
   "Montako päivää Berliinin muuri seisoi?",
   10315,
   "From 13 August 1961 to 9 November 1989. By chance that is almost exactly the same length of time as it has been down.",
-  "13. elokuuta 1961 yhdeksänteen marraskuuta 1989. Sattumalta se on melkein täsmälleen yhtä kauan kuin muuri on nyt ollut poissa.",
-  "13. elokuuta 1961 yhdeksänteen marraskuuta 1989. Sattumalta se on melkein täsmälleen yhtä kauan kuin muuri on nyt ollut poissa."
+  "13. elokuuta 1961 – 9. marraskuuta 1989. Sattumalta se on melkein täsmälleen yhtä kauan kuin muuri on nyt ollut poissa.",
+  "13. elokuuta 1961 – 9. marraskuuta 1989. Sattumalta se on melkein täsmälleen yhtä kauan kuin muuri on nyt ollut poissa."
  ],
  [
   "History",
-  "In which year did Constantinople fall to the Ottomans?",
-  "Minä vuonna Konstantinopoli kaatui ottomaanien käsiin?",
-  "Minä vuonna Konstantinopoli kaatui ottomaanien käsiin?",
-  1453,
-  "29 May 1453, after a siege of 53 days. Many historians use the date to mark the end of the Middle Ages.",
-  "29. toukokuuta 1453, 53 päivän piirityksen jälkeen. Monet historioitsijat merkitsevät siihen keskiajan lopun.",
-  "29. toukokuuta 1453, 53 päivän piirityksen jälkeen. Monet historioitsijat merkitsevät siihen keskiajan lopun."
+  "How many days did the siege of Constantinople last before the city fell in 1453?",
+  "Montako päivää Konstantinopolin piiritys kesti ennen kaupungin kaatumista vuonna 1453?",
+  "Montako päivää Konstantinopolin piiritys kesti ennen kaupungin kaatumista vuonna 1453?",
+  53,
+  "Fifty-three days, from 6 April to 29 May 1453. Many historians use the date to mark the end of the Middle Ages.",
+  "Viisikymmentäkolme päivää, 6. huhtikuuta – 29. toukokuuta 1453. Monet historioitsijat merkitsevät siihen keskiajan lopun.",
+  "Viisikymmentäkolme päivää, 6. huhtikuuta – 29. toukokuuta 1453. Monet historioitsijat merkitsevät siihen keskiajan lopun."
  ],
  [
   "History",
@@ -301,13 +301,13 @@
  ],
  [
   "History",
-  "In which year did the Mayflower cross to America?",
-  "Minä vuonna Mayflower ylitti Atlantin Amerikkaan?",
-  "Minä vuonna Mayflower ylitti Atlantin Amerikkaan?",
-  1620,
-  "1620. The crossing took 66 days and 102 passengers were aboard, in a ship about the length of two buses.",
-  "Vuonna 1620. Matka kesti 66 päivää ja mukana oli 102 matkustajaa laivassa, joka oli noin kahden linja-auton mittainen.",
-  "Vuonna 1620. Matka kesti 66 päivää ja mukana oli 102 matkustajaa laivassa, joka oli noin kahden linja-auton mittainen."
+  "How many days did the Mayflower take to cross the Atlantic in 1620?",
+  "Montako päivää Mayflowerilta kesti Atlantin ylitys vuonna 1620?",
+  "Montako päivää Mayflowerilta kesti Atlantin ylitys vuonna 1620?",
+  66,
+  "Sixty-six days, with 102 passengers in a ship about the length of two buses. One baby was born at sea.",
+  "Kuusikymmentäkuusi päivää, mukana 102 matkustajaa laivassa, joka oli noin kahden linja-auton mittainen. Yksi lapsi syntyi merellä.",
+  "Kuusikymmentäkuusi päivää, mukana 102 matkustajaa laivassa, joka oli noin kahden linja-auton mittainen. Yksi lapsi syntyi merellä."
  ],
  [
   "History",
@@ -662,8 +662,8 @@
  [
   "Geography",
   "How many kilometres long are all the parts of the Great Wall of China together?",
-  "Montako kilometriä pitkiä Kiinan muurin kaikki osat ovat yhteensä?",
-  "Montako kilometriä pitkiä Kiinan muurin kaikki osat ovat yhteensä?",
+  "Montako kilometriä Kiinan muurin kaikki osat ovat yhteensä?",
+  "Montako kilometriä Kiinan muurin kaikki osat ovat yhteensä?",
   21196,
   "A Chinese survey put it at 21,196 km, counting every branch from every period. One single continuous wall it never was.",
   "Kiinalainen kartoitus päätyi lukuun 21 196 kilometriä, kun kaikki haarat kaikilta aikakausilta lasketaan. Yhtä yhtenäistä muuria se ei ole koskaan ollut.",
@@ -822,8 +822,8 @@
  [
   "Science",
   "How many per cent of the Earth's surface is covered by water?",
-  "Montako prosenttia maapallon pinnasta on veden peitossä?",
-  "Montako prosenttia maapallon pinnasta on veden peitossä?",
+  "Montako prosenttia maapallon pinnasta on veden peitossa?",
+  "Montako prosenttia maapallon pinnasta on veden peitossa?",
   71,
   "About 71 per cent, and almost all of it salt. Every lake and river on earth together is a rounding error beside the oceans.",
   "Noin 71 prosenttia, ja lähes kaikki suolaista. Maailman kaikki järvet ja joet yhdessä ovat pyöristysvirhe valtamerten rinnalla.",
@@ -886,8 +886,8 @@
   "Montako päivää aasiannorsu on tiine?",
   609,
   "About 609 days, over twenty months — the longest pregnancy of any land animal. The calf weighs about a hundred kilos at birth.",
-  "Noin 609 päivää eli yli kaksikymmentä kuukautta, maaelÄinten pisin tiineys. Vasa painaa syntyessään noin sata kiloa.",
-  "Noin 609 päivää eli yli kaksikymmentä kuukautta, maaelÄinten pisin tiineys. Vasa painaa syntyessään noin sata kiloa."
+  "Noin 609 päivää eli yli kaksikymmentä kuukautta, maaeläinten pisin tiineys. Vasa painaa syntyessään noin sata kiloa.",
+  "Noin 609 päivää eli yli kaksikymmentä kuukautta, maaeläinten pisin tiineys. Vasa painaa syntyessään noin sata kiloa."
  ],
  [
   "Science",
@@ -946,8 +946,8 @@
   "Montako kilometriä tunnissa miekkavalas uii?",
   56,
   "About 56 km/h in short bursts — fast enough to run down a dolphin, which is one reason dolphins fear nothing else so much.",
-  "Noin 56 kilometriä tunnissa lyhyinä pyähdyksinä, tarpeeksi delfiinin kiinni saamiseen. Siksi delfiinit eivät pelkää mitään muuta yhtä paljon.",
-  "Noin 56 kilometriä tunnissa lyhyinä pyähdyksinä, tarpeeksi delfiinin kiinni saamiseen. Siksi delfiinit eivät pelkää mitään muuta yhtä paljon."
+  "Noin 56 kilometriä tunnissa lyhyinä pyrähdyksinä, tarpeeksi delfiinin kiinni saamiseen. Siksi delfiinit eivät pelkää mitään muuta yhtä paljon.",
+  "Noin 56 kilometriä tunnissa lyhyinä pyrähdyksinä, tarpeeksi delfiinin kiinni saamiseen. Siksi delfiinit eivät pelkää mitään muuta yhtä paljon."
  ],
  [
   "Science",
@@ -1016,8 +1016,8 @@
   "Kuinka monelle kielelle Kalevala on käännetty?",
   61,
   "At least 61. It has been one of Finland's steadiest exports since the nineteenth century, and Tolkien read it in the original.",
-  "Vähintään 61. Se on ollut Suomen vakain vientituote 1800-luvulta lähtien, ja Tolkien luki sitä alkukielellä.",
-  "Vähintään 61. Se on ollut Suomen vakain vientituote 1800-luvulta lähtien, ja Tolkien luki sitä alkukielellä."
+  "Vähintään 61. Se on ollut yksi Suomen tasaisimmista vientituotteista 1800-luvulta lähtien, ja Tolkien luki sitä alkukielellä.",
+  "Vähintään 61. Se on ollut yksi Suomen tasaisimmista vientituotteista 1800-luvulta lähtien, ja Tolkien luki sitä alkukielellä."
  ],
  [
   "Arts & culture",
@@ -1056,8 +1056,8 @@
   "Montako kieltä nykyaikaisessa konserttikanteleessa voi olla?",
   40,
   "Up to forty. A lever mechanism added in the 1920s lets the player change key in the middle of a piece.",
-  "Jopa neljäkymmentä. 1920-luvulla lisätty vipukoneisto antaa soittajan vaihtaa sävellejiä kappaleen keskellä.",
-  "Jopa neljäkymmentä. 1920-luvulla lisätty vipukoneisto antaa soittajan vaihtaa sävellejiä kappaleen keskellä."
+  "Jopa neljäkymmentä. 1920-luvulla lisätty vipukoneisto antaa soittajan vaihtaa sävellajia kappaleen keskellä.",
+  "Jopa neljäkymmentä. 1920-luvulla lisätty vipukoneisto antaa soittajan vaihtaa sävellajia kappaleen keskellä."
  ],
  [
   "Arts & culture",
@@ -1441,9 +1441,9 @@
  ],
  [
   "Sport",
-  "How many metres apart are the two blue lines on an international hockey rink?",
-  "Montako metriä kansainvälisen jääkiekkokaukalon sinivivojen välissä on?",
-  "Montako metriä kansainvälisen jääkiekkokaukalon sinivivojen välissä on?",
+  "How many metres apart are the two blue lines on an international ice hockey rink?",
+  "Montako metriä on kansainvälisen jääkiekkokaukalon siniviivojen välissä?",
+  "Montako metriä on kansainvälisen jääkiekkokaukalon siniviivojen välissä?",
   15,
   "Fifteen metres. The neutral zone is a quarter of the whole rink, and offside is measured from the far edge of the line.",
   "Viisitoista metriä. Keskialue on neljännes koko kaukalosta, ja paitsio mitataan viivan kauemmasta reunasta.",
@@ -1452,8 +1452,8 @@
  [
   "Sport",
   "How many metres across is the centre circle of an ice hockey rink?",
-  "Montako metriä halkaisijaltaan on jääkiekkokaukalon keskiympyrä?",
-  "Montako metriä halkaisijaltaan on jääkiekkokaukalon keskiympyrä?",
+  "Montako metriä on jääkiekkokaukalon keskiympyrän halkaisija?",
+  "Montako metriä on jääkiekkokaukalon keskiympyrän halkaisija?",
   9,
   "Nine metres across, with the face-off spot exactly in the middle of the rink.",
   "Yhdeksän metriä halkaisijaltaan, ja aloituspiste on tarkalleen kaukalon keskellä.",
@@ -1476,8 +1476,8 @@
   "Montako kilometriä pitkä yksi kierros Monacon katuradalla on?",
   3.337,
   "3.337 km through the streets of the principality, with barriers instead of run-off and a tunnel in the middle.",
-  "3,337 kilometriä ruhtinaskunnan katuja, estät pientareen sijasta ja tunneli keskellä.",
-  "3,337 kilometriä ruhtinaskunnan katuja, estät pientareen sijasta ja tunneli keskellä."
+  "3,337 kilometriä ruhtinaskunnan katuja, esteet pientareen sijasta ja tunneli keskellä.",
+  "3,337 kilometriä ruhtinaskunnan katuja, esteet pientareen sijasta ja tunneli keskellä."
  ],
  [
   "Sport",
@@ -1681,13 +1681,13 @@
  ],
  [
   "Everyday",
-  "What is Finland's international telephone country code?",
-  "Mikä on Suomen kansainvälinen puhelinmaatunnus?",
-  "Mikä on Suomen kansainvälinen puhelinmaatunnus?",
-  358,
-  "358. Denmark has 45, Norway 47 and Sweden 46; Finland joined the numbering later and was given a three-digit code.",
-  "358. Tanskalla on 45, Norjalla 47 ja Ruotsilla 46; Suomi liittyi numerointiin myöhemmin ja sai kolminumeroisen tunnuksen.",
-  "358. Tanskalla on 45, Norjalla 47 ja Ruotsilla 46; Suomi liittyi numerointiin myöhemmin ja sai kolminumeroisen tunnuksen."
+  "How many grams does a 500-sheet ream of ordinary 80-gram A4 paper weigh?",
+  "Montako grammaa painaa 500 arkin riisi tavallista 80 gramman A4-paperia?",
+  "Montako grammaa painaa 500 arkin riisi tavallista 80 gramman A4-paperia?",
+  2500,
+  "About 2,500 grams. Sixteen A4 sheets make a square metre, so one sheet weighs five grams, and five hundred of them two and a half kilos.",
+  "Noin 2 500 grammaa. Kuusitoista A4-arkkia tekee neliömetrin, joten yksi arkki painaa viisi grammaa ja viisisataa niitä kaksi ja puoli kiloa.",
+  "Noin 2 500 grammaa. Kuusitoista A4-arkkia tekee neliömetrin, joten yksi arkki painaa viisi grammaa ja viisisataa niitä kaksi ja puoli kiloa."
  ],
  [
   "Everyday",
@@ -1726,8 +1726,8 @@
   "Montako kirjainta sanassa epäjärjestelmällisyydestäänköhän on?",
   32,
   "Thirty-two. It means roughly \"I wonder if it is because of its unsystematic nature\" — one word, no gaps, and nine suffixes.",
-  "Kolmekymmentäkaksi. Se tarkoittaa suunnilleen ”lieneeöhän se sen epäjärjestelmällisyydestä” — yksi sana, ei välejä, yhdeksän päätettä.",
-  "Kolmekymmentäkaksi. Se tarkoittaa suunnilleen ”lieneeöhän se sen epäjärjestelmällisyydestä” — yksi sana, ei välejä, yhdeksän päätettä."
+  "Kolmekymmentäkaksi. Se tarkoittaa suunnilleen ”lieneeköhän se sen epäjärjestelmällisyydestä” — yksi sana, ei välejä, yhdeksän päätettä.",
+  "Kolmekymmentäkaksi. Se tarkoittaa suunnilleen ”lieneeköhän se sen epäjärjestelmällisyydestä” — yksi sana, ei välejä, yhdeksän päätettä."
  ],
  [
   "Everyday",
@@ -1766,8 +1766,8 @@
   "Montako karkauspäivää neljässäsadassa vuodessa on?",
   97,
   "Ninety-seven, not a hundred: century years are skipped unless they divide by 400. That is why 1900 had no 29 February and 2000 did.",
-  "Yhdeksänkymmentäseitsemän, ei sata: satavuodet jäävät pois, jos ne eivät ole neljänsädoilla jaollisia. Siksi vuonna 1900 ei ollut 29. helmikuuta ja vuonna 2000 oli.",
-  "Yhdeksänkymmentäseitsemän, ei sata: satavuodet jäävät pois, jos ne eivät ole neljänsädoilla jaollisia. Siksi vuonna 1900 ei ollut 29. helmikuuta ja vuonna 2000 oli."
+  "Yhdeksänkymmentäseitsemän, ei sata: satavuodet jäävät pois, jos ne eivät ole neljälläsadalla jaollisia. Siksi vuonna 1900 ei ollut 29. helmikuuta ja vuonna 2000 oli.",
+  "Yhdeksänkymmentäseitsemän, ei sata: satavuodet jäävät pois, jos ne eivät ole neljälläsadalla jaollisia. Siksi vuonna 1900 ei ollut 29. helmikuuta ja vuonna 2000 oli."
  ],
  [
   "Everyday",
@@ -1816,8 +1816,8 @@
   "Montako millimetriä pitkä maksukortti on?",
   85.6,
   "85.60 mm by 53.98 — a standard shared by bank cards, SIM card holders, hotel keys and library cards the world over.",
-  "85,60 millimetriä kertaa 53,98 — sama standardi maksukorteissa, SIM-korttien pohjissa, hotellin avaimissa ja kirjastokorteissa kaikkialla.",
-  "85,60 millimetriä kertaa 53,98 — sama standardi maksukorteissa, SIM-korttien pohjissa, hotellin avaimissa ja kirjastokorteissa kaikkialla."
+  "85,60 millimetriä kertaa 53,98 — sama standardi maksukorteissa, SIM-korttien pohjissa, hotellin avaimissa ja kirjastokorteissa ympäri maailman.",
+  "85,60 millimetriä kertaa 53,98 — sama standardi maksukorteissa, SIM-korttien pohjissa, hotellin avaimissa ja kirjastokorteissa ympäri maailman."
  ],
  [
   "Everyday",
@@ -1826,8 +1826,8 @@
   "Montako värillistä ruutua Rubikin kuution pinnalla on?",
   54,
   "Fifty-four: six faces of nine. There are twenty-six small cubes in all, around a core nobody ever sees.",
-  "Viäsikymmentäneljä: kuusi sivua, jokaisessa yhdeksän. Pikkukuutioita on kaikkiaan kaksikymmentäkuusi, ja keskellä ydin jota kukaan ei näe.",
-  "Viäsikymmentäneljä: kuusi sivua, jokaisessa yhdeksän. Pikkukuutioita on kaikkiaan kaksikymmentäkuusi, ja keskellä ydin jota kukaan ei näe."
+  "Viisikymmentäneljä: kuusi sivua, jokaisessa yhdeksän. Pikkukuutioita on kaikkiaan kaksikymmentäkuusi, ja keskellä ydin jota kukaan ei näe.",
+  "Viisikymmentäneljä: kuusi sivua, jokaisessa yhdeksän. Pikkukuutioita on kaikkiaan kaksikymmentäkuusi, ja keskellä ydin jota kukaan ei näe."
  ],
  [
   "Everyday",
@@ -1896,8 +1896,8 @@
   "Montako senttimetriä tuumassa on?",
   2.54,
   "Exactly 2.54 since 1959, when the English-speaking countries gave up and defined their inch by the metre.",
-  "Tasan 2,54 vuodesta 1959, kun englanninkieliset maat antoivat periksi ja määrittelivat tuumansa metrin avulla.",
-  "Tasan 2,54 vuodesta 1959, kun englanninkieliset maat antoivat periksi ja määrittelivat tuumansa metrin avulla."
+  "Tasan 2,54 vuodesta 1959, kun englanninkieliset maat antoivat periksi ja määrittelivät tuumansa metrin avulla.",
+  "Tasan 2,54 vuodesta 1959, kun englanninkieliset maat antoivat periksi ja määrittelivät tuumansa metrin avulla."
  ],
  [
   "Everyday",
@@ -1912,8 +1912,8 @@
  [
   "Everyday",
   "How many items are there in a gross?",
-  "Montako kappaletta on yhdessä krossissa eli tusinan tusinassa?",
-  "Montako kappaletta on yhdessä krossissa eli tusinan tusinassa?",
+  "Montako kappaletta on yhdessä krossissa?",
+  "Montako kappaletta on yhdessä krossissa?",
   144,
   "144, a dozen dozen. A great gross is twelve of those, 1,728, and a small gross is ten dozen.",
   "144 eli tusinan tusina. Suuri krossi on kaksitoista niitä eli 1 728, ja pieni krossi on kymmenen tusinaa.",
@@ -1922,8 +1922,8 @@
  [
   "Everyday",
   "How many days does the Earth really take to go once round the Sun?",
-  "Montako päivää maapallolta todella kestää kiertää Aurinko kerran?",
-  "Montako päivää maapallolta todella kestää kiertää Aurinko kerran?",
+  "Montako päivää maapallolta todella kuluu yhteen kierrokseen Auringon ympäri?",
+  "Montako päivää maapallolta todella kuluu yhteen kierrokseen Auringon ympäri?",
   365.2422,
   "365.2422 days. The quarter day left over is what leap years mop up, and the small remainder is why century years are skipped.",
   "365,2422 päivää. Yli jäävä neljännespäivä on se, minkä karkausvuodet korjaavat, ja pieni loppuosa on syy satavuosien jättämiseen pois.",

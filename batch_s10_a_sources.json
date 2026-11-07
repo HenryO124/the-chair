@@ -1,0 +1,214 @@
+{
+  "batch": "batch_s10_a.json",
+  "categories": ["History", "Geography", "Science"],
+  "note": "One source page per batch of sets. Swedish slots hold the Finnish string: recorded debt, not a translation.",
+  "sources": [
+    {
+      "page": "List of wars involving Finland",
+      "url": "https://en.wikipedia.org/wiki/List_of_wars_involving_Finland",
+      "sets": ["Finnish wars as an independent country", "Moscow Peace Treaty 1940 cessions"]
+    },
+    {
+      "page": "Finnish Civil War",
+      "url": "https://en.wikipedia.org/wiki/Finnish_Civil_War",
+      "sets": ["White commanders 1918", "events in Finland in 1918"]
+    },
+    {
+      "page": "Battles and operations of the Continuation War (article titles reached from search)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ilomantsi_(1944)",
+      "sets": ["Continuation War battles"],
+      "also": ["https://en.wikipedia.org/wiki/Battle_of_Hanko_(1941)", "https://en.wikipedia.org/wiki/Battle_of_Someri", "https://en.wikipedia.org/wiki/Battles_of_Kiestinki", "https://en.wikipedia.org/wiki/Battle_of_Vyborg_Bay_(1944)"]
+    },
+    {
+      "page": "Member states of the League of Nations",
+      "url": "https://en.wikipedia.org/wiki/Member_states_of_the_League_of_Nations",
+      "sets": ["joined by 1921", "left or expelled before 1940", "joined in the 1930s", "members at the first assembly"]
+    },
+    {
+      "page": "List of treaties",
+      "url": "https://en.wikipedia.org/wiki/List_of_treaties",
+      "sets": ["Sweden-Russia peaces", "Sweden-Denmark peaces", "17th-century treaties", "treaties ending US wars", "Russo-Turkish peaces", "anti-Napoleon coalition peaces", "wars in Asia", "treaties recognising new states", "treaties of the 1810s", "treaties of the 20th century"]
+    },
+    {
+      "page": "List of French monarchs",
+      "url": "https://en.wikipedia.org/wiki/List_of_French_monarchs",
+      "sets": ["House of Bourbon", "House of Valois"]
+    },
+    {
+      "page": "List of World War II battles",
+      "url": "https://en.wikipedia.org/wiki/List_of_World_War_II_battles",
+      "sets": ["battles of 1944", "battles of 1940", "battles in Italy"]
+    },
+    {
+      "page": "Timeline of national independence",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_national_independence",
+      "sets": ["independence 1917-18", "independence from France", "independence in 1960", "independence from the UK", "independence in 1991"]
+    },
+    {
+      "page": "List of cities and towns in Finland",
+      "url": "https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Finland",
+      "sets": ["town rights after 1990", "town rights in the 1970s", "medieval town charters"]
+    },
+    {
+      "page": "Timeline of historic inventions (Wikipedia-on-IPFS mirror; en.wikipedia.org copy was not served)",
+      "url": "https://ipfs.ssi.eecc.de/ipns/en.wikipedia-on-ipfs.org/wiki/Timeline_of_historic_inventions",
+      "sets": ["inventions before 1850", "inventions of the 1870s"]
+    },
+    {
+      "page": "Former countries in Europe after 1815",
+      "url": "https://en.wikipedia.org/wiki/Former_countries_in_Europe_after_1815",
+      "sets": ["interwar states", "republics after the Russian Empire", "German kingdoms", "states that ended in 1918", "German states absorbed in 1866"]
+    },
+    {
+      "page": "List of polar explorers",
+      "url": "https://en.wikipedia.org/wiki/List_of_polar_explorers",
+      "sets": ["Norwegian polar explorers"],
+      "caveat": "The page lists names only; nationalities were supplied from general knowledge."
+    },
+    {
+      "page": "List of islands of Finland",
+      "url": "https://en.wikipedia.org/wiki/List_of_islands_of_Finland",
+      "sets": ["largest sea islands", "largest lake islands"]
+    },
+    {
+      "page": "List of mountains in Finland",
+      "url": "https://en.wikipedia.org/wiki/List_of_mountains_in_Finland",
+      "sets": ["ten highest fells"]
+    },
+    {
+      "page": "List of rivers of Finland",
+      "url": "https://en.wikipedia.org/wiki/List_of_rivers_of_Finland",
+      "sets": ["rivers over 200 km", "rivers reaching the Gulf of Bothnia", "tributaries of the Kemijoki"]
+    },
+    {
+      "page": "List of municipalities of Finland",
+      "url": "https://en.wikipedia.org/wiki/List_of_municipalities_of_Finland",
+      "sets": ["municipalities over 5,000 km2", "twenty largest by area"]
+    },
+    {
+      "page": "List of river systems by length",
+      "url": "https://en.wikipedia.org/wiki/List_of_river_systems_by_length",
+      "sets": ["ten longest river systems", "basins reaching Russia", "Nile basin", "Congo basin", "Niger basin", "rivers emptying into the Arctic"]
+    },
+    {
+      "page": "List of lakes by depth",
+      "url": "https://en.wikipedia.org/wiki/List_of_lakes_by_depth",
+      "sets": ["lakes over 600 m deep", "deep lakes in Norway", "deep lakes in South America"]
+    },
+    {
+      "page": "Seven Summits",
+      "url": "https://en.wikipedia.org/wiki/Seven_Summits",
+      "sets": ["highest on each continent", "Seven Summits over 5,000 m"]
+    },
+    {
+      "page": "Countries and capitals of Africa (Nations Online)",
+      "url": "https://nationsonline.org/oneworld/capitals_africa.htm",
+      "sets": ["African capitals", "African seats of government"]
+    },
+    {
+      "page": "List of national capitals in East, South, and Southeast Asia",
+      "url": "https://en.wikipedia.org/wiki/List_of_national_capitals_in_East,_South,_and_Southeast_Asia",
+      "sets": ["Asian capitals", "Southeast Asian capitals"]
+    },
+    {
+      "page": "List of straits",
+      "url": "https://en.wikipedia.org/wiki/List_of_straits",
+      "sets": ["Baltic straits", "straits between continents", "Mediterranean straits", "British Isles straits", "Southeast Asian straits"]
+    },
+    {
+      "page": "List of waterfalls by height",
+      "url": "https://en.wikipedia.org/wiki/List_of_waterfalls_by_height",
+      "sets": ["waterfalls over 900 m", "tall waterfalls in Norway"]
+    },
+    {
+      "page": "Countries that drive on the left (WorldAtlas)",
+      "url": "https://www.worldatlas.com/articles/list-of-countries-who-drive-on-the-left.html",
+      "sets": ["European left-hand traffic", "African left-hand traffic"]
+    },
+    {
+      "page": "Nordic cross flag",
+      "url": "https://en.wikipedia.org/wiki/Nordic_cross_flag",
+      "sets": ["Nordic cross flags"]
+    },
+    {
+      "page": "List of seas on Earth",
+      "url": "https://en.wikipedia.org/wiki/List_of_seas_on_Earth",
+      "sets": ["parts of the Baltic", "Arctic Ocean seas", "Mediterranean seas", "Pacific seas", "Indian Ocean seas"]
+    },
+    {
+      "page": "List of longest suspension bridge spans",
+      "url": "https://en.wikipedia.org/wiki/List_of_longest_suspension_bridge_spans",
+      "sets": ["spans over 1,500 m", "opened in the 20th century"]
+    },
+    {
+      "page": "Finnish national symbols",
+      "url": "https://en.wikipedia.org/wiki/Finnish_national_symbols",
+      "sets": ["Finnish national nature symbols"]
+    },
+    {
+      "page": "List of mammals of Finland",
+      "url": "https://en.wikipedia.org/wiki/List_of_mammals_of_Finland",
+      "sets": ["mammals living wild in Finland", "introduced mammals", "the deer family", "mustelids of Finland", "cetaceans recorded in Finland", "rodents of Finland", "bats of Finland"]
+    },
+    {
+      "page": "List of birds of Finland",
+      "url": "https://en.wikipedia.org/wiki/List_of_birds_of_Finland",
+      "sets": ["owls", "woodpeckers", "grouse and gamebirds", "the crow family", "eagles and harriers", "falcons", "introduced waterfowl"]
+    },
+    {
+      "page": "Timeline of chemical element discoveries",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_chemical_element_discoveries",
+      "sets": ["metals used before 1000 BC", "Scheele's elements", "20th-century elements", "elements before 1800", "elements of the 1790s", "Ramsay's noble gases", "elements named after scientists", "synthetic elements"]
+    },
+    {
+      "page": "Mohs scale",
+      "url": "https://en.wikipedia.org/wiki/Mohs_scale",
+      "sets": ["the ten reference minerals", "harder than quartz"]
+    },
+    {
+      "page": "List of rock types",
+      "url": "https://en.wikipedia.org/wiki/List_of_rock_types",
+      "sets": ["sedimentary rocks", "metamorphic rocks"]
+    },
+    {
+      "page": "List of Mars landers",
+      "url": "https://en.wikipedia.org/wiki/List_of_Mars_landers",
+      "sets": ["successful Mars landings", "Soviet Mars missions"]
+    },
+    {
+      "page": "List of Nobel laureates in Physics",
+      "url": "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics",
+      "sets": ["physics laureates", "prizes before 1940", "years with no prize", "prizes for an instrument or method"]
+    },
+    {
+      "page": "List of brightest stars",
+      "url": "https://en.wikipedia.org/wiki/List_of_brightest_stars",
+      "sets": ["ten brightest stars", "bright stars in Orion"]
+    },
+    {
+      "page": "List of natural satellites",
+      "url": "https://en.wikipedia.org/wiki/List_of_natural_satellites",
+      "sets": ["moons of Pluto"]
+    },
+    {
+      "page": "Trees of Finland (Finnish nature vocabulary, uusikielemme.fi) and Species of trees (puuinfo.fi)",
+      "url": "https://uusikielemme.fi/finnish-vocabulary/vocabulary-lists/trees-finnish-nature-vocabulary",
+      "also": ["https://puuinfo.fi/puutieto/finnish-forests/species-of-trees/?lang=en"],
+      "sets": ["native trees of Finland", "conifers growing wild in Finland"]
+    },
+    {
+      "page": "Fish species (Fishing in Finland)",
+      "url": "https://fishinginfinland.fi/species",
+      "sets": ["Finnish salmonids"]
+    },
+    {
+      "page": "Geologic periods",
+      "url": null,
+      "sets": ["periods of the Palaeozoic"],
+      "caveat": "No clean list page was served. The Palaeozoic/Mesozoic/Cenozoic period names are standard textbook stratigraphy and were not taken from a fetched table."
+    }
+  ],
+  "avoided": [
+    "cavac.at mirror pages, which appeared in several search result lists and were never fetched"
+  ]
+}

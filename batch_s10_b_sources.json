@@ -1,0 +1,99 @@
+{
+ "batch": "batch_s10_b.json",
+ "categories": ["Arts & culture", "Sport", "Everyday"],
+ "pages": [
+  {
+   "url": "https://en.wikipedia.org/wiki/Finlandia_Prize",
+   "used_for": ["Finlandia-winning novels", "writers who won it twice", "Finnish authors who have won it"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Astrid_Lindgren_bibliography",
+   "used_for": ["books by Astrid Lindgren", "characters from Lindgren's books"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Jussi_Award_for_Best_Film",
+   "used_for": ["Finnish films that won the Jussi for Best Film"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finland_in_the_Eurovision_Song_Contest",
+   "used_for": ["artists who have represented Finland", "Finnish entries that finished last in the final"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Mika_Waltari",
+   "used_for": ["novels by Mika Waltari"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Edvard_Munch",
+   "used_for": ["paintings by Edvard Munch"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_Finnish_ice_hockey_champions",
+   "used_for": ["clubs that have won the Finnish ice hockey title", "clubs with eight or more titles", "cities with a champion club"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_Finnish_football_champions",
+   "used_for": ["clubs that have won the Finnish football title", "clubs with eight or more titles"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Formula_One_drivers_from_Finland",
+   "used_for": ["Finnish drivers who have won a Formula One Grand Prix"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finland_at_the_Olympics",
+   "used_for": ["summer sports in which Finland has won gold", "winter sports in which Finland has won gold", "Finns with five or more Olympic medals"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finland_at_the_1924_Summer_Olympics",
+   "used_for": ["Nurmi's 1924 golds", "sports in which Finland medalled in Paris 1924", "Finnish Olympic javelin champions (cross-checked)"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Finland_at_the_1994_Winter_Olympics",
+   "used_for": ["cross-checking Finnish winter medallists; thin page, no set written from it alone"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/List_of_culinary_herbs_and_spices",
+   "used_for": ["spices that are seeds", "spices that are bark", "spices that are roots or rhizomes", "spices that are flowers or buds", "spices that are dried fruits or berries"]
+  },
+  {
+   "url": "https://shop.procoffeegear.com/blogs/articles/coffee-drinks-chart-explained",
+   "used_for": ["coffee drinks made with espresso", "coffee drinks with steamed or frothed milk", "coffee drinks with no milk"],
+   "note": "Wikipedia's List_of_coffee_drinks was not on the fetch allowlist; this chart page was used instead."
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/ISO_216",
+   "used_for": ["paper sizes bigger than A4", "sizes in the international A series"]
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Road_signs_in_Finland",
+   "used_for": ["Finnish yellow warning triangles", "Finnish round signs"],
+   "note": "The page gives no Finnish sign names; the Finnish names in the rows are the standard ones."
+  },
+  {
+   "url": "https://www.ginetex.net/userfiles/files/Textile_care_symbols_en.pdf",
+   "used_for": ["the five basic care-label symbols", "instructions shown by crossing the symbol out"]
+  },
+  {
+   "url": "https://almanakka.helsinki.fi/en/liputuspaiva/flag-days-in-finland",
+   "used_for": ["official flag days in Finland", "flag days on a fixed date", "Finns with a flag day named after them"]
+  },
+  {
+   "url": "https://catalog.webstaurantstore.com/guide/965/types-of-beef-cuts.html",
+   "used_for": ["cuts of beef from the shoulder, breast or leg", "cuts that suit long slow braising"],
+   "note": "Wikipedia's Cut_of_beef was not on the fetch allowlist."
+  }
+ ],
+ "avoided": [
+  {
+   "domain": "cavac.at",
+   "reason": "Appeared in several search result lists (Little Finlandia Prize, Jussi Awards, Kanada-malja, Formula One drivers from Finland). Never fetched, per the warning that it serves instructions hidden in page text."
+  }
+ ],
+ "topics_notes": [
+  "Topic line 'name days' was skipped: Finnish name days are revised in the almanac every few years, so a per-date set would not be a settled fact.",
+  "Topic line 'knots and their uses' was skipped: no clean knot-by-category list was fetchable, and the Finnish knot vocabulary could not be sourced.",
+  "Topic lines 'sports and the number of players a side', 'sports invented in a named country' and 'comic strips and their creators' were left alone, as warned. Asterix album titles were used instead of the comic-strip line.",
+  "Spent lines in Arts & culture (already in the bank): Shakespeare's plays, Kaurismaki's films, Tove Jansson's books, Sibelius's works, Gallen-Kallela's paintings, Kalevala characters, Nobel literature laureates, Pixar films, Academy Award best picture.",
+  "Spent lines in Sport (already in the bank): Olympic host cities, Winter Olympic hosts, football World Cup winners, ice hockey world champions, Formula One world champions, Finnish rally champions, Tour de France winners, Olympic sports that were dropped.",
+  "Spent lines in Everyday (already in the bank): Finnish public holidays, cheeses by country (France and Italy), currencies by country (dollar), units of measure (volume), Finnish mythology, Finnish dishes."
+ ]
+}
